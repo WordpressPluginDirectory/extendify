@@ -1,0 +1,17 @@
+{
+	"api": {
+		"launch": "https://dashboard.extendify.com/api/onboarding",
+		"launch-dev": "https://testing.extendify.com/api/onboarding",
+		"launch-local": "http://templates.test/api/onboarding",
+
+		"assist": "https://dashboard.extendify.com/api/assist",
+		"assist-dev": "https://testing.extendify.com/api/assist",
+		"assist-local": "http://templates.test/api/assist",
+
+		"chat": "https://ai.extendify.com/api/chat",
+
+		"live": "https://dashboard.extendify.com/api",
+		"dev": "https://testing.extendify.com/api",
+		"local": "http://templates.test/api"
+	}
+}
