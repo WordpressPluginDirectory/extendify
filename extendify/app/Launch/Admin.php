@@ -120,6 +120,7 @@ class Admin
                 && \get_option('admin_email') === $user->user_email
                 && in_array('administrator', $user->roles, true)
             ) {
+                \update_option('extendify_attempted_redirect', gmdate('Y-m-d H:i:s'));
                 \wp_safe_redirect(\admin_url() . 'admin.php?page=extendify-launch');
             }
         });
@@ -169,7 +170,7 @@ class Admin
         $partnerData = PartnerData::getPartnerData();
         $consentTermsUrlAI = isset($partnerData['consentTermsUrl']) ? \esc_url_raw($partnerData['consentTermsUrl']) : '';
         // Always shows on devmode, and won't show if disabled, or the consent url is missing.
-        if ((!array_key_exists('showAICopy', $partnerData) || !$consentTermsUrlAI) && Config::$environment !== 'DEVELOPMENT') {
+        if (!array_key_exists('showAICopy', $partnerData) && Config::$environment !== 'DEVELOPMENT') {
             $skipSteps[] = 'business-information';
         }
 
@@ -191,6 +192,7 @@ class Admin
                 'partnerId' => \esc_attr(PartnerData::$id),
                 'partnerSkipSteps' => $skipSteps,
                 'consentTermsUrlAI' => $consentTermsUrlAI,
+                'showLocalizedCopy' => array_key_exists('showLocalizedCopy', $partnerData),
                 'devbuild' => \esc_attr(Config::$environment === 'DEVELOPMENT'),
                 'version' => Config::$version,
                 'siteId' => \get_option('extendify_site_id', ''),

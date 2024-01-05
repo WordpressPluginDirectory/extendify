@@ -190,6 +190,11 @@ class Admin
             array_merge([
                 'root' => \esc_url_raw(\rest_url(Config::$slug . '/' . Config::$apiVersion)),
                 'nonce' => \wp_create_nonce('wp_rest'),
+                'devbuild' => \esc_attr(Config::$environment === 'DEVELOPMENT'),
+                'partnerId' => \esc_attr(PartnerData::$id),
+                'siteId' => \get_option('extendify_site_id', false),
+                'wpVersion' => \get_bloginfo('version'),
+                'isBlockTheme' => function_exists('wp_is_block_theme') ? wp_is_block_theme() : false,
                 'showAIConsent' => isset($data['showAIConsent']) ? $data['showAIConsent'] : false,
                 'consentTermsUrl' => isset($data['consentTermsUrl']) ? $data['consentTermsUrl'] : '',
                 'userId' => get_current_user_id(),

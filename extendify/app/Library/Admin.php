@@ -94,6 +94,7 @@ class Admin
     public function addScopedScriptsAndStyles()
     {
         $userInfo = \get_user_option('extendify_library_user');
+        $partnerData = PartnerData::getPartnerData();
         $hasPartner = PartnerData::$id && PartnerData::$id !== 'no-partner';
         $userInfo = $userInfo ? json_decode($userInfo, true) : [
             'state' => ['openOnNewPage' => $hasPartner],
@@ -133,6 +134,7 @@ class Admin
                 'partnerLogo' => \esc_attr(PartnerData::$logo),
                 'partnerName' => \esc_attr(PartnerData::$name),
                 'partnerId' => \esc_attr(PartnerData::$id),
+                'showLocalizedCopy' => array_key_exists('showLocalizedCopy', $partnerData),
                 'userInfo' => $userInfo,
                 'siteInfo' => $siteInfo,
                 'wpVersion' => \get_bloginfo('version'),

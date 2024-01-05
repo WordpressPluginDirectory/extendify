@@ -111,7 +111,7 @@ export const CreatingSite = () => {
 			};
 
 			await waitFor200Response();
-			if (businessInformation.acceptTerms) {
+			if (businessInformation.description) {
 				informDesc(__('Creating pages with custom content', 'extendify-local'));
 				[homePage, ...pages].forEach((page) =>
 					setPagesToAnimate((previous) => [...previous, page.name]),

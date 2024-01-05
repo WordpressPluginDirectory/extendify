@@ -62,6 +62,8 @@ const state = (set, get) => ({
 	history: [],
 	viewedPages: [],
 	current: null,
+	// initialize the state with default values
+	...((window.extAssistData.userData.routerData?.data || {})?.state ?? {}),
 	setCurrent: async (page) => {
 		if (!page) return;
 		for (const event of onChangeEvents) {

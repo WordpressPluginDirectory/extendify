@@ -12,6 +12,7 @@ const storage = {
 const startingState = {
 	siteType: {},
 	category: '',
+	totalImports: 0,
 };
 
 export const useSiteSettingsStore = create(
@@ -31,6 +32,8 @@ export const useSiteSettingsStore = create(
 				});
 			},
 			setCategory: (category) => set({ category }),
+			incrementImports: () =>
+				set((state) => ({ totalImports: state.totalImports + 1 })),
 		}),
 		{
 			name: 'extendify_library_site_data',

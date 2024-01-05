@@ -1,13 +1,26 @@
 import { __ } from '@wordpress/i18n';
+import { DRAFT_URL } from '../../constants.js';
 
-const DRAFT_URL = 'https://ai.extendify.com/api/draft';
-// const DRAFT_URL = 'http://localhost:3000/api/draft'
+// Optionally add items to request body
+const denyList = ['nonce', 'api'];
+const extraBody = {
+	...Object.fromEntries(
+		Object.entries(window.extDraftData).filter(
+			([key]) => !denyList.includes(key),
+		),
+	),
+};
 
 export const completion = async (prompt, promptType, systemMessageKey) => {
 	const response = await fetch(`${DRAFT_URL}/completion`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ prompt, promptType, systemMessageKey }),
+		body: JSON.stringify({
+			prompt,
+			promptType,
+			systemMessageKey,
+			...extraBody,
+		}),
 	});
 
 	if (!response.ok) {

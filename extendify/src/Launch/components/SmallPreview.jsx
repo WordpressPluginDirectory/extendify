@@ -35,17 +35,27 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 
 	const onLoad = useCallback(
 		(frame) => {
-			// Remove load-styles in case WP laods them
-			frame?.contentDocument?.querySelector('[href*=load-styles]')?.remove();
-
-			// Add variation styles
-			const style = `<style id="ext-tj">
+			// Run this 150 times at an interval of 100ms (15s)
+			// This is a brute force check that the styles are there
+			let lastRun = performance.now();
+			let counter = 0;
+			const checkOnStyles = () => {
+				if (counter >= 150) return;
+				const now = performance.now();
+				if (now - lastRun < 100) return requestAnimationFrame(checkOnStyles);
+				lastRun = now;
+				frame?.contentDocument?.querySelector('[href*=load-styles]')?.remove();
+				const style = `<style id="ext-tj">
                 html body.editor-styles-wrapper { background-color: var(--wp--preset--color--background) }
                 ${transformedStyles}
             </style>`;
-			if (!frame.contentDocument?.getElementById('ext-tj')) {
-				frame.contentDocument?.body?.insertAdjacentHTML('beforeend', style);
-			}
+				if (!frame.contentDocument?.getElementById('ext-tj')) {
+					frame.contentDocument?.body?.insertAdjacentHTML('beforeend', style);
+				}
+				counter++;
+				requestAnimationFrame(checkOnStyles); // recursive
+			};
+			checkOnStyles();
 		},
 		[transformedStyles],
 	);

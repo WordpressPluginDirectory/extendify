@@ -51,7 +51,12 @@ class AdminPageRouter
             if ((Config::$showLaunch && !Config::$launchCompleted) || Config::$environment === 'DEVELOPMENT') {
                 $launch = new LaunchAdminPage();
                 $cb = [$launch, 'pageContent'];
-                $this->addSubMenu('Launch', $launch->slug, $cb);
+                $this->addSubMenu(
+                    // translators: Launch is a noun.
+                    __('Launch', 'extendify-local'),
+                    $launch->slug,
+                    $cb
+                );
             }
         });
 

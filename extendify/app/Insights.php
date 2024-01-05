@@ -7,6 +7,7 @@ namespace Extendify;
 
 /**
  * Controller for handling various Insights related things.
+ * WP code reviewers: This is used in another plugin and not invoked here.
  */
 class Insights
 {
@@ -28,14 +29,19 @@ class Insights
         // If there isn't a siteId, then create one.
         if (!\get_option('extendify_site_id', false)) {
             \update_option('extendify_site_id', \wp_generate_uuid4());
-            if (defined('EXTENDIFY_INSIGHTS_URL') && class_exists('ExtendifyInsights')) {
-                // If we are generating an ID, then trigger the job here too.
-                // This only runs if they have opted in.
-                add_action('init', function () {
-                    wp_schedule_single_event(time(), 'extendify_insights');
-                    spawn_cron();
-                });
-            }
+        }
+
+        if (defined('EXTENDIFY_INSIGHTS_URL')
+            && class_exists('ExtendifyInsights')
+            && !\get_option('extendify_insights_checkedin_once', 0)
+        ) {
+            \update_option('extendify_insights_checkedin_once', gmdate('Y-m-d H:i:s'));
+            // WP code reviewers: This job is defined in another plugin (i.e. it's opt-in).
+            \add_action('init', function () {
+                // Run this once but wait 10 minutes.
+                \wp_schedule_single_event((time() + 10 * MINUTE_IN_SECONDS), 'extendify_insights');
+                \spawn_cron();
+            });
         }
 
         $this->setUpActiveTests();
@@ -71,8 +77,12 @@ class Insights
         add_filter('extendify_insights_data', function ($data) {
             $insights = array_merge($data, [
                 'launch' => defined('EXTENDIFY_SHOW_ONBOARDING') && constant('EXTENDIFY_SHOW_ONBOARDING'),
+                'launchRedirectedAt' => \get_option('extendify_attempted_redirect', null),
+                'launchLoadedAt' => \get_option('extendify_launch_loaded', null),
                 'partner' => defined('EXTENDIFY_PARTNER_ID') ? constant('EXTENDIFY_PARTNER_ID') : null,
-                'siteCreatedAt' => get_user_option('user_registered', 1),
+                'siteCreatedAt' => \get_user_option('user_registered', 1),
+                'assistRouterData' => \get_option('extendify_assist_router', null),
+                'libraryData' => \get_option('extendify_library_site_data', null),
             ]);
             return $insights;
         });

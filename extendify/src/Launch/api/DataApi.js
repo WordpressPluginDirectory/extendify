@@ -8,7 +8,7 @@ export const saveUserSelectionData = (data) =>
 	api.post('launch/user-selection-data', { data });
 
 const fetchTemplates = async (type, siteType) => {
-	const { wpLanguage, wpVersion } = window.extOnbData;
+	const { wpLanguage, wpVersion, showLocalizedCopy } = window.extOnbData;
 	const { goals, plugins } = useUserSelectionStore.getState();
 	const url = new URL(`${PATTERNS_HOST}/api/${type}-templates`);
 	url.searchParams.append('siteType', siteType?.slug);
@@ -17,6 +17,7 @@ const fetchTemplates = async (type, siteType) => {
 	goals?.length && url.searchParams.append('goals', JSON.stringify(goals));
 	plugins?.length &&
 		url.searchParams.append('plugins', JSON.stringify(plugins));
+	showLocalizedCopy && url.searchParams.append('showLocalizedCopy', true);
 	const res = await fetch(url.toString(), {
 		headers: { 'Content-Type': 'application/json' },
 	});

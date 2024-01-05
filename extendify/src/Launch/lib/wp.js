@@ -56,13 +56,12 @@ const createWordpressPage = async (page) => {
 };
 
 export const createPages = async (pages, userState) => {
-	// Either didn't accept the terms or didn't see the page
-	if (!userState.businessInformation?.acceptTerms) {
+	// Either didn't see the ai copy page or skipped it
+	if (!userState.businessInformation.description) {
 		return await createWordpressPages(pages);
 	}
 
 	const { siteId, partnerId, wpLanguage, wpVersion } = window.extOnbData;
-
 	return (
 		(
 			await Promise.allSettled(

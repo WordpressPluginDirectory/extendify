@@ -16,12 +16,13 @@ const isNewPage = window?.location?.pathname?.includes('post-new.php');
 export const Modal = () => {
 	const { open, setOpen } = useGlobalsStore();
 	const { updateUserOption, openOnNewPage } = useUserStore();
-	const { category, siteType } = useSiteSettingsStore();
+	const { category, siteType, incrementImports } = useSiteSettingsStore();
 	const { createNotice } = dispatch('core/notices');
 
 	const onClose = () => setOpen(false);
 	const insertPattern = async (blocks) => {
 		await insertBlocks(blocks);
+		incrementImports();
 		onClose();
 		createNotice('info', __('Pattern added', 'extendify-local'), {
 			isDismissible: true,
