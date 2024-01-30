@@ -27,7 +27,7 @@ export const Answer = ({ question, answer, reset, error, answerId }) => {
 
 	if (error) {
 		return (
-			<div className="p-6 pb-10 h-80 overflow-scroll" ref={scrollRef}>
+			<div className="p-6 pb-10 h-80 overflow-y-auto" ref={scrollRef}>
 				<div className="flex justify-end mb-8 ml-4 relative">
 					<Error
 						text={__(
@@ -43,7 +43,7 @@ export const Answer = ({ question, answer, reset, error, answerId }) => {
 
 	return (
 		<>
-			<div className="p-6 pb-10 h-80 overflow-scroll" ref={scrollRef}>
+			<div className="p-6 pb-10 h-80 overflow-y-auto" ref={scrollRef}>
 				<div className="flex justify-end mb-8 ml-4 relative">
 					<div className="m-0 p-5 rounded-lg bg-gray-800 text-design-text text-sm">
 						{question}

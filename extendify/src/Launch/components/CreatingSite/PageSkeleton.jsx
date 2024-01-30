@@ -92,7 +92,7 @@ const Piece = ({ className, i }) => (
 				'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
 			backgroundSize: '600% 600%',
 			animation: 'extendify-loading-skeleton 10s ease-in-out infinite',
-			amimationDelay: `${i}s`,
+			animationDelay: `${i}s`,
 			mixBlendMode: 'plus-lighter',
 		}}
 	/>

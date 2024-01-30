@@ -5,11 +5,8 @@
 
 namespace Extendify;
 
-use Extendify\PartnerData;
-use Extendify\Config;
 use Extendify\Library\AdminPage as LibraryAdminPage;
 use Extendify\Assist\AdminPage as AssistAdminPage;
-use Extendify\Assist\Controllers\TasksController as AssistTasksController;
 use Extendify\Launch\AdminPage as LaunchAdminPage;
 
 /**
@@ -48,7 +45,7 @@ class AdminPageRouter
             $this->addSubMenu('Library', $library->slug, $cb);
 
             // Show the Launch menu for dev users.
-            if ((Config::$showLaunch && !Config::$launchCompleted) || Config::$environment === 'DEVELOPMENT') {
+            if (Config::$showLaunch) {
                 $launch = new LaunchAdminPage();
                 $cb = [$launch, 'pageContent'];
                 $this->addSubMenu(
@@ -112,6 +109,7 @@ class AdminPageRouter
      * @param \WP_Block_Editor_Context $blockEditorContext The current block editor context.
      *
      * @return array
+     *
      * phpcs:disable Generic.CodeAnalysis.UnusedFunctionParameter
      */
     public function blockEditorSettingsAllFilter($editorSettings, $blockEditorContext)

@@ -274,7 +274,6 @@ class Admin
                 'nonce' => \wp_create_nonce('wp_rest'),
                 'root' => \esc_url_raw(\rest_url(Config::$slug . '/' . Config::$apiVersion)),
                 'showChat' => isset($chatOptions['showChat']) ? $chatOptions['showChat'] : false,
-                'api' => \esc_url_raw(Config::$config['api']['chat']),
                 'devbuild' => \esc_attr(Config::$environment === 'DEVELOPMENT'),
                 'partnerId' => \esc_attr(PartnerData::$id),
                 'siteId' => \get_option('extendify_site_id', false),
@@ -286,6 +285,7 @@ class Admin
                 'consentTermsUrl' => isset($chatData['consentTermsUrl']) ? $chatData['consentTermsUrl'] : '',
                 'userId' => get_current_user_id(),
                 'userGaveConsent' => $userGaveConsent,
+                'wpLanguage' => \get_locale(),
                 'data' => $chatData,
             ]),
             'before'

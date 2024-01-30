@@ -184,6 +184,7 @@ class Admin
                     'routerData' => RouterController::get(),
                 ],
                 'resourceData' => (new ResourceData())->getData(),
+                'canSeeRestartLaunch' => $this->canRunLaunchAgain(),
             ]),
             'before'
         );
@@ -203,5 +204,31 @@ class Admin
             return "$k: $v";
         }, array_keys($cssColorVars), $cssColorVars));
         wp_add_inline_style(Config::$slug . "-assist-{$context}-styles", "body { $cssString; }");
+    }
+
+    /**
+     * Check to see if the user can re-run Launch
+     *
+     * @return boolean
+     */
+    public function canRunLaunchAgain()
+    {
+        if (\get_option('stylesheet') !== 'extendable') {
+            return false;
+        }
+
+        $launchCompleted = \get_option('extendify_onboarding_completed', false);
+
+        if (!$launchCompleted) {
+            return false;
+        }
+
+        try {
+            $datetime1 = new \DateTime($launchCompleted);
+            $interval = $datetime1->diff(new \DateTime());
+            return $interval->format('%d') <= 2;
+        } catch (\Exception $exception) {
+            return false;
+        }
     }
 }

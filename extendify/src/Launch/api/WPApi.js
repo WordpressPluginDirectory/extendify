@@ -1,6 +1,8 @@
 import { __ } from '@wordpress/i18n';
 import { Axios as api } from './axios';
 
+const wpRoot = window.extOnbData.wpRoot;
+
 export const updateOption = (option, value) =>
 	api.post('launch/options', { option, value });
 
@@ -12,10 +14,10 @@ export const getOption = async (option) => {
 };
 
 export const createPage = (pageData) =>
-	api.post(`${window.extOnbData.wpRoot}wp/v2/pages`, pageData);
+	api.post(`${wpRoot}wp/v2/pages`, pageData);
 
 export const getPageById = (pageId) =>
-	api.get(`${window.extOnbData.wpRoot}wp/v2/pages/${pageId}`);
+	api.get(`${wpRoot}wp/v2/pages/${pageId}`);
 
 export const installPlugin = async (plugin) => {
 	// Fail silently if no slug is provided
@@ -23,13 +25,10 @@ export const installPlugin = async (plugin) => {
 
 	try {
 		// Install plugin and try to activate it.
-		const response = await api.post(
-			`${window.extOnbData.wpRoot}wp/v2/plugins`,
-			{
-				slug: plugin.wordpressSlug,
-				status: 'active',
-			},
-		);
+		const response = await api.post(`${wpRoot}wp/v2/plugins`, {
+			slug: plugin.wordpressSlug,
+			status: 'active',
+		});
 		if (!response.ok) return response;
 	} catch (e) {
 		// Fail gracefully for now
@@ -44,18 +43,23 @@ export const installPlugin = async (plugin) => {
 };
 
 export const activatePlugin = async (plugin) => {
-	const endpoint = `${window.extOnbData.wpRoot}wp/v2/plugins`;
-	const response = await api.get(`${endpoint}?search=${plugin.wordpressSlug}`);
+	const endpoint = new URL(`${wpRoot}wp/v2/plugins`);
+	const params = new URLSearchParams(endpoint.searchParams);
+	params.set('search', plugin.wordpressSlug);
+	endpoint.search = params.toString();
+	const response = await api.get(endpoint.toString());
 	const pluginSlug = response?.[0]?.plugin;
 	if (!pluginSlug) {
 		throw new Error('Plugin not found');
 	}
 	// Attempt to activate the plugin with the slug we found
-	return await api.post(`${endpoint}/${pluginSlug}`, { status: 'active' });
+	return await api.post(`${wpRoot}wp/v2/plugins/${pluginSlug}`, {
+		status: 'active',
+	});
 };
 
 export const updateTemplatePart = (part, content) =>
-	api.post(`${window.extOnbData.wpRoot}wp/v2/template-parts/${part}`, {
+	api.post(`${wpRoot}wp/v2/template-parts/${part}`, {
 		slug: `${part}`,
 		theme: 'extendable',
 		type: 'wp_template_part',
@@ -85,13 +89,11 @@ export const getHeadersAndFooters = async () => {
 	return { headers, footers };
 };
 
-const getTemplateParts = () =>
-	api.get(window.extOnbData.wpRoot + 'wp/v2/template-parts');
+const getTemplateParts = () => api.get(wpRoot + 'wp/v2/template-parts');
 
 export const getThemeVariations = async () => {
 	const variations = await api.get(
-		window.extOnbData.wpRoot +
-			'wp/v2/global-styles/themes/extendable/variations',
+		wpRoot + 'wp/v2/global-styles/themes/extendable/variations',
 	);
 	if (!Array.isArray(variations)) {
 		throw new Error('Could not get theme variations');
@@ -101,7 +103,7 @@ export const getThemeVariations = async () => {
 };
 
 export const updateThemeVariation = (id, variation) =>
-	api.post(`${window.extOnbData.wpRoot}wp/v2/global-styles/${id}`, {
+	api.post(`${wpRoot}wp/v2/global-styles/${id}`, {
 		id,
 		settings: variation.settings,
 		styles: variation.styles,

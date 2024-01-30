@@ -2,19 +2,20 @@ import { registerCoreBlocks } from '@wordpress/block-library';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
 import { SWRConfig, useSWRConfig } from 'swr';
+import { updateOption } from '@launch/api/WPApi';
+import { RestartLaunchModal } from '@launch/components/RestartLaunchModal';
 import { RetryNotice } from '@launch/components/RetryNotice';
 import { CreatingSite } from '@launch/pages/CreatingSite';
+import { NeedsTheme } from '@launch/pages/NeedsTheme';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
-import { updateOption } from './api/WPApi';
+import { useUserSelectionStore } from '@launch/state/UserSelections';
 import { useTelemetry } from './hooks/useTelemetry';
-import { NeedsTheme } from './pages/NeedsTheme';
-import { useUserSelectionStore } from './state/UserSelections';
 
 export const LaunchPage = () => {
 	const { updateSettings } = useDispatch('core/block-editor');
 	const [retrying, setRetrying] = useState(false);
-	const { siteType } = useUserSelectionStore();
+	const { siteType, resetState } = useUserSelectionStore();
 	const CurrentPage = usePagesStore((state) => {
 		const pageData = state.getCurrentPageData();
 		return pageData?.component;
@@ -39,7 +40,12 @@ export const LaunchPage = () => {
 		}
 		if (generating) return <CreatingSite />;
 		if (!CurrentPage) return null;
-		return <CurrentPage />;
+		return (
+			<>
+				<RestartLaunchModal setPage={setPage} resetState={resetState} />
+				<CurrentPage />
+			</>
+		);
 	};
 
 	useEffect(() => {

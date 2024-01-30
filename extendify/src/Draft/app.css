@@ -20,7 +20,7 @@
 .extendify-draft *:after,
 .extendify-draft *:before {
 	box-sizing: border-box;
-	border: 0 solid #e5e7eb;
+	/* border: 0 solid #e5e7eb; */
 }
 
 .extendify-draft .completion:after {
@@ -70,4 +70,9 @@
 
 .extendify-draft .completion p:last-child {
 	margin-bottom: 0;
+}
+#extendify-draft\:draft,
+.extendify-draft.h-full {
+	/* minus the bottom status bar */
+	height: calc(100% - 25px) !important;
 }

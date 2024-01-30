@@ -197,8 +197,12 @@ class Admin
                 'isBlockTheme' => function_exists('wp_is_block_theme') ? wp_is_block_theme() : false,
                 'showAIConsent' => isset($data['showAIConsent']) ? $data['showAIConsent'] : false,
                 'consentTermsUrl' => isset($data['consentTermsUrl']) ? $data['consentTermsUrl'] : '',
-                'userId' => get_current_user_id(),
+                'userId' => \get_current_user_id(),
                 'userGaveConsent' => $userGaveConsent,
+                'globalState' => \get_option('extendify_draft_settings', [
+                    'state' => [],
+                    'version' => 0,
+                ]),
             ], $this->fetchDraftData())
         );
 

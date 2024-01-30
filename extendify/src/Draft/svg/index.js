@@ -9,3 +9,4 @@ export { default as below } from './Below';
 export { default as replace } from './Replace';
 export { default as replay } from './Replay';
 export { default as trash } from './Trash';
+export { default as twoLines } from './TwoLines';

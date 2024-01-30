@@ -28,17 +28,32 @@ export const Draft = () => {
 		[],
 	);
 	const { getBlock } = useSelect((select) => select('core/block-editor'), []);
-	const showAIConsent = window.extDraftData?.showAIConsent;
-	const consentTermsUrl = window.extDraftData?.consentTermsUrl;
-	const userId = window.extDraftData?.userId;
-	const [userGaveConsent, setUserGaveConsent] = useState(
-		window.extDraftData?.userGaveConsent,
-	);
+	const {
+		userId,
+		showAIConsent,
+		consentTermsUrl,
+		userGaveConsent: gaveBefore,
+	} = window.extDraftData;
+	// TODO: move to global state
+	const [userGaveConsent, setUserGaveConsent] = useState(gaveBefore === '1');
+	const needsConsent = showAIConsent && !userGaveConsent;
 
-	const userAcceptsTerms = () => {
-		updateUserMeta(userId, 'extendify_ai_consent', true);
+	const userAcceptsTerms = async () => {
 		setUserGaveConsent(true);
+		window.extDraftData.userGaveConsent = '1';
+		await updateUserMeta(userId, 'extendify_ai_consent', true);
 	};
+	// TODO: When doing a rewrite, make this global state
+	useEffect(() => {
+		// Allow for external udpates
+		const handle = (event) => {
+			if (needsConsent) return;
+			setPrompt(event.detail);
+		};
+		window.addEventListener('extendify-draft:set-prompt', handle);
+		return () =>
+			window.removeEventListener('extendify-draft:set-prompt', handle);
+	}, [needsConsent]);
 
 	// Reset input text when an error occurs
 	useEffect(() => {
@@ -115,7 +130,7 @@ export const Draft = () => {
 							/>
 						</BaseControl>
 					)}
-					{showAIConsent && !userGaveConsent && (
+					{needsConsent && (
 						<div className="bg-black/75 rounded w-full h-full p-6 absolute inset-0 items-center justify-center">
 							<div className="bg-white p-4 rounded">
 								<h2 className="text-lg mt-0 mb-2">

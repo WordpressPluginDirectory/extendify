@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { DRAFT_URL } from '../../constants.js';
+import { AI_HOST } from '../../constants.js';
 
 // Optionally add items to request body
 const denyList = ['nonce', 'api'];
@@ -12,7 +12,7 @@ const extraBody = {
 };
 
 export const completion = async (prompt, promptType, systemMessageKey) => {
-	const response = await fetch(`${DRAFT_URL}/completion`, {
+	const response = await fetch(`${AI_HOST}/api/draft/completion`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({

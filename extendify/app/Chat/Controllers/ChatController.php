@@ -61,21 +61,6 @@ class ChatController
     }
 
     /**
-     * Rate the answer you got from the chat api.
-     *
-     * @param \WP_REST_Request $request The request.
-     * @return \WP_REST_Response
-     */
-    public static function rateAnswer($request)
-    {
-        $response = Http::post('/rate-answer', $request->get_params());
-        return new \WP_REST_Response(
-            $response,
-            wp_remote_retrieve_response_code($response)
-        );
-    }
-
-    /**
      * Persist the data
      *
      * @param \WP_REST_Request $request - The request.

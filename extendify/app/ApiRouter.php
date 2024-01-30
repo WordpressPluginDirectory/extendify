@@ -37,7 +37,7 @@ class ApiRouter extends \WP_REST_Controller
         $this->capability = Config::$requiredCapability;
         add_filter(
             'rest_request_before_callbacks',
-            // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundInExtendedClassBeforeLastUsed
+            // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
             function ($response, $handler, $request) {
                 // Add the request to our helper class.
                 if ($request->get_header('x_extendify')) {

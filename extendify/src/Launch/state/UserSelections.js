@@ -6,7 +6,7 @@ import {
 } from '@launch/api/DataApi';
 
 const key = `extendify-site-selection-${window.extOnbData.siteId}`;
-const initialState = {
+const defaultState = {
 	siteType: {},
 	siteInformation: {
 		title: undefined,
@@ -23,6 +23,9 @@ const initialState = {
 	pages: undefined,
 	plugins: undefined,
 	goals: undefined,
+};
+const initialState = {
+	...defaultState,
 	...(JSON.parse(localStorage.getItem(key) || '{}')?.state ?? {}),
 };
 
@@ -30,7 +33,7 @@ const state = (set, get) => ({
 	...initialState,
 	setSiteType(siteType) {
 		// Reset the user's selections when site type changes
-		set({ ...initialState, siteType });
+		set({ ...defaultState, siteType });
 	},
 	setSiteTypeSearch(search) {
 		set((state) => ({
@@ -69,9 +72,6 @@ const state = (set, get) => ({
 			[type]: get()?.[type]?.filter((t) => !items.some((i) => i.id === t.id)),
 		});
 	},
-	reset(type) {
-		set({ [type]: [] });
-	},
 	toggle(type, item) {
 		if (get().has(type, item)) {
 			get().remove(type, item);
@@ -90,7 +90,7 @@ const state = (set, get) => ({
 		);
 	},
 	resetState() {
-		set(initialState);
+		set(defaultState);
 	},
 });
 

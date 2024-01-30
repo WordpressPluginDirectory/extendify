@@ -1,4 +1,5 @@
-import { Axios as api, restApi, wpHeaders } from './axios';
+import { AI_HOST } from '../../constants';
+import { Axios as api, wpHeaders } from './axios';
 
 // Optionally add items to request body
 const denyList = ['nonce', 'api'];
@@ -11,7 +12,7 @@ const extraBody = {
 };
 
 export const getAnswer = ({ question, experienceLevel }) =>
-	fetch(`${window.extChatData.api}/ask-question`, {
+	fetch(`${AI_HOST}/api/chat/ask-question`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -20,7 +21,7 @@ export const getAnswer = ({ question, experienceLevel }) =>
 	});
 
 export const rateAnswer = ({ answerId, rating }) =>
-	fetch(`${restApi}/chat/rate-answer`, {
+	fetch(`${AI_HOST}/api/chat/rate-answer`, {
 		method: 'POST',
 		headers: wpHeaders,
 		body: JSON.stringify({ answerId, rating }),

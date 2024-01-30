@@ -27,9 +27,10 @@ export const Rating = ({ answerId }) => {
 						: __('Rate that this answer was helpful', 'extendify-local')
 				}
 				className={classnames(
-					'cursor-pointer bg-transparent w-5 h-5 text-gray-500 border-0 p-0 m-0 hover:text-design-main',
+					'cursor-pointer bg-transparent w-5 h-5 border-0 p-0 m-0 hover:text-design-main',
 					{
 						'text-design-main': rating === 1,
+						'text-gray-500': rating !== 1,
 					},
 				)}>
 				<Icon className="fill-current" icon={thumbUp} />
@@ -46,9 +47,10 @@ export const Rating = ({ answerId }) => {
 						: __('Rate that this answer was not helpful', 'extendify-local')
 				}
 				className={classnames(
-					'cursor-pointer bg-transparent w-5 h-5 text-gray-500 border-0 p-0 m-0 hover:text-design-main',
+					'cursor-pointer bg-transparent w-5 h-5 border-0 p-0 m-0 hover:text-design-main',
 					{
 						'text-design-main': rating === -1,
+						'text-gray-500': rating !== -1,
 					},
 				)}>
 				<Icon className="fill-current" icon={thumbDown} />

@@ -15,7 +15,7 @@ export const ChatSettings = ({ showChat, setShowChat }) => {
 	};
 
 	return (
-		<div className="flex items-center mt-4">
+		<div className="flex items-center my-6">
 			<ToggleControl
 				label={__('Enable the AI Chatbot', 'extendify-local')}
 				checked={showChat}

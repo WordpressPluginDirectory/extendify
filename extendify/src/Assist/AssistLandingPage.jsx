@@ -5,9 +5,9 @@ import { getPlugins } from '@wordpress/plugins';
 import { SWRConfig } from 'swr';
 import { Modal } from '@assist/components/Modal';
 import { GuidedTour } from '@assist/components/shared/GuidedTour';
+import '@assist/documentation.css';
 import { useRouter } from '@assist/hooks/useRouter';
 import { Header } from '@assist/pages/parts/Header';
-import './documentation.css';
 
 const Page = () => {
 	const { CurrentPage } = useRouter();

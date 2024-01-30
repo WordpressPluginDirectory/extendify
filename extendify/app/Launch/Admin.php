@@ -202,6 +202,7 @@ class Admin
                 'wpLanguage' => \get_locale(),
                 'wpVersion' => \get_bloginfo('version'),
                 'siteCreatedAt' => get_user_option('user_registered', 1),
+                'oldPagesIds' => $this->getLaunchCreatedPages(),
             ]),
             'before'
         );
@@ -220,5 +221,25 @@ class Admin
             return "$k: $v";
         }, array_keys($cssColorVars), $cssColorVars));
         wp_add_inline_style(Config::$slug . '-launch-styles', "body { $cssString; }");
+    }
+
+    /**
+     * Returns all the pages created by Extendify.
+     *
+     * @return array
+     */
+    public static function getLaunchCreatedPages()
+    {
+        $posts = get_posts([
+            'numberposts' => -1,
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            // only return the ID field.
+            'fields' => 'ids',
+        ]);
+
+        return array_values(array_filter(array_map(function ($post) {
+            return get_post_meta($post, 'made_with_extendify_launch') ? $post : false;
+        }, $posts)));
     }
 }

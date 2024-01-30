@@ -5,6 +5,8 @@
 
 namespace Extendify;
 
+use Extendify\Config;
+
 /**
  * Controller for handling various Insights related things.
  * WP code reviewers: This is used in another plugin and not invoked here.
@@ -83,6 +85,8 @@ class Insights
                 'siteCreatedAt' => \get_user_option('user_registered', 1),
                 'assistRouterData' => \get_option('extendify_assist_router', null),
                 'libraryData' => \get_option('extendify_library_site_data', null),
+                'draftSettingsData' => \get_option('extendify_draft_settings', null),
+                'extendifyVersion' => Config::$version,
             ]);
             return $insights;
         });

@@ -18,6 +18,7 @@ import { useWarnOnLeave } from '@launch/hooks/useWarnOnLeave';
 import { uploadLogo } from '@launch/lib/logo';
 import { waitFor200Response, wasInstalled } from '@launch/lib/util';
 import { createPages, updateGlobalStyleVariant } from '@launch/lib/wp';
+import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/UserSelections';
 import { Logo, Spinner } from '@launch/svg';
 
@@ -42,6 +43,7 @@ export const CreatingSite = () => {
 	const inform = (msg) => setInfo((info) => [msg, ...info]);
 	const informDesc = (msg) => setInfoDesc((infoDesc) => [msg, ...infoDesc]);
 	const [pagesToAnimate, setPagesToAnimate] = useState([]);
+	const { setPage } = usePagesStore();
 
 	useWarnOnLeave(warnOnLeaveReady);
 
@@ -253,12 +255,13 @@ export const CreatingSite = () => {
 
 	useEffect(() => {
 		doEverything().then(() => {
+			setPage(0);
 			window.location.replace(
 				window.extOnbData.adminUrl +
 					'admin.php?page=extendify-assist&extendify-launch-success',
 			);
 		});
-	}, [doEverything]);
+	}, [doEverything, setPage]);
 
 	useEffect(() => {
 		const documentStyles = window.getComputedStyle(document.body);

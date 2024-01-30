@@ -29,6 +29,7 @@ use Extendify\Assist\Controllers\RecommendationsBannerController;
 use Extendify\Chat\Controllers\ChatController;
 
 use Extendify\Draft\Controllers\DraftController;
+use Extendify\Draft\Controllers\UserSettingsController;
 
 \add_action(
     'rest_api_init',
@@ -82,12 +83,13 @@ use Extendify\Draft\Controllers\DraftController;
         ApiRouter::get('/assist/recommendations-banner', [RecommendationsBannerController::class, 'get']);
 
         // Chat.
-        ApiRouter::get('/chat/options/', [ChatController::class, 'getOptions']);
-        ApiRouter::post('/chat/options/', [ChatController::class, 'updateOptions']);
-        ApiRouter::post('/chat/rate-answer', [ChatController::class, 'rateAnswer']);
+        ApiRouter::get('/chat/options', [ChatController::class, 'getOptions']);
+        ApiRouter::post('/chat/options', [ChatController::class, 'updateOptions']);
         ApiRouter::post('/chat/update-user-meta/', [ChatController::class, 'updateUserMeta']);
 
         // Draft.
-        ApiRouter::post('/draft/update-user-meta/', [DraftController::class, 'updateUserMeta']);
+        ApiRouter::post('/draft/update-user-meta', [DraftController::class, 'updateUserMeta']);
+        ApiRouter::get('/draft/user-settings', [UserSettingsController::class, 'get']);
+        ApiRouter::post('/draft/user-settings', [UserSettingsController::class, 'store']);
     }
 );
