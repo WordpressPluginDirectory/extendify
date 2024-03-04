@@ -1,3 +1,4 @@
+import { store as blockEditorStore } from '@wordpress/block-editor';
 import { createBlock, pasteHandler } from '@wordpress/blocks';
 import {
 	MenuGroup,
@@ -7,9 +8,15 @@ import {
 import { useDispatch, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { Icon } from '@wordpress/icons';
+import {
+	addSubmenu,
+	rotateLeft,
+	trash,
+	replace,
+	insertAfter,
+	Icon,
+} from '@wordpress/icons';
 import { useContentHighlight } from '@draft/hooks/useContentHighlight';
-import { replace, replay, below, trash, shorter, longer } from '@draft/svg';
 
 export const InsertMenu = ({
 	prompt,
@@ -19,94 +26,106 @@ export const InsertMenu = ({
 	setInputText,
 }) => {
 	const { toggleHighlight, toggleInsertionPoint } = useContentHighlight();
-	const { insertBlocks, replaceBlocks } = useDispatch('core/block-editor');
-	const selectedBlock = useSelect(
-		(select) => select('core/block-editor').getSelectedBlock(),
-		[],
-	);
-	const selectedBlockClientIds = useSelect(
-		(select) => select('core/block-editor').getSelectedBlockClientIds(),
-		[],
-	);
-	const { getBlockRootClientId, getBlockIndex, getBlock } = useSelect(
-		(select) => select('core/block-editor'),
-		[],
-	);
+	const { insertBlocks, replaceBlocks } = useDispatch(blockEditorStore);
+	const {
+		getSelectedBlock,
+		getSelectedBlockClientIds,
+		getBlockRootClientId,
+		getBlockIndex,
+		getBlock,
+	} = useSelect((select) => select(blockEditorStore), []);
+	const selectedBlock = getSelectedBlock();
+	const selectedBlockIds = getSelectedBlockClientIds();
 
 	const canReplaceContent = () => {
-		const targetBlock = selectedBlock
+		const firstBlock = selectedBlock
 			? selectedBlock
-			: getBlock(selectedBlockClientIds[0]);
-		if (!targetBlock) {
-			return true;
+			: getBlock(selectedBlockIds[0]);
+		if (!firstBlock) return false;
+		// If it's a header or a p, we can replace the content
+		// TODO: support more?
+		const unsupported = ['core/list-item', 'core/button'];
+		if (unsupported.includes(firstBlock?.name)) {
+			// Can we support the same block?
+			const blocks = plainTextToBlocks(completion);
+			return blocks[0]?.name === firstBlock?.name;
 		}
-		return typeof targetBlock?.attributes?.content === 'undefined';
+		return true;
 	};
 
-	const transformBlocks = (blocks, targetBlockId) => {
-		const targetBlock = getBlock(targetBlockId);
-		return blocks.map((block) => {
-			return {
-				...block,
-				name: targetBlock.name,
-				attributes: {
-					...targetBlock.attributes,
-					content: block.attributes.content,
-				},
-			};
-		});
+	const canInsertAfter = () => {
+		const firstBlock = selectedBlock
+			? selectedBlock
+			: getBlock(selectedBlockIds[0]);
+		if (!firstBlock) return true;
+		// TODO: more? or should we go up to the parent?
+		const unsupported = ['core/list-item', 'core/button'];
+		return unsupported.includes(firstBlock?.name) ? false : true;
 	};
 
 	const plainTextToBlocks = (plainText) => {
-		let blocks = pasteHandler({ plainText: plainText });
+		const blocks = pasteHandler({ plainText: plainText });
 		if (!Array.isArray(blocks)) {
-			blocks = [
-				createBlock('core/paragraph', {
-					content: blocks,
-				}),
-			];
+			return [createBlock('core/paragraph', { content: blocks })];
 		}
 		return blocks;
 	};
 
-	const insertCompletion = ({ replaceContent = false }) => {
+	const insertCompletion = ({ replaceContent = false, position }) => {
 		setPrompt({ text: '', promptType: '', systemMessageKey: '' });
 
 		const targetBlockId = selectedBlock
 			? selectedBlock?.clientId
-			: selectedBlockClientIds[0];
+			: selectedBlockIds[0];
+		const targetBlock = getBlock(targetBlockId);
 
-		let blocks = plainTextToBlocks(completion);
-
-		if (selectedBlock && selectedBlock?.attributes?.content === '') {
-			replaceContent = true;
-		}
-
-		if (replaceContent) {
-			blocks = transformBlocks(blocks, targetBlockId);
-			replaceBlocks(selectedBlockClientIds, blocks);
-		} else if (!targetBlockId) {
+		const blocks = plainTextToBlocks(completion);
+		if (!targetBlockId || position === 'end') {
 			insertBlocks(blocks);
-		} else {
-			const parentBlockId = getBlockRootClientId(targetBlockId);
-			const blockIndex = getBlockIndex(
-				selectedBlockClientIds.at(-1),
-				parentBlockId,
-			);
-			if (parentBlockId) {
-				blocks = transformBlocks(blocks, targetBlockId);
-			}
-			insertBlocks(blocks, blockIndex + 1, parentBlockId);
+			return;
 		}
-	};
+		if (position === 'top') {
+			insertBlocks(blocks, 0);
+			return;
+		}
 
-	const handleEdit = (promptType) => {
-		setInputText('');
-		setPrompt({
-			text: completion,
-			promptType,
-			systemMessageKey: 'edit',
-		});
+		const targetIsEmpty = targetBlock?.attributes?.content === '';
+		const parentBlockId = getBlockRootClientId(targetBlockId);
+		const blockIndex = getBlockIndex(selectedBlockIds.at(-1), parentBlockId);
+		if (!replaceContent && !targetIsEmpty) {
+			// Multiple blocks are selected, insert after
+			insertBlocks(blocks, blockIndex + 1, parentBlockId);
+			return;
+		}
+
+		const bothHaveContent = (one, two) =>
+			Object.prototype.hasOwnProperty.call(one?.attributes, 'content') &&
+			Object.prototype.hasOwnProperty.call(two?.attributes, 'content');
+		// If both have content, and it's only one block, they can be merged
+		const mergable =
+			blocks.length === 1 && bothHaveContent(targetBlock, blocks[0]);
+
+		console.log({ targetBlock, blocks, mergable });
+		// Apply formatting to all the blocks
+		const formattedBlocks = blocks.map((incomingBlock) => ({
+			...incomingBlock,
+			name: mergable ? targetBlock.name : incomingBlock.name,
+			attributes: {
+				...targetBlock.attributes,
+				content:
+					// If they both have content, they can merge and give it to the incoing block
+					// otherwise just default to the existing block content
+					bothHaveContent(incomingBlock, targetBlock)
+						? incomingBlock?.attributes?.content
+						: incomingBlock?.attributes?.content,
+			},
+		}));
+		console.log({ formattedBlocks });
+
+		// TODO: some blocks are harder to replace, like list items
+		// Should we climb up to the parent in this case?
+		// See notes in canReplaceContent() above
+		replaceBlocks(selectedBlockIds, formattedBlocks);
 	};
 
 	const discard = () => {
@@ -122,68 +141,72 @@ export const InsertMenu = ({
 
 	useEffect(() => {
 		return () => {
-			toggleHighlight(selectedBlockClientIds, { isHighlighted: false });
+			toggleHighlight(selectedBlockIds, { isHighlighted: false });
 		};
-	}, [selectedBlockClientIds, toggleHighlight]);
+	}, [selectedBlockIds, toggleHighlight]);
 
 	return (
 		<MenuGroup>
 			<MenuItem
 				onClick={() => insertCompletion({ replaceContent: true })}
 				onMouseEnter={() =>
-					toggleHighlight(selectedBlockClientIds, {
+					toggleHighlight(selectedBlockIds, {
 						isHighlighted: true,
 					})
 				}
 				onMouseLeave={() =>
-					toggleHighlight(selectedBlockClientIds, {
+					toggleHighlight(selectedBlockIds, {
 						isHighlighted: false,
 					})
 				}
-				disabled={loading || canReplaceContent()}>
-				<Icon icon={replace} className="shrink-0 fill-current w-5 h-5 mr-2" />
-				<span className="whitespace-normal text-left">
-					{__('Replace selected block text', 'extendify-local')}
-				</span>
+				disabled={loading || !canReplaceContent()}
+				icon={replace}
+				iconPosition="left">
+				{__('Replace selected block text', 'extendify-local')}
+			</MenuItem>
+			<MenuItem
+				onClick={() =>
+					insertCompletion({ replaceContent: false, position: 'top' })
+				}
+				disabled={loading}
+				iconPosition="left">
+				<div className="-ml-1">
+					<Icon icon={addSubmenu} className="rotate-180" />
+				</div>
+				<div className="px-1">{__('Insert at top', 'extendify-local')}</div>
 			</MenuItem>
 			<MenuItem
 				onClick={() => insertCompletion({ replaceContent: false })}
 				onMouseEnter={() => toggleInsertionPoint(true)}
 				onMouseLeave={() => toggleInsertionPoint(false)}
-				disabled={loading}>
-				<Icon icon={below} className="shrink-0 fill-current w-5 h-5 mr-2" />
-				<span className="whitespace-normal text-left">
-					{__('Insert below', 'extendify-local')}
-				</span>
+				disabled={loading || !canInsertAfter()}
+				icon={insertAfter}
+				iconPosition="left">
+				{__('Insert after the selected text', 'extendify-local')}
 			</MenuItem>
 			<MenuItem
-				onClick={() => handleEdit('make-shorter')}
+				onClick={() =>
+					insertCompletion({ replaceContent: false, position: 'end' })
+				}
 				disabled={loading}
-				className="group">
-				<Icon icon={shorter} className="shrink-0 fill-current w-5 h-5 mr-2" />
-				{__('Make shorter', 'extendify-local')}
-			</MenuItem>
-			<MenuItem
-				onClick={() => handleEdit('make-longer')}
-				disabled={loading}
-				className="group">
-				<Icon icon={longer} className="shrink-0 fill-current w-5 h-5 mr-2" />
-				<span className="whitespace-normal text-left">
-					{__('Make longer', 'extendify-local')}
-				</span>
+				icon={addSubmenu}
+				iconPosition="left">
+				{__('Insert at bottom', 'extendify-local')}
 			</MenuItem>
 			<Divider />
-			<MenuItem onClick={retry} disabled={loading}>
-				<Icon icon={replay} className="shrink-0 fill-current w-5 h-5 mr-2" />
-				<span className="whitespace-normal text-left">
-					{__('Try again', 'extendify-local')}
-				</span>
+			<MenuItem
+				onClick={retry}
+				disabled={loading}
+				icon={rotateLeft}
+				iconPosition="left">
+				{__('Try again', 'extendify-local')}
 			</MenuItem>
-			<MenuItem onClick={discard} disabled={loading}>
-				<Icon icon={trash} className="shrink-0 fill-current w-5 h-5 mr-2" />
-				<span className="whitespace-normal text-left">
-					{__('Discard', 'extendify-local')}
-				</span>
+			<MenuItem
+				onClick={discard}
+				disabled={loading}
+				icon={trash}
+				iconPosition="left">
+				{__('Discard', 'extendify-local')}
 			</MenuItem>
 		</MenuGroup>
 	);

@@ -1,17 +1,33 @@
 import { __ } from '@wordpress/i18n';
 import { AI_HOST } from '../../constants.js';
 
-// Optionally add items to request body
-const denyList = ['nonce', 'api'];
+// Additional data to send with requests
+const allowList = [
+	'siteId',
+	'partnerId',
+	'wpVersion',
+	'wpLanguage',
+	'devbuild',
+	'isBlockTheme',
+	'showAIConsent',
+	'userGaveConsent',
+	'userId',
+	'globalState',
+];
 const extraBody = {
 	...Object.fromEntries(
-		Object.entries(window.extDraftData).filter(
-			([key]) => !denyList.includes(key),
+		Object.entries(window.extDraftData).filter(([key]) =>
+			allowList.includes(key),
 		),
 	),
 };
 
-export const completion = async (prompt, promptType, systemMessageKey) => {
+export const completion = async (
+	prompt,
+	promptType,
+	systemMessageKey,
+	details,
+) => {
 	const response = await fetch(`${AI_HOST}/api/draft/completion`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
@@ -19,6 +35,7 @@ export const completion = async (prompt, promptType, systemMessageKey) => {
 			prompt,
 			promptType,
 			systemMessageKey,
+			details,
 			...extraBody,
 		}),
 	});

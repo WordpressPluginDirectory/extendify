@@ -199,6 +199,7 @@ class Admin
                 'consentTermsUrl' => isset($data['consentTermsUrl']) ? $data['consentTermsUrl'] : '',
                 'userId' => \get_current_user_id(),
                 'userGaveConsent' => $userGaveConsent,
+                'wpLanguage' => \get_locale(),
                 'globalState' => \get_option('extendify_draft_settings', [
                     'state' => [],
                     'version' => 0,

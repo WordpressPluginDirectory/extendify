@@ -58,14 +58,12 @@ class AdminPageRouter
         });
 
         if (PartnerData::$id !== 'no-partner') {
-            \add_action('wp_before_admin_bar_render', [$this, 'changeDashboardLink']);
-            \add_filter('block_editor_settings_all', [$this, 'blockEditorSettingsAllFilter'], 10, 2);
             \add_filter('login_redirect', [$this, 'customLoginRedirect'], 10, 3);
         }
 
         // Hide the menu items unless in dev mode.
         if (Config::$environment === 'PRODUCTION') {
-            add_action('admin_head', function () {
+            \add_action('admin_head', function () {
                 echo '<style>
                 #toplevel_page_extendify-admin-page .wp-submenu {
                     display:none!important;
@@ -79,16 +77,20 @@ class AdminPageRouter
 
         // If the user is redirected to this while visiting our url, intercept it.
         \add_filter('wp_redirect', function ($url) {
-            // Check for extendify-launch-success as other plugins will not override
-            // this as they intercept the request.
-            // Special treatment for Yoast to disable their redirect when installing.
-            if ($url === \admin_url() . 'admin.php?page=wpseo_installation_successful_free') {
-                return \admin_url() . 'admin.php?page=extendify-assist';
+            if (PartnerData::$id !== 'no-partner') {
+                return $url;
             }
 
+            // Check for extendify-launch-success as other plugins will not override
+            // this as they intercept the request.
             // phpcs:ignore WordPress.Security.NonceVerification
             if (isset($_GET['extendify-launch-success'])) {
                 return \admin_url() . $this->getRoute();
+            }
+
+            // Special treatment for Yoast to disable their redirect when installing.
+            if ($url === \admin_url() . 'admin.php?page=wpseo_installation_successful_free') {
+                return \admin_url() . 'admin.php?page=extendify-assist';
             }
 
             return $url;
@@ -100,23 +102,6 @@ class AdminPageRouter
             header('Location: ' . \admin_url() . $this->getRoute(), true, 302);
             exit;
         }
-    }
-
-    /**
-     * Function for `block_editor_settings_all` filter-hook.
-     *
-     * @param array                    $editorSettings     Default editor settings.
-     * @param \WP_Block_Editor_Context $blockEditorContext The current block editor context.
-     *
-     * @return array
-     *
-     * phpcs:disable Generic.CodeAnalysis.UnusedFunctionParameter
-     */
-    public function blockEditorSettingsAllFilter($editorSettings, $blockEditorContext)
-    {
-        $editorSettings['__experimentalDashboardLink'] = \admin_url() . $this->getRoute();
-
-        return $editorSettings;
     }
 
     /**
@@ -184,28 +169,6 @@ class AdminPageRouter
     }
 
     /**
-     * Change the default url of the dashboard and the site name to extendify assists
-     *
-     * @return void
-     */
-    public function changeDashboardLink()
-    {
-        $wpAdminBar = $GLOBALS['wp_admin_bar'];
-
-        if (!\is_admin()) {
-            $url = \admin_url() . $this->getRoute();
-
-            $siteName = $wpAdminBar->get_node('site-name');
-            $siteName->href = $url;
-            $wpAdminBar->add_menu($siteName);
-
-            $dashboard = $wpAdminBar->get_node('dashboard');
-            $dashboard->href = $url;
-            $wpAdminBar->add_menu($dashboard);
-        }
-    }
-
-    /**
      * A custom login redirect
      *
      * @param string             $redirectTo          - The redirect destination URL.
@@ -224,6 +187,6 @@ class AdminPageRouter
             return $requestedRedirectTo;
         }
 
-        return $user->has_cap('administrator') ? \admin_url() . $this->getRoute() : home_url();
+        return $user->has_cap(Config::$requiredCapability) ? \admin_url() . $this->getRoute() : $requestedRedirectTo;
     }
 }

@@ -16,7 +16,6 @@ const defaultState = {
 		tones: [],
 		acceptTerms: false,
 	},
-	siteTypeSearch: [],
 	// for somewhat legacy reasons, this includes the home page, header,
 	// and footer code + the style (variation)
 	style: null,
@@ -26,6 +25,7 @@ const defaultState = {
 };
 const initialState = {
 	...defaultState,
+	siteTypeSearch: [],
 	...(JSON.parse(localStorage.getItem(key) || '{}')?.state ?? {}),
 };
 

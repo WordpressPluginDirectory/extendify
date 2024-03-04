@@ -1,4 +1,4 @@
-import { getPagePatternsGeneratedByAI } from '@launch/api/DataApi';
+import { generateCustomPatterns } from '@launch/api/DataApi';
 import {
 	updateOption,
 	createPage,
@@ -66,7 +66,7 @@ export const createPages = async (pages, userState) => {
 		(
 			await Promise.allSettled(
 				pages.map((page) =>
-					getPagePatternsGeneratedByAI(page, {
+					generateCustomPatterns(page, {
 						...userState,
 						siteId,
 						partnerId,

@@ -2,19 +2,20 @@ import { useEffect, useState } from '@wordpress/element';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/UserSelections';
+import { INSIGHTS_HOST } from '../../constants';
 
+// Dev note: This entire section is opt-in only when partnerID is set as a constant
 export const useTelemetry = () => {
 	const {
-		goals: selectedGoals,
+		goals,
 		pages: selectedPages,
 		plugins: selectedPlugins,
-		siteType: selectedSiteType,
+		siteType,
 		style: selectedStyle,
 		siteTypeSearch,
 	} = useUserSelectionStore();
 	const { generating } = useGlobalStore();
 	const { pages, currentPageIndex } = usePagesStore();
-	const [url, setUrl] = useState();
 	const [stepProgress, setStepProgress] = useState([]);
 	const [viewedStyles, setViewedStyles] = useState(new Set());
 
@@ -45,15 +46,6 @@ export const useTelemetry = () => {
 	}, [selectedStyle]);
 
 	useEffect(() => {
-		let mode = 'launch';
-		const search = window.location?.search;
-		mode = search?.indexOf('DEVMODE') > -1 ? 'launch-dev' : mode;
-		mode = search?.indexOf('LOCALMODE') > -1 ? 'launch-local' : mode;
-		setUrl(window?.extOnbData?.config?.api[mode]);
-	}, []);
-
-	useEffect(() => {
-		if (!url) return;
 		let id = 0;
 		let innerId = 0;
 		const timeout = currentPageIndex ? 1000 : 0;
@@ -61,52 +53,49 @@ export const useTelemetry = () => {
 			const controller = new AbortController();
 			innerId = window.setTimeout(() => {
 				controller.abort();
-			}, 500);
-			fetch(`${url}/progress`, {
+			}, 900);
+			fetch(`${INSIGHTS_HOST}/api/v1/launch`, {
 				method: 'POST',
 				headers: {
 					'Content-type': 'application/json',
 					Accept: 'application/json',
+					'X-Extendify': 'true',
 				},
 				signal: controller.signal,
 				body: JSON.stringify({
-					selectedGoals: selectedGoals?.map((g) => g.id),
-					selectedGoalsSlugs: selectedGoals?.map((g) => g.slug),
-					selectedPages: selectedPages?.map((p) => p.id),
-					selectedPagesSlugs: selectedPages?.map((p) => p.slug),
-					selectedPlugins: selectedPlugins?.map((p) => p.name),
-					selectedSiteType: selectedSiteType?.slug
-						? [selectedSiteType.slug]
-						: [],
-					selectedSiteTypeSlug: selectedSiteType?.slug,
-					selectedStyle: selectedStyle?.recordId
-						? [selectedStyle.recordId]
-						: [],
-					selectedStyleSlug: selectedStyle?.slug,
-					stepProgress,
-					viewedStyles: [...viewedStyles].map((s) => s.recordId).slice(1),
-					viewedStylesSlugs: [...viewedStyles].map((s) => s.slug).slice(1),
-					siteTypeSearch,
-					insightsId: window.extOnbData?.siteId,
-					activeTests: JSON.stringify(window.extOnbData?.activeTests),
-					partnerName: window.extOnbData?.partnerId,
-					wpLanguage: window.extOnbData?.wpLanguage,
+					siteType: siteType.slug,
 					siteCreatedAt: window.extOnbData?.siteCreatedAt,
+					style: selectedStyle?.variation?.title,
+					pages: selectedPages?.map((p) => p.slug),
+					goals: goals?.map((g) => g.slug),
+					lastCompletedStep: stepProgress?.at(-1),
+					progress: stepProgress,
+					stylesViewed: [...viewedStyles]
+						.filter((s) => s?.variation)
+						.map((s) => s.variation.title),
+					siteTypeSearches: siteTypeSearch,
+					insightsId: window.extOnbData?.siteId,
+					activeTests:
+						window.extOnbData?.activeTests?.length > 0
+							? JSON.stringify(window.extOnbData?.activeTests)
+							: undefined,
+					hostPartner: window.extOnbData?.partnerId,
+					language: window.extOnbData?.wpLanguage,
+					siteURL: window.extOnbData?.home,
 				}),
 			}).catch(() => undefined);
 		}, timeout);
 		return () => [id, innerId].forEach((i) => window.clearTimeout(i));
 	}, [
-		url,
-		selectedGoals,
 		selectedPages,
 		selectedPlugins,
-		selectedSiteType,
 		selectedStyle,
 		pages,
 		stepProgress,
 		viewedStyles,
 		siteTypeSearch,
 		currentPageIndex,
+		goals,
+		siteType,
 	]);
 };

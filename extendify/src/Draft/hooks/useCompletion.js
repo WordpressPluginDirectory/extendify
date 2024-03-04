@@ -1,7 +1,12 @@
 import { useEffect, useState } from '@wordpress/element';
 import { completion } from '@draft/api/Data';
 
-export const useCompletion = (prompt, promptType, systemMessageKey) => {
+export const useCompletion = (
+	prompt,
+	promptType,
+	systemMessageKey,
+	details,
+) => {
 	const [result, setResult] = useState('');
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
@@ -23,7 +28,12 @@ export const useCompletion = (prompt, promptType, systemMessageKey) => {
 			setError(false);
 			setLoading(true);
 
-			const response = await completion(prompt, promptType, systemMessageKey);
+			const response = await completion(
+				prompt,
+				promptType,
+				systemMessageKey,
+				details,
+			);
 			reader = response.body.getReader();
 
 			let done = false;
@@ -57,7 +67,7 @@ export const useCompletion = (prompt, promptType, systemMessageKey) => {
 				reader.cancel();
 			}
 		};
-	}, [prompt, systemMessageKey, promptType]);
+	}, [prompt, systemMessageKey, promptType, details]);
 
 	return { completion: result, error, loading };
 };

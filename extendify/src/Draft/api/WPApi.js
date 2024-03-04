@@ -1,4 +1,8 @@
-import { Axios as api } from './axios';
+import apiFetch from '@wordpress/api-fetch';
 
 export const updateUserMeta = (user, option, value) =>
-	api.post('draft/update-user-meta', { user, option, value });
+	apiFetch({
+		path: '/extendify/v1/draft/update-user-meta',
+		method: 'POST',
+		data: { user, option, value },
+	});

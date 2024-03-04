@@ -3,7 +3,7 @@ import {
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import {
-	Button,
+	ToolbarButton,
 	Dropdown,
 	ToolbarGroup,
 	NavigableMenu,
@@ -20,6 +20,7 @@ import {
 	paragraph,
 	postContent,
 } from '@wordpress/icons';
+import { DropdownTranslate } from '@draft/components/TranslationDropdown';
 import { magic, twoLines } from '@draft/svg';
 
 const supportedBlocks = [
@@ -75,13 +76,13 @@ export const ToolbarMenu = (CurrentMenuItems, props) => {
 								onToggle();
 							};
 							return (
-								<Button
+								<ToolbarButton
 									onClick={handleClick}
 									aria-expanded={isOpen}
 									aria-haspopup="true"
 									icon={magic}>
 									{__('Ask AI', 'extendify-local')}
-								</Button>
+								</ToolbarButton>
 							);
 						}}
 					/>
@@ -129,19 +130,32 @@ const DropdownActions = ({ text, closePopup, openDraft, updatePrompt }) => {
 			disabled: () => false,
 		},
 	];
+
 	return (
 		<NavigableMenu
 			orientation="vertical"
 			role="menu"
 			style={{ minWidth: '200px' }}>
-			<MenuGroup
-				className="extendify-draft"
-				label={
-					<div className="flex items-center gap-2">
-						<Icon className="fill-gray-900" size={16} icon={magic} />
-						{__('Prompt AI to...', 'extendify-local')}
-					</div>
-				}>
+			<MenuGroup className="extendify-draft">
+				<MenuItem
+					key={'custom-prompt'}
+					style={{ width: '100%' }}
+					isSelected={false}
+					disabled={false}
+					iconPosition="left"
+					icon={magic}
+					variant={undefined}
+					onClick={() => {
+						openDraft?.();
+						closePopup?.();
+						window.requestAnimationFrame(() =>
+							window.requestAnimationFrame(() =>
+								document.getElementById('draft-ai-textarea').focus(),
+							),
+						);
+					}}>
+					{__('Custom prompt', 'extendify-local')}
+				</MenuItem>
 				{actions.map(
 					({ label, promptType, systemMessageKey, disabled, icon }) => (
 						<MenuItem
@@ -165,6 +179,13 @@ const DropdownActions = ({ text, closePopup, openDraft, updatePrompt }) => {
 						</MenuItem>
 					),
 				)}
+
+				<DropdownTranslate
+					text={text}
+					closePopup={closePopup}
+					openDraft={openDraft}
+					updatePrompt={updatePrompt}
+				/>
 			</MenuGroup>
 		</NavigableMenu>
 	);

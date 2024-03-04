@@ -8,20 +8,25 @@ import { DraftMenu } from '@draft/components/DraftMenu';
 import { EditMenu } from '@draft/components/EditMenu';
 import { Input } from '@draft/components/Input';
 import { InsertMenu } from '@draft/components/InsertMenu';
+import { SelectedText } from '@draft/components/SelectedText';
 import { useCompletion } from '@draft/hooks/useCompletion';
+import { useSelectedText } from '@draft/hooks/useSelectedText';
 
 export const Draft = () => {
+	const { selectedText } = useSelectedText();
 	const [inputText, setInputText] = useState('');
 	const [ready, setReady] = useState(false);
 	const [prompt, setPrompt] = useState({
 		text: '',
 		promptType: '',
 		systemMessageKey: '',
+		details: {},
 	});
 	const { completion, loading, error } = useCompletion(
 		prompt.text,
 		prompt.promptType,
 		prompt.systemMessageKey,
+		prompt.details,
 	);
 	const selectedBlockClientIds = useSelect(
 		(select) => select('core/block-editor').getSelectedBlockClientIds(),
@@ -45,7 +50,7 @@ export const Draft = () => {
 	};
 	// TODO: When doing a rewrite, make this global state
 	useEffect(() => {
-		// Allow for external udpates
+		// Allow for external updates
 		const handle = (event) => {
 			if (needsConsent) return;
 			setPrompt(event.detail);
@@ -79,21 +84,20 @@ export const Draft = () => {
 		<>
 			<Panel>
 				<PanelBody>
+					{selectedText && <SelectedText loading={loading} />}
+
 					<div className="rounded-sm border-none bg-gray-100 overflow-hidden mb-4">
-						<Input
-							inputText={inputText}
-							setInputText={setInputText}
-							ready={ready}
-							setReady={setReady}
-							setPrompt={setPrompt}
-							loading={loading}
-						/>
-						{completion && (
-							<>
-								<hr className="mx-5 my-0 border-gray-300" />
-								<Completion completion={completion} />
-							</>
+						{!completion && (
+							<Input
+								inputText={inputText}
+								setInputText={setInputText}
+								ready={ready}
+								setReady={setReady}
+								setPrompt={setPrompt}
+								loading={loading}
+							/>
 						)}
+						{completion && <Completion completion={completion} />}
 						{error && (
 							<div className="px-4 mb-4 mt-2">
 								<p className="m-0 text-xs font-semibold text-red-500">
@@ -112,7 +116,7 @@ export const Draft = () => {
 						/>
 					)}
 					{!loading && !completion && canEditContent() && (
-						<BaseControl label={__('Edit or review', 'extendify-local')}>
+						<BaseControl>
 							<EditMenu
 								completion={completion}
 								disabled={loading}
@@ -122,7 +126,7 @@ export const Draft = () => {
 						</BaseControl>
 					)}
 					{!loading && !completion && !canEditContent() && (
-						<BaseControl label={__('Draft with AI', 'extendify-local')}>
+						<BaseControl label={__('Suggested prompts', 'extendify-local')}>
 							<DraftMenu
 								disabled={loading}
 								setInputText={setInputText}
