@@ -35,6 +35,7 @@ export const Sidebar = () => {
 				</div>
 
 				<div
+					id="extendify-library-category-control"
 					data-test="category-control"
 					className="hidden md:flex flex-col px-4 overflow-x-hidden">
 					<CategoryControl />

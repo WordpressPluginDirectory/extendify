@@ -14,19 +14,22 @@ const startingState = {
 	category: '',
 	totalImports: 0,
 };
+const incomingState = window.extLibraryData?.siteInfo?.state ?? {};
 
 export const useSiteSettingsStore = create(
 	persist(
 		(set) => ({
 			...startingState,
-			...(window.extLibraryData?.siteInfo?.state ?? {}),
+			...incomingState,
+			// Override siteType with the value from the server
+			siteType: window.extSharedData?.siteType ?? incomingState.siteType ?? {},
 			setSiteType: async (siteType) => {
 				set({ siteType });
 				await apiFetch({
 					path: `${path}/single`,
 					method: 'POST',
 					data: {
-						key: 'extendify_siteType',
+						key: 'siteType',
 						value: siteType,
 					},
 				});

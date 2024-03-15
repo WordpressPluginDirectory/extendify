@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { NavigationButton } from '@launch/components/NavigationButton';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
-import { useUserSelectionStore } from '@launch/state/UserSelections';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 import { RightCaret, LeftCaret } from '@launch/svg';
 
 export const PageControl = () => {

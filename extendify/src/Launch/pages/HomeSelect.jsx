@@ -10,8 +10,8 @@ import { Title } from '@launch/components/Title';
 import { useFetch } from '@launch/hooks/useFetch';
 import { useIsMountedLayout } from '@launch/hooks/useIsMounted';
 import { PageLayout } from '@launch/layouts/PageLayout';
-import { useUserSelectionStore } from '@launch/state/UserSelections';
 import { pageState } from '@launch/state/factory';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Checkmark } from '@launch/svg';
 
 export const fetcher = ({ siteType }) => getHomeTemplates(siteType);

@@ -3,7 +3,7 @@ import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Icon, close } from '@wordpress/icons';
 import { Dialog } from '@headlessui/react';
-import { useGlobalStore } from '@assist/state/Global';
+import { useGlobalStore } from '@assist/state/globals';
 
 export const Modal = () => {
 	const { modals, popModal } = useGlobalStore();

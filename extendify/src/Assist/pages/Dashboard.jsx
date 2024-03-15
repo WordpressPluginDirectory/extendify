@@ -1,49 +1,67 @@
-import { __ } from '@wordpress/i18n';
-import { KnowledgeBase } from '@assist/components/dashboard/KnowledgeBase';
-import { Launch } from '@assist/components/dashboard/Launch';
+import classnames from 'classnames';
+import { DesktopCards } from '@assist/components/dashboard/DesktopCards';
+import { MobileCards } from '@assist/components/dashboard/MobileCards';
 import { QuickLinks } from '@assist/components/dashboard/QuickLinks';
 import { Recommendations } from '@assist/components/dashboard/Recommendations';
-import { RecommendationsBanner } from '@assist/components/dashboard/RecommendationsBanner';
-import { Settings } from '@assist/components/dashboard/Settings';
-import { TasksList } from '@assist/components/dashboard/TasksList';
-import { Tours } from '@assist/components/dashboard/Tours';
-import { WelcomeNotice } from '@assist/notices/WelcomeNotice';
-import { Full } from './layouts/Full';
+import { TasksCompleted } from '@assist/components/dashboard/TasksCompleted';
+import { DomainBanner } from '@assist/components/dashboard/domains/DomainBanner';
+import { useTasks } from '@assist/hooks/useTasks';
+import { showDomainBanner } from '@assist/lib/domains';
+import { Full } from '@assist/pages/layouts/Full';
+import { useGlobalStore } from '@assist/state/globals';
+import { useTasksStore } from '@assist/state/tasks';
+
+const { devbuild } = window.extSharedData;
+
+const showRecommendations =
+	devbuild || !window.extAssistData.disableRecommendations || false;
+
+const { themeSlug, launchCompleted } = window.extAssistData;
 
 export const Dashboard = () => {
-	const { disableRecommendations } = window.extAssistData;
+	const { tasks } = useTasks();
+	const { isDismissedBanner } = useGlobalStore();
+	const { isCompleted } = useTasksStore();
+	const totalCompleted = tasks.filter((task) => isCompleted(task.slug)).length;
+	const isTasksCompleted = totalCompleted === tasks.length;
+	const showTasks =
+		(themeSlug === 'extendable' && (!launchCompleted || launchCompleted)) ||
+		(themeSlug !== 'extendable' && launchCompleted);
+
 	return (
 		<Full>
-			<RecommendationsBanner />
-			<div className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start my-4">
-				<div className="col-span-12 xl:col-span-7">
-					<WelcomeNotice />
-					<LaunchOrTasks />
-					{disableRecommendations ? null : <Recommendations />}
-				</div>
-				<div className="col-span-12 xl:col-span-5">
-					<h2 className="text-base leading-tight m-0 bg-gray-800 text-white px-8 py-4 rounded-t-lg">
-						{__('Help Center', 'extendify-local')}
-					</h2>
-					<div className="border-l border-r border-b border-gray-300 rounded-b-lg overflow-hidden divide-y divide-gray-300">
-						<KnowledgeBase />
-						<Tours />
-						<QuickLinks />
-					</div>
-					<Settings />
-				</div>
+			{showDomainBanner && !isDismissedBanner('domain-banner') && (
+				<DomainBanner />
+			)}
+
+			{isTasksCompleted && !isDismissedBanner('tasks-completed') && (
+				<TasksCompleted />
+			)}
+
+			{showTasks && !isTasksCompleted && (
+				<>
+					<DesktopCards
+						className="hidden md:block"
+						tasks={tasks}
+						totalCompleted={totalCompleted}
+					/>
+
+					<MobileCards
+						className="md:hidden"
+						tasks={tasks}
+						totalCompleted={totalCompleted}
+					/>
+				</>
+			)}
+
+			<div
+				className={classnames('md:grid gap-4 mb-6', {
+					'md:grid-cols-2': !showRecommendations,
+				})}>
+				<QuickLinks className="col-span-2" />
 			</div>
+
+			{showRecommendations && <Recommendations />}
 		</Full>
 	);
-};
-
-const LaunchOrTasks = () => {
-	const { themeSlug, launchCompleted } = window.extAssistData;
-	if (themeSlug === 'extendable' && !launchCompleted) {
-		return <Launch />;
-	}
-	if (themeSlug === 'extendable') {
-		return <TasksList />;
-	}
-	return null;
 };

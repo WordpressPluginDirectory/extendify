@@ -77,7 +77,7 @@ class AdminPageRouter
 
         // If the user is redirected to this while visiting our url, intercept it.
         \add_filter('wp_redirect', function ($url) {
-            if (PartnerData::$id !== 'no-partner') {
+            if (PartnerData::$id === 'no-partner') {
                 return $url;
             }
 
@@ -90,6 +90,11 @@ class AdminPageRouter
 
             // Special treatment for Yoast to disable their redirect when installing.
             if ($url === \admin_url() . 'admin.php?page=wpseo_installation_successful_free') {
+                return \admin_url() . 'admin.php?page=extendify-assist';
+            }
+
+            // Special treatment for Germanized for WooCommerce to disable their redirect when installing.
+            if ($url === \admin_url() . 'admin.php?page=wc-gzd-setup') {
                 return \admin_url() . 'admin.php?page=extendify-assist';
             }
 

@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
-import { useUserSelectionStore } from '@launch/state/UserSelections.js';
+import { useUserSelectionStore } from '@launch/state/user-selections.js';
 
 export const SiteTones = () => {
 	const { businessInformation, setBusinessInformation } =

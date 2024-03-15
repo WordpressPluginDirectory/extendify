@@ -37,7 +37,7 @@ class RecommendationsController
      */
     public static function get()
     {
-        $data = get_option('extendify_assist_recommendations', []);
+        $data = get_option('extendify_help_center_recommendations', []);
         return new \WP_REST_Response($data);
     }
 
@@ -49,8 +49,8 @@ class RecommendationsController
      */
     public static function store($request)
     {
-        $data = json_decode($request->get_param('data'), true);
-        update_option('extendify_assist_recommendations', $data);
+        $data = json_decode($request->get_param('state'), true);
+        update_option('extendify_help_center_recommendations', $data);
         return new \WP_REST_Response($data);
     }
 }

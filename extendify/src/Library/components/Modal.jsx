@@ -1,5 +1,5 @@
 import { dispatch } from '@wordpress/data';
-import { useLayoutEffect } from '@wordpress/element';
+import { useLayoutEffect, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Dialog } from '@headlessui/react';
 import { motion } from 'framer-motion';
@@ -41,6 +41,17 @@ export const Modal = () => {
 		}
 	}, [openOnNewPage, setOpen]);
 
+	useEffect(() => {
+		const handleOpen = () => setOpen(true);
+		const handleClose = () => setOpen(false);
+		window.addEventListener('extendify::open-library', handleOpen);
+		window.addEventListener('extendify::close-library', handleClose);
+		return () => {
+			window.removeEventListener('extendify::open-library', handleOpen);
+			window.removeEventListener('extendify::close-library', handleClose);
+		};
+	}, [setOpen, open]);
+
 	if (!open) return null;
 
 	return (
@@ -48,7 +59,7 @@ export const Modal = () => {
 			className="extendify-library extendify-library-modal"
 			open={open}
 			static
-			onClose={onClose}>
+			onClose={() => undefined}>
 			<div className="absolute mx-auto w-full h-full md:p-8">
 				<div
 					className="fixed inset-0 bg-black/30"
@@ -72,7 +83,9 @@ export const Modal = () => {
 							updateUserOption={updateUserOption}
 							onClose={onClose}
 						/>
-						<div className="overflow-y-auto flex-grow">
+						<div
+							id="extendify-library-patterns-list"
+							className="overflow-y-auto flex-grow">
 							<ModalContent
 								insertPattern={insertPattern}
 								category={category}

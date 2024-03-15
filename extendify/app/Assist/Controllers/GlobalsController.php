@@ -34,7 +34,7 @@ class GlobalsController
      */
     public static function store($request)
     {
-        $data = json_decode($request->get_param('data'), true);
+        $data = json_decode($request->get_param('state'), true);
         update_option('extendify_assist_globals', $data);
         return new \WP_REST_Response($data);
     }

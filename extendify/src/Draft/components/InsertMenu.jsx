@@ -105,7 +105,6 @@ export const InsertMenu = ({
 		const mergable =
 			blocks.length === 1 && bothHaveContent(targetBlock, blocks[0]);
 
-		console.log({ targetBlock, blocks, mergable });
 		// Apply formatting to all the blocks
 		const formattedBlocks = blocks.map((incomingBlock) => ({
 			...incomingBlock,
@@ -120,7 +119,6 @@ export const InsertMenu = ({
 						: incomingBlock?.attributes?.content,
 			},
 		}));
-		console.log({ formattedBlocks });
 
 		// TODO: some blocks are harder to replace, like list items
 		// Should we climb up to the parent in this case?

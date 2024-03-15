@@ -7,12 +7,8 @@ namespace Extendify\Assist;
 
 use Extendify\Assist\DataProvider\ResourceData;
 use Extendify\Assist\Controllers\GlobalsController;
-use Extendify\Assist\Controllers\RecommendationsController;
 use Extendify\Assist\Controllers\RouterController;
-use Extendify\Assist\Controllers\SupportArticlesController;
 use Extendify\Assist\Controllers\TasksController;
-use Extendify\Assist\Controllers\TourController;
-use Extendify\Assist\Controllers\UserSelectionController;
 use Extendify\PartnerData;
 use Extendify\Config;
 
@@ -65,9 +61,6 @@ class Admin
     public function loadScripts()
     {
         \add_action('admin_enqueue_scripts', [$this, 'loadPageScripts']);
-
-        \add_action('admin_enqueue_scripts', [$this, 'loadGlobalScripts']);
-        \add_action('wp_enqueue_scripts', [$this, 'loadGlobalScripts']);
     }
 
     /**
@@ -86,40 +79,6 @@ class Admin
             return;
         }
 
-        $this->enqueueWithContext('page');
-    }
-
-    /**
-     * Adds scripts to every page
-     *
-     * @return void
-     */
-    public function loadGlobalScripts()
-    {
-        if (!current_user_can(Config::$requiredCapability)) {
-            return;
-        }
-
-        // Don't load on Launch.
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if (isset($_GET['page']) && $_GET['page'] === 'extendify-launch') {
-            return;
-        }
-
-        $this->enqueueWithContext('global');
-    }
-
-    /**
-     * Enqueue the defined scripts
-     *
-     * @param string $context The context to enqueue the scripts in.
-     *
-     * @return void
-     */
-    public function enqueueWithContext($context)
-    {
-        $version = Config::$environment === 'PRODUCTION' ? Config::$version : uniqid();
-
         $siteInstalled = \get_users([
             'orderby' => 'registered',
             'order' => 'ASC',
@@ -128,24 +87,20 @@ class Admin
         ])[0]->user_registered;
 
         $version = Config::$environment === 'PRODUCTION' ? Config::$version : uniqid();
-        $scriptAssetPath = EXTENDIFY_PATH . 'public/build/' . Config::$assetManifest["extendify-assist-{$context}.php"];
+        $scriptAssetPath = EXTENDIFY_PATH . 'public/build/' . Config::$assetManifest['extendify-assist-page.php'];
         $fallback = [
             'dependencies' => [],
             'version' => $version,
         ];
         $scriptAsset = file_exists($scriptAssetPath) ? require $scriptAssetPath : $fallback;
 
-        if ($context === 'page') {
-            \wp_enqueue_media();
-        }
-
         foreach ($scriptAsset['dependencies'] as $style) {
             \wp_enqueue_style($style);
         }
 
         \wp_enqueue_script(
-            Config::$slug . "-assist-{$context}-scripts",
-            EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest["extendify-assist-{$context}.js"],
+            Config::$slug . '-assist-page-scripts',
+            EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-assist-page.js'],
             $scriptAsset['dependencies'],
             $scriptAsset['version'],
             true
@@ -154,7 +109,7 @@ class Admin
         $assistState = \get_option('extendify_assist_globals');
         $dismissed = isset($assistState['state']['dismissedNotices']) ? $assistState['state']['dismissedNotices'] : [];
         \wp_add_inline_script(
-            Config::$slug . "-assist-{$context}-scripts",
+            Config::$slug . '-assist-page-scripts',
             'window.extAssistData = ' . \wp_json_encode([
                 'devbuild' => \esc_attr(Config::$environment === 'DEVELOPMENT'),
                 'siteId' => \get_option('extendify_site_id', ''),
@@ -170,18 +125,24 @@ class Admin
                 'dismissedNotices' => $dismissed,
                 'partnerLogo' => \esc_attr(PartnerData::$logo),
                 'partnerName' => \esc_attr(PartnerData::$name),
-                'disableRecommendations' => \esc_attr(PartnerData::$disableRecommendations),
+                'partnerId' => \esc_attr(PartnerData::$id),
                 'blockTheme' => \wp_is_block_theme(),
+                'hasCustomizer' => \has_action('customize_register'),
                 'themeSlug' => \get_option('stylesheet'),
                 'wpLanguage' => \get_locale(),
+                'disableRecommendations' => (bool) \esc_attr(PartnerData::$disableRecommendations),
+                'domainsSuggestionSettings' => [
+                    'showBanner' => (bool) \esc_attr(PartnerData::$showDomainBanner),
+                    'showTask' => (bool) \esc_attr(PartnerData::$showDomainTask),
+                    'tlds' => \esc_attr(PartnerData::$domainTLDs),
+                    'searchUrl' => \esc_attr(PartnerData::$domainSearchURL),
+                ],
                 'userData' => [
                     'taskData' => TasksController::get(),
-                    'tourData' => TourController::get(),
                     'globalData' => GlobalsController::get(),
-                    'userSelectionData' => UserSelectionController::get(),
-                    'recommendationData' => RecommendationsController::get(),
-                    'supportArticlesData' => SupportArticlesController::get(),
                     'routerData' => RouterController::get(),
+                    'recommendationData' => RouterController::get(),
+                    'tasksDependencies' => $this->getTasksDependecies(),
                 ],
                 'resourceData' => (new ResourceData())->getData(),
                 'canSeeRestartLaunch' => $this->canRunLaunchAgain(),
@@ -189,22 +150,17 @@ class Admin
             'before'
         );
 
-        \wp_set_script_translations(Config::$slug . "-assist-{$context}-scripts", 'extendify-local', EXTENDIFY_PATH . 'languages/js');
+        \wp_set_script_translations(Config::$slug . '-assist-page-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
 
         \wp_enqueue_style(
             Config::$slug . '-assist-page-styles',
-            EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest["extendify-assist-{$context}.css"],
+            EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-assist-page.css'],
             [],
             Config::$version,
             'all'
         );
-
-        $cssColorVars = PartnerData::cssVariableMapping();
-        $cssString = implode('; ', array_map(function ($k, $v) {
-            return "$k: $v";
-        }, array_keys($cssColorVars), $cssColorVars));
-        wp_add_inline_style(Config::$slug . "-assist-{$context}-styles", "body { $cssString; }");
     }
+
 
     /**
      * Check to see if the user can re-run Launch
@@ -230,5 +186,26 @@ class Admin
         } catch (\Exception $exception) {
             return false;
         }
+    }
+
+
+    /**
+     * Check to see if specific tasks are completed or not.
+     *
+     * @return array
+     */
+    public function getTasksDependecies()
+    {
+        $give = \get_option('give_onboarding', false);
+        $completedSetupGivewp = isset($give['form_id']) && $give['form_id'] > 0;
+
+        $woo = \get_option('woocommerce_onboarding_profile', false);
+        $completedwWoocommerceStore = (isset($woo['completed']) && $woo['completed']) || (isset($woo['skipped']) && $woo['skipped']);
+
+        return [
+            'completedSetupGivewp' => $completedSetupGivewp,
+            'completedWoocommerceStore' => $completedwWoocommerceStore,
+        ];
+
     }
 }

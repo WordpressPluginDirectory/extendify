@@ -6,8 +6,8 @@ import { Title } from '@launch/components/Title';
 import { useFetch } from '@launch/hooks/useFetch';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { usePagesStore } from '@launch/state/Pages';
-import { useUserSelectionStore } from '@launch/state/UserSelections';
 import { pageState } from '@launch/state/factory';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const fetcher = async () => ({ title: await getOption('blogname') });
 export const fetchData = () => ({ key: 'site-info' });

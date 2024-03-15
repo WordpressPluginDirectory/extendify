@@ -74,7 +74,7 @@ const withDevtools = devtools(store, {
 	serialize: true,
 });
 const withPersist = persist(withDevtools, {
-	name: `extendify-pages-${window.extOnbData.siteId}`,
+	name: `extendify-pages-${window.extSharedData.siteId}`,
 	partialize: (state) => ({
 		currentPageIndex: state?.currentPageIndex ?? 0,
 		currentPageSlug: state?.getCurrentPageSlug() ?? null,

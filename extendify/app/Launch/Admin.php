@@ -216,11 +216,6 @@ class Admin
             Config::$version
         );
 
-        $cssColorVars = PartnerData::cssVariableMapping();
-        $cssString = implode('; ', array_map(function ($k, $v) {
-            return "$k: $v";
-        }, array_keys($cssColorVars), $cssColorVars));
-        wp_add_inline_style(Config::$slug . '-launch-styles', "body { $cssString; }");
     }
 
     /**

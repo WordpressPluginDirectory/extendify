@@ -1,20 +1,10 @@
+import apiFetch from '@wordpress/api-fetch';
 import { useCallback, useEffect, useLayoutEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
-import { getRouterData, saveRouterData } from '@assist/api/Data';
 import { Dashboard } from '@assist/pages/Dashboard';
-import { KnowledgeBase } from '@assist/pages/KnowledgeBase';
-import { Recommendations } from '@assist/pages/Recommendations';
-import { Tasks } from '@assist/pages/Tasks';
-import { Tours } from '@assist/pages/Tours';
-import {
-	helpIcon,
-	homeIcon,
-	recommendationsIcon,
-	tasksIcon,
-	toursIcon,
-} from '@assist/svg';
+import { homeIcon } from '@assist/svg';
 
 const pages = [
 	{
@@ -22,30 +12,6 @@ const pages = [
 		name: __('Dashboard', 'extendify-local'),
 		icon: homeIcon,
 		component: Dashboard,
-	},
-	{
-		slug: 'tasks',
-		name: __('Tasks', 'extendify-local'),
-		icon: tasksIcon,
-		component: Tasks,
-	},
-	{
-		slug: 'tours',
-		name: __('Tours', 'extendify-local'),
-		icon: toursIcon,
-		component: Tours,
-	},
-	{
-		slug: 'recommendations',
-		name: __('Recommendations', 'extendify-local'),
-		icon: recommendationsIcon,
-		component: Recommendations,
-	},
-	{
-		slug: 'knowledge-base',
-		name: __('Knowledge Base', 'extendify-local'),
-		icon: helpIcon,
-		component: KnowledgeBase,
 	},
 ];
 const { themeSlug, launchCompleted, disableRecommendations } =
@@ -95,10 +61,12 @@ const state = (set, get) => ({
 		});
 	},
 });
+
+const path = '/extendify/v1/assist/router-data';
 const storage = {
-	getItem: async () => JSON.stringify(await getRouterData()),
-	setItem: async (_, value) => await saveRouterData(value),
-	removeItem: () => undefined,
+	getItem: async () => await apiFetch({ path }),
+	setItem: async (_name, state) =>
+		await apiFetch({ path, method: 'POST', data: { state } }),
 };
 
 const useRouterState = create(

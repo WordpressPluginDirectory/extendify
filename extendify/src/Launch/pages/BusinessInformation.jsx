@@ -6,8 +6,8 @@ import { SiteTones } from '@launch/components/BusinessInformation/Tones';
 import { Title } from '@launch/components/Title';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { usePagesStore } from '@launch/state/Pages';
-import { useUserSelectionStore } from '@launch/state/UserSelections';
 import { pageState } from '@launch/state/factory';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const state = pageState('Business Information', () => ({
 	title: __('Business Information', 'extendify-local'),

@@ -35,7 +35,7 @@ export const Input = ({
 		<form className="relative flex items-start" onSubmit={submit}>
 			<Icon
 				icon={magic}
-				className="text-wp-theme-500 fill-current w-5 h-5 absolute left-2 top-3.5"
+				className="text-wp-theme-main fill-current w-5 h-5 absolute left-2 top-3.5"
 			/>
 			<DynamicTextarea
 				disabled={loading}
@@ -47,7 +47,7 @@ export const Input = ({
 						: __('Ask AI to generate text', 'extendify-local')
 				}
 				value={inputText}
-				className="bg-transparent border-transparent outline-none rounded-none focus:ring-1 focus:ring-wp-theme-500 w-full h-full px-10 py-3 overflow-hidden resize-none"
+				className="bg-transparent border-transparent outline-none rounded-none focus:ring-1 focus:ring-wp-theme-main w-full h-full px-10 py-3 overflow-hidden resize-none"
 				onChange={(event) => {
 					setInputText(event.target.value);
 					setReady(event.target.value.length > 0);

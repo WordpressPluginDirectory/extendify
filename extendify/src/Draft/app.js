@@ -5,6 +5,7 @@ import { __ } from '@wordpress/i18n';
 import { registerPlugin } from '@wordpress/plugins';
 import { Draft } from '@draft/Draft';
 import '@draft/app.css';
+import { GenerateImageButtons } from '@draft/components/GenerateImageButtons';
 import { ToolbarMenu } from '@draft/components/ToolbarMenu';
 import { magic } from '@draft/svg';
 
@@ -36,6 +37,14 @@ const ExtendifyDraft = ({ children }) => {
 // Add the toolbar
 addFilter(
 	'editor.BlockEdit',
-	'extendify-draft/draft',
+	'extendify-draft/draft-toolbar',
 	(CurrentMenuItems) => (props) => ToolbarMenu(CurrentMenuItems, props),
+);
+
+// Add the Generate with AI button
+addFilter(
+	'editor.BlockEdit',
+	'extendify-draft/draft-image',
+	(CurrentComponents) => (props) =>
+		GenerateImageButtons(CurrentComponents, props),
 );

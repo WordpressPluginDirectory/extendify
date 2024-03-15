@@ -33,19 +33,48 @@ class PartnerData
     public static $name = '';
 
     /**
-     * The partner display name
+     * The partner colors
      *
      * @var string
      */
     public static $colors = [];
 
     /**
-     * The partner display name
+     * The partner recommendations status
      *
      * @var boolean
      */
     public static $disableRecommendations = false;
 
+    /**
+     * The partner suggest domains banner status
+     *
+     * @var boolean
+     */
+    public static $showDomainBanner = false;
+
+    /**
+     * The partner suggested domains card status
+     *
+     * @var boolean
+     */
+    public static $showDomainTask = false;
+
+    /**
+     * The partner suggested domains tlds
+     *
+     * @var array
+     */
+    public static $domainTLDs = ['com', 'net'];
+
+    /**
+     * The partner suggested domains search url
+     *
+     * @var string
+     */
+    public static $domainSearchURL = '';
+
+    // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
     /**
      * Set up and collect partner data
      *
@@ -68,23 +97,19 @@ class PartnerData
         }
 
         $data = self::getPartnerData();
-
-        if (isset($data['disableRecommendations'])) {
-            self::$disableRecommendations = $data['disableRecommendations'];
-            unset($data['disableRecommendations']);
-        }
-
-        if (isset($data['logo'])) {
-            self::$logo = $data['logo'][0]['thumbnails']['large']['url'];
-            unset($data['logo']);
-        }
-
-        if (isset($data['Name'])) {
-            self::$name = $data['Name'];
-            unset($data['Name']);
-        }
-
-        self::$colors = $data;
+        self::$disableRecommendations = ($data['disableRecommendations'] ?? self::$disableRecommendations);
+        self::$showDomainBanner = ($data['showDomainBanner'] ?? self::$showDomainBanner);
+        self::$showDomainTask = ($data['showDomainTask'] ?? self::$showDomainTask);
+        self::$domainTLDs = implode(',', ($data['domainTLDs'] ?? self::$domainTLDs));
+        self::$domainSearchURL = ($data['domainSearchURL'] ?? self::$domainSearchURL);
+        self::$logo = isset($data['logo'][0]['thumbnails']['large']['url']) ? $data['logo'][0]['thumbnails']['large']['url'] : self::$logo;
+        self::$name = ($data['Name'] ?? self::$name);
+        self::$colors = [
+            'backgroundColor' => ($data['backgroundColor'] ?? null),
+            'foregroundColor' => ($data['foregroundColor'] ?? null),
+            'secondaryColor' => ($data['secondaryColor'] ?? ($data['backgroundColor'] ?? null)),
+            'secondaryColorText' => '#ffffff',
+        ];
     }
 
     /**
@@ -123,18 +148,11 @@ class PartnerData
             return get_option('extendify_partner_data', []);
         }
 
-        $data = $result['data'];
-
-        $data['secondaryColorText'] = '#ffffff';
-        if (!isset($data['secondaryColor'])) {
-            $data['secondaryColor'] = $data['backgroundColor'];
-        }
-
         // Transient is used to mark the time, but the data is put into an option,
         // so that in case of network issues, we can still return old data.
-        set_transient('extendify_partner_data', $data, (2 * DAY_IN_SECONDS));
-        update_option('extendify_partner_data', $data);
-        return $data;
+        set_transient('extendify_partner_data', $result['data'], (2 * DAY_IN_SECONDS));
+        update_option('extendify_partner_data', $result['data']);
+        return $result['data'];
     }
 
     /**
@@ -150,11 +168,24 @@ class PartnerData
             'secondaryColor' => '--ext-design-main',
             'secondaryColorText' => '--ext-design-text',
         ];
+
         $cssVariables = [];
-        $colors = self::$colors;
+        $adminTheme = \get_user_option('admin_color', get_current_user_id());
+        if (isset($GLOBALS['_wp_admin_css_colors'][$adminTheme])) {
+            $theme = $GLOBALS['_wp_admin_css_colors'][$adminTheme];
+            if (in_array($adminTheme, ['modern', 'blue'], true)) {
+                $cssVariables['--wp-admin-theme-main'] = $theme->colors[1];
+                $cssVariables['--wp-admin-theme-accent'] = $theme->colors[2];
+            } else {
+                $cssVariables['--wp-admin-theme-bg'] = $theme->colors[0];
+                $cssVariables['--wp-admin-theme-main'] = $theme->colors[2];
+                $cssVariables['--wp-admin-theme-accent'] = $theme->colors[3];
+            }
+        }
+
         foreach ($mapping as $color => $variable) {
-            if (isset($colors[$color])) {
-                $cssVariables[$variable] = $colors[$color];
+            if (isset(self::$colors[$color])) {
+                $cssVariables[$variable] = self::$colors[$color];
             }
         }
 

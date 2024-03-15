@@ -10,8 +10,9 @@ use Extendify\Launch\Admin as LaunchAdmin;
 use Extendify\Library\Admin as LibraryAdmin;
 use Extendify\Library\Frontend;
 use Extendify\Assist\Admin as AssistAdmin;
-use Extendify\Chat\Admin as ChatAdmin;
+use Extendify\HelpCenter\Admin as HelpCenterAdmin;
 use Extendify\Draft\Admin as DraftAdmin;
+use Extendify\Shared\Admin as SharedAdmin;
 use Extendify\AdminPageRouter;
 use Extendify\Affiliate;
 
@@ -38,11 +39,12 @@ if (is_readable(EXTENDIFY_PATH . 'vendor/autoload.php')) {
 new PartnerData();
 new Config();
 new Insights();
+new SharedAdmin();
+new HelpCenterAdmin();
 new LaunchAdmin();
 new LibraryAdmin();
 new Frontend();
 new AssistAdmin();
-new ChatAdmin();
 new DraftAdmin();
 new AdminPageRouter();
 new Affiliate();

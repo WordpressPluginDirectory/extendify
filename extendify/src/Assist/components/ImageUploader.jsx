@@ -1,3 +1,4 @@
+import apiFetch from '@wordpress/api-fetch';
 import { isBlobURL } from '@wordpress/blob';
 import {
 	DropZone,
@@ -11,9 +12,8 @@ import { useEffect } from '@wordpress/element';
 import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { MediaUpload, uploadMedia } from '@wordpress/media-utils';
-import { getOption, updateOption } from '@assist/api/WPApi';
-import { useGlobalStore } from '@assist/state/Global.js';
-import { getMediaDetails } from '../lib/media';
+import { getMediaDetails } from '@assist/lib/media';
+import { useGlobalStore } from '@assist/state/globals';
 
 export const ImageUploader = ({ type, onUpdate, title, actionLabel }) => {
 	const { popModal } = useGlobalStore();
@@ -24,18 +24,36 @@ export const ImageUploader = ({ type, onUpdate, title, actionLabel }) => {
 		[imageId],
 	);
 	const { mediaWidth, mediaHeight, mediaSourceUrl } = getMediaDetails(media);
+
 	useEffect(() => {
-		getOption(type).then((id) => setImageId(Number(id)));
+		const controller = new AbortController();
+
+		apiFetch({
+			path: '/wp/v2/settings',
+			signal: controller.signal,
+		}).then((settings) => {
+			if (settings[type]) setImageId(Number(settings[type]));
+		});
+
+		return () => controller.abort();
 	}, [type]);
 
-	const onUpdateImage = (image) => {
+	const updateOption = async (type, id) => {
+		await apiFetch({
+			path: '/wp/v2/settings',
+			method: 'post',
+			data: { [type]: id },
+		});
+	};
+
+	const onUpdateImage = async (image) => {
 		setImageId(image.id);
-		updateOption(type, image.id);
+		await updateOption(type, image.id);
 		onUpdate();
 	};
-	const onRemoveImage = () => {
+	const onRemoveImage = async () => {
 		setImageId(0);
-		updateOption(type, 0);
+		await updateOption(type, 0);
 	};
 
 	const onDropFiles = (filesList) => {

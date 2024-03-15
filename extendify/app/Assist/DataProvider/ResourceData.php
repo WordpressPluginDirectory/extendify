@@ -5,15 +5,9 @@
 
 namespace Extendify\Assist\DataProvider;
 
-use Extendify\Assist\Controllers\RecommendationsBannerController;
-use Extendify\Assist\Controllers\RecommendationsController;
-use Extendify\Assist\Controllers\SupportArticlesController;
-use Extendify\Assist\Controllers\QuickLinksController;
-use Extendify\Assist\Controllers\TasksController;
-use Extendify\Assist\Controllers\TourController;
-use Extendify\Assist\Controllers\WPController;
-use Extendify\Config;
 use Extendify\Http;
+use Extendify\Config;
+use Extendify\Assist\Controllers\RecommendationsController;
 
 /**
  * The cache data class.
@@ -86,14 +80,7 @@ class ResourceData
     public function cache()
     {
         $endPoints = [
-            'tasks' => $this->getResponseData(TasksController::fetchTasks()),
             'recommendations' => $this->getResponseData(RecommendationsController::fetchRecommendations()),
-            'recommendationsBanner' => $this->getResponseData(RecommendationsBannerController::get()),
-            'tours' => $this->getResponseData(TourController::fetchTours()),
-            'quickLinks' => $this->getResponseData(QuickLinksController::fetchQuickLinks()),
-            'activePlugins' => $this->getResponseData(WPController::getActivePlugins()),
-            'supportArticles' => $this->getResponseData(SupportArticlesController::articles()),
-            'supportArticleCategories' => $this->getResponseData(SupportArticlesController::categories()),
         ];
 
         foreach ($endPoints as $key => $endpoint) {
@@ -109,56 +96,10 @@ class ResourceData
     public function getData()
     {
         return [
-            'tasks' => $this->tasks(),
             'recommendations' => $this->recommendations(),
-            'recommendationsBanner' => $this->recommendationsBanner(),
-            'quickLinks' => $this->quickLinks(),
-            'tours' => $this->tours(),
-            'activePlugins' => $this->activePlugins(),
-            'supportArticles' => $this->supportArticles(),
-            'supportArticleCategories' => $this->supportArticleCategories(),
         ];
     }
 
-    /**
-     * Return the tasks.
-     *
-     * @return mixed|\WP_REST_Response
-     */
-    protected function tasks()
-    {
-        $tasks = get_transient($this->group . Config::$version . '_' . __FUNCTION__);
-
-        if ($tasks === false) {
-            $tasks = $this->getResponseData(TasksController::fetchTasks());
-            $this->cacheData(__FUNCTION__, $tasks);
-        }
-
-        if (!empty($tasks)) {
-            foreach ($tasks as $task) {
-                if (is_array($task)
-                    && array_key_exists('doneDependencies', $task)
-                    && $task['doneDependencies']
-                ) {
-                    if ($task['slug'] === 'setup-givewp') {
-                        $give = \get_option('give_onboarding', false);
-                        if (isset($give['form_id']) && $give['form_id'] > 0) {
-                            $this->markTaskCompleted($task['slug']);
-                        }
-                    }
-
-                    if ($task['slug'] === 'setup-woocommerce-store') {
-                        $woo = \get_option('woocommerce_onboarding_profile', false);
-                        if ((isset($woo['completed']) && $woo['completed']) || (isset($woo['skipped']) && $woo['skipped'])) {
-                            $this->markTaskCompleted($task['slug']);
-                        }
-                    }
-                }//end if
-            }//end foreach
-        }//end if
-
-        return $tasks;
-    }
 
     /**
      * Return the recommendations.
@@ -175,108 +116,6 @@ class ResourceData
         }
 
         return $recommendations;
-    }
-
-    /**
-     * Returns the recommendations banner.
-     *
-     * @return mixed|\WP_REST_Response
-     */
-    protected function recommendationsBanner()
-    {
-        $recommendationsBanner = get_transient($this->group . Config::$version . '_' . __FUNCTION__);
-
-        if ($recommendationsBanner === false) {
-            $recommendationsBanner = $this->getResponseData(RecommendationsBannerController::get());
-            $this->cacheData(__FUNCTION__, $recommendationsBanner);
-        }
-
-        return $recommendationsBanner;
-    }
-
-    /**
-     * Return the tours.
-     *
-     * @return mixed|\WP_REST_Response
-     */
-    protected function tours()
-    {
-        $tours = get_transient($this->group . Config::$version . '_' . __FUNCTION__);
-
-        if ($tours === false) {
-            $tours = $this->getResponseData(TourController::fetchTours());
-            $this->cacheData(__FUNCTION__, $tours);
-        }
-
-        return $tours;
-    }
-
-    /**
-     * Return the support articles.
-     *
-     * @return mixed|\WP_REST_Response
-     */
-    protected function supportArticles()
-    {
-        $supportArticles = get_transient($this->group . Config::$version . '_' . __FUNCTION__);
-
-        if ($supportArticles === false) {
-            $supportArticles = $this->getResponseData(SupportArticlesController::articles());
-            $this->cacheData(__FUNCTION__, $supportArticles);
-        }
-
-        return $supportArticles;
-    }
-
-    /**
-     * Return the support articles categories.
-     *
-     * @return mixed|\WP_REST_Response
-     */
-    protected function supportArticleCategories()
-    {
-        $supportArticlesCategories = get_transient($this->group . Config::$version . '_' . __FUNCTION__);
-
-        if ($supportArticlesCategories === false) {
-            $supportArticlesCategories = $this->getResponseData(SupportArticlesController::categories());
-            $this->cacheData(__FUNCTION__, $supportArticlesCategories);
-        }
-
-        return $supportArticlesCategories;
-    }
-
-    /**
-     * Return the quick links.
-     *
-     * @return mixed|\WP_REST_Response
-     */
-    protected function quickLinks()
-    {
-        $quickLinks = get_transient($this->group . Config::$version . '_' . __FUNCTION__);
-
-        if ($quickLinks === false) {
-            $quickLinks = $this->getResponseData(QuickLinksController::fetchQuickLinks());
-            $this->cacheData(__FUNCTION__, $quickLinks);
-        }
-
-        return $quickLinks;
-    }
-
-    /**
-     * Return the active plugins.
-     *
-     * @return mixed|\WP_REST_Response
-     */
-    protected function activePlugins()
-    {
-        $activePlugins = get_transient($this->group . Config::$version . '_' . __FUNCTION__);
-
-        if ($activePlugins === false) {
-            $activePlugins = $this->getResponseData(WPController::getActivePlugins());
-            $this->cacheData(__FUNCTION__, $activePlugins);
-        }
-
-        return $activePlugins;
     }
 
     /**
@@ -390,13 +229,8 @@ class ResourceData
     {
         $storedTransient = [
             'tasks',
-            'recommendations',
-            'recommendationsBanner',
-            'supportArticles',
-            'supportArticleCategories',
             'activePlugins',
             'quickLinks',
-            'tours',
         ];
 
         foreach ($storedTransient as $value) {

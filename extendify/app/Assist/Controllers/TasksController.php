@@ -6,6 +6,7 @@
 namespace Extendify\Assist\Controllers;
 
 use Extendify\Http;
+use Extendify\Assist\Controllers\WPController;
 
 if (!defined('ABSPATH')) {
     die('No direct access.');
@@ -63,7 +64,7 @@ class TasksController
      */
     public static function store($request)
     {
-        $data = json_decode($request->get_param('data'), true);
+        $data = json_decode($request->get_param('state'), true);
         update_option('extendify_assist_tasks', $data);
         return new \WP_REST_Response($data);
     }

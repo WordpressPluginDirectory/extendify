@@ -1,13 +1,8 @@
 export { default as Confetti } from './Confetti';
 export { default as arrowTurnRight } from './ArrowTurnRight';
-export { default as helpIcon } from './HelpIcon';
 export { default as HelpIcon } from './HelpIconFunc';
 export { default as homeIcon } from './HomeIcon';
 export { default as Logo } from './Logo';
 export { default as LogoIcon } from './LogoIcon';
-export { default as recommendationsIcon } from './RecommendationsIcon';
-export { default as tasksIcon } from './TasksIcon';
-export { default as toursIcon } from './ToursIcon';
-export { default as ToursIcon } from './ToursIconFunction';
-export { default as ToursPlay } from './ToursPlay';
-export { default as ToursRestart } from './ToursRestart';
+export { default as Bullet } from './BulletPoint';
+export { default as AllCaughtUp } from './AllCaughtUp';

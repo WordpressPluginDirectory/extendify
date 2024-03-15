@@ -6,8 +6,8 @@ import { PageSelectButton } from '@launch/components/PageSelectButton';
 import { Title } from '@launch/components/Title';
 import { useFetch } from '@launch/hooks/useFetch';
 import { PageLayout } from '@launch/layouts/PageLayout';
-import { useUserSelectionStore } from '@launch/state/UserSelections';
 import { pageState } from '@launch/state/factory';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const fetcher = ({ siteType }) => getPageTemplates(siteType);
 export const fetchData = (siteType) => ({
@@ -80,7 +80,7 @@ export const PagesSelect = () => {
 
 	useEffect(() => {
 		// If no pages have been set, then add the recommended pages
-		if (pages) return;
+		if (pages !== undefined) return;
 		if (!availablePages?.recommended) return;
 		availablePages.recommended.forEach((page) => add('pages', page));
 	}, [pages, availablePages?.recommended, add]);

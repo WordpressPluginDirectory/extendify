@@ -118,38 +118,6 @@ class Http
     }
 
     /**
-     * Register dynamic routes
-     *
-     * @param string  $endpoint - The endpoint.
-     * @param array   $data     - The arguments to include.
-     * @param array   $headers  - The headers to include.
-     * @param boolean $sendBody - Whether to include the body or not.
-     *
-     * @return array
-     */
-    public function postHandler($endpoint, $data = [], $headers = [], $sendBody = true)
-    {
-        $args['headers'] = array_merge($this->headers, $headers);
-
-        if ($sendBody) {
-            $args['body'] = array_merge($this->data, $data);
-        }
-
-        $response = \wp_remote_post($this->baseUrl . $endpoint, $args);
-
-        if (\is_wp_error($response)) {
-            return $response;
-        }
-
-        if ((int) $response['response']['code'] >= 500) {
-            wp_send_json_error($response['response']['message'], $response['response']['code']);
-        }
-
-        $responseBody = \wp_remote_retrieve_body($response);
-        return json_decode($responseBody, true);
-    }
-
-    /**
      * The caller
      *
      * @param string $name      - The name of the method to call.
@@ -188,7 +156,7 @@ class Http
             'x_extendify_assist_dev_mode' => 'assist-dev',
             'x_extendify_assist_local_mode' => 'assist-local',
             'x_extendify_assist' => 'assist',
-            'x_extendify_chat' => 'chat',
+            'x_extendify_help_center' => 'help-center',
         ];
 
         foreach ($headerToConfigKeyMap as $headerKey => $configKey) {

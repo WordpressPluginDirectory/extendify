@@ -1,11 +1,7 @@
-import { useUserSelectionStore } from '@launch/state/UserSelections';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 import { PATTERNS_HOST, AI_HOST } from '../../constants';
 import { getHeadersAndFooters } from './WPApi';
 import { Axios as api } from './axios';
-
-export const getUserSelectionData = () => api.get('launch/user-selection-data');
-export const saveUserSelectionData = (data) =>
-	api.post('launch/user-selection-data', { data });
 
 const fetchTemplates = async (type, siteType) => {
 	const { wpLanguage, wpVersion, showLocalizedCopy } = window.extOnbData;

@@ -6,8 +6,8 @@ import { Title } from '@launch/components/Title';
 import { useSiteTypes } from '@launch/hooks/useSiteTypes';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { usePagesStore } from '@launch/state/Pages';
-import { useUserSelectionStore } from '@launch/state/UserSelections';
 import { pageState } from '@launch/state/factory';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Checkmark, RightCaret } from '@launch/svg';
 
 export const state = pageState('Site Industry', () => ({

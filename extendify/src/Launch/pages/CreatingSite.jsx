@@ -19,7 +19,7 @@ import { uploadLogo } from '@launch/lib/logo';
 import { waitFor200Response, wasInstalled } from '@launch/lib/util';
 import { createPages, updateGlobalStyleVariant } from '@launch/lib/wp';
 import { usePagesStore } from '@launch/state/Pages';
-import { useUserSelectionStore } from '@launch/state/UserSelections';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
 
 export const CreatingSite = () => {

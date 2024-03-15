@@ -158,11 +158,6 @@ class Admin
         \wp_enqueue_style(Config::$slug);
         \wp_add_inline_style(Config::$slug, $css);
 
-        $cssColorVars = PartnerData::cssVariableMapping();
-        $cssString = implode('; ', array_map(function ($k, $v) {
-            return "$k: $v";
-        }, array_keys($cssColorVars), $cssColorVars));
-        wp_add_inline_style(Config::$slug, "body { $cssString; }");
     }
 
     /**

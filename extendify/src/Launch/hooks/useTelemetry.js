@@ -1,7 +1,7 @@
 import { useEffect, useState } from '@wordpress/element';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
-import { useUserSelectionStore } from '@launch/state/UserSelections';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 import { INSIGHTS_HOST } from '../../constants';
 
 // Dev note: This entire section is opt-in only when partnerID is set as a constant
@@ -63,7 +63,7 @@ export const useTelemetry = () => {
 				},
 				signal: controller.signal,
 				body: JSON.stringify({
-					siteType: siteType.slug,
+					siteType: siteType?.slug,
 					siteCreatedAt: window.extOnbData?.siteCreatedAt,
 					style: selectedStyle?.variation?.title,
 					pages: selectedPages?.map((p) => p.slug),

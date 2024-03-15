@@ -33,11 +33,13 @@ const supportedBlocks = [
 
 export const ToolbarMenu = (CurrentMenuItems, props) => {
 	const { clientId: blockId } = props;
-	const { getBlockName, getBlock } = useSelect((select) =>
-		select(blockEditorStore),
+	const { getBlockName, getBlock } = useSelect(
+		(select) => select(blockEditorStore),
+		[],
 	);
-	const { getActiveGeneralSidebarName } = useSelect((select) =>
-		select(editPostStore),
+	const { getActiveGeneralSidebarName } = useSelect(
+		(select) => select(editPostStore),
+		[],
 	);
 	const { openGeneralSidebar } = useDispatch(editPostStore);
 

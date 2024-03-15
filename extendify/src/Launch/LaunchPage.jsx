@@ -9,7 +9,7 @@ import { CreatingSite } from '@launch/pages/CreatingSite';
 import { NeedsTheme } from '@launch/pages/NeedsTheme';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
-import { useUserSelectionStore } from '@launch/state/UserSelections';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 import { useTelemetry } from './hooks/useTelemetry';
 
 export const LaunchPage = () => {
