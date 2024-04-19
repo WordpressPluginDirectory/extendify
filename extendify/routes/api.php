@@ -8,8 +8,8 @@ if (!defined('ABSPATH')) {
 }
 
 use Extendify\ApiRouter;
+use Extendify\Assist\Controllers\DomainsSuggestionController;
 use Extendify\Assist\Controllers\GlobalsController;
-use Extendify\Assist\Controllers\QuickLinksController;
 use Extendify\Assist\Controllers\RecommendationsController;
 use Extendify\Assist\Controllers\RouterController;
 use Extendify\Assist\Controllers\TasksController;
@@ -18,7 +18,6 @@ use Extendify\HelpCenter\Controllers\TourController;
 use Extendify\HelpCenter\Controllers\RouterController as HelpCenterRouterController;
 use Extendify\HelpCenter\Controllers\SupportArticlesController;
 
-use Extendify\Draft\Controllers\DraftController;
 use Extendify\Draft\Controllers\ImageController;
 use Extendify\Draft\Controllers\UserSettingsController;
 
@@ -49,21 +48,19 @@ use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsCon
         ApiRouter::get('/launch/suggested-plugins', [DataController::class, 'getSuggestedPlugins']);
         ApiRouter::get('/launch/ping', [DataController::class, 'ping']);
         ApiRouter::get('/launch/prefetch-assist-data', [WPController::class, 'prefetchAssistData']);
+        ApiRouter::post('/launch/create-navigation', [WPController::class, 'createNavigationWithMeta']);
 
         // Assist.
         ApiRouter::get('/assist/recommendations', [RecommendationsController::class, 'fetchRecommendations']);
         ApiRouter::get('/assist/recommendations-data', [RecommendationsController::class, 'get']);
         ApiRouter::post('/assist/recommendations-data', [RecommendationsController::class, 'store']);
-        ApiRouter::get('/assist/tasks', [TasksController::class, 'fetchTasks']);
         ApiRouter::get('/assist/task-data', [TasksController::class, 'get']);
         ApiRouter::post('/assist/task-data', [TasksController::class, 'store']);
         ApiRouter::post('/assist/router-data', [RouterController::class, 'store']);
         ApiRouter::get('/assist/router-data', [RouterController::class, 'get']);
         ApiRouter::get('/assist/global-data', [GlobalsController::class, 'get']);
         ApiRouter::post('/assist/global-data', [GlobalsController::class, 'store']);
-        ApiRouter::get('/assist/active-plugins', [AssistWPController::class, 'getActivePlugins']);
-        ApiRouter::get('/assist/tasks/dependency-completed', [TasksController::class, 'dependencyCompleted']);
-        ApiRouter::get('/assist/quicklinks', [QuickLinksController::class, 'fetchQuickLinks']);
+        ApiRouter::post('/assist/delete-domains-recommendations', [DomainsSuggestionController::class, 'deleteCache']);
 
         // Help Center.
         ApiRouter::get('/help-center/tours', [TourController::class, 'fetchTours']);

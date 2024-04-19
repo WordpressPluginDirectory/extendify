@@ -23,16 +23,16 @@ export const Header = () => {
 		<header className="w-full flex bg-banner-main border-b border-gray-400">
 			<div className="max-w-[996px] w-full mx-auto mt-auto flex flex-col px-4">
 				<div className="flex flex-wrap justify-between items-center my-6 gap-x-4 gap-y-2">
-					{window.extAssistData?.partnerLogo && (
-						<div className="w-32 md:w-36 md:max-h-9 flex items-center">
+					{window.extSharedData?.partnerLogo && (
+						<div className="flex items-center h-10 max-w-52	md:max-w-72 overflow-hidden">
 							<img
-								className="h-full w-full"
-								src={window.extAssistData.partnerLogo}
-								alt={window.extAssistData.partnerName}
+								className="max-w-full max-h-full object-contain"
+								src={window.extSharedData.partnerLogo}
+								alt={window.extSharedData.partnerName}
 							/>
 						</div>
 					)}
-					{!window.extAssistData?.partnerLogo && (
+					{!window.extSharedData?.partnerLogo && (
 						<Logo className="logo text-banner-text max-h-9 w-32 sm:w-40" />
 					)}
 					<div className="lg:hidden">
@@ -64,7 +64,7 @@ export const Header = () => {
 								'--ext-override': focusColor,
 							}}
 							className="text-sm text-center bg-white text-gray-900 border-gray-500 border cursor-pointer rounded-sm lg:rounded-sm py-2 px-3 no-underline block lg:inline-block hover:border-override hover:text-design-main focus:ring-wp focus:ring-offset-1 focus:ring-offset-banner-main focus:outline-none transition-colors duration-200"
-							href={window.extAssistData.home}
+							href={window.extSharedData.home}
 							target="_blank"
 							rel="noreferrer">
 							{__('View site', 'extendify-local')}

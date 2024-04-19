@@ -5,27 +5,16 @@
 
 namespace Extendify\Draft;
 
-use Extendify\PartnerData;
+defined('ABSPATH') || die('No direct access.');
+
 use Extendify\Config;
+use Extendify\Draft\Controllers\UserSettingsController;
 
 /**
  * This class handles any file loading for the admin area.
  */
 class Admin
 {
-    /**
-     * The instance
-     *
-     * @var $instance
-     */
-    public static $instance = null;
-
-    /**
-     * Whether to show the Ask AI button.
-     *
-     * @var boolean
-     */
-    public $showDraft = false;
 
     /**
      * Adds various actions to set up the page
@@ -34,24 +23,7 @@ class Admin
      */
     public function __construct()
     {
-        if (self::$instance) {
-            return self::$instance;
-        }
-
-        self::$instance = $this;
-
-        if (!defined('EXTENDIFY_PARTNER_ID')) {
-            return;
-        }
-
-        $draftData = $this->fetchDraftData();
-        if (! $draftData) {
-            return;
-        }
-
-        $this->showDraft = isset($draftData['showDraft']) ? $draftData['showDraft'] : false;
-
-        $this->loadScripts();
+        \add_action('admin_init', [$this, 'loadScripts']);
     }
 
     /**
@@ -61,84 +33,15 @@ class Admin
      */
     public function loadScripts()
     {
-        \add_action(
-            'admin_init',
-            function () {
-                if (!current_user_can(Config::$requiredCapability)) {
-                    return;
-                }
-
-                // Don't show on Launch pages.
-                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-                if (isset($_GET['page']) && $_GET['page'] === 'extendify-launch') {
-                    return;
-                }
-
-                if (!$this->showDraft) {
-                    return;
-                }
-
-                add_action('enqueue_block_editor_assets', [$this, 'enqueueGutenbergAssets']);
-
-                $version = Config::$environment === 'PRODUCTION' ? Config::$version : uniqid();
-
-                \wp_enqueue_style(
-                    Config::$slug . '-draft-styles',
-                    EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-draft.css'],
-                    [],
-                    Config::$version,
-                    'all'
-                );
-            }
+        add_action('enqueue_block_editor_assets', [$this, 'enqueueGutenbergAssets']);
+        $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
+        \wp_enqueue_style(
+            Config::$slug . '-draft-styles',
+            EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-draft.css'],
+            [],
+            Config::$version,
+            'all'
         );
-    }
-
-    /**
-     * Fetch the data from the partner-data API endpoint.
-     *
-     * @return array
-     */
-    private function fetchDraftData()
-    {
-        $draftData = get_transient('extendify_draft_data');
-
-        if ($draftData !== false) {
-            return $draftData;
-        }
-
-        if (!defined('EXTENDIFY_PARTNER_ID')) {
-            return [];
-        }
-
-        $apiUrl = Config::$config['api']['launch'];
-
-        $response = wp_remote_get(
-            add_query_arg(
-                ['partner' => EXTENDIFY_PARTNER_ID],
-                $apiUrl . '/partner-data/'
-            ),
-            ['headers' => ['Accept' => 'application/json']]
-        );
-
-        if (is_wp_error($response)) {
-            return [];
-        }
-
-        $result = json_decode(wp_remote_retrieve_body($response), true);
-        $data = isset($result['data']) ? $result['data'] : [];
-
-        $draftData = [
-            'showDraft' => isset($data['showDraft']) ? $data['showDraft'] : false,
-            'showAIConsent' => isset($data['showAIConsent']) ? $data['showAIConsent'] : false,
-            'consentTermsUrl' => isset($data['consentTermsUrl']) ? $data['consentTermsUrl'] : '',
-        ];
-
-        if (Config::$environment === 'DEVELOPMENT') {
-            $draftData['showDraft'] = true;
-        }
-
-        set_transient('extendify_draft_data', $draftData, DAY_IN_SECONDS);
-        return $draftData;
     }
 
     /**
@@ -154,53 +57,33 @@ class Admin
             return;
         }
 
-        $version = Config::$environment === 'PRODUCTION' ? Config::$version : uniqid();
+        $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
         $scriptAssetPath = EXTENDIFY_PATH . 'public/build/' . Config::$assetManifest['extendify-draft.php'];
         $fallback = [
             'dependencies' => [],
             'version' => $version,
         ];
 
-        $draftDependencies = file_exists($scriptAssetPath) ? require $scriptAssetPath : $fallback;
-
-        foreach ($draftDependencies['dependencies'] as $style) {
+        $scriptAsset = file_exists($scriptAssetPath) ? require $scriptAssetPath : $fallback;
+        foreach ($scriptAsset['dependencies'] as $style) {
             wp_enqueue_style($style);
         }
 
         \wp_enqueue_script(
             Config::$slug . '-draft-scripts',
             EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-draft.js'],
-            $draftDependencies['dependencies'],
-            $draftDependencies['version'],
+            array_merge([Config::$slug . '-shared-scripts'], $scriptAsset['dependencies']),
+            $scriptAsset['version'],
             true
         );
 
-        $userConsent = get_user_meta(get_current_user_id(), 'extendify_ai_consent', true);
-        $userGaveConsent = $userConsent ? $userConsent : false;
-
-        \wp_localize_script(
+        \wp_add_inline_script(
             Config::$slug . '-draft-scripts',
-            'extDraftData',
-            array_merge([
-                'root' => \esc_url_raw(\rest_url(Config::$slug . '/' . Config::$apiVersion)),
-                'nonce' => \wp_create_nonce('wp_rest'),
-                'devbuild' => \esc_attr(Config::$environment === 'DEVELOPMENT'),
-                'partnerId' => \esc_attr(PartnerData::$id),
-                'siteId' => \get_option('extendify_site_id', false),
-                'wpVersion' => \get_bloginfo('version'),
-                'isBlockTheme' => function_exists('wp_is_block_theme') ? wp_is_block_theme() : false,
-                'showAIConsent' => isset($data['showAIConsent']) ? $data['showAIConsent'] : false,
-                'consentTermsUrl' => isset($data['consentTermsUrl']) ? $data['consentTermsUrl'] : '',
-                'userId' => \get_current_user_id(),
-                'userGaveConsent' => $userGaveConsent,
-                'wpLanguage' => \get_locale(),
-                'globalState' => \get_option('extendify_draft_settings', [
-                    'state' => [],
-                    'version' => 0,
-                ]),
-            ], $this->fetchDraftData())
+            'window.extDraftData = ' . \wp_json_encode([
+                'globalState' => \wp_json_encode(UserSettingsController::get()->get_data()),
+            ]),
+            'before'
         );
-
         \wp_set_script_translations(Config::$slug . '-draft-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
     }
 }

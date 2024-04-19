@@ -5,6 +5,8 @@
 
 namespace Extendify\Assist;
 
+defined('ABSPATH') || die('No direct access.');
+
 /**
  * This class handles the Assist admin page.
  */
@@ -36,8 +38,6 @@ class AdminPage
             1000
         );
     }
-
-
 
     /**
      * Settings page output

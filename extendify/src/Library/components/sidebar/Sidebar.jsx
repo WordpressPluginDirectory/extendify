@@ -3,9 +3,7 @@ import { extendifyLogo } from '@library/icons/extendify-logo';
 import { CategoryControl } from './CategoryControl';
 import { SiteTypeControl } from './SiteTypeControl';
 
-// import { SourceControl } from './SourceControl'
-
-const { partnerLogo, partnerName } = window.extLibraryData;
+const { partnerLogo, partnerName } = window.extSharedData;
 export const Sidebar = () => {
 	return (
 		<div className="md:w-80 gap-6 flex-shrink-0 hidden md:flex flex-col">
@@ -25,11 +23,6 @@ export const Sidebar = () => {
 				</div>
 			)}
 			<div className="overflow-y-auto pb-16 flex flex-col gap-4">
-				{/* TODO: This will eventually only show if the users has a license key  */}
-				{/* <div className="hidden md:flex flex-col overflow-hidden px-4">
-                    <SourceControl />
-                </div> */}
-
 				<div className="hidden md:flex flex-col px-4 overflow-x-hidden">
 					<SiteTypeControl />
 				</div>

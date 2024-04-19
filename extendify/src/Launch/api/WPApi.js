@@ -1,3 +1,4 @@
+import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
 import { Axios as api } from './axios';
 
@@ -109,7 +110,7 @@ export const updateThemeVariation = (id, variation) =>
 		styles: variation.styles,
 	});
 
-export const addLaunchPagesToNav = (
+export const addLaunchPagesToNav = async (
 	pages,
 	pageIds,
 	rawCode,
@@ -127,7 +128,20 @@ export const addLaunchPagesToNav = (
 			return `<!-- wp:navigation-link { "label":"${title.rendered}", "type":"${type}", "id":"${id}", "url":"${link}", "kind":"post-type", "isTopLevelLink":true } /-->`;
 		})
 		.join('');
-	return rawCode.replace(replace, `$1${pageListItems}$3`);
+
+	// create a custom navigation with meta-data
+	const navigation = await apiFetch({
+		path: 'extendify/v1/launch/create-navigation',
+		method: 'POST',
+		data: {
+			title: __('Header Navigation', 'extendify-local'),
+			slug: 'site-navigation',
+			content: pageListItems,
+		},
+	});
+
+	const content = `<!-- wp:navigation {"ref":${navigation.id}} /-->`;
+	return rawCode.replace(replace, `${content}`);
 };
 
 export const getActivePlugins = () => api.get('launch/active-plugins');

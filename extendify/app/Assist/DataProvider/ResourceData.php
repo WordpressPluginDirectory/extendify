@@ -5,9 +5,13 @@
 
 namespace Extendify\Assist\DataProvider;
 
-use Extendify\Http;
-use Extendify\Config;
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Assist\Controllers\DomainsSuggestionController;
 use Extendify\Assist\Controllers\RecommendationsController;
+use Extendify\Config;
+use Extendify\Http;
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The cache data class.
@@ -20,13 +24,6 @@ class ResourceData
      * @var Http
      */
     protected $http;
-
-    /**
-     * The cache group.
-     *
-     * @var string
-     */
-    protected $group = 'extendify_';
 
     /**
      * The expiration interval.
@@ -81,6 +78,7 @@ class ResourceData
     {
         $endPoints = [
             'recommendations' => $this->getResponseData(RecommendationsController::fetchRecommendations()),
+            'domainsSuggestion' => $this->getResponseData(DomainsSuggestionController::suggestDomains()),
         ];
 
         foreach ($endPoints as $key => $endpoint) {
@@ -97,9 +95,9 @@ class ResourceData
     {
         return [
             'recommendations' => $this->recommendations(),
+            'domains' => $this->domainsSuggestion(),
         ];
     }
-
 
     /**
      * Return the recommendations.
@@ -108,7 +106,7 @@ class ResourceData
      */
     protected function recommendations()
     {
-        $recommendations = get_transient($this->group . Config::$version . '_' . __FUNCTION__);
+        $recommendations = get_transient('extendify_' . Config::$version . '_' . __FUNCTION__);
 
         if ($recommendations === false) {
             $recommendations = $this->getResponseData(RecommendationsController::fetchRecommendations());
@@ -116,6 +114,23 @@ class ResourceData
         }
 
         return $recommendations;
+    }
+
+    /**
+     * Return the domains suggestions.
+     *
+     * @return mixed|\WP_REST_Response
+     */
+    protected function domainsSuggestion()
+    {
+        $domains = get_transient('extendify_' . Config::$version . '_' . __FUNCTION__);
+
+        if ($domains === false) {
+            $domains = $this->getResponseData(DomainsSuggestionController::suggestDomains());
+            $this->cacheData(__FUNCTION__, $domains);
+        }
+
+        return $domains;
     }
 
     /**
@@ -129,7 +144,7 @@ class ResourceData
     protected function cacheData($functionName, $data)
     {
         if (!empty($data)) {
-            set_transient($this->group . Config::$version . '_' . $functionName, $data, $this->interval);
+            set_transient('extendify_' . Config::$version . '_' . $functionName, Sanitizer::sanitizeArray($data), $this->interval);
         }
     }
 
@@ -216,7 +231,7 @@ class ResourceData
                 'id' => $slug,
                 'completedAt' => gmdate('Y-m-d\TH:i:s.v\Z'),
             ];
-            update_option('extendify_assist_tasks', $data);
+            update_option('extendify_assist_tasks', Sanitizer::sanitizeArray($data));
         }
     }
 
@@ -228,9 +243,8 @@ class ResourceData
     public static function deleteCache()
     {
         $storedTransient = [
-            'tasks',
-            'activePlugins',
-            'quickLinks',
+            'recommendations',
+            'domainsSuggestion',
         ];
 
         foreach ($storedTransient as $value) {

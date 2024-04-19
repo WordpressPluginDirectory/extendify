@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
 
-const { themeSlug, launchCompleted } = window.extAssistData;
+const { launchCompleted } = window.extAssistData;
+const { themeSlug } = window.extSharedData;
 
 export default {
 	slug: 'site-builder-launcher',

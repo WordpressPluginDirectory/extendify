@@ -5,11 +5,10 @@
 
 namespace Extendify\HelpCenter\Controllers;
 
-use Extendify\Http;
+defined('ABSPATH') || die('No direct access.');
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+use Extendify\Http;
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for tracking tour progress info
@@ -50,7 +49,7 @@ class TourController
     public static function store($request)
     {
         $data = json_decode($request->get_param('state'), true);
-        update_option('extendify_assist_tour_progress', $data);
+        update_option('extendify_assist_tour_progress', Sanitizer::sanitizeArray($data));
         return new \WP_REST_Response($data);
     }
 }

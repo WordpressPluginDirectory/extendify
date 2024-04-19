@@ -1,38 +1,84 @@
-const blockList = ['instawp.xyz', 'my blog'];
-const hasValidSiteName = (title) =>
-	blockList.every((l) => !title.toLowerCase().includes(l));
+import apiFetch from '@wordpress/api-fetch';
+import { decodeEntities } from '@wordpress/html-entities';
+import { safeParseJson } from '@assist/lib/parsing';
 
-// This function is used to decode the html entities in the name of the site,
-// like an apostrophe in the name, it will return encoded.
-const decode = (input) => {
-	const doc = new DOMParser().parseFromString(input, 'text/html');
-	return doc.documentElement.textContent;
+const { hostname } = window.location;
+let { devbuild, siteTitle, wpLanguage } = window.extSharedData;
+const {
+	showBanner,
+	showTask,
+	searchUrl,
+	showSecondaryBanner,
+	showSecondaryTask,
+	stagingSites,
+} = window.extAssistData?.domainsSuggestionSettings || {};
+
+const hasDomains =
+	(safeParseJson(window.extAssistData.resourceData)?.domains || [])?.length > 0;
+
+const domainByLanguage = (lang, urlList) => {
+	try {
+		const urls = JSON.parse(decodeEntities(urlList));
+		return urls[lang] ?? urls['default'];
+	} catch (e) {
+		return decodeEntities(urlList) || false;
+	}
 };
-
-let { devbuild, siteTitle } = window.extSharedData;
-
-const { showBanner, showTask, tlds, searchUrl } =
-	window.extAssistData?.domainsSuggestionSettings || {};
 
 export const domainSearchUrl =
 	devbuild && !searchUrl
 		? 'https://extendify.com?s={DOMAIN}'
-		: searchUrl.replaceAll('&amp;', '&');
+		: domainByLanguage(wpLanguage, searchUrl);
 
-export const showDomainBanner =
-	devbuild || (showBanner && siteTitle && hasValidSiteName(siteTitle));
+const isStagingDomain =
+	stagingSites.filter((l) => hostname.toLowerCase().includes(l))?.length > 0 ||
+	false;
 
-export const showDomainTask =
-	devbuild || (showTask && siteTitle && hasValidSiteName(siteTitle));
+// Show if it's not a staging domain, has a title, and is enabled
+export const showDomainBanner = (() => {
+	if (devbuild) return true;
+	if (!showBanner) return false;
+	if (!hasDomains) return false;
+	if (!siteTitle) return false;
+	return isStagingDomain;
+})();
 
-export const tldList = tlds.replaceAll('.', '').trim() || 'com,net';
+// Show if it's not a staging domain, has a title, and is enabled
+export const showDomainTask = (() => {
+	if (devbuild) return true;
+	if (!showTask) return false;
+	if (!hasDomains) return false;
+	if (!siteTitle) return false;
+	return isStagingDomain;
+})();
 
-siteTitle = decode(siteTitle).replaceAll(/[^a-zA-Z\s0-9]/gi, '');
-export { siteTitle };
+// Show if it's a staging domain, has a title, and is enabled
+export const showSecondaryDomainBanner = (() => {
+	if (devbuild) return true;
+	if (!showSecondaryBanner) return false;
+	if (!hasDomains) return false;
+	if (!siteTitle) return false;
+	return !isStagingDomain;
+})();
+
+// Show if it's a staging domain, has a title, and is enabled
+export const showSecondaryDomainTask = (() => {
+	if (devbuild) return true;
+	if (!showSecondaryTask) return false;
+	if (!hasDomains) return false;
+	if (!siteTitle) return false;
+	return !isStagingDomain;
+})();
 
 /**
  * 	The domainSearchUrl will look something like
  * 	https://example.com?s={DOMAIN} where {DOMAIN} will be replaced with the domain name
  */
-export const createDomainUrlLink = (domain) =>
-	domainSearchUrl.replace('{DOMAIN}', domain);
+export const createDomainUrlLink = (domainSearchUrl, domain) =>
+	domainSearchUrl.replace('{DOMAIN}', domain.toLowerCase());
+
+export const deleteDomainCache = () =>
+	apiFetch({
+		path: 'extendify/v1/assist/delete-domains-recommendations',
+		method: 'POST',
+	});

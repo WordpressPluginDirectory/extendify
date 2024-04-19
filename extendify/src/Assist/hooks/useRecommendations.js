@@ -1,5 +1,7 @@
+import { safeParseJson } from '@assist/lib/parsing';
+
 const recommendations =
-	window.extAssistData?.resourceData?.recommendations || {};
+	safeParseJson(window.extAssistData.resourceData)?.recommendations || {};
 
 const adminUrl = window.extSharedData.adminUrl || '';
 

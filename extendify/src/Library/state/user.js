@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@library/lib/parsing';
 
 const storage = {
 	getItem: async () => await apiFetch({ path: '/wp/v2/users/me' }),
@@ -20,7 +21,7 @@ export const useUserStore = create(
 				if (!Object.keys(get()).includes(key)) return;
 				set({ [key]: value });
 			},
-			...(window.extLibraryData?.userInfo?.state ?? {}),
+			...(safeParseJson(window.extLibraryData.userInfo)?.state ?? {}),
 		}),
 		{
 			name: 'extendify_library_user',

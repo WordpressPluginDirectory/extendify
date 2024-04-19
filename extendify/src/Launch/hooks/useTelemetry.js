@@ -1,4 +1,4 @@
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect, useRef, useState } from '@wordpress/element';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/user-selections';
@@ -18,6 +18,7 @@ export const useTelemetry = () => {
 	const { pages, currentPageIndex } = usePagesStore();
 	const [stepProgress, setStepProgress] = useState([]);
 	const [viewedStyles, setViewedStyles] = useState(new Set());
+	const running = useRef(false);
 
 	useEffect(() => {
 		const p = [...pages].map((p) => p[0]);
@@ -50,8 +51,11 @@ export const useTelemetry = () => {
 		let innerId = 0;
 		const timeout = currentPageIndex ? 1000 : 0;
 		id = window.setTimeout(() => {
+			if (running.current) return;
+			running.current = true;
 			const controller = new AbortController();
 			innerId = window.setTimeout(() => {
+				running.current = false;
 				controller.abort();
 			}, 900);
 			fetch(`${INSIGHTS_HOST}/api/v1/launch`, {
@@ -64,7 +68,7 @@ export const useTelemetry = () => {
 				signal: controller.signal,
 				body: JSON.stringify({
 					siteType: siteType?.slug,
-					siteCreatedAt: window.extOnbData?.siteCreatedAt,
+					siteCreatedAt: window.extSharedData?.siteCreatedAt,
 					style: selectedStyle?.variation?.title,
 					pages: selectedPages?.map((p) => p.slug),
 					goals: goals?.map((g) => g.slug),
@@ -74,18 +78,25 @@ export const useTelemetry = () => {
 						.filter((s) => s?.variation)
 						.map((s) => s.variation.title),
 					siteTypeSearches: siteTypeSearch,
-					insightsId: window.extOnbData?.siteId,
+					insightsId: window.extSharedData?.siteId,
 					activeTests:
 						window.extOnbData?.activeTests?.length > 0
 							? JSON.stringify(window.extOnbData?.activeTests)
 							: undefined,
-					hostPartner: window.extOnbData?.partnerId,
-					language: window.extOnbData?.wpLanguage,
-					siteURL: window.extOnbData?.home,
+					hostPartner: window.extSharedData?.partnerId,
+					language: window.extSharedData?.wpLanguage,
+					siteURL: window.extSharedData?.home,
 				}),
-			}).catch(() => undefined);
+			})
+				.catch(() => undefined)
+				.finally(() => {
+					running.current = false;
+				});
 		}, timeout);
-		return () => [id, innerId].forEach((i) => window.clearTimeout(i));
+		return () => {
+			running.current = false;
+			[id, innerId].forEach((i) => window.clearTimeout(i));
+		};
 	}, [
 		selectedPages,
 		selectedPlugins,

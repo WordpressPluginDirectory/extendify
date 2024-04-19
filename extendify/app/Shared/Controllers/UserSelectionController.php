@@ -5,9 +5,9 @@
 
 namespace Extendify\Shared\Controllers;
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for plugin dependency checking, etc
@@ -35,7 +35,7 @@ class UserSelectionController
     public static function store($request)
     {
         $data = json_decode($request->get_param('state'), true);
-        update_option('extendify_user_selections', $data);
+        update_option('extendify_user_selections', Sanitizer::sanitizeArray($data));
         return new \WP_REST_Response($data);
     }
 }

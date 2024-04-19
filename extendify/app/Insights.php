@@ -5,7 +5,9 @@
 
 namespace Extendify;
 
-use Extendify\Config;
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * Controller for handling various Insights related things.
@@ -65,7 +67,7 @@ class Insights
         }, array_diff_key($this->activeTests, $currentTests));
         $testsCombined = array_merge($currentTests, $newTests);
         if ($newTests) {
-            \update_option('extendify_active_tests', $testsCombined);
+            \update_option('extendify_active_tests', Sanitizer::sanitizeArray($testsCombined));
         }
     }
 
@@ -77,6 +79,10 @@ class Insights
     public function filterExternalInsights()
     {
         add_filter('extendify_insights_data', function ($data) {
+            // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+            $readme = file_get_contents(EXTENDIFY_PATH . 'readme.txt');
+            preg_match('/Stable tag: ([0-9.:]+)/', $readme, $version);
+
             $insights = array_merge($data, [
                 'launch' => defined('EXTENDIFY_SHOW_ONBOARDING') && constant('EXTENDIFY_SHOW_ONBOARDING'),
                 'launchRedirectedAt' => \get_option('extendify_attempted_redirect', null),
@@ -86,7 +92,7 @@ class Insights
                 'assistRouterData' => \get_option('extendify_assist_router', null),
                 'libraryData' => \get_option('extendify_library_site_data', null),
                 'draftSettingsData' => \get_option('extendify_draft_settings', null),
-                'extendifyVersion' => Config::$version,
+                'extendifyVersion' => ($version[1] ?? null),
             ]);
             return $insights;
         });

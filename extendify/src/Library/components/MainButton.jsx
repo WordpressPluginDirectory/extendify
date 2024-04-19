@@ -5,7 +5,11 @@ import { useGlobalsStore } from '@library/state/global';
 
 export const MainButton = () => {
 	const { setOpen } = useGlobalsStore();
-	const handleClick = () => setOpen(true);
+	const handleClick = () => {
+		// Minimize HC if its open
+		window.dispatchEvent(new CustomEvent('extendify-hc:minimize'));
+		setOpen(true);
+	};
 
 	return (
 		<div

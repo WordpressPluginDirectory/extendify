@@ -21,5 +21,5 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extAssistData.asset_path}/hubspot.png`,
+	backgroundImage: `${window.extSharedData.assetPath}/hubspot.png`,
 };

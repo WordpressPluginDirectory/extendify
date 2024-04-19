@@ -21,5 +21,5 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extAssistData.asset_path}/woocommerce.png`,
+	backgroundImage: `${window.extSharedData.assetPath}/woocommerce.png`,
 };

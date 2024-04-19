@@ -136,7 +136,7 @@ export const usePreviewIframe = ({
 			m.disconnect();
 
 			await updateCoverBlocks(iFrame, container);
-			if (window.extLibraryData.themeSlug !== 'extendable') {
+			if (window.extSharedData.themeSlug !== 'extendable') {
 				await addMissingThemeVars(iFrame, container);
 			}
 			// Reconnect observer after making changes

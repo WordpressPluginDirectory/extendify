@@ -5,9 +5,9 @@
 
 namespace Extendify\HelpCenter\Controllers;
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for fetching support articles
@@ -74,7 +74,7 @@ class SupportArticlesController
     public static function store($request)
     {
         $data = json_decode($request->get_param('state'), true);
-        update_option('extendify_assist_support_articles', $data);
+        update_option('extendify_assist_support_articles', Sanitizer::sanitizeArray($data));
         return new \WP_REST_Response($data);
     }
 

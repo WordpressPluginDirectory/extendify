@@ -5,18 +5,13 @@
 
 namespace Extendify;
 
+defined('ABSPATH') || die('No direct access.');
+
 /**
  * The affiliate class.
  */
 class Affiliate
 {
-    /**
-     * The Host ID.
-     *
-     * @var string $hostId
-     */
-    protected $hostId = null;
-
     /**
      * Affiliate data
      *
@@ -29,12 +24,6 @@ class Affiliate
      */
     public function __construct()
     {
-        if (!defined('EXTENDIFY_PARTNER_ID')) {
-            return;
-        }
-
-        $this->hostId = defined('EXTENDIFY_PARTNER_ID') ? constant('EXTENDIFY_PARTNER_ID') : null;
-
         $this->data = PartnerData::getPartnerData();
 
         $this->wpforms();
@@ -57,7 +46,7 @@ class Affiliate
             return sprintf(
                 'http://www.shareasale.com/r.cfm?B=837827&U=3909268&M=64312&urllink=%s&afftrack=%s',
                 rawurlencode($url),
-                $this->hostId
+                Config::$partnerId
             );
         }, PHP_INT_MAX);
     }
@@ -77,7 +66,7 @@ class Affiliate
             return sprintf(
                 'https://shareasale.com/r.cfm?b=1491200&u=3909268&m=94778&urllink=%s&afftrack=%s',
                 rawurlencode($url),
-                $this->hostId
+                Config::$partnerId
             );
         }, PHP_INT_MAX);
     }
@@ -101,7 +90,7 @@ class Affiliate
             return sprintf(
                 'https://shareasale.com/r.cfm?b=966004&u=3909268&m=69975&urllink=%s&afftrack=%s',
                 rawurlencode($url),
-                $this->hostId
+                Config::$partnerId
             );
         }, PHP_INT_MAX, 1);
     }

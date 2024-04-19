@@ -16,7 +16,7 @@ export const Topbar = () => {
 	};
 
 	return (
-		<div className="relative bg-banner-main flex justify-end items-center p-4">
+		<div className="relative bg-banner-main flex justify-end items-center p-4 gap-x-2">
 			<div
 				role={isMinimized ? 'button' : 'heading'}
 				onClick={isMinimized ? toggleMinimized : undefined}
@@ -24,12 +24,9 @@ export const Topbar = () => {
 					isMinimized ? __('Show Help Center', 'extendify-local') : undefined
 				}
 				aria-expanded={isMinimized ? 'false' : 'true'}
-				className={classNames(
-					'bg-banner-main flex justify-between w-full pr-20',
-					{
-						'cursor-pointer': isMinimized,
-					},
-				)}>
+				className={classNames('bg-banner-main flex justify-between w-full', {
+					'cursor-pointer': isMinimized,
+				})}>
 				<div
 					className={classNames('flex w-full gap-1', {
 						'gap-4': history.length === 1,
@@ -46,6 +43,7 @@ export const Topbar = () => {
 				<button
 					className="text-banner-text fill-banner-text border-0 bg-transparent p-0 m-0 cursor-pointer"
 					type="button"
+					data-test="help-center-toggle-minimize-button"
 					onClick={toggleMinimized}>
 					{isMinimized ? (
 						<>
@@ -70,6 +68,7 @@ export const Topbar = () => {
 				<button
 					className="text-banner-text fill-banner-text border-0 bg-transparent p-0 m-0 cursor-pointer"
 					type="button"
+					data-test="help-center-close-button"
 					onClick={handleClose}>
 					<Icon icon={closeSmall} size={24} />
 					<span className="sr-only">{__('close', 'extendify-local')}</span>
@@ -97,11 +96,13 @@ const LogoOrBackButton = () => {
 
 	return partnerLogo ? (
 		<div className="bg-banner-main flex justify-center h-6 after:text-banner-text after:opacity-40 after:relative after:-right-2 after:top-0.5 after:content-['|']">
-			<img
-				className="max-h-full max-w-full"
-				src={partnerLogo}
-				alt={partnerName}
-			/>
+			<div className="flex items-center h-6 overflow-hidden max-w-[9rem]">
+				<img
+					className="max-w-full max-h-full object-contain"
+					src={partnerLogo}
+					alt={partnerName}
+				/>
+			</div>
 		</div>
 	) : null;
 };

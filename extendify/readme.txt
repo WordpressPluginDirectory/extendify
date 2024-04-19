@@ -2,8 +2,8 @@
 Contributors: extendify, kbat82, clubkert, arturgrabo
 Tags: templates, patterns, layouts, blocks, gutenberg, layout, template, editor, library, page builder, gutenberg blocks, wordpress blocks
 Requires at least: 6.0
-Tested up to: 6.4
-Stable tag: 1.13.0
+Tested up to: 6.5
+Stable tag: 1.13.2
 Requires PHP: 7.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -96,6 +96,15 @@ Nope! Extendify imports lightweight block-based content that is served directly 
 3. The Extendify library, as seen with the Twenty Twenty Two block theme
 
 == Changelog ==
+
+= 1.13.2 - 2024-04-18 =
+- Update WP script packages
+- Various bug fixes and improvements
+
+= 1.13.1 - 2024-03-14 =
+- Fixed a bug where buttons in Gutenberg would trigger a form submit
+- Fixed compatibility with Dark Reader Chrome extension
+- Various other bug fixes and improvements
 
 = 1.13.0 - 2024-03-14 =
 - Enhancements to editor AI tools

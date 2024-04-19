@@ -42,7 +42,8 @@ const BusinessInfo = () => {
 		useUserSelectionStore();
 	const [desc, setDesc] = useState(businessInformation?.description || '');
 	const nextPage = usePagesStore((state) => state.nextPage);
-	const termsUrl = window.extOnbData?.consentTermsUrlAI;
+	const consentTermsHTML = window.extSharedData?.consentTermsHTML;
+	const showAIConsent = window.extSharedData?.showAIConsent && consentTermsHTML;
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -53,7 +54,7 @@ const BusinessInfo = () => {
 	}, [desc, setBusinessInformation]);
 
 	useEffect(() => {
-		if (!termsUrl) return;
+		if (!showAIConsent) return;
 		if (businessInformation.acceptTerms || !businessInformation.description) {
 			state.setState({ validation: null });
 			return;
@@ -63,7 +64,7 @@ const BusinessInfo = () => {
 				message: __('Please accept the terms to continue', 'extendify-local'),
 			},
 		});
-	}, [businessInformation, termsUrl]);
+	}, [businessInformation, showAIConsent]);
 
 	return (
 		<form
@@ -78,10 +79,10 @@ const BusinessInfo = () => {
 			<div className="mb-8">
 				<SiteTones />
 			</div>
-			{termsUrl ? (
+			{showAIConsent ? (
 				<div className="mb-8 flex items-center">
 					<AcceptTerms
-						termsUrl={termsUrl}
+						consentTermsHTML={consentTermsHTML}
 						acceptTerms={businessInformation.acceptTerms}
 						setAcceptTerms={(acceptTerms) => {
 							setBusinessInformation('acceptTerms', acceptTerms);

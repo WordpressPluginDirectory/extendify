@@ -5,12 +5,13 @@ import { SWRConfig, useSWRConfig } from 'swr';
 import { updateOption } from '@launch/api/WPApi';
 import { RestartLaunchModal } from '@launch/components/RestartLaunchModal';
 import { RetryNotice } from '@launch/components/RetryNotice';
+import { useTelemetry } from '@launch/hooks/useTelemetry';
+import { safeParseJson } from '@launch/lib/parsing';
 import { CreatingSite } from '@launch/pages/CreatingSite';
 import { NeedsTheme } from '@launch/pages/NeedsTheme';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/user-selections';
-import { useTelemetry } from './hooks/useTelemetry';
 
 export const LaunchPage = () => {
 	const { updateSettings } = useDispatch('core/block-editor');
@@ -50,7 +51,7 @@ export const LaunchPage = () => {
 
 	useEffect(() => {
 		// Add editor styles to use for live previews
-		updateSettings(window.extOnbData.editorStyles);
+		updateSettings(safeParseJson(window.extOnbData.editorStyles));
 	}, [updateSettings]);
 
 	useEffect(() => {
@@ -73,9 +74,16 @@ export const LaunchPage = () => {
 	}, []);
 
 	useEffect(() => {
-		if (fetcher) {
-			const data = typeof fetchData === 'function' ? fetchData() : fetchData;
-			mutate(data, () => fetcher(data));
+		const fetchers = [].concat(fetcher);
+		const fetchDatas = [].concat(fetchData);
+		if (fetchers.length) {
+			fetchers.forEach((fetcher, i) => {
+				const data =
+					typeof fetchDatas?.[i] === 'function'
+						? fetchDatas[i]()
+						: fetchDatas?.[i];
+				mutate(data, () => fetcher(data));
+			});
 		}
 	}, [fetcher, mutate, fetchData]);
 

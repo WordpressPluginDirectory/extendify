@@ -7,7 +7,9 @@ export const ArticlesList = ({ articles }) => {
 	const { navigateTo } = useRouter();
 
 	return (
-		<ul className="m-0 py-2 flex flex-col gap-1">
+		<ul
+			className="m-0 py-2 flex flex-col gap-1"
+			data-test="help-center-kb-articles-list">
 			{articles.map(({ slug, title }) => (
 				<li key={slug} className="m-0 py-1 pr-3 pl-2">
 					<button

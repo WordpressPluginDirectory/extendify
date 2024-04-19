@@ -32,6 +32,9 @@ export const Modal = () => {
 
 	useLayoutEffect(() => {
 		if (openOnNewPage && isNewPage) {
+			// Minimize HC if its open
+			window.dispatchEvent(new CustomEvent('extendify-hc:minimize'));
+
 			setOpen(true);
 			return;
 		}

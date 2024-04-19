@@ -2,23 +2,32 @@ import { BaseControl, Panel, PanelBody } from '@wordpress/components';
 import { useState, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { generateImage } from '@draft/api/Data';
+import { pageState } from '@draft/state/factory';
 import { useGlobalStore } from '@draft/state/global';
 import { GenerateForm } from './GenerateForm';
 import { ImagePreview } from './ImagePreview';
+
+const usePageState = pageState('AI Image', (set) => ({
+	imageDetails: { src: '', id: undefined },
+	setImageDetails: (newState) => {
+		set((state) => ({ ...state, imageDetails: newState }));
+	},
+}));
 
 export const GenerateImageSidebar = () => {
 	const {
 		imageCredits: curCredits,
 		updateImageCredits,
 		subtractOneCredit,
+		aiImageOptions,
 	} = useGlobalStore();
-	const [imagePrompt, setImagePrompt] = useState('');
 	const [isGenerating, setIsGenerating] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
-	const [src, setSrc] = useState('');
 	const abortController = useRef(null);
 	const noCredits = curCredits.remaining === 0;
+	const { imageDetails, setImageDetails } = usePageState();
 
+	const clearImageResponse = () => setImageDetails({ src: '', id: undefined });
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		setErrorMessage('');
@@ -31,12 +40,12 @@ export const GenerateImageSidebar = () => {
 			setIsGenerating(true);
 			subtractOneCredit();
 			abortController.current = new AbortController();
-			const { imageCredits, images } = await generateImage(
-				imagePrompt,
+			const { imageCredits, images, id } = await generateImage(
+				aiImageOptions,
 				abortController.current.signal,
 			);
 			updateImageCredits(imageCredits);
-			setSrc(images[0].url);
+			setImageDetails({ src: images[0].url, id });
 		} catch (error) {
 			// If the request was aborted (cancelled), don't show an error
 			if (error?.code === 20) return;
@@ -58,10 +67,10 @@ export const GenerateImageSidebar = () => {
 	};
 
 	useEffect(() => {
-		if (src || isGenerating) return;
+		if (imageDetails.src || isGenerating) return;
 		// refocus when image is removed
 		document.getElementById('draft-ai-image-textarea')?.focus();
-	}, [src, isGenerating]);
+	}, [imageDetails.src, isGenerating]);
 
 	return (
 		<>
@@ -69,18 +78,18 @@ export const GenerateImageSidebar = () => {
 				<PanelBody>
 					<BaseControl label={__('Image Description', 'extendify-local')}>
 						<ImagePreview
-							imagePrompt={imagePrompt}
+							prompt={aiImageOptions.prompt}
+							size={aiImageOptions.size}
 							isGenerating={isGenerating}
-							src={src}
-							setSrc={setSrc}
+							id={imageDetails?.id}
+							src={imageDetails?.src}
+							clearImageResponse={clearImageResponse}
 						/>
-						{src ? null : (
+						{imageDetails.src ? null : (
 							<form onSubmit={handleSubmit} className="flex flex-col gap-5">
 								<GenerateForm
 									isGenerating={isGenerating}
 									errorMessage={errorMessage}
-									imagePrompt={imagePrompt}
-									setImagePrompt={setImagePrompt}
 								/>
 							</form>
 						)}

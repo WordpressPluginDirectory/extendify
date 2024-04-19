@@ -4,9 +4,6 @@ import { AIChatDashboard } from './AIChat';
 import { KnowledgeBaseDashboard } from './KnowledgeBase';
 import { ToursDashboard } from './Tours';
 
-const showChat =
-	window.extHelpCenterData?.showChat || window.extSharedData?.devbuild;
-
 export const Dashboard = () => {
 	const { navigateTo } = useRouter();
 	return (
@@ -16,7 +13,9 @@ export const Dashboard = () => {
 				onOpen={() => navigateTo('tours')}
 				classes="hidden md:block"
 			/>
-			{showChat && <AIChatDashboard onOpen={() => navigateTo('ai-chat')} />}
+			{window.extHelpCenterData?.showChat && (
+				<AIChatDashboard onOpen={() => navigateTo('ai-chat')} />
+			)}
 		</div>
 	);
 };

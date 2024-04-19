@@ -5,9 +5,9 @@
 
 namespace Extendify\Draft\Controllers;
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for keeping draft settings in sync
@@ -35,7 +35,7 @@ class UserSettingsController
     public static function store($request)
     {
         $data = json_decode($request->get_param('state'), true);
-        update_option('extendify_draft_settings', $data);
+        update_option('extendify_draft_settings', Sanitizer::sanitizeArray($data));
         return new \WP_REST_Response($data);
     }
 }

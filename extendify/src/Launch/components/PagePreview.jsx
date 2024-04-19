@@ -25,7 +25,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 				? transformStyles(
 						[{ css: themeJSON[style?.variation?.title] }],
 						'html body.editor-styles-wrapper',
-				  )
+					)
 				: null,
 		[style?.variation],
 	);

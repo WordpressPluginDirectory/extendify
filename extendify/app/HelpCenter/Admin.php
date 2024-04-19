@@ -5,12 +5,14 @@
 
 namespace Extendify\HelpCenter;
 
+defined('ABSPATH') || die('No direct access.');
+
 use Extendify\Config;
-use Extendify\PartnerData;
-use Extendify\HelpCenter\DataProvider\ResourceData;
-use Extendify\HelpCenter\Controllers\TourController;
 use Extendify\HelpCenter\Controllers\RouterController;
 use Extendify\HelpCenter\Controllers\SupportArticlesController;
+use Extendify\HelpCenter\Controllers\TourController;
+use Extendify\HelpCenter\DataProvider\ResourceData;
+use Extendify\PartnerData;
 
 /**
  * This class handles any file loading for the admin area.
@@ -18,29 +20,12 @@ use Extendify\HelpCenter\Controllers\SupportArticlesController;
 class Admin
 {
     /**
-     * The instance
-     *
-     * @var $instance
-     */
-    public static $instance = null;
-
-    /**
      * Adds various actions to set up the page
      *
      * @return self|void
      */
     public function __construct()
     {
-        if (self::$instance) {
-            return self::$instance;
-        }
-
-        self::$instance = $this;
-
-        if (PartnerData::$id === 'no-partner' && Config::$environment === 'PRODUCTION') {
-            return;
-        }
-
         \add_action('admin_enqueue_scripts', [$this, 'loadGlobalScripts']);
     }
 
@@ -51,18 +36,7 @@ class Admin
      */
     public function loadGlobalScripts()
     {
-        if (!current_user_can(Config::$requiredCapability)) {
-            return;
-        }
-
-        // Don't load on Launch.
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if (isset($_GET['page']) && $_GET['page'] === 'extendify-launch') {
-            return;
-        }
-
         $version = Config::$environment === 'PRODUCTION' ? Config::$version : uniqid();
-
         $scriptAssetPath = EXTENDIFY_PATH . 'public/build/' . Config::$assetManifest['extendify-help-center.php'];
         $fallback = [
             'dependencies' => [],
@@ -77,7 +51,7 @@ class Admin
         \wp_enqueue_script(
             Config::$slug . '-help-center-scripts',
             EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-help-center.js'],
-            $scriptAsset['dependencies'],
+            array_merge([Config::$slug . '-shared-scripts'], $scriptAsset['dependencies']),
             $scriptAsset['version'],
             true
         );
@@ -87,14 +61,14 @@ class Admin
         \wp_add_inline_script(
             Config::$slug . '-help-center-scripts',
             'window.extHelpCenterData = ' . \wp_json_encode([
-                'showChat' => ($partnerData['showChat'] ?? false),
-                'supportUrl' => ($partnerData['supportUrl'] ?? ''),
+                'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
+                'supportUrl' => isset($partnerData['supportUrl']) ? \esc_attr($partnerData['supportUrl']) : '',
                 'userData' => [
-                    'tourData' => TourController::get(),
-                    'supportArticlesData' => SupportArticlesController::get(),
-                    'routerData' => RouterController::get(),
+                    'tourData' => \wp_json_encode(TourController::get()->get_data()),
+                    'supportArticlesData' => \wp_json_encode(SupportArticlesController::get()->get_data()),
+                    'routerData' => \wp_json_encode(RouterController::get()->get_data()),
                 ],
-                'resourceData' => (new ResourceData())->getData(),
+                'resourceData' => \wp_json_encode((new ResourceData())->getData()),
             ]),
             'before'
         );

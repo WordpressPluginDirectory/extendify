@@ -7,9 +7,9 @@ export const usePatterns = (incomingParams) => {
 	const params = {
 		siteType: undefined,
 		category: undefined,
-		wpVersion: window.extLibraryData.wpVersion,
-		lang: window.extLibraryData.wpLanguage || null,
-		showLocalizedCopy: window.extLibraryData.showLocalizedCopy || null,
+		wpVersion: window.extSharedData.wpVersion,
+		lang: window.extSharedData.wpLanguage || null,
+		showLocalizedCopy: window.extSharedData.showLocalizedCopy || null,
 		...incomingParams,
 	};
 

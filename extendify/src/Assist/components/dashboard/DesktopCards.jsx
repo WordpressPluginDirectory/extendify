@@ -13,7 +13,7 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 
 	return (
 		<div
-			id="assist-tasks-module"
+			data-test="assist-tasks-module"
 			className={classNames(
 				className,
 				'w-full border border-gray-300 text-base bg-white rounded mb-6 h-full',
@@ -43,7 +43,11 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 
 					<Tab.Panels as="div" className="w-3/4">
 						{tasks.map((task) => (
-							<Tab.Panel key={task.slug} as="div" className="h-full">
+							<Tab.Panel
+								key={task.slug}
+								as="div"
+								data-test="assist-task-card-wrapper"
+								className="h-full">
 								<CardContent task={task} />
 							</Tab.Panel>
 						))}
@@ -55,7 +59,7 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 };
 
 const TabItem = ({ task, isCompleted }) => (
-	<Tab as="div">
+	<Tab as="div" data-test={`assist-task-${task.slug}`}>
 		{({ selected }) => (
 			<div
 				className={classNames(
@@ -68,6 +72,9 @@ const TabItem = ({ task, isCompleted }) => (
 					<Icon
 						icon={isCompleted ? check : Bullet}
 						size={isCompleted ? 24 : 12}
+						data-test={
+							isCompleted ? 'completed-task-icon' : 'uncompleted-task-icon'
+						}
 						className={classNames({
 							'text-design-main fill-current': selected || isCompleted,
 							'mx-2 text-center text-gray-400': !isCompleted && !selected,

@@ -30,7 +30,7 @@ export const SelectedText = ({ loading }) => {
 	return (
 		<div className="flex space-x-2 rounded-sm border-none bg-gray-100 overflow-hidden mb-4 p-3">
 			<div>
-				<Icon icon={edit} />
+				<Icon icon={edit} className="fill-current" />
 			</div>
 			<div>
 				<div

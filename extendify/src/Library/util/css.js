@@ -14,7 +14,7 @@ export const requiredCSSVars = {
 };
 
 export const addGlobalCSS = async (missingCSSVars) => {
-	const id = window.extLibraryData.globalStylesPostID;
+	const id = window.extSharedData.globalStylesPostID;
 	const { styles, settings } = await apiFetch({
 		path: `/wp/v2/global-styles/${id}`,
 	});

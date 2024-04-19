@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@assist/lib/parsing';
 
 const startingState = {
 	siteType: {},
@@ -13,7 +14,7 @@ const startingState = {
 	plugins: [],
 	goals: [],
 	// initialize the state with default values
-	...((window.extSharedData.userData.userSelectionData?.data || {})?.state ??
+	...(safeParseJson(window.extSharedData.userData.userSelectionData)?.state ??
 		{}),
 };
 

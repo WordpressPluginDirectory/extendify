@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@help-center/lib/parsing';
 
 const key = 'extendify-help-center-tour-progress';
 const startingState = {
@@ -9,7 +10,7 @@ const startingState = {
 	preparingStep: undefined,
 	progress: [],
 	// initialize the state with default values
-	...((window.extHelpCenterData.userData?.tourData?.data || {})?.state ?? {}),
+	...(safeParseJson(window.extHelpCenterData.userData.tourData)?.state ?? {}),
 };
 
 const state = (set, get) => ({

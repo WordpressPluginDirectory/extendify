@@ -5,8 +5,10 @@
 
 namespace Extendify\Library;
 
-use Extendify\PartnerData;
+defined('ABSPATH') || die('No direct access.');
+
 use Extendify\Config;
+use Extendify\PartnerData;
 
 /**
  * This class handles the Welcome page on the admin panel.
@@ -68,7 +70,7 @@ class AdminPage
         ?>
         <div class="extendify-outer-container">
             <div class="wrap welcome-container">
-                <?php if (PartnerData::$id !== 'no-partner') : ?>
+                <?php if (esc_attr(PartnerData::$id) !== 'no-partner') : ?>
                     <ul class="extendify-welcome-tabs">
                         <li><a href="<?php echo \esc_url(\admin_url('admin.php?page=extendify-assist')); ?>">Assist</a></li>
                         <li class="active"><a href="<?php echo \esc_url(\admin_url('admin.php?page=extendify-welcome')); ?>">Library</a></li>

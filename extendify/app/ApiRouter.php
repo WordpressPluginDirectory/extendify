@@ -5,8 +5,7 @@
 
 namespace Extendify;
 
-use Extendify\Config;
-use Extendify\Http;
+defined('ABSPATH') || die('No direct access.');
 
 /**
  * Simple router for the REST Endpoints
@@ -21,21 +20,13 @@ class ApiRouter extends \WP_REST_Controller
      */
     protected static $instance = null;
 
-    /**
-     * The capability required for access.
-     *
-     * @var $capability
-     */
-    protected $capability;
-
 
     /**
      * The constructor
      */
     public function __construct()
     {
-        $this->capability = Config::$requiredCapability;
-        add_filter(
+        \add_filter(
             'rest_request_before_callbacks',
             // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
             function ($response, $handler, $request) {
@@ -60,7 +51,7 @@ class ApiRouter extends \WP_REST_Controller
     {
         // Check for the nonce on the server (used by WP REST).
         if (isset($_SERVER['HTTP_X_WP_NONCE']) && \wp_verify_nonce(sanitize_text_field(wp_unslash($_SERVER['HTTP_X_WP_NONCE'])), 'wp_rest')) {
-            return \current_user_can($this->capability);
+            return \current_user_can(Config::$requiredCapability);
         }
 
         return false;
@@ -77,18 +68,11 @@ class ApiRouter extends \WP_REST_Controller
      */
     public function getHandler($namespace, $endpoint, $callback)
     {
-        \register_rest_route(
-            $namespace,
-            $endpoint,
-            [
-                'methods' => 'GET',
-                'callback' => $callback,
-                'permission_callback' => [
-                    $this,
-                    'checkPermission',
-                ],
-            ]
-        );
+        \register_rest_route($namespace, $endpoint, [
+            'methods' => 'GET',
+            'callback' => $callback,
+            'permission_callback' => [$this, 'checkPermission'],
+        ]);
     }
 
     /**
@@ -102,18 +86,11 @@ class ApiRouter extends \WP_REST_Controller
      */
     public function postHandler($namespace, $endpoint, $callback)
     {
-        \register_rest_route(
-            $namespace,
-            $endpoint,
-            [
-                'methods' => 'POST',
-                'callback' => $callback,
-                'permission_callback' => [
-                    $this,
-                    'checkPermission',
-                ],
-            ]
-        );
+        \register_rest_route($namespace, $endpoint, [
+            'methods' => 'POST',
+            'callback' => $callback,
+            'permission_callback' => [$this, 'checkPermission'],
+        ]);
     }
 
     /**

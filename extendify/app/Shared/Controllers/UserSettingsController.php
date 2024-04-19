@@ -5,9 +5,9 @@
 
 namespace Extendify\Shared\Controllers;
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for interacting with user settings
@@ -23,7 +23,7 @@ class UserSettingsController
     public static function updateUserMeta($request)
     {
         $params = $request->get_json_params();
-        \update_user_meta(\get_current_user_id(), 'extendify_' . $params['option'], $params['value']);
+        \update_user_meta(\get_current_user_id(), 'extendify_' . $params['option'], Sanitizer::sanitizeUnknown($params['value']));
 
         return new \WP_REST_Response(['success' => true]);
     }

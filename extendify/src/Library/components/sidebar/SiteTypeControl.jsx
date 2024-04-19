@@ -45,7 +45,7 @@ export const SiteTypeControl = () => {
 							// translators: %s is the site type name
 							__('Site Type: %s', 'extendify-local'),
 							siteType.name,
-					  )
+						)
 					: __('Site Type', 'extendify-local')
 			}
 			className="ext-type-control p-0"

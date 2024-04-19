@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { waitUntilExists } from '@help-center/lib/tour-helpers';
 
-const { adminUrl, themeSlug, blockTheme } = window.extHelpCenterData;
+const { isBlockTheme, themeSlug, adminUrl } = window.extSharedData;
 
 export default {
 	id: 'style-editor-tour',
@@ -13,7 +13,7 @@ export default {
 				// TODO: This needs attention as it was sending me into an infinite frontend loop
 				`site-editor.php?canvas=edit&postType=wp_template&postId=${themeSlug}%2F%2Fhome`,
 		],
-		enabled: blockTheme ?? false,
+		enabled: isBlockTheme ?? false,
 	},
 	onStart: () => {
 		// close modal if shown

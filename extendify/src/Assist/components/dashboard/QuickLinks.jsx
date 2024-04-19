@@ -8,11 +8,12 @@ import {
 	header,
 	footer,
 	reusableBlock,
+	navigation,
 } from '@wordpress/icons';
 import classNames from 'classnames';
 
-const { devbuild } = window.extSharedData;
-const { themeSlug, adminUrl, blockTheme, hasCustomizer } = window.extAssistData;
+const { themeSlug, devbuild, adminUrl, isBlockTheme } = window.extSharedData;
+const { hasCustomizer, editSiteNavigationMenuLink } = window.extAssistData;
 
 const showRestartLaunch =
 	devbuild || window.extAssistData.canSeeRestartLaunch || false;
@@ -45,14 +46,14 @@ export const QuickLinks = ({ className }) => {
 			link: `${adminUrl}site-editor.php?path=%2Fwp_global_styles`,
 			slug: 'site-style',
 			icon: styles,
-			show: blockTheme,
+			show: isBlockTheme,
 		},
 		{
 			title: __('Site style', 'extendify-local'),
 			link: `${adminUrl}customize.php?return=%2Fwp%2Fwp-admin%2Fadmin.php%3Fpage%3Dextendify-assist`,
 			slug: 'site-style-classic',
 			icon: styles,
-			show: hasCustomizer && !blockTheme,
+			show: hasCustomizer && !isBlockTheme,
 		},
 		{
 			title: __('Edit header', 'extendify-local'),
@@ -69,6 +70,13 @@ export const QuickLinks = ({ className }) => {
 			show: themeSlug === 'extendable',
 		},
 		{
+			title: __('Edit Site Navigation', 'extendify-local'),
+			link: editSiteNavigationMenuLink,
+			slug: 'edit-site-navigation',
+			icon: navigation,
+			show: true,
+		},
+		{
 			// translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
 			title: __('Reset site', 'extendify-local'),
 			link: `${adminUrl}admin.php?page=extendify-launch`,
@@ -81,7 +89,7 @@ export const QuickLinks = ({ className }) => {
 	return (
 		<>
 			<div
-				id="assist-quick-links-module"
+				data-test="assist-quick-links-module"
 				className={classNames(
 					className,
 					'w-full p-5 lg:p-8 border border-gray-300 text-base bg-white rounded h-full',
@@ -97,6 +105,7 @@ export const QuickLinks = ({ className }) => {
 								key={item.slug}
 								href={item.link}
 								title={item.title}
+								data-test={`assist-quick-links-module-${item.slug}`}
 								className="text-sm py-1.5 focus:ring-0 flex justify-center items-center hover:text-design-main hover:underline hover:underline-offset-2 no-underline text-gray-800">
 								<Icon icon={item.icon} className="fill-current mr-2" />
 								<span className="mr-1">{item.title}</span>

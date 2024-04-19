@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from '@wordpress/element';
+import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
 import { getOption, updateOption } from '@launch/api/WPApi';
 import { LoadingIndicator } from '@launch/components/LoadingIndicator';
@@ -91,7 +92,7 @@ const Info = () => {
 					name="site-title-input"
 					id="extendify-site-title-input"
 					className="w-full rounded border border-gray-200 h-12 py-6 px-4 input-focus ring-offset-0"
-					value={title ?? ''}
+					value={decodeEntities(title) ?? ''}
 					onChange={(e) => setTitle(e.target.value)}
 					placeholder={__('Enter your website name', 'extendify-local')}
 				/>

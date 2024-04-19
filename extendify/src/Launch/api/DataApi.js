@@ -4,7 +4,7 @@ import { getHeadersAndFooters } from './WPApi';
 import { Axios as api } from './axios';
 
 const fetchTemplates = async (type, siteType) => {
-	const { wpLanguage, wpVersion, showLocalizedCopy } = window.extOnbData;
+	const { showLocalizedCopy, wpVersion, wpLanguage } = window.extSharedData;
 	const { goals, plugins } = useUserSelectionStore.getState();
 	const url = new URL(`${PATTERNS_HOST}/api/${type}-templates`);
 	url.searchParams.append('siteType', siteType?.slug);
@@ -84,7 +84,7 @@ const allowList = [
 ];
 const extraBody = {
 	...Object.fromEntries(
-		Object.entries(window.extOnbData).filter(([key]) =>
+		Object.entries(window.extSharedData).filter(([key]) =>
 			allowList.includes(key),
 		),
 	),

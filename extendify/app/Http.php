@@ -5,8 +5,7 @@
 
 namespace Extendify;
 
-use Extendify\PartnerData;
-use Extendify\Config;
+defined('ABSPATH') || die('No direct access.');
 
 /**
  * Controller for http communication

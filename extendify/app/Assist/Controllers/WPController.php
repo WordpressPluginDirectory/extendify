@@ -5,9 +5,7 @@
 
 namespace Extendify\Assist\Controllers;
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+defined('ABSPATH') || die('No direct access.');
 
 /**
  * The controller for interacting with WordPress.

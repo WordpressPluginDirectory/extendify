@@ -18,7 +18,7 @@ export const NeedsTheme = () => {
 					</p>
 					<a
 						className="text-base text-design-main font-medium underline mt-4"
-						href={`${window.extOnbData.site}/wp-admin/theme-install.php?theme=extendable`}>
+						href={`${window.extSharedData.adminUrl}/theme-install.php?theme=extendable`}>
 						{__('Take me there', 'extendify-local')}
 					</a>
 				</div>

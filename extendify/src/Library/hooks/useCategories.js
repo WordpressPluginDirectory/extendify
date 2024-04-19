@@ -4,8 +4,8 @@ import { PATTERNS_HOST } from '../../constants';
 
 const fetcher = async () => {
 	const urlParams = new URLSearchParams({
-		wpVersion: window.extLibraryData.wpVersion || null,
-		lang: window.extLibraryData.wpLanguage || null,
+		wpVersion: window.extSharedData.wpVersion || null,
+		lang: window.extSharedData.wpLanguage || null,
 	});
 	return await fetch(
 		`${PATTERNS_HOST}/api/categories?${urlParams.toString()}`,
@@ -14,7 +14,7 @@ const fetcher = async () => {
 
 export const useCategories = () => {
 	const [errorCount, setErrorCount] = useState(0);
-	const lang = window.extLibraryData?.wpLanguage ?? 'en_US';
+	const lang = window.extSharedData?.wpLanguage ?? 'en_US';
 	const { data, error, isLoading } = useSWRImmutable(
 		`categories-${lang}`,
 		fetcher,

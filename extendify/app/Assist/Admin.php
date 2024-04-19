@@ -5,12 +5,14 @@
 
 namespace Extendify\Assist;
 
-use Extendify\Assist\DataProvider\ResourceData;
+defined('ABSPATH') || die('No direct access.');
+
 use Extendify\Assist\Controllers\GlobalsController;
 use Extendify\Assist\Controllers\RouterController;
 use Extendify\Assist\Controllers\TasksController;
-use Extendify\PartnerData;
+use Extendify\Assist\DataProvider\ResourceData;
 use Extendify\Config;
+use Extendify\PartnerData;
 
 /**
  * This class handles any file loading for the admin area.
@@ -18,49 +20,14 @@ use Extendify\Config;
 class Admin
 {
     /**
-     * The instance
-     *
-     * @var $instance
-     */
-    public static $instance = null;
-
-    /**
      * Adds various actions to set up the page
      *
      * @return self|void
      */
     public function __construct()
     {
-        if (self::$instance) {
-            return self::$instance;
-        }
-
-        self::$instance = $this;
-
-        if (PartnerData::$id === 'no-partner' && Config::$environment === 'PRODUCTION') {
-            return;
-        }
-
-        $this->loadScripts();
-
-        add_action('after_setup_theme', function () {
-            // phpcs:ignore WordPress.Security.NonceVerification
-            if (isset($_GET['extendify-disable-admin-bar'])) {
-                show_admin_bar(false);
-            }
-        });
-
-        ResourceData::scheduleCache();
-    }
-
-    /**
-     * Adds scripts to the admin
-     *
-     * @return void
-     */
-    public function loadScripts()
-    {
         \add_action('admin_enqueue_scripts', [$this, 'loadPageScripts']);
+        ResourceData::scheduleCache();
     }
 
     /**
@@ -70,23 +37,7 @@ class Admin
      */
     public function loadPageScripts()
     {
-        if (!current_user_can(Config::$requiredCapability)) {
-            return;
-        }
-
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if (!isset($_GET['page']) || $_GET['page'] !== 'extendify-assist') {
-            return;
-        }
-
-        $siteInstalled = \get_users([
-            'orderby' => 'registered',
-            'order' => 'ASC',
-            'number' => 1,
-            'fields' => ['user_registered'],
-        ])[0]->user_registered;
-
-        $version = Config::$environment === 'PRODUCTION' ? Config::$version : uniqid();
+        $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
         $scriptAssetPath = EXTENDIFY_PATH . 'public/build/' . Config::$assetManifest['extendify-assist-page.php'];
         $fallback = [
             'dependencies' => [],
@@ -101,51 +52,35 @@ class Admin
         \wp_enqueue_script(
             Config::$slug . '-assist-page-scripts',
             EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-assist-page.js'],
-            $scriptAsset['dependencies'],
+            array_merge([Config::$slug . '-shared-scripts'], $scriptAsset['dependencies']),
             $scriptAsset['version'],
             true
         );
 
-        $assistState = \get_option('extendify_assist_globals');
-        $dismissed = isset($assistState['state']['dismissedNotices']) ? $assistState['state']['dismissedNotices'] : [];
         \wp_add_inline_script(
             Config::$slug . '-assist-page-scripts',
             'window.extAssistData = ' . \wp_json_encode([
-                'devbuild' => \esc_attr(Config::$environment === 'DEVELOPMENT'),
-                'siteId' => \get_option('extendify_site_id', ''),
-                // Only send insights if they have opted in explicitly.
-                'insightsEnabled' => defined('EXTENDIFY_INSIGHTS_URL'),
-                'root' => \esc_url_raw(\rest_url(Config::$slug . '/' . Config::$apiVersion)),
-                'nonce' => \wp_create_nonce('wp_rest'),
-                'adminUrl' => \esc_url_raw(\admin_url()),
-                'home' => \esc_url_raw(\get_home_url()),
-                'siteCreatedAt' => $siteInstalled ? $siteInstalled : null,
-                'asset_path' => \esc_url(EXTENDIFY_URL . 'public/assets'),
-                'launchCompleted' => Config::$launchCompleted,
-                'dismissedNotices' => $dismissed,
-                'partnerLogo' => \esc_attr(PartnerData::$logo),
-                'partnerName' => \esc_attr(PartnerData::$name),
-                'partnerId' => \esc_attr(PartnerData::$id),
-                'blockTheme' => \wp_is_block_theme(),
-                'hasCustomizer' => \has_action('customize_register'),
-                'themeSlug' => \get_option('stylesheet'),
-                'wpLanguage' => \get_locale(),
-                'disableRecommendations' => (bool) \esc_attr(PartnerData::$disableRecommendations),
+                'launchCompleted' => (bool) Config::$launchCompleted,
+                'hasCustomizer' => (bool) \has_action('customize_register'),
+                'disableRecommendations' => (bool) PartnerData::setting('disableRecommendations'),
                 'domainsSuggestionSettings' => [
-                    'showBanner' => (bool) \esc_attr(PartnerData::$showDomainBanner),
-                    'showTask' => (bool) \esc_attr(PartnerData::$showDomainTask),
-                    'tlds' => \esc_attr(PartnerData::$domainTLDs),
-                    'searchUrl' => \esc_attr(PartnerData::$domainSearchURL),
+                    'showBanner' => (bool) PartnerData::setting('showDomainBanner'),
+                    'showTask' => (bool) PartnerData::setting('showDomainTask'),
+                    'showSecondaryBanner' => (bool) PartnerData::setting('showSecondaryDomainBanner'),
+                    'showSecondaryTask' => (bool) PartnerData::setting('showSecondaryDomainTask'),
+                    'stagingSites' => array_map('esc_attr', PartnerData::setting('stagingSites')),
+                    'searchUrl' => \esc_attr(PartnerData::setting('domainSearchURL')),
                 ],
                 'userData' => [
-                    'taskData' => TasksController::get(),
-                    'globalData' => GlobalsController::get(),
-                    'routerData' => RouterController::get(),
-                    'recommendationData' => RouterController::get(),
-                    'tasksDependencies' => $this->getTasksDependecies(),
+                    'taskData' => \wp_json_encode(TasksController::get()->get_data()),
+                    'globalData' => \wp_json_encode(GlobalsController::get()->get_data()),
+                    'routerData' => \wp_json_encode(RouterController::get()->get_data()),
+                    'recommendationData' => \wp_json_encode(RouterController::get()->get_data()),
+                    'tasksDependencies' => \wp_json_encode($this->getTasksDependecies()),
                 ],
-                'resourceData' => (new ResourceData())->getData(),
-                'canSeeRestartLaunch' => $this->canRunLaunchAgain(),
+                'resourceData' => \wp_json_encode((new ResourceData())->getData()),
+                'canSeeRestartLaunch' => (bool) $this->canRunLaunchAgain(),
+                'editSiteNavigationMenuLink' => \current_theme_supports('menus') ? \esc_url(\admin_url('nav-menus.php')) : \esc_url(\admin_url('site-editor.php?path=%2Fnavigation')),
             ]),
             'before'
         );
@@ -174,7 +109,6 @@ class Admin
         }
 
         $launchCompleted = \get_option('extendify_onboarding_completed', false);
-
         if (!$launchCompleted) {
             return false;
         }
@@ -187,7 +121,6 @@ class Admin
             return false;
         }
     }
-
 
     /**
      * Check to see if specific tasks are completed or not.
@@ -206,6 +139,5 @@ class Admin
             'completedSetupGivewp' => $completedSetupGivewp,
             'completedWoocommerceStore' => $completedwWoocommerceStore,
         ];
-
     }
 }

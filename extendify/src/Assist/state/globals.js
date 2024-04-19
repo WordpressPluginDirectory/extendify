@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@assist/lib/parsing';
 
 const key = 'extendify-assist-globals';
 const startingState = {
@@ -11,7 +12,7 @@ const startingState = {
 	// domains suggestion key
 	domainsCacheKey: 'first-run',
 	// initialize the state with default values
-	...((window.extAssistData.userData.globalData?.data || {})?.state ?? {}),
+	...(safeParseJson(window.extAssistData.userData.globalData)?.state ?? {}),
 };
 
 const state = (set, get) => ({

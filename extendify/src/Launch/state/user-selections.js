@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@launch/lib/parsing';
 
 const initialState = {
 	siteType: {},
@@ -20,11 +21,11 @@ const initialState = {
 };
 
 const key = `extendify-launch-user-selection-${window.extSharedData.siteId}`;
-const incoming = window.extSharedData.userData.userSelectionData?.data || {};
+const incoming = safeParseJson(window.extSharedData.userData.userSelectionData);
 const state = (set, get) => ({
 	...initialState,
 	// initialize the state with default values
-	...incoming?.state,
+	...(incoming?.state ?? {}),
 	...(JSON.parse(localStorage.getItem(key) || '{}')?.state ?? {}), // For testing
 	setSiteType(siteType) {
 		// Reset the user's selections when site type changes

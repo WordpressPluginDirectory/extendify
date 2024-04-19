@@ -140,14 +140,6 @@ export const CreatingSite = () => {
 
 			// Fetch active plugins after installing plugins
 			let { data: activePlugins } = await getActivePlugins();
-			if (!Array.isArray(activePlugins)) {
-				// Sometimes, seemingly randomly, an object is returned instead of an array
-				// if not an object (or array - checked above), then set to undefined
-				activePlugins =
-					typeof activePlugins === 'object'
-						? Object.keys(activePlugins)
-						: undefined;
-			}
 			// Add plugin related pages only if plugin is active
 			if (wasInstalled(activePlugins, 'woocommerce')) {
 				const shopPageId = await getOption('woocommerce_shop_page_id');
@@ -198,7 +190,7 @@ export const CreatingSite = () => {
 			);
 			await waitFor200Response();
 
-			const updatedHeaderCode = addLaunchPagesToNav(
+			const updatedHeaderCode = await addLaunchPagesToNav(
 				navPages,
 				pageIds,
 				style?.headerCode,
@@ -235,7 +227,7 @@ export const CreatingSite = () => {
 					'extendify-local',
 				);
 				alert(alertMsg);
-				location.href = window.extOnbData.adminUrl;
+				location.href = window.extSharedData.adminUrl;
 			}
 			await new Promise((resolve) => setTimeout(resolve, 2000));
 			return doEverything();
@@ -257,7 +249,7 @@ export const CreatingSite = () => {
 		doEverything().then(() => {
 			setPage(0);
 			window.location.replace(
-				window.extOnbData.adminUrl +
+				window.extSharedData.adminUrl +
 					'admin.php?page=extendify-assist&extendify-launch-success',
 			);
 		});
@@ -298,12 +290,12 @@ export const CreatingSite = () => {
 			className="bg-banner-main text-banner-text py-12 px-10 md:h-screen flex flex-col justify-between shrink-0">
 			<div className="max-w-prose">
 				<div className="md:min-h-48">
-					{window.extOnbData?.partnerLogo ? (
+					{window.extSharedData?.partnerLogo ? (
 						<div className="mb-8">
 							<img
 								style={{ maxWidth: '200px' }}
-								src={window.extOnbData.partnerLogo}
-								alt={window.extOnbData?.partnerName ?? ''}
+								src={window.extSharedData.partnerLogo}
+								alt={window.extSharedData?.partnerName ?? ''}
 							/>
 						</div>
 					) : (

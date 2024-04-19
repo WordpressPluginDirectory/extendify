@@ -8,6 +8,7 @@ export const PostEditor = () => {
 	return (
 		<Button
 			className="inline-flex gap-1 ml-1"
+			data-test="help-center-editor-page-button"
 			onClick={() => setVisibility('open')}
 			variant="primary">
 			{__('Help', 'extendify-local')}

@@ -294,7 +294,7 @@ export const GuidedTour = () => {
 									className="absolute bg-white cursor-pointer flex ring-gray-200 ring-1 focus:ring-wp focus:ring-design-main focus:shadow-none h-6 items-center justify-center leading-none m-2 outline-none p-0 right-0 rounded-full top-0 w-6 border-0 z-20"
 									onClick={() => closeCurrentTour('closed-manually')}
 									aria-label={__('Close Modal', 'extendify-local')}>
-									<Icon icon={close} className="w-4 h-4" />
+									<Icon icon={close} className="w-4 h-4 fill-current" />
 								</button>
 								<Dialog.Title className="sr-only">
 									{currentTour?.title ?? __('Tour', 'extendify-local')}

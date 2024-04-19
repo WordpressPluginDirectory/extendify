@@ -5,9 +5,9 @@
 
 namespace Extendify\Library\Controllers;
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for persisting site data
@@ -35,7 +35,7 @@ class SiteController
     public static function store($request)
     {
         $data = json_decode($request->get_param('state'), true);
-        \update_option('extendify_library_site_data', $data);
+        \update_option('extendify_library_site_data', Sanitizer::sanitizeArray($data));
         return new \WP_REST_Response($data);
     }
 
@@ -49,7 +49,7 @@ class SiteController
     {
         $key = $request->get_param('key');
         $value = $request->get_param('value');
-        \update_option('extendify_' . $key, $value);
+        \update_option('extendify_' . $key, Sanitizer::sanitizeUnknown($value));
         return new \WP_REST_Response($value);
     }
 

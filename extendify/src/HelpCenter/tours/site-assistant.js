@@ -9,6 +9,7 @@ export default {
 			`${window.extSharedData.adminUrl}admin.php?page=extendify-assist#dashboard`,
 		],
 	},
+	onStart: () => window.dispatchEvent(new CustomEvent('extendify-hc:minimize')),
 	steps: [
 		{
 			title: __('Tasks', 'extendify-local'),

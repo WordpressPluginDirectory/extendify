@@ -18,5 +18,5 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extAssistData.asset_path}/add-page.png`,
+	backgroundImage: `${window.extSharedData.assetPath}/add-page.png`,
 };

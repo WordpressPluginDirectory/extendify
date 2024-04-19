@@ -5,9 +5,9 @@
 
 namespace Extendify\Assist\Controllers;
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for plugin dependency checking, etc
@@ -34,7 +34,7 @@ class RouterController
     public static function store($request)
     {
         $data = json_decode($request->get_param('state'), true);
-        update_option('extendify_assist_router', $data);
+        update_option('extendify_assist_router', Sanitizer::sanitizeArray($data));
         return new \WP_REST_Response($data);
     }
 }

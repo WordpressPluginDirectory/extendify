@@ -52,7 +52,7 @@ const launchSteps = {
 
 const getCurrentLaunchStep = () => {
 	const pageData = JSON.parse(
-		localStorage.getItem(`extendify-pages-${window.extAssistData.siteId}`),
+		localStorage.getItem(`extendify-pages-${window.extSharedData.siteId}`),
 	) || { state: {} };
 	const currentPageSlug = pageData?.state?.currentPageSlug;
 
@@ -79,7 +79,7 @@ export const LaunchCard = () => {
 				<img
 					alt="preview"
 					className="object-cover w-full block"
-					src={window.extAssistData.asset_path + '/extendify-preview-2.png'}
+					src={window.extSharedData.assetPath + '/extendify-preview-2.png'}
 				/>
 				<div className="w-full text-center">
 					<h2 className="text-2xl mb-4 mt-8 text-white">
@@ -90,12 +90,13 @@ export const LaunchCard = () => {
 					</p>
 					<div>
 						<a
-							href={`${window.extAssistData.adminUrl}admin.php?page=extendify-launch`}
+							href={`${window.extSharedData.adminUrl}admin.php?page=extendify-launch`}
 							className="inline-block rounded mt-4 px-4 py-2.5 bg-white text-gray-900 border-none no-underline cursor-pointer">
 							{launchSteps[currentStep]?.buttonText}
 						</a>
 						<button
 							type="button"
+							id="dismiss"
 							onClick={() => {
 								dismissTask('site-builder-launcher');
 							}}

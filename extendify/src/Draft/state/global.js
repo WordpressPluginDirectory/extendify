@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@draft/lib/parsing';
 
 const path = '/extendify/v1/draft/user-settings';
 const storage = {
@@ -10,6 +11,11 @@ const storage = {
 };
 // Values added here should also be added to Admin.php ln ~200
 const startingState = {
+	aiImageOptions: {
+		prompt: '',
+		style: 'vivid',
+		size: '1024x1024',
+	},
 	imageCredits: {
 		remaining: 10,
 		total: 10,
@@ -18,7 +24,7 @@ const startingState = {
 };
 const store = (set) => ({
 	...startingState,
-	...(window.extDraftData?.globalState?.state ?? {}),
+	...safeParseJson(window.extDraftData?.globalState)?.state,
 	updateImageCredits({ remaining, total, refresh }) {
 		set((state) => ({
 			imageCredits: {
@@ -43,11 +49,23 @@ const store = (set) => ({
 	resetImageCredits() {
 		set({ imageCredits: startingState.imageCredits });
 	},
+	setAiImageOption(option, value) {
+		set((state) => ({
+			aiImageOptions: { ...state.aiImageOptions, [option]: value },
+		}));
+	},
 });
 const withDevtools = devtools(store, { name: 'Extendify Draft Globals' });
 const withPersist = persist(withDevtools, {
 	name: 'extendify_draft_settings',
 	storage: createJSONStorage(() => storage),
 	skipHydration: true,
+	partialize: (state) => {
+		// Remove the prompt
+		return {
+			...state,
+			aiImageOptions: { ...state.aiImageOptions, prompt: '' },
+		};
+	},
 });
 export const useGlobalStore = create(withPersist);

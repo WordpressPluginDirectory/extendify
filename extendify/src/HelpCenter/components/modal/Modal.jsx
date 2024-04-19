@@ -29,6 +29,7 @@ export const Modal = () => {
 				document.documentElement.style.overflow = 'unset';
 			}}
 			className="extendify-help-center"
+			data-test="help-center-modal"
 			open={visibility === 'open'}
 			static
 			onClose={() => undefined}>

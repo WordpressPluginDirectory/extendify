@@ -165,21 +165,11 @@ const ConsentOverlay = ({ onAccept }) => (
 			<h2 className="text-lg mt-0 mb-2">
 				{__('Terms of Use', 'extendify-local')}
 			</h2>
-			<p className="m-0">
-				{
-					// translators: at the end of the sentence, there is a link to the terms of use
-					__(
-						'In order to use the AI-powered chatbot to answer your WordPress questions, you must agree to the terms of use. For more information, click on this link:',
-						'extendify-local',
-					)
-				}{' '}
-				<a
-					href={window.extSharedData.consentTermsUrl}
-					target="_blank"
-					rel="noreferrer">
-					{__('Terms of Use', 'extendify-local')}
-				</a>
-			</p>
+			<p
+				className="m-0"
+				dangerouslySetInnerHTML={{
+					__html: window.extSharedData.consentTermsHTML,
+				}}></p>
 			<button
 				className="mt-4 bg-design-main text-white rounded px-4 py-2 border-0 text-center w-full cursor-pointer"
 				type="button"

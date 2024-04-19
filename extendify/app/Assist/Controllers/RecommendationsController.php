@@ -5,11 +5,10 @@
 
 namespace Extendify\Assist\Controllers;
 
-use Extendify\Http;
+defined('ABSPATH') || die('No direct access.');
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+use Extendify\Http;
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for fetching recommendations
@@ -50,7 +49,7 @@ class RecommendationsController
     public static function store($request)
     {
         $data = json_decode($request->get_param('state'), true);
-        update_option('extendify_help_center_recommendations', $data);
+        update_option('extendify_help_center_recommendations', Sanitizer::sanitizeArray($data));
         return new \WP_REST_Response($data);
     }
 }

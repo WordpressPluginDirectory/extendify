@@ -1,13 +1,14 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@assist/lib/parsing';
 
 const key = 'extendify-assist-recommendations';
 const startingState = {
 	viewedRecommendations: [],
 	dismissedRecommendations: [],
 	// initialize the state with default values
-	...((window.extAssistData.userData.recommendationData?.data || {})?.state ??
+	...(safeParseJson(window.extAssistData.userData.recommendationData)?.state ??
 		{}),
 };
 

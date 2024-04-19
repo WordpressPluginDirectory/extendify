@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 const Axios = axios.create({
-	baseURL: window.extOnbData.root,
+	baseURL: window.extSharedData.root,
 	headers: {
-		'X-WP-Nonce': window.extOnbData.nonce,
+		'X-WP-Nonce': window.extSharedData.nonce,
 		'X-Requested-With': 'XMLHttpRequest',
 		'X-Extendify-Launch': true,
 		'X-Extendify': true,

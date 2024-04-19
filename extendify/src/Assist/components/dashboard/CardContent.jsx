@@ -2,9 +2,13 @@ import { LaunchCard } from '@assist/components/dashboard/LaunchCard';
 import { ActionButton } from '@assist/components/dashboard/buttons/ActionButton';
 import { DemoCard } from '@assist/components/dashboard/demo-cards/DemoCard';
 import { DomainCard } from '@assist/components/dashboard/domains/DomainCard';
+import { SecondaryDomainCard } from '@assist/components/dashboard/domains/SecondaryDomainCard';
 
 export const CardContent = ({ task }) => {
 	if (task.type === 'domain-task') return <DomainCard task={task} />;
+
+	if (task.type === 'secondary-domain-task')
+		return <SecondaryDomainCard task={task} />;
 
 	if (task.type === 'site-launcher-task') return <LaunchCard task={task} />;
 

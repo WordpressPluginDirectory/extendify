@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@assist/lib/parsing';
 
 const startingState = {
 	// These are tests the user is in progress of completing.
@@ -17,10 +18,10 @@ const startingState = {
 	inProgressTasks: [],
 	// These are the tasks dependencies
 	tasksDependencies: {
-		...(window.extAssistData.userData?.tasksDependencies || {}),
+		...safeParseJson(window.extAssistData.userData.tasksDependencies),
 	},
 	// initialize the state with default values
-	...((window.extAssistData.userData.taskData?.data || {})?.state ?? {}),
+	...(safeParseJson(window.extAssistData.userData.taskData)?.state ?? {}),
 };
 
 const state = (set, get) => ({

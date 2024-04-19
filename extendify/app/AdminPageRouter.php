@@ -5,9 +5,11 @@
 
 namespace Extendify;
 
-use Extendify\Library\AdminPage as LibraryAdminPage;
+defined('ABSPATH') || die('No direct access.');
+
 use Extendify\Assist\AdminPage as AssistAdminPage;
 use Extendify\Launch\AdminPage as LaunchAdminPage;
+use Extendify\Library\AdminPage as LibraryAdminPage;
 
 /**
  * This class handles routing when the main admin button is pressed.
@@ -21,6 +23,9 @@ class AdminPageRouter
      */
     public function __construct()
     {
+        // This does the initial redirect to Launch.
+        \add_action('admin_init', [$this, 'redirectOnce']);
+
         // When Launch is finished, fire this to set the correct permalinks.
         // phpcs:ignore WordPress.Security.NonceVerification
         if (isset($_GET['extendify-launch-success'])) {
@@ -62,7 +67,7 @@ class AdminPageRouter
         }
 
         // Hide the menu items unless in dev mode.
-        if (Config::$environment === 'PRODUCTION') {
+        if (!constant('EXTENDIFY_DEVMODE')) {
             \add_action('admin_head', function () {
                 echo '<style>
                 #toplevel_page_extendify-admin-page .wp-submenu {
@@ -160,7 +165,7 @@ class AdminPageRouter
     public function getRoute()
     {
         // If dev, redirect to assist always.
-        if (Config::$environment === 'DEVELOPMENT') {
+        if (constant('EXTENDIFY_DEVMODE')) {
             return 'admin.php?page=extendify-assist';
         }
 
@@ -194,4 +199,35 @@ class AdminPageRouter
 
         return $user->has_cap(Config::$requiredCapability) ? \admin_url() . $this->getRoute() : $requestedRedirectTo;
     }
+
+    /**
+     * Redirect once to Launch, only once (at least once) when
+     * the email matches the entry in WP Admin > Settings > General.
+     *
+     * @return void
+     */
+    public function redirectOnce()
+    {
+        if (\get_option('extendify_launch_loaded', false) || !Config::$showLaunch) {
+            return;
+        }
+
+        // Only redirect if we aren't already on the page.
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if (isset($_GET['page']) && $_GET['page'] === 'extendify-launch') {
+            return;
+        }
+
+        $user = \wp_get_current_user();
+        if ($user
+            // Check the main admin email, and they have an admin role.
+            // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
+            && \get_option('admin_email') === $user->user_email
+            && in_array('administrator', $user->roles, true)
+        ) {
+            \update_option('extendify_attempted_redirect', gmdate('Y-m-d H:i:s'));
+            \wp_safe_redirect(\admin_url() . 'admin.php?page=extendify-launch');
+        }
+    }
+
 }

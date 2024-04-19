@@ -1,25 +1,36 @@
 import { store as blockEditorStore } from '@wordpress/block-editor';
+import { createBlock } from '@wordpress/blocks';
 import { Button, Spinner } from '@wordpress/components';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
 import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { AnimatePresence, motion } from 'framer-motion';
+import { downloadPing } from '@draft/api/Data';
 import { importImage, importImageServer } from '@draft/api/WPApi';
 
-export const ImagePreview = ({ imagePrompt, isGenerating, src, setSrc }) => {
+export const ImagePreview = ({
+	prompt,
+	size,
+	isGenerating,
+	id,
+	src,
+	clearImageResponse,
+}) => {
 	const { openGeneralSidebar } = useDispatch(editPostStore);
-	const { updateBlockAttributes } = useDispatch('core/block-editor');
+	const { updateBlockAttributes, insertBlock } = useDispatch(blockEditorStore);
 	const [isInserting, setIsInserting] = useState(false);
 	const selectedBlock = useSelect(
 		(select) => select(blockEditorStore).getSelectedBlock(),
 		[],
 	);
+	const [imgWidth, imgHeight] = size.split('x');
 
 	const handleInsert = async (event) => {
 		event.preventDefault();
 		setIsInserting(true);
 		let image;
+		await downloadPing(id, 'ai-generated');
 		try {
 			image = await importImage(src, {
 				alt: '',
@@ -54,8 +65,38 @@ export const ImagePreview = ({ imagePrompt, isGenerating, src, setSrc }) => {
 			});
 		}
 
+		if (selectedBlock.name === 'core/gallery') {
+			const newBlock = createBlock('core/image', {
+				id: image.id,
+				caption: image.caption.raw,
+				url: image.source_url,
+				alt: image.alt_text,
+			});
+
+			insertBlock(newBlock, null, selectedBlock.clientId);
+		}
+
+		if (selectedBlock.name === 'core/cover') {
+			updateBlockAttributes(selectedBlock.clientId, {
+				id: image.id,
+				url: image.source_url,
+				alt: image.alt_text,
+				backgroundType: 'image',
+				dimRatio: 50,
+				hasParallax: false,
+				isDark: true,
+				isRepeated: false,
+				layout: {
+					type: 'constrained',
+				},
+				tagName: 'div',
+				useFeaturedImage: false,
+			});
+		}
+
 		setIsInserting(false);
 		openGeneralSidebar('edit-post/block');
+		clearImageResponse();
 	};
 
 	if (src === '' && !isGenerating) return null;
@@ -78,15 +119,20 @@ export const ImagePreview = ({ imagePrompt, isGenerating, src, setSrc }) => {
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
-						className="aspect-square bg-gray-100">
-						<img src={src} className="w-full aspect-square block" />
+						className="bg-gray-100"
+						style={{ aspectRatio: Number(imgWidth) / Number(imgHeight) }}>
+						<img
+							src={src}
+							className="w-full block"
+							style={{ aspectRatio: Number(imgWidth) / Number(imgHeight) }}
+						/>
 					</motion.div>
 				)}
 			</AnimatePresence>
 			{isGenerating ? (
 				<p>
 					{__('Generating your image: ', 'extendify-local')}
-					<span className="font-bold">&quot;{imagePrompt}&quot;</span>
+					<span className="font-bold">&quot;{prompt}&quot;</span>
 				</p>
 			) : (
 				<form onSubmit={handleInsert} className="flex flex-col gap-5">
@@ -98,12 +144,12 @@ export const ImagePreview = ({ imagePrompt, isGenerating, src, setSrc }) => {
 						disabled={isInserting}>
 						{isInserting
 							? // translators: "Importing image" means the image is being added to the WordPress post editor
-							  __('Importing image...', 'extendify-local')
+								__('Importing image...', 'extendify-local')
 							: __('Use this image', 'extendify-local')}
 					</Button>
 					<Button
 						className="w-full justify-center bg-gray-200 text-gray-800 disabled:bg-gray-300 disabled:text-gray-700"
-						onClick={() => setSrc('')}
+						onClick={clearImageResponse}
 						disabled={isInserting}>
 						{__('Delete image', 'extendify-local')}
 					</Button>

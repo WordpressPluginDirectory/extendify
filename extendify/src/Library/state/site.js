@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@assist/lib/parsing';
 
 const path = '/extendify/v1/library/settings';
 const storage = {
@@ -14,13 +15,13 @@ const startingState = {
 	category: '',
 	totalImports: 0,
 };
-const incomingState = window.extLibraryData?.siteInfo?.state ?? {};
+const incomingState = safeParseJson(window.extLibraryData.siteInfo);
 
 export const useSiteSettingsStore = create(
 	persist(
 		(set) => ({
 			...startingState,
-			...incomingState,
+			...(incomingState?.state ?? {}),
 			// Override siteType with the value from the server
 			siteType: window.extSharedData?.siteType ?? incomingState.siteType ?? {},
 			setSiteType: async (siteType) => {

@@ -19,8 +19,9 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 			!tour.settings.startFrom,
 	);
 	return (
-		<section className={classes}>
+		<section className={classes} data-test="help-center-tours-section">
 			<button
+				data-test="help-center-tours-open-button"
 				type="button"
 				onClick={onOpen}
 				className={classNames(
@@ -71,7 +72,9 @@ export const Tours = () => {
 	const { setVisibility } = useGlobalSyncStore();
 	return (
 		<section className="p-4">
-			<ul className="m-0 p-0 flex flex-col gap-2">
+			<ul
+				className="m-0 p-0 flex flex-col gap-2"
+				data-test="help-center-tours-items-list">
 				{Object.values(tours).map((tourData) => {
 					const { id, title } = tourData;
 					return (
@@ -85,9 +88,13 @@ export const Tours = () => {
 								}}>
 								{title}
 								{wasCompleted(id) ? (
-									<Icon icon={restartIcon} size={16} />
+									<Icon
+										data-test="restart-tour-icon"
+										icon={restartIcon}
+										size={16}
+									/>
 								) : (
-									<Icon icon={playIcon} size={16} />
+									<Icon data-test="play-tour-icon" icon={playIcon} size={16} />
 								)}
 							</button>
 						</li>

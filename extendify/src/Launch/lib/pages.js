@@ -7,6 +7,8 @@ import {
 	goalsFetcher,
 	goalsParams as goalsData,
 	state as goalsState,
+	pluginsFetcher,
+	pluginsParams as pluginsData,
 } from '@launch/pages/Goals';
 import {
 	HomeSelect,
@@ -32,6 +34,8 @@ import {
 } from '@launch/pages/SiteTypeSelect';
 
 // pages added here will need to match the orders table on the Styles base
+// You can add pre-fetch functions to start fetching data for the next page
+// Supports both [] and single fetcher functions
 const defaultPages = [
 	[
 		'site-type',
@@ -53,8 +57,8 @@ const defaultPages = [
 		'goals',
 		{
 			component: Goals,
-			fetcher: goalsFetcher,
-			fetchData: goalsData,
+			fetcher: [goalsFetcher, pluginsFetcher],
+			fetchData: [goalsData, pluginsData],
 			state: goalsState,
 		},
 	],

@@ -1,4 +1,5 @@
 import { __ } from '@wordpress/i18n';
+import { useGlobalStore } from '@draft/state/global.js';
 import { AI_HOST } from '../../constants.js';
 
 // Additional data to send with requests
@@ -12,11 +13,10 @@ const allowList = [
 	'showAIConsent',
 	'userGaveConsent',
 	'userId',
-	'globalState',
 ];
 const extraBody = {
 	...Object.fromEntries(
-		Object.entries(window.extDraftData).filter(([key]) =>
+		Object.entries(window.extSharedData).filter(([key]) =>
 			allowList.includes(key),
 		),
 	),
@@ -36,6 +36,7 @@ export const completion = async (
 			promptType,
 			systemMessageKey,
 			details,
+			globalState: useGlobalStore.getState(),
 			...extraBody,
 		}),
 	});
@@ -47,15 +48,17 @@ export const completion = async (
 	return response;
 };
 
-export const generateImage = async (prompt, signal) => {
+export const generateImage = async (imageData, signal) => {
 	const response = await fetch(`${AI_HOST}/api/draft/image`, {
 		method: 'POST',
 		mode: 'cors',
-		headers: {
-			'Content-Type': 'application/json',
-		},
+		headers: { 'Content-Type': 'application/json' },
 		signal: signal,
-		body: JSON.stringify({ prompt, ...extraBody }),
+		body: JSON.stringify({
+			...imageData,
+			globalState: useGlobalStore.getState(),
+			...extraBody,
+		}),
 	});
 
 	const body = await response.json();
@@ -81,5 +84,16 @@ export const generateImage = async (prompt, signal) => {
 			imageCredits,
 		};
 	}
-	return { images: body, imageCredits };
+	return {
+		images: body,
+		imageCredits,
+		id: response.headers.get('x-request-id'),
+	};
 };
+
+export const downloadPing = (id, source) =>
+	fetch(`${AI_HOST}/api/draft/image/download`, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ id, source }),
+	});

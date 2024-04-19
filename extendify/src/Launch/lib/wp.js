@@ -61,7 +61,7 @@ export const createPages = async (pages, userState) => {
 		return await createWordpressPages(pages);
 	}
 
-	const { siteId, partnerId, wpLanguage, wpVersion } = window.extOnbData;
+	const { siteId, partnerId, wpLanguage, wpVersion } = window.extSharedData;
 	return (
 		(
 			await Promise.allSettled(
@@ -87,4 +87,4 @@ export const createPages = async (pages, userState) => {
 };
 
 export const updateGlobalStyleVariant = (variation) =>
-	updateThemeVariation(window.extOnbData.globalStylesPostID, variation);
+	updateThemeVariation(window.extSharedData.globalStylesPostID, variation);

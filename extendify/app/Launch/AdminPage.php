@@ -5,6 +5,8 @@
 
 namespace Extendify\Launch;
 
+defined('ABSPATH') || die('No direct access.');
+
 /**
  * This class handles the Assist admin page.
  */

@@ -19,7 +19,7 @@ export const Support = ({ height }) => {
 						'extendify-local',
 					)}
 				</span>
-				<Icon icon={external} className="w-8" />
+				<Icon icon={external} className="w-8 fill-current" />
 			</a>
 		</div>
 	);

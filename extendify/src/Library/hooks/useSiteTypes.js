@@ -3,7 +3,7 @@ import { PATTERNS_HOST } from '../../constants';
 
 export const useSiteTypes = (search) => {
 	const { data, error } = useSWRImmutable(search || 'cold-boot', async () => {
-		const { wpLanguage } = window.extLibraryData;
+		const { wpLanguage } = window.extSharedData;
 		const now = performance.now();
 		const url = new URL(`${PATTERNS_HOST}/api/site-types`);
 		search && url.searchParams.append('search', search);

@@ -5,10 +5,13 @@
 
 namespace Extendify\HelpCenter\DataProvider;
 
-use Extendify\Http;
+defined('ABSPATH') || die('No direct access.');
+
 use Extendify\Config;
-use Extendify\HelpCenter\Controllers\TourController;
 use Extendify\HelpCenter\Controllers\SupportArticlesController;
+use Extendify\HelpCenter\Controllers\TourController;
+use Extendify\Http;
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The cache data class.
@@ -53,7 +56,6 @@ class ResourceData
         });
     }
 
-
     /**
      * Register the cache schedule.
      *
@@ -71,7 +73,6 @@ class ResourceData
 
         add_action('extendify_cache_server_data', [new ResourceData(), 'cache']);
     }
-
 
     /**
      * Regenerate and overwrite the cache.
@@ -148,7 +149,7 @@ class ResourceData
     protected function cacheData($functionName, $data)
     {
         if (!empty($data)) {
-            set_transient($this->group . Config::$version . '_' . $functionName, $data, $this->interval);
+            set_transient($this->group . Config::$version . '_' . $functionName, Sanitizer::sanitizeArray($data), $this->interval);
         }
     }
 

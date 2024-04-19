@@ -1,6 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@help-center/lib/parsing';
 
 const startingState = {
 	articles: [],
@@ -8,7 +9,7 @@ const startingState = {
 	viewedArticles: [],
 	searchTerm: '',
 	// initialize the state with default values
-	...((window.extHelpCenterData.userData.supportArticlesData?.data || {})
+	...(safeParseJson(window.extHelpCenterData.userData.supportArticlesData)
 		?.state ?? {}),
 };
 
@@ -36,7 +37,7 @@ const state = (set) => ({
 								firstViewedAt,
 								lastViewedAt,
 								count: 1,
-						  },
+							},
 				],
 			};
 		});

@@ -43,8 +43,8 @@ export const Input = ({
 					loading
 						? __('AI is writing...', 'extendify-local')
 						: text
-						? __('Ask AI to edit', 'extendify-local')
-						: __('Ask AI to generate text', 'extendify-local')
+							? __('Ask AI to edit', 'extendify-local')
+							: __('Ask AI to generate text', 'extendify-local')
 				}
 				value={inputText}
 				className="bg-transparent border-transparent outline-none rounded-none focus:ring-1 focus:ring-wp-theme-main w-full h-full px-10 py-3 overflow-hidden resize-none"

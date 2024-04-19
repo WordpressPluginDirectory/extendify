@@ -1,14 +1,24 @@
+import classNames from 'classnames';
+
 export const CheckboxInputCard = (props) => {
-	const { label, description, Icon, ...rest } = props;
+	const { label, description, Icon, checked, ...rest } = props;
 	return (
 		<label
 			className="w-full flex items-center justify-between text-gray-900 font-semibold p-4 h-full"
 			htmlFor={props.id}>
 			<div className="flex items-center flex-auto">
 				<span className="w-5 h-5 relative inline-block mr-3 align-middle">
-					<input {...rest} className="h-5 w-5 rounded-sm m-0" type="checkbox" />
+					<input
+						{...rest}
+						checked={checked}
+						className="h-5 w-5 rounded-sm m-0"
+						type="checkbox"
+					/>
 					<svg
-						className="absolute block h-5 w-5 -mt-px inset-0 text-white"
+						className={classNames('absolute block h-5 w-5 -mt-px inset-0', {
+							'text-white': checked,
+							'text-transparent': !checked,
+						})}
 						viewBox="1 0 20 20"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"

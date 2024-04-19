@@ -75,7 +75,13 @@ export const SiteTones = () => {
 											}
 										/>
 										<svg
-											className="absolute block h-4 w-4 -mt-px inset-0 text-white"
+											className={classNames(
+												'absolute block h-4 w-4 -mt-px inset-0',
+												{
+													'text-white': selected,
+													'text-transparent': !selected,
+												},
+											)}
 											viewBox="1 0 20 20"
 											fill="none"
 											xmlns="http://www.w3.org/2000/svg"

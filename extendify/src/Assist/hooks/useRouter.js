@@ -3,6 +3,7 @@ import { useCallback, useEffect, useLayoutEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@assist/lib/parsing';
 import { Dashboard } from '@assist/pages/Dashboard';
 import { homeIcon } from '@assist/svg';
 
@@ -14,8 +15,9 @@ const pages = [
 		component: Dashboard,
 	},
 ];
-const { themeSlug, launchCompleted, disableRecommendations } =
-	window.extAssistData;
+const { themeSlug } = window.extSharedData;
+const { launchCompleted, disableRecommendations } = window.extAssistData;
+
 const disableTasks = themeSlug !== 'extendable' || !launchCompleted;
 const filteredPages = pages.filter((page) => {
 	const noTasks = page.slug === 'tasks' && disableTasks;
@@ -29,7 +31,7 @@ const state = (set, get) => ({
 	viewedPages: [],
 	current: null,
 	// initialize the state with default values
-	...((window.extAssistData.userData.routerData?.data || {})?.state ?? {}),
+	...(safeParseJson(window.extAssistData.userData.routerData)?.state ?? {}),
 	setCurrent: async (page) => {
 		if (!page) return;
 		for (const event of onChangeEvents) {
@@ -55,7 +57,7 @@ const state = (set, get) => ({
 								firstViewedAt,
 								lastViewedAt,
 								count: 1,
-						  },
+							},
 				],
 			};
 		});

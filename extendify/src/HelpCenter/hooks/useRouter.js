@@ -2,6 +2,7 @@ import apiFetch from '@wordpress/api-fetch';
 import { useCallback, useEffect } from '@wordpress/element';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { safeParseJson } from '@help-center/lib/parsing';
 import { routes as aiRoutes } from '@help-center/pages/AIChat';
 import { routes as dashRoutes } from '@help-center/pages/Dashboard';
 import { routes as kbRoutes } from '@help-center/pages/KnowledgeBase';
@@ -14,7 +15,7 @@ const state = (set, get) => ({
 	viewedPages: [],
 	current: null,
 	// initialize the state with default values
-	...((window.extHelpCenterData.userData.routerData?.data || {})?.state ?? {}),
+	...(safeParseJson(window.extHelpCenterData.userData)?.state ?? {}),
 	goBack: () => {
 		if (get().history.length < 2) return;
 		set((state) => ({
@@ -44,7 +45,7 @@ const state = (set, get) => ({
 								firstViewedAt,
 								lastViewedAt,
 								count: 1,
-						  },
+							},
 				],
 			};
 		});

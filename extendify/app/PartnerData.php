@@ -5,6 +5,10 @@
 
 namespace Extendify;
 
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Shared\Services\Sanitizer;
+
 /**
  * Controller for handling partner settings
  */
@@ -16,7 +20,7 @@ class PartnerData
      *
      * @var string
      */
-    public static $id = 'no-partner';
+    public static $id;
 
     /**
      * The partner logo
@@ -40,39 +44,22 @@ class PartnerData
     public static $colors = [];
 
     /**
-     * The partner recommendations status
-     *
-     * @var boolean
-     */
-    public static $disableRecommendations = false;
-
-    /**
-     * The partner suggest domains banner status
-     *
-     * @var boolean
-     */
-    public static $showDomainBanner = false;
-
-    /**
-     * The partner suggested domains card status
-     *
-     * @var boolean
-     */
-    public static $showDomainTask = false;
-
-    /**
-     * The partner suggested domains tlds
+     * The partner configuration.
      *
      * @var array
      */
-    public static $domainTLDs = ['com', 'net'];
-
-    /**
-     * The partner suggested domains search url
-     *
-     * @var string
-     */
-    public static $domainSearchURL = '';
+    protected static $config = [
+        'disableRecommendations' => false,
+        'showDomainBanner' => false,
+        'showDomainTask' => false,
+        'showSecondaryDomainBanner' => false,
+        'showSecondaryDomainTask' => false,
+        'domainTLDs' => ['com', 'net'],
+        'stagingSites' => ['wordpress.test'],
+        'domainSearchURL' => '',
+        'showDraft' => false,
+        'showChat' => false,
+    ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
     /**
@@ -82,27 +69,21 @@ class PartnerData
      */
     public function __construct()
     {
-        if (isset($GLOBALS['extendify_sdk_partner']) && $GLOBALS['extendify_sdk_partner']) {
-            self::$id = $GLOBALS['extendify_sdk_partner'];
-        }
-
-        // Always use the partner ID if set as a constant.
-        if (defined('EXTENDIFY_PARTNER_ID')) {
-            self::$id = constant('EXTENDIFY_PARTNER_ID');
-        }
-
-        // If the plugin has no partner, don't fetch data.
-        if (self::$id === 'no-partner') {
-            return;
-        }
-
+        self::$id = Config::$partnerId;
         $data = self::getPartnerData();
-        self::$disableRecommendations = ($data['disableRecommendations'] ?? self::$disableRecommendations);
-        self::$showDomainBanner = ($data['showDomainBanner'] ?? self::$showDomainBanner);
-        self::$showDomainTask = ($data['showDomainTask'] ?? self::$showDomainTask);
-        self::$domainTLDs = implode(',', ($data['domainTLDs'] ?? self::$domainTLDs));
-        self::$domainSearchURL = ($data['domainSearchURL'] ?? self::$domainSearchURL);
+        self::$config['disableRecommendations'] = ($data['disableRecommendations'] ?? self::$config['disableRecommendations']);
+        self::$config['showDomainBanner'] = ($data['showDomainBanner'] ?? self::$config['showDomainBanner']);
+        self::$config['showDomainTask'] = ($data['showDomainTask'] ?? self::$config['showDomainTask']);
+        self::$config['showSecondaryDomainTask'] = ($data['showSecondaryDomainTask'] ?? self::$config['showSecondaryDomainTask']);
+        self::$config['showSecondaryDomainBanner'] = ($data['showSecondaryDomainBanner'] ?? self::$config['showSecondaryDomainBanner']);
+        self::$config['domainTLDs'] = implode(',', array_map(function ($item) {
+            return trim(str_replace('.', '', $item));
+        }, ($data['domainTLDs'] ?? self::$config['domainTLDs'])));
+        self::$config['stagingSites'] = array_map('trim', ($data['stagingSites'] ?? self::$config['stagingSites']));
+        self::$config['domainSearchURL'] = ($data['domainSearchURL'] ?? self::$config['domainSearchURL']);
         self::$logo = isset($data['logo'][0]['thumbnails']['large']['url']) ? $data['logo'][0]['thumbnails']['large']['url'] : self::$logo;
+        self::$config['showDraft'] = ($data['showDraft'] ?? self::$config['showDraft']);
+        self::$config['showChat'] = ($data['showChat'] ?? self::$config['showChat']);
         self::$name = ($data['Name'] ?? self::$name);
         self::$colors = [
             'backgroundColor' => ($data['backgroundColor'] ?? null),
@@ -119,6 +100,10 @@ class PartnerData
      */
     public static function getPartnerData()
     {
+        if (!self::$id) {
+            return [];
+        }
+
         // If the transient is already set, don't fetch again.
         $transientData = get_transient('extendify_partner_data');
         // Check the secondaryColor as the Launch Command does not add this in some versions.
@@ -128,7 +113,10 @@ class PartnerData
 
         $response = wp_remote_get(
             add_query_arg(
-                ['partner' => self::$id],
+                [
+                    'partner' => self::$id,
+                    'wp_language' => \get_locale(),
+                ],
                 'https://dashboard.extendify.com/api/onboarding/partner-data/'
             ),
             ['headers' => ['Accept' => 'application/json']]
@@ -151,7 +139,12 @@ class PartnerData
         // Transient is used to mark the time, but the data is put into an option,
         // so that in case of network issues, we can still return old data.
         set_transient('extendify_partner_data', $result['data'], (2 * DAY_IN_SECONDS));
-        update_option('extendify_partner_data', $result['data']);
+
+        update_option('extendify_partner_data', array_merge(
+            Sanitizer::sanitizeUnknown($result['data']),
+            ['consentTermsHTML' => \sanitize_text_field(htmlentities(($result['data']['consentTermsHTML'] ?? '')))]
+        ));
+
         return $result['data'];
     }
 
@@ -183,6 +176,7 @@ class PartnerData
             }
         }
 
+        // Partner specific colors.
         foreach ($mapping as $color => $variable) {
             if (isset(self::$colors[$color])) {
                 $cssVariables[$variable] = self::$colors[$color];
@@ -190,5 +184,16 @@ class PartnerData
         }
 
         return $cssVariables;
+    }
+
+    /**
+     * Return the value of the setting.
+     *
+     * @param string $settingKey - The key of the config.
+     * @return mixed
+     */
+    public static function setting($settingKey)
+    {
+        return self::$config[$settingKey];
     }
 }

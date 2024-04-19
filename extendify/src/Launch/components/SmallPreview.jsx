@@ -28,7 +28,7 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 				? transformStyles(
 						[{ css: themeJSON[style?.variation?.title] }],
 						'html body.editor-styles-wrapper',
-				  )
+					)
 				: null,
 		[style?.variation],
 	);

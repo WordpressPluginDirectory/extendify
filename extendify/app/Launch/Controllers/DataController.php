@@ -5,11 +5,9 @@
 
 namespace Extendify\Launch\Controllers;
 
-use Extendify\Http;
+defined('ABSPATH') || die('No direct access.');
 
-if (!defined('ABSPATH')) {
-    die('No direct access.');
-}
+use Extendify\Http;
 
 /**
  * The controller for handling general data

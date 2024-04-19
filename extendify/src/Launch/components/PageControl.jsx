@@ -95,7 +95,7 @@ const PrevButton = () => {
 		return (
 			<NavigationButton
 				onClick={() =>
-					(window.location.href = `${window.extOnbData.adminUrl}admin.php?page=extendify-assist`)
+					(window.location.href = `${window.extSharedData.adminUrl}admin.php?page=extendify-assist`)
 				}
 				className="bg-white text-design-main border-gray-200 hover:bg-gray-50 focus:bg-gray-50">
 				<>

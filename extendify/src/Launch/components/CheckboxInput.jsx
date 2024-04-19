@@ -28,7 +28,10 @@ export const CheckboxInput = ({
 					checked={locked ? true : checked}
 				/>
 				<svg
-					className="absolute block h-5 inset-0 w-5 text-white"
+					className={classNames('absolute block h-5 inset-0 w-5', {
+						'text-white': checked,
+						'text-transparent': !checked,
+					})}
 					viewBox="1 0 20 20"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"

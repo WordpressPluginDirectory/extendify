@@ -5,9 +5,9 @@
 
 namespace Extendify\Draft\Controllers;
 
-if (! defined('ABSPATH')) {
-    die('No direct access.');
-}
+defined('ABSPATH') || die('No direct access.');
+
+use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for uploading images to the Media Library.
@@ -32,15 +32,15 @@ class ImageController
         $imageId = \media_sideload_image($request->get_param('source'), 0, null, 'id');
 
         if ($request->get_param('alt_text')) {
-            update_post_meta($imageId, '_wp_attachment_image_alt', $request->get_param('alt_text'));
+            update_post_meta($imageId, '_wp_attachment_image_alt', Sanitizer::sanitizeText($request->get_param('alt_text')));
         }
 
         if ($request->get_param('caption')) {
             wp_update_post(
-                [
+                Sanitizer::sanitizeArray([
                     'ID'           => $imageId,
                     'post_excerpt' => $request->get_param('caption'),
-                ]
+                ])
             );
         }
 

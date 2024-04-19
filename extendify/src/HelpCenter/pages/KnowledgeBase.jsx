@@ -4,6 +4,7 @@ import { Article } from '@help-center/components/knowledge-base/Article';
 import { ArticlesList } from '@help-center/components/knowledge-base/ArticlesList';
 import { SearchForm } from '@help-center/components/knowledge-base/SearchForm';
 import { useSearchArticles } from '@help-center/hooks/useSearchArticles';
+import { safeParseJson } from '@help-center/lib/parsing';
 import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base';
 
 const mainArticles = [
@@ -14,15 +15,14 @@ const mainArticles = [
 	'block-pattern-directory',
 ];
 
-const allArticles =
-	window.extHelpCenterData.resourceData.supportArticles?.filter((article) =>
-		mainArticles.includes(article.slug),
-	);
+const allArticles = safeParseJson(
+	window.extHelpCenterData.resourceData,
+)?.supportArticles?.filter((article) => mainArticles.includes(article.slug));
 
 export const KnowledgeBaseDashboard = ({ onOpen }) => {
 	const { setSearchTerm } = useKnowledgeBaseStore();
 	return (
-		<section className="border rounded-md">
+		<section className="border rounded-md" data-test="help-center-kb-section">
 			<div className="bg-gray-100 p-2.5 pb-4 border-b border-gray-150">
 				<h1 className="m-0 mb-3 p-0 text-lg font-medium">
 					{__('Knowledge Base', 'extendify-local')}
@@ -51,8 +51,8 @@ export const KnowledgeBase = () => {
 						{searchTerm && loading
 							? __('Searching...', 'extendify-local')
 							: data?.length > 0
-							? __('Search results', 'extendify-local')
-							: __('Search the knowledge base', 'extendify-local')}
+								? __('Search results', 'extendify-local')
+								: __('Search the knowledge base', 'extendify-local')}
 					</h2>
 					<SearchForm onChange={setSearchTerm} />
 				</div>
