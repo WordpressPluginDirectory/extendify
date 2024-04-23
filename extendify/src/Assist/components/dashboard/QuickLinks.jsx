@@ -106,7 +106,7 @@ export const QuickLinks = ({ className }) => {
 								href={item.link}
 								title={item.title}
 								data-test={`assist-quick-links-module-${item.slug}`}
-								className="text-sm py-1.5 focus:ring-0 flex justify-center items-center hover:text-design-main hover:underline hover:underline-offset-2 no-underline text-gray-800">
+								className="text-sm py-1.5 flex justify-center items-center hover:text-design-main hover:underline hover:underline-offset-2 no-underline text-gray-800">
 								<Icon icon={item.icon} className="fill-current mr-2" />
 								<span className="mr-1">{item.title}</span>
 							</a>

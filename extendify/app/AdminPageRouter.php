@@ -170,7 +170,7 @@ class AdminPageRouter
         }
 
         // If partner isn't set, show the Library page.
-        if (PartnerData::$id === 'no-partner') {
+        if (Config::$partnerId === 'no-partner') {
             return 'admin.php?page=extendify-welcome';
         }
 

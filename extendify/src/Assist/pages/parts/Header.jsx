@@ -24,7 +24,7 @@ export const Header = () => {
 			<div className="max-w-[996px] w-full mx-auto mt-auto flex flex-col px-4">
 				<div className="flex flex-wrap justify-between items-center my-6 gap-x-4 gap-y-2">
 					{window.extSharedData?.partnerLogo && (
-						<div className="flex items-center h-10 max-w-52	md:max-w-72 overflow-hidden">
+						<div className="flex h-10 max-w-52 md:max-w-72 overflow-hidden">
 							<img
 								className="max-w-full max-h-full object-contain"
 								src={window.extSharedData.partnerLogo}

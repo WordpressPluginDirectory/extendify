@@ -1,10 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import { RecommendationCard } from '@assist/components/dashboard/RecommendationCard';
-import { useRecommendations } from '@assist/hooks/useRecommendations';
+import { safeParseJson } from '@assist/lib/parsing';
+
+const recommendations =
+	safeParseJson(window.extAssistData.resourceData)?.recommendations || {};
 
 export const Recommendations = () => {
-	const recommendations = useRecommendations();
-
 	if (!recommendations?.length) return;
 
 	return (

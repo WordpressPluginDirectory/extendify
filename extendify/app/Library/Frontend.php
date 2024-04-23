@@ -7,8 +7,6 @@ namespace Extendify\Library;
 
 defined('ABSPATH') || die('No direct access.');
 
-use Extendify\Config;
-
 /**
  * This class handles any file loading for the frontend of the site.
  */
@@ -35,11 +33,10 @@ class Frontend
         // This only is in the database in older versions of the plugin that require these styles.
         if (\get_option('extendify_pattern_was_imported', false)) {
             $this->themeCompatInlineStyles();
+            // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
             \wp_enqueue_style(
-                Config::$slug . '-utility-styles',
-                EXTENDIFY_BASE_URL . 'public/build/utility-minimum.css',
-                [],
-                Config::$version
+                'extendify-utility-styles',
+                EXTENDIFY_BASE_URL . 'public/build/utility-minimum.css'
             );
         }
     }
@@ -248,10 +245,10 @@ class Frontend
             return;
         }
 
-        $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
-        \wp_register_style(Config::$slug . '-utility-extras', false, [], $version);
-        \wp_enqueue_style(Config::$slug . '-utility-extras');
-        \wp_add_inline_style(Config::$slug . '-utility-extras', $css);
+        // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+        \wp_register_style('extendify-utility-extras', false);
+        \wp_enqueue_style('extendify-utility-extras');
+        \wp_add_inline_style('extendify-utility-extras', $css);
         // Adds inline to the live preview.
         \wp_add_inline_style('wp-components', $css);
     }

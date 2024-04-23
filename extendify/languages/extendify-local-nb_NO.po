@@ -34,7 +34,7 @@ msgid "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_
 msgstr "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
 
 #: app/AdminPageRouter.php:145
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Site Assistant"
 msgstr "Sideassistent"
 
@@ -47,7 +47,7 @@ msgid "Extendify Library User Settings"
 msgstr "Extendify bibliotek brukerinnstillinger"
 
 #: app/Library/AdminPage.php:77
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "View Site"
 msgstr "Se nettsted"
 
@@ -112,200 +112,200 @@ msgstr "Søk etter bransje, innhold og designegenskaper. %s har tusenvis av før
 msgid "You'll find beautiful high fidelity Gutenberg content to add to your pages in no time!"
 msgstr "Du vil finne flott høykvalitets Gutenberg-innhold å legge til sidene dine på null tid!"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Help Center"
 msgstr "Hjelpesenter"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Knowledge Base"
 msgstr "Kunnskapsbase"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Tours"
 msgstr "Omvisninger"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Open the Pattern Library"
 msgstr "Åpne mønsterbiblioteket"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Extendify mønsterbibliotek kan åpnes ved å klikke på knappen til venstre."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Filter Patterns"
 msgstr "Filtrer mønstre"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click on any pattern category to refine the selection."
 msgstr "Klikk på en hvilken som helst mønsterkategori for å forbedre utvalget."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Select a Pattern"
 msgstr "Velg et mønster"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Velg enkelt det mønsteret du ønsker å sette inn på en side ved å klikke på det."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "View the Inserted Pattern"
 msgstr "Se det innsatte mønsteret"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "The selected pattern has been inserted into the page."
 msgstr "Det valgte mønsteret er satt inn på siden."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Add a Block"
 msgstr "Legg til en blokk"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click the plus to open the block inserter."
 msgstr "Klikk på pluss for å åpne blokkinnsetteren."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Block Inserter"
 msgstr "Blokkinnsetter"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Legg til en blokk ved å klikke på den eller dra den til siden."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Page Title"
 msgstr "Sidetittel"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Rediger sidetittelen ved å klikke på den. Merk: Tittelen kan vises eller ikke vises på den publiserte siden, avhengig av sidemalen som brukes."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Blocks"
 msgstr "Blokker"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Hver blokk vil vises på siden og kan redigeres ved å klikke på den."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Dette er en prøve på en avsnittsblokk. Den kan være flere setninger lang og vil strekke seg over flere rader. Du kan legge til så mange blokker du vil på siden."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Page and Block Settings"
 msgstr "Innstillinger for side og blokk"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Velg enten side eller blokk for å endre innstillingene for hele siden eller den valgte blokken."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Klikk på forhåndsvisning for å se hvordan endringene dine ser ut på forsiden av nettstedet ditt."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Publish or Save"
 msgstr "Publiser eller lagre"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Add New plugin menu"
 msgstr "Legg til ny utvidelsesmeny"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click here to access the Add Plugins page."
 msgstr "Klikk her for å få tilgang til siden Legg til utvidelser "
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Search"
 msgstr "Søk"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Search for a plugin by name or functionality."
 msgstr "Søk etter en utvidelse etter navn eller funksjonalitet."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Plugin details"
 msgstr "Detaljer om utvidelsen"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "See important information about each plugin."
 msgstr "Se viktig informasjon om hver utvidelse."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Install now"
 msgstr "Installer nå"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Installer utvidelsen. Trykk deretter på denne knappen igjen for å aktivere utvidelsen."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Upload Plugin"
 msgstr "Last opp plugin"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Hvis du har en utvidelse fra en ekstern kilde, kan du laste den opp direkte her."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Installed Plugins menu"
 msgstr "Meny for installerte utvidelser"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Klikk på denne menyen for å se og håndtere utvidelsene du har installert."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Installed plugins"
 msgstr "Installerte utvidelser"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Se alle utvidelsene installert på nettstedet ditt. Dette inkluderer aktive og deaktiverte utvidelser."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Deactivate/activate option"
 msgstr "Deaktiver/aktiver alternativ"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Under hver utvidelse kan du aktivere eller deaktivere den."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Add another"
 msgstr "Legg til en annen"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click here to add another plugin to your site."
 msgstr "Klikk her for å legge til en annen utvidelse på nettstedet ditt."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Tasks"
 msgstr "Oppgaver"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "Nå som du har opprettet ditt startnettsted, gjør det til ditt eget med disse oppfølgingsoppgavene."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Se våre personlige anbefalinger for deg som vil hjelpe deg med å nå dine mål."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Quick Links"
 msgstr "Hurtiglenker"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Få enkel tilgang til noen av de mest vanlige punktene i WordPress med disse hurtiglenkene."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Du kan komme tilbake til Sideassistenten når som helst ved å klikke på menyvalget."
 
@@ -313,389 +313,389 @@ msgstr "Du kan komme tilbake til Sideassistenten når som helst ved å klikke p�
 msgid "Layout"
 msgstr "Oppsett"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "All Users menu"
 msgstr "Meny for alle brukere"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click here to view and manage the users on your site."
 msgstr "Klikk her for å se og administrere brukerne på nettstedet ditt."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Users"
 msgstr "Brukere"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "See all of your users, including admin users in this table."
 msgstr "Se alle brukerne dine, inkludert admin-brukere i denne tabellen."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Edit user information"
 msgstr "Rediger brukerinformasjon"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Klikk på redigeringsknappen for å endre brukerens rolle, administrere kontoen deres, eller endre profilinformasjonen deres."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Search for users"
 msgstr "Søk etter brukere"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Use the search bar to find a particular user."
 msgstr "Bruk søkefeltet for å finne en bestemt bruker."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Add a new user"
 msgstr "Legg til en ny bruker"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Klikk på knappen Legg til ny for å legge til en ny bruker på nettstedet ditt."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "At any time, you can view your site (from a visitor's perspective) from the top admin bar under your site's name."
 msgstr "Du kan når som helst se nettstedet ditt (fra en besøkers perspektiv) fra administrasjonslinjen på toppen under nettstedet ditt sitt navn."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Access the Site Assistant at any time."
 msgstr "Få tilgang til Sideassistenten når som helst."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Dashboard"
 msgstr "Kontrollpanel"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "The default WordPress dashboard will have some overall site metrics and modules added from certain plugins."
 msgstr "Standard WordPress-kontrollpanelet vil ha noen generelle nettstedsmålinger og moduler lagt til fra visse utvidelser."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Posts"
 msgstr "Innlegg"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Manage and create blog posts."
 msgstr "Behandle og opprett blogginnlegg."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Media"
 msgstr "Media"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Add, edit, or remove images and other media from your library. When you upload an image to be used on your site, it will be added to the library."
 msgstr "Legg til, rediger eller fjern bilder og annen media fra biblioteket ditt. Når du laster opp et bilde for å bruke det på nettstedet ditt, vil det bli lagt til i biblioteket."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 #: public/build/extendify-launch-7f6f27f2219a9aeb01b6.js:5
 msgid "Pages"
 msgstr "Sider"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Bruk sidemenyen for å legge til, slette eller redigere sidene på nettstedet ditt."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Comments"
 msgstr "Kommentarer"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "If you have commenting enabled on your posts, you can manage those comments here."
 msgstr "Hvis du har slått på kommentering på innleggene dine, kan du håndtere disse kommentarene her."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Appearance"
 msgstr "Utseende"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Manage your theme and access the Site Editor from the Appearance menu. The Site Editor is where you can make global changes to your site (such as the menu, header/footer, and styles)."
 msgstr "Administrer temaet ditt og få tilgang til sideredigeringsverktøyet fra utseende-menyen. Sideredigeringsverktøyet er stedet hvor du kan gjøre globale endringer på nettstedet ditt (som menyen, toppfelt/bunnfelt, og stiler)."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Plugins"
 msgstr "Utvidelser"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Add or manage the plugins on your site."
 msgstr "Legg til eller håndter utvidelsene på nettstedet ditt."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Add or manage users on your site, both admin users and others."
 msgstr "Legg til eller administrer brukere på nettstedet ditt, både admin-brukere og andre."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Tools"
 msgstr "Verktøy"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Import/export post data, check site health, and edit theme or plugin files directly in the WordPress admin."
 msgstr "Importer/eksporter innleggsdata, sjekk nettstedets helse, og rediger tema- eller utvidelsesfiler direkte i WordPress-administrasjonen."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Settings"
 msgstr "Innstillinger"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Advanced settings for your site and for certain plugins."
 msgstr "Avanserte innstillinger for nettstedet ditt og for visse utvidelser."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Collapse menu"
 msgstr "Kollaps meny"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Use this toggle to collapse or expand the sidebar menu."
 msgstr "Bruk denne vekslingen for å trekke sammen eller utvide sidemenyen."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "User"
 msgstr "Bruker"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Manage your profile or log out of your account here."
 msgstr "Administrer profilen din eller logg ut av kontoen din her."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Tour this page"
 msgstr "Gå gjennom denne siden"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 #: public/build/extendify-launch-7f6f27f2219a9aeb01b6.js:5
 msgid "Site Industry"
 msgstr "Nettstedsindustri"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Let's Start Building Your Website"
 msgstr "La oss begynne å bygge nettstedet ditt"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher."
 msgstr "Opprett et superraskt, vakkert og fullstendig tilpasset nettsted på minutter med vår nettsted Launch."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Select Site Industry"
 msgstr "Velg industri for nettstedet"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 #: public/build/extendify-launch-7f6f27f2219a9aeb01b6.js:5
 msgid "Site Title"
 msgstr "Nettstedstittel"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Continue Building Your Website"
 msgstr "Fortsett å bygge nettstedet ditt"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Set Site Title"
 msgstr "Angi nettstedstittel"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 #: public/build/extendify-launch-7f6f27f2219a9aeb01b6.js:5
 msgid "Goals"
 msgstr "Målsetninger"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Select Site Goals"
 msgstr "Velg nettstedsmål"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Design"
 msgstr "Design"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Select Site Design"
 msgstr "Velg nettsteddesign"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Select Site Pages"
 msgstr "Velg nettstedssider"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
 msgid "Dismiss"
 msgstr "Avvis"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
 msgid "All caught up!"
 msgstr "Alt er oppdatert!"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Edit or update the image"
 msgstr "Rediger eller oppdater bildet"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Replace image"
 msgstr "Erstatt bilde"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Remove image"
 msgstr "Fjern bilde"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:3
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:3
 msgid "Done"
 msgstr "Ferdig"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Upload site logo"
 msgstr "Last opp nettstedslogo"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Site logo"
 msgstr "Nettstedslogo"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Set site logo"
 msgstr "Angi nettstedslogo"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Add site description"
 msgstr "Legg til nettstedsbeskrivelse"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 #: public/build/extendify-launch-7f6f27f2219a9aeb01b6.js:5
 msgid "Loading..."
 msgstr "Laster..."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Site description"
 msgstr "Beskrivelse av nettstedet"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Enter a site description..."
 msgstr "Skriv inn en nettstedsbeskrivelse..."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Save"
 msgstr "Lagre"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Upload site icon"
 msgstr "Last opp nettstedsikon"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Site icon"
 msgstr "Nettstedsikon"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Set site icon"
 msgstr "Angi nettstedsikon"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Search for articles"
 msgstr "Søk etter artikler"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "There was an error loading this article"
 msgstr "Det oppsto en feil ved innlasting av denne artikkelen."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Close Modal"
 msgstr "Lukk modalvindu"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Tour"
 msgstr "Omvisning"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 #: public/build/extendify-launch-7f6f27f2219a9aeb01b6.js:5
 msgid "Back"
 msgstr "Tilbake"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Tour Steps"
 msgstr "Guide Steg"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:3
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:3
 msgid "%1$s of %2$s"
 msgstr "%1$s av %2$s"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:3
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:3
 #: public/build/extendify-launch-7f6f27f2219a9aeb01b6.js:5
 msgid "Next"
 msgstr "Neste"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Menu"
 msgstr "Meny"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "View site"
 msgstr "Se nettsted"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Skip to Assist"
 msgstr "Hopp til Assistent"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Please try again."
 msgstr "Prøv igjen."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Remove rating"
 msgstr "Fjern vurdering"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Rate that this answer was helpful"
 msgstr "Vurder om dette svaret var nyttig"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Rate that this answer was not helpful"
 msgstr "Vurder at dette svaret ikke var nyttig"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Oops! We were unable to send your question."
 msgstr "Oops! Vi klarte ikke å sende spørsmålet ditt."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Ask Another Question"
 msgstr "Still et annet spørsmål"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Beginner"
 msgstr "Nybegynner"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Intermediate"
 msgstr "Middels"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Advanced"
 msgstr "Avansert"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "WordPress Comfort Level"
 msgstr "Komfortnivå med WordPress"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Hi there!"
 msgstr "Hei der!"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Ask me any questions about WordPress."
 msgstr "Still meg hvilket som helst spørsmål om WordPress."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Ask your WordPress question…"
 msgstr "Still ditt WordPress-spørsmål…"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "For other questions, visit our support page."
 msgstr "For andre spørsmål, besøk vår hjelpeside."
 
 #: public/build/extendify-draft-34e2d6906ec066e0068c.js:1
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Terms of Use"
 msgstr "Brukervilkår"
 
 #: public/build/extendify-draft-34e2d6906ec066e0068c.js:1
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Accept"
 msgstr "Godta"
 
@@ -853,7 +853,7 @@ msgstr "Skriv inn navnet på nettstedet ditt"
 msgid "Search for your business type"
 msgstr "Søk etter din bedriftstype"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 #: public/build/extendify-launch-7f6f27f2219a9aeb01b6.js:5
 msgid "Searching..."
 msgstr "Søker..."
@@ -918,7 +918,7 @@ msgstr "Hei, Launch er drevet av Extendable og er nødvendig for å fortsette. D
 msgid "Take me there"
 msgstr "Ta meg dit"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 #: public/build/extendify-library-39306503ce8adb6733b0.js:1
 msgid "Design Library"
 msgstr "Designbibliotek"
@@ -1078,7 +1078,7 @@ msgid "Continue"
 msgstr "Fortsett"
 
 #: public/build/extendify-draft-34e2d6906ec066e0068c.js:7
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Ask AI"
 msgstr "Spør AI"
 
@@ -1295,333 +1295,333 @@ msgstr "Forespørselen din ble avvist av vårt sikkerhetssystem. Din forespørse
 msgid "Generate with AI"
 msgstr "Generer med AI"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "This tour is only available on desktop devices"
 msgstr "Denne omvisningen er kun tilgjengelig på stasjonære enheter"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Recommend"
 msgstr "Anbefal"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Register this domain"
 msgstr "Registrer dette domenet"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Site Guide"
 msgstr "Nettstedsguide"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Add new page"
 msgstr "Legg til ny side"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Add new post"
 msgstr "Legg til nytt innlegg"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Explore plugins"
 msgstr "Utforsk utvidelser"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Site style"
 msgstr "Nettstedstil"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Edit header"
 msgstr "Rediger sidetopp"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Edit footer"
 msgstr "Rediger bunntekst"
 
 #. translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
 msgid "Reset site"
 msgstr "Tilbakestill nettsted"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Website Tools & Plugins"
 msgstr "Nettstedverktøy og utvidelser"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
 msgid "You've completed the set tasks—your site is looking good. This dashboard will update with new tasks and insights to keep your website evolving. Stay tuned!."
 msgstr "Du har fullført de angitte oppgavene—nettstedet ditt ser bra ut. Dette kontrollpanelet vil oppdateres med nye oppgaver og innsikter for å holde nettstedet ditt i utvikling. Følg med!"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
 msgid "Your Own Domain Awaits"
 msgstr "Ditt eget domene venter"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
 msgid "Move from a subdomain to a custom domain for improved website identity and SEO benefits."
 msgstr "Flytt fra et underdomene til et tilpasset domene for å forbedre nettstedets identitet og få SEO-fordeler."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:5
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:5
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Secure a domain"
 msgstr "Sikre et domene"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Add page"
 msgstr "Legg til side"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Add a new page for your website."
 msgstr "Legg til en ny side for nettstedet ditt."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Add new"
 msgstr "Legg til ny"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Managed WordPress Hosting"
 msgstr "Administrert WordPress-hosting"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "We take care of WordPress settings, updating themes and plugins, security and backing up your website."
 msgstr "Vi tar hånd om WordPress-innstillinger, oppdatering av temaer og utvidelser, sikkerhet og sikkerhetskopiering av nettstedet ditt."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Learn More"
 msgstr "Lær mer"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Domain recommendation"
 msgstr "Domeneanbefaling"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Claim your domain"
 msgstr "Krev ditt domene"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Claim the perfect domain for your site."
 msgstr "Gjør krav på det perfekte domenet for ditt nettsted."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Edit your homepage"
 msgstr "Rediger forsiden din"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Edit homepage by replacing existing content."
 msgstr "Rediger hjemmesiden ved å erstatte eksisterende innhold."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Edit now"
 msgstr "Rediger nå"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Set up donations"
 msgstr "Sett opp donasjoner"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Set up the GiveWP plugin to enable donations on your site."
 msgstr "Sett opp GiveWP-utvidelsen for å aktivere donasjoner på nettstedet ditt."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Set up"
 msgstr "Sett opp"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Revisit"
 msgstr "Besøk på nytt"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Set up HubSpot"
 msgstr "Konfigurer HubSpot"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Start collecting emails and marketing to your customers"
 msgstr "Begynn å samle e-poster og markedsfør til kundene dine"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Set up appointments"
 msgstr "Sett opp avtaler"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Start scheduling appointments on your site by configuring the Simply Scheduled Appointments plugin."
 msgstr "Begynn å planlegge avtaler på nettstedet ditt ved å konfigurere utvidelsen Simply Scheduled Appointments."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Set up events"
 msgstr "Sett opp arrangementer"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Start adding events to your site by configuring The Events Calendar plugin."
 msgstr "Begynn å legge til arrangementer på nettstedet ditt ved å konfigurere utvidelsen The Events Calendar."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Set up WooCommerce store"
 msgstr "Sett opp WooCommerce-butikk"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "This setup wizard help set up your store. It asks about your location, industry, and products to provide recommendations specific to your needs."
 msgstr "Denne oppsettsveiviseren hjelper deg med å konfigurere butikken din. Den spør om din lokasjon, bransje og produkter for å gi anbefalinger tilpasset dine behov."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Take a welcome tour"
 msgstr "Ta en velkomstomvisning"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Learn how to access key areas of your WordPress site."
 msgstr "Lær hvordan du får tilgang til viktige områder på ditt WordPress-nettsted."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Restart"
 msgstr "Start på nytt"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Start"
 msgstr "Start"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Site Builder Launcher"
 msgstr "Oppstart for nettstedsbygger"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "In a few words, explain what your site is about."
 msgstr "Forklar med noen få ord hva nettstedet ditt handler om."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Change"
 msgstr "Endre"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Add"
 msgstr "Legge til"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Upload a logo"
 msgstr "Last opp en logo"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Ensure your website is on-brand by adding your logo."
 msgstr "Sørg for at nettstedet ditt følger merkevaren ved å legge til logoen din."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Replace"
 msgstr "Erstatt"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Upload"
 msgstr "Last opp"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Upload a site icon"
 msgstr "Last opp et nettstedsikon"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Ensure your website is on-brand by adding your site icon."
 msgstr "Sørg for at nettstedet ditt følger merkevaren ved å legge til nettstedikonet ditt."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Chat History"
 msgstr "Chatthistorikk"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Close history"
 msgstr "Lukk historikk"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Remove from history"
 msgstr "Fjern fra historikk"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Toggle menu"
 msgstr "Veksle meny"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Chat History (%d)"
 msgstr "Chatlogg (%d)"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Got questions? Ask our AI chatbot"
 msgstr "Har du spørsmål? Spør vår AI-chatbot"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "AI Chatbot"
 msgstr "AI-chatbot"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "What do you need help with?"
 msgstr "Hva trenger du hjelp til?"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Search results"
 msgstr "Søkeresultater"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Search the knowledge base"
 msgstr "Søk i kunnskapsbasen"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Page editor"
 msgstr "Sideredigeringsverktøy"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Klikk på \"publiser\" eller \"oppdater\" for å lagre endringene du har gjort på siden og gjøre dem synlige på nettstedet."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Installing a plugin"
 msgstr "Installerer en utvidelse"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Plugin management"
 msgstr "Administrasjon av utvidelser"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "You can always access the help center by clicking this button."
 msgstr "Du kan alltid få tilgang til hjelpesenteret ved å klikke på denne knappen."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Visit your site"
 msgstr "Besøk nettstedet ditt"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "You can always visit your site by clicking this button."
 msgstr "Du kan alltid besøke nettstedet ditt ved å klikke på denne knappen."
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Users screen"
 msgstr "Brukeroversikt"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Getting started with WordPress"
 msgstr "Kom i gang med WordPress"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Learn more about your WordPress admin"
 msgstr "Lær mer om din WordPress-administrasjon"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Show Help Center"
 msgstr "Vis hjelpesenter"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Minimize Help Center"
 msgstr "Minimer Hjelpesenter"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "close"
 msgstr "lukk"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Go back"
 msgstr "Gå tilbake"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:1
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:1
 msgid "Extendify Help Center"
 msgstr "Extendify brukerstøttesenter"
 
-#: public/build/extendify-help-center-9d9dda4ecda0702fc812.js:3
+#: public/build/extendify-help-center-26dd20642c6073730ce9.js:3
 msgid "Help"
 msgstr "Hjelp"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:5
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:5
 msgid "Service offline. Check back later."
 msgstr "Tjenesten er offline. Kom tilbake senere."
 
@@ -1648,16 +1648,16 @@ msgid "Portrait: 3:4"
 msgstr "Portrett: 3:4"
 
 #. translators: this refers to a domain name
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:3
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:5
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:5
 msgid "Available and just right for your site"
 msgstr "Tilgjengelig og perfekt for ditt nettsted"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Get another domain for your site."
 msgstr "Skaff et annet domene til nettstedet ditt."
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:1
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:1
 msgid "Edit Site Navigation"
 msgstr "Rediger nettstednavigasjon"
 
@@ -1665,15 +1665,43 @@ msgstr "Rediger nettstednavigasjon"
 msgid "Header Navigation"
 msgstr "Navigasjon i topptekst"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:5
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:7
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:5
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:7
 msgid "Add an additional domain"
 msgstr "Legg til et ekstra domene"
 
-#: public/build/extendify-assist-page-2cf3508fcb18a993b674.js:5
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:5
 msgid "Having another domain can drive additional traffic to your website."
 msgstr "Å ha et annet domene kan føre til mer trafikk til nettstedet ditt."
 
 #: public/build/extendify-launch-7f6f27f2219a9aeb01b6.js:5
 msgid "I agree to the AI terms and conditions"
 msgstr "Jeg godtar AI-vilkårene og betingelsene"
+
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+msgid "Logo for %s"
+msgstr "Logo for %s"
+
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+msgid "Error"
+msgstr "Feil"
+
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+msgid "Active"
+msgstr "Aktiv"
+
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+msgid "Activating..."
+msgstr "Aktiverer..."
+
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+msgid "Activate"
+msgstr "Aktiver"
+
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+msgid "Installing..."
+msgstr "Installerer..."
+
+#: public/build/extendify-assist-page-d30fab304b06e3eaf680.js:3
+msgid "Install Now"
+msgstr "Installer nå"
