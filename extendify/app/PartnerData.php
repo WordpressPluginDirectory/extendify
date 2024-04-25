@@ -106,8 +106,8 @@ class PartnerData
         }
 
         // If the transient is already set, don't fetch again.
-        if (get_transient('extendify_partner_data') !== false) {
-            return get_option('extendify_partner_data', []);
+        if (get_transient('extendify_partner_data_cache_check') !== false) {
+            return get_option('extendify_partner_data_v2', []);
         }
 
         $response = wp_remote_get(
@@ -123,23 +123,23 @@ class PartnerData
 
         if (is_wp_error($response)) {
             // If the request fails, try again in 2 hours.
-            set_transient('extendify_partner_data', [], (2 * HOUR_IN_SECONDS));
-            return get_option('extendify_partner_data', []);
+            set_transient('extendify_partner_data_cache_check', [], (2 * HOUR_IN_SECONDS));
+            return get_option('extendify_partner_data_v2', []);
         }
 
         $result = json_decode(wp_remote_retrieve_body($response), true);
 
         if (!array_key_exists('data', $result)) {
             // If the request didn't have the data key, try again in 2 hours.
-            set_transient('extendify_partner_data', [], (2 * HOUR_IN_SECONDS));
-            return get_option('extendify_partner_data', []);
+            set_transient('extendify_partner_data_cache_check', [], (2 * HOUR_IN_SECONDS));
+            return get_option('extendify_partner_data_v2', []);
         }
 
         // Transient is used to mark the time, but the data is put into an option,
         // so that in case of network issues, we can still return old data.
-        set_transient('extendify_partner_data', $result['data'], (2 * DAY_IN_SECONDS));
+        set_transient('extendify_partner_data_cache_check', $result['data'], (2 * DAY_IN_SECONDS));
 
-        update_option('extendify_partner_data', array_merge(
+        update_option('extendify_partner_data_v2', array_merge(
             Sanitizer::sanitizeUnknown($result['data']),
             ['consentTermsHTML' => \sanitize_text_field(htmlentities(($result['data']['consentTermsHTML'] ?? '')))]
         ));
