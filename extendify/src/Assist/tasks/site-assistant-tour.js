@@ -4,7 +4,7 @@ export default {
 	slug: 'site-assistant-tour',
 	title: __('Take a welcome tour', 'extendify-local'),
 	description: __(
-		'Learn how to access key areas of your WordPress site.',
+		'Learn about the key features of the Site Assistant.',
 		'extendify-local',
 	),
 	buttonLabels: {
@@ -20,5 +20,6 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extSharedData.assetPath}/welcome-tour.png`,
+	backgroundImage:
+		'https://assets.extendify.com/assist-tasks/welcome-tour.webp',
 };

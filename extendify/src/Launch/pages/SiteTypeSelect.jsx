@@ -74,7 +74,7 @@ const SiteTypeSelector = () => {
 					className="w-full h-14 px-4 m-0 input-focus ring-offset-0 focus:bg-white relative z-20 rounded border border-gray-300 shadow-sm outline-none"
 					autoComplete="off"
 					spellCheck={false}
-					placeholder={__('Search for your business type', 'extendify-local')}
+					placeholder={__('Search for your site type', 'extendify-local')}
 					onChange={(event) => setSearch(event.target.value)}
 				/>
 			</div>

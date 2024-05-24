@@ -17,11 +17,14 @@ class DataController
     /**
      * Get Goals information.
      *
+     * @param \WP_REST_Request $request - The wp rest request.
+     *
      * @return \WP_REST_Response
      */
-    public static function getGoals()
+    public static function getGoals($request)
     {
-        $response = Http::get('/goals');
+        $response = Http::get('/goals?site_type=' . $request->get_param('site_type'));
+
         return new \WP_REST_Response(
             $response,
             wp_remote_retrieve_response_code($response)

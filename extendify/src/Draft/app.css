@@ -76,3 +76,17 @@
 	/* minus the bottom status bar */
 	height: calc(100% - 25px) !important;
 }
+
+@keyframes extendifyDraftPulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.extendify-draft .animate-pulse {
+	animation: extendifyDraftPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

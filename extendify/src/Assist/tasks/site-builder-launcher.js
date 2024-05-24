@@ -5,7 +5,7 @@ const { themeSlug } = window.extSharedData;
 
 export default {
 	slug: 'site-builder-launcher',
-	title: __('Site Builder Launcher', 'extendify-local'),
+	title: __('Continue with site builder', 'extendify-local'),
 	description: __(
 		'Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher.',
 		'extendify-local',
@@ -20,4 +20,6 @@ export default {
 	show: () => {
 		return themeSlug === 'extendable' && !launchCompleted;
 	},
+	backgroundImage:
+		'https://assets.extendify.com/assist-tasks/extendify-preview-2.webp',
 };

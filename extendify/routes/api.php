@@ -20,6 +20,7 @@ use Extendify\HelpCenter\Controllers\SupportArticlesController;
 
 use Extendify\Draft\Controllers\ImageController;
 use Extendify\Draft\Controllers\UserSettingsController;
+use Extendify\Draft\Controllers\RouterController as DraftRouterController;
 
 use Extendify\Launch\Controllers\DataController;
 use Extendify\Launch\Controllers\WPController;
@@ -78,6 +79,8 @@ use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsCon
         ApiRouter::get('/draft/user-settings', [UserSettingsController::class, 'get']);
         ApiRouter::post('/draft/user-settings', [UserSettingsController::class, 'store']);
         ApiRouter::post('/draft/upload-image', [ImageController::class, 'uploadMedia']);
+        ApiRouter::post('/draft/router-data', [DraftRouterController::class, 'store']);
+        ApiRouter::get('/draft/router-data', [DraftRouterController::class, 'get']);
 
         // Shared.
         ApiRouter::get('/shared/user-selections-data', [UserSelectionController::class, 'get']);

@@ -10,6 +10,7 @@ import {
 import { sprintf, __ } from '@wordpress/i18n';
 import { Icon, close } from '@wordpress/icons';
 import { Dialog } from '@headlessui/react';
+import classNames from 'classnames';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGlobalSyncStore } from '@help-center/state/globals-sync';
 import { useTourStore } from '@help-center/state/tours';
@@ -59,14 +60,12 @@ export const GuidedTour = () => {
 		[hook],
 	);
 
-	const [targetedElement, setTargetedElement] = useState(null);
-
 	const initialFocus = useRef();
+	const finishedStepOne = useRef(false);
+	const [targetedElement, setTargetedElement] = useState(null);
 	const [redirecting, setRedirecting] = useState(false);
 	const [visible, setVisible] = useState(false);
-
 	const [overlayRect, setOverlayRect] = useState(null);
-
 	const [placement, setPlacement] = useState({
 		x: undefined,
 		y: undefined,
@@ -168,12 +167,11 @@ export const GuidedTour = () => {
 			if (!tours[tourSlug]) return;
 
 			requestAnimationFrame(() => {
+				window.dispatchEvent(new CustomEvent('extendify-hc:minimize'));
 				startTour(tours[tourSlug]);
 			});
 		};
-
 		window.addEventListener('extendify-assist:start-tour', handle);
-
 		return () => {
 			window.removeEventListener('extendify-assist:start-tour', handle);
 		};
@@ -233,15 +231,21 @@ export const GuidedTour = () => {
 		};
 	}, [redirecting, targetedElement, startOrRecalc, options]);
 
+	useEffect(() => {
+		if (finishedStepOne.current) return;
+		if (!currentStep) return;
+		finishedStepOne.current = true;
+	}, [currentStep]);
 	// Handle the attach and detach events
 	useEffect(() => {
 		if (currentStep === undefined || !targetedElement) return;
 		events?.onAttach?.(targetedElement);
 		let inner = 0;
 		const id = requestAnimationFrame(() => {
+			targetedElement.scrollIntoView({ block: 'start' });
+			startOrRecalc();
 			inner = requestAnimationFrame(startOrRecalc);
 		});
-		targetedElement.scrollIntoView({ block: 'end' });
 		initialFocus?.current?.focus();
 		return () => {
 			events?.onDetach?.(targetedElement);
@@ -282,7 +286,7 @@ export const GuidedTour = () => {
 									startOrRecalc();
 								}}
 								transition={{
-									duration: 0.5,
+									duration: finishedStepOne.current ? 0.5 : 0,
 									ease: 'easeInOut',
 								}}
 								className="fixed top-0 left-0 shadow-2xl sm:overflow-hidden bg-transparent flex flex-col max-w-xs z-20"
@@ -338,27 +342,42 @@ export const GuidedTour = () => {
 								opacity: 1,
 								clipPath: `polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%, 0 0, ${rectWithPadding.left}px 0, ${rectWithPadding.left}px ${rectWithPadding?.bottom}px, ${rectWithPadding?.right}px ${rectWithPadding.bottom}px, ${rectWithPadding.right}px ${rectWithPadding.top}px, ${rectWithPadding.left}px ${rectWithPadding.top}px)`,
 							}}
-							transition={{ duration: 0.5, ease: 'easeInOut' }}
+							transition={{
+								duration: finishedStepOne.current ? 0.5 : 0,
+								ease: 'easeInOut',
+							}}
 							className="hidden lg:block fixed inset-0 bg-black/70 z-max-1"
 							aria-hidden="true"
 						/>
-						<motion.div
-							initial={{
-								opacity: 0,
-								...(rectWithPadding ?? {}),
-							}}
-							animate={{
-								opacity: 1,
-								...(rectWithPadding ?? {}),
-							}}
-							transition={{ duration: 0.5, ease: 'easeInOut' }}
-							className="hidden lg:block fixed inset-0 border-2 border-design-main z-high"
-							aria-hidden="true"
+						<BorderOutline
+							rectWithPadding={rectWithPadding}
+							finishedStepOne={finishedStepOne}
 						/>
 					</>
 				)}
 			</AnimatePresence>
 		</>
+	);
+};
+
+const BorderOutline = ({ rectWithPadding, finishedStepOne }) => {
+	const [visible, setVisible] = useState(false);
+	return (
+		<motion.div
+			initial={{ ...(rectWithPadding ?? {}) }}
+			animate={{ ...(rectWithPadding ?? {}) }}
+			transition={{
+				duration: finishedStepOne.current ? 0.5 : 0,
+				ease: 'easeInOut',
+			}}
+			onAnimationStart={() => setVisible(false)}
+			onAnimationComplete={() => setVisible(true)}
+			className={classNames('hidden lg:block fixed inset-0 border-2  z-high', {
+				'border-transparent': !visible,
+				'border-design-main': visible,
+			})}
+			aria-hidden="true"
+		/>
 	);
 };
 

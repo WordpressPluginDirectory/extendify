@@ -21,5 +21,5 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extSharedData.assetPath}/givewp.png`,
+	backgroundImage: 'https://assets.extendify.com/assist-tasks/givewp.webp',
 };

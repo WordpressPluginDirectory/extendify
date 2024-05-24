@@ -76,7 +76,7 @@ class Admin
                     'globalData' => \wp_json_encode(GlobalsController::get()->get_data()),
                     'routerData' => \wp_json_encode(RouterController::get()->get_data()),
                     'recommendationData' => \wp_json_encode(RouterController::get()->get_data()),
-                    'tasksDependencies' => \wp_json_encode($this->getTasksDependecies()),
+                    'tasksDependencies' => \wp_json_encode($this->getTasksDependencies()),
                 ],
                 'resourceData' => \wp_json_encode((new ResourceData())->getData()),
                 'canSeeRestartLaunch' => (bool) $this->canRunLaunchAgain(),
@@ -95,7 +95,6 @@ class Admin
             'all'
         );
     }
-
 
     /**
      * Check to see if the user can re-run Launch
@@ -127,17 +126,38 @@ class Admin
      *
      * @return array
      */
-    public function getTasksDependecies()
+    public function getTasksDependencies()
     {
         $give = \get_option('give_onboarding', false);
         $completedSetupGivewp = isset($give['form_id']) && $give['form_id'] > 0;
 
         $woo = \get_option('woocommerce_onboarding_profile', false);
-        $completedwWoocommerceStore = (isset($woo['completed']) && $woo['completed']) || (isset($woo['skipped']) && $woo['skipped']);
+        $completedWoocommerceStore = (isset($woo['completed']) && $woo['completed']) || (isset($woo['skipped']) && $woo['skipped']);
 
-        return [
-            'completedSetupGivewp' => $completedSetupGivewp,
-            'completedWoocommerceStore' => $completedwWoocommerceStore,
-        ];
+        $aioseo = \get_option('aioseo_blc_options_internal', false);
+        $completedSetupAIOSeo = false;
+        if ($aioseo) {
+            $aioseo = \json_decode($aioseo, true);
+            $completedSetupAIOSeo = isset($aioseo['internal']) && array_key_exists('firstActivated', $aioseo['internal']);
+        }
+
+        $completedWPFormsLite = (bool) \get_option('wpforms_forms_first_created', false) || (bool) (\wp_count_posts('wpforms')->publish ?? 0);
+
+        // The two extra keys that will be added after connecting the store
+        // are the `admin_menu` and `hide_out_of_stock`.
+        $yourWebShop = \get_option('ecwid_plugin_data', false);
+        $completedYourWebShop = isset($yourWebShop['admin_menu']) && $yourWebShop['admin_menu'];
+
+        $monsterInsightsSiteProfile = \get_option( 'monsterinsights_site_profile', false );
+        $completedMonsterInsights = isset($monsterInsightsSiteProfile['token']) && $monsterInsightsSiteProfile['token'];
+
+        return compact(
+            'completedSetupGivewp',
+            'completedWoocommerceStore',
+            'completedSetupAIOSeo',
+            'completedWPFormsLite',
+            'completedYourWebShop',
+            'completedMonsterInsights'
+        );
     }
 }

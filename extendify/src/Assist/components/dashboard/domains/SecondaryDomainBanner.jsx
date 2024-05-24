@@ -28,7 +28,7 @@ export const SecondaryDomainBanner = () => {
 			<div className="grid md:grid-cols-2 gap-4 md:gap-12">
 				<div className="domain-name-message">
 					<div className="text-lg font-semibold">
-						{__('Add an additional domain', 'extendify-local')}
+						{__('Add An Additional Domain', 'extendify-local')}
 					</div>
 					<div className="text-sm mt-1">
 						{__(

@@ -26,15 +26,33 @@ const startingState = {
 
 const state = (set, get) => ({
 	...startingState,
+	// We need to keep the tasks dependencies updated all the time,
+	// the user may complete the task from outside the cards, this will
+	// make sure they are always up-to-date.
+	tasksDependencies: {
+		...safeParseJson(window.extAssistData.userData.tasksDependencies),
+	},
 	isCompleted(taskId) {
 		const completed = get().completedTasks.some((task) => task?.id === taskId);
 
 		// overrides for specific plugin "behind the scenes" tasks
-		const { completedWoocommerceStore, completedSetupGivewp } =
-			get().tasksDependencies || {};
+		const {
+			completedWoocommerceStore,
+			completedSetupGivewp,
+			completedSetupAIOSeo,
+			completedWPFormsLite,
+			completedYourWebShop,
+			completedMonsterInsights,
+		} = get().tasksDependencies || {};
 		if (taskId === 'setup-givewp') return completedSetupGivewp || completed;
 		if (taskId === 'setup-woocommerce-store')
 			return completedWoocommerceStore || completed;
+		if (taskId === 'setup-aioses') return completedSetupAIOSeo || completed;
+		if (taskId === 'setup-wpforms') return completedWPFormsLite || completed;
+		if (taskId === 'setup-yourwebshop')
+			return completedYourWebShop || completed;
+		if (taskId === 'setup-monsterinsights')
+			return completedMonsterInsights || completed;
 
 		return completed;
 	},

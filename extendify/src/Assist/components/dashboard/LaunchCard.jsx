@@ -64,7 +64,7 @@ const getCurrentLaunchStep = () => {
 	return currentPageSlug;
 };
 
-export const LaunchCard = () => {
+export const LaunchCard = ({ task }) => {
 	const [currentStep, setCurrentStep] = useState();
 	const { dismissTask } = useTasksStore();
 
@@ -79,7 +79,7 @@ export const LaunchCard = () => {
 				<img
 					alt="preview"
 					className="object-cover w-full block"
-					src={window.extSharedData.assetPath + '/extendify-preview-2.png'}
+					src={task.backgroundImage}
 				/>
 				<div className="w-full text-center">
 					<h2 className="text-2xl mb-4 mt-8 text-white">

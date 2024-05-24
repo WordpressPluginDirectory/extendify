@@ -56,8 +56,8 @@ export const SiteTypeControl = () => {
 				<SearchControl
 					ref={searchRef}
 					className="w-full"
-					label={__('Search for your business type', 'extendify-local')}
-					placeholder={__('Search for your business type', 'extendify-local')}
+					label={__('Search for your site type', 'extendify-local')}
+					placeholder={__('Search for your site type', 'extendify-local')}
 					value={search}
 					onChange={setSearch}
 				/>

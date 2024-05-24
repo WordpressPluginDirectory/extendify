@@ -9,9 +9,9 @@ import { Input } from '@draft/components/Input';
 import { InsertMenu } from '@draft/components/InsertMenu';
 import { SelectedText } from '@draft/components/SelectedText';
 import { useCompletion } from '@draft/hooks/useCompletion';
+import { useRouter } from '@draft/hooks/useRouter';
 import { useSelectedText } from '@draft/hooks/useSelectedText';
 import { ConsentSidebar } from './components/ConsentSidebar';
-import { GenerateImageSidebar } from './components/GenerateImageSidebar';
 
 export const Draft = () => {
 	const { selectedText } = useSelectedText();
@@ -35,8 +35,9 @@ export const Draft = () => {
 	);
 	const { getBlock } = useSelect((select) => select('core/block-editor'), []);
 	const { showAIConsent, userGaveConsent: gaveBefore } = window.extSharedData;
+	const { CurrentPage: PhotosSection } = useRouter();
 	// TODO: move to global state
-	const [userGaveConsent, setUserGaveConsent] = useState(gaveBefore === '1');
+	const [userGaveConsent, setUserGaveConsent] = useState(gaveBefore);
 	const needsConsent = showAIConsent && !userGaveConsent;
 
 	// TODO: When doing a rewrite, make this global state
@@ -90,7 +91,7 @@ export const Draft = () => {
 		return <ConsentSidebar setUserGaveConsent={setUserGaveConsent} />;
 	}
 
-	if (isImageBlock()) return <GenerateImageSidebar />;
+	if (isImageBlock()) return <PhotosSection />;
 
 	return (
 		<>

@@ -21,5 +21,6 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extSharedData.assetPath}/calendar-events.png`,
+	backgroundImage:
+		'https://assets.extendify.com/assist-tasks/calendar-events.webp',
 };

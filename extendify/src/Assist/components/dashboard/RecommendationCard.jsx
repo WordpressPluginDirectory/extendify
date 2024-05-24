@@ -1,6 +1,6 @@
 import { Button } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { Icon, check, warning } from '@wordpress/icons';
 import { installPlugin } from '@assist/api/WPApi';
 
@@ -13,7 +13,6 @@ export const RecommendationCard = ({ recommendation }) => {
 
 const LinkCard = ({ recommendation }) => {
 	const { by, description, image, title, linkType } = recommendation;
-
 	if (!recommendation?.[linkType]) return null;
 
 	return (
@@ -21,11 +20,13 @@ const LinkCard = ({ recommendation }) => {
 			href={recommendation[linkType]}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="border border-gray-200 p-4 rounded text-base h-48 lg:h-56 hover:bg-gray-50 hover:border-design-main cursor-pointer bg-transparent text-left no-underline">
+			className="border border-gray-200 p-4 rounded text-base hover:bg-gray-50 hover:border-design-main cursor-pointer bg-transparent text-left no-underline">
 			<div className="w-full h-full">
 				<img
 					className="h-8 w-8 rounded fill-current"
-					alt={__('Logo for %s', 'extendify-local')}
+					alt={
+						by ? sprintf(__('Logo for %s', 'extendify-local'), by) : undefined
+					}
 					src={image}
 				/>
 				<div className="mt-2 font-semibold">{title}</div>
@@ -38,13 +39,14 @@ const LinkCard = ({ recommendation }) => {
 
 const InstallCard = ({ recommendation }) => {
 	const { by, description, image, title, pluginSlug } = recommendation;
-
 	return (
-		<div className="border border-gray-200 p-4 rounded text-base h-48 lg:h-56 bg-transparent text-left">
+		<div className="border border-gray-200 p-4 rounded text-base bg-transparent text-left">
 			<div className="w-full h-full">
 				<img
 					className="h-8 w-8 rounded fill-current"
-					alt={__('Logo for %s', 'extendify-local')}
+					alt={
+						by ? sprintf(__('Logo for %s', 'extendify-local'), by) : undefined
+					}
 					src={image}
 				/>
 				<div className="mt-2 font-semibold">{title}</div>

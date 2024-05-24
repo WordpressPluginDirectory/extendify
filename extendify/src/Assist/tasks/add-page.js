@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 
 export default {
 	slug: 'add-pages',
-	title: __('Add page', 'extendify-local'),
+	title: __('Add a page', 'extendify-local'),
 	description: __('Add a new page for your website.', 'extendify-local'),
 	buttonLabels: {
 		completed: __('Add new', 'extendify-local'),
@@ -18,5 +18,5 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extSharedData.assetPath}/add-page.png`,
+	backgroundImage: 'https://assets.extendify.com/assist-tasks/add-page.webp',
 };

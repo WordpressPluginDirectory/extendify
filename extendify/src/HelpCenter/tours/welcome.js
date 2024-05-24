@@ -88,6 +88,30 @@ export default {
 			events: {},
 		},
 		{
+			title: document
+				.getElementById('toplevel_page_wpSq')
+				?.textContent?.replace(/[^\w\s²]/g, '')
+				.trim(),
+			text: __(
+				'Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings.',
+				'extendify-local',
+			),
+			showOnlyIf: () => document.getElementById('toplevel_page_wpSq'),
+			attachTo: {
+				element: '#toplevel_page_wpSq',
+				offset: {
+					marginTop: 0,
+					marginLeft: 15,
+				},
+				position: {
+					x: 'right',
+					y: 'top',
+				},
+				hook: 'top left',
+			},
+			events: {},
+		},
+		{
 			title: __('Dashboard', 'extendify-local'),
 			text: __(
 				'The default WordPress dashboard will have some overall site metrics and modules added from certain plugins.',

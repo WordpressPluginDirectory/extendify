@@ -46,7 +46,7 @@ export const GenerateImageButtons = (CurrentComponents, props) => {
 						await new Promise((r) => requestAnimationFrame(r));
 						document.getElementById('draft-ai-image-textarea')?.focus();
 					}}>
-					{__('Generate with AI', 'extendify-local')}
+					{__('Get Personalized Image', 'extendify-local')}
 				</Button>
 				{/* layout placeholder */}
 				<span aria-hidden="true" />
@@ -99,7 +99,7 @@ const ToolbarButtons = ({ name, attributes }) => {
 						await new Promise((r) => requestAnimationFrame(r));
 						document.getElementById('draft-ai-image-textarea')?.focus();
 					}}>
-					{__('Generate with AI', 'extendify-local')}
+					{__('Get Personalized Image', 'extendify-local')}
 				</MenuItem>
 			);
 			observer = new MutationObserver((mutations) => {

@@ -8,13 +8,9 @@ export const AcceptTerms = ({
 }) => {
 	return (
 		<div className="flex flex-col">
-			<p
-				className="p-0 m-0 mb-2 text-base"
-				dangerouslySetInnerHTML={{ __html: consentTermsHTML }}
-			/>
 			<label
 				htmlFor="accept-terms"
-				className="text-base ml-1 flex items-center focus-within:text-design-mains after:content-['*'] after:ml-0.5 after:text-red-500">
+				className="text-base ml-1 flex items-center focus-within:text-design-mains">
 				<span className="relative">
 					<input
 						id="accept-terms"
@@ -38,10 +34,14 @@ export const AcceptTerms = ({
 						/>
 					</svg>
 				</span>
-				<span className="ml-1 text-base">
-					{__('I agree to the AI terms and conditions', 'extendify-local')}
+				<span className="ml-1 text-base text-gray-950">
+					{__('I agree (required to use AI Assistant)', 'extendify-local')}
 				</span>
 			</label>
+			<p
+				className="mx-7 mt-2 p-0 m-0 mb-2 text-sm text-gray-700"
+				dangerouslySetInnerHTML={{ __html: consentTermsHTML }}
+			/>
 		</div>
 	);
 };

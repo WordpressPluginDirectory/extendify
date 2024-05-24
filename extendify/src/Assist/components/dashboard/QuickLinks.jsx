@@ -70,7 +70,7 @@ export const QuickLinks = ({ className }) => {
 			show: themeSlug === 'extendable',
 		},
 		{
-			title: __('Edit Site Navigation', 'extendify-local'),
+			title: __('Edit site navigation', 'extendify-local'),
 			link: editSiteNavigationMenuLink,
 			slug: 'edit-site-navigation',
 			icon: navigation,
@@ -90,6 +90,7 @@ export const QuickLinks = ({ className }) => {
 		<>
 			<div
 				data-test="assist-quick-links-module"
+				id="assist-quick-links-module"
 				className={classNames(
 					className,
 					'w-full p-5 lg:p-8 border border-gray-300 text-base bg-white rounded h-full',

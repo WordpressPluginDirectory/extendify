@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 
 export default {
 	slug: 'site-description',
-	title: __('Add site description', 'extendify-local'),
+	title: __('Add a site description', 'extendify-local'),
 	description: __(
 		'In a few words, explain what your site is about.',
 		'extendify-local',
@@ -20,5 +20,5 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extSharedData.assetPath}/upload-logo.png`,
+	backgroundImage: 'https://assets.extendify.com/assist-tasks/upload-logo.webp',
 };

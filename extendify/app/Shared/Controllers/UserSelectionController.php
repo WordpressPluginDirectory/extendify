@@ -35,7 +35,7 @@ class UserSelectionController
     public static function store($request)
     {
         $data = json_decode($request->get_param('state'), true);
-        update_option('extendify_user_selections', Sanitizer::sanitizeArray($data));
+        update_option('extendify_user_selections', Sanitizer::sanitizeUserSelections($data));
         return new \WP_REST_Response($data);
     }
 }

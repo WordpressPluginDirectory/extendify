@@ -58,8 +58,10 @@ export const getPageTemplates = async (siteType) => {
 	};
 };
 
-export const getGoals = async () => {
-	const goals = await api.get('launch/goals');
+export const getGoals = async ({ siteTypeSlug }) => {
+	const goals = await api.get(
+		`launch/goals?site_type=${siteTypeSlug ?? 'all'}`,
+	);
 	if (!goals?.data) {
 		throw new Error('Could not get goals');
 	}

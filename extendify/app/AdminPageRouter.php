@@ -225,6 +225,13 @@ class AdminPageRouter
             && \get_option('admin_email') === $user->user_email
             && in_array('administrator', $user->roles, true)
         ) {
+            // Only redirect 3 times.
+            $currentCount = \get_option('extendify_attempted_redirect_count', 0);
+            if ($currentCount >= 3) {
+                return;
+            }
+
+            \update_option('extendify_attempted_redirect_count', ($currentCount + 1));
             \update_option('extendify_attempted_redirect', gmdate('Y-m-d H:i:s'));
             \wp_safe_redirect(\admin_url() . 'admin.php?page=extendify-launch');
         }

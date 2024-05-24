@@ -120,7 +120,14 @@ export const CreatingSite = () => {
 				);
 			}
 
-			pageIds = await createPages([...pages, blogPage, homePage], {
+			const hasBlogGoal = goals?.find((goal) => goal.slug === 'blog');
+			const pagesToCreate = [
+				...pages,
+				homePage,
+				hasBlogGoal ? blogPage : null,
+			].filter(Boolean);
+
+			pageIds = await createPages(pagesToCreate, {
 				goals,
 				businessInformation,
 				siteType,

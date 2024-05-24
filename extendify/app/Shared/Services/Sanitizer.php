@@ -39,6 +39,22 @@ class Sanitizer
     }
 
     /**
+     * This function will sanitize the user selections.
+     *
+     * @param array $array - The array we need to sanitize.
+     * @return array
+     */
+    public static function sanitizeUserSelections($array)
+    {
+        $sanitizedArray = [];
+        foreach ($array as $key => $value) {
+            $sanitizedArray[$key] = is_array($value) ? self::sanitizeUserSelections($value) : self::sanitizePostContent($value);
+        }
+
+        return $sanitizedArray;
+    }
+
+    /**
      * This function will sanitize a text field.
      *
      * @param string $text - The string we need to sanitize.

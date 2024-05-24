@@ -12,8 +12,11 @@ import { pageState } from '@launch/state/factory';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import * as IconComponents from '@launch/svg';
 
-export const goalsFetcher = () => getGoals();
-export const goalsParams = () => ({ key: 'goals' });
+export const goalsFetcher = (params) => getGoals(params);
+export const goalsParams = () => ({
+	key: 'goals',
+	siteTypeSlug: useUserSelectionStore.getState()?.siteType?.slug,
+});
 export const pluginsFetcher = () => getSuggestedPlugins();
 export const pluginsParams = () => ({ key: 'plugins' });
 
@@ -53,9 +56,10 @@ export const Goals = () => {
 };
 
 const GoalsSelector = () => {
+	const { siteType } = useUserSelectionStore();
 	const { addMany, toggle, goals: selected } = useUserSelectionStore();
 	const [selectedGoals, setSelectedGoals] = useState(selected ?? []);
-	const { data: goals } = useFetch(goalsParams, goalsFetcher);
+	const { data: goals } = useFetch(goalsParams(siteType?.slug), goalsFetcher);
 	const { data: suggestedPlugins } = useFetch(pluginsParams, pluginsFetcher);
 	const nextPage = usePagesStore((state) => state.nextPage);
 

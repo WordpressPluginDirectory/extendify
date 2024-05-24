@@ -4,7 +4,7 @@ export default {
 	slug: 'setup-simply-appointments',
 	title: __('Set up appointments', 'extendify-local'),
 	description: __(
-		'Start scheduling appointments on your site by configuring the Simply Scheduled Appointments plugin.',
+		'Start accepting appointments on your website by configuring the Simply Scheduled Appointments plugin.',
 		'extendify-local',
 	),
 	link: 'admin.php?page=simply-schedule-appointments#/wizard/review',
@@ -21,5 +21,6 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extSharedData.assetPath}/calendar-events.png`,
+	backgroundImage:
+		'https://assets.extendify.com/assist-tasks/calendar-events.webp',
 };

@@ -14,6 +14,7 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 	return (
 		<div
 			data-test="assist-tasks-module"
+			id="assist-tasks-module"
 			className={classNames(
 				className,
 				'w-full border border-gray-300 text-base bg-white rounded mb-6 h-full',

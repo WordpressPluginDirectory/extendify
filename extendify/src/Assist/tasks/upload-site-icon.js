@@ -20,5 +20,6 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extSharedData.assetPath}/edit-homepage.png`,
+	backgroundImage:
+		'https://assets.extendify.com/assist-tasks/edit-homepage.webp',
 };

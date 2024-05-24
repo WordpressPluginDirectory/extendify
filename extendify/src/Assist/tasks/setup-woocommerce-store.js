@@ -2,9 +2,9 @@ import { __ } from '@wordpress/i18n';
 
 export default {
 	slug: 'setup-woocommerce-store',
-	title: __('Set up WooCommerce store', 'extendify-local'),
+	title: __('Set up your eCommerce store', 'extendify-local'),
 	description: __(
-		'This setup wizard help set up your store. It asks about your location, industry, and products to provide recommendations specific to your needs.',
+		'Set up WooCommerce to start selling on your website.',
 		'extendify-local',
 	),
 	link: 'admin.php?page=wc-admin&path=%2Fsetup-wizard',
@@ -21,5 +21,5 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: `${window.extSharedData.assetPath}/woocommerce.png`,
+	backgroundImage: 'https://assets.extendify.com/assist-tasks/woocommerce.webp',
 };

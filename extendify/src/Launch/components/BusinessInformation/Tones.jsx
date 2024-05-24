@@ -43,7 +43,7 @@ export const SiteTones = () => {
 			<label
 				htmlFor="extendify-business-info-tone"
 				className="text-lg md:text-base leading-8 md:leading-10 m-0 text-gray-900 font-semibold">
-				{__("Select your site's tone", 'extendify-local')}
+				{__("Select your site's tone (optional)", 'extendify-local')}
 			</label>
 			<div className="flex justify-left w-full flex-wrap gap-2">
 				{tones.map((tone) => {

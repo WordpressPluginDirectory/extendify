@@ -9,7 +9,6 @@ export default {
 			`${window.extSharedData.adminUrl}admin.php?page=extendify-assist#dashboard`,
 		],
 	},
-	onStart: () => window.dispatchEvent(new CustomEvent('extendify-hc:minimize')),
 	steps: [
 		{
 			title: __('Tasks', 'extendify-local'),
@@ -25,16 +24,12 @@ export default {
 					marginLeft: window.innerWidth <= 1151 ? -25 : 15,
 				},
 				position: {
-					x: 'top',
-					y: 'bottom',
+					x: 'right',
+					y: 'top',
 				},
 				hook: 'top left',
 			},
-			events: {
-				onAttach: () => {
-					document.querySelector('#assist-tasks-module')?.scrollIntoView();
-				},
-			},
+			events: {},
 		},
 		{
 			title: __('Quick Links', 'extendify-local'),
@@ -45,8 +40,8 @@ export default {
 			attachTo: {
 				element: '#assist-quick-links-module',
 				offset: {
-					marginTop: window.innerWidth <= 1151 ? -15 : 0,
-					marginLeft: window.innerWidth <= 1151 ? -25 : -15,
+					marginTop: window.innerWidth <= 1151 ? -15 : 2,
+					marginLeft: window.innerWidth <= 1151 ? -25 : 15,
 				},
 				position: {
 					x: 'right',
@@ -55,11 +50,7 @@ export default {
 				hook: 'top left',
 			},
 			events: {
-				onAttach: () => {
-					document
-						.querySelector('#assist-quick-links-module')
-						?.scrollIntoView();
-				},
+				onAttach: () => {},
 			},
 		},
 		{
@@ -82,13 +73,7 @@ export default {
 				},
 				hook: 'top left',
 			},
-			events: {
-				onAttach: () => {
-					document
-						.querySelector('#assist-recommendations-module')
-						?.scrollIntoView();
-				},
-			},
+			events: {},
 		},
 		{
 			title: __('Help Center', 'extendify-local'),
@@ -109,13 +94,7 @@ export default {
 				},
 				hook: 'top left',
 			},
-			events: {
-				onAttach: () => {
-					document
-						.querySelector('#wp-admin-bar-help-center-btn')
-						?.scrollIntoView();
-				},
-			},
+			events: {},
 		},
 		{
 			title: __('Visit your site', 'extendify-local'),
@@ -141,11 +120,7 @@ export default {
 					right: 5,
 				},
 			},
-			events: {
-				onAttach: () => {
-					document.querySelector('#assist-menu-bar')?.scrollIntoView();
-				},
-			},
+			events: {},
 		},
 		{
 			title: __('Site Assistant', 'extendify-local'),
@@ -171,9 +146,6 @@ export default {
 						document.body.classList.remove('folded');
 						document.body.classList.add('temp-open');
 					}
-					document
-						.querySelector('#extendify-assist-landing-page')
-						.scrollIntoView({ block: 'start' });
 				},
 				onDetach: () => {
 					if (document.body.classList.contains('temp-open')) {

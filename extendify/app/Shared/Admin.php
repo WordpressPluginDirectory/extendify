@@ -9,6 +9,7 @@ defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
 use Extendify\PartnerData;
+use Extendify\Shared\Services\Escaper;
 use Extendify\Shared\Controllers\UserSelectionController;
 
 /**
@@ -68,7 +69,7 @@ class Admin
                 'themeSlug' => \esc_attr(\get_option('stylesheet')),
                 'version' => \esc_attr(Config::$version),
                 'siteTitle' => \esc_attr(\get_bloginfo('name')),
-                'siteType' => \array_map('esc_attr', \get_option('extendify_siteType', [])),
+                'siteType' => Escaper::recursiveEscAttr(\get_option('extendify_siteType', [])),
                 'adminUrl' => \esc_url_raw(\admin_url()),
                 'wpLanguage' => \esc_attr(\get_locale()),
                 'wpVersion' => \esc_attr(\get_bloginfo('version')),

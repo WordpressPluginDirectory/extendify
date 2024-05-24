@@ -139,12 +139,19 @@ class PartnerData
         // so that in case of network issues, we can still return old data.
         set_transient('extendify_partner_data_cache_check', $result['data'], (2 * DAY_IN_SECONDS));
 
-        update_option('extendify_partner_data_v2', array_merge(
+        // In the case they sent in a partner id that didn't exist, we get [].
+        if (empty($result['data'])) {
+            update_option('extendify_partner_data', []);
+            return [];
+        }
+
+        $sanitizedData = array_merge(
             Sanitizer::sanitizeUnknown($result['data']),
             ['consentTermsHTML' => \sanitize_text_field(htmlentities(($result['data']['consentTermsHTML'] ?? '')))]
-        ));
+        );
+        update_option('extendify_partner_data_v2', $sanitizedData);
 
-        return $result['data'];
+        return $sanitizedData;
     }
 
     /**

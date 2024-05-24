@@ -9,8 +9,6 @@ import { safeParseJson } from '@assist/lib/parsing';
 import { useTasksStore } from '@assist/state/tasks';
 
 const domains = safeParseJson(window.extAssistData.resourceData)?.domains || [];
-const assetPath = window.extSharedData.assetPath;
-const backgroundImage = `${assetPath + '/domains-recommendations.png'}`;
 
 export const DomainCard = ({ task }) => {
 	const { completeTask } = useTasksStore();
@@ -25,7 +23,7 @@ export const DomainCard = ({ task }) => {
 			<div
 				className="flex w-full h-full items-center justify-center bg-right-bottom bg-no-repeat bg-cover"
 				style={{
-					backgroundImage: `url(${backgroundImage}})`,
+					backgroundImage: `url(${task.backgroundImage}})`,
 				}}>
 				{__('Service offline. Check back later.', 'extendify-local')}
 			</div>
@@ -38,7 +36,7 @@ export const DomainCard = ({ task }) => {
 		<div
 			className="flex w-full h-full bg-right-bottom bg-no-repeat bg-cover"
 			data-test="assist-domain-card-main-domain-module"
-			style={{ backgroundImage: `url(${backgroundImage})` }}>
+			style={{ backgroundImage: `url(${task.backgroundImage})` }}>
 			<div className="w-full px-8 md:pl-8 md:pr-0 py-14 lg:mr-24">
 				<div className="title font-semibold	text-2xl md:text-4xl">
 					{task.innerTitle}
