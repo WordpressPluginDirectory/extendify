@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name:       Extendify WordPress onboarding and AI Assistant
- * Description:       AI powered WordPress assistant for onboarding and ongoing editing offered exclusively through select WordPress hosting providers.
+ * Plugin Name:       Extendify WordPress Onboarding and AI Assistant
+ * Description:       AI-powered WordPress assistant for onboarding and ongoing editing offered exclusively through select WordPress hosting providers.
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.14.0
+ * Version:           1.14.1
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       extendify-local

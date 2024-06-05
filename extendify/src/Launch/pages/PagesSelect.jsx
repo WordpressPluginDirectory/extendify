@@ -95,7 +95,7 @@ export const PagesSelect = () => {
 						</h3>
 						<div
 							ref={pagePreviewRef}
-							className="h-full lg:h-auto grow rounded-t-lg relative lg:overflow-y-scroll">
+							className="h-full lg:h-auto grow rounded-t-lg relative lg:overflow-y-scroll overflow-x-hidden">
 							{previewing && !loading && (
 								<PagePreview ref={pagePreviewRef} style={styleMemo} />
 							)}
@@ -135,15 +135,19 @@ export const PagesSelect = () => {
 							/>
 						))}
 					</div>
-					<div className="flex items-center justify-center">
-						<button
-							type="button"
-							data-test="expand-more"
-							onClick={setExpandMore}
-							className="bg-transparent text-sm text-center font-medium text-gray-900 my-4 cursor-pointer hover:text-design-main button-focus">
-							{__('View more pages', 'extendify-local')}
-						</button>
-					</div>
+
+					{!expandMore && (
+						<div className="flex items-center justify-center">
+							<button
+								type="button"
+								data-test="expand-more"
+								onClick={setExpandMore}
+								className="bg-transparent text-sm text-center font-medium text-gray-900 my-4 cursor-pointer hover:text-design-main button-focus">
+								{__('View more pages', 'extendify-local')}
+							</button>
+						</div>
+					)}
+
 					{expandMore && (
 						<div
 							className="flex flex-col gap-4 pb-4 w-full"

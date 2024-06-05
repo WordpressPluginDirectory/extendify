@@ -105,7 +105,7 @@ export const ImageUploader = ({ type, onUpdate, title, actionLabel }) => {
 											naturalHeight={mediaHeight}
 											isInline>
 											<img
-												className="block m-auto w-auto h-auto max-w-full max-h-48 inset-0 p-6"
+												className="block m-auto w-auto h-auto max-w-96 max-h-48 inset-0"
 												src={mediaSourceUrl}
 												alt=""
 											/>

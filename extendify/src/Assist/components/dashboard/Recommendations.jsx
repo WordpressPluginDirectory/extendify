@@ -1,21 +1,22 @@
 import { __ } from '@wordpress/i18n';
 import { RecommendationCard } from '@assist/components/dashboard/RecommendationCard';
 import { safeParseJson } from '@assist/lib/parsing';
+import { isAtLeastNDaysAgo } from '@assist/lib/recommendations';
 
+const siteCreatedAt = window.extSharedData?.siteCreatedAt ?? '';
 const recommendations =
 	safeParseJson(window.extAssistData.resourceData)?.recommendations || {};
 const goals =
 	safeParseJson(window.extSharedData?.userData?.userSelectionData)?.state
 		?.goals || [];
 const plugins =
-	window.extSharedData?.installedPlugins?.map(
-		(plugin) => plugin.split('/')[0],
-	) || [];
+	window.extSharedData?.activePlugins?.map((plugin) => plugin.split('/')[0]) ||
+	[];
 
-export const Recommendations = () => {
+const getRecommendations = () =>
 	// Filter out recs that have goal deps that don't appear in the user's goals list
 	// If no goal deps, show the rec
-	const filteredRecommendations = recommendations
+	recommendations
 		.filter((rec) =>
 			rec?.goalDepSlugs?.length
 				? rec?.goalDepSlugs?.every((dep) =>
@@ -38,7 +39,16 @@ export const Recommendations = () => {
 						(dep) => plugins.find((plugin) => plugin === dep)?.length,
 					)
 				: true,
+		)
+		.sort((a, b) => b.priority - a.priority)
+		// filter out recs based on the showAfterDay field
+		.filter((rec) =>
+			// Only show recommendations after the number of days set in rec.showAfterDay
+			isAtLeastNDaysAgo(siteCreatedAt, rec?.showAfterDay ?? 0) ? rec : false,
 		);
+
+export const Recommendations = () => {
+	const filteredRecommendations = getRecommendations();
 
 	if (!filteredRecommendations?.length) return;
 

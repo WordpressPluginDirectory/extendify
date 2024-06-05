@@ -22,7 +22,8 @@ export const ConsentSidebar = ({ setUserGaveConsent }) => {
 				<button
 					className="bg-wp-theme-main mt-4 w-full cursor-pointer rounded border-0 px-4 py-2 text-center text-white"
 					type="button"
-					onClick={() => userAcceptsTerms()}>
+					onClick={() => userAcceptsTerms()}
+					data-test="draft-terms-button">
 					{__('Accept', 'extendify-local')}
 				</button>
 			</div>

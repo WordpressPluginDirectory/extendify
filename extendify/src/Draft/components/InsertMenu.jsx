@@ -159,7 +159,8 @@ export const InsertMenu = ({
 				}
 				disabled={loading || !canReplaceContent()}
 				icon={replace}
-				iconPosition="left">
+				iconPosition="left"
+				data-test="replace-selected">
 				{__('Replace selected block text', 'extendify-local')}
 			</MenuItem>
 			<MenuItem
@@ -167,7 +168,8 @@ export const InsertMenu = ({
 					insertCompletion({ replaceContent: false, position: 'top' })
 				}
 				disabled={loading}
-				iconPosition="left">
+				iconPosition="left"
+				data-test="insert-top">
 				<div className="-ml-1">
 					<Icon icon={addSubmenu} className="rotate-180" />
 				</div>
@@ -179,7 +181,8 @@ export const InsertMenu = ({
 				onMouseLeave={() => toggleInsertionPoint(false)}
 				disabled={loading || !canInsertAfter()}
 				icon={insertAfter}
-				iconPosition="left">
+				iconPosition="left"
+				data-test="insert-after">
 				{__('Insert after the selected text', 'extendify-local')}
 			</MenuItem>
 			<MenuItem
@@ -188,7 +191,8 @@ export const InsertMenu = ({
 				}
 				disabled={loading}
 				icon={addSubmenu}
-				iconPosition="left">
+				iconPosition="left"
+				data-test="insert-bottom">
 				{__('Insert at bottom', 'extendify-local')}
 			</MenuItem>
 			<Divider />
@@ -196,14 +200,16 @@ export const InsertMenu = ({
 				onClick={retry}
 				disabled={loading}
 				icon={rotateLeft}
-				iconPosition="left">
+				iconPosition="left"
+				data-test="try-again-button">
 				{__('Try again', 'extendify-local')}
 			</MenuItem>
 			<MenuItem
 				onClick={discard}
 				disabled={loading}
 				icon={trash}
-				iconPosition="left">
+				iconPosition="left"
+				data-test="discard-button">
 				{__('Discard', 'extendify-local')}
 			</MenuItem>
 		</MenuGroup>

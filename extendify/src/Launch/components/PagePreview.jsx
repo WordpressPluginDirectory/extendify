@@ -120,10 +120,12 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 				className={classNames('group w-full bg-transparent z-10', {
 					'opacity-0': !show,
 				})}>
-				<div ref={previewContainer} className="relative rounded-lg">
+				<div
+					ref={previewContainer}
+					className="relative rounded-lg max-w-[1440px] m-auto">
 					<BlockPreview
 						blocks={blocks}
-						viewportWidth={1400}
+						viewportWidth={1440}
 						additionalStyles={[
 							// TODO { css: themeJSON[style?.variation?.title] },
 							{

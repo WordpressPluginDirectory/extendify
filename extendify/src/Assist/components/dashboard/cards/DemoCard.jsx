@@ -18,7 +18,7 @@ export const DemoCard = ({ task }) => {
 				<div className="cta flex items-center mt-8 md:gap-3 text-sm flex-wrap">
 					<a
 						target="_blank"
-						className="text-center no-underline md:block px-4 py-2.5 cursor-pointer text-sm	font-medium	bg-design-main text-design-text rounded-sm hover:opacity-90"
+						className="text-center no-underline md:block min-w-24 px-4 py-2.5 cursor-pointer text-sm font-medium	bg-design-main text-design-text rounded-sm hover:opacity-90"
 						href={task.link}
 						onClick={() => completeTask(task.slug)}
 						rel="noreferrer">

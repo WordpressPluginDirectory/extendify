@@ -4,7 +4,7 @@ export const InfoBox = ({ description, setDescription }) => (
 	<>
 		<label
 			htmlFor="extendify-business-info-input"
-			className="text-lg md:text-base leading-8 md:leading-10 m-0 text-gray-900 font-semibold">
+			className="text-lg md:text-base leading-8 md:leading-10 m-0 text-gray-900 font-medium">
 			{__('Website description', 'extendify-local')}
 		</label>
 		<textarea

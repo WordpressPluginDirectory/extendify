@@ -96,32 +96,29 @@ export const RestartLaunchModal = ({ setPage, resetState }) => {
 						/>
 						<div
 							style={{ zIndex: 99999 + 100 }}
-							className="sm:flex rounded relative shadow-2xl sm:overflow-hidden bg-white max-w-screen-3xl">
-							<Dialog.Panel className="my-6 mx-8 flex flex-col gap-8">
-								<Dialog.Title className="m-0 text-gray-900 text-xl flex items-center">
+							className="sm:flex mx-6 rounded relative shadow-2xl sm:overflow-hidden bg-white max-w-screen-3xl">
+							<Dialog.Panel className="flex flex-col">
+								<Dialog.Title className="m-0 py-6 pr-7 pl-8 font-bold text-gray-900 text-2xl	flex items-center">
 									{__('Start over?', 'extendify-local')}
 								</Dialog.Title>
-								<div className="text-left relative">
-									<p className="text-lg m-0 mb-2">
-										{__(
-											'Go through the onboarding process again to create a new site.',
-											'extendify-local',
+								<div className="text-left relative py-0 px-8 text-base font-normal max-w-screen-sm">
+									{__(
+										'Go through the onboarding process again to create a new site.',
+										'extendify-local',
+									)}
+									<br />
+									<strong>
+										{sprintf(
+											// translators: %3$s is the number of old pages
+											__(
+												'%s pages created in the prior onboarding session will be deleted.',
+												'extendify-local',
+											),
+											oldPages.length,
 										)}
-									</p>
-									<p className="text-base m-0">
-										<strong>
-											{sprintf(
-												// translators: %3$s is the number of old pages
-												__(
-													'%s pages created in the prior onboarding session will be deleted.',
-													'extendify-local',
-												),
-												oldPages.length,
-											)}
-										</strong>
-									</p>
+									</strong>
 								</div>
-								<div className="flex justify-end space-x-4">
+								<div className="px-8 py-8 flex justify-end space-x-4 text-base">
 									<NavigationButton
 										data-test="modal-exit-button"
 										onClick={handleExit}

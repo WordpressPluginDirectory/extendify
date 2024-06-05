@@ -28,7 +28,9 @@ export const SelectedText = ({ loading }) => {
 	};
 
 	return (
-		<div className="flex space-x-2 rounded-sm border-none bg-gray-100 overflow-hidden mb-4 p-3">
+		<div
+			className="flex space-x-2 rounded-sm border-none bg-gray-100 overflow-hidden mb-4 p-3"
+			data-test="existing-text-container">
 			<div>
 				<Icon icon={edit} className="fill-current" />
 			</div>
@@ -46,7 +48,8 @@ export const SelectedText = ({ loading }) => {
 						disabled={loading}
 						icon={trash}
 						iconPosition="right"
-						className="text-gray-800 bg-gray-300 rounded relative cursor-pointer hover:bg-gray-400 flex-row-reverse">
+						className="text-gray-800 bg-gray-300 rounded relative cursor-pointer hover:bg-gray-400 flex-row-reverse"
+						data-test="remove-selection">
 						{__('Remove selection', 'extendify-local')}
 					</Button>
 				</div>
