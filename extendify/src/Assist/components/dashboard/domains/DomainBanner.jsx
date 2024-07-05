@@ -8,12 +8,12 @@ import {
 import { safeParseJson } from '@assist/lib/parsing';
 import { useGlobalStore } from '@assist/state/globals';
 
-const domains = safeParseJson(window.extAssistData.resourceData)?.domains || [];
+const domains = safeParseJson(window.extSharedData.resourceData)?.domains || [];
 
 export const DomainBanner = () => {
 	const { dismissBanner } = useGlobalStore();
 
-	if (!domainSearchUrl) return null;
+	if (!domainSearchUrl || !domains?.length) return null;
 
 	return (
 		<div

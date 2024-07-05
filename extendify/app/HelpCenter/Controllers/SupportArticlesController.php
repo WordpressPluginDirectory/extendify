@@ -15,7 +15,7 @@ use Extendify\Shared\Services\Sanitizer;
 class SupportArticlesController
 {
     /**
-     * The url for the new KB server.
+     * The url for the server.
      *
      * @var string
      */
@@ -26,15 +26,20 @@ class SupportArticlesController
      *
      * @return \WP_REST_Response
      */
-    public static function articles()
+    public static function fetchArticles()
     {
+        if (!defined('EXTENDIFY_PARTNER_ID')) {
+            return new \WP_REST_Response([], 200);
+        }
+
         $response = wp_remote_get(sprintf('%s/api/posts?lang=%s', static::$host, \get_locale()));
 
         if (is_wp_error($response)) {
             return new \WP_REST_Response([]);
         }
 
-        return new \WP_REST_Response(wp_remote_retrieve_body($response));
+        $body = json_decode(\wp_remote_retrieve_body($response), true);
+        return new \WP_REST_Response($body);
     }
 
     /**

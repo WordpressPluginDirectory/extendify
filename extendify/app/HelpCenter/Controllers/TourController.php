@@ -7,7 +7,6 @@ namespace Extendify\HelpCenter\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
-use Extendify\Http;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -15,20 +14,6 @@ use Extendify\Shared\Services\Sanitizer;
  */
 class TourController
 {
-    /**
-     * Return tasks from either database or source.
-     *
-     * @return \WP_REST_Response
-     */
-    public static function fetchTours()
-    {
-        $response = Http::get('/tours');
-        return new \WP_REST_Response(
-            $response,
-            wp_remote_retrieve_response_code($response)
-        );
-    }
-
     /**
      * Return the data
      *

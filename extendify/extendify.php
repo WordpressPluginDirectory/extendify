@@ -5,7 +5,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.14.1
+ * Version:           1.14.2
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       extendify-local
@@ -71,4 +71,27 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
         $extendify = new Extendify();
         $extendify();
     });
+
+    add_action('update_option', function ($option) {
+        if (in_array($option, ['WPLANG', 'blogname'], true)) {
+            \delete_transient('extendify_recommendations');
+            \delete_transient('extendify_domains');
+            \delete_transient('extendify_supportArticles');
+        }
+    });
+
+    // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundBeforeLastUsed
+    add_action('upgrader_process_complete', function ($upgrader, $options) {
+        $updatedExtendify = isset($options['plugins']) && array_filter($options['plugins'], function ($plugin) {
+            return strpos($plugin, 'extendify') !== false;
+        });
+
+        if (!$updatedExtendify) {
+            return;
+        }
+
+        \delete_transient('extendify_recommendations');
+        \delete_transient('extendify_domains');
+        \delete_transient('extendify_supportArticles');
+    }, 10, 2);
 endif;

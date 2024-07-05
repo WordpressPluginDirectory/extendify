@@ -1,0 +1,1819 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugins - Extendify — Gutenberg Patterns and Templates - Stable (latest release)\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-10-30T09:09:41+00:00\n"
+"PO-Revision-Date: 2023-10-17 14:31:16+0000\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+
+#. Plugin Name of the plugin
+#: extendify.php
+msgid "Extendify WordPress Onboarding and AI Assistant"
+msgstr "Extendify – Průvodce nastavením a AI asistent pro WordPress"
+
+#. Plugin URI of the plugin
+#: extendify.php
+msgid "https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash"
+msgstr "https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash"
+
+#. Description of the plugin
+#: extendify.php
+msgid "AI-powered WordPress assistant for onboarding and ongoing editing offered exclusively through select WordPress hosting providers."
+msgstr "AI poháněný asistent pro WordPress určený pro zaučení a průběžnou úpravu, který je k dispozici výhradně prostřednictvím vybraných poskytovatelů WordPress hostingu."
+
+#. Author of the plugin
+#: extendify.php
+msgid "Extendify"
+msgstr "Extendify"
+
+#. Author URI of the plugin
+#: extendify.php
+msgid "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
+msgstr "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
+
+#. translators: Launch is a noun.
+#: app/AdminPageRouter.php:58
+msgid "Launch"
+msgstr "Spuštění"
+
+#: app/AdminPageRouter.php:145
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Site Assistant"
+msgstr "Asistent webu"
+
+#: app/HelpCenter/Controllers/SupportArticlesController.php:98
+msgid "Page not found"
+msgstr "Stránka nenalezena"
+
+#: app/Library/Admin.php:138
+msgid "Extendify Library User Settings"
+msgstr "Uživatelská nastavení knihovny Extendify"
+
+#: app/Library/AdminPage.php:77
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "View Site"
+msgstr "Zobrazit web"
+
+#. translators: %s: The name of the plugin, Extendify
+#: app/Library/AdminPage.php:85
+msgid "%s Banner"
+msgstr "%s banner"
+
+#. translators: %s: The name of the plugin, Extendify
+#: app/Library/AdminPage.php:97
+msgid "Welcome to %s"
+msgstr "Vítejte v %s"
+
+#. translators: %s: The name of the plugin, Extendify
+#: app/Library/AdminPage.php:106
+msgid "%s is a massive library of drop-in block patterns easily customized to your liking. Each pattern is meticulously designed to work with your existing WordPress theme."
+msgstr "%s je rozsáhlá knihovna hotových blokových vzorů, které lze snadno přizpůsobit vašim potřebám. Každý vzor je pečlivě navržen tak, aby fungoval s vaší stávající šablonou WordPress."
+
+#. translators: %s: Extendify Library term
+#: app/Library/AdminPage.php:119
+msgid "1. Open the %s"
+msgstr "1. Otevřete %s"
+
+#. translators: %s: Extendify Library term
+#: app/Library/AdminPage.php:128
+msgid "When editing a page or post within the block editor, you'll see the %s button within the editor's header"
+msgstr "Při úpravě stránky nebo příspěvku v blokovém editoru uvidíte v záhlaví editoru tlačítko %s"
+
+#. translators: %1$s = URL.
+#: app/Library/AdminPage.php:136
+msgid "You may also add a new page with the library opened for you by %1$s."
+msgstr "Můžete také přidat novou stránku s již otevřenou knihovnou prostřednictvím %1$s."
+
+#. translators: %1$s = URL.
+#: app/Library/AdminPage.php:136
+msgid "clicking here"
+msgstr "kliknutím zde"
+
+#: app/Library/AdminPage.php:149
+msgid "2. Choose a site industry"
+msgstr "2. Vyberte odvětví webu"
+
+#: app/Library/AdminPage.php:152
+msgid "With the library open, you can set your site industry - or type - which will surface the perfect industry-specific patterns and full page layouts to drop onto your website."
+msgstr "S otevřenou knihovnou můžete nastavit obor vašeho webu, což umožní zobrazit ideální vzory specifické pro daný obor a kompletní rozložení stránek, které můžete použít na svém webu."
+
+#. translators: %s: The name of the plugin, Extendify
+#: app/Library/AdminPage.php:158
+msgid "%s supports over sixty types with new industries added regularly."
+msgstr "%s podporuje více než šedesát typů a pravidelně přidává nové obory."
+
+#: app/Library/AdminPage.php:168
+msgid "3. Browse Patterns & Layouts."
+msgstr "3. Procházet vzory a rozložení."
+
+#. translators: %s: The name of the plugin, Extendify
+#: app/Library/AdminPage.php:174
+msgid "Search by industry, contents, and design attributes. %s has thousands of best-in-class block patterns. Find what you love and add it to the page - done!"
+msgstr "Hledejte podle odvětví, obsahu a designových atributů. %s nabízí tisíce prvotřídních vzorů bloků. Najděte, co se vám líbí, a přidejte to na stránku - hotovo!"
+
+#: app/Library/AdminPage.php:180
+msgid "You'll find beautiful high fidelity Gutenberg content to add to your pages in no time!"
+msgstr "Naleznete krásný obsah s vysokou věrností pro Gutenberg, který můžete na své stránky přidat během chvíle!"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Edit or update the image"
+msgstr "Upravit nebo aktualizovat obrázek"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Replace image"
+msgstr "Nahradit obrázek"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Remove image"
+msgstr "Odstranit obrázek"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+msgid "Done"
+msgstr "Hotovo"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Close Modal"
+msgstr "Zavřít modální okno"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Site Guide"
+msgstr "Průvodce webem"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Site Industry"
+msgstr "Odvětví webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Let's Start Building Your Website"
+msgstr "Začněme stavět váš web"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher."
+msgstr "Vytvořte během několika minut super rychlý, krásný a plně přizpůsobený web pomocí našeho spouštěče webů."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Select Site Industry"
+msgstr "Vybrat obor webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Site Title"
+msgstr "Název webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Continue Building Your Website"
+msgstr "Pokračujte ve výstavbě vašeho webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Set Site Title"
+msgstr "Nastavit název webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Goals"
+msgstr "Cíle"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Select Site Goals"
+msgstr "Vybrat cíle webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Design"
+msgstr "Design"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Select Site Design"
+msgstr "Vybrat design webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Pages"
+msgstr "Stránky"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Select Site Pages"
+msgstr "Vybrat stránky webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Dismiss"
+msgstr "Zavřít"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Upload site logo"
+msgstr "Nahrát logo webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Site logo"
+msgstr "Logo webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Set site logo"
+msgstr "Nastavit logo webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Add site description"
+msgstr "Přidat popis webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Loading..."
+msgstr "Načítání..."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Site description"
+msgstr "Popis webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Enter a site description..."
+msgstr "Zadejte popis webu..."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Save"
+msgstr "Uložit"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Upload site icon"
+msgstr "Nahrát ikonu webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Site icon"
+msgstr "Ikona webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Set site icon"
+msgstr "Nastavit ikonu webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "This tour is only available on desktop devices"
+msgstr "Tato prohlídka je dostupná pouze na stolních zařízeních"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Register this domain"
+msgstr "Zaregistrujte tuto doménu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+msgid "Service offline. Check back later."
+msgstr "Služba je offline. Zkuste to prosím později."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Add new page"
+msgstr "Přidat novou stránku"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Add new post"
+msgstr "Přidat nový příspěvek"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Explore plugins"
+msgstr "Procházet pluginy"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Site style"
+msgstr "Styl webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Edit header"
+msgstr "Upravit záhlaví"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Edit footer"
+msgstr "Upravit zápatí"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Edit site navigation"
+msgstr "Upravit navigaci webu"
+
+#. translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Reset site"
+msgstr "Resetovat web"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Quick Links"
+msgstr "Rychlé odkazy"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Logo for %s"
+msgstr "Logo pro %s"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Error"
+msgstr "Chyba"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Active"
+msgstr "Aktivní"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Activating..."
+msgstr "Aktivace..."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Activate"
+msgstr "Aktivovat"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Installing..."
+msgstr "Instalace..."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Install Now"
+msgstr "Instalovat nyní"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Website Tools & Plugins"
+msgstr "Nástroje a pluginy pro web"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "All caught up!"
+msgstr "Vše je aktuální!"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "You've completed the set tasks—your site is looking good. This dashboard will update with new tasks and insights to keep your website evolving. Stay tuned!"
+msgstr "Úkoly byly dokončeny—váš web vypadá dobře. Tato hlavní strana bude aktualizována o nové úkoly a postřehy, aby váš web neustále pokračoval v evoluci. Zůstaňte s námi!"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Your Own Domain Awaits"
+msgstr "Vaše vlastní doména na vás čeká"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+msgid "Move from a subdomain to a custom domain for improved website identity and SEO benefits."
+msgstr "Přejděte z subdomény na vlastní doménu pro lepší identitu webu a výhody v oblasti SEO."
+
+#. translators: this refers to a domain name
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+msgid "Available and just right for your site"
+msgstr "Dostupné a přesně pro váš web"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Secure a domain"
+msgstr "Zabezpečte doménu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+msgid "Add An Additional Domain"
+msgstr "Přidat další doménu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+msgid "Having another domain can drive additional traffic to your website."
+msgstr "Vlastnictví další domény může přivést na váš web další návštěvníky."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Add a page"
+msgstr "Přidat stránku"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Add a new page for your website."
+msgstr "Přidejte novou stránku na váš web."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Add new"
+msgstr "Vytvořit nový"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Managed WordPress Hosting"
+msgstr "Spravovaný hosting pro WordPress"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "We take care of WordPress settings, updating themes and plugins, security and backing up your website."
+msgstr "Staráme se o nastavení WordPressu, aktualizace šablon a pluginů, zabezpečení a zálohování vašeho webu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Learn More"
+msgstr "Zjistěte více"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Choose your domain"
+msgstr "Vyberte vaši doménu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Claim your domain"
+msgstr "Zaregistrujte svou doménu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Claim the perfect domain for your site."
+msgstr "Zajistěte si ideální doménu pro váš web."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Edit your homepage"
+msgstr "Upravit úvodní stránku"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Edit homepage by replacing existing content."
+msgstr "Upravit úvodní stránku nahrazením stávajícího obsahu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Edit now"
+msgstr "Upravit nyní"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Connect your domain"
+msgstr "Připojte svou doménu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "To bring real visitors to your website and to complete the website setup, we recommend you connect your domain in your hosting control panel now."
+msgstr "Pro přilákání skutečných návštěvníků na váš web a dokončení nastavení webu doporučujeme nyní připojit vaši doménu v ovládacím panelu hostingu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Add an additional domain"
+msgstr "Přidat další doménu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Get another domain for your site."
+msgstr "Získejte další doménu pro váš web."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up All in One SEO"
+msgstr "Nastavit All in One SEO"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up the All in One SEO plugin to enhance your website discoverability."
+msgstr "Nastavte plugin All in One SEO pro zlepšení vyhledatelnosti vašeho webu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up"
+msgstr "Nastavit"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Revisit"
+msgstr "Navštívit znovu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up donations"
+msgstr "Nastavit dary"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up the GiveWP plugin to enable donations on your site."
+msgstr "Nastavte plugin GiveWP pro povolení darů na vašem webu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up HubSpot"
+msgstr "Nastavit HubSpot"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Start collecting emails and marketing to your customers"
+msgstr "Začněte sbírat e-maily a marketovat svým zákazníkům."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up analytics"
+msgstr "Nastavit analytiku"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up the MonsterInsights plugin to enable Google Analytics in your website."
+msgstr "Nastavte plugin MonsterInsights pro aktivaci Google Analytics na vašem webu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up appointments"
+msgstr "Nastavit schůzky"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Start accepting appointments on your website by configuring the Simply Scheduled Appointments plugin."
+msgstr "Začněte přijímat rezervace na svém webu konfigurací pluginu Simply Scheduled Appointments."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up events"
+msgstr "Nastavit události"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Start adding events to your site by configuring The Events Calendar plugin."
+msgstr "Začněte přidávat události na svůj web konfigurací pluginu Kalendář událostí."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up WooCommerce Germanized plugin"
+msgstr "Nastavit plugin WooCommerce Germanized"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Ensure your eCommerce store complies with local regulations."
+msgstr "Ujistěte se, že váš e-commerce obchod splňuje místní předpisy."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up your eCommerce store"
+msgstr "Nastavte svůj obchod eCommerce"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up WooCommerce to start selling on your website."
+msgstr "Nastavte WooCommerce a začněte prodávat na vašem webu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up WPForms"
+msgstr "Nastavit WPForms"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up the WPForms plugin to add a contact form on your site."
+msgstr "Nastavte plugin WPForms pro přidání kontaktního formuláře na váš web."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up YourWebshop"
+msgstr "Nastavte YourWebshop"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Set up the YourWebshop plugin and start selling on your website right away."
+msgstr "Nastavte plugin YourWebshop a začněte ihned prodávat na svém webu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Take a welcome tour"
+msgstr "Projděte si uvítací prohlídku"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Learn about the key features of the Site Assistant."
+msgstr "Seznamte se s klíčovými funkcemi Asistenta webu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Restart"
+msgstr "Restartovat"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Start"
+msgstr "Spustit"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Continue with site builder"
+msgstr "Pokračovat s tvůrcem webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Add a site description"
+msgstr "Přidat popis webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "In a few words, explain what your site is about."
+msgstr "V několika slovech vysvětlete, o čem váš web je."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Change"
+msgstr "Změnit"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Add"
+msgstr "Přidat"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Upload a logo"
+msgstr "Nahrát logo"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Ensure your website is on-brand by adding your logo."
+msgstr "Zajistěte, aby váš web odpovídal vaší značce, přidáním loga."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Replace"
+msgstr "Nahradit"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Upload"
+msgstr "Nahrát"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Upload a site icon"
+msgstr "Nahrát ikonu webu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Ensure your website is on-brand by adding your site icon."
+msgstr "Zajistěte, aby váš web odpovídal vaší značce, přidáním ikony webu."
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Dashboard"
+msgstr "Nástěnka"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Menu"
+msgstr "Menu"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "View site"
+msgstr "Zobrazit web"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+msgid "Skip to Assist"
+msgstr "Přeskočit na asistenci"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "A paragraph …"
+msgstr "Odstavec …"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Write a paragraph about"
+msgstr "Napište odstavec o"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Blog post …"
+msgstr "Příspěvek na blogu …"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Write a blog post about"
+msgstr "Napište blogový příspěvek na téma"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "An informative article …"
+msgstr "Informativní článek …"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Write an informative article about"
+msgstr "Napište informativní článek o"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Headline …"
+msgstr "Nadpis …"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Write a headline for"
+msgstr "Napište titulek pro"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "List …"
+msgstr "Seznam …"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Write a list of"
+msgstr "Napište seznam"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Improve writing"
+msgstr "Vylepšete psaní"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Fix spelling & grammar"
+msgstr "Opravit pravopis a gramatiku"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Simplify language"
+msgstr "Zjednodušit jazyk"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Make shorter"
+msgstr "Zkrátit"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Make longer"
+msgstr "Prodloužit"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "AI is writing..."
+msgstr "AI píše..."
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Ask AI to edit"
+msgstr "Požádat AI o úpravu"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Ask AI to generate text"
+msgstr "Požádejte AI o vygenerování textu"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Submit"
+msgstr "Potvrdit"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Replace selected block text"
+msgstr "Nahradit text vybraného bloku"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Insert at top"
+msgstr "Vložit na začátek"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Insert after the selected text"
+msgstr "Vložit za vybraný text"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Insert at bottom"
+msgstr "Vložit na konec"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Try again"
+msgstr "Zkusit znovu"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Discard"
+msgstr "Zrušit"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:1
+msgid "Remove selection"
+msgstr "Odstranit výběr"
+
+#. translators: %1$s is the number of used credits, %2$s is the total credits
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:3
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "%1$s of %2$s daily image credits used"
+msgstr "Využito %1$s z %2$s denních kreditů na obrázky"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "You can still explore and find great images on Unsplash until your credits reset."
+msgstr "Stále můžete prozkoumávat a hledat skvělé obrázky na Unsplash, dokud se vaše kredity neobnoví."
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Search on Unsplash"
+msgstr "Hledat na Unsplash"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Tell AI about the image you would like to create"
+msgstr "Popište umělé inteligenci obrázek, který byste chtěli vytvořit."
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Image Prompt"
+msgstr "Výzva k obrázku"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Aspect Ratio"
+msgstr "Poměr stran"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Square: 1:1"
+msgstr "Čtverec: 1:1"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Landscape: 4:3"
+msgstr "Na šířku: 4:3"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Portrait: 3:4"
+msgstr "Na výšku: 3:4"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Generating image..."
+msgstr "Generování obrázku..."
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Generate image"
+msgstr "Vygenerovat obrázek"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:5
+msgid "Generating your image: "
+msgstr "Generování obrázku:"
+
+#. translators: "Importing image" means the image is being added to the WordPress post editor
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Importing image..."
+msgstr "Importuji obrázek..."
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Use this image"
+msgstr "Použít tento obrázek"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Delete image"
+msgstr "Smazat obrázek"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "AI Image"
+msgstr "AI obrázek"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Go Back"
+msgstr "Vrátit se zpět"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "AI Image Generator"
+msgstr "Generátor obrázků s AI"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Image Description"
+msgstr "Popis obrázku"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
+msgstr "Váš požadavek byl zamítnut naším bezpečnostním systémem. Váš dotaz může obsahovat text, který není naším bezpečnostním systémem povolen."
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Service temporarily unavailable"
+msgstr "Služba je dočasně nedostupná"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Home"
+msgstr "Domů"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Use AI to generate custom images based on your description."
+msgstr "Použijte AI k vytvoření uživatelských obrázků na základě vašeho popisu."
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Add a prompt"
+msgstr "Přidat výzvu"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Discover Stock Photos"
+msgstr "Objevte fotobanky"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Search and add free stock photos from Unsplash.com"
+msgstr "Vyhledejte a přidejte bezplatné fotky z Unsplash.com"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Search Unsplash"
+msgstr "Vyhledat na Unsplash"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "No images found."
+msgstr "Nebyly nalezeny žádné obrázky."
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Unsplash"
+msgstr "Unsplash"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Photos from Unsplash"
+msgstr "Fotografie z Unsplash"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Terms of Use"
+msgstr "Podmínky použití"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Accept"
+msgstr "Přijmout"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Suggested prompts"
+msgstr "Doporučené výzvy"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Get Personalized Image"
+msgstr "Získat personalizovaný obrázek"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Catalan"
+msgstr "Katalánština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Danish"
+msgstr "Dánština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Dutch"
+msgstr "Nizozemština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Dutch (Belgium)"
+msgstr "Holandština (Belgie)"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "English"
+msgstr "Angličtina"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Estonian"
+msgstr "Estonština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Finnish"
+msgstr "Finština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "French (Belgium)"
+msgstr "Francouzština (Belgie)"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "French (France)"
+msgstr "Francouzština (Francie)"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "German"
+msgstr "Němčina"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "German (Switzerland)"
+msgstr "Němčina (Švýcarsko)"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Indonesian"
+msgstr "Indonéština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Italian"
+msgstr "Italština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Japanese"
+msgstr "Japonština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Polish"
+msgstr "Polština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Portuguese (Brazil)"
+msgstr "Portugalština (Brazílie)"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Portuguese (Portugal)"
+msgstr "Portugalština (Portugalsko)"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Spanish (Spain)"
+msgstr "Španělština (Španělsko)"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Swedish"
+msgstr "Švédština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Ukrainian"
+msgstr "Ukrajinština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Vietnamese"
+msgstr "Vietnamština"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Translate"
+msgstr "Přeložit"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Translate to..."
+msgstr "Přeložit do..."
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Ask AI"
+msgstr "Zeptejte se AI"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Custom prompt"
+msgstr "Vlastní výzva"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "Draft"
+msgstr "Návrh"
+
+#: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
+msgid "AI Tools"
+msgstr "AI nástroje"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Please try again."
+msgstr "Zkuste to prosím znovu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Remove rating"
+msgstr "Odstranit hodnocení"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Rate that this answer was helpful"
+msgstr "Ohodnoťte, jak byla tato odpověď užitečná"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Rate that this answer was not helpful"
+msgstr "Ohodnoťte, že tato odpověď nebyla užitečná"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Oops! We were unable to send your question."
+msgstr "Jejda! Nepodařilo se nám odeslat váš dotaz."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Ask Another Question"
+msgstr "Položit další otázku"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Chat History"
+msgstr "Historie rozhovorů"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Close history"
+msgstr "Zavřít historii"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Remove from history"
+msgstr "Odstranit z historie"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Beginner"
+msgstr "Začátečník"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Intermediate"
+msgstr "Středně pokročilý"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Advanced"
+msgstr "Pokročilé"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Toggle menu"
+msgstr "Přepnout menu"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "WordPress Comfort Level"
+msgstr "Úroveň pohodlí s WordPressem"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Chat History (%d)"
+msgstr "Historie rozhovorů (%d)"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Hi there!"
+msgstr "Ahoj!"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Ask me any questions about WordPress."
+msgstr "Zeptejte se mě na jakékoli otázky týkající se WordPressu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Ask your WordPress question…"
+msgstr "Zeptejte se na svou otázku ohledně WordPressu…"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "For other questions, visit our support page."
+msgstr "Pro další otázky navštivte naši stránku podpory."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Got questions? Ask our AI chatbot"
+msgstr "Máte otázky? Zeptejte se našeho AI chatbota"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "AI Chatbot"
+msgstr "AI Chatbot"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "There was an error loading this article"
+msgstr "Při načítání tohoto článku došlo k chybě."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Search for articles"
+msgstr "Hledat články"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "What do you need help with?"
+msgstr "S čím potřebujete pomoci?"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Knowledge Base"
+msgstr "Znalostní báze"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Searching..."
+msgstr "Vyhledávání..."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Search results"
+msgstr "Výsledky hledání"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Search the knowledge base"
+msgstr "Vyhledat v databázi znalostí"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+msgid "Design Library"
+msgstr "Knihovna designů"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Open the Pattern Library"
+msgstr "Otevřít knihovnu vzorů"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "The Extendify pattern library can be opened by clicking the button to the left."
+msgstr "Knihovnu vzorů Extendify otevřete kliknutím na tlačítko vlevo."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Filter Patterns"
+msgstr "Filtrovat vzory"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click on any pattern category to refine the selection."
+msgstr "Klikněte na kteroukoli kategorii vzorů pro upřesnění výběru."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Select a Pattern"
+msgstr "Vyberte vzor"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Simply select any pattern you wish to insert into a page by clicking on it."
+msgstr "Stačí kliknout na vzor, který si přejete vložit na stránku."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "View the Inserted Pattern"
+msgstr "Zobrazit vložený vzor"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "The selected pattern has been inserted into the page."
+msgstr "Vybraný vzor byl vložen do stránky."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Page editor"
+msgstr "Editor stránek"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Add a Block"
+msgstr "Přidat blok"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click the plus to open the block inserter."
+msgstr "Klikněte na plus pro otevření nástroje pro vkládání bloků."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Block Inserter"
+msgstr "Vkládání bloků"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Add a block by clicking or dragging it onto the page."
+msgstr "Přidejte blok kliknutím nebo přetažením na stránku."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Page Title"
+msgstr "Název stránky"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
+msgstr "Úpravu názvu stránky provedete kliknutím na něj. Poznámka: Název se může, ale nemusí zobrazit na publikované stránce v závislosti na použité šabloně stránky."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Blocks"
+msgstr "Bloky"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Each block will show up on the page and can be edited by clicking on it."
+msgstr "Každý blok se zobrazí na stránce a lze ho upravit kliknutím na něj."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
+msgstr "Toto je ukázkový blok odstavce. Může obsahovat několik vět a zabírat více řádků. Na stránku můžete přidat libovolný počet bloků."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Page and Block Settings"
+msgstr "Nastavení stránky a bloků"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Select either page or block to change the settings for the entire page or the block that is selected."
+msgstr "Vyberte buď stránku nebo blok, abyste změnili nastavení pro celou stránku nebo vybraný blok."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Preview"
+msgstr "Náhled"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click preview to view how your changes look on the front end of your site."
+msgstr "Klikněte na náhled, abyste viděli, jak budou vaše změny vypadat na veřejné části webu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Publish or Save"
+msgstr "Publikovat nebo uložit"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
+msgstr "Klikněte na Publikovat nebo Aktualizovat pro uložení provedených změn na stránce a zveřejnění jich na webu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Installing a plugin"
+msgstr "Instalace pluginu"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Add New plugin menu"
+msgstr "Přidat nové menu pluginu"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click here to access the Add Plugins page."
+msgstr "Klikněte zde pro přístup na stránku Přidat pluginy."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Search"
+msgstr "Vyhledat"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Search for a plugin by name or functionality."
+msgstr "Vyhledejte plugin podle jména nebo funkcionality."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Plugin details"
+msgstr "Podrobnosti o pluginu"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "See important information about each plugin."
+msgstr "Zobrazit důležité informace o každém pluginu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Install now"
+msgstr "Instalovat nyní"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Install the plugin. Then, press this button again to activate the plugin."
+msgstr "Nainstalujte plugin. Poté stiskněte toto tlačítko znovu pro aktivaci pluginu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Upload Plugin"
+msgstr "Nahrát plugin"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "If you have a plugin from an external source, you can upload it directly here."
+msgstr "Pokud máte plugin z externího zdroje, můžete ho zde nahrát přímo."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Plugin management"
+msgstr "Správa pluginů"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Installed Plugins menu"
+msgstr "Menu nainstalovaných pluginů"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click this menu to see and manage the plugins you have installed."
+msgstr "Klikněte na toto menu pro zobrazení a správu nainstalovaných pluginů."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Installed plugins"
+msgstr "Nainstalované pluginy"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
+msgstr "Zobrazit všechny pluginy nainstalované na webu. Zahrnuje aktivní i deaktivované pluginy."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Deactivate/activate option"
+msgstr "Deaktivovat/aktivovat možnost"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Under each plugin you can activate or deactivate it."
+msgstr "Pod každým pluginem můžete plugin aktivovat nebo deaktivovat."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Add another"
+msgstr "Přidat další"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click here to add another plugin to your site."
+msgstr "Klikněte zde pro přidání dalšího pluginu na váš web."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Tasks"
+msgstr "Úkoly"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Now that you've created your starter site, make it your own with these follow up tasks."
+msgstr "Nyní, když jste vytvořili svůj základní web, přizpůsobte si ho pomocí těchto následujících úkolů."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Easily access some of the most common items in WordPress with these quick links."
+msgstr "S těmito rychlými odkazy snadno získáte přístup k některým z nejběžnějších položek ve WordPressu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "See our personalized recommendations for you that will help you accomplish your goals."
+msgstr "Podívejte se na naše personalizované doporučení pro vás, která vám pomohou dosáhnout vašich cílů."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Help Center"
+msgstr "Centrum podpory"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "You can always access the help center by clicking this button."
+msgstr "Centrum nápovědy můžete kdykoliv otevřít kliknutím na toto tlačítko."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Visit your site"
+msgstr "Navštivte svůj web"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "You can always visit your site by clicking this button."
+msgstr "Svému webu můžete kdykoliv navštívit kliknutím na toto tlačítko."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Come back to the Site Assistant any time by clicking the menu item."
+msgstr "Kdykoliv se můžete vrátit k Asistentovi webu kliknutím na položku v menu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Users screen"
+msgstr "Obrazovka uživatelů"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "All Users menu"
+msgstr "Menu pro všechny uživatele"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click here to view and manage the users on your site."
+msgstr "Klikněte zde pro zobrazení a správu uživatelů na vašem webu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Users"
+msgstr "Uživatelé"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "See all of your users, including admin users in this table."
+msgstr "V této tabulce uvidíte všechny své uživatele, včetně administrátorů."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Edit user information"
+msgstr "Upravit informace o uživateli"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
+msgstr "Klikněte na tlačítko úpravy pro změnu uživatelské úrovně, správu jejich účtu nebo změnu informací v profilu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Search for users"
+msgstr "Vyhledat uživatele"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Use the search bar to find a particular user."
+msgstr "Použijte vyhledávací pole pro nalezení konkrétního uživatele."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Add a new user"
+msgstr "Přidat nového uživatele"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click the Add New button to add a new user to your site."
+msgstr "Klikněte na tlačítko \"Vytvořit nového uživatele\" pro přidání nového uživatele na váš web."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Getting started with WordPress"
+msgstr "Začínáme s WordPressem"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "At any time, you can view your site (from a visitor's perspective) from the top admin bar under your site's name."
+msgstr "Kdykoliv můžete zobrazit svůj web (z pohledu návštěvníka) pomocí horní administrační lišty pod názvem vašeho webu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Access the Site Assistant at any time."
+msgstr "Kdykoliv přistupte k Asistentovi webu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
+msgstr "Klikněte zde pro přechod na řídicí panel správy vašeho webu. Odtud budete moci vytvářet další weby a spravovat nastavení vašeho účtu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "The default WordPress dashboard will have some overall site metrics and modules added from certain plugins."
+msgstr "Ve výchozím nastavení bude mít nástěnka WordPress přehled metrik webu a moduly přidané z některých pluginů."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Posts"
+msgstr "Příspěvky"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Manage and create blog posts."
+msgstr "Spravujte a vytvářejte příspěvky na blogu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Media"
+msgstr "Média"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Add, edit, or remove images and other media from your library. When you upload an image to be used on your site, it will be added to the library."
+msgstr "Přidejte, upravte nebo odstraňte obrázky a další média z vaší knihovny. Po nahrání obrázku, který chcete použít na webu, bude přidán do knihovny."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Use the pages menu to add, delete, or edit the pages on your site."
+msgstr "Pomocí nabídky stránek můžete přidávat, mazat nebo upravovat stránky na vašem webu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Comments"
+msgstr "Komentáře"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "If you have commenting enabled on your posts, you can manage those comments here."
+msgstr "Pokud máte u příspěvků povolené komentáře, můžete je spravovat zde."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Appearance"
+msgstr "Vzhled"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Manage your theme and access the Site Editor from the Appearance menu. The Site Editor is where you can make global changes to your site (such as the menu, header/footer, and styles)."
+msgstr "Spravujte svou šablonu a přistupujte k webovému editoru z nabídky Vzhled. Webový editor je místo, kde můžete provádět globální změny na svém webu (jako jsou menu, záhlaví/patička a styly)."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Plugins"
+msgstr "Pluginy"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Add or manage the plugins on your site."
+msgstr "Přidejte nebo spravujte pluginy na vašem webu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Add or manage users on your site, both admin users and others."
+msgstr "Přidejte nebo spravujte uživatele na vašem webu, jak administrátory, tak ostatní."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Tools"
+msgstr "Nástroje"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Import/export post data, check site health, and edit theme or plugin files directly in the WordPress admin."
+msgstr "Importujte/exportujte data příspěvků, kontrolujte zdraví webu a přímo v administraci WordPressu upravujte soubory šablon nebo pluginů."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Settings"
+msgstr "Nastavení"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Advanced settings for your site and for certain plugins."
+msgstr "Pokročilá nastavení pro váš web a pro určité pluginy."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Collapse menu"
+msgstr "Sbalit menu"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Use this toggle to collapse or expand the sidebar menu."
+msgstr "Pomocí tohoto přepínače můžete sbalit nebo rozbalit postranní nabídku."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "User"
+msgstr "Uživatel"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Manage your profile or log out of your account here."
+msgstr "Zde můžete spravovat svůj profil nebo se odhlásit ze svého účtu."
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Tours"
+msgstr "Prohlídky"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Learn more about your WordPress admin"
+msgstr "Další informace o vaší administraci WordPressu"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Tour this page"
+msgstr "Prohlédnout tuto stránku"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Show Help Center"
+msgstr "Zobrazit Centrum nápovědy"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Minimize Help Center"
+msgstr "Minimalizovat Centrum nápovědy"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "close"
+msgstr "zavřít"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Go back"
+msgstr "Vrátit se zpět"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Extendify Help Center"
+msgstr "Centrum nápovědy Extendify"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Tour"
+msgstr "Prohlídka"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Back"
+msgstr "Zpět"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+msgid "Tour Steps"
+msgstr "Kroky prohlídky"
+
+#. translators: %1$s is the current step, %2$s is the total number of steps
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+msgid "%1$s of %2$s"
+msgstr "%1$s z %2$s"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Next"
+msgstr "Další"
+
+#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+msgid "Help"
+msgstr "Nápověda"
+
+#. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:3
+msgid "Added by Launch"
+msgstr "Přidal Launch"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:3
+msgid "Start over?"
+msgstr "Začít znovu?"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:3
+msgid "Go through the onboarding process again to create a new site."
+msgstr "Pro vytvoření nového webu projděte znovu procesem úvodního nastavení."
+
+#. translators: %3$s is the number of old pages
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "%s pages created in the prior onboarding session will be deleted."
+msgstr "%s stránek vytvořených v předchozí úvodní seanci bude smazáno."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Exit"
+msgstr "Ukončit"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Processing"
+msgstr "Zpracování"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Continue"
+msgstr "Pokračovat"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Just a moment, this is taking longer than expected."
+msgstr "Chvilku strpení, trvá to déle, než se předpokládalo."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "I agree (required to use AI Assistant)"
+msgstr "Souhlasím (vyžadováno pro použití AI asistenta)"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Website description"
+msgstr "Popis webu"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
+msgstr "Například, jsme jóga studio v Londýně s profesionálně vyškolenými instruktory zaměřujícími se na hot jógu pro terapeutické účely."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Professional"
+msgstr "Profesionální"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Friendly"
+msgstr "Přátelský"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Inspirational"
+msgstr "Inspirativní"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Informative"
+msgstr "Informativní"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Persuasive"
+msgstr "Přesvědčivý"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Select your site's tone (optional)"
+msgstr "Vyberte tón vašeho webu (volitelné)"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Exit Launch"
+msgstr "Ukončit spuštění"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Skip"
+msgstr "Přeskočit"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Business Information"
+msgstr "Informace o firmě"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Please accept the terms to continue"
+msgstr "Pro pokračování prosím přijměte podmínky"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Press to select"
+msgstr "Stiskněte pro výběr"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Layout"
+msgstr "Rozvržení"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "What's the name of your website?"
+msgstr "Jaký je název vašeho webu?"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Enter your website name"
+msgstr "Zadejte název vašeho webu"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+msgid "Search for your site type"
+msgstr "Vyhledejte typ vašeho webu"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "What is your WordPress site about?"
+msgstr "O čem je váš web na WordPressu?"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "We will help you create your WordPress website quickly."
+msgstr "Pomůžeme vám rychle vytvořit váš web na WordPressu."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "What's the name of your new site?"
+msgstr "Jaký název bude mít váš nový web?"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "You can change this later."
+msgstr "Toto můžete později změnit."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "What are your goals for your website?"
+msgstr "Jaké jsou vaše cíle pro váš web?"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "We'll make sure your website has what it needs to achieve your goals."
+msgstr "Postaráme se, aby váš web měl vše potřebné pro dosažení vašich cílů."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Pick a design for your website"
+msgstr "Vyberte design pro váš web"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "You can personalize this later."
+msgstr "To můžete později personalizovat."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Home page"
+msgstr "Domovská stránka"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Pick the pages to add to your website"
+msgstr "Vyberte stránky, které chcete přidat na váš web."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "We already selected the most common pages for your type of website."
+msgstr "Pro váš typ webu jsme již vybrali nejběžnější stránky."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "View more pages"
+msgstr "Zobrazit více stránek"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Let us create custom copy for your website"
+msgstr "Nechte nás vytvořit uživatelský text pro váš web."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Our AI Assistant will take your input and create customized copy for each page. Describe your website or business with as much detail as you'd like and we'll use it to create your perfect site."
+msgstr "Náš AI asistent vezme vaše zadání a vytvoří přizpůsobený obsah pro každou stránku. Popište svůj web nebo firmu s tolika detaily, jak chcete, a my to použijeme k vytvoření vašeho ideálního webu."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Site is not ready to launch."
+msgstr "Web není připraven k spuštění."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Applying your website styles"
+msgstr "Aplikace stylů vašeho webu"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Creating a beautiful website"
+msgstr "Vytváření krásného webu"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Installing necessary plugins"
+msgstr "Instalace nezbytných pluginů"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Populating data"
+msgstr "Naplnění daty"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Personalizing your experience"
+msgstr "Personalizace vašeho zážitku"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Adding page content"
+msgstr "Přidávání obsahu stránky"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Starting off with a full website"
+msgstr "Začínáme s kompletním webem"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Blog"
+msgstr "Blog"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Creating pages with custom content"
+msgstr "Vytváření stránek s vlastním obsahem"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Setting up site layout"
+msgstr "Nastavení rozvržení webu"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Events"
+msgstr "Události"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Header Navigation"
+msgstr "Navigace záhlaví"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Setting up your Site Assistant"
+msgstr "Nastavení vašeho asistenta webu"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Helping you to succeed"
+msgstr "Pomáháme vám dosáhnout úspěchu"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Your website has been created!"
+msgstr "Váš web byl vytvořen!"
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Redirecting in 3, 2, 1..."
+msgstr "Přesměrování za 3, 2, 1..."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
+msgstr "Narazili jsme na serverovou chybu, z které se nemůžeme vzpamatovat. Obnovte prosím stránku a zkuste to znovu."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "One more thing before we start."
+msgstr "Ještě jedna věc, než začneme."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
+msgstr "Ahoj, Launch je poháněn rozšířením Extendable a je nutný pro pokračování. Můžete ho nainstalovat z níže uvedeného odkazu a po aktivaci začít znovu."
+
+#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+msgid "Take me there"
+msgstr "Zaveď mě tam"
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+msgid "Insert Pattern"
+msgstr "Vložit vzor"
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+msgid "Loading Patterns..."
+msgstr "Načítání vzorů..."
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+msgid "Loading more patterns..."
+msgstr "Načítání dalších vzorů..."
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+msgid "Design Type"
+msgstr "Typ designu"
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+msgid "All"
+msgstr "Vše"
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+msgid "Retrying..."
+msgstr "Opakování pokusu..."
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+msgid "Fetching..."
+msgstr "Načítání..."
+
+#. translators: %s is the site type name
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+msgid "Site Type: %s"
+msgstr "Typ webu: %s"
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+msgid "Site Type"
+msgstr "Typ webu"
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+msgid "Close"
+msgstr "Zavřít"
+
+#. translators: %s: Extendify Library term
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+msgid "Toggle %s on new pages"
+msgstr "Přepnout %s na nových stránkách"
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+msgid "Open for new pages"
+msgstr "Otevřeno pro nové stránky"
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+msgid "Design Patterns"
+msgstr "Designové vzory"
+
+#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+msgid "Pattern added"
+msgstr "Vzor přidán"
+
+#: app/Shared/Services/Import/ImagesImporter.php:79
+msgid "Every 10 minutes"
+msgstr "Každých 10 minut"
+
+#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+msgid "Recommended"
+msgstr "Doporučeno"

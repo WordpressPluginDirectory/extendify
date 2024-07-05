@@ -49,6 +49,11 @@ class SiteController
     {
         $key = $request->get_param('key');
         $value = $request->get_param('value');
+        // Remove the 'extendify_' prefix if it exists.
+        if (strpos($key, 'extendify_') === 0) {
+            $key = substr($key, 10);
+        }
+
         \update_option('extendify_' . $key, Sanitizer::sanitizeUnknown($value));
         return new \WP_REST_Response($value);
     }

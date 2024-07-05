@@ -14,7 +14,7 @@ export const Input = ({
 	setPrompt,
 	loading,
 }) => {
-	const { selectedText: text } = useSelectedText();
+	const { selectedText } = useSelectedText();
 
 	const submit = (event) => {
 		event.preventDefault();
@@ -25,9 +25,11 @@ export const Input = ({
 		setReady(false);
 
 		setPrompt({
-			text: text ? `${inputText}: ${text}` : inputText,
-			promptType: text ? 'custom-requests' : 'create',
-			systemMessageKey: text ? 'edit' : 'generate',
+			text: selectedText ? selectedText : inputText,
+			promptType: selectedText ? 'custom-requests' : 'create',
+			systemMessageKey: selectedText ? 'edit' : 'generate',
+			// The prompt as a followup to the user's input
+			details: { followup: selectedText ? inputText : undefined },
 		});
 	};
 
@@ -42,7 +44,7 @@ export const Input = ({
 				placeholder={
 					loading
 						? __('AI is writing...', 'extendify-local')
-						: text
+						: selectedText
 							? __('Ask AI to edit', 'extendify-local')
 							: __('Ask AI to generate text', 'extendify-local')
 				}

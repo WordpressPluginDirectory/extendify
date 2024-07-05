@@ -17,6 +17,9 @@ export const getOption = async (option) => {
 export const createPage = (pageData) =>
 	api.post(`${wpRoot}wp/v2/pages`, pageData);
 
+export const updatePage = (pageData) =>
+	api.post(`${wpRoot}wp/v2/pages/${pageData.id}`, pageData);
+
 export const getPageById = (pageId) =>
 	api.get(`${wpRoot}wp/v2/pages/${pageId}`);
 
@@ -110,26 +113,21 @@ export const updateThemeVariation = (id, variation) =>
 		styles: variation.styles,
 	});
 
-export const addLaunchPagesToNav = async (
-	pages,
-	pageIds,
-	rawCode,
-	replace = null,
-) => {
-	if (!replace)
-		replace =
-			/(<!--\s*wp:navigation\b[^>]*>)([^]*?)(<!--\s*\/wp:navigation\s*-->)/gi;
+export const addLaunchPagesToNav = async (pages, wpPages, rawCode) => {
+	// We match the original slugs as the new ones could have changed by wp
+	const findWpPage = ({ slug }) =>
+		wpPages.find(({ originalSlug: s }) => s === slug) || {};
 
 	const pageListItems = pages
-		.filter((page) => Boolean(pageIds[page.slug]?.id))
-		.filter(({ slug }) => slug !== 'home')
+		.filter((p) => findWpPage(p)?.id) // make sure its a page
+		.filter(({ slug }) => slug !== 'home') // exclude home page
 		.map((page) => {
-			const { id, title, link, type } = pageIds[page.slug];
+			const { id, title, link, type } = findWpPage(page);
 			return `<!-- wp:navigation-link { "label":"${title.rendered}", "type":"${type}", "id":"${id}", "url":"${link}", "kind":"post-type", "isTopLevelLink":true } /-->`;
 		})
 		.join('');
 
-	// create a custom navigation with meta-data
+	// Create a custom navigation with meta-data
 	const navigation = await apiFetch({
 		path: 'extendify/v1/launch/create-navigation',
 		method: 'POST',
@@ -140,11 +138,41 @@ export const addLaunchPagesToNav = async (
 		},
 	});
 
-	const content = `<!-- wp:navigation {"ref":${navigation.id}} /-->`;
-	return rawCode.replace(replace, `${content}`);
+	// First check if there are attributes in the nav block
+	let currentAttributes;
+	try {
+		currentAttributes = JSON.parse(
+			rawCode.match(/<!-- wp:navigation([\s\S]*?)-->/)[1],
+		);
+	} catch (e) {
+		currentAttributes = {};
+	}
+	const newAttributes = JSON.stringify({
+		...currentAttributes,
+		ref: navigation.id,
+	});
+	return rawCode.replace(
+		// Find the full nav block including inner blocks
+		/(<!--\s*wp:navigation\b[^>]*>)([^]*?)(<!--\s*\/wp:navigation\s*-->)/gi,
+		// Replace with the new attributes
+		`<!-- wp:navigation ${newAttributes} /-->`,
+	);
 };
 
 export const getActivePlugins = () => api.get('launch/active-plugins');
 
 export const prefetchAssistData = async () =>
 	await api.get('launch/prefetch-assist-data');
+
+export const updateUserMeta = (option, value) =>
+	apiFetch({
+		path: '/extendify/v1/shared/update-user-meta',
+		method: 'POST',
+		data: { option, value },
+	});
+
+export const postLaunchFunctions = async () =>
+	await apiFetch({
+		path: '/extendify/v1/launch/post-launch-functions',
+		method: 'POST',
+	});

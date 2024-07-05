@@ -14,7 +14,7 @@ const {
 } = window.extAssistData?.domainsSuggestionSettings || {};
 
 const hasDomains =
-	(safeParseJson(window.extAssistData.resourceData)?.domains || [])?.length > 0;
+	(safeParseJson(window.extSharedData.resourceData)?.domains || [])?.length > 0;
 
 const domainByLanguage = (lang, urlList) => {
 	try {

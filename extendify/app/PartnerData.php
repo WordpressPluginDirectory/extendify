@@ -49,7 +49,6 @@ class PartnerData
      * @var array
      */
     protected static $config = [
-        'disableRecommendations' => false,
         'showDomainBanner' => false,
         'showDomainTask' => false,
         'showSecondaryDomainBanner' => false,
@@ -59,6 +58,7 @@ class PartnerData
         'domainSearchURL' => '',
         'showDraft' => false,
         'showChat' => false,
+        'enableImageImports' => false,
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
@@ -71,19 +71,17 @@ class PartnerData
     {
         self::$id = Config::$partnerId;
         $data = self::getPartnerData();
-        self::$config['disableRecommendations'] = ($data['disableRecommendations'] ?? self::$config['disableRecommendations']);
         self::$config['showDomainBanner'] = ($data['showDomainBanner'] ?? self::$config['showDomainBanner']);
         self::$config['showDomainTask'] = ($data['showDomainTask'] ?? self::$config['showDomainTask']);
         self::$config['showSecondaryDomainTask'] = ($data['showSecondaryDomainTask'] ?? self::$config['showSecondaryDomainTask']);
         self::$config['showSecondaryDomainBanner'] = ($data['showSecondaryDomainBanner'] ?? self::$config['showSecondaryDomainBanner']);
-        self::$config['domainTLDs'] = implode(',', array_map(function ($item) {
-            return trim(str_replace('.', '', $item));
-        }, ($data['domainTLDs'] ?? self::$config['domainTLDs'])));
+        self::$config['domainTLDs'] = ($data['domainTLDs'] ?? self::$config['domainTLDs']);
         self::$config['stagingSites'] = array_map('trim', ($data['stagingSites'] ?? self::$config['stagingSites']));
         self::$config['domainSearchURL'] = ($data['domainSearchURL'] ?? self::$config['domainSearchURL']);
         self::$logo = isset($data['logo'][0]['thumbnails']['large']['url']) ? $data['logo'][0]['thumbnails']['large']['url'] : self::$logo;
         self::$config['showDraft'] = ($data['showDraft'] ?? self::$config['showDraft']);
         self::$config['showChat'] = ($data['showChat'] ?? self::$config['showChat']);
+        self::$config['enableImageImports'] = ($data['enableImageImports'] ?? self::$config['enableImageImports']);
         self::$name = ($data['Name'] ?? self::$name);
         self::$colors = [
             'backgroundColor' => ($data['backgroundColor'] ?? null),

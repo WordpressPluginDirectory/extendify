@@ -5,7 +5,7 @@ import { isAtLeastNDaysAgo } from '@assist/lib/recommendations';
 
 const siteCreatedAt = window.extSharedData?.siteCreatedAt ?? '';
 const recommendations =
-	safeParseJson(window.extAssistData.resourceData)?.recommendations || {};
+	safeParseJson(window.extSharedData.resourceData)?.recommendations || [];
 const goals =
 	safeParseJson(window.extSharedData?.userData?.userSelectionData)?.state
 		?.goals || [];

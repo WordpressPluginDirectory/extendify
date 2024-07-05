@@ -16,7 +16,7 @@ const mainArticles = [
 ];
 
 const allArticles = safeParseJson(
-	window.extHelpCenterData.resourceData,
+	window.extSharedData.resourceData,
 )?.supportArticles?.filter((article) => mainArticles.includes(article.slug));
 
 export const KnowledgeBaseDashboard = ({ onOpen }) => {

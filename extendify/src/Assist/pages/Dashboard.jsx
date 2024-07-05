@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import { DesktopCards } from '@assist/components/dashboard/DesktopCards';
 import { MobileCards } from '@assist/components/dashboard/MobileCards';
 import { QuickLinks } from '@assist/components/dashboard/QuickLinks';
@@ -15,9 +14,7 @@ import { Full } from '@assist/pages/layouts/Full';
 import { useGlobalStore } from '@assist/state/globals';
 import { useTasksStore } from '@assist/state/tasks';
 
-const { devbuild, themeSlug } = window.extSharedData;
-const showRecommendations =
-	devbuild || !window.extAssistData.disableRecommendations || false;
+const { themeSlug } = window.extSharedData;
 const { launchCompleted } = window.extAssistData;
 
 export const Dashboard = () => {
@@ -61,14 +58,11 @@ export const Dashboard = () => {
 				</>
 			)}
 
-			<div
-				className={classnames('md:grid gap-4 mb-6', {
-					'md:grid-cols-2': !showRecommendations,
-				})}>
+			<div className="md:grid gap-4 mb-6">
 				<QuickLinks className="col-span-2" />
 			</div>
 
-			{showRecommendations && <Recommendations />}
+			<Recommendations />
 		</Full>
 	);
 };

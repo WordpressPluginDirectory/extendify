@@ -10,6 +10,7 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\Config;
 use Extendify\PartnerData;
 use Extendify\Shared\Services\Escaper;
+use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Controllers\UserSelectionController;
 
 /**
@@ -81,6 +82,7 @@ class Admin
                 'userData' => [
                     'userSelectionData' => \wp_json_encode((UserSelectionController::get()->get_data() ?? [])),
                 ],
+                'resourceData' => \wp_json_encode((new ResourceData())->getData()),
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
                 'consentTermsHTML' => \wp_kses((html_entity_decode(($partnerData['consentTermsHTML'] ?? '')) ?? ''), $htmlWhitelist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,

@@ -7,6 +7,7 @@ namespace Extendify\Launch\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -22,6 +23,7 @@ class WPController
      */
     public static function updateOption($request)
     {
+        // TODO: Move unprefixed updates to the server, or create an allowlist.
         $params = $request->get_json_params();
         \update_option($params['option'], Sanitizer::sanitizeUnknown($params['value']));
 
@@ -63,8 +65,8 @@ class WPController
      */
     public static function prefetchAssistData()
     {
-        if (class_exists(\Extendify\Assist\DataProvider\ResourceData::class)) {
-            (new \Extendify\Assist\DataProvider\ResourceData())->cache();
+        if (class_exists(ResourceData::class)) {
+            (new ResourceData())->getData();
         }
 
         return new \WP_REST_Response(true, 200);
@@ -93,4 +95,19 @@ class WPController
             'id' => $post,
         ]);
     }
+
+    /**
+     * This function will be called post finishing the Launch..
+     *
+     * @return \WP_REST_Response
+     */
+    public static function postLaunch()
+    {
+        // Set the state to import images.
+        \update_option('extendify_check_for_image_imports', true, false);
+        \delete_transient('extendify_import_images_check_delay');
+
+        return new \WP_REST_Response(['success' => true]);
+    }
+
 }

@@ -10,7 +10,6 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\Assist\Controllers\GlobalsController;
 use Extendify\Assist\Controllers\RouterController;
 use Extendify\Assist\Controllers\TasksController;
-use Extendify\Assist\DataProvider\ResourceData;
 use Extendify\Config;
 use Extendify\PartnerData;
 
@@ -27,7 +26,6 @@ class Admin
     public function __construct()
     {
         \add_action('admin_enqueue_scripts', [$this, 'loadPageScripts']);
-        ResourceData::scheduleCache();
     }
 
     /**
@@ -62,7 +60,6 @@ class Admin
             'window.extAssistData = ' . \wp_json_encode([
                 'launchCompleted' => (bool) Config::$launchCompleted,
                 'hasCustomizer' => (bool) \has_action('customize_register'),
-                'disableRecommendations' => (bool) PartnerData::setting('disableRecommendations'),
                 'domainsSuggestionSettings' => [
                     'showBanner' => (bool) PartnerData::setting('showDomainBanner'),
                     'showTask' => (bool) PartnerData::setting('showDomainTask'),
@@ -78,7 +75,6 @@ class Admin
                     'recommendationData' => \wp_json_encode(RouterController::get()->get_data()),
                     'tasksDependencies' => \wp_json_encode($this->getTasksDependencies()),
                 ],
-                'resourceData' => \wp_json_encode((new ResourceData())->getData()),
                 'canSeeRestartLaunch' => (bool) $this->canRunLaunchAgain(),
                 'editSiteNavigationMenuLink' => \current_theme_supports('menus') ? \esc_url(\admin_url('nav-menus.php')) : \esc_url(\admin_url('site-editor.php?path=%2Fnavigation')),
             ]),

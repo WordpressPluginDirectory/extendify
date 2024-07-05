@@ -3,6 +3,7 @@ import { useLayoutEffect, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Dialog } from '@headlessui/react';
 import { motion } from 'framer-motion';
+import { updateOption } from '@library/api/WPApi';
 import { useGlobalsStore } from '@library/state/global';
 import { useSiteSettingsStore } from '@library/state/site';
 import { useUserStore } from '@library/state/user';
@@ -28,6 +29,8 @@ export const Modal = () => {
 			isDismissible: true,
 			type: 'snackbar',
 		});
+		// update the general options to reflect the new pattern
+		await updateOption('extendify_check_for_image_imports', true);
 	};
 
 	useLayoutEffect(() => {

@@ -50,11 +50,9 @@ use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsCon
         ApiRouter::get('/launch/ping', [DataController::class, 'ping']);
         ApiRouter::get('/launch/prefetch-assist-data', [WPController::class, 'prefetchAssistData']);
         ApiRouter::post('/launch/create-navigation', [WPController::class, 'createNavigationWithMeta']);
+        ApiRouter::post('/launch/post-launch-functions', [WPController::class, 'postLaunch']);
 
         // Assist.
-        ApiRouter::get('/assist/recommendations', [RecommendationsController::class, 'fetchRecommendations']);
-        ApiRouter::get('/assist/recommendations-data', [RecommendationsController::class, 'get']);
-        ApiRouter::post('/assist/recommendations-data', [RecommendationsController::class, 'store']);
         ApiRouter::get('/assist/task-data', [TasksController::class, 'get']);
         ApiRouter::post('/assist/task-data', [TasksController::class, 'store']);
         ApiRouter::post('/assist/router-data', [RouterController::class, 'store']);
@@ -64,12 +62,10 @@ use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsCon
         ApiRouter::post('/assist/delete-domains-recommendations', [DomainsSuggestionController::class, 'deleteCache']);
 
         // Help Center.
-        ApiRouter::get('/help-center/tours', [TourController::class, 'fetchTours']);
         ApiRouter::get('/help-center/tour-data', [TourController::class, 'get']);
         ApiRouter::post('/help-center/tour-data', [TourController::class, 'store']);
         ApiRouter::post('/help-center/router-data', [HelpCenterRouterController::class, 'store']);
         ApiRouter::get('/help-center/router-data', [HelpCenterRouterController::class, 'get']);
-        ApiRouter::get('/help-center/support-articles', [SupportArticlesController::class, 'articles']);
         ApiRouter::get('/help-center/support-article', [SupportArticlesController::class, 'article']);
         ApiRouter::get('/help-center/support-articles-data', [SupportArticlesController::class, 'get']);
         ApiRouter::post('/help-center/support-articles-data', [SupportArticlesController::class, 'store']);

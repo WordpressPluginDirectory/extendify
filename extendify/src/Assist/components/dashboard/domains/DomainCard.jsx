@@ -8,7 +8,7 @@ import {
 import { safeParseJson } from '@assist/lib/parsing';
 import { useTasksStore } from '@assist/state/tasks';
 
-const domains = safeParseJson(window.extAssistData.resourceData)?.domains || [];
+const domains = safeParseJson(window.extSharedData.resourceData)?.domains || [];
 
 export const DomainCard = ({ task }) => {
 	const { completeTask } = useTasksStore();
@@ -37,18 +37,18 @@ export const DomainCard = ({ task }) => {
 			className="flex w-full h-full bg-right-bottom bg-no-repeat bg-cover"
 			data-test="assist-domain-card-main-domain-module"
 			style={{ backgroundImage: `url(${task.backgroundImage})` }}>
-			<div className="w-full px-8 md:pl-8 md:pr-0 py-14 lg:mr-24">
+			<div className="flex flex-col w-full px-8 md:pl-8 md:pr-0 py-12 lg:mr-24">
 				<div className="title font-semibold	text-2xl md:text-4xl">
 					{task.innerTitle}
 				</div>
 				<div className="description text-base mt-2 mb-8">
 					{task.description}
 				</div>
-				<div className="bg-gray-100 rounded md:w-full overflow">
+				<div className="bg-gray-100 rounded md:w-full overflow-auto">
 					<div className="rounded-tr rounded-tl md:flex md:justify-between md:items-center border-b py-4 px-6 border-gray-200 md:flex-wrap">
 						<div>
-							<div className="text-gray-900 uppercase bg-wp-alert-yellow rounded-full w-fit border-wp-alert-yellow py-1 px-3 mb-1 text-sm bg-opacity-40">
-								{__('Recommend', 'extendify-local')}
+							<div className="text-gray-900 uppercase bg-wp-alert-yellow rounded-full w-fit border-wp-alert-yellow py-1 px-3 mb-1 text-xs bg-opacity-40">
+								{__('Recommended', 'extendify-local')}
 							</div>
 							<div className="text-xl lowercase font-semibold">
 								{domains[0]}

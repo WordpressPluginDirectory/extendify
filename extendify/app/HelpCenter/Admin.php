@@ -11,7 +11,6 @@ use Extendify\Config;
 use Extendify\HelpCenter\Controllers\RouterController;
 use Extendify\HelpCenter\Controllers\SupportArticlesController;
 use Extendify\HelpCenter\Controllers\TourController;
-use Extendify\HelpCenter\DataProvider\ResourceData;
 use Extendify\PartnerData;
 
 /**
@@ -68,7 +67,6 @@ class Admin
                     'supportArticlesData' => \wp_json_encode(SupportArticlesController::get()->get_data()),
                     'routerData' => \wp_json_encode(RouterController::get()->get_data()),
                 ],
-                'resourceData' => \wp_json_encode((new ResourceData())->getData()),
             ]),
             'before'
         );

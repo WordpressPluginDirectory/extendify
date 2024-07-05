@@ -22,7 +22,7 @@ export const TasksCompleted = () => {
 				</p>
 				<p className="mb-0 text-sm text-center">
 					{__(
-						"You've completed the set tasks—your site is looking good. This dashboard will update with new tasks and insights to keep your website evolving. Stay tuned!.",
+						"You've completed the set tasks—your site is looking good. This dashboard will update with new tasks and insights to keep your website evolving. Stay tuned!",
 						'extendify-local',
 					)}
 				</p>

@@ -107,4 +107,24 @@ export const generateCustomPatterns = async (page, userState) => {
 	return await res.json();
 };
 
+export const getLinkSuggestions = async (pageContent, availablePages) => {
+	const abort = new AbortController();
+	const timeout = setTimeout(() => abort.abort(), 10000);
+	try {
+		const res = await fetch(`${AI_HOST}/api/link-pages`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				pageContent,
+				availablePages,
+			}),
+			signal: abort.signal,
+		});
+		if (!res.ok) throw new Error('Bad response from server');
+		return await res.json();
+	} finally {
+		clearTimeout(timeout);
+	}
+};
+
 export const pingServer = () => api.get('launch/ping');

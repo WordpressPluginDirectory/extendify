@@ -11,13 +11,20 @@ import {
 	getPageById,
 	getActivePlugins,
 	prefetchAssistData,
+	updateUserMeta,
+	postLaunchFunctions,
 } from '@launch/api/WPApi';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
 import { useConfetti } from '@launch/hooks/useConfetti';
 import { useWarnOnLeave } from '@launch/hooks/useWarnOnLeave';
+import { updateButtonLinks } from '@launch/lib/linkPages';
 import { uploadLogo } from '@launch/lib/logo';
 import { waitFor200Response, wasInstalled } from '@launch/lib/util';
-import { createPages, updateGlobalStyleVariant } from '@launch/lib/wp';
+import {
+	createWpPages,
+	generateCustomPageContent,
+	updateGlobalStyleVariant,
+} from '@launch/lib/wp';
 import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
@@ -67,6 +74,10 @@ export const CreatingSite = () => {
 			await waitFor200Response();
 			await updateTemplatePart('extendable/footer', style?.footerCode);
 
+			if (businessInformation.acceptTerms) {
+				await updateUserMeta('ai_consent', true);
+			}
+
 			if (plugins?.length) {
 				inform(__('Installing necessary plugins', 'extendify-local'));
 				const pluginsGiveFirst = [...plugins].sort(({ wordpressSlug }) =>
@@ -95,7 +106,7 @@ export const CreatingSite = () => {
 				await waitFor200Response();
 			}
 
-			let pageIds, navPages;
+			let navPages;
 			inform(__('Adding page content', 'extendify-local'));
 			informDesc(__('Starting off with a full website', 'extendify-local'));
 			await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -127,13 +138,19 @@ export const CreatingSite = () => {
 				hasBlogGoal ? blogPage : null,
 			].filter(Boolean);
 
-			pageIds = await createPages(pagesToCreate, {
-				goals,
-				businessInformation,
-				siteType,
-				siteInformation,
-				siteTypeSearch,
-			});
+			const pagesWithCustomContent = await generateCustomPageContent(
+				pagesToCreate,
+				{
+					goals,
+					businessInformation,
+					siteType,
+					siteInformation,
+					siteTypeSearch,
+				},
+			);
+
+			const createdPages = await createWpPages(pagesWithCustomContent);
+			const pagesWithLinksUpdated = await updateButtonLinks(createdPages);
 
 			setPagesToAnimate([]);
 			await waitFor200Response();
@@ -199,7 +216,7 @@ export const CreatingSite = () => {
 
 			const updatedHeaderCode = await addLaunchPagesToNav(
 				navPages,
-				pageIds,
+				pagesWithLinksUpdated,
 				style?.headerCode,
 			);
 
@@ -222,8 +239,6 @@ export const CreatingSite = () => {
 				'extendify_onboarding_completed',
 				new Date().toISOString(),
 			);
-
-			return pageIds;
 		} catch (e) {
 			console.error(e);
 			// if the error is 4xx, we should stop trying and prompt them to reload
@@ -253,8 +268,12 @@ export const CreatingSite = () => {
 	]);
 
 	useEffect(() => {
-		doEverything().then(() => {
+		doEverything().then(async () => {
 			setPage(0);
+
+			// This will trigger the post launch php functions.
+			await postLaunchFunctions();
+
 			window.location.replace(
 				window.extSharedData.adminUrl +
 					'admin.php?page=extendify-assist&extendify-launch-success',

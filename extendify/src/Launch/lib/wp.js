@@ -5,85 +5,58 @@ import {
 	updateThemeVariation,
 } from '@launch/api/WPApi';
 
-export const createWordpressPages = async (pages) => {
-	const pageIds = {};
-
+export const createWpPages = async (pages) => {
+	const pageIds = [];
 	for (const page of pages) {
-		pageIds[page.slug] = await createPage({
+		const newPage = await createPage({
 			title: page.name,
 			status: 'publish',
-			content: page.patterns?.map(({ code }) => code)?.join(''),
+			content: (page.patterns || []).map(({ code }) => code).join(''),
 			template: 'no-title',
 			meta: { made_with_extendify_launch: true },
 		});
+		pageIds.push({ ...newPage, originalSlug: page.slug });
 	}
 
 	// When we have home, set reading setting
-	if (pageIds?.home) {
+	const maybeHome = pageIds.find(({ originalSlug }) => originalSlug === 'home');
+	if (maybeHome) {
 		await updateOption('show_on_front', 'page');
-		await updateOption('page_on_front', pageIds.home.id);
+		await updateOption('page_on_front', maybeHome.id);
 	}
+
 	// When we have blog, set reading setting
-	if (pageIds?.blog) {
-		await updateOption('page_for_posts', pageIds.blog.id);
+	const maybeBlog = pageIds.find(({ originalSlug }) => originalSlug === 'blog');
+	if (maybeBlog) {
+		await updateOption('page_for_posts', maybeBlog.id);
 	}
 
 	return pageIds;
 };
 
-const createWordpressPage = async (page) => {
-	const pageId = {};
-
-	pageId[page.slug] = await createPage({
-		title: page.name,
-		status: 'publish',
-		content: page.patterns?.map(({ code }) => code)?.join(''),
-		template: 'no-title',
-		meta: { made_with_extendify_launch: true },
-	});
-
-	// When we have home, set reading setting
-	if (pageId?.home) {
-		await updateOption('show_on_front', 'page');
-		await updateOption('page_on_front', pageId.home.id);
-	}
-	// When we have blog, set reading setting
-	if (pageId?.blog) {
-		await updateOption('page_for_posts', pageId.blog.id);
-	}
-
-	return pageId;
-};
-
-export const createPages = async (pages, userState) => {
+export const generateCustomPageContent = async (pages, userState) => {
 	// Either didn't see the ai copy page or skipped it
 	if (!userState.businessInformation.description) {
-		return await createWordpressPages(pages);
+		return pages;
 	}
 
 	const { siteId, partnerId, wpLanguage, wpVersion } = window.extSharedData;
-	return (
-		(
-			await Promise.allSettled(
-				pages.map((page) =>
-					generateCustomPatterns(page, {
-						...userState,
-						siteId,
-						partnerId,
-						siteVersion: wpVersion,
-						language: wpLanguage,
-					})
-						.then((response) => createWordpressPage(response))
-						.catch(() => createWordpressPage(page)),
-				),
-			)
-		)
-			?.filter((page) => page.value)
-			// Transform data back into object from array of pages
-			// from `[{ value: { services: {} } }, { value: { home: {} } }]`
-			// to   `{ services: {}, home: {} }`
-			?.reduce((acc, page) => ({ ...acc, ...page.value }), {})
+
+	const result = await Promise.allSettled(
+		pages.map((page) =>
+			generateCustomPatterns(page, {
+				...userState,
+				siteId,
+				partnerId,
+				siteVersion: wpVersion,
+				language: wpLanguage,
+			})
+				.then((response) => response)
+				.catch(() => page),
+		),
 	);
+
+	return result?.map((page, i) => page.value || pages[i]) || pages;
 };
 
 export const updateGlobalStyleVariant = (variation) =>

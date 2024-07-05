@@ -16,12 +16,12 @@ const pages = [
 	},
 ];
 const { themeSlug } = window.extSharedData;
-const { launchCompleted, disableRecommendations } = window.extAssistData;
+const { launchCompleted } = window.extAssistData;
 
 const disableTasks = themeSlug !== 'extendable' || !launchCompleted;
 const filteredPages = pages.filter((page) => {
 	const noTasks = page.slug === 'tasks' && disableTasks;
-	const noRecs = page.slug === 'recommendations' && disableRecommendations;
+	const noRecs = page.slug === 'recommendations';
 	return !noTasks && !noRecs;
 });
 
