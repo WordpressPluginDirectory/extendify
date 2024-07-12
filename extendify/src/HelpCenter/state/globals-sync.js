@@ -4,13 +4,9 @@ import { devtools, persist } from 'zustand/middleware';
 const state = (set) => ({
 	visibility: false, // open | minimized | closed
 	queuedTour: null,
-	queueTourForRedirect(tour) {
-		set({ queuedTour: tour });
-	},
-	clearQueuedTour() {
-		set({ queuedTour: null });
-	},
-	setVisibility(visibility) {
+	queueTourForRedirect: (tour) => set({ queuedTour: tour }),
+	clearQueuedTour: () => set({ queuedTour: null }),
+	setVisibility: (visibility) => {
 		if (!['open', 'minimized', 'closed'].includes(visibility)) {
 			throw new Error('Invalid visibility state');
 		}

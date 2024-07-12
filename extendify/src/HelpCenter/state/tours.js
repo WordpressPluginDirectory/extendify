@@ -33,11 +33,11 @@ const state = (set, get) => ({
 		// Increment the opened count
 		const tour = trackTourProgress(tourData.id);
 		updateProgress(tour.id, {
-			openedCount: tour.openedCount + 1,
+			openedCount: Number(tour.openedCount) + 1,
 			lastAction: 'started',
 		});
 	},
-	onTourPage(startFrom = null) {
+	onTourPage: (startFrom = null) => {
 		const url = window.location.href;
 		if (startFrom?.includes(url)) return true;
 		const { currentTour } = get();
@@ -57,7 +57,7 @@ const state = (set, get) => ({
 		}
 		// Track how many times it was completed
 		updateProgress(tour.id, {
-			completedCount: tour.completedCount + 1,
+			completedCount: Number(tour.completedCount) + 1,
 			lastAction: 'completed',
 		});
 		await currentTour?.onDetach?.();
@@ -85,7 +85,7 @@ const state = (set, get) => ({
 			return updateProgress(tour?.id, { lastAction, errored: true });
 		}
 		if (lastAction === 'closed-manually') {
-			additional.closedManuallyCount = tour.closedManuallyCount + 1;
+			additional.closedManuallyCount = Number(tour.closedManuallyCount) + 1;
 		}
 
 		await currentTour?.onDetach?.();
@@ -97,19 +97,13 @@ const state = (set, get) => ({
 			preparingStep: undefined,
 		});
 	},
-	findTourProgress(tourId) {
-		return get().progress.find((tour) => tour.id === tourId);
-	},
-	wasCompleted(tourId) {
-		return get().findTourProgress(tourId)?.completedAt;
-	},
-	wasOpened(tourId) {
-		return get().findTourProgress(tourId)?.openedCount > 0;
-	},
-	isSeen(tourId) {
-		return get().findTourProgress(tourId)?.firstSeenAt;
-	},
-	trackTourProgress(tourId) {
+	findTourProgress: (tourId) =>
+		get().progress.find((tour) => tour.id === tourId),
+	wasCompleted: (tourId) => get().findTourProgress(tourId)?.completedAt,
+	wasOpened: (tourId) =>
+		Number(get().findTourProgress(tourId)?.openedCount ?? 0) > 0,
+	isSeen: (tourId) => get().findTourProgress(tourId)?.firstSeenAt,
+	trackTourProgress: (tourId) => {
 		const { findTourProgress } = get();
 		// If we are already tracking it, return that
 		if (findTourProgress(tourId)) {
@@ -134,7 +128,7 @@ const state = (set, get) => ({
 		}));
 		return findTourProgress(tourId);
 	},
-	updateProgress(tourId, update) {
+	updateProgress: (tourId, update) => {
 		const lastAction = update?.lastAction ?? 'unknown';
 		set((state) => {
 			const progress = state.progress.map((tour) => {
@@ -151,25 +145,23 @@ const state = (set, get) => ({
 			return { progress };
 		});
 	},
-	getStepData(step, tour = get().currentTour) {
-		return tour?.steps?.[step] ?? {};
-	},
-	hasNextStep() {
+	getStepData: (step, tour = get().currentTour) => tour?.steps?.[step] ?? {},
+	hasNextStep: () => {
 		if (!get().currentTour) return false;
-		return get().currentStep < get().currentTour.steps.length - 1;
+		return Number(get().currentStep) < get().currentTour.steps.length - 1;
 	},
 	nextStep: async () => {
 		const { currentTour, goToStep, updateProgress, currentStep } = get();
-		const step = currentStep + 1;
+		const step = Number(currentStep) + 1;
 		await goToStep(step);
 		updateProgress(currentTour.id, {
 			currentStep: step,
 			lastAction: 'next',
 		});
 	},
-	hasPreviousStep() {
+	hasPreviousStep: () => {
 		if (!get().currentTour) return false;
-		return get().currentStep > 0;
+		return Number(get().currentStep) > 0;
 	},
 	prevStep: async () => {
 		const { currentTour, goToStep, updateProgress, currentStep } = get();

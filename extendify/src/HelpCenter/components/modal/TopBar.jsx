@@ -95,7 +95,7 @@ const LogoOrBackButton = () => {
 	}
 
 	return partnerLogo ? (
-		<div className="bg-banner-main flex justify-center h-6 after:text-banner-text after:opacity-40 after:relative after:-right-2 after:top-0.5 after:content-['|']">
+		<div className="bg-banner-main flex justify-center h-6 after:text-banner-text after:opacity-40 after:relative after:-right-2 after:top-0.5 after:content-['|'] after:mr-2">
 			<div className="flex h-6 overflow-hidden max-w-[9rem]">
 				<img
 					className="max-w-full max-h-full object-contain"

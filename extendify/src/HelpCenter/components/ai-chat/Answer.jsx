@@ -10,11 +10,11 @@ import { useAIChatStore } from '@help-center/state/ai-chat';
 
 export const Answer = ({ question, answer, reset, error, answerId }) => {
 	const scrollRef = useRef(null);
-	const { addHistory } = useAIChatStore();
+	const { addHistory, setCurrentQuestion } = useAIChatStore();
 
 	// check https://github.com/extendify/extendify-sdk/issues/1560
 	const parsedAnswer = pasteHandler({
-		plainText: answer.replace(/[\r\n]+/g, '<br />'),
+		plainText: answer?.replace(/[\r\n]+/g, '<br />') ?? '',
 	});
 	const htmlAnswer = Array.isArray(parsedAnswer)
 		? serialize(parsedAnswer)
@@ -22,8 +22,10 @@ export const Answer = ({ question, answer, reset, error, answerId }) => {
 
 	useEffect(() => {
 		if (!answerId) return;
-		addHistory({ answerId, htmlAnswer, question, time: Date.now() });
-	}, [answerId, htmlAnswer, addHistory, question]);
+		const newQuestion = { answerId, htmlAnswer, question, time: Date.now() };
+		addHistory(newQuestion);
+		setCurrentQuestion(newQuestion);
+	}, [answerId, htmlAnswer, addHistory, question, setCurrentQuestion]);
 
 	if (error) {
 		return (

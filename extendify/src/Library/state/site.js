@@ -37,7 +37,7 @@ export const useSiteSettingsStore = create(
 			},
 			setCategory: (category) => set({ category }),
 			incrementImports: () =>
-				set((state) => ({ totalImports: state.totalImports + 1 })),
+				set((state) => ({ totalImports: Number(state.totalImports) + 1 })),
 		}),
 		{
 			name: 'extendify_library_site_data',

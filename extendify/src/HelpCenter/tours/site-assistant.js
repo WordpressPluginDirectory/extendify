@@ -129,7 +129,7 @@ export default {
 				'extendify-local',
 			),
 			attachTo: {
-				element: '#toplevel_page_extendify-admin-page',
+				element: '#toplevel_page_extendify-assist',
 				offset: {
 					marginTop: 0,
 					marginLeft: 15,

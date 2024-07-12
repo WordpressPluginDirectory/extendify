@@ -13,45 +13,45 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/4.0.0-alpha.11\n"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:5
 msgid "Pattern added"
 msgstr "Mẫu đã được thêm"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:5
 msgid "Design Patterns"
 msgstr "Mẫu thiết kế"
 
 #. translators: %s is the site type name
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Site Type: %s"
 msgstr "Loại trang: %s"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Fetching..."
 msgstr "Đang tải..."
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Retrying..."
 msgstr "Đang thử lại..."
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "All"
 msgstr "Tất cả"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Design Type"
 msgstr "Loại thiết kế"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Loading more patterns..."
 msgstr "Đang tải thêm mẫu..."
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Loading Patterns..."
 msgstr "Đang tải Mẫu..."
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Insert Pattern"
 msgstr "Chèn mẫu"
 
@@ -60,85 +60,85 @@ msgid "Extendify Library User Settings"
 msgstr "Cài đặt người dùng Thư viện Extendify"
 
 #: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Accept"
 msgstr "Chấp nhận"
 
 #: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Terms of Use"
 msgstr "Điều khoản sử dụng"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "View more pages"
 msgstr "Xem thêm trang"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Chúng tôi đã chọn sẵn những trang phổ biến nhất cho loại trang web của bạn."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Chọn các trang để thêm vào trang web của bạn"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Home page"
 msgstr "Trang chủ"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Pick a design for your website"
 msgstr "Chọn một thiết kế cho trang web của bạn"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "We'll make sure your website has what it needs to achieve your goals."
 msgstr "Chúng tôi sẽ đảm bảo rằng trang web của bạn có những gì cần thiết để đạt được mục tiêu của bạn."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "What are your goals for your website?"
 msgstr "Mục tiêu của bạn cho website là gì?"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "We will help you create your WordPress website quickly."
 msgstr "Chúng tôi sẽ giúp bạn tạo trang web WordPress nhanh chóng."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "What is your WordPress site about?"
 msgstr "Trang WordPress của bạn nói về điều gì?"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Searching..."
 msgstr "Đang tìm kiếm..."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Enter your website name"
 msgstr "Nhập tên trang web của bạn"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Helping you to succeed"
 msgstr "Giúp bạn thành công"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Adding page content"
 msgstr "Thêm nội dung trang"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Installing necessary plugins"
 msgstr "Đang cài đặt các plugin cần thiết"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Creating a beautiful website"
 msgstr "Tạo một trang web đẹp mắt"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Applying your website styles"
 msgstr "Áp dụng kiểu dáng cho website của bạn"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Personalizing your experience"
 msgstr "Cá nhân hóa trải nghiệm của bạn"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Populating data"
 msgstr "Đang điền dữ liệu"
 
@@ -203,736 +203,670 @@ msgstr "Cải thiện kỹ năng viết"
 msgid "Write a blog post about"
 msgstr "Viết một bài blog về"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "For other questions, visit our support page."
 msgstr "Đối với các câu hỏi khác, hãy truy cập trang hỗ trợ của chúng tôi."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "WordPress Comfort Level"
 msgstr "Mức độ thoải mái với WordPress"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Advanced"
 msgstr "Nâng cao"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Intermediate"
 msgstr "Trung cấp"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Beginner"
 msgstr "Người mới học"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Rate that this answer was not helpful"
 msgstr "Đánh giá rằng câu trả lời này không hữu ích"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Rate that this answer was helpful"
 msgstr "Đánh giá mức độ hữu ích của câu trả lời này"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Remove rating"
 msgstr "Xóa đánh giá"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Ask your WordPress question…"
 msgstr "Đặt câu hỏi về WordPress của bạn…"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Ask me any questions about WordPress."
 msgstr "Hãy đặt cho tôi bất kỳ câu hỏi nào về WordPress."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Hi there!"
 msgstr "Xin chào!"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Ask Another Question"
 msgstr "Đặt câu hỏi khác"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Oops! We were unable to send your question."
 msgstr "Ồ! Chúng tôi không thể gửi câu hỏi của bạn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Please try again."
 msgstr "Xin vui lòng thử lại."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Use this toggle to collapse or expand the sidebar menu."
 msgstr "Sử dụng công tắc này để thu gọn hoặc mở rộng menu cột bên."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Collapse menu"
 msgstr "Thu gọn menu"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search for articles"
 msgstr "Tìm kiếm bài viết"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "The selected pattern has been inserted into the page."
 msgstr "Mẫu đã chọn đã được chèn vào trang."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "View the Inserted Pattern"
 msgstr "Xem Mẫu đã được Chèn"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Chỉ cần chọn bất kỳ mẫu nào bạn muốn chèn vào trang bằng cách nhấp vào nó."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Select a Pattern"
 msgstr "Chọn một mẫu"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click on any pattern category to refine the selection."
 msgstr "Nhấp vào bất kỳ chuyên mục mẫu nào để tinh chỉnh lựa chọn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Filter Patterns"
 msgstr "Lọc mẫu"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Thư viện mẫu Extendify có thể được mở bằng cách nhấn vào nút ở bên trái."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Open the Pattern Library"
 msgstr "Mở Thư viện Mẫu"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tour this page"
 msgstr "Tham quan trang này"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Manage your profile or log out of your account here."
 msgstr "Quản lý hồ sơ của bạn hoặc đăng xuất khỏi tài khoản tại đây."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "User"
 msgstr "Người dùng"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Advanced settings for your site and for certain plugins."
 msgstr "Cài đặt nâng cao cho trang web và một số plugin của bạn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Import/export post data, check site health, and edit theme or plugin files directly in the WordPress admin."
 msgstr "Nhập/xuất dữ liệu bài viết, kiểm tra sức khỏe trang web, và chỉnh sửa tệp chủ đề hoặc plugin trực tiếp trong quản trị WordPress."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tools"
 msgstr "Công cụ"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add or manage users on your site, both admin users and others."
 msgstr "Thêm hoặc quản lý người dùng trên trang web của bạn, cả người dùng quản trị và người dùng khác."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add or manage the plugins on your site."
 msgstr "Thêm hoặc quản lý các plugin trên trang web của bạn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Manage your theme and access the Site Editor from the Appearance menu. The Site Editor is where you can make global changes to your site (such as the menu, header/footer, and styles)."
 msgstr "Quản lý giao diện của bạn và truy cập vào Trình soạn thảo toàn web từ menu Giao diện. Trình soạn thảo toàn web là nơi bạn có thể thực hiện thay đổi toàn cầu cho trang web của mình (như menu, tiêu đề/chân trang, và kiểu dáng)."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Appearance"
 msgstr "Giao diện"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "If you have commenting enabled on your posts, you can manage those comments here."
 msgstr "Nếu bạn đã kích hoạt chức năng bình luận trên các bài viết của mình, bạn có thể quản lý những bình luận đó tại đây."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Comments"
 msgstr "Bình luận"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add, edit, or remove images and other media from your library. When you upload an image to be used on your site, it will be added to the library."
 msgstr "Thêm, chỉnh sửa, hoặc xóa hình ảnh và các tập tin đa phương tiện khác từ thư viện của bạn. Khi bạn tải lên một hình ảnh để sử dụng trên trang web của mình, nó sẽ được thêm vào thư viện."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Media"
 msgstr "Phương tiện"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Manage and create blog posts."
 msgstr "Quản lý và tạo bài viết blog."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Posts"
 msgstr "Bài viết"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "The default WordPress dashboard will have some overall site metrics and modules added from certain plugins."
 msgstr "Bảng điều khiển mặc định của WordPress sẽ có một số số liệu tổng thể của trang web và các mô-đun được thêm từ một số plugin."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Access the Site Assistant at any time."
 msgstr "Truy cập vào Trợ lý trang web bất cứ lúc nào."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Quay lại Trợ lý Trang bất cứ lúc nào bằng cách nhấp vào mục menu."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Xem các gợi ý cá nhân hóa của chúng tôi dành cho bạn để giúp bạn đạt được mục tiêu."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Truy cập dễ dàng một số mục phổ biến nhất trong WordPress với những liên kết nhanh này."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Knowledge Base"
 msgstr "Cơ sở kiến thức"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "Bây giờ bạn đã tạo xong trang khởi đầu của mình, hãy tùy chỉnh nó theo ý muốn của bạn với những công việc tiếp theo."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
-msgid "Menu"
-msgstr "Menu"
-
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Set Site Title"
 msgstr "Đặt Tên trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher."
 msgstr "Tạo một trang web siêu nhanh, đẹp và hoàn toàn tùy chỉnh trong vài phút với Site Launcher của chúng tôi."
 
 #: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Home"
 msgstr "Trang chủ"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "There was an error loading this article"
 msgstr "Đã xảy ra lỗi khi tải bài viết này"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tours"
 msgstr "Chuyến tham quan"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Help Center"
 msgstr "Trung tâm trợ giúp"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Nhấn vào nút Thêm mới để thêm người dùng mới vào trang web của bạn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add a new user"
 msgstr "Thêm người dùng mới"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Use the search bar to find a particular user."
 msgstr "Sử dụng thanh tìm kiếm để tìm một tài khoản cụ thể."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search for users"
 msgstr "Tìm kiếm người dùng"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Nhấp vào nút sửa để thay đổi vai trò của người dùng, quản lý tài khoản của họ, hoặc thay đổi thông tin hồ sơ của họ."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Edit user information"
 msgstr "Chỉnh sửa thông tin người dùng"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "See all of your users, including admin users in this table."
 msgstr "Xem tất cả thành viên của bạn, bao gồm cả người quản trị trong bảng này."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Users"
 msgstr "Người dùng"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click here to view and manage the users on your site."
 msgstr "Nhấp vào đây để xem và quản lý người dùng trên trang web của bạn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "All Users menu"
 msgstr "Menu tất cả người dùng"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click here to add another plugin to your site."
 msgstr "Nhấp vào đây để thêm một plugin khác vào trang web của bạn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add another"
 msgstr "Thêm một cái khác"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Dưới mỗi plugin, bạn có thể kích hoạt hoặc tắt nó."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Deactivate/activate option"
 msgstr "Tùy chọn hủy kích hoạt/kích hoạt"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Xem tất cả plugin đã được cài trên trang web của bạn. Điều này bao gồm cả plugin đang hoạt động và đã bị vô hiệu hóa."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Installed plugins"
 msgstr "Plugin đã cài đặt"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Nhấp vào menu này để xem và quản lý các plugin bạn đã cài đặt."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Installed Plugins menu"
 msgstr "Menu plugin đã cài đặt"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Nếu bạn có một plugin từ nguồn bên ngoài, bạn có thể tải lên trực tiếp tại đây."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Upload Plugin"
 msgstr "Tải lên Plugin"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Cài đặt plugin. Sau đó, nhấn nút này một lần nữa để kích hoạt plugin."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Install now"
 msgstr "Cài đặt ngay bây giờ"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "See important information about each plugin."
 msgstr "Xem thông tin quan trọng về từng plugin."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Plugin details"
 msgstr "Chi tiết plugin"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search for a plugin by name or functionality."
 msgstr "Tìm kiếm plugin theo tên hoặc chức năng."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click here to access the Add Plugins page."
 msgstr "Nhấp vào đây để truy cập trang Thêm Plugin."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add New plugin menu"
 msgstr "Thêm menu plugin mới"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Publish or Save"
 msgstr "Công bố hoặc Lưu"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Nhấp vào xem trước để xem các thay đổi của bạn trông như thế nào ở phía trước của trang web của bạn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Preview"
 msgstr "Xem thử"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Chọn trang hoặc khối để thay đổi cài đặt cho toàn bộ trang hoặc khối được chọn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Page and Block Settings"
 msgstr "Cài đặt Trang và Khối"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Đây là một khối văn bản mẫu. Nó có thể dài nhiều câu và kéo dài qua nhiều hàng. Bạn có thể thêm bao nhiêu khối bạn muốn vào trang."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Mỗi khối sẽ xuất hiện trên trang và có thể được chỉnh sửa bằng cách nhấp vào nó."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Blocks"
 msgstr "Khối"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Chỉnh sửa tiêu đề trang bằng cách nhấp vào nó. Lưu ý: Tiêu đề có thể hiển thị hoặc không hiển thị trên trang đã xuất bản, tùy thuộc vào mẫu trang được sử dụng."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Page Title"
 msgstr "Tiêu đề trang"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Thêm một block bằng cách nhấp hoặc kéo nó lên trang."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Block Inserter"
 msgstr "Thanh chèn khối"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click the plus to open the block inserter."
 msgstr "Nhấn vào dấu cộng để mở thanh chèn khối."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add a Block"
 msgstr "Thêm một block"
 
-#: app/HelpCenter/Controllers/SupportArticlesController.php:98
+#: app/HelpCenter/Controllers/SupportArticlesController.php:100
 msgid "Page not found"
 msgstr "Không tìm thấy trang"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Layout"
 msgstr "Bố cục"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Events"
 msgstr "Sự kiện"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Skip to Assist"
 msgstr "Chuyển đến Trợ giúp"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Dashboard"
 msgstr "Bảng tin"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "All caught up!"
 msgstr "Đã cập nhật xong!"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tasks"
 msgstr "Công việc"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Quick Links"
 msgstr "Liên kết nhanh"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "At any time, you can view your site (from a visitor's perspective) from the top admin bar under your site's name."
 msgstr "Bất cứ lúc nào, bạn có thể xem trang web của mình (từ góc độ của một người truy cập) từ thanh quản trị trên cùng dưới tên trang web của bạn."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Sử dụng menu trang để thêm, xóa hoặc chỉnh sửa các trang trên website của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:3
 msgid "Done"
 msgstr "Đã xong"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tour Steps"
 msgstr "Các bước của Tour"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tour"
 msgstr "Tour"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:5
 msgid "Open for new pages"
 msgstr "Mở cho trang mới"
 
 #. translators: %s: Extendify Library term
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:5
 msgid "Toggle %s on new pages"
 msgstr "Bật/tắt %s trên các trang mới"
 
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:85
-msgid "%s Banner"
-msgstr "Banner %s"
-
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Chúng tôi đã gặp lỗi máy chủ mà không thể khắc phục. Vui lòng tải lại trang và thử lại."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Save"
 msgstr "Lưu"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Enter a site description..."
 msgstr "Nhập mô tả website..."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site description"
 msgstr "Mô tả trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Add site description"
 msgstr "Thêm mô tả trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Upload site logo"
 msgstr "Tải lên logo trang web"
 
-#: app/AdminPageRouter.php:145
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: app/AdminPageRouter.php:47
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Site Assistant"
 msgstr "Trợ lý trang web"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Blog"
 msgstr "Blog"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "View site"
 msgstr "Xem trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Upload site icon"
 msgstr "Tải lên biểu tượng trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Set site icon"
 msgstr "Đặt biểu tượng trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site icon"
 msgstr "Biểu tượng trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Set site logo"
 msgstr "Đặt logo cho web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site logo"
 msgstr "Logo trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Remove image"
 msgstr "Xóa ảnh"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Replace image"
 msgstr "Thay thế ảnh"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Edit or update the image"
 msgstr "Sửa hoặc cập nhật ảnh"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Close Modal"
 msgstr "Đóng Modal"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Dismiss"
 msgstr "Hủy"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Select Site Pages"
 msgstr "Chọn trang của site"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Select Site Design"
 msgstr "Chọn thiết kế trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Select Site Goals"
 msgstr "Chọn Mục tiêu cho Trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Continue Building Your Website"
 msgstr "Tiếp tục xây dựng website của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Select Site Industry"
 msgstr "Chọn ngành công nghiệp của trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Let's Start Building Your Website"
 msgstr "Hãy Bắt Đầu Xây Dựng Website Của Bạn"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Exit Launch"
 msgstr "Thoát khởi chạy"
 
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:97
-msgid "Welcome to %s"
-msgstr "Chào mừng đến với %s"
-
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Đang chuyển hướng trong 3, 2, 1..."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Your website has been created!"
 msgstr "Website của bạn đã được tạo!"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Setting up your Site Assistant"
 msgstr "Cài đặt Trợ lý trang web của bạn"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Starting off with a full website"
 msgstr "Bắt đầu với một trang web đầy đủ"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Site Title"
 msgstr "Tên trang web"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Back"
 msgstr "Quay lại"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Site Industry"
 msgstr "Ngành công nghiệp của trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Goals"
 msgstr "Mục tiêu"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Take me there"
 msgstr "Đưa tôi tới đó"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Xin chào, Launch được hỗ trợ bởi Extendable và cần thiết để tiếp tục. Bạn có thể cài đặt nó từ liên kết dưới đây và bắt đầu lại sau khi kích hoạt."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "One more thing before we start."
 msgstr "Còn một điều nữa trước khi chúng ta bắt đầu."
 
-#. translators: %s: Extendify Library term
-#: app/Library/AdminPage.php:119
-msgid "1. Open the %s"
-msgstr "1. Mở %s"
-
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Plugins"
 msgstr "Plugin"
 
-#: app/Library/AdminPage.php:77
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "View Site"
 msgstr "Xem trang web"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Site is not ready to launch."
 msgstr "Trang chưa sẵn sàng để khởi chạy."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Next"
 msgstr "Sau"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Pages"
 msgstr "Trang"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "You can personalize this later."
 msgstr "Bạn có thể cá nhân hóa điều này sau."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Loading..."
 msgstr "Đang tải..."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "What's the name of your website?"
 msgstr "Tên website của bạn là gì?"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "You can change this later."
 msgstr "Bạn có thể thay đổi điều này sau."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "What's the name of your new site?"
 msgstr "Tên mới của trang web của bạn là gì?"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Press to select"
 msgstr "Nhấn để chọn"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Chỉ một chút, việc này mất thời gian hơn dự kiến."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Design Library"
 msgstr "Thư viện thiết kế"
 
-#: app/Library/AdminPage.php:180
-msgid "You'll find beautiful high fidelity Gutenberg content to add to your pages in no time!"
-msgstr "Bạn sẽ tìm thấy nội dung Gutenberg chất lượng cao đẹp mắt để thêm vào trang của mình trong thời gian ngắn!"
-
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:174
-msgid "Search by industry, contents, and design attributes. %s has thousands of best-in-class block patterns. Find what you love and add it to the page - done!"
-msgstr "Tìm kiếm theo ngành, nội dung và thuộc tính thiết kế. %s có hàng nghìn mẫu block hàng đầu trong lớp. Tìm những gì bạn yêu thích và thêm vào trang - xong!"
-
-#: app/Library/AdminPage.php:168
-msgid "3. Browse Patterns & Layouts."
-msgstr "3. Duyệt Mẫu & Bố cục."
-
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:158
-msgid "%s supports over sixty types with new industries added regularly."
-msgstr "%s hỗ trợ hơn sáu mươi loại với các ngành được thêm vào thường xuyên."
-
-#: app/Library/AdminPage.php:152
-msgid "With the library open, you can set your site industry - or type - which will surface the perfect industry-specific patterns and full page layouts to drop onto your website."
-msgstr "Với thư viện mở, bạn có thể đặt ngành - hoặc loại - cho trang blog của mình, điều này sẽ hiển thị các mẫu và bố cục trang đầy đủ phù hợp với ngành cụ thể để thả vào trang web của bạn."
-
-#: app/Library/AdminPage.php:149
-msgid "2. Choose a site industry"
-msgstr "2. Chọn ngành nghề của trang web"
-
-#. translators: %1$s = URL.
-#: app/Library/AdminPage.php:136
-msgid "clicking here"
-msgstr "nhấn vào đây"
-
-#. translators: %1$s = URL.
-#: app/Library/AdminPage.php:136
-msgid "You may also add a new page with the library opened for you by %1$s."
-msgstr "Bạn cũng có thể thêm một trang mới với thư viện được mở cho bạn bởi %1$s."
-
-#. translators: %s: Extendify Library term
-#: app/Library/AdminPage.php:128
-msgid "When editing a page or post within the block editor, you'll see the %s button within the editor's header"
-msgstr "Khi chỉnh sửa một trang hoặc bài đăng trong trình chỉnh sửa block, bạn sẽ thấy nút %s trong phần đầu trình chỉnh sửa"
-
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:106
-msgid "%s is a massive library of drop-in block patterns easily customized to your liking. Each pattern is meticulously designed to work with your existing WordPress theme."
-msgstr "%s là một thư viện lớn với các mẫu block dễ dàng tùy chỉnh theo ý thích của bạn. Mỗi mẫu đều được thiết kế tỉ mỉ để hoạt động với chủ đề WordPress hiện tại của bạn."
-
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Design"
 msgstr "Thiết kế"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Close"
 msgstr "Đóng"
 
@@ -940,15 +874,15 @@ msgstr "Đóng"
 msgid "Submit"
 msgstr "Gửi"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Settings"
 msgstr "Thiết lập"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Site Type"
 msgstr "Loại trang web"
 
@@ -968,99 +902,99 @@ msgid "Extendify"
 msgstr "Extendify"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:3
 msgid "%1$s of %2$s"
 msgstr "%1$s của %2$s"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Creating pages with custom content"
 msgstr "Tạo trang với nội dung tùy chỉnh"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Setting up site layout"
 msgstr "Cài đặt bố cục trang web"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Website description"
 msgstr "Mô tả trang web"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Professional"
 msgstr "Chuyên nghiệp"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Friendly"
 msgstr "Thân thiện"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Inspirational"
 msgstr "Truyền cảm hứng"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Informative"
 msgstr "Thông tin chi tiết"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Persuasive"
 msgstr "Thuyết phục"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Skip"
 msgstr "Bỏ qua"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Business Information"
 msgstr "Thông tin doanh nghiệp"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Let us create custom copy for your website"
 msgstr "Hãy để chúng tôi tạo nội dung tùy chỉnh cho trang web của bạn"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Our AI Assistant will take your input and create customized copy for each page. Describe your website or business with as much detail as you'd like and we'll use it to create your perfect site."
 msgstr "Trợ lý AI của chúng tôi sẽ lấy thông tin từ bạn và tạo nội dung tuỳ chỉnh cho mỗi trang. Mô tả về trang web hoặc doanh nghiệp của bạn với bất kỳ chi tiết nào bạn muốn và chúng tôi sẽ sử dụng nó để tạo ra trang web hoàn hảo của bạn."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Please accept the terms to continue"
 msgstr "Vui lòng chấp nhận các điều khoản để tiếp tục"
 
 #. translators: Launch is a noun.
-#: app/AdminPageRouter.php:58
+#: app/AdminPageRouter.php:60
 msgid "Launch"
 msgstr "Khởi chạy"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:3
 msgid "Added by Launch"
 msgstr "Đã thêm bởi Launch"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:3
 msgid "Start over?"
 msgstr "Bắt đầu lại từ đầu?"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Thực hiện lại quy trình nhập môn để tạo một trang web mới."
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "%s pages created in the prior onboarding session will be deleted."
 msgstr "%s trang được tạo trong phiên làm việc trước sẽ bị xoá."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Exit"
 msgstr "Thoát"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Processing"
 msgstr "Đang xử lý"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Continue"
 msgstr "Tiếp tục"
 
 #: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Ask AI"
 msgstr "Hỏi AI"
 
@@ -1273,301 +1207,301 @@ msgstr "Mô tả hình ảnh"
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Yêu cầu của bạn đã bị từ chối do hệ thống an toàn của chúng tôi. Lời nhắc của bạn có thể chứa văn bản không được hệ thống an toàn của chúng tôi cho phép."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "This tour is only available on desktop devices"
 msgstr "Tour này chỉ có sẵn trên các thiết bị máy tính để bàn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Register this domain"
 msgstr "Đăng ký tên miền này"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site Guide"
 msgstr "Hướng dẫn sử dụng website"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Add new page"
 msgstr "Thêm trang mới"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Add new post"
 msgstr "Thêm bài viết mới"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Explore plugins"
 msgstr "Khám phá plugin"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site style"
 msgstr "Phong cách site"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Edit header"
 msgstr "Chỉnh sửa đầu trang"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Edit footer"
 msgstr "Chỉnh sửa chân trang"
 
 #. translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Reset site"
 msgstr "Cài đặt lại trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Website Tools & Plugins"
 msgstr "Công cụ & Plugin cho Website"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "You've completed the set tasks—your site is looking good. This dashboard will update with new tasks and insights to keep your website evolving. Stay tuned!"
 msgstr "Bạn đã hoàn thành các nhiệm vụ được giao—trang web của bạn trông rất tốt. Bảng điều khiển này sẽ được cập nhật với các nhiệm vụ mới và thông tin chi tiết để trang web của bạn ngày càng phát triển. Hãy chú ý theo dõi!"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Your Own Domain Awaits"
 msgstr "Tên miền của riêng bạn đang chờ đợi"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Move from a subdomain to a custom domain for improved website identity and SEO benefits."
 msgstr "Chuyển từ tên miền phụ sang tên miền tuỳ chỉnh để nâng cao nhận diện trang web và lợi ích SEO."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Secure a domain"
 msgstr "Bảo mật tên miền"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add a new page for your website."
 msgstr "Thêm một trang mới cho trang web của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add new"
 msgstr "Thêm mới"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Managed WordPress Hosting"
 msgstr "Dịch vụ lưu trữ WordPress được quản lý"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "We take care of WordPress settings, updating themes and plugins, security and backing up your website."
 msgstr "Chúng tôi quản lý cài đặt WordPress, cập nhật giao diện và plugin, bảo mật và sao lưu trang web của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Learn More"
 msgstr "Tìm hiểu thêm"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Claim your domain"
 msgstr "Yêu cầu tên miền của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Claim the perfect domain for your site."
 msgstr "Yêu cầu tên miền hoàn hảo cho trang web của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Edit your homepage"
 msgstr "Chỉnh sửa trang chủ của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Edit homepage by replacing existing content."
 msgstr "Chỉnh sửa trang chủ bằng cách thay thế nội dung hiện tại."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Edit now"
 msgstr "Sửa ngay"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up donations"
 msgstr "Thiết lập quyên góp"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the GiveWP plugin to enable donations on your site."
 msgstr "Cài đặt plugin GiveWP để bật tính năng quyên góp trên trang web của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up"
 msgstr "Cài đặt"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Revisit"
 msgstr "Xem lại"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up HubSpot"
 msgstr "Cài đặt HubSpot"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Start collecting emails and marketing to your customers"
 msgstr "Bắt đầu thu thập email và tiếp thị cho khách hàng của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up appointments"
 msgstr "Thiết lập cuộc hẹn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up events"
 msgstr "Thiết lập sự kiện"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Start adding events to your site by configuring The Events Calendar plugin."
 msgstr "Bắt đầu thêm sự kiện vào trang web của bạn bằng cách cấu hình plugin Lịch Sự Kiện."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Take a welcome tour"
 msgstr "Tham gia tour hướng dẫn chào mừng"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Restart"
 msgstr "Khởi động lại"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Start"
 msgstr "Bắt đầu"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "In a few words, explain what your site is about."
 msgstr "Trong vài từ, hãy giải thích trang web của bạn nói về điều gì."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Change"
 msgstr "Thay đổi"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add"
 msgstr "Thêm"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Upload a logo"
 msgstr "Tải lên một logo"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Ensure your website is on-brand by adding your logo."
 msgstr "Đảm bảo trang web của bạn phản ánh thương hiệu bằng cách thêm logo."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Replace"
 msgstr "Thay thế"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Upload"
 msgstr "Tải lên"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Upload a site icon"
 msgstr "Tải lên biểu tượng của trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Ensure your website is on-brand by adding your site icon."
 msgstr "Đảm bảo trang web của bạn phản ánh thương hiệu bằng cách thêm biểu tượng site."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Chat History"
 msgstr "Lịch sử trò chuyện"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Close history"
 msgstr "Đóng lịch sử"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Remove from history"
 msgstr "Xóa khỏi lịch sử"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Toggle menu"
 msgstr "Đổi trạng thái menu"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Chat History (%d)"
 msgstr "Lịch sử Chat (%d)"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Got questions? Ask our AI chatbot"
 msgstr "Có câu hỏi? Hỏi chatbot AI của chúng tôi"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "AI Chatbot"
 msgstr "Chatbot AI"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "What do you need help with?"
 msgstr "Bạn cần hỗ trợ vấn đề gì?"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search results"
 msgstr "Kết quả tìm kiếm"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search the knowledge base"
 msgstr "Tìm kiếm cơ sở kiến thức"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Page editor"
 msgstr "Công cụ soạn thảo trang"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Nhấn đăng hoặc cập nhật để lưu những thay đổi bạn đã thực hiện trên trang và áp dụng chúng trực tiếp trên trang web."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Installing a plugin"
 msgstr "Đang cài đặt một plugin"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Plugin management"
 msgstr "Quản lý plugin"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "You can always access the help center by clicking this button."
 msgstr "Bạn luôn có thể truy cập trung tâm trợ giúp bằng cách nhấp vào nút này."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Visit your site"
 msgstr "Xem trang web của bạn"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "You can always visit your site by clicking this button."
 msgstr "Bạn có thể luôn truy cập trang web của mình bằng cách nhấp vào nút này."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Users screen"
 msgstr "Màn hình người dùng"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Getting started with WordPress"
 msgstr "Bắt đầu với WordPress"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Learn more about your WordPress admin"
 msgstr "Tìm hiểu thêm về quản trị viên WordPress của bạn"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Show Help Center"
 msgstr "Hiện Trung tâm Trợ giúp"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Minimize Help Center"
 msgstr "Thu nhỏ Trung tâm Trợ giúp"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "close"
 msgstr "đóng"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Go back"
 msgstr "Quay lại"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Extendify Help Center"
 msgstr "Trung tâm Trợ giúp Extendify"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:3
 msgid "Help"
 msgstr "Trợ giúp"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
 msgid "Service offline. Check back later."
 msgstr "Dịch vụ hiện không hoạt động. Vui lòng quay lại sau."
 
@@ -1594,56 +1528,56 @@ msgid "Portrait: 3:4"
 msgstr "Chân dung: 3:4"
 
 #. translators: this refers to a domain name
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
 msgid "Available and just right for your site"
 msgstr "Có sẵn và rất phù hợp cho trang web của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Get another domain for your site."
 msgstr "Lấy một tên miền khác cho trang web của bạn."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Header Navigation"
 msgstr "Điều hướng tiêu đề"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add an additional domain"
 msgstr "Thêm một tên miền phụ"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
 msgid "Having another domain can drive additional traffic to your website."
 msgstr "Sở hữu một tên miền khác có thể thu hút thêm lượng truy cập đến trang web của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Logo for %s"
 msgstr "Logo cho %s"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Error"
 msgstr "Lỗi"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Active"
 msgstr "Đang hoạt động"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Activating..."
 msgstr "Đang kích hoạt..."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Activate"
 msgstr "Kích hoạt"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Installing..."
 msgstr "Đang cài đặt..."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Install Now"
 msgstr "Cài đặt ngay"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Learn about the key features of the Site Assistant."
 msgstr "Tìm hiểu về các tính năng chính của Trợ lý Trang web."
 
@@ -1695,108 +1629,108 @@ msgstr "Ảnh từ Unsplash"
 msgid "Get Personalized Image"
 msgstr "Lấy ảnh cá nhân hóa"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Nhấp vào đây để chuyển đến bảng điều khiển quản lý trang web của bạn. Từ đó bạn có thể tạo thêm trang web và quản lý cài đặt tài khoản của mình."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Ví dụ, Chúng tôi là một studio yoga tại London với đội ngũ giáo viên được đào tạo chuyên nghiệp, chú trọng vào yoga nóng với mục đích trị liệu."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Search for your site type"
 msgstr "Tìm kiếm theo loại trang web của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Connect your domain"
 msgstr "Kết nối tên miền của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "To bring real visitors to your website and to complete the website setup, we recommend you connect your domain in your hosting control panel now."
 msgstr "Để thu hút người truy cập thực sự đến website của bạn và hoàn thành việc thiết lập website, chúng tôi khuyên bạn nên kết nối tên miền của bạn trong bảng điều khiển hosting ngay bây giờ."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "I agree (required to use AI Assistant)"
 msgstr "Tôi đồng ý (bắt buộc để sử dụng Trợ lý AI)"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Select your site's tone (optional)"
 msgstr "Chọn tông màu cho trang web của bạn (không bắt buộc)"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Edit site navigation"
 msgstr "Chỉnh sửa điều hướng trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
 msgid "Add An Additional Domain"
 msgstr "Thêm một tên miền phụ"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add a page"
 msgstr "Thêm một trang"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Choose your domain"
 msgstr "Chọn tên miền của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Continue with site builder"
 msgstr "Tiếp tục với trình tạo trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add a site description"
 msgstr "Thêm mô tả cho trang web"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up All in One SEO"
 msgstr "Cài đặt All in One SEO"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the All in One SEO plugin to enhance your website discoverability."
 msgstr "Cài đặt plugin All in One SEO để tăng khả năng tìm kiếm cho trang web của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up analytics"
 msgstr "Cài đặt phân tích"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the MonsterInsights plugin to enable Google Analytics in your website."
 msgstr "Cài đặt plugin MonsterInsights để bật Google Analytics trên trang web của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Start accepting appointments on your website by configuring the Simply Scheduled Appointments plugin."
 msgstr "Bắt đầu chấp nhận lịch hẹn trên trang web của bạn bằng cách cấu hình plugin Simply Scheduled Appointments."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up WooCommerce Germanized plugin"
 msgstr "Cài đặt plugin WooCommerce Germanized"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Ensure your eCommerce store complies with local regulations."
 msgstr "Đảm bảo cửa hàng thương mại điện tử của bạn tuân thủ quy định địa phương."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up your eCommerce store"
 msgstr "Thiết lập cửa hàng thương mại điện tử của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up WooCommerce to start selling on your website."
 msgstr "Cài đặt WooCommerce để bắt đầu bán hàng trên trang web của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up WPForms"
 msgstr "Cài đặt WPForms"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the WPForms plugin to add a contact form on your site."
 msgstr "Cài đặt plugin WPForms để thêm một biểu mẫu liên hệ vào trang web của bạn."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up YourWebshop"
 msgstr "Cài đặt YourWebshop của bạn"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the YourWebshop plugin and start selling on your website right away."
 msgstr "Cài đặt plugin YourWebshop và bắt đầu bán hàng trên trang web của bạn ngay lập tức."
 
@@ -1814,6 +1748,6 @@ msgstr "Trợ lý WordPress sử dụng trí tuệ nhân tạo cho việc hướ
 msgid "Every 10 minutes"
 msgstr "Mỗi 10 phút"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Recommended"
 msgstr "Được khuyến nghị"

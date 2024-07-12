@@ -63,7 +63,6 @@ export const AIChat = () => {
 		setAnswer(undefined);
 		setAnswerId(undefined);
 		setError(false);
-		setAnswerId(undefined);
 		setShowHistory(false);
 		setCurrentQuestion(undefined);
 	};
@@ -86,18 +85,13 @@ export const AIChat = () => {
 				const { value, done } = await reader.read();
 				if (done) break;
 				const chunk = decoder.decode(value);
-				try {
-					const { id } = JSON.parse(chunk);
-					if (!id) throw new Error('False positive');
-					setAnswerId(id);
-				} catch (e) {
-					// if chunk fails to parse then it's a string
-					setAnswer((v) => {
-						if (v === '...') return chunk;
-						return v + chunk;
-					});
-				}
+				setAnswer((v) => {
+					if (v === '...') return chunk;
+					// For bw compatability we remove the json appended to the end
+					return (v + chunk).replace(/\{"id":"[a-zA-Z0-9]+"\}/g, '');
+				});
 			}
+			setAnswerId(response.headers.get('x-extendify-chat-id') || undefined);
 		} catch (e) {
 			console.error(e);
 		}

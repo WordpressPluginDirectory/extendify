@@ -13,45 +13,45 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.0.0-alpha.11\n"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:5
 msgid "Pattern added"
 msgstr "Патерн додано"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:5
 msgid "Design Patterns"
 msgstr "Дизайн патернів"
 
 #. translators: %s is the site type name
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Site Type: %s"
 msgstr "Тип сайту: %s"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Fetching..."
 msgstr "Отримання..."
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Retrying..."
 msgstr "Повторна спроба..."
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "All"
 msgstr "Все"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Design Type"
 msgstr "Тип дизайну"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Loading more patterns..."
 msgstr "Завантаження більшої кількості патернів..."
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Loading Patterns..."
 msgstr "Завантаження патернів..."
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Insert Pattern"
 msgstr "Вставити патерн"
 
@@ -60,85 +60,85 @@ msgid "Extendify Library User Settings"
 msgstr "Налаштування користувача бібліотеки Extendify"
 
 #: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Accept"
 msgstr "Прийняти"
 
 #: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Terms of Use"
 msgstr "Умови використання"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "View more pages"
 msgstr "Переглянути більше сторінок"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Ми вже вибрали найпоширеніші сторінки для вашого типу вебсайту."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Виберіть сторінки, які хочете додати на свій вебсайт"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Home page"
 msgstr "Головна сторінка"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Pick a design for your website"
 msgstr "Виберіть дизайн для вашого вебсайту"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "We'll make sure your website has what it needs to achieve your goals."
 msgstr "Ми переконаємося, що ваш вебсайт має все необхідне для досягнення ваших цілей."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "What are your goals for your website?"
 msgstr "Які ваші цілі для вебсайту?"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "We will help you create your WordPress website quickly."
 msgstr "Ми допоможемо вам швидко створити ваш вебсайт на WordPress."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "What is your WordPress site about?"
 msgstr "Про що ваш вебсайт на WordPress?"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Searching..."
 msgstr "Пошук..."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Enter your website name"
 msgstr "Введіть назву вашого вебсайту"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Helping you to succeed"
 msgstr "Допомога вам досягти успіху"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Adding page content"
 msgstr "Додавання вмісту сторінки"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Installing necessary plugins"
 msgstr "Установка необхідних плагінів"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Creating a beautiful website"
 msgstr "Створення прекрасного вебсайту"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Applying your website styles"
 msgstr "Застосування стилів вашого вебсайту"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Personalizing your experience"
 msgstr "Персоналізація вашого досвіду"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Populating data"
 msgstr "Заповнення даними"
 
@@ -203,736 +203,670 @@ msgstr "Покращити письмо"
 msgid "Write a blog post about"
 msgstr "Напишіть блоговий запис про"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "For other questions, visit our support page."
 msgstr "Для інших питань відвідайте нашу сторінку підтримки."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "WordPress Comfort Level"
 msgstr "Рівень комфорту користування WordPress"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Advanced"
 msgstr "Розширені"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Intermediate"
 msgstr "Проміжний"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Beginner"
 msgstr "Початківець"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Rate that this answer was not helpful"
 msgstr "Оцініть, наскільки ця відповідь була не корисною"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Rate that this answer was helpful"
 msgstr "Оцініть наскільки корисною була ця відповідь"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Remove rating"
 msgstr "Видалити рейтинг"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Ask your WordPress question…"
 msgstr "Задати питання про WordPress…"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Ask me any questions about WordPress."
 msgstr "Задайте мені будь-які питання про WordPress."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Hi there!"
 msgstr "Привіт!"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Ask Another Question"
 msgstr "Задати інше питання"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Oops! We were unable to send your question."
 msgstr "Ой! Ми не змогли відправити ваше питання."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Please try again."
 msgstr "Будь ласка, спробуйте ще раз."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Use this toggle to collapse or expand the sidebar menu."
 msgstr "Використовуйте цей перемикач, щоб згорнути чи розгорнути бічне меню."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Collapse menu"
 msgstr "Згорнути меню"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search for articles"
 msgstr "Шукати статті"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "The selected pattern has been inserted into the page."
 msgstr "Обраний патерн було додано на сторінку."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "View the Inserted Pattern"
 msgstr "Переглянути доданий патерн"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Просто оберіть будь-який патерн, який хочете додати на сторінку, натиснувши на нього."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Select a Pattern"
 msgstr "Обрати патерн"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click on any pattern category to refine the selection."
 msgstr "Натисніть на будь-яку категорію патернів, щоб уточнити вибір."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Filter Patterns"
 msgstr "Фільтрувати патерни"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Бібліотеку дизайнів Extendify можна відкрити, натиснувши на кнопку ліворуч."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Open the Pattern Library"
 msgstr "Відкрити бібліотеку патернів"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tour this page"
 msgstr "Оглянути цю сторінку"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Manage your profile or log out of your account here."
 msgstr "Керуйте своїм профілем або вийдіть з нього тут."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "User"
 msgstr "Користувач"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Advanced settings for your site and for certain plugins."
 msgstr "Розширені налаштування для вашого сайту та певних плагінів."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Import/export post data, check site health, and edit theme or plugin files directly in the WordPress admin."
 msgstr "Імпортуйте/експортуйте вміст записів, перевіряйте стан сайту і редагуйте файли тем та плагінів напряму в адміністративній панелі WordPress."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tools"
 msgstr "Інструменти"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add or manage users on your site, both admin users and others."
 msgstr "Додавайте нових користувачів або керуйте вже створеними — як адміністраторами, так і іншими."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add or manage the plugins on your site."
 msgstr "Додавайте нові плагіни або керуйте вже встановленими."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Manage your theme and access the Site Editor from the Appearance menu. The Site Editor is where you can make global changes to your site (such as the menu, header/footer, and styles)."
 msgstr "Керуйте темою та отримуйте доступ до Редактора сайту. Саме в Редакторі сайту ви зможете вносити глобальні зміни до вашого сайту (наприклад, змінювати меню, шапку/підвал та стилі)."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Appearance"
 msgstr "Вигляд"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "If you have commenting enabled on your posts, you can manage those comments here."
 msgstr "Якщо для ваших записів увімкнені коментарі, ви можете керувати ними тут."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Comments"
 msgstr "Коментарі"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add, edit, or remove images and other media from your library. When you upload an image to be used on your site, it will be added to the library."
 msgstr "Додавайте, редагуйте або видаляйте зображення та інші медіа-файли з бібліотеки. Коли ви завантажуєте зображення на сайт, воні з’являться тут у бібліотеці."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Media"
 msgstr "Медіа"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Manage and create blog posts."
 msgstr "Створюйте нові записи в блогу та редагуйте вже створені."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Posts"
 msgstr "Записи"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "The default WordPress dashboard will have some overall site metrics and modules added from certain plugins."
 msgstr "На головній сторінці панелі керування WordPress будуть деякі загальні показники сайту та модулі, додані з деяких плагінів."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Access the Site Assistant at any time."
 msgstr "Користуйтеся помічником по сайту в будь-який час."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Знову відкрийте Помічник сайту, натиснувши на цей пункт меню у будь-який час."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Подивіться наші індивідуальні рекомендації, які допоможуть вам у створенні сайту."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Отримайте швидкий доступ до найбільш популярних елементів WordPress за цими швидкими посиланнями."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Knowledge Base"
 msgstr "База знань"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "Тепер, коли початковий сайт готовий, почніть персоналізувати його за допомогою цих простих завдань."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
-msgid "Menu"
-msgstr "Меню"
-
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Set Site Title"
 msgstr "Вказати назву сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher."
 msgstr "Створіть собі швидкий та гарний сайт за лічені хвилини за допомогою нашого інструмента «Site Launcher»."
 
 #: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Home"
 msgstr "Головна"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "There was an error loading this article"
 msgstr "Виникла помилка під час завантаження цієї статті"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tours"
 msgstr "Огляди"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Help Center"
 msgstr "Довідковий центр"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Натисність кнопку «Додати», щоб створити нового користувача для вашого сайту."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add a new user"
 msgstr "Додати нового користувача"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Use the search bar to find a particular user."
 msgstr "Скористуйтеся пошуком, щоб швидко знайти конкретного користувача."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search for users"
 msgstr "Шукати користувачів"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Натисність кнопку «Редагувати», щоб змінити роль користувача або змінити інформацію в його обліковому записі."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Edit user information"
 msgstr "Редагувати інформацію користувача"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "See all of your users, including admin users in this table."
 msgstr "У цій таблиці ви побачите всіх ваших користувачів, в тому числі адміністраторів."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Users"
 msgstr "Користувачі"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click here to view and manage the users on your site."
 msgstr "Перейдіть у цей розділ, щоб переглянути користувачів вашого сайту та керувати ними."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "All Users menu"
 msgstr "Розділ «Всі користувачі»"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click here to add another plugin to your site."
 msgstr "Натисність тут, щоб додати ще один плагін на сайт."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add another"
 msgstr "Додати плагін"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Під кожним плагіном ви можете його активувати або деактивувати."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Deactivate/activate option"
 msgstr "Опція активувати/деактивувати"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "У цій таблиці ви знайдете всі плагіни, що встановлені у вас на сайті. Як ввімкнені, так і вимкнені."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Installed plugins"
 msgstr "Встановлені плагіни"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Перейдіть у цей розділ, щоб переглянути встановлені плагіни на та керувати ними."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Installed Plugins menu"
 msgstr "Розділ «Встановлені плагіни»"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Якщо у вас є плагін, який ви скачали з іншого сайту, ви можете завантажити його тут."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Upload Plugin"
 msgstr "Завантажити плагін"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Натисніть «Встановити», щоб додати плагін на сайт. Потім натисніть «Активувати», щоб увімкнути плагін."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Install now"
 msgstr "Встановити плагін"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "See important information about each plugin."
 msgstr "Тут ви знайдете важливу інформацію про кожен плагін."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Plugin details"
 msgstr "Інформація про плагін"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search for a plugin by name or functionality."
 msgstr "Шукати плагін за назвою або функціоналом."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click here to access the Add Plugins page."
 msgstr "Натисніть тут, щоб перейти в розділ «Додати плагіни»."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add New plugin menu"
 msgstr "Розділ «Додати новий»"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Publish or Save"
 msgstr "Опублікувати або Зберегти"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Натисність «Переглянути», щоб побачити, як внесені зміни будуть виглядати на сайті."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Preview"
 msgstr "Перегляд"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Оберіть «Сторінка» або «Блок», щоб змінити налаштування для всієї сторінки або обраного блока."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Page and Block Settings"
 msgstr "Наташтування сторінки або блока"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Це зразок блоку «Параграф». Він може складатись з кількох речень і займати кілька рядків. Ви можете додати на сторінку стільки блоків, скільки забажаєте."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Кожен блок відображатиметься тут і його можна буде відредагувати, натиснувши на нього."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Blocks"
 msgstr "Блоки"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Редагуйте назву сторінки, натиснувши на неї. Ця назва може бути або не бути відображена на опублікованій сторінці, в залежності від шаблону сторінки."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Page Title"
 msgstr "Назва сторінки"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Додайте блок, натиснувши на нього або перетягнувши на сторінку."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Block Inserter"
 msgstr "Розділ з блоками"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click the plus to open the block inserter."
 msgstr "Натисніть на плюс, щоб додати новий блок."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Add a Block"
 msgstr "Додати блок"
 
-#: app/HelpCenter/Controllers/SupportArticlesController.php:98
+#: app/HelpCenter/Controllers/SupportArticlesController.php:100
 msgid "Page not found"
 msgstr "Сторінку не знайдено"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Layout"
 msgstr "Макет"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Events"
 msgstr "Події"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Skip to Assist"
 msgstr "Перейти до розділу «Допомога»"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Dashboard"
 msgstr "Майстерня"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "All caught up!"
 msgstr "Все виконано!"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tasks"
 msgstr "Завдання"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Quick Links"
 msgstr "Швидкі посилання"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "At any time, you can view your site (from a visitor's perspective) from the top admin bar under your site's name."
 msgstr "У будь-який час ви можете побачити свій сайт очима користувача за допомогою кнопки «Відвідати сайт» на верхній панелі під назвою сайта."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Створюйте нові сторінки на вашому сайті або редагуйте вже створені."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:3
 msgid "Done"
 msgstr "Готово"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tour Steps"
 msgstr "Етапи огляду"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Tour"
 msgstr "Огляд"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:5
 msgid "Open for new pages"
 msgstr "Запускати бібліотеку на нових сторінках"
 
 #. translators: %s: Extendify Library term
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:5
 msgid "Toggle %s on new pages"
 msgstr "Відкривати %s на нових сторінках"
 
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:85
-msgid "%s Banner"
-msgstr "%s Банер"
-
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "На сервері виникла помилка. Будь-ласка, перезавантажте сторінку та спробуйте знову."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Save"
 msgstr "Зберегти"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Enter a site description..."
 msgstr "Введіть опис сайту…"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site description"
 msgstr "Опис сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Add site description"
 msgstr "Додати опис сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Upload site logo"
 msgstr "Завантажити логотип сайту"
 
-#: app/AdminPageRouter.php:145
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: app/AdminPageRouter.php:47
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Site Assistant"
 msgstr "Помічник сайту"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Blog"
 msgstr "Блог"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "View site"
 msgstr "Показати сайт"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Upload site icon"
 msgstr "Завантажити іконку сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Set site icon"
 msgstr "Встановити іконку сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site icon"
 msgstr "Іконка сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Set site logo"
 msgstr "Встановити логотип сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site logo"
 msgstr "Логотип сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Remove image"
 msgstr "Видалити зображення"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Replace image"
 msgstr "Замінити зображення"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Edit or update the image"
 msgstr "Редагувати або оновити зображення"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Close Modal"
 msgstr "Закрити модальне вікно"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Dismiss"
 msgstr "Відхилити"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Select Site Pages"
 msgstr "Оберіть сторінки сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Select Site Design"
 msgstr "Оберіть дизайн сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Select Site Goals"
 msgstr "Оберіть цілі сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Continue Building Your Website"
 msgstr "Продовжити будувати сайт"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Select Site Industry"
 msgstr "Оберіть галузь сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Let's Start Building Your Website"
 msgstr "Давайте почнемо будувати ваш сайт"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Exit Launch"
 msgstr "Вийти з меню Запуску"
 
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:97
-msgid "Welcome to %s"
-msgstr "Вітаємо у %s"
-
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Перенаправлення через 3, 2, 1…"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Your website has been created!"
 msgstr "Ваш вебсайт створено!"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Setting up your Site Assistant"
 msgstr "Налаштування вашого помічника сайту"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Starting off with a full website"
 msgstr "Початок роботи з повноцінним вебсайтом"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Site Title"
 msgstr "Назва сайту"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Back"
 msgstr "Назад"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Site Industry"
 msgstr "Галузь сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Goals"
 msgstr "Цілі"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Take me there"
 msgstr "Перейти туди"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Вітаємо, додаток «Запуск» працює за допомогою теми Extendable і вона потрібна для того, щоб продовжити. Її можна встановити за посиланням нижче і почати знову, коли вона буде ввімкнена."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "One more thing before we start."
 msgstr "Ще одна річ, перш ніж ми почнемо."
 
-#. translators: %s: Extendify Library term
-#: app/Library/AdminPage.php:119
-msgid "1. Open the %s"
-msgstr "1. Відкрийте %s"
-
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Plugins"
 msgstr "Плагіни"
 
-#: app/Library/AdminPage.php:77
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "View Site"
 msgstr "Показати сайт"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Site is not ready to launch."
 msgstr "Сайт не готовий до запуску."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Next"
 msgstr "Далі"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Pages"
 msgstr "Сторінки"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "You can personalize this later."
 msgstr "Ви можете персоналізувати це пізніше."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Loading..."
 msgstr "Завантаження…"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "What's the name of your website?"
 msgstr "Яка назва вашого вебсайту?"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "You can change this later."
 msgstr "Ви можете змінити це пізніше."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "What's the name of your new site?"
 msgstr "Як називається ваш новий сайт?"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Press to select"
 msgstr "Натисність, щоб обрати"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Хвилинку, це займає більше часу, ніж очікувалось."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:1
 msgid "Design Library"
 msgstr "Бібліотека дизайнів"
 
-#: app/Library/AdminPage.php:180
-msgid "You'll find beautiful high fidelity Gutenberg content to add to your pages in no time!"
-msgstr "Ви знайдете гарні, підібрані під вашу галузь шаблони, які зможете швидко додати на свій сайт!"
-
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:174
-msgid "Search by industry, contents, and design attributes. %s has thousands of best-in-class block patterns. Find what you love and add it to the page - done!"
-msgstr "Шукайте за галуззю, вмістом або елементами дизайну. В %s є тисячі дизайнів різних блоків. Знайдіть той, що вам подобається та додайте його на сторінку!"
-
-#: app/Library/AdminPage.php:168
-msgid "3. Browse Patterns & Layouts."
-msgstr "3. Знайдіть патерни та макети."
-
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:158
-msgid "%s supports over sixty types with new industries added regularly."
-msgstr "%s підтримує більше ніж шістдесят видів, а нові галузі регулярно додаються."
-
-#: app/Library/AdminPage.php:152
-msgid "With the library open, you can set your site industry - or type - which will surface the perfect industry-specific patterns and full page layouts to drop onto your website."
-msgstr "З відкритою бібліотекою ви можете обрати галузь вашого сайту та знайти ідеальні патерни для вашого бізнесу або макети повних сторінок, які можна буде легко додати на сайт."
-
-#: app/Library/AdminPage.php:149
-msgid "2. Choose a site industry"
-msgstr "2. Оберіть галузь сайту"
-
-#. translators: %1$s = URL.
-#: app/Library/AdminPage.php:136
-msgid "clicking here"
-msgstr "натиснути тут"
-
-#. translators: %1$s = URL.
-#: app/Library/AdminPage.php:136
-msgid "You may also add a new page with the library opened for you by %1$s."
-msgstr "Ви також можете додату нову сторінку з відкритою для вас бібліотекою за %1$s."
-
-#. translators: %s: Extendify Library term
-#: app/Library/AdminPage.php:128
-msgid "When editing a page or post within the block editor, you'll see the %s button within the editor's header"
-msgstr "Під час редагування сторінки або запису, кнопка %s буде знаходитись у шапці редактора"
-
-#. translators: %s: The name of the plugin, Extendify
-#: app/Library/AdminPage.php:106
-msgid "%s is a massive library of drop-in block patterns easily customized to your liking. Each pattern is meticulously designed to work with your existing WordPress theme."
-msgstr "%s — це величезна бібліотека патернів, які можна легко налаштувати як вам подобається. Кожен патерн був ретельно створений, щоб підходити до вашої теми WordPress."
-
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Design"
 msgstr "Дизайн"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Close"
 msgstr "Закрити"
 
@@ -940,15 +874,15 @@ msgstr "Закрити"
 msgid "Submit"
 msgstr "Відправити"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Settings"
 msgstr "Налаштування"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search"
 msgstr "Пошук"
 
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Site Type"
 msgstr "Тип сайту"
 
@@ -968,99 +902,99 @@ msgid "Extendify"
 msgstr "Extendify"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:3
 msgid "%1$s of %2$s"
 msgstr "%1$s з %2$s"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Creating pages with custom content"
 msgstr "Створення сторінок з власним вмістом"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Setting up site layout"
 msgstr "Налаштування компонування сайту"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Website description"
 msgstr "Опис сайту"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Professional"
 msgstr "Професійний"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Friendly"
 msgstr "Дружній"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Inspirational"
 msgstr "Надихаючий"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Informative"
 msgstr "Інформативний"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Persuasive"
 msgstr "Переконливий"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Skip"
 msgstr "Пропустити"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Business Information"
 msgstr "Інформація про бізнес"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Let us create custom copy for your website"
 msgstr "Дозвольте нам створити унікальний текст для вашого веб-сайту"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Our AI Assistant will take your input and create customized copy for each page. Describe your website or business with as much detail as you'd like and we'll use it to create your perfect site."
 msgstr "Наш помічник на базі штучного інтелекту візьме ваші дані та створить індивідуальний текст для кожної сторінки. Опишіть свій веб-сайт або бізнес з бажаною деталізацією, і ми використаємо це для створення вашого ідеального сайту."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Please accept the terms to continue"
 msgstr "Будь ласка, прийміть умови, щоб продовжити"
 
 #. translators: Launch is a noun.
-#: app/AdminPageRouter.php:58
+#: app/AdminPageRouter.php:60
 msgid "Launch"
 msgstr "Запуск"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:3
 msgid "Added by Launch"
 msgstr "Доданий Launch"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:3
 msgid "Start over?"
 msgstr "Почати спочатку?"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Пройдіть процес введення в курс справ ще раз, щоб створити новий сайт."
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "%s pages created in the prior onboarding session will be deleted."
 msgstr "%s сторінок, створених під час попереднього сеансу налаштування, буде видалено."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Exit"
 msgstr "Вийти"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Processing"
 msgstr "Обробка"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Continue"
 msgstr "Продовжити"
 
 #: public/build/extendify-draft-e94c730d2b8df8f93381.js:7
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Ask AI"
 msgstr "Запитати у ШІ"
 
@@ -1273,301 +1207,301 @@ msgstr "Опис зображення"
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Ваш запит було відхилено через нашу систему безпеки. Ваше повідомлення може містити текст, який не дозволений нашою системою безпеки."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "This tour is only available on desktop devices"
 msgstr "Ця функція доступна лише на настільних пристроях"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Register this domain"
 msgstr "Зареєструвати цей домен"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site Guide"
 msgstr "Путівник сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Add new page"
 msgstr "Додати нову сторінку"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Add new post"
 msgstr "Додати новий запис"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Explore plugins"
 msgstr "Огляд плагінів"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Site style"
 msgstr "Стиль сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Edit header"
 msgstr "Редагувати хедер"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Edit footer"
 msgstr "Редагувати підвал"
 
 #. translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Reset site"
 msgstr "Скинути сайт"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Website Tools & Plugins"
 msgstr "Інструменти та плагіни для сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "You've completed the set tasks—your site is looking good. This dashboard will update with new tasks and insights to keep your website evolving. Stay tuned!"
 msgstr "Ви виконали поставлені завдання — ваш сайт виглядає добре. Ця майстерня буде оновлюватися новими завданнями та інсайтами, щоб ваш вебсайт розвивався. Слідкуйте за оновленнями!"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Your Own Domain Awaits"
 msgstr "Ваш власний домен чекає"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Move from a subdomain to a custom domain for improved website identity and SEO benefits."
 msgstr "Перейдіть з піддомену на власний домен для покращення ідентичності вебсайту та переваг SEO."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Secure a domain"
 msgstr "Забезпечте безпеку домену"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add a new page for your website."
 msgstr "Додайте нову сторінку для вашого вебсайту."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add new"
 msgstr "Додати новий"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Managed WordPress Hosting"
 msgstr "Хостинг WordPress з управлінням"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "We take care of WordPress settings, updating themes and plugins, security and backing up your website."
 msgstr "Ми дбаємо про налаштування WordPress, оновлення тем і плагінів, безпеку та резервне копіювання вашого вебсайту."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Learn More"
 msgstr "Дізнатися більше"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Claim your domain"
 msgstr "Зареєструйте свій домен"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Claim the perfect domain for your site."
 msgstr "Зареєструйте ідеальний домен для вашого сайту."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Edit your homepage"
 msgstr "Редагувати вашу домашню сторінку"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Edit homepage by replacing existing content."
 msgstr "Редагувати домашню сторінку, замінивши існуючий вміст."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Edit now"
 msgstr "Редагувати зараз"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up donations"
 msgstr "Налаштувати пожертви"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the GiveWP plugin to enable donations on your site."
 msgstr "Налаштуйте плагін GiveWP, щоб активувати можливість здійснення пожертв на вашому сайті."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up"
 msgstr "Налаштувати"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Revisit"
 msgstr "Переглянути знову"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up HubSpot"
 msgstr "Налаштувати HubSpot"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Start collecting emails and marketing to your customers"
 msgstr "Почніть збирати електронні адреси та займайтеся маркетингом для ваших клієнтів"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up appointments"
 msgstr "Налаштувати прийоми"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up events"
 msgstr "Налаштувати події"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Start adding events to your site by configuring The Events Calendar plugin."
 msgstr "Почніть додавати події на ваш сайт, налаштувавши плагін Календар Подій."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Take a welcome tour"
 msgstr "Пройти вступний тур"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Restart"
 msgstr "Перезапустити"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Start"
 msgstr "Старт"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "In a few words, explain what your site is about."
 msgstr "Кількома словами поясніть, про що ваш сайт."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Change"
 msgstr "Змінити"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add"
 msgstr "Додати"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Upload a logo"
 msgstr "Завантажити лого"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Ensure your website is on-brand by adding your logo."
 msgstr "Переконайтеся, що ваш вебсайт відповідає бренду, додавши свій логотип."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Replace"
 msgstr "Замінити"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Upload"
 msgstr "Завантажити"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Upload a site icon"
 msgstr "Завантажити іконку сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Ensure your website is on-brand by adding your site icon."
 msgstr "Переконайтеся, що ваш вебсайт відповідає бренду, додавши іконку сайту."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Chat History"
 msgstr "Історія чату"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Close history"
 msgstr "Закрити історію"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Remove from history"
 msgstr "Видалити з історії"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Toggle menu"
 msgstr "Перемкнути меню"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Chat History (%d)"
 msgstr "Історія чату (%d)"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Got questions? Ask our AI chatbot"
 msgstr "Маєте запитання? Запитайте нашого штучного інтелекту в чаті"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "AI Chatbot"
 msgstr "ШІ-чатбот"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "What do you need help with?"
 msgstr "З чим вам потрібна допомога?"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search results"
 msgstr "Результати пошуку"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Search the knowledge base"
 msgstr "Шукати в базі знань"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Page editor"
 msgstr "Редактор сторінок"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Натисніть \"Опублікувати\" або \"Оновити\", щоб зберегти зроблені вами зміни на сторінці та застосувати їх на сайті."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Installing a plugin"
 msgstr "Встановлення плагіна"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Plugin management"
 msgstr "Керування плагінами"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "You can always access the help center by clicking this button."
 msgstr "Ви завжди можете отримати доступ до центру допомоги, натиснувши цю кнопку."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Visit your site"
 msgstr "Відвідайте ваш сайт"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "You can always visit your site by clicking this button."
 msgstr "Ви завжди можете відвідати свій сайт, натиснувши цю кнопку."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Users screen"
 msgstr "Екран користувачів"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Getting started with WordPress"
 msgstr "Починаємо роботу з WordPress"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Learn more about your WordPress admin"
 msgstr "Дізнайтеся більше про ваш адміністративний інтерфейс WordPress."
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Show Help Center"
 msgstr "Показати центр допомоги"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Minimize Help Center"
 msgstr "Згорнути Центр допомоги"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "close"
 msgstr "закрити"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Go back"
 msgstr "Повернутися назад"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Extendify Help Center"
 msgstr "Центр допомоги Extendify"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:3
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:3
 msgid "Help"
 msgstr "Допомога"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
 msgid "Service offline. Check back later."
 msgstr "Сервіс поза мережею. Зайдіть пізніше."
 
@@ -1594,56 +1528,56 @@ msgid "Portrait: 3:4"
 msgstr "Портрет: 3:4"
 
 #. translators: this refers to a domain name
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
 msgid "Available and just right for your site"
 msgstr "Доступний та ідеально підходить для вашого сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Get another domain for your site."
 msgstr "Отримайте інший домен для вашого сайту."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Header Navigation"
 msgstr "Навігація у шапці сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add an additional domain"
 msgstr "Додати додатковий домен"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
 msgid "Having another domain can drive additional traffic to your website."
 msgstr "Наявність іншого домену може залучити додатковий трафік на ваш сайт."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Logo for %s"
 msgstr "Логотип для %s"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Error"
 msgstr "Помилка"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Active"
 msgstr "Активний"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Activating..."
 msgstr "Активація..."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Activate"
 msgstr "Активувати"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Installing..."
 msgstr "Встановлення..."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:3
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:3
 msgid "Install Now"
 msgstr "Встановити зараз"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Learn about the key features of the Site Assistant."
 msgstr "Дізнайтеся про ключові особливості Помічника сайту."
 
@@ -1695,108 +1629,108 @@ msgstr "Фотографії з Unsplash"
 msgid "Get Personalized Image"
 msgstr "Отримати персоналізоване зображення"
 
-#: public/build/extendify-help-center-99f6e8bb9d64cd0c40ef.js:1
+#: public/build/extendify-help-center-cc341bc2459436da86ae.js:1
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Натисніть тут, щоб перейти до панелі керування вашим сайтом. Звідти ви зможете створювати більше сайтів та керувати налаштуваннями облікового запису."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Наприклад, ми - студія йоги в Лондоні з професійно підготовленими інструкторами, які спеціалізуються на гарячій йозі з терапевтичною метою."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
-#: public/build/extendify-library-bfe4a85e96a2ffb39fbe.js:3
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
+#: public/build/extendify-library-e370452e8b2a74694d0d.js:3
 msgid "Search for your site type"
 msgstr "Пошук за типом вашого сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Connect your domain"
 msgstr "Підключіть ваш домен"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "To bring real visitors to your website and to complete the website setup, we recommend you connect your domain in your hosting control panel now."
 msgstr "Щоб привести реальних відвідувачів на ваш сайт та завершити налаштування сайту, ми рекомендуємо зараз підключити ваш домен у панелі керування хостингом."
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "I agree (required to use AI Assistant)"
 msgstr "Я згоден (необхідно для використання AI Assistant)"
 
-#: public/build/extendify-launch-17870ce7f9c8e8c442d0.js:5
+#: public/build/extendify-launch-74986124a4f5b7d4aa0c.js:5
 msgid "Select your site's tone (optional)"
 msgstr "Виберіть тон вашого сайту (необов'язково)"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Edit site navigation"
 msgstr "Редагувати навігацію сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:5
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:5
 msgid "Add An Additional Domain"
 msgstr "Додати додатковий домен"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add a page"
 msgstr "Додати сторінку"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Choose your domain"
 msgstr "Виберіть ваш домен"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Continue with site builder"
 msgstr "Продовжити з конструктором сайтів"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Add a site description"
 msgstr "Додати опис сайту"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up All in One SEO"
 msgstr "Налаштувати All in One SEO"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the All in One SEO plugin to enhance your website discoverability."
 msgstr "Налаштуйте плагін All in One SEO для покращення видимості вашого сайту в інтернеті."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up analytics"
 msgstr "Налаштувати аналітику"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the MonsterInsights plugin to enable Google Analytics in your website."
 msgstr "Налаштуйте плагін MonsterInsights, щоб активувати Google Analytics на вашому сайті."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Start accepting appointments on your website by configuring the Simply Scheduled Appointments plugin."
 msgstr "Почніть приймати записи на вашому сайті, налаштувавши плагін Simply Scheduled Appointments."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up WooCommerce Germanized plugin"
 msgstr "Налаштувати плагін WooCommerce Germanized"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Ensure your eCommerce store complies with local regulations."
 msgstr "Переконайтеся, що ваш інтернет-магазин відповідає місцевим нормам."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up your eCommerce store"
 msgstr "Налаштуйте ваш інтернет-магазин"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up WooCommerce to start selling on your website."
 msgstr "Налаштуйте WooCommerce, щоб почати продаж на вашому вебсайті."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up WPForms"
 msgstr "Налаштувати WPForms"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the WPForms plugin to add a contact form on your site."
 msgstr "Налаштуйте плагін WPForms, щоб додати контактну форму на ваш сайт."
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up YourWebshop"
 msgstr "Налаштуйте YourWebshop"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:7
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:7
 msgid "Set up the YourWebshop plugin and start selling on your website right away."
 msgstr "Налаштуйте плагін YourWebshop та почніть продавати на вашому сайті відразу."
 
@@ -1814,6 +1748,6 @@ msgstr "Штучний інтелект, що допомагає у викори
 msgid "Every 10 minutes"
 msgstr "Кожні 10 хвилин"
 
-#: public/build/extendify-assist-page-909036752e9da06ea7b4.js:1
+#: public/build/extendify-assist-page-9b0983ec3ae2de2ecb8c.js:1
 msgid "Recommended"
 msgstr "Рекомендовано"

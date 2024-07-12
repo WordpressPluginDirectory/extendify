@@ -30,12 +30,15 @@ class Sanitizer
      */
     public static function sanitizeArray($array)
     {
-        $sanitizedArray = [];
-        foreach ($array as $key => $value) {
-            $sanitizedArray[$key] = is_array($value) ? self::sanitizeArray($value) : \sanitize_text_field($value);
-        }
-
-        return $sanitizedArray;
+        return array_map(function ($value) {
+            if (is_array($value)) {
+                return self::sanitizeArray($value);
+            } elseif (is_int($value) || is_float($value)) {
+                return $value;
+            } else {
+                return \sanitize_text_field($value);
+            }
+        }, $array);
     }
 
     /**

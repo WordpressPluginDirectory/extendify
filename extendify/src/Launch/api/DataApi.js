@@ -3,7 +3,7 @@ import { PATTERNS_HOST, AI_HOST } from '../../constants';
 import { getHeadersAndFooters } from './WPApi';
 import { Axios as api } from './axios';
 
-const fetchTemplates = async (type, siteType) => {
+const fetchTemplates = async (type, siteType, otherData = {}) => {
 	const { showLocalizedCopy, wpVersion, wpLanguage } = window.extSharedData;
 	const { goals, plugins } = useUserSelectionStore.getState();
 	const url = new URL(`${PATTERNS_HOST}/api/${type}-templates`);
@@ -14,6 +14,15 @@ const fetchTemplates = async (type, siteType) => {
 	plugins?.length &&
 		url.searchParams.append('plugins', JSON.stringify(plugins));
 	showLocalizedCopy && url.searchParams.append('showLocalizedCopy', true);
+
+	Object.entries(otherData).forEach(([key, value]) => {
+		if (value == null) return;
+		if (typeof value === 'object') {
+			return url.searchParams.append(key, JSON.stringify(value));
+		}
+		url.searchParams.append(key, value);
+	});
+
 	const res = await fetch(url.toString(), {
 		headers: { 'Content-Type': 'application/json' },
 	});
@@ -40,7 +49,8 @@ export const getHomeTemplates = async (siteType) => {
 	});
 };
 export const getPageTemplates = async (siteType) => {
-	const pages = await fetchTemplates('page', siteType);
+	const { siteInformation } = useUserSelectionStore.getState();
+	const pages = await fetchTemplates('page', siteType, { siteInformation });
 	if (!pages?.recommended) {
 		throw new Error('Could not get pages');
 	}

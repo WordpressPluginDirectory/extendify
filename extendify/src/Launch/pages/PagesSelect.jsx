@@ -88,7 +88,7 @@ export const PagesSelect = () => {
 	return (
 		<PageLayout>
 			<div className="grow lg:flex overflow-y-scroll space-y-4 lg:space-y-0">
-				<div className="h-full bg-gray-100 grow pt-0 px-4 lg:pb-0 l6:px-16 xl:px-32 overflow-y-hidden min-h-screen lg:min-h-0">
+				<div className="hidden lg:block h-full bg-gray-100 grow pt-0 px-4 lg:pb-0 l6:px-16 xl:px-32 overflow-y-hidden min-h-screen lg:min-h-0">
 					<div className="h-full flex flex-col">
 						<h3 className="text-base lg:text-lg font-medium text-gray-700 text-center my-2 lg:my-4">
 							{previewing?.name}

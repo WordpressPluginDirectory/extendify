@@ -56,7 +56,6 @@ use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsCon
         ApiRouter::get('/assist/task-data', [TasksController::class, 'get']);
         ApiRouter::post('/assist/task-data', [TasksController::class, 'store']);
         ApiRouter::post('/assist/router-data', [RouterController::class, 'store']);
-        ApiRouter::get('/assist/router-data', [RouterController::class, 'get']);
         ApiRouter::get('/assist/global-data', [GlobalsController::class, 'get']);
         ApiRouter::post('/assist/global-data', [GlobalsController::class, 'store']);
         ApiRouter::post('/assist/delete-domains-recommendations', [DomainsSuggestionController::class, 'deleteCache']);
@@ -67,7 +66,6 @@ use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsCon
         ApiRouter::post('/help-center/router-data', [HelpCenterRouterController::class, 'store']);
         ApiRouter::get('/help-center/router-data', [HelpCenterRouterController::class, 'get']);
         ApiRouter::get('/help-center/support-article', [SupportArticlesController::class, 'article']);
-        ApiRouter::get('/help-center/support-articles-data', [SupportArticlesController::class, 'get']);
         ApiRouter::post('/help-center/support-articles-data', [SupportArticlesController::class, 'store']);
         ApiRouter::get('/help-center/get-redirect', [SupportArticlesController::class, 'getRedirect']);
 

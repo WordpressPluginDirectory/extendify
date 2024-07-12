@@ -74,7 +74,7 @@ export default {
 			title: __('Site Assistant', 'extendify-local'),
 			text: __('Access the Site Assistant at any time.', 'extendify-local'),
 			attachTo: {
-				element: '#toplevel_page_extendify-admin-page',
+				element: '#toplevel_page_extendify-assist',
 				offset: {
 					marginTop: 0,
 					marginLeft: 15,

@@ -56,7 +56,7 @@ export const generateCustomPageContent = async (pages, userState) => {
 		),
 	);
 
-	return result?.map((page, i) => page.value || pages[i]) || pages;
+	return result?.map((page, i) => page.value || pages[i]);
 };
 
 export const updateGlobalStyleVariant = (variation) =>

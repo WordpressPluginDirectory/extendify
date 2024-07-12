@@ -78,8 +78,10 @@ class SupportArticlesController
      */
     public static function store($request)
     {
-        $data = json_decode($request->get_param('state'), true);
-        update_option('extendify_assist_support_articles', Sanitizer::sanitizeArray($data));
+        $data = $request->get_param('state');
+        update_option('extendify_assist_support_articles', [
+            'state' => Sanitizer::sanitizeArray($data),
+        ]);
         return new \WP_REST_Response($data);
     }
 

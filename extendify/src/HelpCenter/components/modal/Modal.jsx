@@ -1,13 +1,28 @@
+import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Dialog } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import { ModalContent } from '@help-center/components/modal/ModalContent';
 import { Topbar } from '@help-center/components/modal/TopBar';
+import { useRouter } from '@help-center/hooks/useRouter';
+import { useAIChatStore } from '@help-center/state/ai-chat';
 import { useGlobalSyncStore } from '@help-center/state/globals-sync';
+import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base';
 import { MinimizedButton } from '../buttons/MinimizedButton';
 
 export const Modal = () => {
 	const { visibility } = useGlobalSyncStore();
+	const { reset: resetRouterState } = useRouter();
+	const { reset: resetKnowledgeBaseState } = useKnowledgeBaseStore();
+	const { reset: resetAIChatState } = useAIChatStore();
+
+	useEffect(() => {
+		if (visibility === 'closed') {
+			resetRouterState();
+			resetKnowledgeBaseState();
+			resetAIChatState();
+		}
+	}, [resetAIChatState, resetKnowledgeBaseState, resetRouterState, visibility]);
 
 	if (visibility === 'minimized') {
 		return (

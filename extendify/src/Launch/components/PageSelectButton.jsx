@@ -27,7 +27,7 @@ export const PageSelectButton = ({
 		<button
 			type="button"
 			className={classNames(
-				'flex items-center h-full min-h-6 min-w-6 shrink py-3 px-4 border-l border-gray-300 cursor-pointer',
+				'hidden lg:flex items-center h-full min-h-6 min-w-6 shrink py-3 px-4 border-l border-gray-300 cursor-pointer',
 				{
 					'bg-gray-100 text-gray-800': !previewing,
 					'bg-design-main text-white': previewing,

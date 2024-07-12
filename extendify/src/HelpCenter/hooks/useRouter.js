@@ -10,12 +10,16 @@ import { routes as tourRoutes } from '@help-center/pages/Tours';
 
 const pages = [...dashRoutes, ...kbRoutes, ...tourRoutes, ...aiRoutes];
 
-const state = (set, get) => ({
+const initialState = {
 	history: [],
 	viewedPages: [],
 	current: null,
+};
+
+const state = (set, get) => ({
+	...initialState,
 	// initialize the state with default values
-	...(safeParseJson(window.extHelpCenterData.userData)?.state ?? {}),
+	...(safeParseJson(window.extHelpCenterData.userData.routerData)?.state ?? {}),
 	goBack: () => {
 		if (get().history.length < 2) return;
 		set((state) => ({
@@ -27,50 +31,58 @@ const state = (set, get) => ({
 		if (!page) return;
 		// If history is the same, dont add (they pressed the same button)
 		if (get().history[0]?.slug === page.slug) return;
-		set((state) => {
-			const lastViewedAt = new Date().toISOString();
-			const firstViewedAt = lastViewedAt;
-			const visited = state.viewedPages.find((a) => a.slug === page.slug);
-			return {
-				history: [page, ...state.history].filter(Boolean),
-				current: page,
-				viewedPages: [
-					// Remove the page if it's already in the list
-					...state.viewedPages.filter((a) => a.slug !== page.slug),
-					// Either add the page or update the count
-					visited
-						? { ...visited, count: visited.count + 1, lastViewedAt }
-						: {
-								slug: page.slug,
-								firstViewedAt,
-								lastViewedAt,
-								count: 1,
-							},
-				],
-			};
+		const state = get();
+		const lastViewedAt = new Date().toISOString();
+		const firstViewedAt = lastViewedAt;
+		const visited = state.viewedPages.find((a) => a.slug === page.slug);
+		const viewedPages = [
+			// Remove the page if it's already in the list
+			...state.viewedPages.filter((a) => a.slug !== page.slug),
+			// Either add the page or update the count
+			visited
+				? { ...visited, count: Number(visited.count) + 1, lastViewedAt }
+				: {
+						slug: page.slug,
+						firstViewedAt,
+						lastViewedAt,
+						count: 1,
+					},
+		];
+
+		// Persist the detailed history to the server (don't wait for response)
+		apiFetch({
+			path: '/extendify/v1/help-center/router-data',
+			method: 'POST',
+			data: { state: { viewedPages } },
+		});
+
+		set({
+			history: [page, ...state.history].filter(Boolean),
+			current: page,
+			viewedPages,
 		});
 	},
+	reset: () => set({ ...initialState }),
 });
-
-const path = '/extendify/v1/help-center/router-data';
-const storage = {
-	getItem: async () => await apiFetch({ path }),
-	setItem: async (_name, state) =>
-		await apiFetch({ path, method: 'POST', data: { state } }),
-};
 
 const useRouterState = create(
 	persist(devtools(state, { name: 'Extendify Help Center Router' }), {
 		name: 'extendify-help-center-router',
-		storage: createJSONStorage(() => storage),
-		skipHydration: true,
-		partialize: ({ viewedPages }) => ({ viewedPages }),
+		storage: createJSONStorage(() => sessionStorage),
+		partialize: ({ history, current }) => {
+			// remove the component from the current page
+			return { history, current: { ...current, component: null } };
+		},
 	}),
 );
 
 export const useRouter = () => {
-	const { current, setCurrent, history, goBack } = useRouterState();
-	const Component = current?.component ?? (() => null);
+	const { current, setCurrent, history, goBack, reset } = useRouterState();
+	const Component =
+		current?.component ??
+		pages.find((a) => a.slug === current?.slug)?.component ??
+		(() => null);
+
 	useEffect(() => {
 		if (current) return;
 		setCurrent(pages[0]);
@@ -93,5 +105,6 @@ export const useRouter = () => {
 		},
 		goBack,
 		history,
+		reset,
 	};
 };
