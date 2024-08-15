@@ -45,7 +45,7 @@ body[class*="_page_extendify-assist"] #wpcontent {
 		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 .extendify-assist .input-focus {
-	@apply outline-none text-sm ring-design-main focus:shadow-none focus:ring-wp;
+	@apply text-sm outline-none ring-design-main focus:shadow-none focus:ring-wp;
 }
 .extendify-assist-settings
 	.components-form-toggle

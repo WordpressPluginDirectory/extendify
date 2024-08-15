@@ -16,7 +16,7 @@ export const Card = ({
 			tabIndex={lock ? undefined : 0}
 			aria-label={lock ? undefined : name}
 			className={classNames(
-				'text-base p-0 bg-transparent overflow-hidden rounded-lg border border-gray-100',
+				'overflow-hidden rounded-lg border border-gray-100 bg-transparent p-0 text-base',
 				{
 					'button-focus': !lock,
 				},
@@ -29,17 +29,17 @@ export const Card = ({
 			onClick={() => {
 				if (!lock) onClick();
 			}}>
-			<div className="border-gray-100 border-b p-2 flex justify-between min-w-sm">
+			<div className="flex min-w-sm justify-between border-b border-gray-100 p-2">
 				<div
 					className={classNames('flex items-center', {
 						'text-gray-700': !selected,
 					})}>
 					<span className="text-left">{name}</span>
 					{lock && (
-						<span className="w-4 h-4 text-base leading-none pl-2 mr-6 dashicons dashicons-lock"></span>
+						<span className="dashicons dashicons-lock mr-6 h-4 w-4 pl-2 text-base leading-none"></span>
 					)}
 				</div>
-				{(lock || selected) && <Checkmark className="text-design-main w-6" />}
+				{(lock || selected) && <Checkmark className="w-6 text-design-main" />}
 			</div>
 			<div className="flex flex-col">
 				{image ? (
@@ -51,7 +51,7 @@ export const Card = ({
 					<div className="h-32 bg-gray-100" />
 				)}
 				<div className="p-6">
-					<div className="text-left text-base font-bold mb-2">{heading}</div>
+					<div className="mb-2 text-left text-base font-bold">{heading}</div>
 					<div className="text-left text-sm">{description}</div>
 				</div>
 			</div>

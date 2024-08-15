@@ -8,13 +8,13 @@ export const ArticlesList = ({ articles }) => {
 
 	return (
 		<ul
-			className="m-0 py-2 flex flex-col gap-1"
+			className="m-0 flex flex-col gap-1 py-2"
 			data-test="help-center-kb-articles-list">
 			{articles.map(({ slug, title }) => (
-				<li key={slug} className="m-0 py-1 pr-3 pl-2">
+				<li key={slug} className="m-0 py-1 pl-2 pr-3">
 					<button
 						type="button"
-						className="text-sm bg-transparent text-gray-800 flex gap-2 hover:underline hover:underline-offset-4 cursor-pointer"
+						className="flex cursor-pointer gap-2 bg-transparent text-sm text-gray-800 hover:underline hover:underline-offset-4"
 						onClick={() => {
 							pushArticle({ slug, title });
 							navigateTo('knowledge-base-article');
@@ -22,7 +22,7 @@ export const ArticlesList = ({ articles }) => {
 						<Icon
 							size={20}
 							icon={undo}
-							className="fill-gray-700 transform rotate-180"
+							className="rotate-180 transform fill-gray-700"
 						/>
 						{title}
 					</button>

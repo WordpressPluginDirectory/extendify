@@ -59,6 +59,7 @@ class PartnerData
         'showDraft' => false,
         'showChat' => false,
         'enableImageImports' => false,
+        'disableLibraryAutoOpen' => false,
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
@@ -82,6 +83,7 @@ class PartnerData
         self::$config['showDraft'] = ($data['showDraft'] ?? self::$config['showDraft']);
         self::$config['showChat'] = ($data['showChat'] ?? self::$config['showChat']);
         self::$config['enableImageImports'] = ($data['enableImageImports'] ?? self::$config['enableImageImports']);
+        self::$config['disableLibraryAutoOpen'] = ($data['disableLibraryAutoOpen'] ?? self::$config['disableLibraryAutoOpen']);
         self::$name = ($data['Name'] ?? self::$name);
         self::$colors = [
             'backgroundColor' => ($data['backgroundColor'] ?? null),

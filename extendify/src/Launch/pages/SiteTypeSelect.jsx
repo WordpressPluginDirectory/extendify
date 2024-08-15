@@ -20,7 +20,7 @@ export const SiteTypeSelect = () => {
 	const { loading } = useUserSelectionStore();
 	return (
 		<PageLayout>
-			<div className="grow px-6 py-8 md:py-16 md:px-32 overflow-y-scroll">
+			<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
 				<Title
 					title={__('What is your WordPress site about?', 'extendify-local')}
 					description={__(
@@ -28,7 +28,7 @@ export const SiteTypeSelect = () => {
 						'extendify-local',
 					)}
 				/>
-				<div className="w-full relative max-w-xl mx-auto">
+				<div className="relative mx-auto w-full max-w-xl">
 					{loading ? <LoadingIndicator /> : <SiteTypeSelector />}
 				</div>
 			</div>
@@ -71,7 +71,7 @@ const SiteTypeSelector = () => {
 				<input
 					autoFocus
 					data-test="site-type-search"
-					className="w-full h-14 px-4 m-0 input-focus ring-offset-0 focus:bg-white relative z-20 rounded border border-gray-300 shadow-sm outline-none"
+					className="input-focus relative z-20 m-0 h-14 w-full rounded border border-gray-300 px-4 shadow-sm outline-none ring-offset-0 focus:bg-white"
 					autoComplete="off"
 					spellCheck={false}
 					placeholder={__('Search for your site type', 'extendify-local')}
@@ -87,7 +87,7 @@ const SiteTypeSelector = () => {
 				{siteType?.name && (!loading || !search) && (
 					<div
 						className={
-							'group gap-2 flex justify-between items-center py-2.5 px-3 text-base relative overflow-hidden border border-gray-200 rounded bg-gray-100 transition-all duration-100 ease-in-out'
+							'group relative flex items-center justify-between gap-2 overflow-hidden rounded border border-gray-200 bg-gray-100 px-3 py-2.5 text-base transition-all duration-100 ease-in-out'
 						}>
 						{siteType.name}
 						<Checkmark className="h-5 w-5" />
@@ -98,11 +98,11 @@ const SiteTypeSelector = () => {
 						key={item.id}
 						type="button"
 						className={
-							'group gap-2 flex justify-between items-center py-2.5 px-3 text-base bg-gray-50 relative overflow-hidden border border-gray-200 rounded cursor-pointer hover:bg-gray-100 transition-all duration-100 ease-in-out'
+							'group relative flex cursor-pointer items-center justify-between gap-2 overflow-hidden rounded border border-gray-200 bg-gray-50 px-3 py-2.5 text-base transition-all duration-100 ease-in-out hover:bg-gray-100'
 						}
 						onClick={() => handleSetSiteType(item)}>
 						{item.name}
-						<RightCaret className="h-5 w-5 invisible group-hover:visible" />
+						<RightCaret className="invisible h-5 w-5 group-hover:visible" />
 					</button>
 				))}
 			</div>

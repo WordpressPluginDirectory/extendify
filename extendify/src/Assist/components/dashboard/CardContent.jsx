@@ -38,19 +38,19 @@ const TaskContent = ({ task }) => {
 	};
 	return (
 		<div
-			className="flex w-full h-full bg-right-bottom bg-no-repeat bg-cover"
+			className="flex h-full w-full bg-cover bg-right-bottom bg-no-repeat"
 			style={{
 				backgroundImage: `url(${task?.backgroundImage})`,
 			}}>
-			<div className="flex flex-col grow w-full h-full px-8 py-8 lg:mr-48 bg-white/95 lg:bg-transparent">
-				<div className="md:mt-32 title text-2xl lg:text-4xl leading-10 font-semibold">
+			<div className="flex h-full w-full grow flex-col bg-white/95 px-8 py-8 lg:mr-48 lg:bg-transparent">
+				<div className="title text-2xl font-semibold leading-10 md:mt-32 lg:text-4xl">
 					{task.title}
 				</div>
-				<div className="description text-sm md:text-base mt-2">
+				<div className="description mt-2 text-sm md:text-base">
 					{task.description}
 				</div>
 
-				<div className="cta flex items-center mt-8 md:gap-3 text-sm flex-wrap">
+				<div className="cta mt-8 flex flex-wrap items-center text-sm md:gap-3">
 					<ActionButton task={lockedState.current ?? task} />
 					{lockedState.current || !isCompletedTask ? (
 						<DismissButton task={task} onClick={handleDismiss} />

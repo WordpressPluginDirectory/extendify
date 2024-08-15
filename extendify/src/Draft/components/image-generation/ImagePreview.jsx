@@ -45,7 +45,7 @@ export const ImagePreview = ({
 					<motion.div
 						initial={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
-						className="w-full aspect-square flex justify-center items-center"
+						className="flex aspect-square w-full items-center justify-center"
 						style={{
 							background:
 								'linear-gradient(135deg, #E8E8E8 47.92%, #F3F3F3 60.42%, #E8E8E8 72.92%)',
@@ -60,7 +60,7 @@ export const ImagePreview = ({
 						style={{ aspectRatio: Number(imgWidth) / Number(imgHeight) }}>
 						<img
 							src={src}
-							className="w-full block"
+							className="block w-full"
 							style={{ aspectRatio: Number(imgWidth) / Number(imgHeight) }}
 						/>
 					</motion.div>

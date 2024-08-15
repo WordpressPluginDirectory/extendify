@@ -29,8 +29,8 @@ export const Answer = ({ question, answer, reset, error, answerId }) => {
 
 	if (error) {
 		return (
-			<div className="p-6 pb-10 overflow-y-auto" ref={scrollRef}>
-				<div className="flex justify-end mb-8 ml-4 relative">
+			<div className="overflow-y-auto p-6 pb-10" ref={scrollRef}>
+				<div className="relative mb-8 ml-4 flex justify-end">
 					<Error
 						text={__(
 							'Oops! We were unable to send your question.',
@@ -44,23 +44,23 @@ export const Answer = ({ question, answer, reset, error, answerId }) => {
 	}
 
 	return (
-		<div className="flex flex-col h-full">
-			<div className="p-6 pb-10 flex-grow overflow-y-auto" ref={scrollRef}>
-				<div className="flex justify-end mb-8 ml-4 relative">
-					<div className="m-0 p-5 rounded-lg bg-gray-800 text-design-text text-sm">
+		<div className="flex h-full flex-col">
+			<div className="flex-grow overflow-y-auto p-6 pb-10" ref={scrollRef}>
+				<div className="relative mb-8 ml-4 flex justify-end">
+					<div className="m-0 rounded-lg bg-gray-800 p-5 text-sm text-design-text">
 						{question}
 					</div>
 				</div>
 				<div className="relative">
-					<div className="absolute z-10 -mt-4 -ml-2 rounded-full bg-design-main p-2 flex items-center">
+					<div className="absolute z-10 -ml-2 -mt-4 flex items-center rounded-full bg-design-main p-2">
 						<Icon
 							icon={robot}
-							className="text-design-text fill-current w-4 h-4"
+							className="h-4 w-4 fill-current text-design-text"
 						/>
 					</div>
 					<div
 						className={classNames(
-							'm-0 p-5 rounded-lg bg-gray-100 inline-block text-gray-800 text-sm',
+							'm-0 inline-block rounded-lg bg-gray-100 p-5 text-sm text-gray-800',
 							{
 								'animate-pulse bg-gray-300': answer === '...',
 								'bg-gray-100': answer !== '...',
@@ -73,13 +73,13 @@ export const Answer = ({ question, answer, reset, error, answerId }) => {
 					{answerId && <Rating answerId={answerId} />}
 				</div>
 			</div>
-			<div className="ask-another-question p-4 relative flex justify-center">
+			<div className="ask-another-question relative flex justify-center p-4">
 				<button
 					type="button"
 					onClick={reset}
-					className="bg-design-main text-design-text border-none py-2 px-4 rounded-sm cursor-pointer text-sm flex items-center gap-2">
+					className="flex cursor-pointer items-center gap-2 rounded-sm border-none bg-design-main px-4 py-2 text-sm text-design-text">
 					{__('Ask Another Question', 'extendify-local')}
-					<Icon icon={send} className="text-design-text fill-current h-6" />
+					<Icon icon={send} className="h-6 fill-current text-design-text" />
 				</button>
 			</div>
 		</div>

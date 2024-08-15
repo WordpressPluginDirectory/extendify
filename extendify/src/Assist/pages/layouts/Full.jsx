@@ -1,5 +1,5 @@
 export const Full = ({ children }) => (
-	<div className="max-w-[996px] px-4 mx-auto pt-6 xl:pt-8 flex justify-center flex-col">
+	<div className="mx-auto flex max-w-[996px] flex-col justify-center px-4 pt-6 xl:pt-8">
 		{children}
 	</div>
 );

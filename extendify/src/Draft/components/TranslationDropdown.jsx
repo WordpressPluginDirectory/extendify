@@ -35,13 +35,13 @@ export const DropdownTranslate = ({
 
 	return (
 		<Dropdown
-			className="my-container-class-name flex items-center justify-between w-full"
+			className="my-container-class-name flex w-full items-center justify-between"
 			contentClassName="my-dropdown-content-classname"
 			popoverProps={{ placement: 'right-start' }}
 			renderToggle={({ isOpen, onToggle }) => (
-				<div className="group flex items-center justify-between w-full hover:text-design-main">
+				<div className="group flex w-full items-center justify-between hover:text-design-main">
 					<MenuItem
-						className="w-full flex justify-between"
+						className="flex w-full justify-between"
 						icon={language}
 						iconPosition="left"
 						variant={undefined}
@@ -52,7 +52,7 @@ export const DropdownTranslate = ({
 					<Icon
 						icon={chevronRight}
 						size={24}
-						className="group-hover:text-current fill-current"
+						className="fill-current group-hover:text-current"
 					/>
 				</div>
 			)}

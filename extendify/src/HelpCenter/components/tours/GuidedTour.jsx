@@ -289,16 +289,16 @@ export const GuidedTour = () => {
 									duration: finishedStepOne.current ? 0.5 : 0,
 									ease: 'easeInOut',
 								}}
-								className="fixed top-0 left-0 shadow-2xl sm:overflow-hidden bg-transparent flex flex-col max-w-xs z-20"
+								className="fixed left-0 top-0 z-20 flex max-w-xs flex-col bg-transparent shadow-2xl sm:overflow-hidden"
 								style={{
 									minWidth: settings?.minBoxWidth ?? '325px',
 								}}>
 								<button
 									data-test="close-tour"
-									className="absolute bg-white cursor-pointer flex ring-gray-200 ring-1 focus:ring-wp focus:ring-design-main focus:shadow-none h-6 items-center justify-center leading-none m-2 outline-none p-0 right-0 rounded-full top-0 w-6 border-0 z-20"
+									className="absolute right-0 top-0 z-20 m-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-0 bg-white p-0 leading-none outline-none ring-1 ring-gray-200 focus:shadow-none focus:ring-wp focus:ring-design-main"
 									onClick={() => closeCurrentTour('closed-manually')}
 									aria-label={__('Close Modal', 'extendify-local')}>
-									<Icon icon={close} className="w-4 h-4 fill-current" />
+									<Icon icon={close} className="h-4 w-4 fill-current" />
 								</button>
 								<Dialog.Title className="sr-only">
 									{currentTour?.title ?? __('Tour', 'extendify-local')}
@@ -311,12 +311,12 @@ export const GuidedTour = () => {
 											background:
 												'linear-gradient(58.72deg, #485563 7.71%, #29323C 92.87%)',
 										}}>
-										<img src={image} className="w-full block" alt={title} />
+										<img src={image} className="block w-full" alt={title} />
 									</div>
 								)}
-								<div className="m-0 p-6 pt-0 text-left relative bg-white">
+								<div className="relative m-0 bg-white p-6 pt-0 text-left">
 									{title && (
-										<h2 className="text-xl font-medium mb-2">{title}</h2>
+										<h2 className="mb-2 text-xl font-medium">{title}</h2>
 									)}
 									{text && <p className="mb-6">{text}</p>}
 									<BottomNav initialFocus={initialFocus} />
@@ -346,7 +346,7 @@ export const GuidedTour = () => {
 								duration: finishedStepOne.current ? 0.5 : 0,
 								ease: 'easeInOut',
 							}}
-							className="hidden lg:block fixed inset-0 bg-black/70 z-max-1"
+							className="fixed inset-0 z-max-1 hidden bg-black/70 lg:block"
 							aria-hidden="true"
 						/>
 						<BorderOutline
@@ -372,7 +372,7 @@ const BorderOutline = ({ rectWithPadding, finishedStepOne }) => {
 			}}
 			onAnimationStart={() => setVisible(false)}
 			onAnimationComplete={() => setVisible(true)}
-			className={classNames('hidden lg:block fixed inset-0 border-2  z-high', {
+			className={classNames('fixed inset-0 z-high hidden border-2 lg:block', {
 				'border-transparent': !visible,
 				'border-design-main': visible,
 			})}
@@ -401,17 +401,17 @@ const BottomNav = ({ initialFocus }) => {
 	return (
 		<div
 			id="extendify-tour-navigation"
-			className="flex justify-between items-center w-full">
-			<div className="flex-1 flex justify-start">
+			className="flex w-full items-center justify-between">
+			<div className="flex flex-1 justify-start">
 				<AnimatePresence>
 					{hasPreviousStep() && !hideBackButton && (
 						<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 							<button
-								className="flex gap-2 p-0 h-8 rounded-sm items-center justify-center bg-transparent hover:bg-transparent focus:outline-none ring-design-main focus:ring-wp focus:ring-offset-1 focus:ring-offset-white text-gray-900 disabled:opacity-60"
+								className="flex h-8 items-center justify-center gap-2 rounded-sm bg-transparent p-0 text-gray-900 ring-design-main hover:bg-transparent focus:outline-none focus:ring-wp focus:ring-offset-1 focus:ring-offset-white disabled:opacity-60"
 								onClick={prevStep}
 								disabled={preparingStep > -1}>
 								{preparingStep < currentStep && (
-									<Spinner className="text-design-main m-0 h-4" />
+									<Spinner className="m-0 h-4 text-design-main" />
 								)}
 								<span>{__('Back', 'extendify-local')}</span>
 							</button>
@@ -424,7 +424,7 @@ const BottomNav = ({ initialFocus }) => {
 				<nav
 					role="navigation"
 					aria-label={__('Tour Steps', 'extendify-local')}
-					className="flex-1 flex items-center justify-center gap-1 -translate-x-3">
+					className="flex flex-1 -translate-x-3 items-center justify-center gap-1">
 					{steps.map((_step, index) => (
 						<div key={index}>
 							<button
@@ -435,7 +435,7 @@ const BottomNav = ({ initialFocus }) => {
 									steps.length,
 								)}
 								aria-current={index === currentStep}
-								className={`focus:ring-wp focus:outline-none ring-offset-1 ring-offset-white focus:ring-design-main block cursor-pointer w-2.5 h-2.5 m-0 p-0 rounded-full ${
+								className={`m-0 block h-2.5 w-2.5 cursor-pointer rounded-full p-0 ring-offset-1 ring-offset-white focus:outline-none focus:ring-wp focus:ring-design-main ${
 									index === currentStep ? 'bg-design-main' : 'bg-gray-300'
 								}`}
 								onClick={() => goToStep(index)}
@@ -446,7 +446,7 @@ const BottomNav = ({ initialFocus }) => {
 				</nav>
 			) : null}
 
-			<div className="flex-1 flex justify-end">
+			<div className="flex flex-1 justify-end">
 				{hasNextStep() ? (
 					<Button
 						ref={initialFocus}
@@ -454,10 +454,10 @@ const BottomNav = ({ initialFocus }) => {
 						data-test="help-center-tour-next-button"
 						onClick={nextStep}
 						disabled={preparingStep > -1}
-						className="flex gap-2 text-design-text bg-design-main focus:text-design-text disabled:opacity-60"
+						className="flex gap-2 bg-design-main text-design-text focus:text-design-text disabled:opacity-60"
 						variant="primary">
 						{preparingStep > currentStep && (
-							<Spinner className="text-design-main m-0 h-4" />
+							<Spinner className="m-0 h-4 text-design-main" />
 						)}
 						<span>{__('Next', 'extendify-local')}</span>
 					</Button>

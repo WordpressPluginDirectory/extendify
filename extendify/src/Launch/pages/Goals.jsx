@@ -35,7 +35,7 @@ export const Goals = () => {
 
 	return (
 		<PageLayout>
-			<div className="grow px-6 py-8 md:py-16 md:px-32 overflow-y-scroll">
+			<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
 				<Title
 					title={__('What are your goals for your website?', 'extendify-local')}
 					description={__(
@@ -43,7 +43,7 @@ export const Goals = () => {
 						'extendify-local',
 					)}
 				/>
-				<div className="w-full relative max-w-3xl mx-auto">
+				<div className="relative mx-auto w-full max-w-3xl">
 					{goalsLoading || pluginsLoading ? (
 						<LoadingIndicator />
 					) : (
@@ -99,7 +99,7 @@ const GoalsSelector = () => {
 				e.preventDefault();
 				nextPage();
 			}}
-			className="w-full grid xl:grid-cols-2 gap-4 goal-select">
+			className="goal-select grid w-full gap-4 xl:grid-cols-2">
 			{/* Added so forms can be submitted by pressing Enter */}
 			<input type="submit" className="hidden" />
 			{goals?.map((goal, index) => {
@@ -109,13 +109,13 @@ const GoalsSelector = () => {
 					<div
 						key={goal.id}
 						className={classNames(
-							'relative border rounded-lg border-gray-300',
+							'relative rounded-lg border border-gray-300',
 							{
 								'bg-gray-100': selected,
 							},
 						)}
 						data-test="goal-item">
-						<div className="flex items-center gap-4 h-full">
+						<div className="flex h-full items-center gap-4">
 							<CheckboxInputCard
 								autoFocus={index === 0}
 								label={goal.title}

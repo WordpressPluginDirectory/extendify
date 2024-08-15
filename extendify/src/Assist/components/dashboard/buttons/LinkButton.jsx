@@ -18,7 +18,7 @@ export const LinkButton = ({ task, completed }) => {
 
 	return (
 		<a
-			className="min-w-24 px-4 py-2.5 cursor-pointer text-sm font-medium text-center no-underline bg-design-main text-design-text rounded-sm hover:opacity-90"
+			className="min-w-24 cursor-pointer rounded-sm bg-design-main px-4 py-2.5 text-center text-sm font-medium text-design-text no-underline hover:opacity-90"
 			href={window.extSharedData.adminUrl + link}
 			onClick={() => completeTask(task.slug)}>
 			{completed ? task.buttonLabels.completed : task.buttonLabels.notCompleted}

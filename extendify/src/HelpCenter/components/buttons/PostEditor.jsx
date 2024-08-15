@@ -7,7 +7,7 @@ export const PostEditor = () => {
 	const { setVisibility } = useGlobalSyncStore();
 	return (
 		<Button
-			className="inline-flex gap-1 ml-1"
+			className="is-compact ml-1 inline-flex gap-1"
 			data-test="help-center-editor-page-button"
 			onClick={() => setVisibility('open')}
 			variant="primary">

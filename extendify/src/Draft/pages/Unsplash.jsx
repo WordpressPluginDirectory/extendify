@@ -62,9 +62,9 @@ export const Unsplash = () => {
 
 	return (
 		<>
-			<div className="flex gap-1 items-center h-12 pl-1">
+			<div className="flex h-12 items-center gap-1 pl-1">
 				<button
-					className="bg-transparent border-0 h-9 w-9 cursor-pointer"
+					className="h-9 w-9 cursor-pointer border-0 bg-transparent"
 					onClick={goBack}
 					type="button"
 					aria-label={__('Go Back', 'extendify-local')}>
@@ -75,12 +75,12 @@ export const Unsplash = () => {
 				</Heading>
 			</div>
 			<Divider className="my-0 border-gray-150" />
-			<div className="p-4 flex flex-col gap-2">
+			<div className="flex flex-col gap-2 p-4">
 				<SearchControl
 					autoFocus
 					// This wp component has no real disabled state
 					className={classNames({
-						'opacity-50 pointer-events-none bg-gray-150': isInsertingImage,
+						'pointer-events-none bg-gray-150 opacity-50': isInsertingImage,
 					})}
 					disabled={isInsertingImage}
 					aria-disabled={isInsertingImage}

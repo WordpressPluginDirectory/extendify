@@ -1,5 +1,10 @@
 import { BlockControls } from '@wordpress/block-editor';
-import { Button, MenuItem } from '@wordpress/components';
+import {
+	Button,
+	MenuItem,
+	ToolbarGroup,
+	ToolbarButton,
+} from '@wordpress/components';
 import { useDispatch } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
 import { useEffect } from '@wordpress/element';
@@ -44,7 +49,11 @@ export const GenerateImageButtons = (CurrentComponents, props) => {
 					onClick={async () => {
 						openGeneralSidebar('extendify-draft/draft');
 						await new Promise((r) => requestAnimationFrame(r));
-						document.getElementById('draft-ai-image-textarea')?.focus();
+						const btn = document.getElementById(
+							'extendify-draft-image-gen-button',
+						);
+						btn?.focus();
+						btn?.classList.add('animate-pulse-flash');
 					}}>
 					{__('Get Personalized Image', 'extendify-local')}
 				</Button>
@@ -72,9 +81,45 @@ export const GenerateImageButtons = (CurrentComponents, props) => {
 	);
 };
 
-const ToolbarButtons = ({ name, attributes }) => {
+const GetPersonalizedImage = () => {
 	const { openGeneralSidebar } = useDispatch(editPostStore);
+	return (
+		<MenuItem
+			icon={magic}
+			onClick={async () => {
+				openGeneralSidebar('extendify-draft/draft');
+				await new Promise((r) => requestAnimationFrame(r));
+				const btn = document.getElementById('extendify-draft-image-gen-button');
+				btn?.focus();
+				btn?.classList.add('animate-pulse-flash');
+			}}>
+			{__('Get Personalized Image', 'extendify-local')}
+		</MenuItem>
+	);
+};
+const GetPersonalizedImageToolbar = () => {
+	const { openGeneralSidebar } = useDispatch(editPostStore);
+	return (
+		<ToolbarGroup className="extendify-draft">
+			<ToolbarButton
+				className="py-1.5 pl-2 pr-3 text-white before:bg-editor-main before:content-[''] hover:before:bg-editor-main-darker"
+				icon={magic}
+				onClick={async () => {
+					openGeneralSidebar('extendify-draft/draft');
+					await new Promise((r) => requestAnimationFrame(r));
+					const btn = document.getElementById(
+						'extendify-draft-image-gen-button',
+					);
+					btn?.focus();
+					btn?.classList.add('animate-pulse-flash');
+				}}>
+				{__('Ask AI', 'extendify-local')}
+			</ToolbarButton>
+		</ToolbarGroup>
+	);
+};
 
+const ToolbarButtons = ({ name, attributes }) => {
 	useEffect(() => {
 		if (!supportedBlocks.includes(name)) return;
 
@@ -91,17 +136,6 @@ const ToolbarButtons = ({ name, attributes }) => {
 			);
 			if (!replaceBtn) return;
 
-			const element = (
-				<MenuItem
-					icon={magic}
-					onClick={async () => {
-						openGeneralSidebar('extendify-draft/draft');
-						await new Promise((r) => requestAnimationFrame(r));
-						document.getElementById('draft-ai-image-textarea')?.focus();
-					}}>
-					{__('Get Personalized Image', 'extendify-local')}
-				</MenuItem>
-			);
 			observer = new MutationObserver((mutations) => {
 				// Button is open
 				if (mutations[0].target.getAttribute('aria-expanded') === 'true') {
@@ -114,7 +148,7 @@ const ToolbarButtons = ({ name, attributes }) => {
 					placeholder = document.createElement('div');
 					popover.prepend(placeholder);
 					rafInsert = requestAnimationFrame(() => {
-						root = render(element, placeholder);
+						root = render(<GetPersonalizedImage />, placeholder);
 					});
 					return;
 				}
@@ -138,6 +172,9 @@ const ToolbarButtons = ({ name, attributes }) => {
 			placeholder?.remove();
 			observer?.disconnect();
 		};
-	}, [name, attributes, openGeneralSidebar]);
-	return null;
+	}, [name, attributes]);
+
+	if (!supportedBlocks.includes(name)) return null;
+
+	return <GetPersonalizedImageToolbar />;
 };

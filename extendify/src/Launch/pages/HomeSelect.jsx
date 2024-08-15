@@ -31,12 +31,12 @@ export const HomeSelect = () => {
 
 	return (
 		<PageLayout>
-			<div className="grow px-6 py-8 md:py-16 md:px-32 overflow-y-scroll">
+			<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
 				<Title
 					title={__('Pick a design for your website', 'extendify-local')}
 					description={__('You can personalize this later.', 'extendify-local')}
 				/>
-				<div className="w-full relative max-w-6xl mx-auto">
+				<div className="relative mx-auto w-full max-w-6xl">
 					{loading ? (
 						<LoadingIndicator />
 					) : (
@@ -97,7 +97,7 @@ const DesignSelector = ({ styleData }) => {
 
 	return (
 		<div
-			className="gap-8 grid md:grid-cols-2 lg:grid-cols-3"
+			className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
 			data-test="layout-preview-wrapper"
 			ref={wrapperRef}>
 			{styles?.map((style) => (
@@ -108,9 +108,9 @@ const DesignSelector = ({ styleData }) => {
 							animate={{ opacity: 1 }}
 							duration={0.7}
 							className={classNames(
-								'relative overflow-hidden border border-gray-200 rounded cursor-pointer hover:ring-4 hover:ring-gray-300 ring-offset-2 ring-offset-white hover:outline-none focus-within:ring-4 focus-within:ring-offset-2 focus-within:ring-offset-white focus-within:ring-design-main focus-within:outline-none',
+								'relative cursor-pointer overflow-hidden rounded border border-gray-200 ring-offset-2 ring-offset-white focus-within:outline-none focus-within:ring-4 focus-within:ring-design-main focus-within:ring-offset-2 focus-within:ring-offset-white hover:outline-none hover:ring-4 hover:ring-gray-300',
 								{
-									'ring-4 ring-offset-2 ring-offset-white ring-design-main hover:ring-design-main':
+									'ring-4 ring-design-main ring-offset-2 ring-offset-white hover:ring-design-main':
 										currentStyle?.id === style.id,
 								},
 							)}
@@ -124,7 +124,7 @@ const DesignSelector = ({ styleData }) => {
 					</AnimatePresence>
 					<span aria-hidden="true">
 						{currentStyle?.id === style.id ? (
-							<Checkmark className="absolute top-0 right-0 m-2 text-design-text bg-design-main w-6 h-6 z-50 rounded-full translate-x-5 -translate-y-5" />
+							<Checkmark className="absolute right-0 top-0 z-50 m-2 h-6 w-6 -translate-y-5 translate-x-5 rounded-full bg-design-main text-design-text" />
 						) : null}
 					</span>
 				</div>

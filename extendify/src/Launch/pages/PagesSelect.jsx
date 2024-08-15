@@ -25,7 +25,7 @@ export const PagesSelect = () => {
 	const { data: availablePages, loading } = useFetch(fetchData, fetcher);
 	const [previewing, setPreviewing] = useState();
 	const [expandMore, setExpandMore] = useState();
-	const { pages, remove, add, has, style } = useUserSelectionStore();
+	const { pages, remove, removeAll, add, has, style } = useUserSelectionStore();
 	const pagePreviewRef = useRef();
 
 	const homePage = useMemo(
@@ -79,30 +79,30 @@ export const PagesSelect = () => {
 	}, [previewing, homePage]);
 
 	useEffect(() => {
-		// If no pages have been set, then add the recommended pages
-		if (pages !== undefined) return;
 		if (!availablePages?.recommended) return;
+		// On re-load, remove any lingering pages and add the recommended ones
+		removeAll('pages');
 		availablePages.recommended.forEach((page) => add('pages', page));
-	}, [pages, availablePages?.recommended, add]);
+	}, [availablePages?.recommended, removeAll, add]);
 
 	return (
 		<PageLayout>
-			<div className="grow lg:flex overflow-y-scroll space-y-4 lg:space-y-0">
-				<div className="hidden lg:block h-full bg-gray-100 grow pt-0 px-4 lg:pb-0 l6:px-16 xl:px-32 overflow-y-hidden min-h-screen lg:min-h-0">
-					<div className="h-full flex flex-col">
-						<h3 className="text-base lg:text-lg font-medium text-gray-700 text-center my-2 lg:my-4">
+			<div className="grow space-y-4 overflow-y-scroll lg:flex lg:space-y-0">
+				<div className="l6:px-16 hidden h-full min-h-screen grow overflow-y-hidden bg-gray-100 px-4 pt-0 lg:block lg:min-h-0 lg:pb-0 xl:px-32">
+					<div className="flex h-full flex-col">
+						<h3 className="my-2 text-center text-base font-medium text-gray-700 lg:my-4 lg:text-lg">
 							{previewing?.name}
 						</h3>
 						<div
 							ref={pagePreviewRef}
-							className="h-full lg:h-auto grow rounded-t-lg relative lg:overflow-y-scroll overflow-x-hidden">
+							className="relative h-full grow overflow-x-hidden rounded-t-lg lg:h-auto lg:overflow-y-scroll">
 							{previewing && !loading && (
 								<PagePreview ref={pagePreviewRef} style={styleMemo} />
 							)}
 						</div>
 					</div>
 				</div>
-				<div className="flex items-center w-full lg:max-w-lg flex-col px-6 py-8 lg:py-16 lg:px-12 overflow-y-auto">
+				<div className="flex w-full flex-col items-center overflow-y-auto px-6 py-8 lg:max-w-lg lg:px-12 lg:py-16">
 					<Title
 						title={__(
 							'Pick the pages to add to your website',
@@ -114,7 +114,7 @@ export const PagesSelect = () => {
 						)}
 					/>
 					<div
-						className="flex flex-col gap-4 pb-4 w-full"
+						className="flex w-full flex-col gap-4 pb-4"
 						data-test="recommended-pages">
 						<PageSelectButton
 							page={homePage}
@@ -142,7 +142,7 @@ export const PagesSelect = () => {
 								type="button"
 								data-test="expand-more"
 								onClick={setExpandMore}
-								className="bg-transparent text-sm text-center font-medium text-gray-900 my-4 cursor-pointer hover:text-design-main button-focus">
+								className="button-focus my-4 cursor-pointer bg-transparent text-center text-sm font-medium text-gray-900 hover:text-design-main">
 								{__('View more pages', 'extendify-local')}
 							</button>
 						</div>
@@ -150,7 +150,7 @@ export const PagesSelect = () => {
 
 					{expandMore && (
 						<div
-							className="flex flex-col gap-4 pb-4 w-full"
+							className="flex w-full flex-col gap-4 pb-4"
 							data-test="optional-pages">
 							{availablePages?.optional?.map((page) => (
 								<PageSelectButton

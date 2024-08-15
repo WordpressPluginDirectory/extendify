@@ -17,10 +17,10 @@ export const AIChatDashboard = ({ onOpen }) => {
 			<button
 				type="button"
 				onClick={onOpen}
-				className="rounded-md border border-gray-200 w-full text-left m-0 p-2.5 bg-transparent flex justify-between gap-2 cursor-pointer hover:bg-gray-100">
+				className="m-0 flex w-full cursor-pointer justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100">
 				<Icon
 					icon={postComments}
-					className="p-2 bg-design-main fill-design-text border-0 rounded-full"
+					className="rounded-full border-0 bg-design-main fill-design-text p-2"
 					size={48}
 				/>
 				<div className="grow pl-1">
@@ -31,7 +31,7 @@ export const AIChatDashboard = ({ onOpen }) => {
 						{__('Got questions? Ask our AI chatbot', 'extendify-local')}
 					</p>
 				</div>
-				<div className="flex justify-end items-center h-12 grow-0">
+				<div className="flex h-12 grow-0 items-center justify-end">
 					<Icon
 						icon={chevronRight}
 						size={24}
@@ -128,9 +128,9 @@ export const AIChat = () => {
 
 	return (
 		<>
-			<section className="flex flex-col h-full">
+			<section className="flex h-full flex-col">
 				<Nav setShowHistory={setShowHistory} showHistory={showHistory} />
-				<div className="p-6 bg-design-main text-design-text flex-grow flex items-center">
+				<div className="flex flex-grow items-center bg-design-main p-6 text-design-text">
 					<Question onSubmit={handleSubmit} />
 				</div>
 				<Support height={'h-11'} />
@@ -144,7 +144,7 @@ export const AIChat = () => {
 						exit={{ x: 0 }}
 						transition={{ duration: 0.2 }}
 						style={{ '--ext-design-text': '#000000' }}
-						className="flex flex-col h-full shadow-2xl ml-4 mt-4 rounded-tl-lg overflow-hidden absolute bottom-0 right-0 left-0 top-0 bg-white z-20">
+						className="absolute bottom-0 left-0 right-0 top-0 z-20 ml-4 mt-4 flex h-full flex-col overflow-hidden rounded-tl-lg bg-white shadow-2xl">
 						<History setShowHistory={setShowHistory} />
 					</motion.section>
 				)}
@@ -154,9 +154,9 @@ export const AIChat = () => {
 };
 
 const ConsentOverlay = ({ onAccept }) => (
-	<div className="bg-black/75 p-6 absolute inset-0 flex items-center justify-center">
-		<div className="bg-white p-4 rounded">
-			<h2 className="text-lg mt-0 mb-2">
+	<div className="absolute inset-0 flex items-center justify-center bg-black/75 p-6">
+		<div className="rounded bg-white p-4">
+			<h2 className="mb-2 mt-0 text-lg">
 				{__('Terms of Use', 'extendify-local')}
 			</h2>
 			<p
@@ -165,7 +165,7 @@ const ConsentOverlay = ({ onAccept }) => (
 					__html: window.extSharedData.consentTermsHTML,
 				}}></p>
 			<button
-				className="mt-4 bg-design-main text-white rounded px-4 py-2 border-0 text-center w-full cursor-pointer"
+				className="mt-4 w-full cursor-pointer rounded border-0 bg-design-main px-4 py-2 text-center text-white"
 				type="button"
 				onClick={onAccept}>
 				{__('Accept', 'extendify-local')}

@@ -10,7 +10,7 @@ export const AcceptTerms = ({
 		<div className="flex flex-col">
 			<label
 				htmlFor="accept-terms"
-				className="text-base ml-1 flex items-center focus-within:text-design-mains cursor-pointer">
+				className="focus-within:text-design-mains ml-1 flex cursor-pointer items-center text-base">
 				<span className="relative">
 					<input
 						id="accept-terms"
@@ -20,7 +20,7 @@ export const AcceptTerms = ({
 						checked={acceptTerms}
 					/>
 					<svg
-						className={classNames('absolute block inset-0 h-5 w-4', {
+						className={classNames('absolute inset-0 block h-5 w-4', {
 							'text-white': acceptTerms,
 							'text-transparent': !acceptTerms,
 						})}
@@ -34,12 +34,12 @@ export const AcceptTerms = ({
 						/>
 					</svg>
 				</span>
-				<span className="ml-1.5 text-lg md:text-base m-0 text-gray-900 font-medium">
+				<span className="m-0 ml-1.5 text-lg font-medium text-gray-900 md:text-base">
 					{__('I agree (required to use AI Assistant)', 'extendify-local')}
 				</span>
 			</label>
 			<p
-				className="mx-7 mt-1 p-0 m-0 mb-2 text-sm text-gray-700"
+				className="m-0 mx-7 mb-2 mt-1 p-0 text-sm text-gray-700"
 				dangerouslySetInnerHTML={{ __html: consentTermsHTML }}
 			/>
 		</div>

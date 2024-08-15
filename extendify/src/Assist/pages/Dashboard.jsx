@@ -58,7 +58,7 @@ export const Dashboard = () => {
 				</>
 			)}
 
-			<div className="md:grid gap-4 mb-6">
+			<div className="mb-6 gap-4 md:grid">
 				<QuickLinks className="col-span-2" />
 			</div>
 

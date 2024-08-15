@@ -27,10 +27,10 @@ export const BlockPreviewButton = ({ insertPattern, code }) => {
 			type="button"
 			aria-label={__('Insert Pattern', 'extendify-local')}
 			className={classNames(
-				'library-pattern mb-8 inline-block w-full bg-transparent p-0 m-0 focus:ring-design-main focus:ring-wp focus:ring-offset-2 focus:ring-offset-[#FAFAFA] focus:shadow-sm border focus:outline-none relative z-10 cursor-pointer',
+				'library-pattern relative z-10 m-0 mb-8 inline-block w-full cursor-pointer border bg-transparent p-0 focus:shadow-sm focus:outline-none focus:ring-wp focus:ring-design-main focus:ring-offset-2 focus:ring-offset-[#FAFAFA]',
 				{
-					'opacity-0 border-transparent': !show,
-					'opacity-100 border-gray-400': show,
+					'border-transparent opacity-0': !show,
+					'border-gray-400 opacity-100': show,
 				},
 			)}
 			onClick={() => insertPattern(blocks)}>

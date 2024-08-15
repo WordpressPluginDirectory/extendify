@@ -9,7 +9,7 @@ export const Completion = ({ completion }) => {
 		<div
 			ref={ref}
 			style={{ fontSize: 'clamp(1em 1em 1em)' }}
-			className="completion relative px-5 pt-4 break-words max-h-60 overflow-y-auto"
+			className="completion relative max-h-60 overflow-y-auto break-words px-5 pt-4"
 			data-test="completion-input">
 			{Array.isArray(blocks) ? (
 				<div dangerouslySetInnerHTML={{ __html: serialize(blocks) }} />

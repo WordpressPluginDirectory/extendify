@@ -15,9 +15,9 @@ class BlocksUpdater
     /**
      * The class to target.
      *
-     * @var string The class name that we want to target.
+     * @var array The class names that we want to target.
      */
-    protected $classToTarget = 'extendify-image-import';
+    protected $classesToTarget = ['extendify-image-import', 'ext-import'];
 
     /**
      * Update the content of the blocks in a specific post.
@@ -73,7 +73,7 @@ class BlocksUpdater
         $attrs = ($block['attrs'] ?? []);
         if (array_key_exists('className', $attrs)) {
             $className = is_array($attrs['className']) ? $attrs['className'] : explode(' ', $attrs['className']);
-            return in_array($this->classToTarget, $className, true);
+            return !empty(array_intersect($this->classesToTarget, $className));
         }
 
         return false;
@@ -104,6 +104,13 @@ class BlocksUpdater
             if ($needsToRemoveClassName) {
                 $block = $this->removeTargetedClassAttribute($block);
                 $block = $this->removeClassAttributeFromAttrs($block);
+                // In some cases the block might become unformatted.
+                foreach ($this->classesToTarget as $cls) {
+                    $block['innerHTML'] = str_replace($cls, '', $block['innerHTML']);
+                    $block['innerContent'] = array_map(function ($item) use ($cls) {
+                        return str_replace($cls, '', $item);
+                    }, ($block['innerContent'] ?? []));
+                }
             }
 
             return $block;
@@ -164,12 +171,15 @@ class BlocksUpdater
      */
     protected function removeClassAttributeFromContent($content)
     {
-        $html = new \WP_HTML_Tag_Processor($content);
-        do {
-            $html->remove_class($this->classToTarget);
-        } while ($html->next_tag(['class' => $this->classToTarget]));
+        foreach ($this->classesToTarget as $targetedClass) {
+            $html = new \WP_HTML_Tag_Processor($content);
+            do {
+                $html->remove_class($targetedClass);
+            } while ($html->next_tag(['class' => $targetedClass]));
+            $content = $html->get_updated_html();
+        }
 
-        return $html->get_updated_html();
+        return $content;
     }
 
     /**
@@ -182,7 +192,7 @@ class BlocksUpdater
     {
         if (isset($block['attrs']['className'])) {
             $className = is_array($block['attrs']['className']) ? $block['attrs']['className'] : explode(' ', $block['attrs']['className']);
-            $className = array_diff($className, [$this->classToTarget]);
+            $className = array_diff($className, $this->classesToTarget);
             $block['attrs']['className'] = !empty($className) ? implode(' ', $className) : null;
         }
 
@@ -238,15 +248,18 @@ class BlocksUpdater
      * @param array $block The block.
      * @return boolean
      */
-    protected function hasTargetedClassName($block)
+    protected function hasTargetedClassName(array $block)
     {
-        if (strpos($block['innerHTML'], $this->classToTarget) !== false) {
+        if (array_reduce($this->classesToTarget, function (bool $carry, string $targetClass) use ($block) {
+            return $carry || (strpos(($block['innerHTML'] ?? ''), $targetClass) !== false);
+        }, false)
+        ) {
             return true;
         }
 
-        $classList = is_array(($block['attrs']['className'] ?? false)) ? $block['attrs']['className'] : explode(' ', $block['attrs']['className']);
+        $classList = is_array(($block['attrs']['className'] ?? null)) ? $block['attrs']['className'] : explode(' ', ($block['attrs']['className'] ?? ''));
 
-        return in_array($this->classToTarget, $classList, true);
+        return !empty(array_intersect($this->classesToTarget, $classList));
     }
 
     /**

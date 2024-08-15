@@ -8,7 +8,7 @@
 }
 
 .extendify-documentation .link-disabled {
-	@apply focus:outline-none cursor-text text-gray-900 no-underline shadow-none;
+	@apply cursor-text text-gray-900 no-underline shadow-none focus:outline-none;
 }
 
 .extendify-documentation p.has-background,

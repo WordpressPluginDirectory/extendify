@@ -47,12 +47,12 @@ const PageSkeleton = ({ pageName }) => {
 					animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
 					exit={{ opacity: 0, x: -50 }}
 					transition={{ ease: 'easeInOut' }}
-					className="p-4 rounded w-96 mt-12 border-8 border-gray-200 border-opacity-25"
+					className="mt-12 w-96 rounded border-8 border-gray-200 border-opacity-25 p-4"
 					style={{
 						mixBlendMode: isLightBg ? 'difference' : 'plus-lighter',
 					}}>
 					<h1
-						className="text-banner-text opacity-60 mb-8"
+						className="mb-8 text-banner-text opacity-60"
 						style={{ mixBlendMode: 'plus-lighter' }}>
 						{title}
 					</h1>
@@ -68,11 +68,11 @@ const PageSkeleton = ({ pageName }) => {
 									transition={item ? { duration: delay / 2, delay } : {}}
 									role="status"
 									className="max-w-sm space-y-2">
-									<Piece i={item * delay} className="w-48 h-3 mb-3" />
-									<Piece i={item * delay} className="w-full h-2" />
-									<Piece i={item * delay} className="w-full max-w-[90%] h-2" />
-									<Piece i={item * delay} className="w-full h-2" />
-									<Piece i={item * delay} className="w-full h-2" />
+									<Piece i={item * delay} className="mb-3 h-3 w-48" />
+									<Piece i={item * delay} className="h-2 w-full" />
+									<Piece i={item * delay} className="h-2 w-full max-w-[90%]" />
+									<Piece i={item * delay} className="h-2 w-full" />
+									<Piece i={item * delay} className="h-2 w-full" />
 								</motion.div>
 							);
 						})}

@@ -4,7 +4,7 @@ export const InfoBox = ({ description, setDescription }) => (
 	<>
 		<label
 			htmlFor="extendify-business-info-input"
-			className="text-lg md:text-base leading-8 md:leading-10 m-0 text-gray-900 font-medium">
+			className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
 			{__('Website description', 'extendify-local')}
 		</label>
 		<textarea
@@ -15,7 +15,7 @@ export const InfoBox = ({ description, setDescription }) => (
 			name="business-info-input"
 			id="extendify-business-info-input"
 			className={
-				'w-full rounded-lg border border-gray-300 h-40 p-2 input-focus ring-offset-0 placeholder:italic placeholder:text-md placeholder:opacity-50'
+				'input-focus placeholder:text-md h-40 w-full rounded-lg border border-gray-300 p-2 ring-offset-0 placeholder:italic placeholder:opacity-50'
 			}
 			value={description ?? ''}
 			onChange={(e) => setDescription(e.target.value)}

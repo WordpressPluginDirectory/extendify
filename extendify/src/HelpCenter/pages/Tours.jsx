@@ -25,14 +25,14 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 				type="button"
 				onClick={onOpen}
 				className={classNames(
-					'rounded-md border border-gray-200 w-full text-left m-0 p-2.5 bg-transparent flex justify-between gap-2 cursor-pointer hover:bg-gray-100',
+					'm-0 flex w-full cursor-pointer justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100',
 					{
 						'rounded-b-none': availableTours.length > 0,
 					},
 				)}>
 				<Icon
 					icon={toursIcon}
-					className="p-2 bg-design-main fill-design-text border-0 rounded-full"
+					className="rounded-full border-0 bg-design-main fill-design-text p-2"
 					size={48}
 				/>
 				<div className="grow pl-1">
@@ -43,7 +43,7 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 						{__('Learn more about your WordPress admin', 'extendify-local')}
 					</p>
 				</div>
-				<div className="flex justify-between items-center h-12 grow-0">
+				<div className="flex h-12 grow-0 items-center justify-between">
 					<Icon
 						icon={chevronRight}
 						size={24}
@@ -54,7 +54,7 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 			{availableTours.length > 0 && (
 				<button
 					type="button"
-					className="rounded-md border border-t-0 border-gray-200 rounded-t-none w-full bg-transparent text-gray-900 hover:bg-gray-100 cursor-pointer p-3 text-md font-medium m-0 px-4 text-left justify-between items-center flex gap-2 pl-[4.25rem]"
+					className="text-md m-0 flex w-full cursor-pointer items-center justify-between gap-2 rounded-md rounded-t-none border border-t-0 border-gray-200 bg-transparent p-3 px-4 pl-[4.25rem] text-left font-medium text-gray-900 hover:bg-gray-100"
 					onClick={() => {
 						setVisibility('minimized');
 						startTour(availableTours[0]);
@@ -73,7 +73,7 @@ export const Tours = () => {
 	return (
 		<section className="p-4">
 			<ul
-				className="m-0 p-0 flex flex-col gap-2"
+				className="m-0 flex flex-col gap-2 p-0"
 				data-test="help-center-tours-items-list">
 				{Object.values(tours).map((tourData) => {
 					const { id, title } = tourData;
@@ -81,7 +81,7 @@ export const Tours = () => {
 						<li key={id} className="m-0 p-0">
 							<button
 								type="button"
-								className="text-sm font-medium m-0 py-3.5 px-4 w-full bg-gray-100 text-gray-900 hover:bg-gray-150 cursor-pointer flex gap-2 justify-between items-center"
+								className="m-0 flex w-full cursor-pointer items-center justify-between gap-2 bg-gray-100 px-4 py-3.5 text-sm font-medium text-gray-900 hover:bg-gray-150"
 								onClick={() => {
 									setVisibility('minimized');
 									startTour(tourData);

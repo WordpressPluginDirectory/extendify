@@ -74,15 +74,15 @@ export const LaunchCard = ({ task }) => {
 	}, [currentStep]);
 
 	return (
-		<div className="justify-center h-full text-base bg-design-main overflow-hidden">
+		<div className="h-full justify-center overflow-hidden bg-design-main text-base">
 			<div className="mx-11 my-16">
 				<img
 					alt="preview"
-					className="object-cover w-full block"
+					className="block w-full object-cover"
 					src={task.backgroundImage}
 				/>
 				<div className="w-full text-center">
-					<h2 className="text-2xl mb-4 mt-8 text-white">
+					<h2 className="mb-4 mt-8 text-2xl text-white">
 						{launchSteps[currentStep]?.title}
 					</h2>
 					<p className="my-4 text-base text-gray-50">
@@ -91,7 +91,7 @@ export const LaunchCard = ({ task }) => {
 					<div>
 						<a
 							href={`${window.extSharedData.adminUrl}admin.php?page=extendify-launch`}
-							className="inline-block rounded mt-4 px-4 py-2.5 bg-white text-gray-900 border-none no-underline cursor-pointer">
+							className="mt-4 inline-block cursor-pointer rounded border-none bg-white px-4 py-2.5 text-gray-900 no-underline">
 							{launchSteps[currentStep]?.buttonText}
 						</a>
 						<button
@@ -100,7 +100,7 @@ export const LaunchCard = ({ task }) => {
 							onClick={() => {
 								dismissTask('site-builder-launcher');
 							}}
-							className="text-design-text cursor-pointer text-center bg-transparent mx-3 text-sm py-2 px-2">
+							className="mx-3 cursor-pointer bg-transparent px-2 py-2 text-center text-sm text-design-text">
 							{__('Dismiss', 'extendify-local')}
 						</button>
 					</div>

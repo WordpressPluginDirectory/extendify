@@ -21,7 +21,7 @@ export const SecondaryDomainCard = ({ task }) => {
 	if (!domains?.length) {
 		return (
 			<div
-				className="flex w-full h-full items-center justify-center bg-right-bottom bg-no-repeat bg-cover"
+				className="flex h-full w-full items-center justify-center bg-cover bg-right-bottom bg-no-repeat"
 				style={{
 					backgroundImage: `url(${task.backgroundImage}})`,
 				}}>
@@ -34,25 +34,25 @@ export const SecondaryDomainCard = ({ task }) => {
 
 	return (
 		<div
-			className="flex w-full h-full bg-right-bottom bg-no-repeat bg-cover"
+			className="flex h-full w-full bg-cover bg-right-bottom bg-no-repeat"
 			data-test="assist-domain-card-secondary-domain-module"
 			style={{
 				backgroundImage: `url(${task.backgroundImage})`,
 			}}>
-			<div className="flex flex-col w-full px-8 md:pl-8 md:pr-0 py-12 lg:mr-24">
-				<div className="title font-semibold	text-2xl md:text-4xl">
+			<div className="flex w-full flex-col px-8 py-12 md:pl-8 md:pr-0 lg:mr-24">
+				<div className="title text-2xl font-semibold md:text-4xl">
 					{task.innerTitle}
 				</div>
-				<div className="description text-base mt-2 mb-8">
+				<div className="description mb-8 mt-2 text-base">
 					{task.description}
 				</div>
-				<div className="bg-gray-100 rounded md:w-full overflow-auto">
-					<div className="rounded-tr rounded-tl md:flex md:justify-between md:items-center border-b py-4 px-6 border-gray-200 md:flex-wrap">
+				<div className="overflow-auto rounded bg-gray-100 md:w-full">
+					<div className="rounded-tl rounded-tr border-b border-gray-200 px-6 py-4 md:flex md:flex-wrap md:items-center md:justify-between">
 						<div>
-							<div className="text-gray-900 uppercase bg-wp-alert-yellow rounded-full w-fit border-wp-alert-yellow py-1 px-3 mb-1 text-xs bg-opacity-40">
+							<div className="mb-1 w-fit rounded-full border-wp-alert-yellow bg-wp-alert-yellow bg-opacity-40 px-3 py-1 text-xs uppercase text-gray-900">
 								{__('Recommended', 'extendify-local')}
 							</div>
-							<div className="text-xl lowercase font-semibold">
+							<div className="text-xl font-semibold lowercase">
 								{domains[0]}
 							</div>
 						</div>
@@ -61,7 +61,7 @@ export const SecondaryDomainCard = ({ task }) => {
 							target="_blank"
 							rel="noreferrer"
 							onClick={handleInteract}
-							className="mt-3 md:mt-0 h-8 text-sm bg-design-main text-design-text hover:opacity-90 border-design-main py-2 px-3 inline-flex md:flex justify-between items-center rounded-sm cursor-pointer leading-tight text-center no-underline">
+							className="mt-3 inline-flex h-8 cursor-pointer items-center justify-between rounded-sm border-design-main bg-design-main px-3 py-2 text-center text-sm leading-tight text-design-text no-underline hover:opacity-90 md:mt-0 md:flex">
 							{__('Register this domain', 'extendify-local')}
 							<Icon icon={chevronRightSmall} className="fill-current" />
 						</a>
@@ -72,7 +72,7 @@ export const SecondaryDomainCard = ({ task }) => {
 							href={createDomainUrlLink(domainSearchUrl, domain)}
 							target="_blank"
 							rel="noreferrer"
-							className="text-sm font-normal text-gray-800 lowercase hover:bg-gray-50 h-11 cursor-pointer flex justify-between items-center py-3.5 px-6 border-b border-gray-200 last:border-transparent no-underline"
+							className="flex h-11 cursor-pointer items-center justify-between border-b border-gray-200 px-6 py-3.5 text-sm font-normal lowercase text-gray-800 no-underline last:border-transparent hover:bg-gray-50"
 							onClick={handleInteract}
 							key={domain}>
 							{domain}

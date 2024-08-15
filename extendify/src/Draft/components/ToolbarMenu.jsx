@@ -58,6 +58,7 @@ export const ToolbarMenu = (CurrentMenuItems, props) => {
 		window.dispatchEvent(
 			new CustomEvent('extendify-draft:set-prompt', { detail }),
 		);
+
 	return (
 		<>
 			<CurrentMenuItems {...props} />
@@ -79,6 +80,7 @@ export const ToolbarMenu = (CurrentMenuItems, props) => {
 							};
 							return (
 								<ToolbarButton
+									className="py-1.5 pl-2 pr-3 text-white before:bg-editor-main before:content-[''] hover:before:bg-editor-main-darker"
 									onClick={handleClick}
 									aria-expanded={isOpen}
 									aria-haspopup="true"

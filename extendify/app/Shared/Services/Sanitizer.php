@@ -23,7 +23,8 @@ class Sanitizer
         return is_array($data) ? self::sanitizeArray($data) : self::sanitizeText($data);
     }
     /**
-     * This function will sanitize a multidimensional array.
+     * This function will sanitize a multidimensional array,
+     * if the value is number it will be returned as is.
      *
      * @param array $array - The array we need to sanitize.
      * @return array
@@ -49,12 +50,17 @@ class Sanitizer
      */
     public static function sanitizeUserSelections($array)
     {
-        $sanitizedArray = [];
-        foreach ($array as $key => $value) {
-            $sanitizedArray[$key] = is_array($value) ? self::sanitizeUserSelections($value) : self::sanitizePostContent($value);
-        }
+        return array_map(function ($value) {
+            if (is_array($value)) {
+                return self::sanitizeUserSelections($value);
+            }
 
-        return $sanitizedArray;
+            if (is_int($value) || is_float($value)) {
+                return $value;
+            }
+
+            return self::sanitizePostContent($value);
+        }, $array);
     }
 
     /**

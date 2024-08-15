@@ -4,18 +4,18 @@ export const CheckboxInputCard = (props) => {
 	const { label, description, Icon, checked, ...rest } = props;
 	return (
 		<label
-			className="w-full flex items-center justify-between text-gray-900 font-semibold p-4 h-full"
+			className="flex h-full w-full items-center justify-between p-4 font-semibold text-gray-900"
 			htmlFor={props.id}>
-			<div className="flex items-center flex-auto">
-				<span className="w-5 h-5 relative inline-block mr-3 align-middle">
+			<div className="flex flex-auto items-center">
+				<span className="relative mr-3 inline-block h-5 w-5 align-middle">
 					<input
 						{...rest}
 						checked={checked}
-						className="h-5 w-5 rounded-sm m-0"
+						className="m-0 h-5 w-5 rounded-sm"
 						type="checkbox"
 					/>
 					<svg
-						className={classNames('absolute block h-5 w-5 -mt-px inset-0', {
+						className={classNames('absolute inset-0 -mt-px block h-5 w-5', {
 							'text-white': checked,
 							'text-transparent': !checked,
 						})}
@@ -32,7 +32,7 @@ export const CheckboxInputCard = (props) => {
 				<span>
 					<span className="text-sm font-medium">{label}</span>
 					{description ? (
-						<span className="block pt-1 text-gray-700 pr-4 font-normal">
+						<span className="block pr-4 pt-1 font-normal text-gray-700">
 							{description}
 						</span>
 					) : (
@@ -40,7 +40,7 @@ export const CheckboxInputCard = (props) => {
 					)}
 				</span>
 			</div>
-			{Icon && <Icon className="flex-none text-design-main h-6 w-6" />}
+			{Icon && <Icon className="h-6 w-6 flex-none text-design-main" />}
 		</label>
 	);
 };

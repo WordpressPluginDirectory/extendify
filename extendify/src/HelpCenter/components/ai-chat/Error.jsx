@@ -2,13 +2,13 @@ import { __ } from '@wordpress/i18n';
 
 export const Error = ({ text, reset }) => {
 	return (
-		<div className="p-5 rounded-lg bg-red-100 border border-solid border-red-500">
-			<p className="m-0 mb-4 text-gray-800 text-sm">{text}</p>
+		<div className="rounded-lg border border-solid border-red-500 bg-red-100 p-5">
+			<p className="m-0 mb-4 text-sm text-gray-800">{text}</p>
 			{reset && (
 				<p className="m-0">
 					<button
 						type="button"
-						className="bg-transparent border-none p-0 underline cursor-pointer"
+						className="cursor-pointer border-none bg-transparent p-0 underline"
 						onClick={reset}>
 						{__('Please try again.', 'extendify-local')}
 					</button>

@@ -75,7 +75,7 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 				</div>
 			)}
 			{errorMessage.length > 0 && (
-				<p className="text-red-500 mb-0">{errorMessage}</p>
+				<p className="mb-0 text-red-500">{errorMessage}</p>
 			)}
 			<Button
 				type="submit"

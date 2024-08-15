@@ -64,7 +64,7 @@ const CategoryList = ({ categories, errorCount, current, setCurrent }) => {
 	// If we have categories, return early no matter the error
 	if (categories?.length) {
 		return (
-			<ul className="m-0 w-full py-2 px-1 border border-gray-300 overflow-y-auto max-h-half -mt-1.5 rounded-b">
+			<ul className="m-0 -mt-1.5 max-h-half w-full overflow-y-auto rounded-b border border-gray-300 px-1 py-2">
 				<li className="m-0 p-0">
 					<button
 						type="button"
@@ -93,7 +93,7 @@ const CategoryList = ({ categories, errorCount, current, setCurrent }) => {
 
 	if (errorCount > 1) {
 		return (
-			<div className="flex flex-col w-full justify-center items-center gap-2 border-t border-gray-300 -mt-1 p-2">
+			<div className="-mt-1 flex w-full flex-col items-center justify-center gap-2 border-t border-gray-300 p-2">
 				<span>{__('Retrying...', 'extendify-local')}</span>
 				<Spinner />
 			</div>
@@ -101,7 +101,7 @@ const CategoryList = ({ categories, errorCount, current, setCurrent }) => {
 	}
 
 	return (
-		<div className="flex w-full justify-center border-t border-gray-300 -mt-1 p-2">
+		<div className="-mt-1 flex w-full justify-center border-t border-gray-300 p-2">
 			<span className="sr-only">{__('Fetching...', 'extendify-local')}</span>
 			<Spinner />
 		</div>

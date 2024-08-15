@@ -82,10 +82,10 @@ class WPController
     {
         $post = \wp_insert_post([
             'post_type' => 'wp_navigation',
-            'post_title' => Sanitizer::sanitizeText($request->get_param('title')),
-            'post_name' => Sanitizer::sanitizeText($request->get_param('slug')),
+            'post_title' => $request->get_param('title'),
+            'post_name' => $request->get_param('slug'),
             'post_status' => 'publish',
-            'post_content' => Sanitizer::sanitizePostContent($request->get_param('content')),
+            'post_content' => $request->get_param('content'),
         ]);
 
         \add_post_meta($post, 'made_with_extendify_launch', 1);
@@ -106,6 +106,28 @@ class WPController
         // Set the state to import images.
         \update_option('extendify_check_for_image_imports', true, false);
         \delete_transient('extendify_import_images_check_delay');
+
+        // Clean up the user selections.
+        $userSelections = \get_option('extendify_user_selections', []);
+        $userSelections = array_map(function ($selection) {
+            if (!isset($selection['pages'])) {
+                return $selection;
+            }
+
+            // Remove unecessary patterns from user selections to save space.
+            $selection['pages'] = array_map(function ($page) {
+                unset($page['patterns']);
+                return $page;
+            }, $selection['pages']);
+
+            // Remove style but keep variations.
+            $selection['variation'] = ($selection['style']['variation'] ?? null);
+            unset($selection['style']);
+
+            return $selection;
+        }, $userSelections);
+
+        update_option('extendify_user_selections', $userSelections);
 
         return new \WP_REST_Response(['success' => true]);
     }

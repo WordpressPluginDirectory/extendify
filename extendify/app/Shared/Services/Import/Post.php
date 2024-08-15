@@ -24,8 +24,13 @@ class Post
 	      // phpcs:ignore WordPress.DB.DirectDatabaseQuery
         return $wpdb->get_results(
             $wpdb->prepare(
-                "SELECT * FROM {$wpdb->posts} WHERE post_status != 'trash' AND post_content LIKE %s AND post_type NOT IN ('revision', 'attachment')",
-                '%extendify-image-import%'
+                "SELECT * FROM {$wpdb->posts} WHERE post_status != 'trash'
+                  AND (INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0)
+                  AND post_type NOT IN ('revision', 'attachment')",
+                'extendify-image-import',
+                ' ext-import"',
+                ' ext-import ',
+                '"ext-import '
             )
         );
     }
@@ -42,8 +47,13 @@ class Post
 	      // phpcs:ignore WordPress.DB.DirectDatabaseQuery
         return $wpdb->get_row(
             $wpdb->prepare(
-                "SELECT count(ID) as posts_count FROM {$wpdb->posts} WHERE post_status != 'trash' AND post_content LIKE %s AND post_type NOT IN ('revision', 'attachment')",
-                '%extendify-image-import%'
+                "SELECT count(ID) as posts_count FROM {$wpdb->posts} WHERE post_status != 'trash'
+                  AND (INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0)
+                  AND post_type NOT IN ('revision', 'attachment')",
+                'extendify-image-import',
+                ' ext-import"',
+                ' ext-import ',
+                '"ext-import '
             )
         );
     }

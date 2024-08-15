@@ -42,10 +42,10 @@ export const SiteTones = () => {
 		<>
 			<label
 				htmlFor="extendify-business-info-tone"
-				className="text-lg md:text-base leading-8 md:leading-10 m-0 text-gray-900 font-medium">
+				className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
 				{__("Select your site's tone (optional)", 'extendify-local')}
 			</label>
-			<div className="flex justify-left w-full flex-wrap gap-2">
+			<div className="justify-left flex w-full flex-wrap gap-2">
 				{tones.map((tone) => {
 					const selected = businessInformation.tones?.find(
 						({ value }) => value === tone.value,
@@ -54,15 +54,15 @@ export const SiteTones = () => {
 					return (
 						<div
 							key={tone.value}
-							className={classNames('relative border rounded border-gray-300', {
+							className={classNames('relative rounded border border-gray-300', {
 								'bg-gray-100': selected,
 								'border-gray-300': !selected,
 							})}>
 							<label
 								htmlFor={tone.value}
-								className="w-full flex items-center justify-between text-gray-900 p-2 h-full cursor-pointer">
-								<div className="flex items-center flex-auto">
-									<span className="w-4 h-4 relative inline-block mr-1 align-middle">
+								className="flex h-full w-full cursor-pointer items-center justify-between p-2 text-gray-900">
+								<div className="flex flex-auto items-center">
+									<span className="relative mr-1 inline-block h-4 w-4 align-middle">
 										<input
 											id={tone.value}
 											className="h-4 w-4 rounded-sm focus:ring-0 focus:ring-offset-0"
@@ -76,7 +76,7 @@ export const SiteTones = () => {
 										/>
 										<svg
 											className={classNames(
-												'absolute block h-4 w-4 -mt-px inset-0',
+												'absolute inset-0 -mt-px block h-4 w-4',
 												{
 													'text-white': selected,
 													'text-transparent': !selected,
@@ -92,7 +92,7 @@ export const SiteTones = () => {
 											/>
 										</svg>
 									</span>
-									<span className="text-sm font-small">{tone.label}</span>
+									<span className="font-small text-sm">{tone.label}</span>
 								</div>
 							</label>
 						</div>

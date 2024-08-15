@@ -14,7 +14,7 @@ export const SearchForm = ({ onChange }) => {
 		<form
 			method="get"
 			onSubmit={(e) => e.preventDefault()}
-			className="relative w-full h-10">
+			className="relative h-10 w-full">
 			<label htmlFor="ext-help-center-search" className="sr-only">
 				{__('Search for articles', 'extendify-local')}
 			</label>
@@ -33,9 +33,9 @@ export const SearchForm = ({ onChange }) => {
 					fetch(`${KB_HOST}/api/posts?boot=true`, { method: 'POST' });
 				}}
 				placeholder={__('What do you need help with?', 'extendify-local')}
-				className="input border border-text-800 w-full placeholder-gray-600 text-sm h-10 px-3"
+				className="input border-text-800 h-10 w-full border px-3 text-sm placeholder-gray-600"
 			/>
-			<div className="absolute right-2 text-gray-400 flex items-center justify-center inset-y-5">
+			<div className="absolute inset-y-5 right-2 flex items-center justify-center text-gray-400">
 				<Icon
 					icon={!searchTerm ? sIcon : closeSmall}
 					className={classNames('fill-current', {

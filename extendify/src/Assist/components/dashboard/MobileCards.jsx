@@ -14,7 +14,7 @@ export const MobileCards = ({ className, totalCompleted, tasks }) => {
 			<div
 				className={classNames(
 					className,
-					'w-full border border-gray-300 bg-white overflow-auto rounded mb-6 h-full',
+					'mb-6 h-full w-full overflow-auto rounded border border-gray-300 bg-white',
 				)}>
 				<CardsTitle totalCompleted={totalCompleted} total={tasks.length} />
 
@@ -27,19 +27,19 @@ export const MobileCards = ({ className, totalCompleted, tasks }) => {
 									<Disclosure.Button
 										as="div"
 										className={classNames(
-											'w-full flex items-center border-b text-base',
+											'flex w-full items-center border-b text-base',
 											{
 												'border-transparent font-semibold': open,
 												'border-gray-400': !open,
 											},
 										)}>
-										<div className="group hover:bg-gray-100 hover:cursor-pointer flex items-center justify-between w-full md:border md:border-gray-100 py-4 px-5 lg:px-6">
-											<div className="flex items-center space-x-2 w-full">
+										<div className="group flex w-full items-center justify-between px-5 py-4 hover:cursor-pointer hover:bg-gray-100 md:border md:border-gray-100 lg:px-6">
+											<div className="flex w-full items-center space-x-2">
 												<Icon
 													icon={isCompletedTask ? check : Bullet}
 													size={isCompletedTask ? 24 : 12}
 													className={classNames({
-														'text-design-main fill-current': open,
+														'fill-current text-design-main': open,
 														'mx-2 text-center text-gray-400':
 															!isCompletedTask && !open,
 														'mx-2': !isCompletedTask && open,
@@ -51,7 +51,7 @@ export const MobileCards = ({ className, totalCompleted, tasks }) => {
 												<Icon
 													icon={chevronUp}
 													className={classNames(
-														'md:hidden h-5 w-5 text-purple-500',
+														'h-5 w-5 text-purple-500 md:hidden',
 														{
 															'rotate-180 transform': open,
 														},
@@ -61,7 +61,7 @@ export const MobileCards = ({ className, totalCompleted, tasks }) => {
 										</div>
 									</Disclosure.Button>
 
-									<Disclosure.Panel className="border-gray-400 border-b">
+									<Disclosure.Panel className="border-b border-gray-400">
 										<CardContent task={task} />
 									</Disclosure.Panel>
 								</>

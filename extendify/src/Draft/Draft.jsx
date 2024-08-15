@@ -99,7 +99,7 @@ export const Draft = () => {
 				<PanelBody>
 					{selectedText && <SelectedText loading={loading} />}
 
-					<div className="rounded-sm border-none bg-gray-100 overflow-hidden mb-4">
+					<div className="mb-4 overflow-hidden rounded-sm border-none bg-gray-100">
 						{!completion && (
 							<Input
 								inputText={inputText}
@@ -112,7 +112,7 @@ export const Draft = () => {
 						)}
 						{completion && <Completion completion={completion} />}
 						{error && (
-							<div className="px-4 mb-4 mt-2">
+							<div className="mb-4 mt-2 px-4">
 								<p className="m-0 text-xs font-semibold text-red-500">
 									{error.message}
 								</p>

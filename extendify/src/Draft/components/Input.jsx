@@ -37,7 +37,7 @@ export const Input = ({
 		<form className="relative flex items-start" onSubmit={submit}>
 			<Icon
 				icon={magic}
-				className="text-wp-theme-main fill-current w-5 h-5 absolute left-2 top-3.5"
+				className="absolute left-2 top-3.5 h-5 w-5 fill-current text-wp-theme-main"
 			/>
 			<DynamicTextarea
 				disabled={loading}
@@ -49,7 +49,7 @@ export const Input = ({
 							: __('Ask AI to generate text', 'extendify-local')
 				}
 				value={inputText}
-				className="bg-transparent border-transparent outline-none rounded-none focus:ring-1 focus:ring-wp-theme-main w-full h-full px-10 py-3 overflow-hidden resize-none"
+				className="h-full w-full resize-none overflow-hidden rounded-none border-transparent bg-transparent px-10 py-3 outline-none focus:ring-1 focus:ring-wp-theme-main"
 				onChange={(event) => {
 					setInputText(event.target.value);
 					setReady(event.target.value.length > 0);
@@ -62,7 +62,7 @@ export const Input = ({
 				}}
 			/>
 			{loading && (
-				<div className="text-gray-700 absolute right-4 w-4 h-4 p-1 top-3.5">
+				<div className="absolute right-4 top-3.5 h-4 w-4 p-1 text-gray-700">
 					<Spinner style={{ margin: '0' }} />
 				</div>
 			)}
@@ -72,7 +72,7 @@ export const Input = ({
 					disabled={!ready}
 					aria-label={__('Submit', 'extendify-local')}
 					className={classnames(
-						'bg-transparent border-none absolute right-2 p-0 top-3.5',
+						'absolute right-2 top-3.5 border-none bg-transparent p-0',
 						{
 							'cursor-pointer text-gray-700 hover:text-design-main': ready,
 							'text-gray-500': !ready,
@@ -81,7 +81,7 @@ export const Input = ({
 					<Icon
 						icon={arrowRight}
 						onClick={submit}
-						className="fill-current w-6 h-6"
+						className="h-6 w-6 fill-current"
 					/>
 				</button>
 			)}

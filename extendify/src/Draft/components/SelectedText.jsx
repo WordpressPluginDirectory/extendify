@@ -29,7 +29,7 @@ export const SelectedText = ({ loading }) => {
 
 	return (
 		<div
-			className="flex space-x-2 rounded-sm border-none bg-gray-100 overflow-hidden mb-4 p-3"
+			className="mb-4 flex space-x-2 overflow-hidden rounded-sm border-none bg-gray-100 p-3"
 			data-test="existing-text-container">
 			<div>
 				<Icon icon={edit} className="fill-current" />
@@ -41,14 +41,14 @@ export const SelectedText = ({ loading }) => {
 						__html: truncatedText(),
 					}}
 				/>
-				<div className="mt-3 w-full flex justify-end">
+				<div className="mt-3 flex w-full justify-end">
 					<Button
 						size="compact"
 						onClick={clearSelectedBlock}
 						disabled={loading}
 						icon={trash}
 						iconPosition="right"
-						className="text-gray-800 bg-gray-300 rounded relative cursor-pointer hover:bg-gray-400 flex-row-reverse"
+						className="relative cursor-pointer flex-row-reverse rounded bg-gray-300 text-gray-800 hover:bg-gray-400"
 						data-test="remove-selection">
 						{__('Remove selection', 'extendify-local')}
 					</Button>

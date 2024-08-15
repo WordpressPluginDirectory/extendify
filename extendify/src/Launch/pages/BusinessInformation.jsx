@@ -19,7 +19,7 @@ export const state = pageState('Business Information', () => ({
 
 export const BusinessInformation = () => (
 	<PageLayout>
-		<div className="grow px-6 py-8 md:py-16 md:px-32 overflow-y-scroll">
+		<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
 			<Title
 				title={__(
 					'Let us create custom copy for your website',
@@ -30,7 +30,7 @@ export const BusinessInformation = () => (
 					'extendify-local',
 				)}
 			/>
-			<div className="w-full relative max-w-xl mx-auto">
+			<div className="relative mx-auto w-full max-w-xl">
 				<BusinessInfo />
 			</div>
 		</div>

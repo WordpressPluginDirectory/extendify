@@ -15,29 +15,29 @@ export const History = ({ setShowHistory }) => {
 
 	return (
 		<div className="relative h-full">
-			<div className="flex p-4 px-6 justify-between items-center bg-gray-100 text-gray-900">
+			<div className="flex items-center justify-between bg-gray-100 p-4 px-6 text-gray-900">
 				<h1 className="m-0 p-0 text-sm font-medium">
 					{__('Chat History', 'extendify-local')}
 				</h1>
 				<button
 					type="button"
 					onClick={() => setShowHistory(false)}
-					className="text-design-text fill-current cursor-pointer m-0 p-0 border-0 bg-transparent">
+					className="m-0 cursor-pointer border-0 bg-transparent fill-current p-0 text-design-text">
 					<Icon icon={close} size={16} />
 					<span className="sr-only">
 						{__('Close history', 'extendify-local')}
 					</span>
 				</button>
 			</div>
-			<ul className="m-0 p-0 mt-3 h-full overflow-y-auto">
+			<ul className="m-0 mt-3 h-full overflow-y-auto p-0">
 				{[...history]
 					.sort((a, b) => a.time - b.time)
 					.map((item) => (
-						<li key={item.answerId} className="group px-2 pr-4 flex gap-1">
+						<li key={item.answerId} className="group flex gap-1 px-2 pr-4">
 							<button
 								type="button"
 								onClick={() => deleteFromHistory(item)}
-								className="bg-transparent border-0 p-0 m-0 group-hover:opacity-100 opacity-0 cursor-pointer">
+								className="m-0 cursor-pointer border-0 bg-transparent p-0 opacity-0 group-hover:opacity-100">
 								<Icon icon={close} size={12} />
 								<span className="sr-only">
 									{__('Remove from history', 'extendify-local')}
@@ -45,10 +45,10 @@ export const History = ({ setShowHistory }) => {
 							</button>
 							<button
 								type="button"
-								className="rounded-md border border-gray-200 w-full text-left m-0 p-2.5 bg-transparent flex items-center justify-between gap-2 cursor-pointer hover:bg-gray-100"
+								className="m-0 flex w-full cursor-pointer items-center justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100"
 								onClick={() => setCurrentQuestion(item)}>
 								<div>
-									<span className="text-ellipsis overflow-hidden truncate">
+									<span className="overflow-hidden truncate text-ellipsis">
 										{item.question.substring(0, 100)}
 									</span>
 								</div>

@@ -12,7 +12,7 @@ export const Support = ({ height }) => {
 				href={window.extHelpCenterData.supportUrl}
 				target="_blank"
 				rel="noopener noreferrer"
-				className="text-sm text-gray-800 no-underline border border-gray-300 border-solid rounded py-3 px-4 flex items-center gap-4">
+				className="flex items-center gap-4 rounded border border-solid border-gray-300 px-4 py-3 text-sm text-gray-800 no-underline">
 				<span>
 					{__(
 						'For other questions, visit our support page.',

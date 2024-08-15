@@ -16,7 +16,7 @@ export const Topbar = () => {
 	};
 
 	return (
-		<div className="relative bg-banner-main flex justify-end items-center p-4 gap-x-2">
+		<div className="relative flex items-center justify-end gap-x-2 bg-banner-main p-4">
 			<div
 				role={isMinimized ? 'button' : 'heading'}
 				onClick={isMinimized ? toggleMinimized : undefined}
@@ -24,7 +24,7 @@ export const Topbar = () => {
 					isMinimized ? __('Show Help Center', 'extendify-local') : undefined
 				}
 				aria-expanded={isMinimized ? 'false' : 'true'}
-				className={classNames('bg-banner-main flex justify-between w-full', {
+				className={classNames('flex w-full justify-between bg-banner-main', {
 					'cursor-pointer': isMinimized,
 				})}>
 				<div
@@ -33,22 +33,22 @@ export const Topbar = () => {
 					})}>
 					<LogoOrBackButton />
 					{current?.title && (
-						<span className="text-banner-text border-banner-text text-base font-medium">
+						<span className="border-banner-text text-base font-medium text-banner-text">
 							{current.title}
 						</span>
 					)}
 				</div>
 			</div>
-			<div className="flex justify-end items-center gap-2.5">
+			<div className="flex items-center justify-end gap-2.5">
 				<button
-					className="text-banner-text fill-banner-text border-0 bg-transparent p-0 m-0 cursor-pointer"
+					className="m-0 cursor-pointer border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 					type="button"
 					data-test="help-center-toggle-minimize-button"
 					onClick={toggleMinimized}>
 					{isMinimized ? (
 						<>
 							<Icon
-								className="fill-current rotate-90"
+								className="rotate-90 fill-current"
 								icon={chevronLeft}
 								size={24}
 							/>
@@ -66,7 +66,7 @@ export const Topbar = () => {
 					)}
 				</button>
 				<button
-					className="text-banner-text fill-banner-text border-0 bg-transparent p-0 m-0 cursor-pointer"
+					className="m-0 cursor-pointer border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 					type="button"
 					data-test="help-center-close-button"
 					onClick={handleClose}>
@@ -85,7 +85,7 @@ const LogoOrBackButton = () => {
 	if (history.length > 1 && visibility === 'open') {
 		return (
 			<button
-				className="text-banner-text fill-banner-text border-0 bg-transparent p-0 m-0 cursor-pointer"
+				className="m-0 cursor-pointer border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 				type="button"
 				onClick={goBack}>
 				<Icon icon={chevronLeft} />
@@ -95,10 +95,10 @@ const LogoOrBackButton = () => {
 	}
 
 	return partnerLogo ? (
-		<div className="bg-banner-main flex justify-center h-6 after:text-banner-text after:opacity-40 after:relative after:-right-2 after:top-0.5 after:content-['|'] after:mr-2">
-			<div className="flex h-6 overflow-hidden max-w-[9rem]">
+		<div className="flex h-6 justify-center bg-banner-main after:relative after:-right-2 after:top-0.5 after:mr-2 after:text-banner-text after:opacity-40 after:content-['|']">
+			<div className="flex h-6 max-w-[9rem] overflow-hidden">
 				<img
-					className="max-w-full max-h-full object-contain"
+					className="max-h-full max-w-full object-contain"
 					src={partnerLogo}
 					alt={partnerName}
 				/>

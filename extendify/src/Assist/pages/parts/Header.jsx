@@ -19,25 +19,25 @@ export const Header = () => {
 	}, []);
 
 	return (
-		<header className="w-full flex bg-banner-main border-b border-gray-400">
-			<div className="max-w-[996px] w-full mx-auto mt-auto flex flex-col px-4">
-				<div className="flex flex-wrap justify-between items-center my-6 gap-x-4 gap-y-6">
+		<header className="flex w-full border-b border-gray-400 bg-banner-main">
+			<div className="mx-auto mt-auto flex w-full max-w-[996px] flex-col px-4">
+				<div className="my-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-6">
 					{window.extSharedData?.partnerLogo && (
-						<div className="flex h-10 max-w-52 md:max-w-72 overflow-hidden">
+						<div className="flex h-10 max-w-52 overflow-hidden md:max-w-72">
 							<img
-								className="max-w-full max-h-full object-contain"
+								className="max-h-full max-w-full object-contain"
 								src={window.extSharedData.partnerLogo}
 								alt={window.extSharedData.partnerName}
 							/>
 						</div>
 					)}
 					{!window.extSharedData?.partnerLogo && (
-						<Logo className="logo text-banner-text max-h-9 w-32 sm:w-40" />
+						<Logo className="logo max-h-9 w-32 text-banner-text sm:w-40" />
 					)}
 					<div
 						id="assist-menu-bar"
 						className={classNames(
-							'lg:flex lg:w-auto flex-wrap gap-4 items-center',
+							'flex-wrap items-center gap-4 lg:flex lg:w-auto',
 						)}>
 						<a
 							style={{
@@ -45,7 +45,7 @@ export const Header = () => {
 								'--tw-ring-color': focusColor,
 								'--ext-override': focusColor,
 							}}
-							className="text-sm text-center bg-white text-gray-900 border-gray-500 border cursor-pointer rounded-sm lg:rounded-sm py-2 px-4 no-underline block lg:inline-block hover:bg-gray-100 focus:ring focus:ring-offset-1 focus:ring-gray-900 focus:outline-none transition-colors duration-200"
+							className="block cursor-pointer rounded-sm border border-gray-500 bg-white px-4 py-2 text-center text-sm text-gray-900 no-underline transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-900 focus:ring-offset-1 lg:inline-block lg:rounded-sm"
 							href={window.extSharedData.home}
 							target="_blank"
 							rel="noreferrer">

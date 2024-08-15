@@ -93,12 +93,12 @@ export const QuickLinks = ({ className }) => {
 				id="assist-quick-links-module"
 				className={classNames(
 					className,
-					'w-full p-5 lg:p-8 border border-gray-300 text-base bg-white rounded h-full',
+					'h-full w-full rounded border border-gray-300 bg-white p-5 text-base lg:p-8',
 				)}>
-				<h2 className="font-semibold text-lg mt-0 mb-4">
+				<h2 className="mb-4 mt-0 text-lg font-semibold">
 					{__('Quick Links', 'extendify-local')}
 				</h2>
-				<div className="grid md:grid-rows-2 gap-x-6 md:grid-flow-col place-items-start">
+				<div className="grid place-items-start gap-x-6 md:grid-flow-col md:grid-rows-2">
 					{quickLinks
 						.filter((item) => item.show)
 						.map((item) => (
@@ -107,8 +107,8 @@ export const QuickLinks = ({ className }) => {
 								href={item.link}
 								title={item.title}
 								data-test={`assist-quick-links-module-${item.slug}`}
-								className="text-sm py-1.5 flex justify-center items-center hover:text-design-main hover:underline hover:underline-offset-2 no-underline text-gray-800">
-								<Icon icon={item.icon} className="fill-current mr-2" />
+								className="flex items-center justify-center py-1.5 text-sm text-gray-800 no-underline hover:text-design-main hover:underline hover:underline-offset-2">
+								<Icon icon={item.icon} className="mr-2 fill-current" />
 								<span className="mr-1">{item.title}</span>
 							</a>
 						))}

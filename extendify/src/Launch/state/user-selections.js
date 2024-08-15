@@ -68,6 +68,9 @@ const state = (set, get) => ({
 			[type]: get()?.[type]?.filter((t) => !items.some((i) => i.id === t.id)),
 		});
 	},
+	removeAll(type) {
+		set({ [type]: [] });
+	},
 	toggle(type, item) {
 		if (get().has(type, item)) {
 			get().remove(type, item);

@@ -3,9 +3,9 @@ import { CloseButton } from './CloseButton';
 
 export const Topbar = ({ openOnNewPage, updateUserOption, onClose }) => {
 	return (
-		<div className="flex gap-6 items-center justify-end px-8 h-16 mb-2 flex-shrink-0">
+		<div className="mb-2 flex h-16 flex-shrink-0 items-center justify-end gap-6 px-8">
 			<label
-				className="flex gap-2 items-center mt-4"
+				className="mt-4 flex items-center gap-2"
 				htmlFor="extendify-open-on-new-pages"
 				title={sprintf(
 					// translators: %s: Extendify Library term
@@ -14,7 +14,7 @@ export const Topbar = ({ openOnNewPage, updateUserOption, onClose }) => {
 				)}>
 				<input
 					id="extendify-open-on-new-pages"
-					className="border border-solid border-gray-900 rounded-sm m-0"
+					className="m-0 rounded-sm border border-solid border-gray-900"
 					type="checkbox"
 					checked={openOnNewPage}
 					onChange={(e) => updateUserOption('openOnNewPage', e.target.checked)}

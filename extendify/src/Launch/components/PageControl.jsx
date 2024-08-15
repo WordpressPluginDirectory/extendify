@@ -41,10 +41,10 @@ export const PageControl = () => {
 			<span className="flex-1 self-start">
 				<PrevButton />
 			</span>
-			<span className="grow hidden md:flex items-center justify-center">
+			<span className="hidden grow items-center justify-center md:flex">
 				<Steps />
 			</span>
-			<span className="flex-1 flex justify-end">
+			<span className="flex flex-1 justify-end">
 				<NextButton />
 			</span>
 		</div>
@@ -70,15 +70,15 @@ const Steps = () => {
 				return (
 					<div key={page} className="flex items-center">
 						{index !== currentPageIndex && (
-							<div className={`${bgColor} w-2.5 h-2.5 rounded-full`} />
+							<div className={`${bgColor} h-2.5 w-2.5 rounded-full`} />
 						)}
 						{index === currentPageIndex && (
-							<div className="bg-design-main w-4 h-4 rounded-full flex items-center justify-center">
-								<div className="bg-white/80 w-1.5 h-1.5 rounded-full" />
+							<div className="flex h-4 w-4 items-center justify-center rounded-full bg-design-main">
+								<div className="h-1.5 w-1.5 rounded-full bg-white/80" />
 							</div>
 						)}
 						{index < totalPages - 1 && (
-							<div className={`${bgColor} w-16 h-0.5`} />
+							<div className={`${bgColor} h-0.5 w-16`} />
 						)}
 					</div>
 				);
@@ -97,9 +97,9 @@ const PrevButton = () => {
 				onClick={() =>
 					(window.location.href = `${window.extSharedData.adminUrl}admin.php?page=extendify-assist`)
 				}
-				className="bg-white text-design-main border-gray-200 hover:bg-gray-50 focus:bg-gray-50">
+				className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
 				<>
-					<LeftCaret className="h-5 w-5 mt-px" />
+					<LeftCaret className="mt-px h-5 w-5" />
 					{__('Exit Launch', 'extendify-local')}
 				</>
 			</NavigationButton>
@@ -110,9 +110,9 @@ const PrevButton = () => {
 		<NavigationButton
 			onClick={previousPage}
 			data-test="back-button"
-			className="bg-white text-design-main border-gray-200 hover:bg-gray-50 focus:bg-gray-50">
+			className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
 			<>
-				<LeftCaret className="h-5 w-5 mt-px" />
+				<LeftCaret className="mt-px h-5 w-5" />
 				{__('Back', 'extendify-local')}
 			</>
 		</NavigationButton>
@@ -164,21 +164,21 @@ const NextButton = () => {
 				<NavigationButton
 					onClick={() => nextPageOrComplete()}
 					data-test="back-button"
-					className="bg-white mr-2 text-design-main border-gray-200 hover:bg-gray-50 focus:bg-gray-50">
+					className="mr-2 border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
 					<>
 						{__('Skip', 'extendify-local')}
-						<RightCaret className="h-5 w-5 mt-px" />
+						<RightCaret className="mt-px h-5 w-5" />
 					</>
 				</NavigationButton>
 			) : (
 				<NavigationButton
 					onClick={nextPageOrComplete}
 					disabled={!canProgress}
-					className="bg-design-main text-design-text border-design-main"
+					className="border-design-main bg-design-main text-design-text"
 					data-test="next-button">
 					<>
 						{__('Next', 'extendify-local')}
-						<RightCaret className="h-5 w-5 mt-px" />
+						<RightCaret className="mt-px h-5 w-5" />
 					</>
 				</NavigationButton>
 			)}
@@ -188,7 +188,7 @@ const NextButton = () => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: 20 }}
-						className="extendify-launch w-full fixed bottom-[100px] pb-4 flex justify-end z-max">
+						className="extendify-launch fixed bottom-[100px] z-max flex w-full justify-end pb-4">
 						<div className="shadow-2xl">
 							<Snackbar
 								actions={validation?.action ? [validation?.action] : []}>

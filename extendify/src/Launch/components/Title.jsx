@@ -1,10 +1,10 @@
 export const Title = ({ title, description }) => (
-	<div className="w-full relative max-w-xl mx-auto">
-		<div className="flex flex-col gap-2 mb-8 md:mb-12">
-			<h2 className="text-2xl leading-8 md:leading-10 m-0 text-gray-900 text-center">
+	<div className="relative mx-auto w-full max-w-xl">
+		<div className="mb-8 flex flex-col gap-2 md:mb-12">
+			<h2 className="m-0 text-center text-2xl leading-8 text-gray-900 md:leading-10">
 				{title}
 			</h2>
-			<p className="text-gray-700 text-base text-center leading-6 m-0">
+			<p className="m-0 text-center text-base leading-6 text-gray-700">
 				{description}
 			</p>
 		</div>

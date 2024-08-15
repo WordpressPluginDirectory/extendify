@@ -32,7 +32,7 @@ export const ModalContent = ({ insertPattern, siteType, category }) => {
 
 	if (isLoading || !data?.length) {
 		return (
-			<div className="text-center absolute inset-0 flex flex-col items-center justify-center">
+			<div className="absolute inset-0 flex flex-col items-center justify-center text-center">
 				<Spinner />
 				<span className="sr-only">
 					{__('Loading Patterns...', 'extendify-local')}
@@ -52,7 +52,7 @@ export const ModalContent = ({ insertPattern, siteType, category }) => {
 					600: 1,
 				}}
 				columnClassName=""
-				className="w-full relative p-8 pt-2 flex gap-6">
+				className="relative flex w-full gap-6 p-8 pt-2">
 				{data.map((p) =>
 					p.map(({ id, code }) => (
 						<BlockPreviewButton
@@ -64,7 +64,7 @@ export const ModalContent = ({ insertPattern, siteType, category }) => {
 				)}
 			</Masonry>
 			{showLoading ? (
-				<div className="text-center absolute inset-0 flex flex-col items-center justify-center z-0">
+				<div className="absolute inset-0 z-0 flex flex-col items-center justify-center text-center">
 					<Spinner />
 					<span className="sr-only">
 						{__('Loading Patterns...', 'extendify-local')}
@@ -74,7 +74,7 @@ export const ModalContent = ({ insertPattern, siteType, category }) => {
 			{showLoading || noMore ? null : (
 				<div
 					ref={loadMoreRef}
-					className="mt-6 md:mt-2 mb-6 flex w-full justify-center">
+					className="mb-6 mt-6 flex w-full justify-center md:mt-2">
 					<Spinner />
 					<span className="sr-only">
 						{__('Loading more patterns...', 'extendify-local')}

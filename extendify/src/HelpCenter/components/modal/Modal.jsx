@@ -27,7 +27,7 @@ export const Modal = () => {
 	if (visibility === 'minimized') {
 		return (
 			<div className="extendify-help-center">
-				<div className="fixed mx-auto z-high md:m-8 bottom-0 right-0 w-[420px]">
+				<div className="fixed bottom-0 right-0 z-high mx-auto w-[420px] md:m-8">
 					<MinimizedButton />
 				</div>
 			</div>
@@ -50,20 +50,20 @@ export const Modal = () => {
 			onClose={() => undefined}>
 			<div
 				// TODO: later measure the dashboard height using h-fit and apply that elsewhere
-				className="fixed mx-auto z-high md:m-8 md:mt-20 max-w-[420px] w-full bottom-0 right-0 h-full max-h-[589px]">
+				className="fixed bottom-0 right-0 z-high mx-auto h-full max-h-[589px] w-full max-w-[420px] md:m-8 md:mt-20">
 				<motion.div
 					key="help-center-modal"
 					initial={{ y: 6, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: 0, opacity: 0 }}
 					transition={{ duration: 0.2, delay: 0.1 }}
-					className="sm:flex h-full w-full relative shadow-2xl-flipped md:shadow-2xl md:rounded-md sm:overflow-hidden mx-auto">
+					className="relative mx-auto h-full w-full shadow-2xl-flipped sm:flex sm:overflow-hidden md:rounded-md md:shadow-2xl">
 					<Dialog.Title className="sr-only">
 						{__('Extendify Help Center', 'extendify-local')}
 					</Dialog.Title>
-					<div className="flex flex-col w-full relative h-full bg-gray-50 md:overflow-hidden rounded-md border border-gray-400">
+					<div className="relative flex h-full w-full flex-col rounded-md border border-gray-400 bg-gray-50 md:overflow-hidden">
 						<Topbar />
-						<div className="overflow-y-auto flex-grow overscroll-contain">
+						<div className="flex-grow overflow-y-auto overscroll-contain">
 							<ModalContent />
 						</div>
 					</div>

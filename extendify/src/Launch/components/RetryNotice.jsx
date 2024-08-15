@@ -6,7 +6,7 @@ export const RetryNotice = ({ show }) => {
 	if (!show) return null;
 	return (
 		<AnimatePresence>
-			<motion.div className="extendify-launch w-full fixed bottom-[100px] pb-4 flex justify-end z-max px-12">
+			<motion.div className="extendify-launch fixed bottom-[100px] z-max flex w-full justify-end px-12 pb-4">
 				<div className="shadow-2xl">
 					<Snackbar>
 						{__(

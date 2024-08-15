@@ -26,7 +26,7 @@
 
 .extendify-chat-button:hover:after {
 	content: "";
-	@apply absolute top-0 left-0 h-full w-full bg-white/20;
+	@apply absolute left-0 top-0 h-full w-full bg-white/20;
 }
 
 .extendify-help-center .ask-another-question {
@@ -40,7 +40,7 @@
 }
 
 #wp-admin-bar-help-center-btn.extendify-help-center {
-	@apply block mt-2 md:mt-0;
+	@apply mt-2 block md:mt-0;
 }
 
 @keyframes extendifyChatPulse {

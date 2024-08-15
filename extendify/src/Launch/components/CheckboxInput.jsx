@@ -10,15 +10,15 @@ export const CheckboxInput = ({
 }) => {
 	return (
 		<label
-			className={classNames('flex items-center py-3.5 px-4', {
+			className={classNames('flex items-center px-4 py-3.5', {
 				'cursor-not-allowed': locked,
-				'hover:text-design-main focus-within:text-design-mains': !locked,
+				'focus-within:text-design-mains hover:text-design-main': !locked,
 			})}
 			htmlFor={slug}>
-			<span className="w-5 h-5 relative inline-block mr-3 align-middle">
+			<span className="relative mr-3 inline-block h-5 w-5 align-middle">
 				<input
 					id={slug}
-					className="h-5 w-5 rounded-sm m-0"
+					className="m-0 h-5 w-5 rounded-sm"
 					style={{
 						'--ext-design-main': locked ? '#BBBBBB' : undefined,
 					}}
@@ -28,7 +28,7 @@ export const CheckboxInput = ({
 					checked={locked ? true : checked}
 				/>
 				<svg
-					className={classNames('absolute block h-5 inset-0 w-5', {
+					className={classNames('absolute inset-0 block h-5 w-5', {
 						'text-white': checked,
 						'text-transparent': !checked,
 					})}
@@ -42,8 +42,8 @@ export const CheckboxInput = ({
 					/>
 				</svg>
 			</span>
-			<span className="flex flex-col grow overflow-hidden">
-				<span className="text-base font-medium leading-tight truncate">
+			<span className="flex grow flex-col overflow-hidden">
+				<span className="truncate text-base font-medium leading-tight">
 					{label}
 				</span>
 				{description ? (

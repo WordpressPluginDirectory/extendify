@@ -16,7 +16,7 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 export const LaunchPage = () => {
 	const { updateSettings } = useDispatch('core/block-editor');
 	const [retrying, setRetrying] = useState(false);
-	const { siteType, resetState } = useUserSelectionStore();
+	const { siteType } = useUserSelectionStore();
 	const CurrentPage = usePagesStore((state) => {
 		const pageData = state.getCurrentPageData();
 		return pageData?.component;
@@ -43,7 +43,7 @@ export const LaunchPage = () => {
 		if (!CurrentPage) return null;
 		return (
 			<>
-				<RestartLaunchModal setPage={setPage} resetState={resetState} />
+				<RestartLaunchModal setPage={setPage} />
 				<CurrentPage />
 			</>
 		);
@@ -82,7 +82,7 @@ export const LaunchPage = () => {
 					typeof fetchDatas?.[i] === 'function'
 						? fetchDatas[i]()
 						: fetchDatas?.[i];
-				mutate(data, () => fetcher(data));
+				mutate(data, (last) => last || fetcher(data), { revalidate: false });
 			});
 		}
 	}, [fetcher, mutate, fetchData]);
@@ -116,7 +116,7 @@ export const LaunchPage = () => {
 			}}>
 			<div
 				style={{ zIndex: 99999 + 1 }} // 1 more than the library
-				className="h-screen w-screen fixed inset-0 overflow-y-auto md:overflow-hidden bg-white">
+				className="fixed inset-0 h-screen w-screen overflow-y-auto bg-white md:overflow-hidden">
 				{page()}
 			</div>
 			<RetryNotice show={retrying} />

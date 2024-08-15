@@ -5,14 +5,16 @@ import { __, sprintf } from '@wordpress/i18n';
 import { Dialog } from '@headlessui/react';
 import classnames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 
-export const RestartLaunchModal = ({ setPage, resetState }) => {
+export const RestartLaunchModal = ({ setPage }) => {
 	const oldPages = window.extOnbData.resetSiteInformation.pagesIds ?? [];
 	const oldNavigations =
 		window.extOnbData.resetSiteInformation.navigationsIds ?? [];
 	const templatePartsIds =
 		window.extOnbData.resetSiteInformation.templatePartsIds ?? [];
 
+	const { resetState } = useUserSelectionStore();
 	const [open, setOpen] = useState(false);
 	const [processing, setProcessing] = useState(false);
 	const initialFocus = useRef(null);
@@ -88,7 +90,7 @@ export const RestartLaunchModal = ({ setPage, resetState }) => {
 					data-test="confirmation-launch"
 					className="extendify-launch extendify-launch-modal"
 					onClose={() => null}>
-					<div className="mx-auto md:p-8 w-full flex justify-center items-center h-screen absolute top-0">
+					<div className="absolute top-0 mx-auto flex h-screen w-full items-center justify-center md:p-8">
 						<div
 							className="fixed inset-0 bg-black/30"
 							style={{ backdropFilter: 'blur(2px)', zIndex: 99999 }}
@@ -96,12 +98,12 @@ export const RestartLaunchModal = ({ setPage, resetState }) => {
 						/>
 						<div
 							style={{ zIndex: 99999 + 100 }}
-							className="sm:flex mx-6 rounded relative shadow-2xl sm:overflow-hidden bg-white max-w-screen-3xl">
+							className="relative mx-6 max-w-screen-3xl rounded bg-white shadow-2xl sm:flex sm:overflow-hidden">
 							<Dialog.Panel className="flex flex-col">
-								<Dialog.Title className="m-0 py-6 pr-7 pl-8 font-bold text-gray-900 text-2xl	flex items-center">
+								<Dialog.Title className="m-0 flex items-center py-6 pl-8 pr-7 text-2xl font-bold text-gray-900">
 									{__('Start over?', 'extendify-local')}
 								</Dialog.Title>
-								<div className="text-left relative py-0 px-8 text-base font-normal max-w-screen-sm">
+								<div className="relative max-w-screen-sm px-8 py-0 text-left text-base font-normal">
 									{__(
 										'Go through the onboarding process again to create a new site.',
 										'extendify-local',
@@ -118,18 +120,18 @@ export const RestartLaunchModal = ({ setPage, resetState }) => {
 										)}
 									</strong>
 								</div>
-								<div className="px-8 py-8 flex justify-end space-x-4 text-base">
+								<div className="flex justify-end space-x-4 px-8 py-8 text-base">
 									<NavigationButton
 										data-test="modal-exit-button"
 										onClick={handleExit}
 										disabled={processing}
-										className="bg-white text-design-main border-gray-200 hover:bg-gray-50 focus:bg-gray-50">
+										className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
 										{__('Exit', 'extendify-local')}
 									</NavigationButton>
 									<NavigationButton
 										onClick={handleOk}
 										disabled={processing}
-										className="bg-design-main text-design-text border-design-main"
+										className="border-design-main bg-design-main text-design-text"
 										data-test="modal-continue-button">
 										{!processing ? (
 											__('Continue', 'extendify-local')
@@ -156,9 +158,9 @@ const NavigationButton = forwardRef((props, ref) => {
 			ref={ref}
 			{...props}
 			className={classnames(
-				'rounded flex items-center px-6 py-3 leading-6 button-focus border',
+				'button-focus flex items-center rounded border px-6 py-3 leading-6',
 				{
-					'opacity-50 cursor-not-allowed': props.disabled,
+					'cursor-not-allowed opacity-50': props.disabled,
 				},
 				props.className,
 			)}

@@ -15,7 +15,7 @@ export const Rating = ({ answerId }) => {
 	}, [rating, answerId]);
 
 	return (
-		<div className="mt-1 flex items-center gap-0.5 justify-end text-right">
+		<div className="mt-1 flex items-center justify-end gap-0.5 text-right">
 			<button
 				type="button"
 				aria-pressed={rating === 1}
@@ -27,7 +27,7 @@ export const Rating = ({ answerId }) => {
 						: __('Rate that this answer was helpful', 'extendify-local')
 				}
 				className={classnames(
-					'cursor-pointer bg-transparent w-5 h-5 border-0 p-0 m-0 hover:text-design-main',
+					'm-0 h-5 w-5 cursor-pointer border-0 bg-transparent p-0 hover:text-design-main',
 					{
 						'text-design-main': rating === 1,
 						'text-gray-500': rating !== 1,
@@ -47,7 +47,7 @@ export const Rating = ({ answerId }) => {
 						: __('Rate that this answer was not helpful', 'extendify-local')
 				}
 				className={classnames(
-					'cursor-pointer bg-transparent w-5 h-5 border-0 p-0 m-0 hover:text-design-main',
+					'm-0 h-5 w-5 cursor-pointer border-0 bg-transparent p-0 hover:text-design-main',
 					{
 						'text-design-main': rating === -1,
 						'text-gray-500': rating !== -1,

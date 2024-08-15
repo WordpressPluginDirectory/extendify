@@ -141,7 +141,7 @@ export const Article = () => {
 
 	if (loading || fetching) {
 		return (
-			<div className="p-8 text-base text-center">
+			<div className="p-8 text-center text-base">
 				<Spinner />
 			</div>
 		);
@@ -149,7 +149,7 @@ export const Article = () => {
 
 	if (error) {
 		return (
-			<div className="p-8 text-base text-center">
+			<div className="p-8 text-center text-base">
 				{__('There was an error loading this article', 'extendify-local')}
 			</div>
 		);

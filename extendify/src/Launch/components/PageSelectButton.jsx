@@ -10,9 +10,9 @@ export const PageSelectButton = ({
 	onChange,
 	forceChecked = false,
 }) => (
-	<div className="border border-gray-300 rounded flex items-center">
+	<div className="flex items-center rounded border border-gray-300">
 		<div
-			className={classNames('grow text-gray-900 overflow-hidden', {
+			className={classNames('grow overflow-hidden text-gray-900', {
 				'bg-gray-300': forceChecked,
 			})}>
 			<CheckboxInput
@@ -27,7 +27,7 @@ export const PageSelectButton = ({
 		<button
 			type="button"
 			className={classNames(
-				'hidden lg:flex items-center h-full min-h-6 min-w-6 shrink py-3 px-4 border-l border-gray-300 cursor-pointer',
+				'hidden h-full min-h-6 min-w-6 shrink cursor-pointer items-center border-l border-gray-300 px-4 py-3 lg:flex',
 				{
 					'bg-gray-100 text-gray-800': !previewing,
 					'bg-design-main text-white': previewing,

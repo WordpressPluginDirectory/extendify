@@ -1,5 +1,8 @@
 import { Flex, FlexBlock } from '@wordpress/components';
+import { useDispatch } from '@wordpress/data';
+import { store as editPostStore } from '@wordpress/edit-post';
 import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/edit-post';
+import { useEffect } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { __ } from '@wordpress/i18n';
 import { registerPlugin } from '@wordpress/plugins';
@@ -30,7 +33,14 @@ registerPlugin('extendify-draft', {
 	),
 });
 const ExtendifyDraft = ({ children }) => {
-	// You can run effects here
+	const { openGeneralSidebar } = useDispatch(editPostStore);
+	useEffect(() => {
+		const id = requestAnimationFrame(() => {
+			openGeneralSidebar('extendify-draft/draft');
+		});
+		return () => cancelAnimationFrame(id);
+	}, [openGeneralSidebar]);
+
 	return children;
 };
 

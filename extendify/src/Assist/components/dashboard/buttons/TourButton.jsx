@@ -12,13 +12,13 @@ export const TourButton = ({ task, completed }) => {
 		<div className="">
 			<button
 				type="button"
-				className="hidden md:block min-w-24 px-4 py-2.5 cursor-pointer text-sm	font-medium	bg-design-main text-design-text rounded-sm hover:opacity-90"
+				className="hidden min-w-24 cursor-pointer rounded-sm bg-design-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90 md:block"
 				onClick={() => startTour(task.slug)}>
 				{completed
 					? task.buttonLabels.completed
 					: task.buttonLabels.notCompleted}
 			</button>
-			<div className="sm:block md:hidden rounded-sm border py-2 px-2 bg-gray-100 text-gray-700">
+			<div className="rounded-sm border bg-gray-100 px-2 py-2 text-gray-700 sm:block md:hidden">
 				{__(
 					'This tour is only available on desktop devices',
 					'extendify-local',

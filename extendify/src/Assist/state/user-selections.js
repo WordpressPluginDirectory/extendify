@@ -9,6 +9,7 @@ const startingState = {
 		title: undefined,
 	},
 	siteTypeSearch: [],
+	variation: null,
 	style: null,
 	pages: [],
 	plugins: [],

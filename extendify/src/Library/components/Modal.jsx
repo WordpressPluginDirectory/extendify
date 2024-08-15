@@ -66,7 +66,7 @@ export const Modal = () => {
 			open={open}
 			static
 			onClose={() => undefined}>
-			<div className="absolute mx-auto w-full h-full md:p-8">
+			<div className="absolute mx-auto h-full w-full md:p-8">
 				<div
 					className="fixed inset-0 bg-black/30"
 					style={{ backdropFilter: 'blur(2px)' }}
@@ -78,12 +78,12 @@ export const Modal = () => {
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: 0, opacity: 0 }}
 					transition={{ duration: 0.3 }}
-					className="sm:flex h-full w-full relative shadow-2xl sm:overflow-hidden mx-auto bg-white max-w-screen-3xl">
+					className="relative mx-auto h-full w-full max-w-screen-3xl bg-white shadow-2xl sm:flex sm:overflow-hidden">
 					<Dialog.Title className="sr-only">
 						{__('Design Patterns', 'extendify-local')}
 					</Dialog.Title>
 					<Sidebar />
-					<div className="flex flex-col w-full relative bg-[#FAFAFA]">
+					<div className="relative flex w-full flex-col bg-[#FAFAFA]">
 						<Topbar
 							openOnNewPage={openOnNewPage}
 							updateUserOption={updateUserOption}
@@ -91,7 +91,7 @@ export const Modal = () => {
 						/>
 						<div
 							id="extendify-library-patterns-list"
-							className="overflow-y-auto flex-grow">
+							className="flex-grow overflow-y-auto">
 							<ModalContent
 								insertPattern={insertPattern}
 								category={category}

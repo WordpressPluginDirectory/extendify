@@ -82,9 +82,9 @@ export const GenerateImage = () => {
 
 	return (
 		<Panel>
-			<div className="flex gap-1 items-center h-12 pl-1">
+			<div className="flex h-12 items-center gap-1 pl-1">
 				<button
-					className="bg-transparent border-0 h-9 w-9 cursor-pointer"
+					className="h-9 w-9 cursor-pointer border-0 bg-transparent"
 					onClick={goBack}
 					type="button"
 					aria-label={__('Go Back', 'extendify-local')}>
@@ -94,7 +94,7 @@ export const GenerateImage = () => {
 					{__('AI Image Generator', 'extendify-local')}
 				</Heading>
 			</div>
-			<PanelBody className="border-t-0 -mt-4">
+			<PanelBody className="-mt-4 border-t-0">
 				<BaseControl label={__('Image Description', 'extendify-local')}>
 					<ImagePreview
 						prompt={aiImageOptions.prompt}

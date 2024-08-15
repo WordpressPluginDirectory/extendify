@@ -45,10 +45,19 @@ class ResourceData
      */
     public static function scheduleCache()
     {
+        // phpcs:ignore WordPress.WP.CronInterval -- Verified > 30 days.
+        \add_filter('cron_schedules', function ($schedules) {
+            $schedules['every_month'] = [
+                'interval' => (30 * DAY_IN_SECONDS), // phpcs:ignore
+                'display' => __('Every month', 'extendify-local'),
+            ];
+            return $schedules;
+        });
+
         if (! \wp_next_scheduled('extendify_cache_data')) {
             \wp_schedule_event(
                 (\current_time('timestamp') + DAY_IN_SECONDS), // phpcs:ignore
-                'daily',
+                'every_month',
                 'extendify_cache_data'
             );
         }
@@ -80,7 +89,7 @@ class ResourceData
     }
 
     /**
-     * Return the recommendations.
+     * Return the recommendations. Fetch them if not found (or on a schedule).
      *
      * @return mixed|\WP_REST_Response
      */
@@ -97,7 +106,8 @@ class ResourceData
     }
 
     /**
-     * Return the domains suggestions.
+     * Return the domains suggestions. Fetch them if not found (or on a schedule).
+     * Unlike other data fetching in this class, this is non-blocking.
      *
      * @return mixed|\WP_REST_Response
      */
@@ -105,7 +115,8 @@ class ResourceData
     {
         $domains = get_transient('extendify_domains');
         if ($domains === false) {
-            // Schedule a job to generate the cache for next time, if on the Assist page.
+            // Instead of blocking here, schedule a job to generate the cache for next time,
+            // But only if on the Assist page.
             // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             if ((isset($_GET['page']) && $_GET['page'] === 'extendify-assist')) {
                 wp_schedule_single_event(time(), 'extendify_cache_data');
@@ -119,7 +130,7 @@ class ResourceData
     }
 
     /**
-     * Return the support articles.
+     * Return the support articles. Fetch them if not found (or on a schedule).
      *
      * @return mixed|\WP_REST_Response
      */

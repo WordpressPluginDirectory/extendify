@@ -20,8 +20,8 @@ const LinkCard = ({ recommendation }) => {
 			href={recommendation[linkType]}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="border border-gray-200 p-4 rounded text-base hover:bg-gray-50 hover:border-design-main cursor-pointer bg-transparent text-left no-underline">
-			<div className="w-full h-full">
+			className="cursor-pointer rounded border border-gray-200 bg-transparent p-4 text-left text-base no-underline hover:border-design-main hover:bg-gray-50">
+			<div className="h-full w-full">
 				<img
 					className="h-8 w-8 rounded fill-current"
 					alt={
@@ -40,8 +40,8 @@ const LinkCard = ({ recommendation }) => {
 const InstallCard = ({ recommendation }) => {
 	const { by, description, image, title, pluginSlug } = recommendation;
 	return (
-		<div className="border border-gray-200 p-4 rounded text-base bg-transparent text-left">
-			<div className="w-full h-full">
+		<div className="rounded border border-gray-200 bg-transparent p-4 text-left text-base">
+			<div className="h-full w-full">
 				<img
 					className="h-8 w-8 rounded fill-current"
 					alt={
@@ -51,7 +51,7 @@ const InstallCard = ({ recommendation }) => {
 				/>
 				<div className="mt-2 font-semibold">{title}</div>
 				{by && <div className="text-sm text-gray-700">{by}</div>}
-				<div className="mt-2 mb-3 text-sm text-gray-800">{description}</div>
+				<div className="mb-3 mt-2 text-sm text-gray-800">{description}</div>
 				<InstallButton pluginSlug={pluginSlug} />
 			</div>
 		</div>
@@ -89,7 +89,7 @@ const InstallButton = ({ pluginSlug }) => {
 		return (
 			<>
 				<p
-					className="flex items-center text-wp-alert-red fill-wp-alert-red"
+					className="flex items-center fill-wp-alert-red text-wp-alert-red"
 					style={{ fontSize: '13px' }}>
 					<Icon icon={warning} />
 					{__('Error', 'extendify-local')}
@@ -102,7 +102,7 @@ const InstallButton = ({ pluginSlug }) => {
 		return (
 			<>
 				<p
-					className="flex items-center text-wp-alert-green fill-wp-alert-green"
+					className="flex items-center fill-wp-alert-green text-wp-alert-green"
 					style={{ fontSize: '13px' }}>
 					<Icon icon={check} />
 					{__('Active', 'extendify-local')}

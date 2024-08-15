@@ -63,10 +63,6 @@ class AdminPageRouter
             );
         });
 
-        if (PartnerData::$id !== 'no-partner') {
-            \add_filter('login_redirect', [$this, 'customLoginRedirect'], 10, 3);
-        }
-
         // If the user is redirected to this while visiting our url, intercept it.
         \add_filter('wp_redirect', function ($url) {
             if (PartnerData::$id === 'no-partner') {
@@ -149,28 +145,6 @@ class AdminPageRouter
     {
         // This router use to handle more cases but now everyone goes to Assist.
         return 'admin.php?page=extendify-assist';
-    }
-
-    /**
-     * A custom login redirect
-     *
-     * @param string             $redirectTo          - The redirect destination URL.
-     * @param string             $requestedRedirectTo - The requested redirect destination URL passed as a parameter.
-     * @param \WP_USER|\WP_ERROR $user                - WP_User object if login was successful, WP_Error object otherwise.
-     *
-     * @return string
-     */
-    public function customLoginRedirect($redirectTo, $requestedRedirectTo, $user)
-    {
-        if (!$user || !is_a($user, 'WP_User')) {
-            return $redirectTo;
-        }
-
-        if (!empty($requestedRedirectTo) && $requestedRedirectTo !== \admin_url()) {
-            return $requestedRedirectTo;
-        }
-
-        return $user->has_cap(Config::$requiredCapability) ? \admin_url() . $this->getRoute() : $requestedRedirectTo;
     }
 
     /**

@@ -79,17 +79,22 @@ class ImageUploader
             return new \WP_Error(2002, 'File type is not allowed.');
         }
 
-        // Otherwise, upload it.
-        $extension = $this->mimes[$fileMimeType];
-
-        // We only upload the images if they are hosted on unsplash.com or extendify.com.
         $imageUrl = (preg_match('(' . implode('|', array_map('preg_quote', self::$imagesDomains)) . ')i', $image)) ? esc_url_raw($image . '&auto=avif,compress&q=70') : esc_url_raw($image);
-        $response = wp_remote_get($imageUrl);
-        $body = trim(wp_remote_retrieve_body($response));
-        $upload = wp_upload_bits(sha1($image) . $extension, null, $body);
+        $imageSha = sha1($image);
+
+        $upload = $this->upload($imageUrl, $imageSha, $fileMimeType);
 
         if ($upload['error']) {
             return new \WP_Error(2003, 'There was an error while uploading the image.');
+        }
+
+        if (!wp_getimagesize($upload['file'])) {
+            // we need to delete the file and upload it again.
+            // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+            @unlink($upload['file']);
+
+            $imageUrl = str_replace('avif', 'jpg', $imageUrl);
+            $upload = $this->upload($imageUrl, $imageSha, 'image/jpeg');
         }
 
         // Check the size of the file to ensure the file was successfully uploaded.
@@ -122,6 +127,28 @@ class ImageUploader
         $upload['attachment_id'] = $attachmentId;
 
         return $upload;
+    }
+
+    /**
+     * Upload the image and return the uploaded file information.
+     *
+     * @param string $imageUrl     The image url to upload.
+     * @param string $imageSha     The image sha.
+     * @param string $fileMimeType The file mime type.
+     * @return array {
+     *      Information about the newly-uploaded file.
+     *
+     *      @type string $file Filename of the newly-uploaded file.
+     *      @type string $url URL of the uploaded file.
+     *      @type string $type File type.
+     *      @type string|false $error Error message, if there has been an error.
+     * }
+     */
+    protected function upload($imageUrl, $imageSha, $fileMimeType)
+    {
+        $response = wp_remote_get($imageUrl);
+        $body = trim(wp_remote_retrieve_body($response));
+        return wp_upload_bits($imageSha . $this->mimes[$fileMimeType], null, $body);
     }
 
     /**

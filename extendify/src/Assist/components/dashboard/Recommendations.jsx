@@ -56,12 +56,12 @@ export const Recommendations = () => {
 		<div
 			data-test="assist-recommendations-module"
 			id="assist-recommendations-module"
-			className="w-full p-5 lg:p-8 border border-gray-300 text-base bg-white rounded h-full">
-			<h2 className="font-semibold text-lg mt-0 mb-4">
+			className="h-full w-full rounded border border-gray-300 bg-white p-5 text-base lg:p-8">
+			<h2 className="mb-4 mt-0 text-lg font-semibold">
 				{__('Website Tools & Plugins', 'extendify-local')}
 			</h2>
 			<div
-				className="grid md:grid-cols-3 md:gap-3 gap-y-3"
+				className="grid gap-y-3 md:grid-cols-3 md:gap-3"
 				data-test="assist-recommendations-module-list">
 				{filteredRecommendations.map((recommendation) => (
 					<RecommendationCard

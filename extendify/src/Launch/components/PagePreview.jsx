@@ -100,7 +100,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.3 }}
-						className="absolute inset-0 z-30 pointer-events-none"
+						className="pointer-events-none absolute inset-0 z-30"
 						style={{
 							backgroundColor: 'rgba(204, 204, 204, 0.25)',
 							backgroundImage:
@@ -109,7 +109,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 							animation: 'extendify-loading-skeleton 10s ease-in-out infinite',
 						}}>
 						<div className="absolute inset-0 flex items-center justify-center">
-							<Spinner className="w-10 h-10 text-design-main" />
+							<Spinner className="h-10 w-10 text-design-main" />
 						</div>
 					</motion.div>
 				)}
@@ -117,12 +117,12 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 			<div
 				data-test="layout-preview"
 				ref={blockRef}
-				className={classNames('group w-full bg-transparent z-10', {
+				className={classNames('group z-10 w-full bg-transparent', {
 					'opacity-0': !show,
 				})}>
 				<div
 					ref={previewContainer}
-					className="relative rounded-lg max-w-[1440px] m-auto">
+					className="relative m-auto max-w-[1440px] rounded-lg">
 					<BlockPreview
 						blocks={blocks}
 						viewportWidth={1440}

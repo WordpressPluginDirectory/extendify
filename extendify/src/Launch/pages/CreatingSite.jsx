@@ -313,7 +313,7 @@ export const CreatingSite = () => {
 			enter="transition-all ease-in-out duration-500"
 			enterFrom="md:w-40vw md:max-w-md"
 			enterTo="md:w-full md:max-w-full"
-			className="bg-banner-main text-banner-text py-12 px-10 md:h-screen flex flex-col justify-between shrink-0">
+			className="flex shrink-0 flex-col justify-between bg-banner-main px-10 py-12 text-banner-text md:h-screen">
 			<div className="max-w-prose">
 				<div className="md:min-h-48">
 					{window.extSharedData?.partnerLogo ? (
@@ -325,7 +325,7 @@ export const CreatingSite = () => {
 							/>
 						</div>
 					) : (
-						<Logo className="logo text-banner-text w-32 sm:w-40 mb-8" />
+						<Logo className="logo mb-8 w-32 text-banner-text sm:w-40" />
 					)}
 					<div data-test="message-area">
 						{info.map((step, index) => {
@@ -340,14 +340,14 @@ export const CreatingSite = () => {
 										leave="transition-opacity duration-1000"
 										leaveFrom="opacity-100"
 										leaveTo="opacity-0"
-										className="text-4xl flex space-x-4 items-center"
+										className="flex items-center space-x-4 text-4xl"
 										key={step}>
 										{step}
 									</Transition>
 								);
 							}
 						})}
-						<div className="flex space-x-4 items-center mt-6">
+						<div className="mt-6 flex items-center space-x-4">
 							<Spinner className="spin" />
 							{infoDesc.map((step, index) => {
 								if (!index) {

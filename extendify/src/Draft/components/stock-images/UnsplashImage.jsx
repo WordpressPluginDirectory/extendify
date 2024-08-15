@@ -46,21 +46,21 @@ export const UnsplashImage = ({
 						initial={{ opacity: 1 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}>
-						<div className="absolute inset-0 z-10 animate-pulse bg-gray-150" />
+						<div className="animate-pulse absolute inset-0 z-10 bg-gray-150" />
 					</motion.div>
 				)}
 			</AnimatePresence>
 			<div className="group relative">
 				<button
 					type="button"
-					className={classNames('border-0 p-0 relative block', {
-						'bg-transparent cursor-pointer': !isInsertingImage,
+					className={classNames('relative block border-0 p-0', {
+						'cursor-pointer bg-transparent': !isInsertingImage,
 						'bg-black': isInsertingImage,
 					})}
 					onClick={() => onClick(image)}
 					disabled={isInsertingImage}>
 					{isInsertingImage && isInsertingImage?.id === image?.id && (
-						<div className="absolute inset-0 flex justify-center items-center">
+						<div className="absolute inset-0 flex items-center justify-center">
 							<Spinner style={{ height: '24px', width: '24px' }} />
 						</div>
 					)}
@@ -77,9 +77,9 @@ export const UnsplashImage = ({
 						href={authorUrl}
 						target="_blank"
 						className={classNames(
-							'text-white no-underline absolute bottom-1 bg-black/70 px-1 opacity-0',
+							'absolute bottom-1 bg-black/70 px-1 text-white no-underline opacity-0',
 							{
-								'group-hover:opacity-100 group-focus-within:opacity-100':
+								'group-focus-within:opacity-100 group-hover:opacity-100':
 									!isInsertingImage,
 							},
 						)}

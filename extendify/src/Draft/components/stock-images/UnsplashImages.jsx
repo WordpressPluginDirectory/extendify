@@ -14,7 +14,7 @@ export const UnsplashImages = ({
 	}
 
 	return (
-		<div className="gap-1 columns-2">
+		<div className="columns-2 gap-1">
 			{Array.from({ length: imageLength }).map((_, idx) => {
 				const skeletonHeight = [150, 175, 200];
 				return (

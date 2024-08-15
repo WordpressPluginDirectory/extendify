@@ -7,7 +7,7 @@ import { ToursDashboard } from './Tours';
 export const Dashboard = () => {
 	const { navigateTo } = useRouter();
 	return (
-		<div className="mx-auto w-full max-w-md rounded-2xl flex flex-col gap-3 p-4">
+		<div className="mx-auto flex w-full max-w-md flex-col gap-3 rounded-2xl p-4">
 			<KnowledgeBaseDashboard onOpen={() => navigateTo('knowledge-base')} />
 			<ToursDashboard
 				onOpen={() => navigateTo('tours')}

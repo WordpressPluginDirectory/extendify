@@ -49,10 +49,10 @@ export const UpdateSiteDescription = ({ popModal, setModalTitle }) => {
 	}
 
 	return (
-		<form className="gap-6 flex flex-col" onSubmit={(e) => e.preventDefault()}>
+		<form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
 			<div>
 				<label
-					className="block mb-1 text-gray-900 text-sm"
+					className="mb-1 block text-sm text-gray-900"
 					htmlFor="extendify-site-description-input">
 					{__('Site description', 'extendify-local')}
 				</label>
@@ -61,7 +61,7 @@ export const UpdateSiteDescription = ({ popModal, setModalTitle }) => {
 					type="text"
 					name="extendify-site-description-input"
 					id="extendify-site-description-input"
-					className="w-96 max-w-full border border-gray-900 px-2 h-12 input-focus"
+					className="input-focus h-12 w-96 max-w-full border border-gray-900 px-2"
 					onChange={(e) => {
 						setSiteDescription(e.target.value);
 					}}
@@ -73,9 +73,9 @@ export const UpdateSiteDescription = ({ popModal, setModalTitle }) => {
 				<button
 					disabled={siteDescription === initialValue}
 					className={classNames(
-						'px-4 py-3 text-white bg-design-main button-focus border-0 rounded relative cursor-pointer w-1/5',
+						'button-focus relative w-1/5 cursor-pointer rounded border-0 bg-design-main px-4 py-3 text-white',
 						{
-							'opacity-50 cursor-default': siteDescription === initialValue,
+							'cursor-default opacity-50': siteDescription === initialValue,
 						},
 					)}
 					onClick={submitChange}>

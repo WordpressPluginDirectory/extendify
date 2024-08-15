@@ -104,7 +104,7 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 		<>
 			<div
 				data-test="layout-preview"
-				className="w-full h-full relative overflow-hidden"
+				className="relative h-full w-full overflow-hidden"
 				ref={blockRef}
 				role={onSelect ? 'button' : undefined}
 				tabIndex={onSelect ? 0 : undefined}

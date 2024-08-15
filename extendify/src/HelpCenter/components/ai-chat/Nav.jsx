@@ -13,8 +13,8 @@ export const Nav = ({ setShowHistory }) => {
 		useAIChatStore();
 
 	return (
-		<nav className="absolute z-10 flex gap-2 items-center justify-between mx-4 mt-3 right-0">
-			<div className="flex gap-2 items-center">
+		<nav className="absolute right-0 z-10 mx-4 mt-3 flex items-center justify-between gap-2">
+			<div className="flex items-center gap-2">
 				<Dropdown
 					className="flex"
 					contentClassName="origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
@@ -25,7 +25,7 @@ export const Nav = ({ setShowHistory }) => {
 								icon={moreVertical}
 								onClick={onToggle}
 								size={28}
-								className="text-design-text fill-current p-1 rounded cursor-pointer hover:bg-white/10"
+								className="cursor-pointer rounded fill-current p-1 text-design-text hover:bg-white/10"
 							/>
 							<span className="sr-only">
 								{__('Toggle menu', 'extendify-local')}

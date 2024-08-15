@@ -17,16 +17,16 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 			id="assist-tasks-module"
 			className={classNames(
 				className,
-				'w-full border border-gray-300 text-base bg-white rounded mb-6 h-full',
+				'mb-6 h-full w-full rounded border border-gray-300 bg-white text-base',
 			)}>
 			{tasks && (
 				<Tab.Group
 					vertical
 					as="div"
-					className="flex flex-row-reverse grow min-h-96 h-[472px] justify-between">
+					className="flex h-[472px] min-h-96 grow flex-row-reverse justify-between">
 					<Tab.List
 						as="div"
-						className="w-96 border-l border-gray-100 overflow-auto">
+						className="w-96 overflow-auto border-l border-gray-100">
 						<CardsTitle totalCompleted={totalCompleted} total={tasks.length} />
 
 						{tasks.map((task) => (
@@ -64,12 +64,12 @@ const TabItem = ({ task, isCompleted }) => (
 		{({ selected }) => (
 			<div
 				className={classNames(
-					'group hover:bg-gray-100 hover:cursor-pointer flex items-center justify-between w-full border-b border-gray-300 py-4 pl-2 pr-4 text-sm',
+					'group flex w-full items-center justify-between border-b border-gray-300 py-4 pl-2 pr-4 text-sm hover:cursor-pointer hover:bg-gray-100',
 					{
 						'bg-gray-100 font-semibold': selected,
 					},
 				)}>
-				<div className="flex items-center w-full">
+				<div className="flex w-full items-center">
 					<Icon
 						icon={isCompleted ? Check : Bullet}
 						size={12}
@@ -77,9 +77,9 @@ const TabItem = ({ task, isCompleted }) => (
 							isCompleted ? 'completed-task-icon' : 'uncompleted-task-icon'
 						}
 						className={classNames('mx-2', {
-							'text-design-main stroke-current':
+							'stroke-current text-design-main':
 								(isCompleted && selected) || (isCompleted && !selected),
-							'text-design-main fill-current': selected && !isCompleted,
+							'fill-current text-design-main': selected && !isCompleted,
 							'text-center text-gray-400': !isCompleted && !selected,
 						})}
 					/>

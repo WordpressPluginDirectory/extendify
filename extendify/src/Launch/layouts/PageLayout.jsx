@@ -3,23 +3,23 @@ import { Logo } from '@launch/svg';
 
 export const PageLayout = ({ children, includeNav = true }) => {
 	return (
-		<div className="flex flex-col h-[calc(100dvh)]">
-			<div className="flex-none px-6 py-5 md:px-12 md:py-6 w-full bg-banner-main">
+		<div className="flex h-[calc(100dvh)] flex-col">
+			<div className="w-full flex-none bg-banner-main px-6 py-5 md:px-12 md:py-6">
 				{window.extSharedData?.partnerLogo ? (
-					<div className="flex items-center h-10 max-w-52	md:max-w-72 overflow-hidden">
+					<div className="flex h-10 max-w-52 items-center overflow-hidden md:max-w-72">
 						<img
-							className="max-w-full max-h-full object-contain"
+							className="max-h-full max-w-full object-contain"
 							src={window.extSharedData.partnerLogo}
 							alt={window.extSharedData?.partnerName ?? ''}
 						/>
 					</div>
 				) : (
-					<Logo className="text-banner-text w-auto h-8" />
+					<Logo className="h-8 w-auto text-banner-text" />
 				)}
 			</div>
 			{children}
 			{includeNav && (
-				<div className="flex-none px-6 py-5 md:px-12 md:py-6 w-full bg-white shadow-surface border-t border-gray-100 z-10">
+				<div className="z-10 w-full flex-none border-t border-gray-100 bg-white px-6 py-5 shadow-surface md:px-12 md:py-6">
 					<PageControl />
 				</div>
 			)}

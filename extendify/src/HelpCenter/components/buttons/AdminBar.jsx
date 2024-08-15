@@ -10,7 +10,7 @@ export const AdminBar = () => {
 			type="button"
 			data-test="help-center-adminbar-button"
 			onClick={() => setVisibility('open')}
-			className="cursor-pointer inline-flex justify-center items-center gap-1 leading-extra-tight p-1 px-2 rounded-sm h-6 -mt-1 m-1.5 bg-wp-theme-main text-white border-0 focus:ring-wp focus:ring-wp-theme-main focus:outline-none ring-offset-1 ring-offset-wp-theme-bg">
+			className="m-1.5 -mt-1 inline-flex h-6 cursor-pointer items-center justify-center gap-1 rounded-sm border-0 bg-wp-theme-main p-1 px-2 leading-extra-tight text-white ring-offset-1 ring-offset-wp-theme-bg focus:outline-none focus:ring-wp focus:ring-wp-theme-main">
 			{__('Help', 'extendify-local')}
 			<Icon
 				icon={helpFilled}

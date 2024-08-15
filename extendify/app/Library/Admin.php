@@ -8,6 +8,7 @@ namespace Extendify\Library;
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
+use Extendify\PartnerData;
 
 /**
  * This class handles any file loading for the admin area.
@@ -73,7 +74,7 @@ class Admin
     {
         $userInfo = \get_user_option('extendify_library_user');
         $userInfo = $userInfo ? json_decode($userInfo, true) : [
-            'state' => ['openOnNewPage' => Config::$hasPartner],
+            'state' => ['openOnNewPage' => Config::$hasPartner && ! PartnerData::setting('disableLibraryAutoOpen')],
             'version' => 0,
         ];
         $siteInfo = \get_option('extendify_library_site_data', [

@@ -29,11 +29,11 @@
 }
 
 .extendify-launch .button-focus {
-	@apply outline-none cursor-pointer rounded-lg text-center text-base no-underline ring-design-main ring-offset-2 ring-offset-white focus:shadow-none focus:ring-wp;
+	@apply cursor-pointer rounded-lg text-center text-base no-underline outline-none ring-design-main ring-offset-2 ring-offset-white focus:shadow-none focus:ring-wp;
 }
 
 .extendify-launch .input-focus {
-	@apply outline-none rounded-lg text-base ring-design-main ring-offset-2 ring-offset-white focus:shadow-none focus:ring-wp;
+	@apply rounded-lg text-base outline-none ring-design-main ring-offset-2 ring-offset-white focus:shadow-none focus:ring-wp;
 }
 
 .extendify-launch .button-card {
@@ -92,7 +92,7 @@
 	@apply mb-0;
 }
 .block-editor-block-preview__content {
-	@apply top-0 left-0 m-0 overflow-visible;
+	@apply left-0 top-0 m-0 overflow-visible;
 	transform-origin: top left;
 	text-align: initial;
 	min-height: auto;

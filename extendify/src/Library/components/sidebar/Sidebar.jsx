@@ -6,10 +6,10 @@ import { SiteTypeControl } from './SiteTypeControl';
 const { partnerLogo, partnerName } = window.extSharedData;
 export const Sidebar = () => {
 	return (
-		<div className="md:w-80 gap-6 flex-shrink-0 hidden md:flex flex-col">
+		<div className="hidden flex-shrink-0 flex-col gap-6 md:flex md:w-80">
 			{partnerLogo ? (
-				<div className="bg-banner-main p-6 py-0 flex justify-center">
-					<div className="flex h-20 py-3 items-center justify-center w-40">
+				<div className="flex justify-center bg-banner-main p-6 py-0">
+					<div className="flex h-20 w-40 items-center justify-center py-3">
 						<img
 							className="max-h-full max-w-full"
 							src={partnerLogo}
@@ -18,19 +18,19 @@ export const Sidebar = () => {
 					</div>
 				</div>
 			) : (
-				<div className="hidden py-3 px-5 text-extendify-black sm:flex sm:pt-5 -mb-5">
+				<div className="-mb-5 hidden px-5 py-3 text-extendify-black sm:flex sm:pt-5">
 					<Icon icon={extendifyLogo} size={40} />
 				</div>
 			)}
-			<div className="overflow-y-auto pb-16 flex flex-col gap-4">
-				<div className="hidden md:flex flex-col px-4 overflow-x-hidden">
+			<div className="flex flex-col gap-4 overflow-y-auto pb-16">
+				<div className="hidden flex-col overflow-x-hidden px-4 md:flex">
 					<SiteTypeControl />
 				</div>
 
 				<div
 					id="extendify-library-category-control"
 					data-test="category-control"
-					className="hidden md:flex flex-col px-4 overflow-x-hidden">
+					className="hidden flex-col overflow-x-hidden px-4 md:flex">
 					<CategoryControl />
 				</div>
 			</div>
