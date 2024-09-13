@@ -1,5 +1,8 @@
 import { __ } from '@wordpress/i18n';
 
+const { themeSlug } = window.extSharedData;
+const { launchCompleted } = window.extAssistData;
+
 export default {
 	slug: 'secondary-domain-recommendation',
 	title: __('Add an additional domain', 'extendify-local'),
@@ -11,7 +14,11 @@ export default {
 	},
 	type: 'secondary-domain-task',
 	dependencies: { goals: [], plugins: [] },
-	show: ({ showSecondaryDomainTask }) => showSecondaryDomainTask,
+	show: ({ showSecondaryDomainTask }) => {
+		// They need either extendable or launch completed
+		if (themeSlug !== 'extendable' && !launchCompleted) return false;
+		return showSecondaryDomainTask;
+	},
 	backgroundImage:
 		'https://assets.extendify.com/assist-tasks/domains-recommendations.webp',
 };

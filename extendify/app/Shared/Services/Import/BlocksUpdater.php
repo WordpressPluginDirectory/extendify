@@ -52,7 +52,7 @@ class BlocksUpdater
                 return $block;
             }
 
-            if (!empty($block['innerBlocks']) && $block['blockName'] !== null) {
+            if (!empty($block['innerBlocks']) && !is_null($block['blockName'])) {
                 $block['innerBlocks'] = $this->processAndMutateBlocks($block['innerBlocks'], $author);
             }
 
@@ -108,7 +108,7 @@ class BlocksUpdater
                 foreach ($this->classesToTarget as $cls) {
                     $block['innerHTML'] = str_replace($cls, '', $block['innerHTML']);
                     $block['innerContent'] = array_map(function ($item) use ($cls) {
-                        return str_replace($cls, '', $item);
+                        return !is_null($item) ? str_replace($cls, '', $item) : null;
                     }, ($block['innerContent'] ?? []));
                 }
             }
@@ -155,7 +155,7 @@ class BlocksUpdater
     protected function removeTargetedClassAttribute(array $block)
     {
         $block['innerContent'] = array_map(function ($item) {
-            return ($item !== null) ? $this->removeClassAttributeFromContent($item) : null;
+            return !is_null($item) ? $this->removeClassAttributeFromContent($item) : null;
         }, ($block['innerContent'] ?? []));
 
         $block['innerHTML'] = $this->removeClassAttributeFromContent($block['innerHTML']);
@@ -193,7 +193,7 @@ class BlocksUpdater
         if (isset($block['attrs']['className'])) {
             $className = is_array($block['attrs']['className']) ? $block['attrs']['className'] : explode(' ', $block['attrs']['className']);
             $className = array_diff($className, $this->classesToTarget);
-            $block['attrs']['className'] = !empty($className) ? implode(' ', $className) : null;
+            $block['attrs']['className'] = implode(' ', $className);
         }
 
         return $block;
@@ -234,7 +234,7 @@ class BlocksUpdater
         $isMediaText = $block['blockName'] === 'core/media-text';
 
         $block['innerContent'] = array_map(function ($item) use ($upload, $isMediaText) {
-            return ($item !== null) ? $this->updateImageTagAttributes($item, $upload, $isMediaText) : null;
+            return !is_null($item) ? $this->updateImageTagAttributes($item, $upload, $isMediaText) : null;
         }, ($block['innerContent'] ?? []));
 
         $block['innerHTML'] = $this->updateImageTagAttributes($block['innerHTML'], $upload, $isMediaText);

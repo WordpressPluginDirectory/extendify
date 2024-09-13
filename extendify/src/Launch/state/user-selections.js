@@ -1,10 +1,11 @@
 import apiFetch from '@wordpress/api-fetch';
+import { safeParseJson } from '@shared/lib/parsing';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
-import { safeParseJson } from '@launch/lib/parsing';
 
 const initialState = {
 	siteType: {},
+	siteStructure: undefined,
 	siteInformation: {
 		title: undefined,
 	},
@@ -15,7 +16,7 @@ const initialState = {
 	},
 	siteTypeSearch: [],
 	style: null,
-	pages: undefined,
+	pages: [],
 	plugins: undefined,
 	goals: undefined,
 };
@@ -30,6 +31,12 @@ const state = (set, get) => ({
 	setSiteType(siteType) {
 		// Reset the user's selections when site type changes
 		set({ ...initialState, siteType });
+	},
+	setSiteStructure(siteStructure) {
+		if (!['single-page', 'multi-page'].includes(siteStructure)) {
+			throw new Error("Page structure doesn't exist");
+		}
+		set({ siteStructure });
 	},
 	setSiteTypeSearch(search) {
 		set((state) => ({

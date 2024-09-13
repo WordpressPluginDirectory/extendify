@@ -1,5 +1,6 @@
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
+import { pageNames } from '@shared/lib/pages';
 import { Axios as api } from './axios';
 
 const wpRoot = window.extOnbData.wpRoot;
@@ -74,11 +75,7 @@ export const updateTemplatePart = (part, content) =>
 		content,
 	});
 
-const allowedHeaders = [
-	'header',
-	'header-with-center-nav-and-social',
-	'header-title-social-nav',
-];
+const allowedHeaders = ['header', 'header-with-center-nav-and-social'];
 const allowedFooters = [
 	'footer',
 	'footer-social-icons',
@@ -113,7 +110,34 @@ export const updateThemeVariation = (id, variation) =>
 		styles: variation.styles,
 	});
 
-export const addLaunchPagesToNav = async (pages, wpPages, rawCode) => {
+export const addPatternSectionsToNav = async (homePatterns, headerCode) => {
+	// ['about-us', 'services', 'contact-us']
+	const sections = homePatterns
+		.map(({ patternTypes }) => patternTypes?.[0])
+		.filter(Boolean);
+
+	const seen = new Set();
+	const pageListItems = sections
+		.map((patternType) => {
+			const { title, slug } =
+				Object.values(pageNames).find(({ alias }) =>
+					alias.includes(patternType),
+				) || {};
+			if (!slug) return '';
+			if (seen.has(slug)) return '';
+			seen.add(slug);
+			return `<!-- wp:navigation-link { "label":"${title}", "type":"custom", "url":"#${slug}", "isTopLevelLink":true } /-->`;
+		})
+		.join('');
+
+	// Create a custom navigation
+	const navigation = await saveNavigation(pageListItems);
+
+	// Add ref to nav attributes
+	return updateNavAttributes(headerCode, { ref: navigation.id });
+};
+
+export const addPagesToNav = async (pages, wpPages, headerCode) => {
 	// We match the original slugs as the new ones could have changed by wp
 	const findWpPage = ({ slug }) =>
 		wpPages.find(({ originalSlug: s }) => s === slug) || {};
@@ -127,34 +151,38 @@ export const addLaunchPagesToNav = async (pages, wpPages, rawCode) => {
 		})
 		.join('');
 
-	// Create a custom navigation with meta-data
-	const navigation = await apiFetch({
+	// Create a custom navigation
+	const navigation = await saveNavigation(pageListItems);
+
+	// Add ref to nav attributes
+	return updateNavAttributes(headerCode, { ref: navigation.id });
+};
+
+const saveNavigation = (pageItems) =>
+	apiFetch({
 		path: 'extendify/v1/launch/create-navigation',
 		method: 'POST',
 		data: {
 			title: __('Header Navigation', 'extendify-local'),
 			slug: 'site-navigation',
-			content: pageListItems,
+			content: pageItems,
 		},
 	});
 
-	// First check if there are attributes in the nav block
-	let currentAttributes;
+const getNavAttributes = (headerCode) => {
 	try {
-		currentAttributes = JSON.parse(
-			rawCode.match(/<!-- wp:navigation([\s\S]*?)-->/)[1],
-		);
+		return JSON.parse(headerCode.match(/<!-- wp:navigation([\s\S]*?)-->/)[1]);
 	} catch (e) {
-		currentAttributes = {};
+		return {};
 	}
+};
+const updateNavAttributes = (headerCode, attributes) => {
 	const newAttributes = JSON.stringify({
-		...currentAttributes,
-		ref: navigation.id,
+		...getNavAttributes(headerCode),
+		...attributes,
 	});
-	return rawCode.replace(
-		// Find the full nav block including inner blocks
+	return headerCode.replace(
 		/(<!--\s*wp:navigation\b[^>]*>)([^]*?)(<!--\s*\/wp:navigation\s*-->)/gi,
-		// Replace with the new attributes
 		`<!-- wp:navigation ${newAttributes} /-->`,
 	);
 };
@@ -171,8 +199,15 @@ export const updateUserMeta = (option, value) =>
 		data: { option, value },
 	});
 
-export const postLaunchFunctions = async () =>
-	await apiFetch({
+export const processPlaceholders = (patterns) =>
+	apiFetch({
+		path: '/extendify/v1/shared/process-placeholders',
+		method: 'POST',
+		data: { patterns },
+	});
+
+export const postLaunchFunctions = () =>
+	apiFetch({
 		path: '/extendify/v1/launch/post-launch-functions',
 		method: 'POST',
 	});

@@ -1,5 +1,8 @@
 import { __ } from '@wordpress/i18n';
 
+const { themeSlug } = window.extSharedData;
+const { launchCompleted } = window.extAssistData;
+
 export default {
 	slug: 'domain-recommendation',
 	title: __('Choose your domain', 'extendify-local'),
@@ -11,7 +14,11 @@ export default {
 	},
 	type: 'domain-task',
 	dependencies: { goals: [], plugins: [] },
-	show: ({ showDomainTask }) => showDomainTask,
+	show: ({ showDomainTask }) => {
+		// They need either extendable or launch completed
+		if (themeSlug !== 'extendable' && !launchCompleted) return false;
+		return showDomainTask;
+	},
 	backgroundImage:
 		'https://assets.extendify.com/assist-tasks/domains-recommendations.webp',
 };

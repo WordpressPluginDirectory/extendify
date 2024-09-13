@@ -22,11 +22,10 @@ export const pluginsParams = () => ({ key: 'plugins' });
 
 export const state = pageState('Goals', () => ({
 	title: __('Goals', 'extendify-local'),
-	default: undefined,
-	showInSidebar: true,
 	ready: false,
-	// If no goals are selected
-	isDefault: () => useUserSelectionStore.getState().goals?.length === 0,
+	canSkip: false,
+	validation: null,
+	onRemove: () => {},
 }));
 
 export const Goals = () => {

@@ -1,11 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import { chevronRightSmall, Icon } from '@wordpress/icons';
+import { safeParseJson } from '@shared/lib/parsing';
 import {
 	createDomainUrlLink,
 	deleteDomainCache,
 	domainSearchUrl,
 } from '@assist/lib/domains';
-import { safeParseJson } from '@assist/lib/parsing';
 import { useTasksStore } from '@assist/state/tasks';
 
 const domains = safeParseJson(window.extSharedData.resourceData)?.domains || [];

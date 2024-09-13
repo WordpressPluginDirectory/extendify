@@ -4,7 +4,8 @@ import { getHeadersAndFooters } from './WPApi';
 import { Axios as api } from './axios';
 
 const fetchTemplates = async (type, siteType, otherData = {}) => {
-	const { showLocalizedCopy, wpVersion, wpLanguage } = window.extSharedData;
+	const { showLocalizedCopy, wpVersion, wpLanguage, allowedPlugins } =
+		window.extSharedData;
 	const { goals, plugins } = useUserSelectionStore.getState();
 	const url = new URL(`${PATTERNS_HOST}/api/${type}-templates`);
 	url.searchParams.append('siteType', siteType?.slug);
@@ -14,6 +15,8 @@ const fetchTemplates = async (type, siteType, otherData = {}) => {
 	plugins?.length &&
 		url.searchParams.append('plugins', JSON.stringify(plugins));
 	showLocalizedCopy && url.searchParams.append('showLocalizedCopy', true);
+	allowedPlugins &&
+		url.searchParams.append('allowedPlugins', JSON.stringify(allowedPlugins));
 
 	Object.entries(otherData).forEach(([key, value]) => {
 		if (value == null) return;
@@ -30,24 +33,24 @@ const fetchTemplates = async (type, siteType, otherData = {}) => {
 	return await res.json();
 };
 
-export const getHomeTemplates = async (siteType) => {
+export const getHomeTemplates = async ({ siteType }) => {
 	const styles = await fetchTemplates('home', siteType);
 	const { headers, footers } = await getHeadersAndFooters();
 	if (!styles?.length) {
 		throw new Error('Could not get styles');
 	}
-	return styles.map(({ id, patterns }, index) => {
+	return styles.map((template, index) => {
 		// Cycle through the headers and footers
 		const header = headers[index % headers.length];
 		const footer = footers[index % footers.length];
 		return {
-			id,
-			code: patterns.map(({ code }) => code).flat(),
+			...template,
 			headerCode: header?.content?.raw?.trim() ?? '',
 			footerCode: footer?.content?.raw?.trim() ?? '',
 		};
 	});
 };
+
 export const getPageTemplates = async (siteType) => {
 	const { siteInformation } = useUserSelectionStore.getState();
 	const pages = await fetchTemplates('page', siteType, { siteInformation });
@@ -77,6 +80,7 @@ export const getGoals = async ({ siteTypeSlug }) => {
 	}
 	return goals.data;
 };
+
 export const getSuggestedPlugins = async () => {
 	const suggested = await api.get('launch/suggested-plugins');
 	if (!suggested?.data) {

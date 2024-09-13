@@ -36,7 +36,7 @@ export const SelectedText = ({ loading }) => {
 			</div>
 			<div>
 				<div
-					className="mb-1 text-pretty text-gray-800"
+					className="mb-1 hyphens-auto text-pretty text-gray-800"
 					dangerouslySetInnerHTML={{
 						__html: truncatedText(),
 					}}

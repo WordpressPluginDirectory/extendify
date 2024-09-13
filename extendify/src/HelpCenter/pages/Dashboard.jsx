@@ -13,7 +13,7 @@ export const Dashboard = () => {
 				onOpen={() => navigateTo('tours')}
 				classes="hidden md:block"
 			/>
-			{window.extHelpCenterData?.showChat && (
+			{window.extSharedData?.aiChatEnabled && (
 				<AIChatDashboard onOpen={() => navigateTo('ai-chat')} />
 			)}
 		</div>

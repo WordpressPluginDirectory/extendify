@@ -38,14 +38,14 @@ export const MobileCards = ({ className, totalCompleted, tasks }) => {
 												<Icon
 													icon={isCompletedTask ? check : Bullet}
 													size={isCompletedTask ? 24 : 12}
-													className={classNames({
+													className={classNames('flex-shrink-0', {
 														'fill-current text-design-main': open,
 														'mx-2 text-center text-gray-400':
 															!isCompletedTask && !open,
 														'mx-2': !isCompletedTask && open,
 													})}
 												/>
-												{task.title}
+												{task?.sidebarTitle ?? task.title}
 											</div>
 											<div className="md:hidden">
 												<Icon

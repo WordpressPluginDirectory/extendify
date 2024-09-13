@@ -18,6 +18,7 @@ export default {
 	type: 'site-launcher-task',
 	dependencies: { goals: [], plugins: [] },
 	show: () => {
+		// This only runs if launch wasn't finished and they have extendable
 		return themeSlug === 'extendable' && !launchCompleted;
 	},
 	backgroundImage:

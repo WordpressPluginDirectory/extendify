@@ -23,7 +23,7 @@ class ImagesImporter
         // Get the data directly from the database.
         $partnerData = get_option('extendify_partner_data_v2', []);
         // If the setting is not enabled, we do nothing.
-        if (! ($partnerData['enableImageImports'] ?? false)) {
+        if (! ($partnerData['enableImageImports-1-14-6'] ?? false)) {
             return;
         }
 

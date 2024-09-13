@@ -92,6 +92,7 @@ class Insights
                 'assistRouterData' => \get_option('extendify_assist_router', null),
                 'libraryData' => \get_option('extendify_library_site_data', null),
                 'draftSettingsData' => \get_option('extendify_draft_settings', null),
+                'activity' => \get_option('extendify_shared_activity', null),
                 'extendifyVersion' => ($version[1] ?? null),
             ]);
             return $insights;

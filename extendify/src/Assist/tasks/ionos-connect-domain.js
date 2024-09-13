@@ -1,7 +1,8 @@
 import { __ } from '@wordpress/i18n';
 
 const hostname = new URL(window.location.href)?.hostname?.split('.');
-const { devbuild } = window.extSharedData;
+const { themeSlug } = window.extSharedData;
+const { launchCompleted } = window.extAssistData;
 
 export default {
 	slug: 'ionos-connect-domain',
@@ -17,10 +18,14 @@ export default {
 	link: undefined,
 	type: 'no-action-btn-card',
 	dependencies: { goals: [], plugins: [] },
-	show: () =>
-		devbuild ||
-		(hostname?.length > 2 &&
-			hostname?.slice(1, hostname?.length)?.join('.') === 'live-website.com'),
+	show: () => {
+		// They need either extendable or launch completed
+		if (themeSlug !== 'extendable' && !launchCompleted) return false;
+		return (
+			hostname?.length > 2 &&
+			hostname?.slice(1, hostname?.length)?.join('.') === 'live-website.com'
+		);
+	},
 	backgroundImage:
 		'https://assets.extendify.com/assist-tasks/connect-your-domain-ions.webp',
 };

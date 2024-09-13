@@ -5,10 +5,11 @@ import {
 	useRef,
 	useMemo,
 	useState,
-	useEffect,
+	useLayoutEffect,
 	useCallback,
 } from '@wordpress/element';
 import { forwardRef } from '@wordpress/element';
+import { pageNames } from '@shared/lib/pages';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePreviewIframe } from '@launch/hooks/usePreviewIframe';
@@ -38,17 +39,44 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 			let counter = 0;
 			const checkOnStyles = () => {
 				if (counter >= 150) return;
+				const stylesToInject = `<style id="ext-tj">
+					html body.editor-styles-wrapper { background-color: var(--wp--preset--color--background) }
+					${transformedStyles}
+				</style>`;
+
 				const now = performance.now();
 				if (now - lastRun < 100) return requestAnimationFrame(checkOnStyles);
 				lastRun = now;
 				frame?.contentDocument?.querySelector('[href*=load-styles]')?.remove();
-				const style = `<style id="ext-tj">
-                html body.editor-styles-wrapper { background-color: var(--wp--preset--color--background) }
-                ${transformedStyles}
-            </style>`;
 				if (!frame.contentDocument?.getElementById('ext-tj')) {
-					frame.contentDocument?.body?.insertAdjacentHTML('beforeend', style);
+					frame.contentDocument?.body?.insertAdjacentHTML(
+						'beforeend',
+						stylesToInject,
+					);
 				}
+
+				// Look for any frames inside the iframe, like the html block
+				const innerFrames = frame.contentDocument?.querySelectorAll('iframe');
+				innerFrames?.forEach((inner) => {
+					const stylesToInject = `<style id="ext-tj">
+						body { background-color: transparent !important; }
+						body, body * { box-sizing: border-box !important; }
+						${transformedStyles}
+					</style>`;
+					inner?.contentDocument
+						?.querySelector('[href*=load-styles]')
+						?.remove();
+					inner?.contentDocument
+						?.querySelector('body')
+						?.classList.add('editor-styles-wrapper');
+					if (inner && !inner.contentDocument?.getElementById('ext-tj')) {
+						inner.contentDocument?.body?.insertAdjacentHTML(
+							'beforeend',
+							stylesToInject,
+						);
+					}
+				});
+
 				counter++;
 				requestAnimationFrame(checkOnStyles); // recursive
 			};
@@ -57,7 +85,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 		[transformedStyles],
 	);
 
-	const { ready: show } = usePreviewIframe({
+	const { ready: showPreview } = usePreviewIframe({
 		container: ref.current,
 		ready,
 		onLoad,
@@ -65,18 +93,31 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 	});
 
 	const blocks = useMemo(() => {
-		const code = [style?.headerCode, style?.code, style?.footerCode]
+		const links = [
+			pageNames.about.title,
+			pageNames.blog.title,
+			pageNames.contact.title,
+		];
+
+		const code = [
+			style?.headerCode,
+			style?.patterns
+				?.map(({ code }) => code)
+				.flat()
+				.join(''),
+			style?.footerCode,
+		]
 			.filter(Boolean)
 			.join('')
 			.replace(
 				// <!-- wp:navigation --> <!-- /wp:navigation -->
 				/<!-- wp:navigation[.\S\s]*?\/wp:navigation -->/g,
-				'<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">Link | Link | Link</p ><!-- /wp:paragraph -->',
+				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">${links.join(' | ')}</p ><!-- /wp:paragraph -->`,
 			)
 			.replace(
 				// <!-- wp:navigation /-->
 				/<!-- wp:navigation.*\/-->/g,
-				'<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">Link | Link | Link</p ><!-- /wp:paragraph -->',
+				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">${links.join(' | ')}</p ><!-- /wp:paragraph -->`,
 			)
 			.replace(
 				/<!-- wp:site-logo.*\/-->/g,
@@ -85,7 +126,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 		return rawHandler({ HTML: lowerImageQuality(code) });
 	}, [style]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		setReady(false);
 		const timer = setTimeout(() => setReady(true), 0);
 		return () => clearTimeout(timer);
@@ -94,7 +135,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 	return (
 		<>
 			<AnimatePresence>
-				{show || (
+				{showPreview || (
 					<motion.div
 						initial={{ opacity: 0.7 }}
 						animate={{ opacity: 1 }}
@@ -102,6 +143,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 						transition={{ duration: 0.3 }}
 						className="pointer-events-none absolute inset-0 z-30"
 						style={{
+							// opacity: showPreview || !ready ? 0 : 1,
 							backgroundColor: 'rgba(204, 204, 204, 0.25)',
 							backgroundImage:
 								'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
@@ -118,7 +160,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 				data-test="layout-preview"
 				ref={blockRef}
 				className={classNames('group z-10 w-full bg-transparent', {
-					'opacity-0': !show,
+					'opacity-0': !showPreview,
 				})}>
 				<div
 					ref={previewContainer}

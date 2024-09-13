@@ -1,5 +1,6 @@
 import apiFetch from '@wordpress/api-fetch';
 import { useCallback, useEffect } from '@wordpress/element';
+import { useActivityStore } from '@shared/state/activity';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 import { routes as aiRoutes } from '@draft/pages/GenerateImage';
@@ -14,9 +15,13 @@ const state = (set, get) => ({
 	current: null,
 	goBack: () => {
 		if (get().history.length < 2) return;
+		const nextPage = get().history[1];
+		useActivityStore
+			.getState()
+			.incrementActivity(`draft-${nextPage.slug}-back`);
 		set((state) => ({
 			history: state.history.slice(1),
-			current: get().history[1],
+			current: nextPage,
 		}));
 	},
 	setCurrent: (page) => {
@@ -85,7 +90,10 @@ export const useRouter = () => {
 		),
 		navigateTo: (slug) => {
 			const page = pages.find((a) => a.slug === slug);
-			setCurrent(page ?? pages[0]);
+			if (!page) return setCurrent(pages[0]);
+
+			useActivityStore.getState().incrementActivity(`draft-${page.slug}`);
+			setCurrent(page);
 		},
 		goBack,
 		history,

@@ -1,12 +1,12 @@
 import { registerCoreBlocks } from '@wordpress/block-library';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
+import { safeParseJson } from '@shared/lib/parsing';
 import { SWRConfig, useSWRConfig } from 'swr';
 import { updateOption } from '@launch/api/WPApi';
 import { RestartLaunchModal } from '@launch/components/RestartLaunchModal';
 import { RetryNotice } from '@launch/components/RetryNotice';
 import { useTelemetry } from '@launch/hooks/useTelemetry';
-import { safeParseJson } from '@launch/lib/parsing';
 import { CreatingSite } from '@launch/pages/CreatingSite';
 import { NeedsTheme } from '@launch/pages/NeedsTheme';
 import { useGlobalStore } from '@launch/state/Global';

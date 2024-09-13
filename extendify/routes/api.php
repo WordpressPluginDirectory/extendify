@@ -26,9 +26,10 @@ use Extendify\Launch\Controllers\DataController;
 use Extendify\Launch\Controllers\WPController;
 
 use Extendify\Library\Controllers\SiteController;
-
+use Extendify\Shared\Controllers\PatternPlaceholderController;
 use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsController;
+use Extendify\Shared\Controllers\ActivityController;
 
 
 \add_action(
@@ -80,5 +81,8 @@ use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsCon
         ApiRouter::get('/shared/user-selections-data', [UserSelectionController::class, 'get']);
         ApiRouter::post('/shared/user-selections-data', [UserSelectionController::class, 'store']);
         ApiRouter::post('/shared/update-user-meta', [SharedUserSettingsController::class, 'updateUserMeta']);
+        ApiRouter::post('/shared/process-placeholders', [PatternPlaceholderController::class, 'processPlaceholders']);
+        ApiRouter::get('/shared/activity', [ActivityController::class, 'get']);
+        ApiRouter::post('/shared/activity', [ActivityController::class, 'store']);
     }
 );

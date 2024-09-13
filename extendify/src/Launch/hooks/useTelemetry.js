@@ -13,6 +13,7 @@ export const useTelemetry = () => {
 		siteType,
 		style: selectedStyle,
 		siteTypeSearch,
+		siteStructure,
 	} = useUserSelectionStore();
 	const { generating } = useGlobalStore();
 	const { pages, currentPageIndex } = usePagesStore();
@@ -70,6 +71,7 @@ export const useTelemetry = () => {
 					siteType: siteType?.slug,
 					siteCreatedAt: window.extSharedData?.siteCreatedAt,
 					style: selectedStyle?.variation?.title,
+					siteStructure: siteStructure,
 					pages: selectedPages?.map((p) => p.slug),
 					goals: goals?.map((g) => g.slug),
 					lastCompletedStep: stepProgress?.at(-1),
@@ -108,5 +110,6 @@ export const useTelemetry = () => {
 		currentPageIndex,
 		goals,
 		siteType,
+		siteStructure,
 	]);
 };

@@ -1,7 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
+import { safeParseJson } from '@shared/lib/parsing';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
-import { safeParseJson } from '@draft/lib/parsing';
 
 const path = '/extendify/v1/draft/user-settings';
 const storage = {

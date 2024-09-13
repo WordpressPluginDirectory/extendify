@@ -5,16 +5,10 @@ import { pages } from '@launch/lib/pages';
 const store = (set, get) => ({
 	pages: new Map(pages),
 	currentPageIndex: 0,
-	count() {
-		return get().pages.size;
-	},
-	getPageOrder() {
-		return Array.from(get().pages.keys());
-	},
-	getCurrentPageData() {
-		return get().pages.get(get().getCurrentPageSlug());
-	},
-	getCurrentPageSlug() {
+	count: () => get().pages.size,
+	getPageOrder: () => Array.from(get().pages.keys()),
+	getCurrentPageData: () => get().pages.get(get().getCurrentPageSlug()),
+	getCurrentPageSlug: () => {
 		const page = get().getPageOrder()[get().currentPageIndex];
 		if (!page) {
 			get().setPage(0);
@@ -22,12 +16,12 @@ const store = (set, get) => ({
 		}
 		return page;
 	},
-	getNextPageData() {
+	getNextPageData: () => {
 		const nextIndex = get().currentPageIndex + 1;
 		if (nextIndex > get().count() - 1) return {};
 		return get().pages.get(get().getPageOrder()[nextIndex]);
 	},
-	setPage(page) {
+	setPage: (page) => {
 		// If page is a string, get the index
 		if (typeof page === 'string') {
 			page = get().getPageOrder().indexOf(page);
@@ -36,7 +30,36 @@ const store = (set, get) => ({
 		if (page < 0) return;
 		set({ currentPageIndex: page });
 	},
-	pushHistory(page) {
+	removePage: (page) => {
+		const thePage = get().pages.get(page);
+		if (!thePage) return;
+		const newPages = new Map();
+		get().pages.forEach((value, key) => {
+			if (key !== page) {
+				newPages.set(key, value);
+			}
+		});
+		set({ pages: newPages });
+		// If the page has a cleanup function, run it
+		thePage?.state?.getState()?.onRemove();
+	},
+	addPage: (page, data, after) => {
+		// If the after page is not found, throw
+		if (!get().pages.has(after)) {
+			throw new Error(`Page ${after} not found`);
+		}
+		// If it already exists return
+		if (get().pages.has(page)) return;
+		const newPages = new Map();
+		get().pages.forEach((value, key) => {
+			newPages.set(key, value);
+			if (key === after) {
+				newPages.set(page, data);
+			}
+		});
+		set({ pages: newPages });
+	},
+	pushHistory: (page) => {
 		history.pushState(
 			{
 				currentPageIndex: page,
@@ -46,7 +69,7 @@ const store = (set, get) => ({
 			'',
 		);
 	},
-	replaceHistory(page) {
+	replaceHistory: (page) => {
 		history.replaceState(
 			{
 				currentPageIndex: page,
@@ -56,19 +79,18 @@ const store = (set, get) => ({
 			'',
 		);
 	},
-	nextPage() {
+	nextPage: () => {
 		const pageIndex = get().currentPageIndex + 1;
-
 		get().pushHistory(pageIndex);
 		get().setPage(pageIndex);
 	},
-	previousPage() {
+	previousPage: () => {
 		const pageIndex = get().currentPageIndex - 1;
-
 		get().replaceHistory(pageIndex);
 		get().setPage(pageIndex);
 	},
 });
+
 const withDevtools = devtools(store, {
 	name: 'Extendify Launch Pages',
 	serialize: true,

@@ -8,6 +8,7 @@ import {
 	useMemo,
 } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { pageNames } from '@shared/lib/pages';
 import classNames from 'classnames';
 import { colord } from 'colord';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -67,9 +68,19 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 		loadDelay: 2000,
 	});
 	const blocks = useMemo(() => {
+		const links = [
+			pageNames.about.title,
+			pageNames.blog.title,
+			pageNames.contact.title,
+		];
+
 		const code = [
 			style?.headerCode,
-			style?.code.slice(0, 3).join('\n'),
+			style?.patterns
+				.map(({ code }) => code)
+				.flat()
+				.slice(0, 3)
+				.join('\n'),
 			style?.footerCode,
 		]
 			.filter(Boolean)
@@ -77,12 +88,12 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 			.replace(
 				// <!-- wp:navigation --> <!-- /wp:navigation -->
 				/<!-- wp:navigation[.\S\s]*?\/wp:navigation -->/g,
-				'<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">Link | Link | Link</p ><!-- /wp:paragraph -->',
+				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">${links.join(' | ')}</p ><!-- /wp:paragraph -->`,
 			)
 			.replace(
 				// <!-- wp:navigation /-->
 				/<!-- wp:navigation.*\/-->/g,
-				'<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">Link | Link | Link</p ><!-- /wp:paragraph -->',
+				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">${links.join(' | ')}</p ><!-- /wp:paragraph -->`,
 			)
 			.replace(
 				/<!-- wp:site-logo.*\/-->/g,

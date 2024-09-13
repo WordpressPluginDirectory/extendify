@@ -1,8 +1,9 @@
 import apiFetch from '@wordpress/api-fetch';
 import { useCallback, useEffect } from '@wordpress/element';
+import { safeParseJson } from '@shared/lib/parsing';
+import { useActivityStore } from '@shared/state/activity';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
-import { safeParseJson } from '@help-center/lib/parsing';
 import { routes as aiRoutes } from '@help-center/pages/AIChat';
 import { routes as dashRoutes } from '@help-center/pages/Dashboard';
 import { routes as kbRoutes } from '@help-center/pages/KnowledgeBase';
@@ -22,9 +23,11 @@ const state = (set, get) => ({
 	...(safeParseJson(window.extHelpCenterData.userData.routerData)?.state ?? {}),
 	goBack: () => {
 		if (get().history.length < 2) return;
+		const nextPage = get().history[1];
+		useActivityStore.getState().incrementActivity(`hc-${nextPage.slug}-back`);
 		set((state) => ({
 			history: state.history.slice(1),
-			current: get().history[1],
+			current: nextPage,
 		}));
 	},
 	setCurrent: (page) => {
@@ -48,7 +51,6 @@ const state = (set, get) => ({
 						count: 1,
 					},
 		];
-
 		// Persist the detailed history to the server (don't wait for response)
 		apiFetch({
 			path: '/extendify/v1/help-center/router-data',
@@ -101,7 +103,10 @@ export const useRouter = () => {
 		),
 		navigateTo: (slug) => {
 			const page = pages.find((a) => a.slug === slug);
-			setCurrent(page ?? pages[0]);
+			if (!page) return setCurrent(pages[0]);
+
+			useActivityStore.getState().incrementActivity(`hc-${page.slug}`);
+			setCurrent(page);
 		},
 		goBack,
 		history,

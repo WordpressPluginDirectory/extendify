@@ -1,5 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { Icon, closeSmall, chevronLeft, reset } from '@wordpress/icons';
+import { useActivityStore } from '@shared/state/activity';
 import classNames from 'classnames';
 import { useRouter } from '@help-center/hooks/useRouter';
 import { useGlobalSyncStore } from '@help-center/state/globals-sync';
@@ -8,11 +9,17 @@ const { partnerLogo, partnerName } = window.extSharedData;
 
 export const Topbar = () => {
 	const { visibility, setVisibility } = useGlobalSyncStore();
+	const { incrementActivity } = useActivityStore();
 	const { current, history } = useRouter();
-	const handleClose = () => setVisibility('closed');
+	const handleClose = () => {
+		incrementActivity(`hc-close-button-when-${visibility}`);
+		setVisibility('closed');
+	};
 	const isMinimized = visibility === 'minimized';
 	const toggleMinimized = () => {
-		setVisibility(isMinimized ? 'open' : 'minimized');
+		const nextState = isMinimized ? 'open' : 'minimized';
+		incrementActivity(`hc-toggle-button-${nextState}`);
+		setVisibility(nextState);
 	};
 
 	return (

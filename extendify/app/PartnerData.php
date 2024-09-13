@@ -57,12 +57,15 @@ class PartnerData
         'stagingSites' => ['wordpress.test'],
         'domainSearchURL' => '',
         'showDraft' => false,
-        'showChat' => false,
-        'enableImageImports' => false,
+        'aiChatEnabled' => false,
+        'enableImageImports-1-14-6' => false,
         'disableLibraryAutoOpen' => false,
+        'enableApexDomain' => false,
+        'allowedPluginsSlugs' => [],
+        'requiredPlugins' => [],
     ];
 
-    // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
+    // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
     /**
      * Set up and collect partner data
      *
@@ -81,9 +84,10 @@ class PartnerData
         self::$config['domainSearchURL'] = ($data['domainSearchURL'] ?? self::$config['domainSearchURL']);
         self::$logo = isset($data['logo'][0]['thumbnails']['large']['url']) ? $data['logo'][0]['thumbnails']['large']['url'] : self::$logo;
         self::$config['showDraft'] = ($data['showDraft'] ?? self::$config['showDraft']);
-        self::$config['showChat'] = ($data['showChat'] ?? self::$config['showChat']);
-        self::$config['enableImageImports'] = ($data['enableImageImports'] ?? self::$config['enableImageImports']);
+        self::$config['aiChatEnabled'] = ($data['showChat'] ?? self::$config['aiChatEnabled']);
+        self::$config['enableImageImports-1-14-6'] = ($data['enableImageImports-1-14-6'] ?? self::$config['enableImageImports-1-14-6']);
         self::$config['disableLibraryAutoOpen'] = ($data['disableLibraryAutoOpen'] ?? self::$config['disableLibraryAutoOpen']);
+        self::$config['enableApexDomain'] = ($data['enableApexDomain'] ?? self::$config['enableApexDomain']);
         self::$name = ($data['Name'] ?? self::$name);
         self::$colors = [
             'backgroundColor' => ($data['backgroundColor'] ?? null),
@@ -91,6 +95,8 @@ class PartnerData
             'secondaryColor' => ($data['secondaryColor'] ?? ($data['backgroundColor'] ?? null)),
             'secondaryColorText' => '#ffffff',
         ];
+        self::$config['allowedPluginsSlugs'] = ($data['allowedPluginsSlugs'] ?? self::$config['allowedPluginsSlugs']);
+        self::$config['requiredPlugins'] = ($data['requiredPlugins'] ?? self::$config['requiredPlugins']);
     }
 
     /**
@@ -105,9 +111,9 @@ class PartnerData
             return [];
         }
 
-        // If the transient is already set, don't fetch again.
+        // Return if we have the transient. Data might be empty.
         if (get_transient('extendify_partner_data_cache_check') !== false) {
-            return get_option('extendify_partner_data_v2', []);
+            return array_merge(self::$config, get_option('extendify_partner_data_v2', []));
         }
 
         $response = wp_remote_get(
@@ -122,26 +128,24 @@ class PartnerData
         );
 
         if (is_wp_error($response)) {
-            // If the request fails, try again in 2 hours.
-            set_transient('extendify_partner_data_cache_check', [], (2 * HOUR_IN_SECONDS));
-            return get_option('extendify_partner_data_v2', []);
+            // If the request fails, try again in 30 minutes.
+            set_transient('extendify_partner_data_cache_check', true, (30 * MINUTE_IN_SECONDS));
+            return array_merge(self::$config, get_option('extendify_partner_data_v2', []));
         }
 
         $result = json_decode(wp_remote_retrieve_body($response), true);
 
         if (!array_key_exists('data', $result)) {
-            // If the request didn't have the data key, try again in 2 hours.
-            set_transient('extendify_partner_data_cache_check', [], (2 * HOUR_IN_SECONDS));
-            return get_option('extendify_partner_data_v2', []);
+            // If the request didn't have the data key, try again in 30 minutes.
+            set_transient('extendify_partner_data_cache_check', true, (30 * MINUTE_IN_SECONDS));
+            return array_merge(self::$config, get_option('extendify_partner_data_v2', []));
         }
 
-        // Transient is used to mark the time, but the data is put into an option,
-        // so that in case of network issues, we can still return old data.
-        set_transient('extendify_partner_data_cache_check', $result['data'], (2 * DAY_IN_SECONDS));
-
+        // Cache the data for 2 days.
+        set_transient('extendify_partner_data_cache_check', true, (2 * DAY_IN_SECONDS));
         // In the case they sent in a partner id that didn't exist, we get [].
         if (empty($result['data'])) {
-            update_option('extendify_partner_data', []);
+            update_option('extendify_partner_data_v2', []);
             return [];
         }
 
@@ -149,9 +153,12 @@ class PartnerData
             Sanitizer::sanitizeUnknown($result['data']),
             ['consentTermsHTML' => \sanitize_text_field(htmlentities(($result['data']['consentTermsHTML'] ?? '')))]
         );
-        update_option('extendify_partner_data_v2', $sanitizedData);
 
-        return $sanitizedData;
+        // Merge before persisting as this data is accessed directly elsewhere.
+        $mergedData = array_merge(self::$config, $sanitizedData);
+        update_option('extendify_partner_data_v2', $mergedData);
+
+        return $mergedData;
     }
 
     /**
@@ -192,14 +199,23 @@ class PartnerData
         return $cssVariables;
     }
 
+
     /**
-     * Return the value of the setting.
+     * Retrieves the value of a setting.
      *
-     * @param string $settingKey - The key of the config.
-     * @return mixed
+     * This method first checks if the setting exists as a static property of the class.
+     * If it does, it returns the value of that property. Otherwise, it looks for the
+     * setting in the config array and returns its value if found.
+     *
+     * @param string $settingKey The key of the setting to retrieve.
+     * @return mixed The value of the setting if found, or null if not found.
      */
     public static function setting($settingKey)
     {
-        return self::$config[$settingKey];
+        if (property_exists(self::class, $settingKey)) {
+            return self::$$settingKey;
+        }
+
+        return (self::$config[$settingKey] ?? null);
     }
 }

@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
 
-const { frontPage } = window.extSharedData || {};
+const { frontPage, themeSlug } = window.extSharedData;
+const { launchCompleted } = window.extAssistData;
 
 export default {
 	slug: 'edit-homepage',
@@ -16,14 +17,10 @@ export default {
 	link: 'post.php?post=$&action=edit',
 	type: 'internalLink',
 	dependencies: { goals: [], plugins: [] },
-	show: ({ plugins, goals, activePlugins, userGoals }) => {
-		if (!Number(frontPage)) return false;
-
-		if (!plugins.length && !goals.length) return true;
-
-		return activePlugins
-			.concat(userGoals)
-			.some((item) => plugins.concat(goals).includes(item));
+	show: () => {
+		// They need either extendable or launch completed
+		if (themeSlug !== 'extendable' && !launchCompleted) return false;
+		return !!frontPage;
 	},
 	backgroundImage:
 		'https://assets.extendify.com/assist-tasks/edit-homepage.webp',

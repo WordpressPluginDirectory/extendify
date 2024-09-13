@@ -1,5 +1,8 @@
 import { __ } from '@wordpress/i18n';
 
+const { themeSlug } = window.extSharedData;
+const { launchCompleted } = window.extAssistData;
+
 export default {
 	slug: 'site-description',
 	title: __('Add a site description', 'extendify-local'),
@@ -13,12 +16,10 @@ export default {
 	},
 	type: 'modal',
 	dependencies: { goals: [], plugins: [] },
-	show: ({ plugins, goals, activePlugins, userGoals }) => {
-		if (!plugins.length && !goals.length) return true;
-
-		return activePlugins
-			.concat(userGoals)
-			.some((item) => plugins.concat(goals).includes(item));
+	show: () => {
+		if (themeSlug === 'extendable') return true;
+		if (launchCompleted) return true;
+		return false;
 	},
 	backgroundImage: 'https://assets.extendify.com/assist-tasks/upload-logo.webp',
 };

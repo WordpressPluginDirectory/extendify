@@ -1,11 +1,13 @@
 import { useEffect, useState, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
+import { pageNames } from '@shared/lib/pages';
 import { colord } from 'colord';
 import {
 	installPlugin,
 	updateTemplatePart,
-	addLaunchPagesToNav,
+	addPagesToNav,
+	addPatternSectionsToNav,
 	updateOption,
 	getOption,
 	getPageById,
@@ -23,6 +25,7 @@ import { waitFor200Response, wasInstalled } from '@launch/lib/util';
 import {
 	createWpPages,
 	generateCustomPageContent,
+	replacePlaceholderPatterns,
 	updateGlobalStyleVariant,
 } from '@launch/lib/wp';
 import { usePagesStore } from '@launch/state/Pages';
@@ -44,6 +47,7 @@ export const CreatingSite = () => {
 		siteType,
 		siteInformation,
 		siteTypeSearch,
+		siteStructure,
 	} = useUserSelectionStore();
 	const [info, setInfo] = useState([]);
 	const [infoDesc, setInfoDesc] = useState([]);
@@ -58,6 +62,12 @@ export const CreatingSite = () => {
 		if (!canLaunch) {
 			throw new Error(__('Site is not ready to launch.', 'extendify-local'));
 		}
+
+		// As we add more site structures, abstract these into configs
+		const addPatternsAsNav = siteStructure === 'single-page';
+		const linkButtonsToPages = siteStructure === 'multi-page';
+		const stickyNav = siteStructure === 'single-page';
+
 		try {
 			await updateOption('permalink_structure', '/%postname%/');
 			await waitFor200Response();
@@ -78,18 +88,34 @@ export const CreatingSite = () => {
 				await updateUserMeta('ai_consent', true);
 			}
 
-			if (plugins?.length) {
+			// Add required plugins to the end of the list to give them lower priority
+			// when filtering out duplicates.
+			const pluginsSorted = [
+				...(plugins ?? []),
+				...(window.extSharedData?.requiredPlugins ?? []),
+			]
+				// We add give to the front. See here why:
+				// https://github.com/extendify/company-product/issues/713
+				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1))
+				// Remove duplicates
+				.reduce((acc, plugin) => {
+					const found = acc.find(
+						({ wordpressSlug: s }) => s === plugin.wordpressSlug,
+					);
+					return found ? acc : [...acc, plugin];
+				}, []);
+
+			if (pluginsSorted?.length) {
 				inform(__('Installing necessary plugins', 'extendify-local'));
-				const pluginsGiveFirst = [...plugins].sort(({ wordpressSlug }) =>
-					wordpressSlug === 'give' ? -1 : 1,
-				);
-				for (const [index, plugin] of pluginsGiveFirst.entries()) {
+
+				for (const [index, plugin] of pluginsSorted.entries()) {
 					informDesc(
 						__(
-							`${index + 1}/${plugins.length}: ${plugin.name}`,
+							`${index + 1}/${pluginsSorted.length}: ${plugin.name}`,
 							'extendify-local',
 						),
 					);
+
 					await waitFor200Response();
 					try {
 						await installPlugin(plugin);
@@ -106,21 +132,22 @@ export const CreatingSite = () => {
 				await waitFor200Response();
 			}
 
-			let navPages;
 			inform(__('Adding page content', 'extendify-local'));
 			informDesc(__('Starting off with a full website', 'extendify-local'));
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 			await waitFor200Response();
 
 			const homePage = {
+				name: pageNames.home.title,
+				id: 'home',
+				patterns: style.patterns,
 				slug: 'home',
-				name: __('Home', 'extendify-local'),
-				patterns: style.code.map((code) => ({ code })),
 			};
 			const blogPage = {
-				slug: 'blog',
-				name: __('Blog', 'extendify-local'),
+				name: pageNames.blog.title,
+				id: 'blog',
 				patterns: [],
+				slug: 'blog',
 			};
 
 			await waitFor200Response();
@@ -138,8 +165,18 @@ export const CreatingSite = () => {
 				hasBlogGoal ? blogPage : null,
 			].filter(Boolean);
 
+			const pagesWithReplacedPatterns = [];
+			// Run these one page at a time so we don't end up with duplicate dependency issues
+			for (const page of pagesToCreate) {
+				const updatedPage = {
+					...page,
+					patterns: await replacePlaceholderPatterns(page.patterns),
+				};
+				pagesWithReplacedPatterns.push(updatedPage);
+			}
+
 			const pagesWithCustomContent = await generateCustomPageContent(
-				pagesToCreate,
+				pagesWithReplacedPatterns,
 				{
 					goals,
 					businessInformation,
@@ -149,15 +186,24 @@ export const CreatingSite = () => {
 				},
 			);
 
-			const createdPages = await createWpPages(pagesWithCustomContent);
-			const pagesWithLinksUpdated = await updateButtonLinks(createdPages);
+			const createdPages = await createWpPages(pagesWithCustomContent, {
+				stickyNav,
+			});
+			const pagesWithLinksUpdated = linkButtonsToPages
+				? await updateButtonLinks(createdPages)
+				: // TODO: update the buttons with link to sections
+					createdPages;
 
 			setPagesToAnimate([]);
 			await waitFor200Response();
 			informDesc(__('Setting up site layout', 'extendify-local'));
 			const addBlogPageToNav = goals?.some((goal) => goal.slug === 'blog');
 
-			navPages = [...pages, addBlogPageToNav ? blogPage : null, homePage]
+			let navPagesMultiPageSite = [
+				...pages,
+				addBlogPageToNav ? blogPage : null,
+				homePage,
+			]
 				.filter(Boolean)
 				// Sorted AZ by title in all languages
 				.sort((a, b) => a?.name?.localeCompare(b?.name));
@@ -181,7 +227,11 @@ export const CreatingSite = () => {
 						slug: cartPage.slug,
 						title: cartPage.title.rendered,
 					};
-					navPages = [...navPages, wooShopPage, wooCartPage];
+					navPagesMultiPageSite = [
+						...navPagesMultiPageSite,
+						wooShopPage,
+						wooCartPage,
+					];
 				}
 			}
 
@@ -190,7 +240,7 @@ export const CreatingSite = () => {
 					slug: 'events',
 					title: __('Events', 'extendify-local'),
 				};
-				navPages = [...navPages, eventsPage];
+				navPagesMultiPageSite = [...navPagesMultiPageSite, eventsPage];
 			}
 
 			if (wasInstalled(activePlugins, 'wpforms-lite')) {
@@ -214,11 +264,16 @@ export const CreatingSite = () => {
 			);
 			await waitFor200Response();
 
-			const updatedHeaderCode = await addLaunchPagesToNav(
-				navPages,
-				pagesWithLinksUpdated,
-				style?.headerCode,
-			);
+			const updatedHeaderCode = addPatternsAsNav
+				? await addPatternSectionsToNav(
+						homePage?.patterns ?? [],
+						style?.headerCode,
+					)
+				: await addPagesToNav(
+						navPagesMultiPageSite,
+						pagesWithLinksUpdated,
+						style?.headerCode,
+					);
 
 			await waitFor200Response();
 			await updateTemplatePart('extendable/header', updatedHeaderCode);
@@ -265,15 +320,14 @@ export const CreatingSite = () => {
 		siteInformation,
 		siteTypeSearch,
 		setPagesToAnimate,
+		siteStructure,
 	]);
 
 	useEffect(() => {
 		doEverything().then(async () => {
 			setPage(0);
-
 			// This will trigger the post launch php functions.
 			await postLaunchFunctions();
-
 			window.location.replace(
 				window.extSharedData.adminUrl +
 					'admin.php?page=extendify-assist&extendify-launch-success',
@@ -308,6 +362,7 @@ export const CreatingSite = () => {
 
 	return (
 		<Transition
+			as="div"
 			show={isShowing}
 			appear={true}
 			enter="transition-all ease-in-out duration-500"
@@ -332,6 +387,7 @@ export const CreatingSite = () => {
 							if (!index) {
 								return (
 									<Transition
+										as="div"
 										appear={true}
 										show={isShowing}
 										enter="transition-opacity duration-1000"
@@ -353,6 +409,7 @@ export const CreatingSite = () => {
 								if (!index) {
 									return (
 										<Transition
+											as="div"
 											appear={true}
 											show={isShowing}
 											enter="transition-opacity duration-1000"

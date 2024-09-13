@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
+import { safeParseJson } from '@shared/lib/parsing';
 import { RecommendationCard } from '@assist/components/dashboard/RecommendationCard';
-import { safeParseJson } from '@assist/lib/parsing';
 import { isAtLeastNDaysAgo } from '@assist/lib/recommendations';
 
 const siteCreatedAt = window.extSharedData?.siteCreatedAt ?? '';

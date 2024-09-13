@@ -1,35 +1,59 @@
 import { Snackbar } from '@wordpress/components';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect, useLayoutEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { AnimatePresence, motion } from 'framer-motion';
 import { NavigationButton } from '@launch/components/NavigationButton';
+import {
+	PagesSelect,
+	fetcher as pagesSelectFetcher,
+	fetchData as pagesSelectData,
+	state as pagesSelectState,
+} from '@launch/pages/PagesSelect';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { RightCaret, LeftCaret } from '@launch/svg';
 
+const PagesPageData = {
+	component: PagesSelect,
+	fetcher: pagesSelectFetcher,
+	fetchData: pagesSelectData,
+	state: pagesSelectState,
+};
+
 export const PageControl = () => {
-	const { currentPageIndex, setPage, replaceHistory, pushHistory } =
-		usePagesStore();
+	const {
+		currentPageIndex,
+		setPage,
+		addPage,
+		removePage,
+		replaceHistory,
+		pushHistory,
+	} = usePagesStore();
+	const { siteStructure } = useUserSelectionStore();
+
+	useLayoutEffect(() => {
+		// If we later add more structures, consider having predefined paths
+		if (siteStructure === 'multi-page') {
+			addPage('page-select', PagesPageData, 'layout');
+			return;
+		}
+		removePage('page-select');
+	}, [siteStructure, addPage, removePage]);
 
 	useEffect(() => {
 		const replaceStateHistory = () => {
 			history.state === null && replaceHistory(currentPageIndex);
 		};
-
 		window.addEventListener('load', replaceStateHistory);
 
 		const popstate = () => {
 			const page = currentPageIndex - 1;
-
 			if (page === -1) history.go(-1);
-
 			setPage(page);
 			pushHistory(page);
 		};
-
 		window.addEventListener('popstate', popstate);
-
 		return () => {
 			window.removeEventListener('load', replaceStateHistory);
 			window.removeEventListener('popstate', popstate);

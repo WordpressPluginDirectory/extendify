@@ -1,9 +1,9 @@
-=== Extendify — Gutenberg Patterns and Templates ===
+=== Extendify ===
 Contributors: extendify, kbat82, clubkert, arturgrabo
 Tags: templates, patterns, layouts, blocks, gutenberg, layout, template, editor, library, page builder, gutenberg blocks, wordpress blocks
 Requires at least: 6.0
 Tested up to: 6.6
-Stable tag: 1.14.5
+Stable tag: 1.15.0
 Requires PHP: 7.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -96,6 +96,15 @@ Nope! Extendify imports lightweight block-based content that is served directly 
 3. The Extendify library, as seen with the Twenty Twenty Two block theme
 
 == Changelog ==
+
+= 1.15.0 - 2024-09-12 =
+- Added initial support for 3rd party plugin patterns
+- Added compatibility with new Extendable helpers
+- Various bug fixes and improvements
+
+= 1.14.6 - 2024-08-28 =
+- Added Bulgarian language support
+- Various bug fixes and improvements
 
 = 1.14.5 - 2024-08-14 =
 - Updated button styles to match WP designs

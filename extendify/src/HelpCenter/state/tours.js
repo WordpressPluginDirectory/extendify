@@ -1,7 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
+import { safeParseJson } from '@shared/lib/parsing';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
-import { safeParseJson } from '@help-center/lib/parsing';
 
 const key = 'extendify-help-center-tour-progress';
 const startingState = {

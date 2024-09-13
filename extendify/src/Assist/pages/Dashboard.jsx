@@ -2,7 +2,6 @@ import { DesktopCards } from '@assist/components/dashboard/DesktopCards';
 import { MobileCards } from '@assist/components/dashboard/MobileCards';
 import { QuickLinks } from '@assist/components/dashboard/QuickLinks';
 import { Recommendations } from '@assist/components/dashboard/Recommendations';
-import { TasksCompleted } from '@assist/components/dashboard/TasksCompleted';
 import { DomainBanner } from '@assist/components/dashboard/domains/DomainBanner';
 import { SecondaryDomainBanner } from '@assist/components/dashboard/domains/SecondaryDomainBanner';
 import { useTasks } from '@assist/hooks/useTasks';
@@ -14,18 +13,11 @@ import { Full } from '@assist/pages/layouts/Full';
 import { useGlobalStore } from '@assist/state/globals';
 import { useTasksStore } from '@assist/state/tasks';
 
-const { themeSlug } = window.extSharedData;
-const { launchCompleted } = window.extAssistData;
-
 export const Dashboard = () => {
 	const { tasks } = useTasks();
 	const { isDismissedBanner } = useGlobalStore();
 	const { isCompleted } = useTasksStore();
 	const totalCompleted = tasks.filter((task) => isCompleted(task.slug)).length;
-	const isTasksCompleted = totalCompleted === tasks.length;
-	const showTasks =
-		(themeSlug === 'extendable' && (!launchCompleted || launchCompleted)) ||
-		(themeSlug !== 'extendable' && launchCompleted);
 
 	return (
 		<Full>
@@ -38,25 +30,17 @@ export const Dashboard = () => {
 					<SecondaryDomainBanner />
 				)}
 
-			{isTasksCompleted && !isDismissedBanner('tasks-completed') && (
-				<TasksCompleted />
-			)}
+			<DesktopCards
+				className="hidden md:block"
+				tasks={tasks}
+				totalCompleted={totalCompleted}
+			/>
 
-			{showTasks && !isTasksCompleted && (
-				<>
-					<DesktopCards
-						className="hidden md:block"
-						tasks={tasks}
-						totalCompleted={totalCompleted}
-					/>
-
-					<MobileCards
-						className="md:hidden"
-						tasks={tasks}
-						totalCompleted={totalCompleted}
-					/>
-				</>
-			)}
+			<MobileCards
+				className="md:hidden"
+				tasks={tasks}
+				totalCompleted={totalCompleted}
+			/>
 
 			<div className="mb-6 gap-4 md:grid">
 				<QuickLinks className="col-span-2" />

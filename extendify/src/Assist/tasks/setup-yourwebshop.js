@@ -1,5 +1,8 @@
 import { __ } from '@wordpress/i18n';
 
+const { themeSlug } = window.extSharedData;
+const { launchCompleted } = window.extAssistData;
+
 export default {
 	slug: 'setup-yourwebshop',
 	title: __('Set up YourWebshop', 'extendify-local'),
@@ -18,6 +21,9 @@ export default {
 		plugins: ['YourWebshop-updater', 'ecwid-shopping-cart'],
 	},
 	show: ({ plugins, goals, activePlugins, userGoals }) => {
+		// They need either extendable or launch completed
+		if (themeSlug !== 'extendable' && !launchCompleted) return false;
+
 		if (!plugins.length && !goals.length) return true;
 
 		return activePlugins

@@ -7,3 +7,4 @@ export { default as LogoIcon } from './LogoIcon';
 export { default as Bullet } from './BulletPoint';
 export { default as AllCaughtUp } from './AllCaughtUp';
 export { default as Check } from './Check';
+export { default as DesignLibraryMarkup } from './DesignLibraryMarkup';

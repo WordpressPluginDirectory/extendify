@@ -1,7 +1,8 @@
 import { dispatch } from '@wordpress/data';
-import { useLayoutEffect, useEffect } from '@wordpress/element';
+import { useLayoutEffect, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Dialog } from '@headlessui/react';
+import { useActivityStore } from '@shared/state/activity';
 import { motion } from 'framer-motion';
 import { updateOption } from '@library/api/WPApi';
 import { useGlobalsStore } from '@library/state/global';
@@ -15,12 +16,16 @@ import { Topbar } from './topbar/Topbar';
 const isNewPage = window?.location?.pathname?.includes('post-new.php');
 
 export const Modal = () => {
+	const { incrementActivity } = useActivityStore();
 	const { open, setOpen } = useGlobalsStore();
 	const { updateUserOption, openOnNewPage } = useUserStore();
 	const { category, siteType, incrementImports } = useSiteSettingsStore();
 	const { createNotice } = dispatch('core/notices');
+	const once = useRef(false);
 
-	const onClose = () => setOpen(false);
+	const onClose = () => {
+		setOpen(false);
+	};
 	const insertPattern = async (blocks) => {
 		await insertBlocks(blocks);
 		incrementImports();
@@ -34,18 +39,35 @@ export const Modal = () => {
 	};
 
 	useLayoutEffect(() => {
+		if (open || once.current) return;
+		once.current = true;
 		if (openOnNewPage && isNewPage) {
 			// Minimize HC if its open
 			window.dispatchEvent(new CustomEvent('extendify-hc:minimize'));
-
+			incrementActivity('library-auto-open');
 			setOpen(true);
 			return;
 		}
 		const search = new URLSearchParams(window.location.search);
 		if (search.has('ext-open')) {
 			setOpen(true);
+			incrementActivity('library-search-param-auto-open');
 		}
-	}, [openOnNewPage, setOpen]);
+	}, [openOnNewPage, setOpen, incrementActivity, open]);
+
+	useEffect(() => {
+		const search = new URLSearchParams(window.location.search);
+
+		if (search.has('ext-close')) {
+			setOpen(false);
+			search.delete('ext-close');
+			window.history.replaceState(
+				{},
+				'',
+				window.location.pathname + '?' + search.toString(),
+			);
+		}
+	}, [setOpen, incrementActivity]);
 
 	useEffect(() => {
 		const handleOpen = () => setOpen(true);

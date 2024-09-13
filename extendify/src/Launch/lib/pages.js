@@ -17,23 +17,22 @@ import {
 	state as homeSelectState,
 } from '@launch/pages/HomeSelect';
 import {
-	PagesSelect,
-	fetcher as pagesSelectFetcher,
-	fetchData as pagesSelectData,
-	state as pagesSelectState,
-} from '@launch/pages/PagesSelect';
-import {
 	SiteInformation,
 	fetcher as siteInfoFetcher,
 	fetchData as siteInfoData,
 	state as siteInfoState,
 } from '@launch/pages/SiteInformation';
 import {
+	SiteStructure,
+	state as siteStructureState,
+} from '@launch/pages/SiteStructure';
+import {
 	SiteTypeSelect,
 	state as siteTypeState,
 } from '@launch/pages/SiteTypeSelect';
 
-// pages added here will need to match the orders table on the Styles base
+// This is the default pages array
+// Pages can be added/removed dynamically, and override partnerSkipSteps
 // You can add pre-fetch functions to start fetching data for the next page
 // Supports both [] and single fetcher functions
 const defaultPages = [
@@ -63,21 +62,19 @@ const defaultPages = [
 		},
 	],
 	[
+		'site-structure',
+		{
+			component: SiteStructure,
+			state: siteStructureState,
+		},
+	],
+	[
 		'layout',
 		{
 			component: HomeSelect,
 			fetcher: homeSelectFetcher,
 			fetchData: homeSelectData,
 			state: homeSelectState,
-		},
-	],
-	[
-		'pages',
-		{
-			component: PagesSelect,
-			fetcher: pagesSelectFetcher,
-			fetchData: pagesSelectData,
-			state: pagesSelectState,
 		},
 	],
 	[

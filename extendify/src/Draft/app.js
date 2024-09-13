@@ -1,8 +1,8 @@
 import { Flex, FlexBlock } from '@wordpress/components';
-import { useDispatch } from '@wordpress/data';
+import { useDispatch, useSelect } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
 import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/edit-post';
-import { useEffect } from '@wordpress/element';
+import { useEffect, useRef } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { __ } from '@wordpress/i18n';
 import { registerPlugin } from '@wordpress/plugins';
@@ -34,12 +34,25 @@ registerPlugin('extendify-draft', {
 });
 const ExtendifyDraft = ({ children }) => {
 	const { openGeneralSidebar } = useDispatch(editPostStore);
+	const sidebarName = useSelect((select) =>
+		select(editPostStore).getActiveGeneralSidebarName(),
+	);
+	const once = useRef(false);
 	useEffect(() => {
+		if (once.current) return;
 		const id = requestAnimationFrame(() => {
+			once.current = true;
+			// Silence is golden
+			document
+				.querySelector(
+					'.components-modal__screen-overlay .components-modal__header > button',
+				)
+				?.click();
+			if (sidebarName === 'extendify-draft/draft') return;
 			openGeneralSidebar('extendify-draft/draft');
 		});
 		return () => cancelAnimationFrame(id);
-	}, [openGeneralSidebar]);
+	}, [openGeneralSidebar, sidebarName]);
 
 	return children;
 };

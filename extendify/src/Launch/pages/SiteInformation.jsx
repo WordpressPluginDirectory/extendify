@@ -12,11 +12,11 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const fetcher = async () => ({ title: await getOption('blogname') });
 export const fetchData = () => ({ key: 'site-info' });
-export const state = pageState('Site Title', () => ({
-	title: __('Site Title', 'extendify-local'),
-	default: undefined,
-	showInSidebar: true,
+export const state = pageState('Site Information', () => ({
 	ready: false,
+	canSkip: false,
+	validation: null,
+	onRemove: () => {},
 }));
 
 export const SiteInformation = () => {

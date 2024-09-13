@@ -93,6 +93,6 @@ class Sanitizer
      */
     public static function sanitizePostContent($content)
     {
-        return \wp_kses_post($content);
+        return \wp_kses_post($content ? $content : '');
     }
 }

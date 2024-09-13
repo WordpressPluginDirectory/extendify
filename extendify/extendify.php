@@ -5,7 +5,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.14.5
+ * Version:           1.15.0
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       extendify-local
@@ -96,18 +96,15 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
     }, 10, 2);
 
     // Redirect logins to the Extendify Assist dashboard if they are an admin.
+    // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundBeforeLastUsed
     \add_filter('login_redirect', function ($redirectTo, $requestedRedirectTo, $user) {
-        $partnerData = get_option('extendify_partner_data_v2', []);
-        if (!$user || !is_a($user, 'WP_User') || empty($partnerData)) {
+        if (!$user || !is_a($user, 'WP_User')) {
             return $redirectTo;
         }
 
-        if (!empty($requestedRedirectTo) && $requestedRedirectTo !== \admin_url()) {
-            return $requestedRedirectTo;
-        }
-
-        if (!$user->has_cap('manage_options')) {
-            return $requestedRedirectTo;
+        $partnerData = get_option('extendify_partner_data_v2', []);
+        if (!$user->has_cap('manage_options') || empty($partnerData)) {
+            return $redirectTo;
         }
 
         return \admin_url() . 'admin.php?page=extendify-assist';

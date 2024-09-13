@@ -1,14 +1,18 @@
 import { __ } from '@wordpress/i18n';
 import { Icon } from '@wordpress/icons';
+import { useActivityStore } from '@shared/state/activity';
 import { extendifyLogo } from '@library/icons/extendify-logo';
 import { useGlobalsStore } from '@library/state/global';
 
 export const MainButton = () => {
 	const { setOpen } = useGlobalsStore();
+	const { incrementActivity } = useActivityStore();
+
 	const handleClick = () => {
 		// Minimize HC if its open
 		window.dispatchEvent(new CustomEvent('extendify-hc:minimize'));
 		setOpen(true);
+		incrementActivity('library-button-click');
 	};
 
 	return (

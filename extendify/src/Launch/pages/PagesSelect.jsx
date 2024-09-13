@@ -16,9 +16,14 @@ export const fetchData = (siteType) => ({
 });
 
 export const state = pageState('Pages', () => ({
-	title: __('Pages', 'extendify-local'),
-	showInSidebar: true,
 	ready: true,
+	canSkip: false,
+	validation: null,
+	onRemove: () => {
+		// If the page is removed then clean up the selected pages
+		const { pages, remove } = useUserSelectionStore.getState();
+		pages.forEach((page) => remove('pages', page));
+	},
 }));
 
 export const PagesSelect = () => {
@@ -33,20 +38,18 @@ export const PagesSelect = () => {
 			id: 'home-page',
 			slug: 'home-page',
 			name: __('Home page', 'extendify-local'),
-			patterns: style?.code.map((code, i) => ({
-				name: `pattern-${i}`,
-				code,
-			})),
+			patterns: style?.patterns
+				.map(({ code }) => code)
+				.flat()
+				.map((code, i) => ({
+					name: `pattern-${i}`,
+					code,
+				})),
 		}),
 		[style],
 	);
 	const styleMemo = useMemo(
-		() => ({
-			...style,
-			code: previewing
-				? previewing.patterns.map(({ code }) => code).join('')
-				: '',
-		}),
+		() => ({ ...style, patterns: previewing?.patterns || [] }),
 		[style, previewing],
 	);
 

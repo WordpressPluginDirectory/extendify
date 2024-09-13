@@ -60,7 +60,6 @@ class Admin
         \wp_add_inline_script(
             Config::$slug . '-help-center-scripts',
             'window.extHelpCenterData = ' . \wp_json_encode([
-                'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
                 'supportUrl' => isset($partnerData['supportUrl']) ? \esc_attr($partnerData['supportUrl']) : '',
                 'userData' => [
                     'tourData' => \wp_json_encode(TourController::get()->get_data()),

@@ -10,11 +10,10 @@ import { pageState } from '@launch/state/factory';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const state = pageState('Business Information', () => ({
-	title: __('Business Information', 'extendify-local'),
-	showInSidebar: true,
 	ready: true,
 	canSkip: true,
 	validation: null,
+	onRemove: () => {},
 }));
 
 export const BusinessInformation = () => (

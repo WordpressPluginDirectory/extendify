@@ -1,5 +1,8 @@
 import { __ } from '@wordpress/i18n';
 
+const { themeSlug } = window.extSharedData;
+const { launchCompleted } = window.extAssistData;
+
 export default {
 	slug: 'add-pages',
 	title: __('Add a page', 'extendify-local'),
@@ -11,12 +14,10 @@ export default {
 	link: 'post-new.php?post_type=page',
 	type: 'internalLink',
 	dependencies: { goals: [], plugins: [] },
-	show: ({ plugins, goals, activePlugins, userGoals }) => {
-		if (!plugins.length && !goals.length) return true;
-
-		return activePlugins
-			.concat(userGoals)
-			.some((item) => plugins.concat(goals).includes(item));
+	show: () => {
+		if (themeSlug === 'extendable') return true;
+		if (launchCompleted) return true;
+		return false;
 	},
 	backgroundImage: 'https://assets.extendify.com/assist-tasks/add-page.webp',
 };

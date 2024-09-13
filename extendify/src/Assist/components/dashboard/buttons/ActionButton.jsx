@@ -1,3 +1,4 @@
+import { EventButton } from '@assist/components/dashboard/buttons/EventButton';
 import { LinkButton } from '@assist/components/dashboard/buttons/LinkButton';
 import { ModalButton } from '@assist/components/dashboard/buttons/ModalButton';
 import { TourButton } from '@assist/components/dashboard/buttons/TourButton';
@@ -8,10 +9,14 @@ export const ActionButton = ({ task }) => {
 	const { isCompleted } = useTasksStore();
 	const { finishedTour } = useTours();
 
+	if (task.event) {
+		return <EventButton task={task} completed={isCompleted(task.slug)} />;
+	}
+
 	if (task.type === 'modal')
 		return <ModalButton task={task} completed={isCompleted(task.slug)} />;
 
-	if (task.type === 'internalLink')
+	if (['html-text-button', 'internalLink'].includes(task.type))
 		return <LinkButton task={task} completed={isCompleted(task.slug)} />;
 
 	if (task.type === 'tour')

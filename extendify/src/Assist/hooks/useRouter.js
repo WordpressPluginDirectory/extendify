@@ -1,9 +1,10 @@
 import apiFetch from '@wordpress/api-fetch';
 import { useCallback, useEffect, useLayoutEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { safeParseJson } from '@shared/lib/parsing';
+import { useActivityStore } from '@shared/state/activity';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
-import { safeParseJson } from '@assist/lib/parsing';
 import { Dashboard } from '@assist/pages/Dashboard';
 import { homeIcon } from '@assist/svg';
 
@@ -15,15 +16,6 @@ const pages = [
 		component: Dashboard,
 	},
 ];
-const { themeSlug } = window.extSharedData;
-const { launchCompleted } = window.extAssistData;
-
-const disableTasks = themeSlug !== 'extendable' || !launchCompleted;
-const filteredPages = pages.filter((page) => {
-	const noTasks = page.slug === 'tasks' && disableTasks;
-	const noRecs = page.slug === 'recommendations';
-	return !noTasks && !noRecs;
-});
 
 let onChangeEvents = [];
 const state = (set, get) => ({
@@ -39,6 +31,7 @@ const state = (set, get) => ({
 		}
 		// If history is the same, dont add (they pressed the same nav button)
 		if (get().history[0]?.slug === page.slug) return;
+		useActivityStore.getState().incrementActivity(`assist-${page.slug}`);
 		set((state) => {
 			const lastViewedAt = new Date().toISOString();
 			const firstViewedAt = lastViewedAt;
@@ -116,7 +109,7 @@ export const useRouter = () => {
 		// watch url changes for #dashboard, etc
 		const handle = () => {
 			const hash = window.location.hash.replace('#', '');
-			const page = filteredPages.find((page) => page.slug === hash);
+			const page = pages.find((page) => page.slug === hash);
 			if (!page) {
 				navigateTo(current?.slug ?? 'dashboard');
 				return;
@@ -145,7 +138,7 @@ export const useRouter = () => {
 			),
 			[current],
 		),
-		filteredPages,
+		pages,
 		navigateTo,
 		history,
 	};

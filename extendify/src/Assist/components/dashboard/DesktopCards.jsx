@@ -76,14 +76,14 @@ const TabItem = ({ task, isCompleted }) => (
 						data-test={
 							isCompleted ? 'completed-task-icon' : 'uncompleted-task-icon'
 						}
-						className={classNames('mx-2', {
+						className={classNames('mx-2 flex-shrink-0', {
 							'stroke-current text-design-main':
 								(isCompleted && selected) || (isCompleted && !selected),
 							'fill-current text-design-main': selected && !isCompleted,
 							'text-center text-gray-400': !isCompleted && !selected,
 						})}
 					/>
-					<span>{task.title}</span>
+					<span>{task?.sidebarTitle ?? task.title}</span>
 				</div>
 			</div>
 		)}

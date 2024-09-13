@@ -3,6 +3,7 @@ import { LaunchCard } from '@assist/components/dashboard/LaunchCard';
 import { ActionButton } from '@assist/components/dashboard/buttons/ActionButton';
 import { DismissButton } from '@assist/components/dashboard/buttons/DismissButton';
 import { DemoCard } from '@assist/components/dashboard/cards/DemoCard';
+import { GenericCard } from '@assist/components/dashboard/cards/GenericCard';
 import { NoActionBtnCard } from '@assist/components/dashboard/cards/NoActionBtnCard';
 import { DomainCard } from '@assist/components/dashboard/domains/DomainCard';
 import { SecondaryDomainCard } from '@assist/components/dashboard/domains/SecondaryDomainCard';
@@ -10,6 +11,8 @@ import { useTours } from '@assist/hooks/useTours';
 import { useTasksStore } from '@assist/state/tasks';
 
 export const CardContent = ({ task }) => {
+	if (task.type === 'html-text-button') return <GenericCard task={task} />;
+
 	if (task.type === 'domain-task') return <DomainCard task={task} />;
 
 	if (task.type === 'secondary-domain-task')

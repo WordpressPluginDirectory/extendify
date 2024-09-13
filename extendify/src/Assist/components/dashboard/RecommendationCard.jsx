@@ -2,6 +2,7 @@ import { Button } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 import { Icon, check, warning } from '@wordpress/icons';
+import { useActivityStore } from '@shared/state/activity';
 import { installPlugin } from '@assist/api/WPApi';
 
 export const RecommendationCard = ({ recommendation }) => {
@@ -12,12 +13,17 @@ export const RecommendationCard = ({ recommendation }) => {
 };
 
 const LinkCard = ({ recommendation }) => {
-	const { by, description, image, title, linkType } = recommendation;
+	const { by, slug, description, image, title, linkType } = recommendation;
+	const { incrementActivity } = useActivityStore();
 	if (!recommendation?.[linkType]) return null;
 
 	return (
 		<a
-			href={recommendation[linkType]}
+			href={recommendation[linkType]?.replace(
+				'{APEXDOMAIN}',
+				window.extSharedData?.apexDomain ?? '',
+			)}
+			onClick={() => incrementActivity(`recommendations-${slug}`)}
 			target="_blank"
 			rel="noopener noreferrer"
 			className="cursor-pointer rounded border border-gray-200 bg-transparent p-4 text-left text-base no-underline hover:border-design-main hover:bg-gray-50">
@@ -38,9 +44,12 @@ const LinkCard = ({ recommendation }) => {
 };
 
 const InstallCard = ({ recommendation }) => {
-	const { by, description, image, title, pluginSlug } = recommendation;
+	const { by, slug, description, image, title, pluginSlug } = recommendation;
+	const { incrementActivity } = useActivityStore();
 	return (
-		<div className="rounded border border-gray-200 bg-transparent p-4 text-left text-base">
+		<div
+			onClick={() => incrementActivity(`recommendations-install-${slug}`)}
+			className="rounded border border-gray-200 bg-transparent p-4 text-left text-base">
 			<div className="h-full w-full">
 				<img
 					className="h-8 w-8 rounded fill-current"

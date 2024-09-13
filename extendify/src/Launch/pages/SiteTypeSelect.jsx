@@ -11,9 +11,10 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Checkmark, RightCaret } from '@launch/svg';
 
 export const state = pageState('Site Industry', () => ({
-	title: __('Site Industry', 'extendify-local'),
-	showInSidebar: true,
 	ready: false,
+	canSkip: false,
+	validation: null,
+	onRemove: () => {},
 }));
 
 export const SiteTypeSelect = () => {

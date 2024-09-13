@@ -90,7 +90,7 @@ export const GuidedTour = () => {
 		if (!targetedElement) return;
 
 		const frame = frameSelector
-			? document.querySelector(frameSelector)?.contentDocument ?? document
+			? (document.querySelector(frameSelector)?.contentDocument ?? document)
 			: document;
 
 		const rect = getBoundingClientRect(
@@ -205,7 +205,7 @@ export const GuidedTour = () => {
 		if (!elementSelector) return;
 		// Find and set the element we are attaching to
 		const frame = frameSelector
-			? document.querySelector(frameSelector)?.contentDocument ?? document
+			? (document.querySelector(frameSelector)?.contentDocument ?? document)
 			: document;
 		const element =
 			frame.querySelector(elementSelector) ??
