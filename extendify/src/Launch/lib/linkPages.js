@@ -1,4 +1,5 @@
 import { rawHandler, getBlockContent } from '@wordpress/blocks';
+import { pageNames } from '@shared/lib/pages';
 import { getLinkSuggestions } from '@launch/api/DataApi';
 import { updatePage } from '@launch/api/WPApi';
 
@@ -92,4 +93,32 @@ export const updateButtonLinks = async (wpPages) => {
 				return { ...p, originalSlug };
 			})
 	);
+};
+
+export const updateSinglePageLinksToContactSection = (wpPages, pages) => {
+	// Find if there's a contact pattern in the single page's patterns
+	const hasContactPattern = pages?.[0]?.patterns.find((p) =>
+		p?.patternTypes?.[0]?.startsWith('contact'),
+	);
+
+	// If no contact pattern is found, return the original wpPages
+	if (!hasContactPattern) return wpPages;
+
+	// Get the translated slug
+	const { slug } =
+		Object.values(pageNames).find(({ alias }) =>
+			alias.includes(hasContactPattern.patternTypes[0]),
+		) || {};
+
+	// Map through each WordPress page and update its content
+	return wpPages.map((page) => {
+		// Update each page by replacing the buttons urls with the new slug
+		return updatePage({
+			id: page.id,
+			content: page.content.raw.replaceAll(
+				/"#extendify-[a-zA-Z0-9_-]+"/g,
+				`"#${slug}"`,
+			),
+		});
+	});
 };

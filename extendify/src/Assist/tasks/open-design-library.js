@@ -20,7 +20,7 @@ export default {
 	backgroundImage: null,
 	htmlBefore: () => (
 		<DesignLibraryMarkup
-			className="pointer-events-none relative hidden h-56 w-full overflow-hidden rounded-t-lg border border-gray-300 bg-gray-100 pt-5 md:mb-8 lg:block"
+			className="pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border border-gray-300 bg-gray-100 pt-5 lg:block"
 			aria-hidden="true"
 		/>
 	),

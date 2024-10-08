@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
 const state = (set) => ({
-	visibility: false, // open | minimized | closed
+	visibility: 'minimized', // open | minimized | closed
 	queuedTour: null,
 	queueTourForRedirect: (tour) => set({ queuedTour: tour }),
 	clearQueuedTour: () => set({ queuedTour: null }),

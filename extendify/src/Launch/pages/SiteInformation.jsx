@@ -28,7 +28,7 @@ export const SiteInformation = () => {
 
 	return (
 		<PageLayout>
-			<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
+			<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
 				<Title
 					title={__("What's the name of your new site?", 'extendify-local')}
 					description={__('You can change this later.', 'extendify-local')}

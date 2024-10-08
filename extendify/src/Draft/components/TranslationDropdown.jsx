@@ -24,6 +24,7 @@ export const DropdownTranslate = ({
 		{ language: __('French (France)', 'extendify-local'), code: 'fr_FR' },
 		{ language: __('German', 'extendify-local'), code: 'de_DE' },
 		{ language: __('German (Switzerland)', 'extendify-local'), code: 'de_CH' },
+		{ language: __('Greek', 'extendify-local'), code: 'el' },
 		{ language: __('Hungarian', 'extendify-local'), code: 'hu_HU' },
 		{ language: __('Indonesian', 'extendify-local'), code: 'id_ID' },
 		{ language: __('Italian', 'extendify-local'), code: 'it_IT' },

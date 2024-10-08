@@ -12,13 +12,14 @@ import { pageState } from '@launch/state/factory';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import * as IconComponents from '@launch/svg';
 
-export const goalsFetcher = (params) => getGoals(params);
+export const goalsFetcher = async (params) => ({
+	goals: await getGoals(params),
+	suggestedPlugins: await getSuggestedPlugins(),
+});
 export const goalsParams = () => ({
 	key: 'goals',
 	siteTypeSlug: useUserSelectionStore.getState()?.siteType?.slug,
 });
-export const pluginsFetcher = () => getSuggestedPlugins();
-export const pluginsParams = () => ({ key: 'plugins' });
 
 export const state = pageState('Goals', () => ({
 	title: __('Goals', 'extendify-local'),
@@ -29,12 +30,16 @@ export const state = pageState('Goals', () => ({
 }));
 
 export const Goals = () => {
-	const { loading: goalsLoading } = useFetch(goalsParams, goalsFetcher);
-	const { loading: pluginsLoading } = useFetch(pluginsParams, pluginsFetcher);
+	const { siteType } = useUserSelectionStore();
+	const { error, loading, data } = useFetch(
+		goalsParams(siteType?.slug),
+		goalsFetcher,
+	);
+	const { goals, suggestedPlugins } = data ?? {};
 
 	return (
 		<PageLayout>
-			<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
+			<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
 				<Title
 					title={__('What are your goals for your website?', 'extendify-local')}
 					description={__(
@@ -43,10 +48,10 @@ export const Goals = () => {
 					)}
 				/>
 				<div className="relative mx-auto w-full max-w-3xl">
-					{goalsLoading || pluginsLoading ? (
+					{loading || error ? (
 						<LoadingIndicator />
 					) : (
-						<GoalsSelector />
+						<GoalsSelector goals={goals} suggestedPlugins={suggestedPlugins} />
 					)}
 				</div>
 			</div>
@@ -54,12 +59,10 @@ export const Goals = () => {
 	);
 };
 
-const GoalsSelector = () => {
-	const { siteType } = useUserSelectionStore();
+const GoalsSelector = ({ goals, suggestedPlugins }) => {
 	const { addMany, toggle, goals: selected } = useUserSelectionStore();
 	const [selectedGoals, setSelectedGoals] = useState(selected ?? []);
-	const { data: goals } = useFetch(goalsParams(siteType?.slug), goalsFetcher);
-	const { data: suggestedPlugins } = useFetch(pluginsParams, pluginsFetcher);
+
 	const nextPage = usePagesStore((state) => state.nextPage);
 
 	useEffect(() => {

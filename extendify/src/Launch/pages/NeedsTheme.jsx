@@ -5,7 +5,7 @@ import { PageLayout } from '@launch/layouts/PageLayout';
 export const NeedsTheme = () => {
 	return (
 		<PageLayout includeNav={false}>
-			<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
+			<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
 				<Title
 					title={__('One more thing before we start.', 'extendify-local')}
 				/>

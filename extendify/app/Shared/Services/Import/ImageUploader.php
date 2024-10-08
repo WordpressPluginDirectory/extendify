@@ -62,10 +62,6 @@ class ImageUploader
             ];
         }
 
-        if (!file_is_valid_image($image)) {
-            return new \WP_Error(2001, 'File is not a valid image.');
-        }
-
         $imageHeadersInformation = wp_remote_retrieve_headers(wp_safe_remote_head($image));
 
         if (!empty($imageHeadersInformation)) {
@@ -99,10 +95,10 @@ class ImageUploader
 
         // Check the size of the file to ensure the file was successfully uploaded.
         // If the size of the uploaded file is 0 we need to delete it.
-	      // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+        // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
         if (!@filesize($upload['file']) || !wp_getimagesize($upload['file'])) {
             // No need to keep the file, so we just delete it to be uploaded later.
-		        // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+            // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
             @unlink($upload['file']);
             return new \WP_Error(2001, 'File is not a valid image.');
         }

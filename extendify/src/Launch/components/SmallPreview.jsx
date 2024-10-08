@@ -26,10 +26,7 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 	const transformedStyles = useMemo(
 		() =>
 			themeJSON?.[style?.variation?.title]
-				? transformStyles(
-						[{ css: themeJSON[style?.variation?.title] }],
-						'html body.editor-styles-wrapper',
-					)
+				? transformStyles([{ css: themeJSON[style?.variation?.title] }])
 				: null,
 		[style?.variation],
 	);
@@ -47,9 +44,9 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 				lastRun = now;
 				frame?.contentDocument?.querySelector('[href*=load-styles]')?.remove();
 				const style = `<style id="ext-tj">
-                html body.editor-styles-wrapper { background-color: var(--wp--preset--color--background) }
-                ${transformedStyles}
-            </style>`;
+               		${transformedStyles}
+									.wp-block-missing { display: none !important }
+            	</style>`;
 				if (!frame.contentDocument?.getElementById('ext-tj')) {
 					frame.contentDocument?.body?.insertAdjacentHTML('beforeend', style);
 				}

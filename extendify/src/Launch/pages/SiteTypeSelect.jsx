@@ -21,7 +21,7 @@ export const SiteTypeSelect = () => {
 	const { loading } = useUserSelectionStore();
 	return (
 		<PageLayout>
-			<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
+			<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
 				<Title
 					title={__('What is your WordPress site about?', 'extendify-local')}
 					description={__(

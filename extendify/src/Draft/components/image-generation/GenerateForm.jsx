@@ -34,6 +34,7 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 				<div>
 					<TextareaControl
 						id="draft-ai-image-textarea"
+						autoFocus
 						placeholder={__(
 							'Tell AI about the image you would like to create',
 							'extendify-local',

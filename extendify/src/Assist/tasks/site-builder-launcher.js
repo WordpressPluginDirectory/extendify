@@ -1,4 +1,5 @@
 import { __ } from '@wordpress/i18n';
+import { LaunchDemoSitesMarkup } from '@assist/tasks/images/LaunchDemoSitesMarkup';
 
 const { launchCompleted } = window.extAssistData;
 const { themeSlug } = window.extSharedData;
@@ -21,6 +22,11 @@ export default {
 		// This only runs if launch wasn't finished and they have extendable
 		return themeSlug === 'extendable' && !launchCompleted;
 	},
-	backgroundImage:
-		'https://assets.extendify.com/assist-tasks/extendify-preview-2.webp',
+	backgroundImage: null,
+	htmlBefore: () => (
+		<LaunchDemoSitesMarkup
+			className="border-gray300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-800 pt-5 lg:block"
+			aria-hidden="true"
+		/>
+	),
 };

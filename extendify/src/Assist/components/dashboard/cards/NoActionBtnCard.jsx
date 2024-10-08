@@ -10,7 +10,7 @@ export const NoActionBtnCard = ({ task }) => {
 				backgroundImage: `url(${task?.backgroundImage})`,
 			}}>
 			<div className="flex h-full w-full grow flex-col bg-white/95 px-8 py-8 lg:mr-48 lg:bg-transparent">
-				<div className="title text-2xl font-semibold leading-10 md:mt-32 lg:text-4xl">
+				<div className="title text-2xl font-semibold leading-10 md:mt-32 lg:text-3xl">
 					{task.title}
 				</div>
 				<div className="description mt-2 text-sm md:text-base">

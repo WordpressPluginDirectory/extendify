@@ -13,13 +13,15 @@ import {
 	getPageById,
 	getActivePlugins,
 	prefetchAssistData,
-	updateUserMeta,
 	postLaunchFunctions,
 } from '@launch/api/WPApi';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
 import { useConfetti } from '@launch/hooks/useConfetti';
 import { useWarnOnLeave } from '@launch/hooks/useWarnOnLeave';
-import { updateButtonLinks } from '@launch/lib/linkPages';
+import {
+	updateButtonLinks,
+	updateSinglePageLinksToContactSection,
+} from '@launch/lib/linkPages';
 import { uploadLogo } from '@launch/lib/logo';
 import { waitFor200Response, wasInstalled } from '@launch/lib/util';
 import {
@@ -83,10 +85,6 @@ export const CreatingSite = () => {
 
 			await waitFor200Response();
 			await updateTemplatePart('extendable/footer', style?.footerCode);
-
-			if (businessInformation.acceptTerms) {
-				await updateUserMeta('ai_consent', true);
-			}
 
 			// Add required plugins to the end of the list to give them lower priority
 			// when filtering out duplicates.
@@ -191,8 +189,10 @@ export const CreatingSite = () => {
 			});
 			const pagesWithLinksUpdated = linkButtonsToPages
 				? await updateButtonLinks(createdPages)
-				: // TODO: update the buttons with link to sections
-					createdPages;
+				: updateSinglePageLinksToContactSection(
+						createdPages,
+						pagesWithCustomContent,
+					);
 
 			setPagesToAnimate([]);
 			await waitFor200Response();

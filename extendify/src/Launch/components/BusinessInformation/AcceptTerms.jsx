@@ -1,11 +1,18 @@
 import { __ } from '@wordpress/i18n';
+import { useAIConsentStore } from '@shared/state/ai-consent';
 import classNames from 'classnames';
 
-export const AcceptTerms = ({
-	setAcceptTerms,
-	acceptTerms,
-	consentTermsHTML,
-}) => {
+export const AcceptTerms = ({ setBusinessInformation }) => {
+	const { userGaveConsent, consentTermsHTML, setUserGaveConsent } =
+		useAIConsentStore();
+
+	const handleCheckbox = (event) => {
+		const { checked } = event.target;
+
+		setUserGaveConsent(checked);
+		setBusinessInformation('acceptTerms', checked);
+	};
+
 	return (
 		<div className="flex flex-col">
 			<label
@@ -16,13 +23,13 @@ export const AcceptTerms = ({
 						id="accept-terms"
 						className="h-4 w-4 rounded-sm focus:ring-0 focus:ring-offset-0"
 						type="checkbox"
-						onChange={() => setAcceptTerms(!acceptTerms)}
-						checked={acceptTerms}
+						onChange={handleCheckbox}
+						checked={userGaveConsent}
 					/>
 					<svg
 						className={classNames('absolute inset-0 block h-5 w-4', {
-							'text-white': acceptTerms,
-							'text-transparent': !acceptTerms,
+							'text-white': userGaveConsent,
+							'text-transparent': !userGaveConsent,
 						})}
 						viewBox="1 0 20 20"
 						fill="none"

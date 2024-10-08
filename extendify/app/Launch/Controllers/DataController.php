@@ -25,10 +25,11 @@ class DataController
     {
         $response = Http::get('/goals?site_type=' . $request->get_param('site_type'));
 
-        return new \WP_REST_Response(
-            $response,
-            wp_remote_retrieve_response_code($response)
-        );
+        if (is_wp_error($response)) {
+            return new \WP_REST_Response([], 500);
+        }
+
+        return new \WP_REST_Response($response);
     }
 
     /**
@@ -39,10 +40,12 @@ class DataController
     public static function getSuggestedPlugins()
     {
         $response = Http::get('/suggested-plugins');
-        return new \WP_REST_Response(
-            $response,
-            wp_remote_retrieve_response_code($response)
-        );
+
+        if (is_wp_error($response)) {
+            return new \WP_REST_Response([], 500);
+        }
+
+        return new \WP_REST_Response($response);
     }
 
     /**

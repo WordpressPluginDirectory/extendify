@@ -75,7 +75,7 @@ export const getGoals = async ({ siteTypeSlug }) => {
 	const goals = await api.get('launch/goals', {
 		params: { site_type: siteTypeSlug ?? 'all' },
 	});
-	if (!goals?.data) {
+	if (!goals?.data?.length) {
 		throw new Error('Could not get goals');
 	}
 	return goals.data;
@@ -83,7 +83,7 @@ export const getGoals = async ({ siteTypeSlug }) => {
 
 export const getSuggestedPlugins = async () => {
 	const suggested = await api.get('launch/suggested-plugins');
-	if (!suggested?.data) {
+	if (!suggested?.data?.length) {
 		throw new Error('Could not get suggested plugins');
 	}
 	return suggested.data;

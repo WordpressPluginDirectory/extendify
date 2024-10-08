@@ -1,6 +1,6 @@
 import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { Dialog } from '@headlessui/react';
+import { Dialog, DialogTitle } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import { ModalContent } from '@help-center/components/modal/ModalContent';
 import { Topbar } from '@help-center/components/modal/TopBar';
@@ -42,6 +42,7 @@ export const Modal = () => {
 				await Promise.resolve();
 				if (!document?.documentElement?.style) return;
 				document.documentElement.style.overflow = 'unset';
+				document.documentElement.style.paddingRight = 'unset';
 			}}
 			className="extendify-help-center"
 			data-test="help-center-modal"
@@ -58,9 +59,9 @@ export const Modal = () => {
 					exit={{ y: 0, opacity: 0 }}
 					transition={{ duration: 0.2, delay: 0.1 }}
 					className="relative mx-auto h-full w-full shadow-2xl-flipped sm:flex sm:overflow-hidden md:rounded-md md:shadow-2xl">
-					<Dialog.Title className="sr-only">
+					<DialogTitle className="sr-only">
 						{__('Extendify Help Center', 'extendify-local')}
-					</Dialog.Title>
+					</DialogTitle>
 					<div className="relative flex h-full w-full flex-col rounded-md border border-gray-400 bg-gray-50 md:overflow-hidden">
 						<Topbar />
 						<div className="flex-grow overflow-y-auto overscroll-contain">

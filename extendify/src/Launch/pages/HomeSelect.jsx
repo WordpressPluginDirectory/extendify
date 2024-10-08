@@ -32,7 +32,7 @@ export const HomeSelect = () => {
 
 	return (
 		<PageLayout>
-			<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
+			<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
 				<Title
 					title={__('Pick a design for your website', 'extendify-local')}
 					description={__('You can personalize this later.', 'extendify-local')}

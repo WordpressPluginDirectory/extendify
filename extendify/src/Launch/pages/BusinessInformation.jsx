@@ -1,5 +1,6 @@
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { useAIConsentStore } from '@shared/state/ai-consent';
 import { AcceptTerms } from '@launch/components/BusinessInformation/AcceptTerms';
 import { InfoBox } from '@launch/components/BusinessInformation/InfoBox';
 import { SiteTones } from '@launch/components/BusinessInformation/Tones';
@@ -18,7 +19,7 @@ export const state = pageState('Business Information', () => ({
 
 export const BusinessInformation = () => (
 	<PageLayout>
-		<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
+		<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
 			<Title
 				title={__(
 					'Let us create custom copy for your website',
@@ -41,8 +42,10 @@ const BusinessInfo = () => {
 		useUserSelectionStore();
 	const [desc, setDesc] = useState(businessInformation?.description || '');
 	const nextPage = usePagesStore((state) => state.nextPage);
-	const consentTermsHTML = window.extSharedData?.consentTermsHTML;
-	const showAIConsent = window.extSharedData?.showAIConsent && consentTermsHTML;
+	const { userGaveConsent } = useAIConsentStore();
+	const shouldShowAIConsent = useAIConsentStore((state) =>
+		state.shouldShowAIConsent('launch'),
+	);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -53,8 +56,8 @@ const BusinessInfo = () => {
 	}, [desc, setBusinessInformation]);
 
 	useEffect(() => {
-		if (!showAIConsent) return;
-		if (businessInformation.acceptTerms || !businessInformation.description) {
+		if (!shouldShowAIConsent) return;
+		if (userGaveConsent || !businessInformation.description) {
 			state.setState({ validation: null });
 			return;
 		}
@@ -63,7 +66,7 @@ const BusinessInfo = () => {
 				message: __('Please accept the terms to continue', 'extendify-local'),
 			},
 		});
-	}, [businessInformation, showAIConsent]);
+	}, [businessInformation, userGaveConsent, shouldShowAIConsent]);
 
 	return (
 		<form
@@ -78,15 +81,9 @@ const BusinessInfo = () => {
 			<div className="mb-8">
 				<SiteTones />
 			</div>
-			{showAIConsent ? (
+			{shouldShowAIConsent ? (
 				<div className="mb-8 flex items-center">
-					<AcceptTerms
-						consentTermsHTML={consentTermsHTML}
-						acceptTerms={businessInformation.acceptTerms}
-						setAcceptTerms={(acceptTerms) => {
-							setBusinessInformation('acceptTerms', acceptTerms);
-						}}
-					/>
+					<AcceptTerms setBusinessInformation={setBusinessInformation} />
 				</div>
 			) : null}
 		</form>

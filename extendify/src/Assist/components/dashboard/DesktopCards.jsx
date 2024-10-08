@@ -1,5 +1,12 @@
+import {
+	useEffect,
+	useState,
+	useCallback,
+	useRef,
+	forwardRef,
+} from '@wordpress/element';
 import { Icon } from '@wordpress/icons';
-import { Tab } from '@headlessui/react';
+import { TabGroup, TabList, TabPanels, TabPanel, Tab } from '@headlessui/react';
 import classNames from 'classnames';
 import { CardContent } from '@assist/components/dashboard/CardContent';
 import { CardsTitle } from '@assist/components/dashboard/CardsTitle';
@@ -10,6 +17,34 @@ import { Bullet, Check } from '@assist/svg';
 export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 	const { isCompleted } = useTasksStore();
 	const { finishedTour } = useTours();
+	const [nextTask, setNextTask] = useState(-1);
+	const tabRefs = useRef([]);
+
+	const findNextTask = useCallback(
+		(currentIndex = 0) => {
+			// Re sort based on current index
+			const sortedTasks = tasks
+				.slice(currentIndex)
+				.concat(tasks.slice(0, currentIndex));
+			const next = sortedTasks.findIndex(({ slug }) => !isCompleted(slug));
+			// Find the index of the next incomplete task from the original list
+			return tasks.findIndex(({ slug }) => slug === sortedTasks?.[next]?.slug);
+		},
+		[tasks, isCompleted],
+	);
+
+	useEffect(() => {
+		if (totalCompleted === tasks.length || totalCompleted === 0) return;
+		setNextTask((prev) => findNextTask(prev + 1));
+	}, [tasks?.length, totalCompleted, findNextTask]);
+
+	useEffect(() => {
+		tabRefs.current?.[nextTask]?.scrollIntoView({
+			behavior: 'smooth',
+			block: 'nearest',
+			inline: 'start',
+		});
+	}, [nextTask]);
 
 	return (
 		<div
@@ -20,18 +55,22 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 				'mb-6 h-full w-full rounded border border-gray-300 bg-white text-base',
 			)}>
 			{tasks && (
-				<Tab.Group
+				<TabGroup
+					defaultIndex={nextTask}
+					selectedIndex={nextTask}
+					onChange={setNextTask}
 					vertical
 					as="div"
 					className="flex h-[472px] min-h-96 grow flex-row-reverse justify-between">
-					<Tab.List
+					<TabList
 						as="div"
 						className="w-96 overflow-auto border-l border-gray-100">
 						<CardsTitle totalCompleted={totalCompleted} total={tasks.length} />
 
-						{tasks.map((task) => (
+						{tasks.map((task, index) => (
 							<TabItem
 								key={task.slug}
+								ref={(el) => (tabRefs.current[index] = el)}
 								task={task}
 								isCompleted={
 									task.type === 'tour'
@@ -40,29 +79,30 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 								}
 							/>
 						))}
-					</Tab.List>
+					</TabList>
 
-					<Tab.Panels as="div" className="w-3/4">
+					<TabPanels as="div" className="w-3/4">
 						{tasks.map((task) => (
-							<Tab.Panel
+							<TabPanel
 								key={task.slug}
 								as="div"
 								data-test="assist-task-card-wrapper"
 								className="h-full">
 								<CardContent task={task} />
-							</Tab.Panel>
+							</TabPanel>
 						))}
-					</Tab.Panels>
-				</Tab.Group>
+					</TabPanels>
+				</TabGroup>
 			)}
 		</div>
 	);
 };
 
-const TabItem = ({ task, isCompleted }) => (
+const TabItem = forwardRef(({ task, isCompleted }, ref) => (
 	<Tab as="div" data-test={`assist-task-${task.slug}`}>
 		{({ selected }) => (
 			<div
+				ref={ref}
 				className={classNames(
 					'group flex w-full items-center justify-between border-b border-gray-300 py-4 pl-2 pr-4 text-sm hover:cursor-pointer hover:bg-gray-100',
 					{
@@ -88,4 +128,4 @@ const TabItem = ({ task, isCompleted }) => (
 			</div>
 		)}
 	</Tab>
-);
+));

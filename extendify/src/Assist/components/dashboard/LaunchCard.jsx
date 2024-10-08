@@ -30,6 +30,15 @@ const launchSteps = {
 		),
 		buttonText: __('Select Site Goals', 'extendify-local'),
 	},
+	'site-structure': {
+		step: __('Site Structure', 'extendify-local'),
+		title: __('Continue Building Your Website', 'extendify-local'),
+		description: __(
+			'Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher.',
+			'extendify-local',
+		),
+		buttonText: __('Pick Your Site Structure', 'extendify-local'),
+	},
 	layout: {
 		step: __('Design', 'extendify-local'),
 		title: __('Continue Building Your Website', 'extendify-local'),
@@ -74,24 +83,22 @@ export const LaunchCard = ({ task }) => {
 	}, [currentStep]);
 
 	return (
-		<div className="h-full justify-center overflow-hidden bg-design-main text-base">
-			<div className="mx-11 my-16">
-				<img
-					alt="preview"
-					className="block w-full object-cover"
-					src={task.backgroundImage}
-				/>
-				<div className="w-full text-center">
-					<h2 className="mb-4 mt-8 text-2xl text-white">
-						{launchSteps[currentStep]?.title}
-					</h2>
-					<p className="my-4 text-base text-gray-50">
-						{launchSteps[currentStep]?.description}
-					</p>
+		<div className="h-full justify-center overflow-hidden bg-white/95 text-base">
+			<div className="flex h-full flex-col items-center justify-center gap-5 p-7 text-center md:p-8">
+				{task?.htmlBefore()}
+				<div className="flex h-full flex-col items-center justify-center text-center lg:justify-between">
 					<div>
+						<h2 className="mb-2 text-2xl font-semibold leading-10 md:mt-0 lg:text-2xl">
+							{launchSteps[currentStep]?.title}
+						</h2>
+						<p className="m-0 text-sm md:text-base">
+							{launchSteps[currentStep]?.description}
+						</p>
+					</div>
+					<div className="cta mt-6 flex flex-wrap items-center text-sm md:gap-3 lg:mt-3">
 						<a
 							href={`${window.extSharedData.adminUrl}admin.php?page=extendify-launch`}
-							className="mt-4 inline-block cursor-pointer rounded border-none bg-white px-4 py-2.5 text-gray-900 no-underline">
+							className="min-w-24 cursor-pointer rounded-sm bg-design-main px-4 py-2.5 text-sm font-medium text-design-text no-underline hover:opacity-90">
 							{launchSteps[currentStep]?.buttonText}
 						</a>
 						<button
@@ -100,7 +107,7 @@ export const LaunchCard = ({ task }) => {
 							onClick={() => {
 								dismissTask('site-builder-launcher');
 							}}
-							className="mx-3 cursor-pointer bg-transparent px-2 py-2 text-center text-sm text-design-text">
+							className="cursor-pointer bg-transparent text-sm text-design-main underline-offset-4 hover:underline">
 							{__('Dismiss', 'extendify-local')}
 						</button>
 					</div>

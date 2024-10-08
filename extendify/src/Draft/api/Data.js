@@ -1,4 +1,5 @@
 import { __ } from '@wordpress/i18n';
+import { useAIConsentStore } from '@shared/state/ai-consent';
 import { useGlobalStore } from '@draft/state/global.js';
 import { AI_HOST } from '../../constants.js';
 
@@ -10,16 +11,19 @@ const allowList = [
 	'wpLanguage',
 	'devbuild',
 	'isBlockTheme',
-	'showAIConsent',
-	'userGaveConsent',
 	'userId',
 ];
+
+const { showAIConsent, userGaveConsent } = useAIConsentStore.getState();
+
 const extraBody = {
 	...Object.fromEntries(
 		Object.entries(window.extSharedData).filter(([key]) =>
 			allowList.includes(key),
 		),
 	),
+	showAIConsent,
+	userGaveConsent,
 };
 
 export const completion = async (

@@ -1,6 +1,7 @@
 <?php
 /**
  * Helper class for making http requests
+ * This is legacy code and currently only used for Launch goals
  */
 
 namespace Extendify;
@@ -17,7 +18,7 @@ class Http
      *
      * @var string
      */
-    public $baseUrl = '';
+    public $baseUrl = 'https://dashboard.extendify.com/api/onboarding';
 
     /**
      * Request data sent to the server
@@ -53,9 +54,6 @@ class Http
         if (!\wp_verify_nonce(sanitize_text_field(wp_unslash($request->get_header('x_wp_nonce'))), 'wp_rest')) {
             return;
         }
-
-        // Some special cases for library development.
-        $this->baseUrl = $this->getBaseUrl($request);
 
         $this->data = [
             'wp_language' => \get_locale(),
@@ -135,36 +133,5 @@ class Http
         $r = self::$instance;
 
         return $r->$name(...$arguments);
-    }
-
-    /**
-     * Figure out the base URL to use.
-     *
-     * @param \WP_REST_Request $request - The request.
-     *
-     * @return string
-     */
-    public function getBaseUrl($request)
-    {
-        $headerToConfigKeyMap = [
-            'x_extendify_dev_mode' => 'dev',
-            'x_extendify_local_mode' => 'local',
-            'x_extendify_launch_dev_mode' => 'launch-dev',
-            'x_extendify_launch_local_mode' => 'launch-local',
-            'x_extendify_launch' => 'launch',
-            'x_extendify_assist_dev_mode' => 'assist-dev',
-            'x_extendify_assist_local_mode' => 'assist-local',
-            'x_extendify_assist' => 'assist',
-            'x_extendify_help_center' => 'help-center',
-        ];
-
-        foreach ($headerToConfigKeyMap as $headerKey => $configKey) {
-            if ($request->get_header($headerKey) === 'true') {
-                return Config::$config['api'][$configKey];
-            }
-        }
-
-        // Normal Library request.
-        return Config::$config['api']['live'];
     }
 }

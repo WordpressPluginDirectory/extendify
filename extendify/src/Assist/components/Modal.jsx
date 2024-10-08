@@ -2,7 +2,7 @@ import { Button } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Icon, close } from '@wordpress/icons';
-import { Dialog } from '@headlessui/react';
+import { Dialog, DialogTitle } from '@headlessui/react';
 import { useGlobalStore } from '@assist/state/globals';
 
 export const Modal = () => {
@@ -27,9 +27,9 @@ export const Modal = () => {
 				/>
 				<div className="relative mx-auto flex flex-col rounded-sm bg-white shadow-2xl sm:flex sm:min-w-md sm:overflow-hidden">
 					<div className="flex items-center justify-between">
-						<Dialog.Title className="m-0 px-6 text-base text-gray-900">
+						<DialogTitle className="m-0 px-6 text-base text-gray-900">
 							{title}
-						</Dialog.Title>
+						</DialogTitle>
 						<Button
 							className="m-4 cursor-pointer border-0"
 							onClick={popModal}

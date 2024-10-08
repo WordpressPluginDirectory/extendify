@@ -42,7 +42,11 @@ class DomainsSuggestionController
         $partnerData = \get_option('extendify_partner_data_v2', []);
 
         // Return early if neither of the banners are enabled.
-        if (!($partnerData['showDomainBanner'] ?? false) && !($partnerData['showDomainTask'] ?? false)) {
+        if (!($partnerData['showDomainBanner'] ?? false)
+            && !($partnerData['showDomainTask'] ?? false)
+            && !($partnerData['showSecondaryDomainBanner'] ?? false)
+            && !($partnerData['showSecondaryDomainTask'] ?? false)
+        ) {
             return new \WP_REST_Response([]);
         }
 

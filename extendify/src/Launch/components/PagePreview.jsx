@@ -23,10 +23,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 	const transformedStyles = useMemo(
 		() =>
 			themeJSON?.[style?.variation?.title]
-				? transformStyles(
-						[{ css: themeJSON[style?.variation?.title] }],
-						'html body.editor-styles-wrapper',
-					)
+				? transformStyles([{ css: themeJSON[style?.variation?.title] }])
 				: null,
 		[style?.variation],
 	);
@@ -40,7 +37,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 			const checkOnStyles = () => {
 				if (counter >= 150) return;
 				const stylesToInject = `<style id="ext-tj">
-					html body.editor-styles-wrapper { background-color: var(--wp--preset--color--background) }
+					.wp-block-missing { display: none !important }
 					${transformedStyles}
 				</style>`;
 

@@ -68,9 +68,9 @@ export const SiteStructure = () => {
 
 	return (
 		<PageLayout>
-			<div className="grow overflow-y-scroll px-6 py-8 md:px-32 md:py-16">
+			<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
 				<Title title={__('Pick Your Site Structure', 'extendify-local')} />
-				<div className="relative mx-auto flex w-full max-w-3xl flex-col gap-4 lg:flex-row lg:gap-8">
+				<div className="relative mx-auto flex w-full max-w-2xl flex-col gap-8 lg:flex-row 3xl:max-w-4xl">
 					{buttonsOrdered}
 				</div>
 			</div>
@@ -99,15 +99,15 @@ const ButtonSelect = ({ title, description, onClick, selected, imageSrc }) => (
 			onClick();
 		}}
 		onClick={onClick}>
-		<div className="aspect-none hidden w-full justify-center overflow-hidden bg-gray-100 group-hover:opacity-75 lg:flex lg:h-80">
+		<div className="w-full justify-center overflow-hidden bg-gray-100 group-hover:opacity-75 lg:flex">
 			<img
 				alt=""
 				src={imageSrc}
-				className="h-full object-cover object-center lg:h-full"
+				className="h-auto w-full max-w-full object-cover"
 			/>
 		</div>
 		<div className="p-4 lg:p-6">
-			<p className="m-0 mb-4 p-0 text-gray-700">{description}</p>
+			<p className="m-0 mb-3 p-0 text-gray-700 3xl:mb-4">{description}</p>
 			<div className="flex items-center justify-between">
 				<h1 className="m-0 p-0 text-lg font-semibold">{title}</h1>
 				<Icon icon={arrowRight} />

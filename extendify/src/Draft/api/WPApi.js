@@ -3,13 +3,6 @@ import { createBlock, insertBlock } from '@wordpress/blocks';
 import { downloadPing } from '@draft/api/Data';
 import { loadImage } from '@draft/lib/image';
 
-export const updateUserMeta = (option, value) =>
-	apiFetch({
-		path: '/extendify/v1/shared/update-user-meta',
-		method: 'POST',
-		data: { option, value },
-	});
-
 export const importImage = async (imageUrl, metadata = {}) => {
 	const image = new Image();
 	image.src = imageUrl;

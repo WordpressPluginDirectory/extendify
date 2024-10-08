@@ -131,11 +131,6 @@ class Config
         self::$environment = $isDev ? 'DEVELOPMENT' : 'PRODUCTION';
         self::$launchCompleted = (bool) get_option('extendify_onboarding_completed', false);
         self::$showLaunch = $this->showLaunch();
-
-        // Add the config.
-        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-        $config = file_get_contents(EXTENDIFY_PATH . 'config.json');
-        self::$config = json_decode($config, true);
     }
 
     /**

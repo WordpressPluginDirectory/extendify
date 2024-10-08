@@ -1,3 +1,4 @@
+import { useAIConsentStore } from '@shared/state/ai-consent';
 import { AI_HOST } from '../../constants';
 
 // Additional data to send with requests
@@ -8,16 +9,19 @@ const allowList = [
 	'wpLanguage',
 	'devbuild',
 	'isBlockTheme',
-	'showAIConsent',
-	'userGaveConsent',
 	'userId',
 ];
+
+const { showAIConsent, userGaveConsent } = useAIConsentStore.getState();
+
 const extraBody = {
 	...Object.fromEntries(
 		Object.entries(window.extSharedData).filter(([key]) =>
 			allowList.includes(key),
 		),
 	),
+	showAIConsent,
+	userGaveConsent,
 };
 
 export const getAnswer = ({ question, experienceLevel }) =>

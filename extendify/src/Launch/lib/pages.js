@@ -7,8 +7,6 @@ import {
 	goalsFetcher,
 	goalsParams as goalsData,
 	state as goalsState,
-	pluginsFetcher,
-	pluginsParams as pluginsData,
 } from '@launch/pages/Goals';
 import {
 	HomeSelect,
@@ -56,8 +54,8 @@ const defaultPages = [
 		'goals',
 		{
 			component: Goals,
-			fetcher: [goalsFetcher, pluginsFetcher],
-			fetchData: [goalsData, pluginsData],
+			fetcher: [goalsFetcher],
+			fetchData: [goalsData],
 			state: goalsState,
 		},
 	],

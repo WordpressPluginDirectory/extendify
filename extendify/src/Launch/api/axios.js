@@ -5,15 +5,10 @@ const Axios = axios.create({
 	headers: {
 		'X-WP-Nonce': window.extSharedData.nonce,
 		'X-Requested-With': 'XMLHttpRequest',
-		'X-Extendify-Launch': true,
 		'X-Extendify': true,
 	},
 });
 
-Axios.interceptors.request.use(
-	(request) => checkDevMode(request),
-	(error) => error,
-);
 Axios.interceptors.response.use(
 	(response) => findResponse(response),
 	(error) => handleErrors(error),
@@ -35,14 +30,6 @@ const handleErrors = (error) => {
 		return Promise.reject(error.response);
 	}
 	return Promise.reject(findResponse(error.response));
-};
-
-const checkDevMode = (request) => {
-	request.headers['X-Extendify-Launch-Dev-Mode'] =
-		window.location.search.indexOf('DEVMODE') > -1;
-	request.headers['X-Extendify-Launch-Local-Mode'] =
-		window.location.search.indexOf('LOCALMODE') > -1;
-	return request;
 };
 
 export { Axios };

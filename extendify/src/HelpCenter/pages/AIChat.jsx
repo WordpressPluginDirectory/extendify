@@ -1,6 +1,7 @@
 import { useLayoutEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { chevronRight, Icon, postComments } from '@wordpress/icons';
+import { useAIConsentStore } from '@shared/state/ai-consent';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Answer } from '@help-center/components/ai-chat/Answer';
 import { History } from '@help-center/components/ai-chat/History';
@@ -8,13 +9,13 @@ import { Nav } from '@help-center/components/ai-chat/Nav';
 import { Question } from '@help-center/components/ai-chat/Question';
 import { Support } from '@help-center/components/ai-chat/Support';
 import { getAnswer } from '@help-center/lib/api';
-import { updateUserMeta } from '@help-center/lib/wp';
 import { useAIChatStore } from '@help-center/state/ai-chat';
 
 export const AIChatDashboard = ({ onOpen }) => {
 	return (
 		<section className="">
 			<button
+				data-test="help-center-dashboard-ai-chat-button"
 				type="button"
 				onClick={onOpen}
 				className="m-0 flex w-full cursor-pointer justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100">
@@ -53,9 +54,8 @@ export const AIChat = () => {
 	const { experienceLevel, currentQuestion, setCurrentQuestion } =
 		useAIChatStore();
 
-	const showAIConsent = window.extSharedData?.showAIConsent;
-	const [userGaveConsent, setUserGaveConsent] = useState(
-		window.extSharedData?.userGaveConsent,
+	const shouldShowAIConsent = useAIConsentStore((state) =>
+		state.shouldShowAIConsent('help-center'),
 	);
 
 	const reset = () => {
@@ -103,15 +103,8 @@ export const AIChat = () => {
 		setShowHistory(false);
 	}, [currentQuestion]);
 
-	if (showAIConsent && !userGaveConsent) {
-		return (
-			<ConsentOverlay
-				onAccept={() => {
-					updateUserMeta('ai_consent', true);
-					setUserGaveConsent(true);
-				}}
-			/>
-		);
+	if (shouldShowAIConsent) {
+		return <ConsentOverlay />;
 	}
 
 	if (question) {
@@ -153,26 +146,34 @@ export const AIChat = () => {
 	);
 };
 
-const ConsentOverlay = ({ onAccept }) => (
-	<div className="absolute inset-0 flex items-center justify-center bg-black/75 p-6">
-		<div className="rounded bg-white p-4">
-			<h2 className="mb-2 mt-0 text-lg">
-				{__('Terms of Use', 'extendify-local')}
-			</h2>
-			<p
-				className="m-0"
-				dangerouslySetInnerHTML={{
-					__html: window.extSharedData.consentTermsHTML,
-				}}></p>
-			<button
-				className="mt-4 w-full cursor-pointer rounded border-0 bg-design-main px-4 py-2 text-center text-white"
-				type="button"
-				onClick={onAccept}>
-				{__('Accept', 'extendify-local')}
-			</button>
+const ConsentOverlay = () => {
+	const { consentTermsHTML, setUserGaveConsent } = useAIConsentStore();
+
+	return (
+		<div
+			data-test="help-center-ai-chat-consent-prompt"
+			className="absolute inset-0 flex items-center justify-center bg-black/75 p-6">
+			<div className="rounded bg-white p-4">
+				<h2 className="mb-2 mt-0 text-lg">
+					{__('Terms of Use', 'extendify-local')}
+				</h2>
+				<p
+					className="m-0"
+					dangerouslySetInnerHTML={{
+						__html: consentTermsHTML,
+					}}
+				/>
+				<button
+					data-test="help-center-ai-chat-consent-accept-button"
+					className="mt-4 w-full cursor-pointer rounded border-0 bg-design-main px-4 py-2 text-center text-white"
+					type="button"
+					onClick={() => setUserGaveConsent(true)}>
+					{__('Accept', 'extendify-local')}
+				</button>
+			</div>
 		</div>
-	</div>
-);
+	);
+};
 
 export const routes = [
 	{

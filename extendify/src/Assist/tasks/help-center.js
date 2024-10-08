@@ -19,7 +19,7 @@ export default {
 	show: () => !window.extSharedData?.aiChatEnabled,
 	htmlBefore: () => (
 		<HelpCenterMarkup
-			className="border-gray300 pointer-events-none relative hidden h-56 w-full overflow-hidden rounded-t-lg border bg-gray-100 pt-5 md:mb-8 lg:block"
+			className="border-gray300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-100 pt-5 lg:block"
 			aria-hidden="true"
 		/>
 	),

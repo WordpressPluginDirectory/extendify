@@ -54,7 +54,7 @@ class PartnerData
         'showSecondaryDomainBanner' => false,
         'showSecondaryDomainTask' => false,
         'domainTLDs' => ['com', 'net'],
-        'stagingSites' => ['wordpress.test'],
+        'stagingSites' => ['wordpress'],
         'domainSearchURL' => '',
         'showDraft' => false,
         'aiChatEnabled' => false,

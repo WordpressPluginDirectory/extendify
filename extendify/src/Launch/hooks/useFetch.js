@@ -7,5 +7,10 @@ export const useFetch = (params, fetcher, options = {}) => {
 		revalidateOnReconnect: false,
 		...options,
 	});
-	return { data, loading: !data && !error, error };
+
+	return {
+		data,
+		loading: !data && !error && !error?.message,
+		error,
+	};
 };

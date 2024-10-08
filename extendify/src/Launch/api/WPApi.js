@@ -192,13 +192,6 @@ export const getActivePlugins = () => api.get('launch/active-plugins');
 export const prefetchAssistData = async () =>
 	await api.get('launch/prefetch-assist-data');
 
-export const updateUserMeta = (option, value) =>
-	apiFetch({
-		path: '/extendify/v1/shared/update-user-meta',
-		method: 'POST',
-		data: { option, value },
-	});
-
 export const processPlaceholders = (patterns) =>
 	apiFetch({
 		path: '/extendify/v1/shared/process-placeholders',

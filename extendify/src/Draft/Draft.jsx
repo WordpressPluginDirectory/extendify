@@ -1,9 +1,9 @@
 import { store as blockEditorStore } from '@wordpress/block-editor';
-import { createBlock } from '@wordpress/blocks';
 import { BaseControl, Panel, PanelBody } from '@wordpress/components';
-import { useDispatch, useSelect } from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { useAIConsentStore } from '@shared/state/ai-consent';
 import { Completion } from '@draft/components/Completion';
 import { DraftMenu } from '@draft/components/DraftMenu';
 import { EditMenu } from '@draft/components/EditMenu';
@@ -31,60 +31,32 @@ export const Draft = () => {
 		prompt.systemMessageKey,
 		prompt.details,
 	);
-	const { selectedBlockClientIds, getBlock, getBlocks } = useSelect(
-		(select) => {
-			const blockEditor = select(blockEditorStore);
-			return {
-				selectedBlockClientIds: blockEditor.getSelectedBlockClientIds(),
-				getBlock: blockEditor.getBlock,
-				getBlocks: blockEditor.getBlocks,
-			};
-		},
-		[],
-	);
+	const { selectedBlockClientIds, getBlock } = useSelect((select) => {
+		const blockEditor = select(blockEditorStore);
+		return {
+			selectedBlockClientIds: blockEditor.getSelectedBlockClientIds(),
+			getBlock: blockEditor.getBlock,
+			getBlocks: blockEditor.getBlocks,
+		};
+	}, []);
 
-	const { insertBlocks, selectBlock } = useDispatch(blockEditorStore);
-
-	const { showAIConsent, userGaveConsent: gaveBefore } = window.extSharedData;
-	const { CurrentPage: PhotosSection, navigateTo } = useRouter();
+	const { CurrentPage: PhotosSection } = useRouter();
 	// TODO: move to global state
-	const [userGaveConsent, setUserGaveConsent] = useState(gaveBefore);
-	const needsConsent = showAIConsent && !userGaveConsent;
+	const shouldShowAIConsent = useAIConsentStore((state) =>
+		state.shouldShowAIConsent('draft'),
+	);
 
 	// TODO: When doing a rewrite, make this global state
 	useEffect(() => {
 		// Allow for external updates
 		const handle = (event) => {
-			if (needsConsent) return;
+			if (shouldShowAIConsent) return;
 			setPrompt(event.detail);
 		};
 		window.addEventListener('extendify-draft:set-prompt', handle);
 		return () =>
 			window.removeEventListener('extendify-draft:set-prompt', handle);
-	}, [needsConsent]);
-
-	useEffect(() => {
-		const search = new URLSearchParams(window.location.search);
-		if (search.has('ext-add-image-block')) {
-			search.delete('ext-add-image-block');
-			window.history.replaceState(
-				{},
-				'',
-				window.location.pathname + '?' + search.toString(),
-			);
-
-			const imageBlock = getBlocks().find(
-				(block) => block.name === 'core/image',
-			);
-
-			// Navigate to the AI image generator form
-			navigateTo('ai-image');
-
-			imageBlock
-				? selectBlock(imageBlock.clientId)
-				: insertBlocks(createBlock('core/image', {}), 1);
-		}
-	}, [selectBlock, insertBlocks, navigateTo, getBlocks]);
+	}, [shouldShowAIConsent]);
 
 	// Reset input text when an error occurs
 	useEffect(() => {
@@ -121,8 +93,8 @@ export const Draft = () => {
 		return supportedBlocks.includes(targetBlock.name);
 	};
 
-	if (needsConsent) {
-		return <ConsentSidebar setUserGaveConsent={setUserGaveConsent} />;
+	if (shouldShowAIConsent) {
+		return <ConsentSidebar />;
 	}
 
 	if (isImageBlock()) return <PhotosSection />;
