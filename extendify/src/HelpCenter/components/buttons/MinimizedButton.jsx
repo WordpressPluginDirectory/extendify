@@ -1,4 +1,4 @@
-import { Topbar } from '../modal/TopBar';
+import { Topbar } from '@help-center/components/modal/TopBar';
 
 export const MinimizedButton = () => (
 	<div

@@ -12,8 +12,8 @@ export default {
 		'extendify-local',
 	),
 	buttonLabels: {
-		completed: __('Select Site Industry', 'extendify-local'),
-		notCompleted: __('Select Site Industry', 'extendify-local'),
+		completed: __('Add Website Details', 'extendify-local'),
+		notCompleted: __('Add Website Details', 'extendify-local'),
 	},
 	link: 'admin.php?page=extendify-launch',
 	type: 'site-launcher-task',

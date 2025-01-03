@@ -21,7 +21,7 @@ class Post
     {
         $wpdb = $GLOBALS['wpdb'];
 
-	      // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery
         return $wpdb->get_results(
             $wpdb->prepare(
                 "SELECT * FROM {$wpdb->posts} WHERE post_status != 'trash'
@@ -44,7 +44,7 @@ class Post
     {
         $wpdb = $GLOBALS['wpdb'];
 
-	      // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery
         return $wpdb->get_row(
             $wpdb->prepare(
                 "SELECT count(ID) as posts_count FROM {$wpdb->posts} WHERE post_status != 'trash'
@@ -95,12 +95,14 @@ class Post
             return new \WP_Error(1005, 'Post is locked.');
         }
 
-        // Update the post.
         $updatedPost = [
             'ID' => $post->ID,
             'post_content' => $content,
         ];
-
-        return wp_update_post($updatedPost);
+        // Prevent re-sanitizing the content.
+        remove_filter('content_save_pre', 'wp_filter_post_kses');
+        $id = wp_update_post($updatedPost, true);
+        add_filter('content_save_pre', 'wp_filter_post_kses');
+        return $id;
     }
 }

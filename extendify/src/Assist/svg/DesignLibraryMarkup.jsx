@@ -51,7 +51,7 @@ export default function DesignLibraryMarkup(props) {
 			</div>
 			<div className="relative z-10 grid w-full grid-cols-12 px-12">
 				<div className="col-span-12 w-full overflow-hidden rounded-t-md border border-gray-300 bg-white shadow-xl">
-					<div className="w-max origin-top-left scale-[0.48] transform">
+					<div className="w-max origin-top-left scale-[0.48] transform rtl:origin-top-right">
 						<div className="w-full text-left">
 							<div className="grid grid-cols-12">
 								<div className="col-span-3 flex-none border-r border-gray-200 bg-white text-sm">
@@ -72,7 +72,7 @@ export default function DesignLibraryMarkup(props) {
 											{__('Pattern Type', 'extendify-local')}
 											<Icon icon={chevronUp} />
 										</div>
-										<div className="flex w-full flex-col justify-items-start gap-1 rounded-sm border border-t-0 border-gray-400 p-3 text-xs">
+										<div className="flex w-full flex-col justify-items-start gap-1 rounded-sm border border-t-0 border-gray-400 p-3 text-xs rtl:text-right">
 											<div className="bg-design-main px-3 py-2 text-design-text">
 												{__('All', 'extendify-local')}
 											</div>
@@ -98,7 +98,7 @@ export default function DesignLibraryMarkup(props) {
 									</div>
 								</div>
 								<div className="col-span-9">
-									<div className="absolute origin-top-left scale-[0.245] bg-gray-50 px-16 pt-16">
+									<div className="absolute origin-top-left scale-[0.245] bg-gray-50 px-16 pt-16 rtl:origin-top-right">
 										<div className="flex w-[2880px] gap-10 text-xl leading-normal">
 											<div className="flex flex-col gap-10">
 												<div className="border-4 bg-white px-20 py-24">

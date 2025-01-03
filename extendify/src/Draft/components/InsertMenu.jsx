@@ -7,7 +7,7 @@ import {
 } from '@wordpress/components';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import {
 	addSubmenu,
 	rotateLeft,
@@ -170,7 +170,7 @@ export const InsertMenu = ({
 				disabled={loading}
 				iconPosition="left"
 				data-test="insert-top">
-				<div className="-ml-1">
+				<div className={isRTL() ? '-mr-1' : '-ml-1'}>
 					<Icon icon={addSubmenu} className="rotate-180" />
 				</div>
 				<div className="px-1">{__('Insert at top', 'extendify-local')}</div>

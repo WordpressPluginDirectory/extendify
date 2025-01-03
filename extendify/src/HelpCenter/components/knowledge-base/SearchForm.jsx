@@ -1,9 +1,9 @@
 import { useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { search as sIcon, Icon, closeSmall } from '@wordpress/icons';
+import { KB_HOST } from '@constants';
 import classNames from 'classnames';
 import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base.js';
-import { KB_HOST } from '../../../constants';
 
 export const SearchForm = ({ onChange }) => {
 	const { searchTerm, clearSearchTerm, reset } = useKnowledgeBaseStore();
@@ -35,7 +35,7 @@ export const SearchForm = ({ onChange }) => {
 				placeholder={__('What do you need help with?', 'extendify-local')}
 				className="input border-text-800 h-10 w-full border px-3 text-sm placeholder-gray-600"
 			/>
-			<div className="absolute inset-y-5 right-2 flex items-center justify-center text-gray-400">
+			<div className="absolute inset-y-5 right-2 flex items-center justify-center text-gray-400 rtl:left-2 rtl:right-auto">
 				<Icon
 					icon={!searchTerm ? sIcon : closeSmall}
 					className={classNames('fill-current', {

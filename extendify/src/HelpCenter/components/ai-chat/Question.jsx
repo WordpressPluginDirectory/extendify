@@ -19,7 +19,7 @@ export const Question = ({ onSubmit }) => {
 	};
 
 	return (
-		<form onSubmit={onSubmit} ref={formRef} className="">
+		<form onSubmit={onSubmit} ref={formRef} className="rtl:w-full">
 			<p className="m-0 mb-1 text-lg font-medium opacity-80">
 				{__('Hi there!', 'extendify-local')}
 			</p>
@@ -29,14 +29,14 @@ export const Question = ({ onSubmit }) => {
 			<div className="relative rounded border border-gray-300 bg-white shadow">
 				<DynamicTextarea
 					value={inputValue}
-					className="h-full w-full flex-1 resize-none py-4 pl-3 pr-10 placeholder-gray-600"
+					className="rtl:pl-auto h-full w-full flex-1 resize-none py-4 pl-3 pr-10 placeholder-gray-600 rtl:py-2.5 rtl:pr-2"
 					placeholder={__('Ask your WordPress question…', 'extendify-local')}
 					onChange={handleInputChange}
 					onKeyDown={handleKeyDown}
 				/>
 				<button
 					type="submit"
-					className="absolute bottom-3.5 right-2.5 flex h-6 cursor-pointer items-center border-none bg-transparent fill-current text-gray-700 hover:text-gray-900"
+					className="absolute bottom-3.5 right-2.5 flex h-6 cursor-pointer items-center border-none bg-transparent fill-current text-gray-700 hover:text-gray-900 rtl:bottom-2 rtl:left-2.5 rtl:right-auto"
 					disabled={!inputValue}>
 					<Icon icon={send} className="h-4 w-4" />
 				</button>

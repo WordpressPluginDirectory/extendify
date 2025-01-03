@@ -2,14 +2,14 @@ import { __ } from '@wordpress/i18n';
 import { UnsplashImage } from './UnsplashImage';
 
 export const UnsplashImages = ({
-	imageData,
+	images,
 	isInsertingImage,
 	onClick,
 	loading,
 }) => {
-	const imageLength = imageData?.images?.length ?? 10;
+	const imageLength = images?.length ?? 10;
 
-	if (!loading && !imageData.images.length) {
+	if (!loading && !images.length) {
 		return __('No images found.', 'extendify-local');
 	}
 
@@ -19,8 +19,8 @@ export const UnsplashImages = ({
 				const skeletonHeight = [150, 175, 200];
 				return (
 					<UnsplashImage
-						key={imageData?.images?.[idx]?.id ?? idx}
-						image={imageData?.images?.[idx]}
+						key={images?.[idx]?.id ?? idx}
+						image={images?.[idx]}
 						skeletonHeight={skeletonHeight[idx % skeletonHeight.length]}
 						isInsertingImage={isInsertingImage}
 						onClick={onClick}

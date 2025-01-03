@@ -9,6 +9,7 @@ defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Shared\Services\PluginDependencies\Forms\WPForms;
 use Extendify\Shared\Services\PluginDependencies\Forms\ContactForm7;
+use Extendify\Shared\Services\PluginDependencies\WooCommerce;
 
 /**
  * The controller for interacting with the pattern deps.
@@ -43,6 +44,11 @@ class PatternPlaceholderController
 
             if ($pluginDependency === 'wpforms-lite' && isset($metadata['key'])) {
                 $pattern['code'] = WPForms::create($pattern['code'], $metadata['key'], $newCode);
+                return $pattern;
+            }
+
+            if ($pluginDependency === 'woocommerce' && isset($metadata['key'])) {
+                $pattern['code'] = WooCommerce::create($pattern['code'], $metadata['key'], $newCode);
                 return $pattern;
             }
 

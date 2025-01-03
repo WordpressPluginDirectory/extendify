@@ -46,6 +46,7 @@ export const GenerateImageButtons = (CurrentComponents, props) => {
 			<>
 				<Button
 					variant="primary"
+					__next40pxDefaultSize
 					onClick={async () => {
 						openGeneralSidebar('extendify-draft/draft');
 						await new Promise((r) => requestAnimationFrame(r));

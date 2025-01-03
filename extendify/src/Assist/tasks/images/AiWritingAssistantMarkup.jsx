@@ -80,7 +80,7 @@ export const AiWritingAssistantMarkup = (props) => (
 		</div>
 		<div className="relative z-10 grid w-full grid-cols-12 px-12">
 			<div className="col-span-12 w-full overflow-hidden rounded-t-md border border-gray-300 bg-white shadow-xl">
-				<div className="w-[1160px] origin-top-left scale-[0.4] transform">
+				<div className="w-[1160px] origin-top-left scale-[0.4] transform rtl:origin-top-right">
 					<div className="flex justify-between border-b">
 						<div className="flex items-center justify-items-start gap-2">
 							<div className="flex min-h-14 min-w-14 items-center justify-center bg-black fill-current text-white">

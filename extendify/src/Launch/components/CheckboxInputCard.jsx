@@ -7,7 +7,7 @@ export const CheckboxInputCard = (props) => {
 			className="flex h-full w-full items-center justify-between p-4 font-semibold text-gray-900"
 			htmlFor={props.id}>
 			<div className="flex flex-auto items-center">
-				<span className="relative mr-3 inline-block h-5 w-5 align-middle">
+				<span className="relative mr-3 inline-block h-5 w-5 align-middle rtl:ml-3 rtl:mr-0">
 					<input
 						{...rest}
 						checked={checked}
@@ -32,7 +32,7 @@ export const CheckboxInputCard = (props) => {
 				<span>
 					<span className="text-sm font-medium">{label}</span>
 					{description ? (
-						<span className="block pr-4 pt-1 font-normal text-gray-700">
+						<span className="block pr-4 pt-1 font-normal text-gray-700 rtl:pl-4 rtl:pr-0">
 							{description}
 						</span>
 					) : (

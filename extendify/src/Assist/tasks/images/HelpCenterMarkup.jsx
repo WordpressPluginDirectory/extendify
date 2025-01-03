@@ -88,7 +88,7 @@ export const HelpCenterMarkup = (props) => (
 									{__('Knowledge base', 'extendify-local')}
 								</div>
 								<div className="flex justify-between bg-white px-3 py-2 opacity-75">
-									{__('What do you neeed help with?', 'extendify-local')}
+									{__('What do you need help with?', 'extendify-local')}
 
 									<Icon icon={search} />
 								</div>

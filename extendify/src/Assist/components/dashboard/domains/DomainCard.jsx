@@ -1,5 +1,5 @@
-import { __ } from '@wordpress/i18n';
-import { chevronRightSmall, Icon } from '@wordpress/icons';
+import { __, isRTL } from '@wordpress/i18n';
+import { chevronRightSmall, Icon, chevronLeftSmall } from '@wordpress/icons';
 import { safeParseJson } from '@shared/lib/parsing';
 import {
 	createDomainUrlLink,
@@ -61,7 +61,10 @@ export const DomainCard = ({ task }) => {
 							onClick={handleInteract}
 							className="mt-3 inline-flex h-8 cursor-pointer items-center justify-between rounded-sm border-design-main bg-design-main px-3 py-2 text-center text-sm leading-tight text-design-text no-underline hover:opacity-90 md:mt-0 md:flex">
 							{__('Register this domain', 'extendify-local')}
-							<Icon icon={chevronRightSmall} className="fill-current" />
+							<Icon
+								icon={isRTL() ? chevronLeftSmall : chevronRightSmall}
+								className="fill-current"
+							/>
 						</a>
 					</div>
 					{/*Secondary domains*/}
@@ -74,7 +77,7 @@ export const DomainCard = ({ task }) => {
 							onClick={handleInteract}
 							key={domain}>
 							{domain}
-							<Icon icon={chevronRightSmall} />
+							<Icon icon={isRTL() ? chevronLeftSmall : chevronRightSmall} />
 						</a>
 					))}
 				</div>

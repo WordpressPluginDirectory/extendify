@@ -11,7 +11,10 @@ const storage = {
 };
 
 const startingState = {
-	siteType: {},
+	siteType: {
+		slug: '0default',
+		name: 'Default',
+	},
 	category: '',
 	totalImports: 0,
 };
@@ -24,17 +27,7 @@ export const useSiteSettingsStore = create(
 			...(incomingState?.state ?? {}),
 			// Override siteType with the value from the server
 			siteType: window.extSharedData?.siteType ?? incomingState.siteType ?? {},
-			setSiteType: async (siteType) => {
-				set({ siteType });
-				await apiFetch({
-					path: `${path}/single`,
-					method: 'POST',
-					data: {
-						key: 'siteType',
-						value: siteType,
-					},
-				});
-			},
+
 			setCategory: (category) => set({ category }),
 			incrementImports: () =>
 				set((state) => ({ totalImports: Number(state.totalImports) + 1 })),

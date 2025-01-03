@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 
 export default {
 	id: 'welcome-tour',
@@ -38,13 +38,13 @@ export default {
 				element: '#wp-admin-bar-view-site',
 				offset: {
 					marginTop: 0,
-					marginLeft: 10,
+					marginLeft: isRTL() ? -10 : 10,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				beforeAttach: () => {
@@ -77,13 +77,13 @@ export default {
 				element: '#toplevel_page_extendify-assist',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -101,13 +101,13 @@ export default {
 				element: '#toplevel_page_wpSq',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -121,13 +121,13 @@ export default {
 				element: '#menu-dashboard',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -138,13 +138,13 @@ export default {
 				element: '#menu-posts',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -158,13 +158,13 @@ export default {
 				element: '#menu-media',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -179,13 +179,13 @@ export default {
 				element: '#menu-pages',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -199,13 +199,13 @@ export default {
 				element: '#menu-comments',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -219,13 +219,13 @@ export default {
 				element: '#menu-appearance',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -236,13 +236,13 @@ export default {
 				element: '#menu-plugins',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -256,13 +256,13 @@ export default {
 				element: '#menu-users',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -276,13 +276,13 @@ export default {
 				element: '#menu-tools',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -296,13 +296,13 @@ export default {
 				element: '#menu-settings',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -316,13 +316,13 @@ export default {
 				element: '#collapse-menu',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -335,14 +335,14 @@ export default {
 			attachTo: {
 				element: '#wp-admin-bar-user-actions',
 				offset: {
-					marginTop: 0,
-					marginLeft: -15,
+					marginTop: 5,
+					marginLeft: isRTL() ? 15 : -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: () => {

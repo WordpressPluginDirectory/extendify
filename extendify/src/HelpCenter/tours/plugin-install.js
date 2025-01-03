@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 
 export default {
 	id: 'plugin-install-tour',
@@ -20,13 +20,13 @@ export default {
 				element: '#menu-plugins .wp-submenu a[href="plugin-install.php"]',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				onDetach: () => {
@@ -46,7 +46,7 @@ export default {
 				element: '.search-form.search-plugins',
 				offset: {
 					marginTop: 5,
-					marginLeft: -15,
+					marginLeft: isRTL() ? 350 : -350,
 				},
 				boxPadding: {
 					top: -5,
@@ -55,10 +55,10 @@ export default {
 					right: 5,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -72,13 +72,13 @@ export default {
 				element: '#the-list .plugin-card:first-child .plugin-card-bottom',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'bottom',
 				},
-				hook: 'bottom left',
+				hook: isRTL() ? 'bottom right' : 'bottom left',
 			},
 			events: {},
 		},
@@ -92,7 +92,7 @@ export default {
 				element: '#the-list .plugin-card:first-child .install-now',
 				offset: {
 					marginTop: -5,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				boxPadding: {
 					top: 5,
@@ -101,10 +101,10 @@ export default {
 					right: 5,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -118,7 +118,7 @@ export default {
 				element: '.upload-view-toggle',
 				offset: {
 					marginTop: -5,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				boxPadding: {
 					top: 5,
@@ -127,10 +127,10 @@ export default {
 					right: 5,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},

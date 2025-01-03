@@ -1,61 +1,41 @@
 import {
-	BusinessInformation,
-	state as businessInfoState,
-} from '@launch/pages/BusinessInformation';
-import {
-	Goals,
-	goalsFetcher,
-	goalsParams as goalsData,
-	state as goalsState,
-} from '@launch/pages/Goals';
-import {
-	HomeSelect,
-	fetcher as homeSelectFetcher,
-	fetchData as homeSelectData,
-	state as homeSelectState,
-} from '@launch/pages/HomeSelect';
+	ContentGathering,
+	state as contentGatheringState,
+} from '@launch/pages/ContentGathering';
+import { Goals, state as goalsState } from '@launch/pages/Goals';
+import { HomeSelect, state as homeSelectState } from '@launch/pages/HomeSelect';
 import {
 	SiteInformation,
-	fetcher as siteInfoFetcher,
-	fetchData as siteInfoData,
 	state as siteInfoState,
 } from '@launch/pages/SiteInformation';
+import { SitePrep, state as sitePrepState } from '@launch/pages/SitePrep';
 import {
 	SiteStructure,
 	state as siteStructureState,
 } from '@launch/pages/SiteStructure';
-import {
-	SiteTypeSelect,
-	state as siteTypeState,
-} from '@launch/pages/SiteTypeSelect';
 
 // This is the default pages array
-// Pages can be added/removed dynamically, and override partnerSkipSteps
 // You can add pre-fetch functions to start fetching data for the next page
 // Supports both [] and single fetcher functions
-const defaultPages = [
+export const pages = [
 	[
-		'site-type',
+		'site-information',
 		{
-			component: SiteTypeSelect,
-			state: siteTypeState,
+			component: SiteInformation,
+			state: siteInfoState,
 		},
 	],
 	[
-		'site-title',
+		'site-prep',
 		{
-			component: SiteInformation,
-			fetcher: siteInfoFetcher,
-			fetchData: siteInfoData,
-			state: siteInfoState,
+			component: SitePrep,
+			state: sitePrepState,
 		},
 	],
 	[
 		'goals',
 		{
 			component: Goals,
-			fetcher: [goalsFetcher],
-			fetchData: [goalsData],
 			state: goalsState,
 		},
 	],
@@ -67,24 +47,18 @@ const defaultPages = [
 		},
 	],
 	[
-		'layout',
+		'content-fetching',
 		{
-			component: HomeSelect,
-			fetcher: homeSelectFetcher,
-			fetchData: homeSelectData,
-			state: homeSelectState,
+			component: ContentGathering,
+			state: contentGatheringState,
 		},
 	],
 	[
-		'business-information',
+		'layout',
 		{
-			component: BusinessInformation,
-			state: businessInfoState,
+			component: HomeSelect,
+			state: homeSelectState,
 		},
 	],
+	// The page select data is in PageControl.jsx
 ];
-
-const pages = defaultPages?.filter(
-	(pageKey) => !window.extOnbData?.partnerSkipSteps?.includes(pageKey[0]),
-);
-export { pages };

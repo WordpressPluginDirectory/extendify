@@ -12,7 +12,7 @@ import {
 } from '@wordpress/components';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import {
 	Icon,
 	customPostType,
@@ -84,6 +84,7 @@ export const ToolbarMenu = (CurrentMenuItems, props) => {
 									onClick={handleClick}
 									aria-expanded={isOpen}
 									aria-haspopup="true"
+									iconPosition={isRTL() ? 'right' : 'left'}
 									icon={magic}>
 									{__('Ask AI', 'extendify-local')}
 								</ToolbarButton>
@@ -167,7 +168,7 @@ const DropdownActions = ({ text, closePopup, openDraft, updatePrompt }) => {
 							style={{ width: '100%' }}
 							isSelected={false}
 							disabled={disabled()}
-							iconPosition="left"
+							iconPosition={isRTL() ? 'left' : 'right'}
 							icon={icon}
 							variant={undefined}
 							onClick={() => {

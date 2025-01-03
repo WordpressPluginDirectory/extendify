@@ -1,6 +1,6 @@
 import { Icon, Button } from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
-import image from '../../svg/Image';
+import image from '@draft/svg/Image';
 
 export const CreditCounter = ({ usedCredits, total }) => {
 	if (usedCredits < total) {

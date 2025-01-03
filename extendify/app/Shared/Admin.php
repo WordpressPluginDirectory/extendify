@@ -83,6 +83,12 @@ class Admin
             true
         );
 
+        $siteProfile = \get_option('extendify_site_profile', [
+            'aiSiteType' => '',
+            'aiDescription' => '',
+            'aiKeywords' => [],
+        ]);
+
         $partnerData = PartnerData::getPartnerData();
         $userConsent = get_user_meta(get_current_user_id(), 'extendify_ai_consent', true);
         $htmlAllowlist = [
@@ -101,7 +107,8 @@ class Admin
             Config::$slug . '-shared-scripts',
             'window.extSharedData = ' . \wp_json_encode([
                 'root' => \esc_url_raw(rest_url(Config::$slug . '/' . Config::$apiVersion)),
-                'home' => \esc_url_raw(\get_home_url()),
+                'homeUrl' => \esc_url_raw(\get_home_url()),
+                'adminUrl' => \esc_url_raw(\admin_url()),
                 'nonce' => \esc_attr(\wp_create_nonce('wp_rest')),
                 'devbuild' => (bool) constant('EXTENDIFY_DEVMODE'),
                 'assetPath' => \esc_url(EXTENDIFY_URL . 'public/assets'),
@@ -111,7 +118,7 @@ class Admin
                 'version' => \esc_attr(Config::$version),
                 'siteTitle' => \esc_attr(\get_bloginfo('name')),
                 'siteType' => Escaper::recursiveEscAttr(\get_option('extendify_siteType', [])),
-                'adminUrl' => \esc_url_raw(\admin_url()),
+                'siteProfile' => Escaper::recursiveEscAttr((array) $siteProfile),
                 'wpLanguage' => \esc_attr(\get_locale()),
                 'wpVersion' => \esc_attr(\get_bloginfo('version')),
                 'isBlockTheme' => function_exists('wp_is_block_theme') ? (bool) wp_is_block_theme() : false,
@@ -159,6 +166,11 @@ class Admin
     {
         // Add a tag to pages that were made with Launch.
         register_post_meta('page', 'made_with_extendify_launch', [
+            'single' => true,
+            'type' => 'boolean',
+            'show_in_rest' => true,
+        ]);
+        register_post_meta('post', 'made_with_extendify_launch', [
             'single' => true,
             'type' => 'boolean',
             'show_in_rest' => true,

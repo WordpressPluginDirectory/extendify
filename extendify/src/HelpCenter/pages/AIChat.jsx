@@ -1,6 +1,11 @@
 import { useLayoutEffect, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { chevronRight, Icon, postComments } from '@wordpress/icons';
+import { __, isRTL } from '@wordpress/i18n';
+import {
+	chevronLeft,
+	chevronRight,
+	Icon,
+	postComments,
+} from '@wordpress/icons';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Answer } from '@help-center/components/ai-chat/Answer';
@@ -18,7 +23,7 @@ export const AIChatDashboard = ({ onOpen }) => {
 				data-test="help-center-dashboard-ai-chat-button"
 				type="button"
 				onClick={onOpen}
-				className="m-0 flex w-full cursor-pointer justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100">
+				className="m-0 flex w-full cursor-pointer justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100 rtl:text-right">
 				<Icon
 					icon={postComments}
 					className="rounded-full border-0 bg-design-main fill-design-text p-2"
@@ -34,7 +39,7 @@ export const AIChatDashboard = ({ onOpen }) => {
 				</div>
 				<div className="flex h-12 grow-0 items-center justify-end">
 					<Icon
-						icon={chevronRight}
+						icon={isRTL() ? chevronLeft : chevronRight}
 						size={24}
 						className="fill-current text-gray-700"
 					/>

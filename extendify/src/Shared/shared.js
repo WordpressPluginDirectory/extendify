@@ -1,9 +1,10 @@
 import { subscribe } from '@wordpress/data';
+import { preFetchImages as preFetchUnsplashImages } from '@shared/lib/unsplash';
 import '@draft/app.css';
 
 const isOnLaunch = () => {
-	const q = new URLSearchParams(window.location.search);
-	return ['page'].includes(q.get('extendify-launch'));
+	const query = new URLSearchParams(window.location.search);
+	return query.get('page') === 'extendify-launch';
 };
 
 (() => {
@@ -23,6 +24,8 @@ const isOnLaunch = () => {
 	);
 
 	if (isOnLaunch()) return;
+
+	preFetchUnsplashImages();
 
 	// TODO: If this PR is released in WP (6.7?), then we can use the localstorage
 	// approach that we use above for the welcome guide

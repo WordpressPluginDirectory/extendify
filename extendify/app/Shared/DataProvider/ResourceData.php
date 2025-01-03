@@ -69,9 +69,28 @@ class ResourceData
 
             $resourceData = new ResourceData();
             $resourceData->cacheData('recommendations', RecommendationsController::fetchRecommendations()->get_data());
-            $resourceData->cacheData('domains', DomainsSuggestionController::fetchDomainSuggestions()->get_data());
             $resourceData->cacheData('supportArticles', SupportArticlesController::fetchArticles()->get_data());
         });
+
+        // For domains, only update when the site title changes.
+        \add_action('update_option_blogname', function () {
+            if (!defined('EXTENDIFY_PARTNER_ID')) {
+                return;
+            }
+
+            wp_schedule_single_event(time(), 'update_domains_cache');
+            spawn_cron();
+        });
+
+        \add_action('update_domains_cache', function () {
+            if (!defined('EXTENDIFY_PARTNER_ID')) {
+                return;
+            }
+
+            $data = DomainsSuggestionController::fetchDomainSuggestions()->get_data();
+            set_transient('extendify_domains', Sanitizer::sanitizeArray($data));
+        });
+
     }
 
     /**
@@ -81,10 +100,17 @@ class ResourceData
      */
     public function getData()
     {
+        $domains = get_transient('extendify_domains');
+        if ($domains === false) {
+            // TODO: Should we spawn a cron here to refetch the data?
+            $domains = [];
+        }
+
         return [
             'recommendations' => $this->recommendations(),
-            'domains' => $this->domains(),
             'supportArticles' => $this->supportArticles(),
+            // Domains are now cached forever until the site title changes.
+            'domains' => $domains,
         ];
     }
 
@@ -103,30 +129,6 @@ class ResourceData
         }
 
         return $recommendations;
-    }
-
-    /**
-     * Return the domains suggestions. Fetch them if not found (or on a schedule).
-     * Unlike other data fetching in this class, this is non-blocking.
-     *
-     * @return mixed|\WP_REST_Response
-     */
-    protected function domains()
-    {
-        $domains = get_transient('extendify_domains');
-        if ($domains === false) {
-            // Instead of blocking here, schedule a job to generate the cache for next time,
-            // But only if on the Assist page.
-            // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-            if ((isset($_GET['page']) && $_GET['page'] === 'extendify-assist')) {
-                wp_schedule_single_event(time(), 'extendify_cache_data');
-                spawn_cron();
-            }
-
-            return [];
-        }
-
-        return $domains;
     }
 
     /**
@@ -154,6 +156,7 @@ class ResourceData
      */
     protected function cacheData($functionName, $data)
     {
-        set_transient('extendify_' . $functionName, Sanitizer::sanitizeArray($data));
+        // The scheduler runs monthly, one day before the cache expires.
+        set_transient('extendify_' . $functionName, Sanitizer::sanitizeArray($data), (DAY_IN_SECONDS + MONTH_IN_SECONDS));
     }
 }

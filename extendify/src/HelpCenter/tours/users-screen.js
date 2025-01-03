@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 
 export default {
 	id: 'users-screen-tour',
@@ -23,13 +23,13 @@ export default {
 				element: '#menu-users ul > li:nth-child(2)',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				onDetach: () => {
@@ -52,10 +52,10 @@ export default {
 					marginLeft: 0,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'bottom',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {},
 		},
@@ -69,13 +69,13 @@ export default {
 				element: 'tbody#the-list > tr:nth-child(1) > td.username',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				onAttach: () => {
@@ -100,7 +100,7 @@ export default {
 				element: 'p.search-box',
 				offset: {
 					marginTop: -5,
-					marginLeft: -15,
+					marginLeft: isRTL() ? 15 : -15,
 				},
 				boxPadding: {
 					top: 5,
@@ -109,10 +109,10 @@ export default {
 					right: 5,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {},
 		},
@@ -126,7 +126,7 @@ export default {
 				element: '.page-title-action',
 				offset: {
 					marginTop: -5,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				boxPadding: {
 					top: 5,
@@ -135,10 +135,10 @@ export default {
 					right: 5,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},

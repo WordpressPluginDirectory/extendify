@@ -4,40 +4,38 @@ import {
 	useMemo,
 	useState,
 } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { Icon, arrowRight } from '@wordpress/icons';
+import { __, isRTL } from '@wordpress/i18n';
+import { Icon, arrowRight, arrowLeft } from '@wordpress/icons';
 import classNames from 'classnames';
 import { Title } from '@launch/components/Title';
 import { PageLayout } from '@launch/layouts/PageLayout';
-import { usePagesStore } from '@launch/state/Pages';
 import { pageState } from '@launch/state/factory';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const state = pageState('Site Template Type', () => ({
 	ready: false,
 	canSkip: false,
-	validation: null,
+	useNav: true,
 	onRemove: () => {},
 }));
 
 export const SiteStructure = () => {
 	const { siteStructure, setSiteStructure } = useUserSelectionStore();
-	const { removePage, addPage } = usePagesStore();
 	const [firstButton, setFirstButton] = useState(siteStructure);
 
 	useLayoutEffect(() => {
-		if (firstButton) return;
+		if (firstButton || siteStructure) return;
 		// Randomize the order of the buttons
 		const random = ['single-page', 'multi-page'].sort(
 			() => Math.random() - 0.5,
 		);
 		setFirstButton(random[0]);
 		setSiteStructure(random[0]);
-	}, [setSiteStructure, firstButton]);
+	}, [setSiteStructure, firstButton, siteStructure]);
 
 	useEffect(() => {
 		state.setState({ ready: !!siteStructure && firstButton });
-	}, [siteStructure, addPage, removePage, firstButton]);
+	}, [siteStructure, firstButton]);
 
 	const buttons = useMemo(
 		() => [
@@ -68,7 +66,7 @@ export const SiteStructure = () => {
 
 	return (
 		<PageLayout>
-			<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
+			<div className="grow overflow-y-auto px-6 py-8 md:p-12 3xl:p-16">
 				<Title title={__('Pick Your Site Structure', 'extendify-local')} />
 				<div className="relative mx-auto flex w-full max-w-2xl flex-col gap-8 lg:flex-row 3xl:max-w-4xl">
 					{buttonsOrdered}
@@ -110,7 +108,7 @@ const ButtonSelect = ({ title, description, onClick, selected, imageSrc }) => (
 			<p className="m-0 mb-3 p-0 text-gray-700 3xl:mb-4">{description}</p>
 			<div className="flex items-center justify-between">
 				<h1 className="m-0 p-0 text-lg font-semibold">{title}</h1>
-				<Icon icon={arrowRight} />
+				<Icon icon={isRTL() ? arrowLeft : arrowRight} />
 			</div>
 		</div>
 	</div>

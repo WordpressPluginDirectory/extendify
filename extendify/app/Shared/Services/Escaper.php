@@ -19,8 +19,12 @@ class Escaper
      * @param array $array - The array we need to escape.
      * @return array
      */
-    public static function recursiveEscAttr(array $array): array
+    public static function recursiveEscAttr($array): array
     {
+        if (!is_array($array)) {
+            return (array) esc_attr($array);
+        }
+
         return array_map(static function ($value) {
             if (is_array($value)) {
                 return self::recursiveEscAttr($value);

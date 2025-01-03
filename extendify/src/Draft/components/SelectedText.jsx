@@ -2,7 +2,7 @@ import { store as blockEditorStore } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import { useDispatch } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import { Icon, edit, trash } from '@wordpress/icons';
 import { useSelectedText } from '@draft/hooks/useSelectedText';
 
@@ -47,7 +47,7 @@ export const SelectedText = ({ loading }) => {
 						onClick={clearSelectedBlock}
 						disabled={loading}
 						icon={trash}
-						iconPosition="right"
+						iconPosition={isRTL() ? 'right' : 'left'}
 						className="relative cursor-pointer flex-row-reverse rounded bg-gray-300 text-gray-800 hover:bg-gray-400"
 						data-test="remove-selection">
 						{__('Remove selection', 'extendify-local')}

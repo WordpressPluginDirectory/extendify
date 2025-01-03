@@ -82,18 +82,13 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 				type="submit"
 				className="w-full justify-center"
 				variant="primary"
+				__next40pxDefaultSize
 				disabled={isGenerating || !prompt || usedCredits >= imageCredits.total}>
 				{isGenerating
 					? __('Generating image...', 'extendify-local')
 					: __('Generate image', 'extendify-local')}
 			</Button>
-			{isGenerating ? (
-				<Button
-					type="submit"
-					className="w-full justify-center bg-gray-200 text-gray-800">
-					{__('Cancel', 'extendify-local')}
-				</Button>
-			) : (
+			{isGenerating ? null : (
 				<CreditCounter usedCredits={usedCredits} total={imageCredits.total} />
 			)}
 		</>

@@ -1,4 +1,4 @@
-import { BlockPreview, transformStyles } from '@wordpress/block-editor';
+import { BlockPreview } from '@wordpress/block-editor';
 import { rawHandler } from '@wordpress/blocks';
 import {
 	useState,
@@ -12,24 +12,17 @@ import { pageNames } from '@shared/lib/pages';
 import classNames from 'classnames';
 import { colord } from 'colord';
 import { AnimatePresence, motion } from 'framer-motion';
+import themeJSON from '@launch/_data/theme-processed.json';
 import { usePreviewIframe } from '@launch/hooks/usePreviewIframe';
 import { lowerImageQuality } from '@launch/lib/util';
-import themeJSON from '../_data/theme-processed.json';
 
-export const SmallPreview = ({ style, onSelect, selected }) => {
+export const SmallPreview = ({ style, onSelect, selected, siteTitle }) => {
 	const previewContainer = useRef(null);
 	const blockRef = useRef(null);
 	const observer = useRef(null);
 	const [ready, setReady] = useState(false);
 	const variation = style?.variation;
 	const theme = variation?.settings?.color?.palette?.theme;
-	const transformedStyles = useMemo(
-		() =>
-			themeJSON?.[style?.variation?.title]
-				? transformStyles([{ css: themeJSON[style?.variation?.title] }])
-				: null,
-		[style?.variation],
-	);
 
 	const onLoad = useCallback(
 		(frame) => {
@@ -42,20 +35,29 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 				const now = performance.now();
 				if (now - lastRun < 100) return requestAnimationFrame(checkOnStyles);
 				lastRun = now;
-				frame?.contentDocument?.querySelector('[href*=load-styles]')?.remove();
-				const style = `<style id="ext-tj">
-               		${transformedStyles}
-									.wp-block-missing { display: none !important }
-            	</style>`;
+				const content = frame?.contentDocument;
+				if (content) {
+					content.querySelector('[href*=load-styles]')?.remove();
+					const siteTitleElement = content.querySelector('[href*=site-title]');
+					if (siteTitleElement) siteTitleElement.textContent = siteTitle;
+				}
+				const stylesToInject = `<style id="ext-tj">
+					${themeJSON[style?.variation?.title]}
+					.wp-block-missing { display: none !important }
+					img[src^=data] { filter: url(#wp-duotone-primary) !important }
+				</style>`;
 				if (!frame.contentDocument?.getElementById('ext-tj')) {
-					frame.contentDocument?.body?.insertAdjacentHTML('beforeend', style);
+					frame.contentDocument?.body?.insertAdjacentHTML(
+						'beforeend',
+						stylesToInject,
+					);
 				}
 				counter++;
 				requestAnimationFrame(checkOnStyles); // recursive
 			};
 			checkOnStyles();
 		},
-		[transformedStyles],
+		[style?.variation?.title, siteTitle],
 	);
 
 	const { loading, ready: show } = usePreviewIframe({

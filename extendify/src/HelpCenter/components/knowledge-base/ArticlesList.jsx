@@ -1,4 +1,5 @@
-import { Icon, undo } from '@wordpress/icons';
+import { isRTL } from '@wordpress/i18n';
+import { Icon, undo, redo } from '@wordpress/icons';
 import { useRouter } from '@help-center/hooks/useRouter';
 import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base.js';
 
@@ -21,7 +22,7 @@ export const ArticlesList = ({ articles }) => {
 						}}>
 						<Icon
 							size={20}
-							icon={undo}
+							icon={isRTL() ? redo : undo}
 							className="rotate-180 transform fill-gray-700"
 						/>
 						{title}

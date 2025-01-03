@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 
 export default {
 	id: 'site-assistant-tour',
@@ -24,10 +24,10 @@ export default {
 					marginLeft: window.innerWidth <= 1151 ? -25 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -44,10 +44,10 @@ export default {
 					marginLeft: window.innerWidth <= 1151 ? -25 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				onAttach: () => {},
@@ -68,10 +68,10 @@ export default {
 					marginLeft: window.innerWidth <= 1151 ? -25 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -86,13 +86,13 @@ export default {
 				element: '#wp-admin-bar-help-center-btn',
 				offset: {
 					marginTop: 45,
-					marginLeft: -5,
+					marginLeft: isRTL() ? 5 : -5,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {},
 		},
@@ -106,13 +106,13 @@ export default {
 				element: '#assist-menu-bar',
 				offset: {
 					marginTop: 20,
-					marginLeft: -5,
+					marginLeft: isRTL() ? 5 : -5,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'bottom',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 				boxPadding: {
 					top: 5,
 					bottom: 5,
@@ -132,13 +132,13 @@ export default {
 				element: '#toplevel_page_extendify-assist',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				onAttach: () => {

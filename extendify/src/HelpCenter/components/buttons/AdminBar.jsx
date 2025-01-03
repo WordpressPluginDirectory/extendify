@@ -1,7 +1,8 @@
 import { Icon } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import { helpFilled } from '@wordpress/icons';
 import { useActivityStore } from '@shared/state/activity';
+import classNames from 'classnames';
 import { useGlobalSyncStore } from '@help-center/state/globals-sync';
 
 export const AdminBar = () => {
@@ -22,7 +23,9 @@ export const AdminBar = () => {
 				icon={helpFilled}
 				width={18}
 				height={18}
-				className="fill-design-text"
+				className={classNames('fill-design-text', {
+					'scale-x-[-1]': isRTL(),
+				})}
 			/>
 		</button>
 	);

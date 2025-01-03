@@ -26,12 +26,14 @@ const HelpCenterButton = () => {
 		if (isOnLaunch()) return;
 		const id = 'extendify-gtnbrg-help-center-btn';
 		if (document.getElementById(id)) return;
+
 		const helpCenter = Object.assign(document.createElement('span'), {
 			className: 'extendify-help-center',
 			id,
 		});
 		requestAnimationFrame(() => {
 			requestAnimationFrame(() => {
+				if (document.getElementById(id)) return;
 				const page = '[aria-controls="edit-post:document"]';
 				const fse = '[aria-controls="edit-site:template"]';
 				document.querySelector(page)?.after(helpCenter);

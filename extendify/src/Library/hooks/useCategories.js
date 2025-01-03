@@ -1,6 +1,6 @@
 import { useState } from '@wordpress/element';
+import { PATTERNS_HOST } from '@constants';
 import useSWRImmutable from 'swr/immutable';
-import { PATTERNS_HOST } from '../../constants';
 
 const fetcher = async () => {
 	const urlParams = new URLSearchParams({

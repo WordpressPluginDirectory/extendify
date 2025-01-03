@@ -2,37 +2,32 @@ import { useCallback, useEffect, useState, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
-import { getHomeTemplates } from '@launch/api/DataApi';
 import { getThemeVariations } from '@launch/api/WPApi';
 import { LoadingIndicator } from '@launch/components/LoadingIndicator';
 import { SmallPreview } from '@launch/components/SmallPreview';
 import { Title } from '@launch/components/Title';
 import { useFetch } from '@launch/hooks/useFetch';
+import { useHomeLayouts } from '@launch/hooks/useHomeLayouts';
 import { useIsMountedLayout } from '@launch/hooks/useIsMounted';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { pageState } from '@launch/state/factory';
+import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Checkmark } from '@launch/svg';
-
-export const fetcher = getHomeTemplates;
-export const fetchData = (siteType) => ({
-	key: 'home-pages-list',
-	siteType: siteType ?? useUserSelectionStore?.getState().siteType,
-});
 
 export const state = pageState('Layout', () => ({
 	ready: false,
 	canSkip: false,
-	validation: null,
+	useNav: true,
 	onRemove: () => {},
 }));
 
 export const HomeSelect = () => {
-	const { loading, data: homeTemplate } = useFetch(fetchData, fetcher);
+	const { loading, homeLayouts } = useHomeLayouts();
 
 	return (
 		<PageLayout>
-			<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
+			<div className="grow overflow-y-auto px-6 py-8 md:p-12 3xl:p-16">
 				<Title
 					title={__('Pick a design for your website', 'extendify-local')}
 					description={__('You can personalize this later.', 'extendify-local')}
@@ -41,7 +36,7 @@ export const HomeSelect = () => {
 					{loading ? (
 						<LoadingIndicator />
 					) : (
-						<DesignSelector homeTemplate={homeTemplate} />
+						<DesignSelector homeLayouts={homeLayouts} />
 					)}
 				</div>
 			</div>
@@ -49,33 +44,75 @@ export const HomeSelect = () => {
 	);
 };
 
-const DesignSelector = ({ homeTemplate }) => {
+const DesignSelector = ({ homeLayouts }) => {
 	const { data: variations } = useFetch('variations', getThemeVariations);
 	const isMounted = useIsMountedLayout();
 	const [styles, setStyles] = useState([]);
-	const { setStyle, style: currentStyle } = useUserSelectionStore();
-	const onSelect = useCallback((style) => setStyle(style), [setStyle]);
+	const { setStyle, style: currentStyle } = usePagesSelectionStore();
+	const { siteInformation, setVariation, variation } = useUserSelectionStore();
+
+	const onSelect = useCallback(
+		(style) => {
+			setStyle(style);
+			setVariation(style?.variation);
+		},
+		[setStyle, setVariation],
+	);
 	const wrapperRef = useRef();
 	const once = useRef(false);
 
 	useEffect(() => {
-		state.setState({ ready: !!currentStyle?.variation?.title });
-	}, [currentStyle]);
+		state.setState({ ready: !!variation?.title });
+	}, [variation]);
 
 	useEffect(() => {
-		if (!homeTemplate || !variations) return;
+		if (!homeLayouts || !variations) return;
 		if (styles.length) return;
 		setStyle(null);
+		setVariation(null);
 		(async () => {
-			const slicedEntries = Array.from(homeTemplate.entries());
+			const slicedEntries = Array.from(homeLayouts.entries());
 			for (const [index, style] of slicedEntries) {
 				if (!isMounted.current) return;
+
+				const { fonts, colorPalette } = style.siteStyle;
+
+				// Select the variation matching the color palette suggested
+				// by the AI. If none matches, return a random variation.
+				let variation =
+					variations.find(({ slug }) => slug === colorPalette) ??
+					variations[index % variations.length];
+
+				// If a variation matched color palette, replace the fonts with
+				// those suggested by the AI.
+				if (variation.slug === style.colorPalette && fonts) {
+					variation = Object.assign(variation, {
+						...variation,
+						styles: {
+							...variation.styles,
+							elements: {
+								...variation.styles.elements,
+								heading: {
+									...variation.styles.elements.heading,
+									typography: {
+										...variation.styles.elements.heading.typography,
+										fontFamily: fonts.heading,
+									},
+								},
+							},
+							typography: {
+								...variation.styles.typography,
+								fontFamily: fonts.body,
+							},
+						},
+					});
+				}
 
 				setStyles((styles) => [
 					...styles,
 					{
 						...style,
-						variation: variations[index % variations.length],
+						variation,
 					},
 				]);
 
@@ -84,7 +121,14 @@ const DesignSelector = ({ homeTemplate }) => {
 				await new Promise((resolve) => setTimeout(resolve, random));
 			}
 		})();
-	}, [homeTemplate, isMounted, variations, styles.length, setStyle]);
+	}, [
+		homeLayouts,
+		isMounted,
+		variations,
+		styles.length,
+		setStyle,
+		setVariation,
+	]);
 
 	useEffect(() => {
 		if (!currentStyle || !styles || once.current) return;
@@ -119,6 +163,7 @@ const DesignSelector = ({ homeTemplate }) => {
 							style={{ aspectRatio: '1.55' }}>
 							<SmallPreview
 								style={style}
+								siteTitle={siteInformation.title}
 								onSelect={onSelect}
 								selected={currentStyle?.id === style.id}
 							/>
@@ -131,7 +176,7 @@ const DesignSelector = ({ homeTemplate }) => {
 					</span>
 				</div>
 			))}
-			{homeTemplate?.slice(styles?.length).map((_, i) => (
+			{homeLayouts?.slice(styles?.length).map((_, i) => (
 				<AnimatePresence key={i}>
 					<motion.div
 						initial={{ opacity: 1 }}

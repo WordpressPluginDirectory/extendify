@@ -59,6 +59,7 @@ export const ImagePreview = ({
 						className="bg-gray-100"
 						style={{ aspectRatio: Number(imgWidth) / Number(imgHeight) }}>
 						<img
+							alt={prompt}
 							src={src}
 							className="block w-full"
 							style={{ aspectRatio: Number(imgWidth) / Number(imgHeight) }}

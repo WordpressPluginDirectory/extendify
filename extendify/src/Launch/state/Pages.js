@@ -8,6 +8,7 @@ const store = (set, get) => ({
 	count: () => get().pages.size,
 	getPageOrder: () => Array.from(get().pages.keys()),
 	getCurrentPageData: () => get().pages.get(get().getCurrentPageSlug()),
+	getPageSlug: (idx) => get().getPageOrder()[idx],
 	getCurrentPageSlug: () => {
 		const page = get().getPageOrder()[get().currentPageIndex];
 		if (!page) {
@@ -16,10 +17,12 @@ const store = (set, get) => ({
 		}
 		return page;
 	},
+	getPageData: (slug) => get().pages.get(slug),
+	getPageState: (slug) => get().getPageData(slug)?.state.getState(),
 	getNextPageData: () => {
 		const nextIndex = get().currentPageIndex + 1;
 		if (nextIndex > get().count() - 1) return {};
-		return get().pages.get(get().getPageOrder()[nextIndex]);
+		return get().getPageData(get().getPageSlug(nextIndex));
 	},
 	setPage: (page) => {
 		// If page is a string, get the index
@@ -59,35 +62,45 @@ const store = (set, get) => ({
 		});
 		set({ pages: newPages });
 	},
-	pushHistory: (page) => {
+	findPreviousValidPage: (idx) => {
+		let prevIdx = idx;
+		// go back until you find useNav = true
+		do {
+			prevIdx -= 1;
+		} while (
+			prevIdx > 0 &&
+			!get().getPageState(get().getPageSlug(prevIdx))?.useNav
+		);
+		return prevIdx;
+	},
+	pushHistory: (idx) => {
 		history.pushState(
 			{
-				currentPageIndex: page,
-				currentPageKey: get().getPageOrder()[page],
-				previousPageIndex: page - 1,
+				currentPageIndex: idx,
+				currentPageKey: get().getPageSlug(idx),
+				previousPageIndex: get().findPreviousValidPage(idx),
 			},
 			'',
 		);
 	},
-	replaceHistory: (page) => {
+	replaceHistory: (idx) => {
 		history.replaceState(
 			{
-				currentPageIndex: page,
-				currentPageKey: get().getPageOrder()[page],
-				previousPageIndex: page - 1,
+				currentPageIndex: idx,
+				currentPageKey: get().getPageSlug(idx),
+				previousPageIndex: get().findPreviousValidPage(idx),
 			},
 			'',
 		);
 	},
 	nextPage: () => {
 		const pageIndex = get().currentPageIndex + 1;
-		get().pushHistory(pageIndex);
+		const nextPageState = get().getPageState(get().getPageSlug(pageIndex));
+		if (nextPageState?.useNav) get().pushHistory(pageIndex);
 		get().setPage(pageIndex);
 	},
 	previousPage: () => {
-		const pageIndex = get().currentPageIndex - 1;
-		get().replaceHistory(pageIndex);
-		get().setPage(pageIndex);
+		get().setPage(get().findPreviousValidPage(get().currentPageIndex));
 	},
 });
 

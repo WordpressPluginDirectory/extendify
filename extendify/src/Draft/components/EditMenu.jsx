@@ -85,7 +85,9 @@ export const EditMenu = ({ disabled, setPrompt }) => {
 					iconPosition="left"
 					disabled={disabled}
 					className="group">
-					<span className="whitespace-normal text-left">{label}</span>
+					<span className="whitespace-normal text-left rtl:text-right">
+						{label}
+					</span>
 				</MenuItem>
 			))}
 		</MenuGroup>

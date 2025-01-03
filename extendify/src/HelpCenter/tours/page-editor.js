@@ -1,5 +1,5 @@
 import { createBlock } from '@wordpress/blocks';
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import { waitUntilExists, waitUntilGone } from '@help-center/lib/tour-helpers';
 
 const hasIframe = () =>
@@ -13,15 +13,10 @@ export default {
 	title: __('Page editor', 'extendify-local'),
 	settings: {
 		allowOverflow: true,
-		startFrom: [window.extSharedData.adminUrl + 'post-new.php?post_type=page'],
-	},
-	onStart: () => {
-		// close sidebar if open
-		document
-			.querySelector(`[aria-label="${__('Settings')}"].is-pressed`)
-			?.click();
-		// If the Extendify library is open, close it
-		return dispatchEvent(new CustomEvent('extendify::close-library'));
+		startFrom: [
+			window.extSharedData.adminUrl + 'post-new.php?post_type=page&ext-close',
+			window.extSharedData.adminUrl + 'post-new.php?post_type=page',
+		],
 	},
 	steps: [
 		{
@@ -34,22 +29,13 @@ export default {
 					marginLeft: 0,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'bottom',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				beforeAttach: async () => {
-					if (
-						window.wp.data
-							.select('core/edit-post')
-							.isFeatureActive('welcomeGuide')
-					) {
-						await window.wp.data
-							.dispatch('core/edit-post')
-							.toggleFeature('welcomeGuide');
-					}
 					return await waitUntilExists(inserterButtonSelector());
 				},
 			},
@@ -64,20 +50,21 @@ export default {
 				element: '.block-editor-inserter__menu',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				beforeAttach: async () => {
 					document
 						.querySelector(inserterButtonSelector(':not(.is-pressed)'))
 						?.click();
-					return await waitUntilExists('.block-editor-inserter__tabs');
+
+					return await waitUntilExists('.block-editor-tabbed-sidebar');
 				},
 				onAttach: () => {
 					const toggle = document.querySelector(inserterButtonSelector());
@@ -108,13 +95,26 @@ export default {
 					hasIframe() ? 'iframe[name="editor-canvas"]' : '.wp-block-post-title',
 				offset: () => ({
 					marginTop: hasIframe() ? 15 : 0,
-					marginLeft: hasIframe() ? -15 : 15,
+					marginLeft: isRTL()
+						? hasIframe()
+							? 15
+							: -15
+						: hasIframe()
+							? -15
+							: 15,
 				}),
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: () => (hasIframe() ? 'top right' : 'top left'),
+				hook: () =>
+					isRTL()
+						? hasIframe()
+							? 'top left'
+							: 'top right'
+						: hasIframe()
+							? 'top right'
+							: 'top left',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -137,13 +137,26 @@ export default {
 						: '.wp-block-post-content > p',
 				offset: () => ({
 					marginTop: hasIframe() ? 15 : 0,
-					marginLeft: hasIframe() ? -15 : 15,
+					marginLeft: isRTL()
+						? hasIframe()
+							? 15
+							: -15
+						: hasIframe()
+							? -15
+							: 15,
 				}),
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: () => (hasIframe() ? 'top right' : 'top left'),
+				hook: () =>
+					isRTL()
+						? hasIframe()
+							? 'top left'
+							: 'top right'
+						: hasIframe()
+							? 'top right'
+							: 'top left',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -178,30 +191,36 @@ export default {
 				element: '.interface-interface-skeleton__sidebar',
 				offset: {
 					marginTop: 0,
-					marginLeft: -15,
+					marginLeft: isRTL() ? 15 : -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
-					document
-						.querySelector(`[aria-label="${__('Settings')}"]:not(.is-pressed)`)
-						?.click();
+					const settingsButton = document.querySelector(
+						`[aria-label="${__('Settings')}"]:not(.is-pressed)`,
+					);
+					if (settingsButton) {
+						settingsButton?.click();
+					} else {
+						document
+							.querySelector('[aria-label="Settings"]:not(.is-pressed)')
+							?.click();
+					}
+
 					await waitUntilExists('.interface-interface-skeleton__sidebar');
 					document
 						.querySelector(
 							'.edit-post-sidebar__panel-tab,[data-tab-id="edit-post/document"]',
 						)
 						?.click();
-					await waitUntilExists('.edit-post-post-status');
-					document
-						.querySelector('.edit-post-post-status:not(.is-opened) button')
-						?.click();
-					await waitUntilExists('.edit-post-post-status.is-opened');
+
+					await waitUntilExists('.editor-post-status');
+					document.querySelector('.edit-post-post-status button')?.click();
 				},
 			},
 		},
@@ -216,13 +235,13 @@ export default {
 					'.block-editor-post-preview__button-toggle,.editor-preview-dropdown__toggle',
 				offset: {
 					marginTop: 0,
-					marginLeft: -15,
+					marginLeft: isRTL() ? 15 : -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {},
 		},
@@ -238,10 +257,10 @@ export default {
 					marginTop: 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'bottom',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {},
 		},

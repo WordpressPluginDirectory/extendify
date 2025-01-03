@@ -22,7 +22,7 @@ export const DynamicTextarea = ({
 	useLayoutEffect(() => {
 		if (!ref.current) return;
 		const computedStyle = window.getComputedStyle(ref.current);
-		const lineHeight = parseFloat(computedStyle.lineHeight);
+		const lineHeight = parseFloat(computedStyle.lineHeight || '20px');
 		setRowHeight(lineHeight);
 	}, []);
 
@@ -55,7 +55,7 @@ export const DynamicTextarea = ({
 		});
 
 		document.body.appendChild(tempTextarea);
-		setHeight(tempTextarea.scrollHeight);
+		setHeight(tempTextarea.scrollHeight < 52 ? 52 : tempTextarea.scrollHeight);
 		document.body.removeChild(tempTextarea);
 	}, [value, placeholder]);
 

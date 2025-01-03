@@ -5,7 +5,7 @@ export const stripUrlParams = (url) => url?.[0]?.url?.split(/[?#]/)?.[0];
 
 export const lowerImageQuality = (html) => {
 	return html.replace(
-		/(https?:\/\/\S+\?w=\d+)/gi,
+		/(https?:\/\/\S+\w=\d+)/gi,
 		'$1&q=10&auto=format,compress&fm=avif',
 	);
 };
@@ -29,3 +29,20 @@ export const waitFor200Response = async () => {
 
 export const wasInstalled = (activePlugins, pluginSlug) =>
 	activePlugins?.filter((p) => p.includes(pluginSlug))?.length;
+
+export const hexTomatrixValues = (hex) => {
+	// convert from hex
+	const colorInt = parseInt(hex.replace('#', ''), 16);
+	// convert to rgb
+	// This shifts each primary color value to the right-most 8 bits
+	// then applies a mask to get the value of that color
+	const r = (colorInt >> 16) & 255;
+	const g = (colorInt >> 8) & 255;
+	const b = colorInt & 255;
+	// normalize to 0-1
+	return [
+		Math.round((r / 255) * 10000) / 10000,
+		Math.round((g / 255) * 10000) / 10000,
+		Math.round((b / 255) * 10000) / 10000,
+	];
+};

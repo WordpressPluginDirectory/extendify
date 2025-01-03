@@ -19,7 +19,7 @@ export const Unsplash = () => {
 	const [search, setSearch] = useState('');
 	const [searchDebounced, setSearchDebounced] = useState('');
 	const [searching, setSearching] = useState(false);
-	const { data: imageData, loading } = useUnsplashImages(searchDebounced);
+	const { data: images, loading } = useUnsplashImages(searchDebounced);
 	const [isInsertingImage, setIsInsertingImage] = useState(null);
 
 	const selectedBlock = useSelect(
@@ -33,16 +33,12 @@ export const Unsplash = () => {
 		setIsInsertingImage(image);
 		try {
 			const downloadedImage = await downloadImage(
-				imageData.requestID,
+				image.requestMetadata?.id,
 				image.urls?.regular,
 				'unsplash',
 				image.id,
 			);
-			await addImageToBlock(
-				selectedBlock,
-				downloadedImage,
-				updateBlockAttributes,
-			);
+			addImageToBlock(selectedBlock, downloadedImage, updateBlockAttributes);
 		} catch (error) {
 			console.log(error);
 		} finally {
@@ -56,7 +52,7 @@ export const Unsplash = () => {
 
 	useEffect(() => {
 		if (!search) return setSearchDebounced('');
-		const id = setTimeout(() => setSearchDebounced(search), 300);
+		const id = setTimeout(() => setSearchDebounced(search), 750);
 		return () => clearTimeout(id);
 	}, [search]);
 
@@ -91,7 +87,7 @@ export const Unsplash = () => {
 					value={search}
 				/>
 				<UnsplashImages
-					imageData={imageData}
+					images={images}
 					isInsertingImage={isInsertingImage}
 					onClick={handleClick}
 					loading={loading || searching}

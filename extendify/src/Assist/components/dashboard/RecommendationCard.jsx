@@ -26,7 +26,7 @@ const LinkCard = ({ recommendation }) => {
 			onClick={() => incrementActivity(`recommendations-${slug}`)}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="cursor-pointer rounded border border-gray-200 bg-transparent p-4 text-left text-base no-underline hover:border-design-main hover:bg-gray-50">
+			className="cursor-pointer rounded border border-gray-200 bg-transparent p-4 text-left text-base no-underline hover:border-design-main hover:bg-gray-50 rtl:text-right">
 			<div className="h-full w-full">
 				<img
 					className="h-8 w-8 rounded fill-current"
@@ -49,7 +49,7 @@ const InstallCard = ({ recommendation }) => {
 	return (
 		<div
 			onClick={() => incrementActivity(`recommendations-install-${slug}`)}
-			className="rounded border border-gray-200 bg-transparent p-4 text-left text-base">
+			className="rounded border border-gray-200 bg-transparent p-4 text-left text-base rtl:text-right">
 			<div className="h-full w-full">
 				<img
 					className="h-8 w-8 rounded fill-current"

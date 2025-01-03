@@ -1,12 +1,21 @@
 import { rawHandler, getBlockContent } from '@wordpress/blocks';
 import { pageNames } from '@shared/lib/pages';
 import { getLinkSuggestions } from '@launch/api/DataApi';
-import { updatePage } from '@launch/api/WPApi';
+import {
+	getActivePlugins,
+	getOption,
+	getPageById,
+	updatePage,
+} from '@launch/api/WPApi';
+import { wasInstalled } from '@launch/lib/util';
 
-const buttonRegex = /href="(#extendify-[\w|-]+)"/gi;
+const { homeUrl } = window.extSharedData;
+const buttonRegex = /href="(#extendify-[\w-]+)"/gi;
 const pagesWithButtons = (p) => p?.content?.raw?.match(buttonRegex);
 
-export const updateButtonLinks = async (wpPages) => {
+export const updateButtonLinks = async (wpPages, pluginPages) => {
+	// Fetch active plugins after installing plugins
+	let { data: activePlugins } = await getActivePlugins();
 	const contactPageSlug = wpPages.find(({ originalSlug }) =>
 		originalSlug.startsWith('contact'),
 	)?.slug;
@@ -29,8 +38,20 @@ export const updateButtonLinks = async (wpPages) => {
 
 	// Collect the page slugs to share with the server
 	const availablePages = wpPages
+		.concat(pluginPages)
 		.filter(({ slug }) => !slug.startsWith('home'))
 		.map(({ slug }) => `/${slug}`);
+
+	// Add plugin related pages only if plugin is active
+	if (wasInstalled(activePlugins, 'woocommerce')) {
+		const shopPage = await getPageById(
+			await getOption('woocommerce_shop_page_id'),
+		);
+
+		if (shopPage) {
+			availablePages.push(`/${shopPage.slug}`);
+		}
+	}
 
 	// Fetch the links from the server. If a request fails, ignore it.
 	const suggestedLinks = (
@@ -67,11 +88,11 @@ export const updateButtonLinks = async (wpPages) => {
 							// if the link points to the current page or '/'
 							// we should link to the contact page (or default to '/')
 							if ([p.slug, `/${p.slug}`, '/'].includes(link))
-								return `/${contactPageSlug ?? ''}`;
+								return `"${homeUrl}/${contactPageSlug ?? ''}"`;
 
 							// The server once sent back slugs without the /
 							// so we need to check
-							return link.startsWith('/') ? link : `/${link}`;
+							return `"${homeUrl}/${link.replace(/^\//, '')}"`;
 						})
 					: p.content.raw.replace(new RegExp(buttonRegex, 'g'), (match) => {
 							return match ? 'href="#"' : '';
@@ -95,11 +116,31 @@ export const updateButtonLinks = async (wpPages) => {
 	);
 };
 
-export const updateSinglePageLinksToContactSection = (wpPages, pages) => {
+export const updateSinglePageLinksToContactSection = async (wpPages, pages) => {
 	// Find if there's a contact pattern in the single page's patterns
 	const hasContactPattern = pages?.[0]?.patterns.find((p) =>
 		p?.patternTypes?.[0]?.startsWith('contact'),
 	);
+
+	// Find if there's a products pattern in the single page's patterns
+	const hasProductPattern = pages?.[0]?.patterns.find((p) =>
+		p?.patternTypes?.[0]?.startsWith('product'),
+	);
+
+	// If there's a product pattern, update the shop page link
+	if (hasProductPattern) {
+		wpPages[0] = await updateShopLinks(wpPages[0]);
+	}
+
+	// Find if there's a blog pattern in the single page's patterns
+	const hasBlogSectionPattern = pages?.[0]?.patterns.find((p) =>
+		p?.patternTypes?.[0]?.startsWith('blog'),
+	);
+
+	// If there's a blog pattern, update the link to point to blog
+	if (hasBlogSectionPattern) {
+		wpPages[0] = await updateBlogLinks(hasBlogSectionPattern, wpPages[0]);
+	}
 
 	// If no contact pattern is found, return the original wpPages
 	if (!hasContactPattern) return wpPages;
@@ -110,15 +151,59 @@ export const updateSinglePageLinksToContactSection = (wpPages, pages) => {
 			alias.includes(hasContactPattern.patternTypes[0]),
 		) || {};
 
+	if (!slug) return wpPages;
+
 	// Map through each WordPress page and update its content
 	return wpPages.map((page) => {
 		// Update each page by replacing the buttons urls with the new slug
 		return updatePage({
 			id: page.id,
 			content: page.content.raw.replaceAll(
-				/"#extendify-[a-zA-Z0-9_-]+"/g,
-				`"#${slug}"`,
+				/"#extendify-[\w-]+"/g,
+				`"${homeUrl}/#${slug}"`,
 			),
 		});
+	});
+};
+
+const updateShopLinks = async (page) => {
+	// Fetch active plugins after installing plugins
+	let { data } = await getActivePlugins();
+
+	// Change the link to the shop page if it exists
+	if (wasInstalled(data, 'woocommerce')) {
+		const shopPage = await getPageById(
+			await getOption('woocommerce_shop_page_id'),
+		);
+
+		if (shopPage) {
+			return updatePage({
+				id: page.id,
+				content: page.content.raw.replaceAll(
+					/"#extendify-shop"/g,
+					`"${homeUrl}/${shopPage.slug}"`,
+				),
+			});
+		}
+	}
+
+	return page;
+};
+
+const updateBlogLinks = (hasBlogSectionPattern, page) => {
+	// Get the translated slug
+	const { slug } =
+		Object.values(pageNames).find(({ alias }) =>
+			alias.includes(hasBlogSectionPattern.patternTypes[0]),
+		) || {};
+
+	if (!slug) return page;
+
+	return updatePage({
+		id: page.id,
+		content: page.content.raw.replaceAll(
+			/"#extendify-blog"/g,
+			`"${homeUrl}/${slug}"`,
+		),
 	});
 };

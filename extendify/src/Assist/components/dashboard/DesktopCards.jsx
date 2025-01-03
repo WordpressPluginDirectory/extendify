@@ -61,7 +61,7 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 					onChange={setNextTask}
 					vertical
 					as="div"
-					className="flex h-[472px] min-h-96 grow flex-row-reverse justify-between">
+					className="flex h-[472px] min-h-96 grow flex-row-reverse justify-between rtl:flex-row">
 					<TabList
 						as="div"
 						className="w-96 overflow-auto border-l border-gray-100">

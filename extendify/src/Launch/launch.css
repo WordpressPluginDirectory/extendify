@@ -98,6 +98,10 @@
 	min-height: auto;
 }
 
+html[dir="rtl"] .block-editor-block-preview__content {
+	transform-origin: top right;
+}
+
 body.site-assistant_page_extendify-launch,
 body.site-launcher_page_extendify-launch {
 	background: white;

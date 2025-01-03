@@ -1,9 +1,9 @@
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
 import { pageNames } from '@shared/lib/pages';
-import { Axios as api } from './axios';
+import { Axios as api } from '@launch/api/axios';
 
-const wpRoot = window.extOnbData.wpRoot;
+const { wpRoot } = window.extOnbData;
 
 export const updateOption = (option, value) =>
 	api.post('launch/options', { option, value });
@@ -24,27 +24,24 @@ export const updatePage = (pageData) =>
 export const getPageById = (pageId) =>
 	api.get(`${wpRoot}wp/v2/pages/${pageId}`);
 
+export const createPost = (postData) =>
+	api.post(`${wpRoot}wp/v2/posts`, postData);
+
+export const uploadMedia = (formData) =>
+	api.post(`${wpRoot}wp/v2/media`, formData);
+
+export const createCategory = (CategoryData) =>
+	api.post(`${wpRoot}wp/v2/categories`, CategoryData);
+
+export const createTag = (tagData) => api.post(`${wpRoot}wp/v2/tags`, tagData);
+
 export const installPlugin = async (plugin) => {
 	// Fail silently if no slug is provided
 	if (!plugin?.wordpressSlug) return;
 
-	try {
-		// Install plugin and try to activate it.
-		const response = await api.post(`${wpRoot}wp/v2/plugins`, {
-			slug: plugin.wordpressSlug,
-			status: 'active',
-		});
-		if (!response.ok) return response;
-	} catch (e) {
-		// Fail gracefully for now
-	}
-
-	try {
-		// Try and activate it if the above fails
-		return await activatePlugin(plugin);
-	} catch (e) {
-		// Fail gracefully for now
-	}
+	await api.post(`${wpRoot}wp/v2/plugins`, {
+		slug: plugin.wordpressSlug,
+	});
 };
 
 export const activatePlugin = async (plugin) => {
@@ -58,9 +55,35 @@ export const activatePlugin = async (plugin) => {
 		throw new Error('Plugin not found');
 	}
 	// Attempt to activate the plugin with the slug we found
-	return await api.post(`${wpRoot}wp/v2/plugins/${pluginSlug}`, {
+	await api.post(`${wpRoot}wp/v2/plugins/${pluginSlug}`, {
 		status: 'active',
 	});
+};
+
+export const createNavigation = async (content = '') => {
+	const payload = await apiFetch({
+		path: 'extendify/v1/launch/create-navigation',
+		method: 'POST',
+		data: {
+			title: __('Header Navigation', 'extendify-local'),
+			slug: 'site-navigation',
+			content,
+		},
+	});
+
+	return payload.id;
+};
+
+export const updateNavigation = async (id, content) => {
+	const payload = await apiFetch({
+		path: `wp/v2/navigation/${id}`,
+		method: 'POST',
+		data: {
+			content,
+		},
+	});
+
+	return payload.id;
 };
 
 export const updateTemplatePart = (part, content) =>
@@ -96,11 +119,24 @@ export const getThemeVariations = async () => {
 	const variations = await api.get(
 		wpRoot + 'wp/v2/global-styles/themes/extendable/variations',
 	);
+
 	if (!Array.isArray(variations)) {
 		throw new Error('Could not get theme variations');
 	}
+
+	// Adds slug to match with color palettes from airtable
+	const variationsWithSlugs = variations.map((variation) => {
+		const slug =
+			// The Fusion Sky variation is misspelled in Extendable, so it needs a special case.
+			variation.title === 'FusionSky'
+				? 'fusion-sky'
+				: variation.title.toLowerCase().trim().replace(/\s+/, '-');
+
+		return { ...variation, slug };
+	});
+
 	// Randomize
-	return [...variations].sort(() => Math.random() - 0.5);
+	return [...variationsWithSlugs].sort(() => Math.random() - 0.5);
 };
 
 export const updateThemeVariation = (id, variation) =>
@@ -110,64 +146,118 @@ export const updateThemeVariation = (id, variation) =>
 		styles: variation.styles,
 	});
 
-export const addPatternSectionsToNav = async (homePatterns, headerCode) => {
+export const addSectionLinksToNav = async (
+	navigationId,
+	homePatterns = [],
+	pluginPages = [],
+) => {
+	// Extract plugin page slugs for comparison
+	const pluginPageSlugs = pluginPages.map(({ slug }) => slug);
+
 	// ['about-us', 'services', 'contact-us']
 	const sections = homePatterns
 		.map(({ patternTypes }) => patternTypes?.[0])
-		.filter(Boolean);
-
-	const seen = new Set();
-	const pageListItems = sections
-		.map((patternType) => {
-			const { title, slug } =
+		.filter(Boolean)
+		// Filter out any pattern type that has a page created by 3rd party plugins.
+		.filter((patternType) => {
+			const { slug } =
 				Object.values(pageNames).find(({ alias }) =>
 					alias.includes(patternType),
 				) || {};
-			if (!slug) return '';
-			if (seen.has(slug)) return '';
-			seen.add(slug);
-			return `<!-- wp:navigation-link { "label":"${title}", "type":"custom", "url":"#${slug}", "isTopLevelLink":true } /-->`;
-		})
-		.join('');
+			return slug && !pluginPageSlugs.includes(slug);
+		});
 
-	// Create a custom navigation
-	const navigation = await saveNavigation(pageListItems);
+	const seen = new Set();
 
-	// Add ref to nav attributes
-	return updateNavAttributes(headerCode, { ref: navigation.id });
-};
+	const sectionsNavigationLinks = sections.map((patternType) => {
+		const { title, slug } =
+			Object.values(pageNames).find(({ alias }) =>
+				alias.includes(patternType),
+			) || {};
+		if (!slug) return '';
+		if (seen.has(slug)) return '';
+		seen.add(slug);
 
-export const addPagesToNav = async (pages, wpPages, headerCode) => {
-	// We match the original slugs as the new ones could have changed by wp
-	const findWpPage = ({ slug }) =>
-		wpPages.find(({ originalSlug: s }) => s === slug) || {};
+		const attributes = JSON.stringify({
+			label: title,
+			type: 'custom',
+			url: `${window.extSharedData.homeUrl}/#${slug}`,
+			kind: 'custom',
+			isTopLevelLink: true,
+		});
 
-	const pageListItems = pages
-		.filter((p) => findWpPage(p)?.id) // make sure its a page
-		.filter(({ slug }) => slug !== 'home') // exclude home page
-		.map((page) => {
-			const { id, title, link, type } = findWpPage(page);
-			return `<!-- wp:navigation-link { "label":"${title.rendered}", "type":"${type}", "id":"${id}", "url":"${link}", "kind":"post-type", "isTopLevelLink":true } /-->`;
-		})
-		.join('');
-
-	// Create a custom navigation
-	const navigation = await saveNavigation(pageListItems);
-
-	// Add ref to nav attributes
-	return updateNavAttributes(headerCode, { ref: navigation.id });
-};
-
-const saveNavigation = (pageItems) =>
-	apiFetch({
-		path: 'extendify/v1/launch/create-navigation',
-		method: 'POST',
-		data: {
-			title: __('Header Navigation', 'extendify-local'),
-			slug: 'site-navigation',
-			content: pageItems,
-		},
+		return `<!-- wp:navigation-link ${attributes} /-->`;
 	});
+
+	const pluginPagesNavigationLinks = pluginPages.map(
+		({ title, id, type, link }) => {
+			const attributes = JSON.stringify({
+				label: title.rendered,
+				id,
+				type,
+				url: link,
+				kind: id ? 'post-type' : 'custom',
+				isTopLevelLink: true,
+			});
+
+			return `<!-- wp:navigation-link ${attributes} /-->`;
+		},
+	);
+
+	const navigationLinks = sectionsNavigationLinks
+		.concat(pluginPagesNavigationLinks)
+		.join('');
+
+	await updateNavigation(navigationId, navigationLinks);
+};
+
+export const addPageLinksToNav = async (
+	navigationId,
+	allPages,
+	createdPages,
+	pluginPages = [],
+) => {
+	// Because WP may have changed the slug and permalink (i.e., because of different languages),
+	// we are using the `originalSlug` property to match the original pages with the updated ones.
+	const findCreatedPage = ({ slug }) =>
+		createdPages.find(({ originalSlug: s }) => s === slug) || {};
+
+	const filteredCreatedPages = allPages
+		.filter((p) => findCreatedPage(p)?.id) // make sure its a page
+		.filter(({ slug }) => slug !== 'home') // exclude home page
+		.map((page) => findCreatedPage(page));
+
+	const pageLinks = filteredCreatedPages
+		.concat(pluginPages)
+		.map(({ id, title, link, type }) => {
+			const attributes = JSON.stringify({
+				label: title.rendered,
+				id,
+				type,
+				url: link,
+				kind: id ? 'post-type' : 'custom',
+				isTopLevelLink: true,
+			});
+
+			return `<!-- wp:navigation-link ${attributes} /-->`;
+		});
+
+	const topLevelLinks = pageLinks.slice(0, 5).join('');
+	const submenuLinks = pageLinks.slice(5);
+	// We want a max of 6 top-level links, but if 7+, then move the last
+	// two+ to a submenu.
+	const additionalLinks =
+		submenuLinks.length > 1
+			? ` <!-- wp:navigation-submenu ${JSON.stringify({
+					// translators: "More" here is used for a navigation menu item that contains additional links.
+					label: __('More', 'extendify-local'),
+					url: '#',
+					kind: 'custom',
+				})} --> ${submenuLinks.join('')} <!-- /wp:navigation-submenu -->`
+			: submenuLinks.join(''); // only 1 link here
+
+	await updateNavigation(navigationId, topLevelLinks + additionalLinks);
+};
 
 const getNavAttributes = (headerCode) => {
 	try {
@@ -176,7 +266,8 @@ const getNavAttributes = (headerCode) => {
 		return {};
 	}
 };
-const updateNavAttributes = (headerCode, attributes) => {
+
+export const updateNavAttributes = (headerCode, attributes) => {
 	const newAttributes = JSON.stringify({
 		...getNavAttributes(headerCode),
 		...attributes,

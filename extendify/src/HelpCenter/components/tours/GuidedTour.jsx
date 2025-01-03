@@ -7,7 +7,7 @@ import {
 	useState,
 	useMemo,
 } from '@wordpress/element';
-import { sprintf, __ } from '@wordpress/i18n';
+import { sprintf, __, isRTL } from '@wordpress/i18n';
 import { Icon, close } from '@wordpress/icons';
 import { Dialog } from '@headlessui/react';
 import classNames from 'classnames';
@@ -160,6 +160,14 @@ export const GuidedTour = () => {
 		onTourPage,
 	]);
 
+	// Check for the inert attribute and remove it if it exists
+	useEffect(() => {
+		if (!currentStep) return;
+		document
+			.querySelectorAll('[inert]')
+			.forEach((el) => el?.removeAttribute('inert'));
+	}, [currentStep]);
+
 	// register a custom event to start the specified tour.
 	useEffect(() => {
 		const handle = (event) => {
@@ -295,7 +303,7 @@ export const GuidedTour = () => {
 								}}>
 								<button
 									data-test="close-tour"
-									className="absolute right-0 top-0 z-20 m-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-0 bg-white p-0 leading-none outline-none ring-1 ring-gray-200 focus:shadow-none focus:ring-wp focus:ring-design-main"
+									className="absolute right-0 top-0 z-20 m-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-0 bg-white p-0 leading-none outline-none ring-1 ring-gray-200 focus:shadow-none focus:ring-wp focus:ring-design-main rtl:left-0 rtl:right-auto"
 									onClick={() => closeCurrentTour('closed-manually')}
 									aria-label={__('Close Modal', 'extendify-local')}>
 									<Icon icon={close} className="h-4 w-4 fill-current" />
@@ -314,7 +322,7 @@ export const GuidedTour = () => {
 										<img src={image} className="block w-full" alt={title} />
 									</div>
 								)}
-								<div className="relative m-0 bg-white p-6 pt-0 text-left">
+								<div className="relative m-0 bg-white p-6 pt-0 text-left rtl:text-right">
 									{title && (
 										<h2 className="mb-2 text-xl font-medium">{title}</h2>
 									)}
@@ -375,6 +383,7 @@ const BorderOutline = ({ rectWithPadding, finishedStepOne }) => {
 			className={classNames('fixed inset-0 z-high hidden border-2 lg:block', {
 				'border-transparent': !visible,
 				'border-design-main': visible,
+				'inset-y-auto right-0': isRTL(),
 			})}
 			aria-hidden="true"
 		/>
@@ -402,7 +411,7 @@ const BottomNav = ({ initialFocus }) => {
 		<div
 			id="extendify-tour-navigation"
 			className="flex w-full items-center justify-between">
-			<div className="flex flex-1 justify-start">
+			<div className="flex flex-1 justify-start rtl:flex-none">
 				<AnimatePresence>
 					{hasPreviousStep() && !hideBackButton && (
 						<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -446,7 +455,7 @@ const BottomNav = ({ initialFocus }) => {
 				</nav>
 			) : null}
 
-			<div className="flex flex-1 justify-end">
+			<div className="flex flex-1 justify-end rtl:flex-none">
 				{hasNextStep() ? (
 					<Button
 						ref={initialFocus}

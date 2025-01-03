@@ -4,11 +4,13 @@ import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 
 const startingState = {
-	siteType: {},
+	siteType: {
+		slug: '0default',
+		name: 'Default',
+	},
 	siteInformation: {
 		title: undefined,
 	},
-	siteTypeSearch: [],
 	style: null,
 	pages: [],
 	plugins: [],

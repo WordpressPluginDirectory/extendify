@@ -64,19 +64,11 @@ class Admin
             ]);
         }
 
-        $skipSteps = defined('EXTENDIFY_SKIP_STEPS') ? constant('EXTENDIFY_SKIP_STEPS') : [];
-        $partnerData = PartnerData::getPartnerData();
-        // Always shows on devmode, and won't show if disabled, or the consent url is missing.
-        if (!array_key_exists('showAICopy', $partnerData) && !constant('EXTENDIFY_DEVMODE')) {
-            $skipSteps[] = 'business-information';
-        }
-
         \wp_add_inline_script(
             Config::$slug . '-launch-scripts',
             'window.extOnbData = ' . \wp_json_encode([
                 'editorStyles' => \wp_json_encode(\get_block_editor_settings([], new \stdClass())),
                 'wpRoot' => \esc_url_raw(\rest_url()),
-                'partnerSkipSteps' => array_map('esc_attr', $skipSteps),
                 'activeTests' => array_map('esc_attr', \get_option('extendify_active_tests', [])),
                 'resetSiteInformation' => [
                     'pagesIds' => array_map('esc_attr', $this->getLaunchCreatedPages()),
@@ -93,7 +85,6 @@ class Admin
             [],
             Config::$version
         );
-
     }
 
     /**
@@ -106,7 +97,7 @@ class Admin
         $posts = get_posts([
             'numberposts' => -1,
             'post_status' => 'publish',
-            'post_type' => 'page',
+            'post_type' => ['page', 'post'],
             // only return the ID field.
             'fields' => 'ids',
         ]);
@@ -144,9 +135,8 @@ class Admin
     public static function getTemplatePartIds()
     {
         return [
-            (get_block_template( get_stylesheet() . '//header', 'wp_template_part' )->id ?? ''),
-            (get_block_template( get_stylesheet() . '//footer', 'wp_template_part' )->id ?? ''),
+            (get_block_template(get_stylesheet() . '//header', 'wp_template_part')->id ?? ''),
+            (get_block_template(get_stylesheet() . '//footer', 'wp_template_part')->id ?? ''),
         ];
     }
-
 }

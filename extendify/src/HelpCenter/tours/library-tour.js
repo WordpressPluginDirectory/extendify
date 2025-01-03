@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import { waitUntilExists, waitUntilGone } from '@help-center/lib/tour-helpers';
 
 export default {
@@ -7,7 +7,10 @@ export default {
 	settings: {
 		allowOverflow: true,
 		hideDotsNav: true,
-		startFrom: [window.extSharedData.adminUrl + 'post-new.php?post_type=page'],
+		startFrom: [
+			window.extSharedData.adminUrl + 'post-new.php?post_type=page&ext-close',
+			window.extSharedData.adminUrl + 'post-new.php?post_type=page',
+		],
 	},
 	onStart: async () => {
 		// Wait for gutenberg to be ready
@@ -29,19 +32,16 @@ export default {
 				element: '#extendify-library-btn [role="button"]',
 				offset: {
 					marginTop: 0,
-					marginLeft: 15,
+					marginLeft: isRTL() ? -15 : 15,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
-				beforeAttach: () => {
-					// If the Extendify library is open, close it
-					return dispatchEvent(new CustomEvent('extendify::close-library'));
-				},
+				beforeAttach: () => {},
 			},
 		},
 		{
@@ -53,10 +53,10 @@ export default {
 			attachTo: {
 				element: '#extendify-library-category-control',
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			options: {
 				allowPointerEvents: true,
@@ -79,10 +79,10 @@ export default {
 			attachTo: {
 				element: '#extendify-library-patterns-list',
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -104,10 +104,10 @@ export default {
 					marginLeft: 0,
 				},
 				position: {
-					x: 'right',
+					x: isRTL() ? 'left' : 'right',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {

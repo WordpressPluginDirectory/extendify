@@ -1,5 +1,5 @@
+import { KB_HOST } from '@constants';
 import useSWRImmutable from 'swr/immutable';
-import { KB_HOST } from '../../constants';
 
 export const fetcher = async (search) => {
 	if (search.length < 3) return null;

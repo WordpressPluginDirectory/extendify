@@ -5,7 +5,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.15.1
+ * Version:           1.16.1
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       extendify-local
@@ -113,7 +113,7 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
     // ALlow Extendify requests to have a longer timeout.
     add_filter('http_request_args', function ($args, $url) {
         if (strpos($url, 'extendify') !== false) {
-            $args['timeout'] = 20;
+            $args['timeout'] = 45;
         }
 
         return $args;

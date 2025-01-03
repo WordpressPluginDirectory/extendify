@@ -4,8 +4,10 @@ import { render, isOnLaunch } from '@help-center/lib/utils';
 import './app.css';
 import './buttons';
 
+const isInsideIframe = () => window !== window.top;
+
 domReady(() => {
-	if (isOnLaunch()) return;
+	if (isOnLaunch() || isInsideIframe()) return;
 	const id = 'extendify-help-center-main';
 	if (document.getElementById(id)) return;
 	const helpCenter = Object.assign(document.createElement('div'), {

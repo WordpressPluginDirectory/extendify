@@ -10,7 +10,6 @@ if (!defined('ABSPATH')) {
 use Extendify\ApiRouter;
 use Extendify\Assist\Controllers\DomainsSuggestionController;
 use Extendify\Assist\Controllers\GlobalsController;
-use Extendify\Assist\Controllers\RecommendationsController;
 use Extendify\Assist\Controllers\RouterController;
 use Extendify\Assist\Controllers\TasksController;
 
@@ -24,6 +23,7 @@ use Extendify\Draft\Controllers\RouterController as DraftRouterController;
 
 use Extendify\Launch\Controllers\DataController;
 use Extendify\Launch\Controllers\WPController;
+use Extendify\Launch\Controllers\WooCommerceController;
 
 use Extendify\Library\Controllers\SiteController;
 use Extendify\Shared\Controllers\PatternPlaceholderController;
@@ -47,11 +47,11 @@ use Extendify\Shared\Controllers\ActivityController;
         ApiRouter::get('/launch/options', [WPController::class, 'getOption']);
         ApiRouter::get('/launch/active-plugins', [WPController::class, 'getActivePlugins']);
         ApiRouter::get('/launch/goals', [DataController::class, 'getGoals']);
-        ApiRouter::get('/launch/suggested-plugins', [DataController::class, 'getSuggestedPlugins']);
         ApiRouter::get('/launch/ping', [DataController::class, 'ping']);
         ApiRouter::get('/launch/prefetch-assist-data', [WPController::class, 'prefetchAssistData']);
         ApiRouter::post('/launch/create-navigation', [WPController::class, 'createNavigationWithMeta']);
         ApiRouter::post('/launch/post-launch-functions', [WPController::class, 'postLaunch']);
+        APIRouter::get('/launch/import-woocommerce', [WooCommerceController::class, 'importTemporaryProducts']);
 
         // Assist.
         ApiRouter::get('/assist/task-data', [TasksController::class, 'get']);

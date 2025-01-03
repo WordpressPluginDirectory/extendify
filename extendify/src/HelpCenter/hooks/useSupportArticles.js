@@ -1,5 +1,5 @@
+import { KB_HOST } from '@constants';
 import useSWRImmutable from 'swr/immutable';
-import { KB_HOST } from '../../constants';
 
 export const fetcher = (slug) => {
 	const lang = window.extSharedData.wpLanguage || null;

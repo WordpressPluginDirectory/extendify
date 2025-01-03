@@ -1,5 +1,11 @@
-import { __ } from '@wordpress/i18n';
-import { Icon, closeSmall, chevronLeft, reset } from '@wordpress/icons';
+import { __, isRTL } from '@wordpress/i18n';
+import {
+	Icon,
+	closeSmall,
+	chevronLeft,
+	chevronRight,
+	reset,
+} from '@wordpress/icons';
 import { useActivityStore } from '@shared/state/activity';
 import classNames from 'classnames';
 import { useRouter } from '@help-center/hooks/useRouter';
@@ -95,14 +101,14 @@ const LogoOrBackButton = () => {
 				className="m-0 cursor-pointer border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 				type="button"
 				onClick={goBack}>
-				<Icon icon={chevronLeft} />
+				<Icon icon={isRTL() ? chevronRight : chevronLeft} />
 				<span className="sr-only">{__('Go back', 'extendify-local')}</span>
 			</button>
 		);
 	}
 
 	return partnerLogo ? (
-		<div className="flex h-6 justify-center bg-banner-main after:relative after:-right-2 after:top-0.5 after:mr-2 after:text-banner-text after:opacity-40 after:content-['|']">
+		<div className="flex h-6 justify-center bg-banner-main after:relative after:-right-2 after:top-0.5 after:mr-2 after:text-banner-text after:opacity-40 after:content-['|'] rtl:after:-right-0">
 			<div className="flex h-6 max-w-[9rem] overflow-hidden">
 				<img
 					className="max-h-full max-w-full object-contain"

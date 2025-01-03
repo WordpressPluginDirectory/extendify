@@ -53,7 +53,7 @@ const TaskContent = ({ task }) => {
 					{task.description}
 				</div>
 
-				<div className="cta mt-8 flex flex-wrap items-center text-sm md:gap-3">
+				<div className="cta mt-8 flex flex-wrap items-center text-sm md:gap-3 rtl:justify-end">
 					<ActionButton task={lockedState.current ?? task} />
 					{lockedState.current || !isCompletedTask ? (
 						<DismissButton task={task} onClick={handleDismiss} />

@@ -94,6 +94,7 @@ class Insights
                 'draftSettingsData' => \get_option('extendify_draft_settings', null),
                 'activity' => \get_option('extendify_shared_activity', null),
                 'extendifyVersion' => ($version[1] ?? null),
+                'siteProfile' => \get_option('extendify_site_profile', null),
             ]);
             return $insights;
         });

@@ -21,6 +21,7 @@ export const Home = () => {
 				)}>
 				<Button
 					variant="primary"
+					__next40pxDefaultSize
 					id="extendify-draft-image-gen-button"
 					className="w-full justify-center"
 					onClick={() => navigateTo('ai-image')}>
@@ -38,6 +39,7 @@ export const Home = () => {
 				)}>
 				<Button
 					variant="primary"
+					__next40pxDefaultSize
 					className="w-full justify-center"
 					onClick={() => navigateTo('unsplash')}>
 					{__('Search Unsplash', 'extendify-local')}

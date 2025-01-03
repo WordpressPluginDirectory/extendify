@@ -1,5 +1,5 @@
-import { __ } from '@wordpress/i18n';
-import { Icon, chevronRight } from '@wordpress/icons';
+import { __, isRTL } from '@wordpress/i18n';
+import { Icon, chevronRight, chevronLeft } from '@wordpress/icons';
 import classNames from 'classnames';
 import {
 	playIcon,
@@ -25,7 +25,7 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 				type="button"
 				onClick={onOpen}
 				className={classNames(
-					'm-0 flex w-full cursor-pointer justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100',
+					'm-0 flex w-full cursor-pointer justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100 rtl:text-right',
 					{
 						'rounded-b-none': availableTours.length > 0,
 					},
@@ -45,7 +45,7 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 				</div>
 				<div className="flex h-12 grow-0 items-center justify-between">
 					<Icon
-						icon={chevronRight}
+						icon={isRTL() ? chevronLeft : chevronRight}
 						size={24}
 						className="fill-current text-gray-700"
 					/>
@@ -54,13 +54,17 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 			{availableTours.length > 0 && (
 				<button
 					type="button"
-					className="text-md m-0 flex w-full cursor-pointer items-center justify-between gap-2 rounded-md rounded-t-none border border-t-0 border-gray-200 bg-transparent p-3 px-4 pl-[4.25rem] text-left font-medium text-gray-900 hover:bg-gray-100"
+					className="text-md m-0 flex w-full cursor-pointer items-center justify-between gap-2 rounded-md rounded-t-none border border-t-0 border-gray-200 bg-transparent p-3 px-4 pl-[4.25rem] text-left font-medium text-gray-900 hover:bg-gray-100 rtl:pl-4 rtl:pr-[4.25rem] rtl:text-right"
 					onClick={() => {
 						setVisibility('minimized');
 						startTour(availableTours[0]);
 					}}>
 					{__('Tour this page', 'extendify-local')}
-					<Icon icon={playIcon} size={16} />
+					<Icon
+						icon={playIcon}
+						size={16}
+						className={isRTL() ? 'rotate-180' : ''}
+					/>
 				</button>
 			)}
 		</section>
@@ -94,7 +98,12 @@ export const Tours = () => {
 										size={16}
 									/>
 								) : (
-									<Icon data-test="play-tour-icon" icon={playIcon} size={16} />
+									<Icon
+										data-test="play-tour-icon"
+										icon={playIcon}
+										className={isRTL() ? 'rotate-180' : ''}
+										size={16}
+									/>
 								)}
 							</button>
 						</li>

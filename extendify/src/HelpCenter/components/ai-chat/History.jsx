@@ -33,7 +33,9 @@ export const History = ({ setShowHistory }) => {
 				{[...history]
 					.sort((a, b) => a.time - b.time)
 					.map((item) => (
-						<li key={item.answerId} className="group flex gap-1 px-2 pr-4">
+						<li
+							key={item.answerId}
+							className="group flex gap-1 px-2 pr-4 rtl:flex-row-reverse">
 							<button
 								type="button"
 								onClick={() => deleteFromHistory(item)}
@@ -53,7 +55,10 @@ export const History = ({ setShowHistory }) => {
 									</span>
 								</div>
 								<span>
-									<Icon className="fill-current text-gray-900" icon={arrow} />
+									<Icon
+										className="fill-current text-gray-900 rtl:rotate-180"
+										icon={arrow}
+									/>
 								</span>
 							</button>
 						</li>

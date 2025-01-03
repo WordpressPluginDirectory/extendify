@@ -39,10 +39,8 @@ export const SiteTones = () => {
 	};
 
 	return (
-		<>
-			<label
-				htmlFor="extendify-business-info-tone"
-				className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
+		<div>
+			<label className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
 				{__("Select your site's tone (optional)", 'extendify-local')}
 			</label>
 			<div className="justify-left flex w-full flex-wrap gap-2">
@@ -60,9 +58,9 @@ export const SiteTones = () => {
 							})}>
 							<label
 								htmlFor={tone.value}
-								className="flex h-full w-full cursor-pointer items-center justify-between p-2 text-gray-900">
+								className="flex h-full w-full cursor-pointer items-center justify-between rounded-sm p-2 text-gray-900 focus-within:ring-wp">
 								<div className="flex flex-auto items-center">
-									<span className="relative mr-1 inline-block h-4 w-4 align-middle">
+									<span className="relative mr-1 inline-block h-4 w-4 align-middle rtl:ml-1 rtl:mr-0">
 										<input
 											id={tone.value}
 											className="h-4 w-4 rounded-sm focus:ring-0 focus:ring-offset-0"
@@ -99,6 +97,6 @@ export const SiteTones = () => {
 					);
 				})}
 			</div>
-		</>
+		</div>
 	);
 };

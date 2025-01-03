@@ -39,7 +39,7 @@ export const GenerateImage = () => {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		setErrorMessage('');
-		if (noCredits || isGenerating) {
+		if (noCredits) {
 			abortController.current?.abort();
 			return;
 		}

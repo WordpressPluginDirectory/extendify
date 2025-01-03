@@ -12,10 +12,10 @@ export const CheckboxInput = ({
 		<label
 			className={classNames('flex items-center px-4 py-3.5', {
 				'cursor-not-allowed': locked,
-				'focus-within:text-design-mains hover:text-design-main': !locked,
+				'focus-within:text-design-main hover:text-design-main': !locked,
 			})}
 			htmlFor={slug}>
-			<span className="relative mr-3 inline-block h-5 w-5 align-middle">
+			<span className="relative mr-3 inline-block h-5 w-5 align-middle rtl:ml-3 rtl:mr-0">
 				<input
 					id={slug}
 					className="m-0 h-5 w-5 rounded-sm"

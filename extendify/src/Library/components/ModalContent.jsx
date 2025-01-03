@@ -54,11 +54,11 @@ export const ModalContent = ({ insertPattern, siteType, category }) => {
 				columnClassName=""
 				className="relative flex w-full gap-6 p-8 pt-2">
 				{data.map((p) =>
-					p.map(({ id, code }) => (
+					p.map(({ id, code, patternReplacementCode }) => (
 						<BlockPreviewButton
 							key={id}
 							insertPattern={insertPattern}
-							code={code}
+							code={patternReplacementCode ?? code}
 						/>
 					)),
 				)}

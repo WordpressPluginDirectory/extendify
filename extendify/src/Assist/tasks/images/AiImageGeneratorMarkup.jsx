@@ -71,7 +71,7 @@ export const AiImageGeneratorMarkup = (props) => (
 		</div>
 		<div className="relative z-10 grid w-full grid-cols-12 px-12">
 			<div className="col-span-12 w-full overflow-hidden rounded-t-md border border-gray-300 bg-white shadow-xl">
-				<div className="w-[1160px] origin-top-left scale-[0.4] transform">
+				<div className="w-[1160px] origin-top-left scale-[0.4] transform rtl:origin-top-right">
 					<div className="flex justify-between border-b">
 						<div className="flex items-center justify-items-start gap-2">
 							<div className="flex min-h-14 min-w-14 items-center justify-center bg-black fill-current text-white">
@@ -108,8 +108,8 @@ export const AiImageGeneratorMarkup = (props) => (
 							<Icon icon={moreVertical} />
 						</div>
 					</div>
-					<div className="grid grid-cols-12 text-left">
-						<div className="col-span-9 bg-gray-50 px-40 pb-12 pt-4">
+					<div className="grid grid-cols-12 text-left rtl:text-right">
+						<div className="col-span-9 bg-gray-50 px-40 pb-12 pt-4 rtl:col-span-10">
 							<h2>{__('A Glimpse into the Arctic', 'extendify-local')}</h2>
 							<div className="mb-2.5 text-sm">
 								<div className="flex max-w-fit border border-current bg-white">
@@ -150,7 +150,7 @@ export const AiImageGeneratorMarkup = (props) => (
 								)}
 							</p>
 						</div>
-						<div className="col-span-3 border-l border-gray-200 bg-white text-sm">
+						<div className="col-span-3 border-l border-gray-200 bg-white text-sm rtl:col-span-2">
 							<div className="flex items-center gap-2 border-b border-gray-200 py-2 pl-3 pr-2 font-medium">
 								<div className="flex">
 									<Button icon={chevronLeft} size="small" />
@@ -181,7 +181,10 @@ export const AiImageGeneratorMarkup = (props) => (
 										<div className="h-4 w-2.5 bg-current"></div>
 									</div>
 								</div>
-								<Button variant="primary" className="w-full justify-center">
+								<Button
+									variant="primary"
+									__next40pxDefaultSize
+									className="w-full justify-center">
 									{__('Generate Image', 'extendify-local')}
 								</Button>
 								<div className="mt-5 flex items-center justify-items-center gap-2">

@@ -1,6 +1,7 @@
 import { registerCoreBlocks } from '@wordpress/block-library';
 import { useSelect, useDispatch } from '@wordpress/data';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect, useState, useRef } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import { safeParseJson } from '@shared/lib/parsing';
 import { SWRConfig, useSWRConfig } from 'swr';
 import { updateOption } from '@launch/api/WPApi';
@@ -11,34 +12,27 @@ import { CreatingSite } from '@launch/pages/CreatingSite';
 import { NeedsTheme } from '@launch/pages/NeedsTheme';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
-import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const LaunchPage = () => {
 	const { updateSettings } = useDispatch('core/block-editor');
 	const [retrying, setRetrying] = useState(false);
-	const { siteType } = useUserSelectionStore();
-	const CurrentPage = usePagesStore((state) => {
-		const pageData = state.getCurrentPageData();
-		return pageData?.component;
-	});
+	const { component: CurrentPage, state } = usePagesStore((state) =>
+		state.getCurrentPageData(),
+	);
 	const { fetcher, fetchData } = usePagesStore((state) =>
 		state.getNextPageData(),
 	);
-	const { setPage, currentPageIndex } = usePagesStore();
+	const { setPage } = usePagesStore();
 	const { mutate } = useSWRConfig();
 	const { generating } = useGlobalStore();
 	const [show, setShow] = useState(false);
 	const [needsTheme, setNeedsTheme] = useState(false);
 	const theme = useSelect((select) => select('core').getCurrentTheme());
 	useTelemetry();
+	const once = useRef(false);
 
 	const page = () => {
 		if (needsTheme) return <NeedsTheme />;
-		// Site type is required to progress
-		if (!siteType?.slug && currentPageIndex !== 0) {
-			setPage(0);
-			return null;
-		}
 		if (generating) return <CreatingSite />;
 		if (!CurrentPage) return null;
 		return (
@@ -48,6 +42,19 @@ export const LaunchPage = () => {
 			</>
 		);
 	};
+
+	useEffect(() => {
+		if (once.current) return;
+		once.current = true;
+		// on page load, if we are on a page without nav, go to the first page
+		if (state.getState().useNav) return;
+		setPage(0);
+	}, [state, setPage]);
+
+	useEffect(() => {
+		// translators: Launch is a noun.
+		document.title = __('Launch - AI-Powered Web Creation', 'extendify-local');
+	}, []);
 
 	useEffect(() => {
 		// Add editor styles to use for live previews
@@ -78,11 +85,15 @@ export const LaunchPage = () => {
 		const fetchDatas = [].concat(fetchData);
 		if (fetchers.length) {
 			fetchers.forEach((fetcher, i) => {
-				const data =
-					typeof fetchDatas?.[i] === 'function'
-						? fetchDatas[i]()
-						: fetchDatas?.[i];
-				mutate(data, (last) => last || fetcher(data), { revalidate: false });
+				try {
+					const data =
+						typeof fetchDatas?.[i] === 'function'
+							? fetchDatas[i]()
+							: fetchDatas?.[i];
+					mutate(data, (last) => last || fetcher(data), { revalidate: false });
+				} catch (e) {
+					//
+				}
 			});
 		}
 	}, [fetcher, mutate, fetchData]);

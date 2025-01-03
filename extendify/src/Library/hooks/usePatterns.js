@@ -1,5 +1,5 @@
+import { PATTERNS_HOST } from '@constants';
 import useSWRInfinite from 'swr/infinite';
-import { PATTERNS_HOST } from '../../constants';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 

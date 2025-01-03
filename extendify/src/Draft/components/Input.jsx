@@ -1,6 +1,6 @@
 import { Spinner } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
-import { arrowRight, Icon } from '@wordpress/icons';
+import { __, isRTL } from '@wordpress/i18n';
+import { arrowRight, Icon, arrowLeft } from '@wordpress/icons';
 import classnames from 'classnames';
 import { DynamicTextarea } from '@draft/components/DynamicTextarea';
 import { useSelectedText } from '@draft/hooks/useSelectedText';
@@ -37,7 +37,7 @@ export const Input = ({
 		<form className="relative flex items-start" onSubmit={submit}>
 			<Icon
 				icon={magic}
-				className="absolute left-2 top-3.5 h-5 w-5 fill-current text-wp-theme-main"
+				className="absolute left-2 top-3.5 h-5 w-5 fill-current text-wp-theme-main rtl:left-auto rtl:right-2"
 			/>
 			<DynamicTextarea
 				disabled={loading}
@@ -62,7 +62,7 @@ export const Input = ({
 				}}
 			/>
 			{loading && (
-				<div className="absolute right-4 top-3.5 h-4 w-4 p-1 text-gray-700">
+				<div className="absolute right-4 top-3.5 h-4 w-4 p-1 text-gray-700 rtl:left-4 rtl:right-auto">
 					<Spinner style={{ margin: '0' }} />
 				</div>
 			)}
@@ -72,14 +72,14 @@ export const Input = ({
 					disabled={!ready}
 					aria-label={__('Submit', 'extendify-local')}
 					className={classnames(
-						'absolute right-2 top-3.5 border-none bg-transparent p-0',
+						'absolute right-2 top-3.5 border-none bg-transparent p-0 rtl:left-2 rtl:right-auto',
 						{
 							'cursor-pointer text-gray-700 hover:text-design-main': ready,
 							'text-gray-500': !ready,
 						},
 					)}>
 					<Icon
-						icon={arrowRight}
+						icon={isRTL() ? arrowLeft : arrowRight}
 						onClick={submit}
 						className="h-6 w-6 fill-current"
 					/>

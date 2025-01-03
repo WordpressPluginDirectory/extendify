@@ -18,11 +18,7 @@ export const PageLayout = ({ children, includeNav = true }) => {
 				)}
 			</div>
 			{children}
-			{includeNav && (
-				<div className="z-10 w-full flex-none border-t border-gray-100 bg-white px-6 py-5 shadow-surface md:px-12 md:py-6">
-					<PageControl />
-				</div>
-			)}
+			{includeNav && <PageControl />}
 		</div>
 	);
 };

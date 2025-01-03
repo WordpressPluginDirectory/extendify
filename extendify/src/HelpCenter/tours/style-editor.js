@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import { waitUntilExists } from '@help-center/lib/tour-helpers';
 
 const { isBlockTheme, themeSlug, adminUrl } = window.extSharedData;
@@ -34,10 +34,10 @@ export default {
 					marginLeft: -30,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'bottom',
 				},
-				hook: 'top left',
+				hook: isRTL() ? 'top right' : 'top left',
 			},
 			events: {
 				beforeAttach: () => waitUntilExists('.interface-pinned-items'),
@@ -56,10 +56,10 @@ export default {
 					marginLeft: -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -85,10 +85,10 @@ export default {
 					marginLeft: -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -117,10 +117,10 @@ export default {
 					marginLeft: -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -149,10 +149,10 @@ export default {
 					marginLeft: -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -178,10 +178,10 @@ export default {
 					marginLeft: -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -210,10 +210,10 @@ export default {
 					marginLeft: -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -242,10 +242,10 @@ export default {
 					marginLeft: -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -274,10 +274,10 @@ export default {
 					marginLeft: -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
@@ -306,10 +306,10 @@ export default {
 					marginLeft: -15,
 				},
 				position: {
-					x: 'left',
+					x: isRTL() ? 'right' : 'left',
 					y: 'top',
 				},
-				hook: 'top right',
+				hook: isRTL() ? 'top left' : 'top right',
 			},
 			events: {
 				beforeAttach: async () => {
