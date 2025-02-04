@@ -116,94 +116,73 @@ export const updateButtonLinks = async (wpPages, pluginPages) => {
 	);
 };
 
-export const updateSinglePageLinksToContactSection = async (wpPages, pages) => {
-	// Find if there's a contact pattern in the single page's patterns
-	const hasContactPattern = pages?.[0]?.patterns.find((p) =>
-		p?.patternTypes?.[0]?.startsWith('contact'),
-	);
+export const updateSinglePageLinksToSections = async (wpPages, pages) => {
+	let homePageContent = wpPages?.[0]?.content?.raw;
+	if (!homePageContent) return wpPages;
 
-	// Find if there's a products pattern in the single page's patterns
-	const hasProductPattern = pages?.[0]?.patterns.find((p) =>
-		p?.patternTypes?.[0]?.startsWith('product'),
-	);
+	// get all the patterns that we have in the home page
+	const patternTypes = pages?.[0]?.patterns
+		?.map((pattern) => pattern?.patternTypes?.[0])
+		?.filter((patternType) => patternType !== 'hero-header')
+		?.map((patternType) => {
+			const { slug } =
+				Object.values(pageNames).find(({ alias }) =>
+					alias.includes(patternType),
+				) || {};
+			return slug;
+		})
+		?.filter(Boolean)
+		?.flat();
 
-	// If there's a product pattern, update the shop page link
-	if (hasProductPattern) {
-		wpPages[0] = await updateShopLinks(wpPages[0]);
-	}
+	const createdPages =
+		pages
+			?.filter((page) => page.slug !== 'home')
+			?.map((page) => page.slug)
+			?.filter(Boolean) ?? [];
 
-	// Find if there's a blog pattern in the single page's patterns
-	const hasBlogSectionPattern = pages?.[0]?.patterns.find((p) =>
-		p?.patternTypes?.[0]?.startsWith('blog'),
-	);
+	// get the active plugins
+	const { data: activePlugins } = await getActivePlugins();
+	const pluginPages = [];
 
-	// If there's a blog pattern, update the link to point to blog
-	if (hasBlogSectionPattern) {
-		wpPages[0] = await updateBlogLinks(hasBlogSectionPattern, wpPages[0]);
-	}
-
-	// If no contact pattern is found, return the original wpPages
-	if (!hasContactPattern) return wpPages;
-
-	// Get the translated slug
-	const { slug } =
-		Object.values(pageNames).find(({ alias }) =>
-			alias.includes(hasContactPattern.patternTypes[0]),
-		) || {};
-
-	if (!slug) return wpPages;
-
-	// Map through each WordPress page and update its content
-	return wpPages.map((page) => {
-		// Update each page by replacing the buttons urls with the new slug
-		return updatePage({
-			id: page.id,
-			content: page.content.raw.replaceAll(
-				/"#extendify-[\w-]+"/g,
-				`"${homeUrl}/#${slug}"`,
-			),
-		});
-	});
-};
-
-const updateShopLinks = async (page) => {
-	// Fetch active plugins after installing plugins
-	let { data } = await getActivePlugins();
-
-	// Change the link to the shop page if it exists
-	if (wasInstalled(data, 'woocommerce')) {
-		const shopPage = await getPageById(
+	// check if woocommerce is active, if so we add it to the list of pages
+	if (wasInstalled(activePlugins, 'woocommerce')) {
+		const { slug } = await getPageById(
 			await getOption('woocommerce_shop_page_id'),
 		);
 
-		if (shopPage) {
-			return updatePage({
-				id: page.id,
-				content: page.content.raw.replaceAll(
-					/"#extendify-shop"/g,
-					`"${homeUrl}/${shopPage.slug}"`,
-				),
-			});
-		}
+		pluginPages.push(slug);
 	}
 
-	return page;
-};
+	// check if events calendar is active, if so we add it to the list of pages
+	if (wasInstalled(activePlugins, 'the-events-calendar')) {
+		pluginPages.push('events');
+	}
 
-const updateBlogLinks = (hasBlogSectionPattern, page) => {
-	// Get the translated slug
-	const { slug } =
-		Object.values(pageNames).find(({ alias }) =>
-			alias.includes(hasBlogSectionPattern.patternTypes[0]),
-		) || {};
+	// get the suggested links from the AI and send both the patterns and the plugin pages.
+	const { suggestedLinks } =
+		(await getLinkSuggestions(
+			homePageContent,
+			patternTypes.concat(pluginPages),
+		)) || {};
 
-	if (!slug) return page;
+	// replace the links
+	homePageContent = Object.keys(suggestedLinks).reduce((content, key) => {
+		const slug = suggestedLinks[key];
 
-	return updatePage({
-		id: page.id,
-		content: page.content.raw.replaceAll(
-			/"#extendify-blog"/g,
-			`"${homeUrl}/${slug}"`,
-		),
+		if (!slug) return content;
+
+		const newLink = pluginPages.concat(createdPages).includes(slug)
+			? `"${homeUrl}/${slug}"`
+			: `"${homeUrl}/#${slug}"`;
+
+		return content.replaceAll(`"${key}"`, newLink);
+	}, homePageContent);
+
+	// Update the first page by replacing the buttons urls with the new slug
+	wpPages[0] = updatePage({
+		id: wpPages[0].id,
+		content: homePageContent,
 	});
+
+	return wpPages;
 };

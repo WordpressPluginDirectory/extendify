@@ -67,6 +67,7 @@ export const useTelemetry = () => {
 				signal: controller.signal,
 				body: JSON.stringify({
 					siteType: siteProfile?.aiSiteType,
+					siteCategory: siteProfile?.aiSiteCategory,
 					siteCreatedAt: window.extSharedData?.siteCreatedAt,
 					style: variation?.title,
 					siteStructure: siteStructure,
@@ -106,6 +107,7 @@ export const useTelemetry = () => {
 		currentPageIndex,
 		goals,
 		siteProfile?.aiSiteType,
+		siteProfile?.aiSiteCategory,
 		siteStructure,
 		variation,
 	]);

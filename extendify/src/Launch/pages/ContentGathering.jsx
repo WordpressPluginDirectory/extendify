@@ -42,11 +42,11 @@ export const ContentGathering = () => {
 
 	return (
 		<PageLayout>
-			<div className="mx-auto grow overflow-y-auto px-6 py-8 md:p-12 3xl:p-16">
+			<div className="mx-auto grow overflow-y-auto px-4 py-8 md:p-12 md:px-6 3xl:p-16">
 				<div className="mx-auto flex h-full flex-col justify-center">
 					<VideoPlayer
 						path="https://assets.extendify.com/launch/site-building.webm"
-						className="mx-auto h-auto w-[400px]"
+						className="mx-auto h-auto w-[200px] md:w-[400px]"
 					/>
 
 					<Title

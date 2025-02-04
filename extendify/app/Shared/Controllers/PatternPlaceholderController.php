@@ -10,12 +10,20 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\Shared\Services\PluginDependencies\Forms\WPForms;
 use Extendify\Shared\Services\PluginDependencies\Forms\ContactForm7;
 use Extendify\Shared\Services\PluginDependencies\WooCommerce;
+use Extendify\Shared\Services\PluginDependencies\SimplyBook;
 
 /**
  * The controller for interacting with the pattern deps.
  */
 class PatternPlaceholderController
 {
+    const PLUGIN_HANDLERS = [
+        'contact-form-7' => ContactForm7::class,
+        'wpforms-lite' => WPForms::class,
+        'woocommerce' => WooCommerce::class,
+        'simplybook' => SimplyBook::class,
+    ];
+
     /**
      * Replace all placeholders in the given content
      *
@@ -37,18 +45,9 @@ class PatternPlaceholderController
                 $metadata = json_decode($pattern['patternMetadata'], true);
             }
 
-            if ($pluginDependency === 'contact-form-7' && isset($metadata['key'])) {
-                $pattern['code'] = ContactForm7::create($pattern['code'], $metadata['key'], $newCode);
-                return $pattern;
-            }
-
-            if ($pluginDependency === 'wpforms-lite' && isset($metadata['key'])) {
-                $pattern['code'] = WPForms::create($pattern['code'], $metadata['key'], $newCode);
-                return $pattern;
-            }
-
-            if ($pluginDependency === 'woocommerce' && isset($metadata['key'])) {
-                $pattern['code'] = WooCommerce::create($pattern['code'], $metadata['key'], $newCode);
+            $handlerClass = isset(self::PLUGIN_HANDLERS[$pluginDependency]) ? self::PLUGIN_HANDLERS[$pluginDependency] : null;
+            if ($handlerClass && isset($metadata['key'])) {
+                $pattern['code'] = $handlerClass::create($pattern['code'], $metadata['key'], $newCode);
                 return $pattern;
             }
 

@@ -17,7 +17,9 @@ export const pageNames = {
 	},
 	book: {
 		// translators: This string represents the title of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits the standard phrasing for a "Book" page in the target language, considering the common usage in websites for that language.
-		title: __('Book', 'extendify-local'),
+		title: __('Book Now', 'extendify-local'),
+		// translators: This string represents the slug of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits a slug for a "Book" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
+		slug: __('book-now', 'extendify-local'),
 		alias: ['book', 'booking'],
 	},
 	careers: {

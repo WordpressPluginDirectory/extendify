@@ -37,7 +37,7 @@ export const SitePrep = () => {
 
 	return (
 		<PageLayout>
-			<div className="mx-auto grow overflow-y-auto px-6 py-8 md:p-12 3xl:p-16">
+			<div className="mx-auto grow overflow-y-auto px-4 py-8 md:p-12 md:px-6 3xl:p-16">
 				<div className="mx-auto flex h-full flex-col justify-center">
 					<VideoPlayer
 						path="https://assets.extendify.com/launch/data-processing.webm"

@@ -17,6 +17,7 @@ export const usePreviewIframe = ({ container, onLoad, ready, loadDelay }) => {
 	const isUpdating = useRef(false);
 
 	const updateCoverBlocks = useCallback(async (frame, cntnr) => {
+		if (!frame) return;
 		const ft = frame.getBoundingClientRect().top;
 		const ct = cntnr.getBoundingClientRect().top;
 		// If they have scrolled, don't mess with it
@@ -33,7 +34,7 @@ export const usePreviewIframe = ({ container, onLoad, ready, loadDelay }) => {
 		frame.style.setProperty('max-height', `${cntnrHScaled}px`, 'important');
 
 		const coverBlocks =
-			frame.contentDocument.querySelectorAll('.wp-block-cover');
+			frame?.contentDocument?.querySelectorAll('.wp-block-cover');
 
 		for (const el of coverBlocks) {
 			if (!originalHeights.has(el)) {

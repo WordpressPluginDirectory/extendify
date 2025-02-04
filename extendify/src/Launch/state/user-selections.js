@@ -60,6 +60,7 @@ const state = (set, get) => ({
 		const siteProfile = Object.assign(
 			{
 				aiSiteType: null,
+				aiSiteCategory: null,
 				aiDescription: null,
 				aiKeywords: [],
 			},

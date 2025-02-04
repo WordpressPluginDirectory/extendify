@@ -6,6 +6,7 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 export const useSiteStyles = () => {
 	const { siteInformation } = useUserSelectionStore();
 	const { loading, siteProfile } = useSiteProfile();
+
 	const { data, error } = useSWRImmutable(
 		loading
 			? null

@@ -41,7 +41,7 @@ export const SiteTones = () => {
 	return (
 		<div>
 			<label className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
-				{__("Select your site's tone (optional)", 'extendify-local')}
+				{__("Select your site's tone", 'extendify-local')}
 			</label>
 			<div className="justify-left flex w-full flex-wrap gap-2">
 				{tones.map((tone) => {

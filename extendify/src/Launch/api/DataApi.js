@@ -3,35 +3,55 @@ import { getHeadersAndFooters } from '@launch/api/WPApi';
 import { Axios as api } from '@launch/api/axios';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
+// Optionally add items to request body
+const allowList = [
+	'partnerId',
+	'devbuild',
+	'version',
+	'siteId',
+	'wpLanguage',
+	'wpVersion',
+];
+
+const extraBody = {
+	...Object.fromEntries(
+		Object.entries(window.extSharedData).filter(([key]) =>
+			allowList.includes(key),
+		),
+	),
+};
+
 const fetchTemplates = async (type, siteType, otherData = {}) => {
-	const { showLocalizedCopy, wpVersion, wpLanguage, allowedPlugins } =
-		window.extSharedData;
+	const { showLocalizedCopy, allowedPlugins } = window.extSharedData;
 	const { goals, getGoalsPlugins } = useUserSelectionStore.getState();
 	const plugins = getGoalsPlugins();
+	const otherDataProcessed = Object.entries(otherData).reduce(
+		(result, [key, value]) => {
+			if (value == null) result;
+			return {
+				...result,
+				[key]: typeof value === 'object' ? JSON.stringify(value) : value,
+			};
+		},
+		{},
+	);
 
-	const url = new URL(`${PATTERNS_HOST}/api/${type}-templates`);
-	siteType?.slug && url.searchParams.append('siteType', siteType?.slug);
-	wpVersion && url.searchParams.append('wpVersion', wpVersion);
-	wpLanguage && url.searchParams.append('lang', wpLanguage);
-	goals?.length && url.searchParams.append('goals', JSON.stringify(goals));
-	plugins?.length &&
-		url.searchParams.append('plugins', JSON.stringify(plugins));
-	showLocalizedCopy && url.searchParams.append('showLocalizedCopy', true);
-	allowedPlugins &&
-		url.searchParams.append('allowedPlugins', JSON.stringify(allowedPlugins));
-
-	Object.entries(otherData).forEach(([key, value]) => {
-		if (value == null) return;
-		if (typeof value === 'object') {
-			return url.searchParams.append(key, JSON.stringify(value));
-		}
-		url.searchParams.append(key, value);
-	});
-
-	const res = await fetch(url.toString(), {
+	const res = await fetch(`${PATTERNS_HOST}/api/${type}-templates`, {
+		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			...extraBody,
+			siteType: siteType?.slug,
+			goals: JSON.stringify(goals?.length ? goals : []),
+			plugins: JSON.stringify(plugins?.length ? plugins : []),
+			showLocalizedCopy: !!showLocalizedCopy,
+			allowedPlugins: JSON.stringify(allowedPlugins ?? []),
+			...otherDataProcessed,
+		}),
 	});
+
 	if (!res.ok) throw new Error('Bad response from server');
+
 	return await res.json();
 };
 
@@ -115,24 +135,6 @@ export const getGoals = async ({ title, siteTypeSlug, siteProfile }) => {
 	return goals.data;
 };
 
-// Optionally add items to request body
-const allowList = [
-	'partnerId',
-	'devbuild',
-	'version',
-	'siteId',
-	'wpLanguage',
-	'wpVersion',
-];
-
-const extraBody = {
-	...Object.fromEntries(
-		Object.entries(window.extSharedData).filter(([key]) =>
-			allowList.includes(key),
-		),
-	),
-};
-
 export const generateCustomPatterns = async (page, userState) => {
 	const res = await fetch(`${AI_HOST}/api/patterns`, {
 		method: 'POST',
@@ -184,6 +186,7 @@ export const getSiteProfile = async ({ title, description }) => {
 	});
 	const fallback = {
 		aiSiteType: null,
+		aiSiteCategory: null,
 		aiDescription: null,
 		aiKeywords: [],
 	};
@@ -228,10 +231,11 @@ export const getSiteStrings = async (siteProfile) => {
 };
 
 export const getSiteImages = async (siteProfile) => {
-	const { aiSiteType, aiDescription, aiKeywords } = siteProfile;
+	const { aiSiteType, aiSiteCategory, aiDescription, aiKeywords } = siteProfile;
 	const { siteInformation } = useUserSelectionStore.getState();
 	const search = new URLSearchParams({
 		aiSiteType,
+		aiSiteCategory,
 		aiDescription,
 		aiKeywords,
 		...extraBody,
@@ -255,7 +259,6 @@ export const getSiteImages = async (siteProfile) => {
 	} catch (error) {
 		return fallback;
 	}
-
 	return data?.siteImages ? data : fallback;
 };
 

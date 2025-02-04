@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
 import { updateOption, getOption } from '@launch/api/WPApi';
@@ -32,18 +32,21 @@ export const SiteInformation = () => {
 		setSiteProfile,
 	} = useUserSelectionStore();
 
-	const title = siteInformation.title || '';
-	const setTitle = useCallback(
-		(t) => setSiteInformation('title', t),
-		[setSiteInformation],
+	const [title, setTitle] = useState(
+		decodeEntities(siteInformation.title || ''),
 	);
-
-	const description = businessInformation.description || '';
-	const setDescription = useCallback(
-		(v) => setBusinessInformation('description', v),
-		[setBusinessInformation],
+	const [description, setDescription] = useState(
+		businessInformation.description || '',
 	);
-	const setReady = useCallback((ready) => state.setState({ ready }), []);
+	useEffect(() => {
+		state.setState({ ready: false });
+		const timer = setTimeout(() => {
+			setSiteInformation('title', title);
+			setBusinessInformation('description', description);
+			state.setState({ ready: !!title.length });
+		}, 1000);
+		return () => clearTimeout(timer);
+	}, [title, description, setSiteInformation, setBusinessInformation]);
 
 	useEffect(() => {
 		setSiteProfile(undefined); // this also resets state
@@ -74,15 +77,10 @@ export const SiteInformation = () => {
 								if (!state.getState().ready) return;
 								nextPage();
 							}}>
-							<SiteTitle
-								title={title}
-								setTitle={setTitle}
-								setReady={setReady}
-							/>
+							<SiteTitle title={title} setTitle={setTitle} />
 							<BusinessInfo
 								description={description}
 								setDescription={setDescription}
-								setReady={setReady}
 							/>
 							<SiteTones />
 							<AcceptTerms />
@@ -94,23 +92,13 @@ export const SiteInformation = () => {
 	);
 };
 
-const SiteTitle = ({ title, setTitle, setReady }) => {
-	const [value, setValue] = useState(decodeEntities(title) || '');
-
-	useEffect(() => {
-		setReady(false);
-		const timer = setTimeout(() => {
-			setTitle(value);
-			setReady(true);
-		}, 1000);
-		return () => clearTimeout(timer);
-	}, [value, setTitle, setReady]);
+const SiteTitle = ({ title, setTitle }) => {
 	return (
 		<div>
 			<label
 				htmlFor="extendify-site-title-input"
 				className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
-				{__('Website title', 'extendify-local')}
+				{__('Website title (required)', 'extendify-local')}
 			</label>
 			<input
 				data-test="site-title-input"
@@ -120,26 +108,15 @@ const SiteTitle = ({ title, setTitle, setReady }) => {
 				name="site-title-input"
 				id="extendify-site-title-input"
 				className="input-focus h-12 w-full rounded border border-gray-200 px-4 py-6 ring-offset-0"
-				value={value}
-				onChange={(e) => setValue(e.target.value)}
+				value={title}
+				onChange={(e) => setTitle(e.target.value)}
 				placeholder={__('Enter your website name', 'extendify-local')}
 			/>
 		</div>
 	);
 };
 
-const BusinessInfo = ({ description, setDescription, setReady }) => {
-	const [value, setValue] = useState(description);
-
-	useEffect(() => {
-		setReady(false);
-		const timer = setTimeout(() => {
-			setDescription(value);
-			setReady(true);
-		}, 1000);
-		return () => clearTimeout(timer);
-	}, [value, setDescription, setReady]);
-
+const BusinessInfo = ({ description, setDescription }) => {
 	return (
 		<div>
 			<label
@@ -156,8 +133,8 @@ const BusinessInfo = ({ description, setDescription, setReady }) => {
 				className={
 					'input-focus placeholder:text-md h-40 w-full rounded-lg border border-gray-300 p-2 ring-offset-0 placeholder:italic placeholder:opacity-50'
 				}
-				value={value}
-				onChange={(e) => setValue(e.target.value)}
+				value={description}
+				onChange={(e) => setDescription(e.target.value)}
 				placeholder={__(
 					'E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes.',
 					'extendify-local',

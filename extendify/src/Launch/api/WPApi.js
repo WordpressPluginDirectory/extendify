@@ -1,7 +1,13 @@
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
 import { pageNames } from '@shared/lib/pages';
+import { sleep } from '@shared/lib/utils';
 import { Axios as api } from '@launch/api/axios';
+import {
+	fetchFontFaceFile,
+	makeFontFamilyFormData,
+	makeFontFaceFormData,
+} from '@launch/lib/fonts-helpers';
 
 const { wpRoot } = window.extOnbData;
 
@@ -34,31 +40,6 @@ export const createCategory = (CategoryData) =>
 	api.post(`${wpRoot}wp/v2/categories`, CategoryData);
 
 export const createTag = (tagData) => api.post(`${wpRoot}wp/v2/tags`, tagData);
-
-export const installPlugin = async (plugin) => {
-	// Fail silently if no slug is provided
-	if (!plugin?.wordpressSlug) return;
-
-	await api.post(`${wpRoot}wp/v2/plugins`, {
-		slug: plugin.wordpressSlug,
-	});
-};
-
-export const activatePlugin = async (plugin) => {
-	const endpoint = new URL(`${wpRoot}wp/v2/plugins`);
-	const params = new URLSearchParams(endpoint.searchParams);
-	params.set('search', plugin.wordpressSlug);
-	endpoint.search = params.toString();
-	const response = await api.get(endpoint.toString());
-	const pluginSlug = response?.[0]?.plugin;
-	if (!pluginSlug) {
-		throw new Error('Plugin not found');
-	}
-	// Attempt to activate the plugin with the slug we found
-	await api.post(`${wpRoot}wp/v2/plugins/${pluginSlug}`, {
-		status: 'active',
-	});
-};
 
 export const createNavigation = async (content = '') => {
 	const payload = await apiFetch({
@@ -150,9 +131,18 @@ export const addSectionLinksToNav = async (
 	navigationId,
 	homePatterns = [],
 	pluginPages = [],
+	createdPages = [],
 ) => {
 	// Extract plugin page slugs for comparison
-	const pluginPageSlugs = pluginPages.map(({ slug }) => slug);
+	const pluginPageTitles = pluginPages.map(({ title }) =>
+		title?.rendered?.toLowerCase(),
+	);
+
+	const pages =
+		createdPages
+			?.filter((page) => page?.slug !== 'home')
+			?.map((page) => page.slug)
+			?.filter(Boolean) ?? [];
 
 	// ['about-us', 'services', 'contact-us']
 	const sections = homePatterns
@@ -164,7 +154,7 @@ export const addSectionLinksToNav = async (
 				Object.values(pageNames).find(({ alias }) =>
 					alias.includes(patternType),
 				) || {};
-			return slug && !pluginPageSlugs.includes(slug);
+			return slug && !pluginPageTitles.includes(slug);
 		});
 
 	const seen = new Set();
@@ -178,10 +168,14 @@ export const addSectionLinksToNav = async (
 		if (seen.has(slug)) return '';
 		seen.add(slug);
 
+		const url = pages.includes(slug)
+			? `${window.extSharedData.homeUrl}/${slug}`
+			: `${window.extSharedData.homeUrl}/#${slug}`;
+
 		const attributes = JSON.stringify({
 			label: title,
 			type: 'custom',
-			url: `${window.extSharedData.homeUrl}/#${slug}`,
+			url,
 			kind: 'custom',
 			isTopLevelLink: true,
 		});
@@ -295,3 +289,106 @@ export const postLaunchFunctions = () =>
 		path: '/extendify/v1/launch/post-launch-functions',
 		method: 'POST',
 	});
+
+export const registerFontFamily = async (fontFamily) => {
+	try {
+		const response = await apiFetch({
+			path: '/wp/v2/font-families',
+			method: 'POST',
+			body: makeFontFamilyFormData(fontFamily),
+		});
+		return {
+			id: response.id,
+			...response.font_family_settings,
+			fontFace: response.fontFaces,
+		};
+	} catch (error) {
+		console.error('Failed to register font family. Error:', error);
+		return;
+	}
+};
+
+export const registerFontFace = async ({ fontFamilyId, ...fontFace }) => {
+	const max_retries = 2;
+
+	const fontFaceSlug = `${fontFace.fontFamilySlug}-${fontFace.fontWeight}`;
+
+	for (let attempt = 0; attempt <= max_retries; attempt++) {
+		try {
+			// Add delay of 1 second if this is not the first attempt
+			if (attempt > 0) await sleep(1000);
+
+			const response = await apiFetch({
+				path: `/wp/v2/font-families/${fontFamilyId}/font-faces`,
+				method: 'POST',
+				body: makeFontFaceFormData(fontFace),
+			});
+
+			return {
+				id: response.id,
+				...response.font_face_settings,
+			};
+		} catch (error) {
+			if (attempt <= max_retries) {
+				console.error(
+					`Failed attempt to upload font file ${fontFaceSlug}. Error:`,
+					error,
+				);
+				continue;
+			}
+
+			console.error(
+				`Failed to upload font file ${fontFaceSlug} after ${max_retries + 1} attempts.`,
+			);
+
+			return;
+		}
+	}
+};
+
+export const installFontFamily = async (fontFamily) => {
+	const fontFaceDownloadRequests = fontFamily.fontFace.map(async (fontFace) => {
+		const file = await fetchFontFaceFile(fontFace.src);
+		if (!file) return;
+		return { ...fontFace, file };
+	});
+
+	const fontFacesWithFile = (
+		await Promise.all(fontFaceDownloadRequests)
+	).filter(Boolean);
+
+	// If we don't have any font file to install, we don't register the font family.
+	if (!fontFacesWithFile.length) return;
+
+	const registeredFontFamily = await registerFontFamily(fontFamily);
+
+	// If we couldn't register the font family, we don't register the font faces.
+	if (!registeredFontFamily) return;
+
+	const fontFaces = fontFacesWithFile.map((fontFace) => ({
+		fontFamilyId: registeredFontFamily.id,
+		fontFamilySlug: registeredFontFamily.slug,
+		...fontFace,
+	}));
+
+	const registeredFontFaces = [];
+
+	for (const fontFace of fontFaces) {
+		registeredFontFaces.push(await registerFontFace(fontFace));
+	}
+
+	return {
+		...registeredFontFamily,
+		fontFace: registeredFontFaces.filter(Boolean),
+	};
+};
+
+export const installFontFamilies = async (fontFamilies) => {
+	const installedFontFamilies = [];
+
+	for (const fontFamily of fontFamilies) {
+		installedFontFamilies.push(await installFontFamily(fontFamily));
+	}
+
+	return installedFontFamilies.filter(Boolean);
+};

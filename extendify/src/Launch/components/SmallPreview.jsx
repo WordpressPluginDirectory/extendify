@@ -14,7 +14,8 @@ import { colord } from 'colord';
 import { AnimatePresence, motion } from 'framer-motion';
 import themeJSON from '@launch/_data/theme-processed.json';
 import { usePreviewIframe } from '@launch/hooks/usePreviewIframe';
-import { lowerImageQuality } from '@launch/lib/util';
+import { getFontOverrides } from '@launch/lib/preview-helpers';
+import { hexTomatrixValues, lowerImageQuality } from '@launch/lib/util';
 
 export const SmallPreview = ({ style, onSelect, selected, siteTitle }) => {
 	const previewContainer = useRef(null);
@@ -30,6 +31,10 @@ export const SmallPreview = ({ style, onSelect, selected, siteTitle }) => {
 			// This is a brute force check that the styles are there
 			let lastRun = performance.now();
 			let counter = 0;
+
+			const variationStyles = themeJSON[variation?.title];
+			const { customFontLinks, fontOverrides } = getFontOverrides(variation);
+
 			const checkOnStyles = () => {
 				if (counter >= 150) return;
 				const now = performance.now();
@@ -41,23 +46,44 @@ export const SmallPreview = ({ style, onSelect, selected, siteTitle }) => {
 					const siteTitleElement = content.querySelector('[href*=site-title]');
 					if (siteTitleElement) siteTitleElement.textContent = siteTitle;
 				}
-				const stylesToInject = `<style id="ext-tj">
-					${themeJSON[style?.variation?.title]}
-					.wp-block-missing { display: none !important }
-					img[src^=data] { filter: url(#wp-duotone-primary) !important }
-				</style>`;
+				const primaryColor = theme?.find(
+					({ slug }) => slug === 'primary',
+				)?.color;
+				const [r, g, b] = primaryColor
+					? hexTomatrixValues(primaryColor)
+					: [0, 0, 0];
+
+				// Add custom font links if not already present
+				if (
+					customFontLinks &&
+					!frame.contentDocument?.querySelector('[id^="ext-custom-font"]')
+				) {
+					frame.contentDocument?.head?.insertAdjacentHTML(
+						'beforeend',
+						customFontLinks,
+					);
+				}
+
 				if (!frame.contentDocument?.getElementById('ext-tj')) {
 					frame.contentDocument?.body?.insertAdjacentHTML(
 						'beforeend',
-						stylesToInject,
+						`<style id="ext-tj">
+							${variationStyles}
+							${fontOverrides}
+							.wp-block-missing { display: none !important }
+							img.custom-logo, [class*=wp-duotone-] img[src^="data"] {
+								filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="solid-color"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values="0 0 0 0 ${r} 0 0 0 0 ${g} 0 0 0 0 ${b} 0 0 0 1 0"/></filter></svg>#solid-color') !important;
+							}
+						</style>`,
 					);
 				}
+
 				counter++;
 				requestAnimationFrame(checkOnStyles); // recursive
 			};
 			checkOnStyles();
 		},
-		[style?.variation?.title, siteTitle],
+		[variation, theme, siteTitle],
 	);
 
 	const { loading, ready: show } = usePreviewIframe({
@@ -87,16 +113,16 @@ export const SmallPreview = ({ style, onSelect, selected, siteTitle }) => {
 			.replace(
 				// <!-- wp:navigation --> <!-- /wp:navigation -->
 				/<!-- wp:navigation[.\S\s]*?\/wp:navigation -->/g,
-				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">${links.join(' | ')}</p ><!-- /wp:paragraph -->`,
+				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="word-spacing: 1.25rem;">${links.join(' ')}</p ><!-- /wp:paragraph -->`,
 			)
 			.replace(
 				// <!-- wp:navigation /-->
 				/<!-- wp:navigation.*\/-->/g,
-				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav">${links.join(' | ')}</p ><!-- /wp:paragraph -->`,
+				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="word-spacing: 1.25rem;">${links.join(' ')}</p ><!-- /wp:paragraph -->`,
 			)
 			.replace(
 				/<!-- wp:site-logo.*\/-->/g,
-				'<!-- wp:paragraph {"className":"custom-logo"} --><img class="custom-logo" style="height: 40px;" src="https://assets.extendify.com/demo-content/logos/extendify-demo-logo.png"><!-- /wp:paragraph -->',
+				'<!-- wp:paragraph {"className":"custom-logo"} --><p class="custom-logo" style="display:flex; align-items: center;"><img alt="" class="custom-logo" style="height: 32px;" src="https://assets.extendify.com/demo-content/logos/extendify-demo-logo.png"></p ><!-- /wp:paragraph -->',
 			);
 		return rawHandler({ HTML: lowerImageQuality(code) });
 	}, [style]);

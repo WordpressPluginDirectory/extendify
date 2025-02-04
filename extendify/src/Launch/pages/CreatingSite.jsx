@@ -1,11 +1,11 @@
 import { useEffect, useState, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
+import { installPlugin, activatePlugin } from '@shared/api/wp';
 import { pageNames } from '@shared/lib/pages';
+import { deepMerge } from '@shared/lib/utils';
 import { colord } from 'colord';
 import {
-	installPlugin,
-	activatePlugin,
 	updateTemplatePart,
 	addSectionLinksToNav,
 	addPageLinksToNav,
@@ -17,6 +17,7 @@ import {
 	postLaunchFunctions,
 	createNavigation,
 	updateNavAttributes,
+	installFontFamilies,
 } from '@launch/api/WPApi';
 import { importTemporaryProducts } from '@launch/api/WooCommerce';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
@@ -24,7 +25,7 @@ import { useConfetti } from '@launch/hooks/useConfetti';
 import { useWarnOnLeave } from '@launch/hooks/useWarnOnLeave';
 import {
 	updateButtonLinks,
-	updateSinglePageLinksToContactSection,
+	updateSinglePageLinksToSections,
 } from '@launch/lib/linkPages';
 import { uploadLogo } from '@launch/lib/logo';
 import { waitFor200Response, wasInstalled } from '@launch/lib/util';
@@ -64,6 +65,8 @@ export const CreatingSite = () => {
 	const informDesc = (msg) => setInfoDesc((infoDesc) => [msg, ...infoDesc]);
 	const [pagesToAnimate, setPagesToAnimate] = useState([]);
 	const { setPage } = usePagesStore();
+	const customFontFamilies =
+		variation?.settings?.typography?.fontFamilies?.custom;
 
 	useWarnOnLeave(warnOnLeaveReady);
 
@@ -95,7 +98,30 @@ export const CreatingSite = () => {
 			);
 
 			await waitFor200Response();
-			await updateGlobalStyleVariant(variation ?? {});
+			// Install font families that are not in the theme.
+			if (customFontFamilies?.length) {
+				const installedFontFamilies =
+					await installFontFamilies(customFontFamilies);
+				await updateGlobalStyleVariant(
+					deepMerge(
+						variation,
+						// We set to null first to reset the field.
+						{ settings: { typography: { fontFamilies: { custom: null } } } },
+						// We add the intalled font families here to activate them.
+						{
+							settings: {
+								typography: {
+									fontFamilies: {
+										custom: installedFontFamilies.filter(Boolean),
+									},
+								},
+							},
+						},
+					) ?? {},
+				);
+			} else {
+				await updateGlobalStyleVariant(variation);
+			}
 
 			const navigationId = await createNavigation();
 
@@ -140,12 +166,12 @@ export const CreatingSite = () => {
 					// Install plugin (2 attempts)
 					try {
 						await waitFor200Response();
-						await installPlugin(plugin);
+						await installPlugin(plugin?.wordpressSlug);
 					} catch (_) {
 						// If this fails, wait and try again
 						await waitFor200Response();
 						try {
-							await installPlugin(plugin);
+							await installPlugin(plugin?.wordpressSlug);
 						} catch (e) {
 							// Fail silently if the plugin is already installed
 						}
@@ -154,12 +180,12 @@ export const CreatingSite = () => {
 					// Activate plugin  (2 attempts)
 					try {
 						await waitFor200Response();
-						await activatePlugin(plugin);
+						await activatePlugin(plugin?.wordpressSlug);
 					} catch (_) {
 						// If this fails, wait and try again
 						await waitFor200Response();
 						try {
-							await activatePlugin(plugin);
+							await activatePlugin(plugin?.wordpressSlug);
 						} catch (e) {
 							// Fail silently if the plugin can't be activated
 						}
@@ -176,6 +202,16 @@ export const CreatingSite = () => {
 			informDesc(__('Starting off with a full website', 'extendify-local'));
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 			await waitFor200Response();
+
+			// Store the site vibes, colorPalette and fonts
+			await updateOption(
+				'extendify_siteStyle',
+				style?.siteStyle || {
+					vibe: 'standard',
+					fonts: { heading: {}, body: {} },
+					colorPalette: null,
+				},
+			);
 
 			const homePage = {
 				name: pageNames.home.title,
@@ -228,7 +264,11 @@ export const CreatingSite = () => {
 				stickyNav: siteStructure === 'single-page',
 			});
 
-			if (hasBlogGoal) {
+			const hasBlogPattern = homePage?.patterns?.some((pattern) =>
+				pattern.patternTypes.includes('blog-section'),
+			);
+
+			if (hasBlogGoal || hasBlogPattern) {
 				informDesc(__('Creating blog sample data', 'extendify-local'));
 				await createBlogSampleData(siteStrings, siteImages);
 			}
@@ -299,7 +339,7 @@ export const CreatingSite = () => {
 
 			const pagesWithLinksUpdated =
 				siteStructure === 'single-page'
-					? await updateSinglePageLinksToContactSection(
+					? await updateSinglePageLinksToSections(
 							createdPages,
 							pagesWithCustomContent,
 						)
@@ -310,6 +350,7 @@ export const CreatingSite = () => {
 					navigationId,
 					homePage?.patterns,
 					pluginPages,
+					createdPages,
 				);
 			} else {
 				await addPageLinksToNav(
@@ -365,6 +406,7 @@ export const CreatingSite = () => {
 		siteProfile,
 		siteStrings,
 		siteImages,
+		customFontFamilies,
 	]);
 
 	useEffect(() => {

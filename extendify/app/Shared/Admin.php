@@ -85,6 +85,7 @@ class Admin
 
         $siteProfile = \get_option('extendify_site_profile', [
             'aiSiteType' => '',
+            'aiSiteCategory' => '',
             'aiDescription' => '',
             'aiKeywords' => [],
         ]);

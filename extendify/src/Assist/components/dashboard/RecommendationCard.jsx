@@ -2,8 +2,8 @@ import { Button } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 import { Icon, check, warning } from '@wordpress/icons';
+import { installPlugin, activatePlugin } from '@shared/api/wp';
 import { useActivityStore } from '@shared/state/activity';
-import { installPlugin } from '@assist/api/WPApi';
 
 export const RecommendationCard = ({ recommendation }) => {
 	if (recommendation.pluginSlug) {
@@ -84,8 +84,13 @@ const InstallButton = ({ pluginSlug }) => {
 		setInstalling(true);
 		try {
 			await installPlugin(pluginSlug);
+		} catch (_) {
+			// Fail silently if the plugin is already installed
+		}
+		try {
+			await activatePlugin(pluginSlug);
 			setStatus('active');
-		} catch {
+		} catch (_) {
 			setStatus('error');
 			setTimeout(() => {
 				setStatus(status);

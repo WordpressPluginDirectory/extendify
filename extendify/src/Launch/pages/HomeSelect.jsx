@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { deepMerge } from '@shared/lib/utils';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { getThemeVariations } from '@launch/api/WPApi';
@@ -85,24 +86,29 @@ const DesignSelector = ({ homeLayouts }) => {
 
 				// If a variation matched color palette, replace the fonts with
 				// those suggested by the AI.
-				if (variation.slug === style.colorPalette && fonts) {
-					variation = Object.assign(variation, {
-						...variation,
+				if (variation.slug === colorPalette && fonts) {
+					variation = deepMerge(variation, {
 						styles: {
-							...variation.styles,
 							elements: {
-								...variation.styles.elements,
 								heading: {
-									...variation.styles.elements.heading,
 									typography: {
-										...variation.styles.elements.heading.typography,
-										fontFamily: fonts.heading,
+										fontFamily: `var(--wp--preset--font-family--${fonts.heading.slug})`,
 									},
 								},
 							},
 							typography: {
-								...variation.styles.typography,
-								fontFamily: fonts.body,
+								fontFamily: `var(--wp--preset--font-family--${fonts.body.slug})`,
+							},
+						},
+						settings: {
+							typography: {
+								fontFamilies: {
+									// If font doesn't have a host, it means it's already installed
+									// with the theme. We only need to add the ones that are not.
+									custom: [fonts.heading, fonts.body].filter(
+										(font) => !!font.host,
+									),
+								},
 							},
 						},
 					});

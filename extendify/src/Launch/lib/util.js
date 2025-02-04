@@ -1,12 +1,37 @@
+import { decodeEntities } from '@wordpress/html-entities';
 import { pingServer } from '@launch/api/DataApi';
 
 /** Removes any hash or qs values from URL - Airtable adds timestamps */
 export const stripUrlParams = (url) => url?.[0]?.url?.split(/[?#]/)?.[0];
 
+function cleanAndBuildUnsplashUrl(url) {
+	let imageUrl = new URL(decodeEntities(url.replaceAll('\\u0026', '&')));
+	const size = 1440;
+	const orientation =
+		imageUrl.searchParams.get('orientation')?.split('?')[0] ?? null;
+
+	if (orientation === 'portrait') {
+		imageUrl.searchParams.set('h', size);
+		imageUrl.searchParams.delete('w');
+	} else if (orientation === 'landscape' || orientation === 'square') {
+		if (!imageUrl.searchParams.has('w')) {
+			imageUrl.searchParams.set('w', size);
+		}
+	}
+
+	imageUrl.searchParams.delete('orientation');
+	imageUrl.searchParams.delete('ixid');
+	imageUrl.searchParams.delete('ixlib');
+	imageUrl.searchParams.append('q', '1');
+	imageUrl.searchParams.append('auto', 'format,compress');
+	imageUrl.searchParams.append('fm', 'avif');
+	return imageUrl.toString();
+}
+
 export const lowerImageQuality = (html) => {
 	return html.replace(
-		/(https?:\/\/\S+\w=\d+)/gi,
-		'$1&q=10&auto=format,compress&fm=avif',
+		/https:\/\/images\.unsplash\.com\/[^"')]+/g,
+		cleanAndBuildUnsplashUrl,
 	);
 };
 
