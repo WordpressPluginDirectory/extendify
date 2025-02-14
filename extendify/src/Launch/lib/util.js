@@ -5,16 +5,21 @@ import { pingServer } from '@launch/api/DataApi';
 export const stripUrlParams = (url) => url?.[0]?.url?.split(/[?#]/)?.[0];
 
 function cleanAndBuildUnsplashUrl(url) {
-	let imageUrl = new URL(decodeEntities(url.replaceAll('\\u0026', '&')));
+	const cleanUrl = url
+		.replaceAll('\\u0026', '&')
+		// Remove duplicate question marks in URL by replacing second '?' with '&'
+		.replace(/(\?.*?)\?/, '$1&');
+	let imageUrl = new URL(decodeEntities(cleanUrl));
+
 	const size = 1440;
-	const orientation =
-		imageUrl.searchParams.get('orientation')?.split('?')[0] ?? null;
+	const orientation = imageUrl.searchParams.get('orientation');
 
 	if (orientation === 'portrait') {
 		imageUrl.searchParams.set('h', size);
 		imageUrl.searchParams.delete('w');
 	} else if (orientation === 'landscape' || orientation === 'square') {
-		if (!imageUrl.searchParams.has('w')) {
+		const widthParam = imageUrl.searchParams.get('w');
+		if (widthParam === null || widthParam === '') {
 			imageUrl.searchParams.set('w', size);
 		}
 	}

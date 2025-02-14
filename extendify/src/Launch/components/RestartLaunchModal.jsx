@@ -13,6 +13,7 @@ export const RestartLaunchModal = ({ setPage }) => {
 		window.extOnbData.resetSiteInformation.navigationsIds ?? [];
 	const templatePartsIds =
 		window.extOnbData.resetSiteInformation.templatePartsIds ?? [];
+	const globalStylesPostID = window.extSharedData.globalStylesPostID;
 
 	const { resetState } = useUserSelectionStore();
 	const [open, setOpen] = useState(false);
@@ -78,6 +79,26 @@ export const RestartLaunchModal = ({ setPage }) => {
 					responseError,
 				);
 			}
+		}
+
+		// Reset global styles
+		try {
+			await apiFetch({
+				path: `/wp/v2/global-styles/${globalStylesPostID}`,
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					settings: {},
+					styles: {},
+				}),
+			});
+		} catch (styleResetError) {
+			console.warn(
+				'Failed to reset global styles with the following error:',
+				styleResetError,
+			);
 		}
 
 		setOpen(false);

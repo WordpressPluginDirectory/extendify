@@ -13,6 +13,7 @@ const allowList = [
 	'devbuild',
 	'isBlockTheme',
 	'userId',
+	'siteProfile',
 ];
 
 const extraBody = {

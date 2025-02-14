@@ -100,10 +100,18 @@ class ResourceData
      */
     public function getData()
     {
+        if (!defined('EXTENDIFY_PARTNER_ID')) {
+            return [
+                'recommendations' => [],
+                'supportArticles' => [],
+                'domains' => [],
+            ];
+        }
+
         $domains = get_transient('extendify_domains');
-        if ($domains === false) {
-            // TODO: Should we spawn a cron here to refetch the data?
-            $domains = [];
+        if (empty($domains)) {
+            wp_schedule_single_event(time(), 'update_domains_cache');
+            spawn_cron();
         }
 
         return [

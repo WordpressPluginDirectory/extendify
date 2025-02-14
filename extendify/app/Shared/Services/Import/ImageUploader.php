@@ -47,11 +47,12 @@ class ImageUploader
      * @param string|null $author the WordPress post author.
      * @return array|\WP_Error
      */
-    public function uploadImage($image, $author = null)
+    public function uploadImage($image, $author = null) // phpcs:ignore Generic.Metrics.CyclomaticComplexity.TooHigh
     {
         require_once ABSPATH . 'wp-admin/includes/image.php';
 
-        $image = str_replace('format%2Ccompres', 'format,compres', $image);
+        $image = preg_replace('/(\?.*?)\?/', '$1&', $image);
+        $image = str_replace('%2C', ',', $image);
         // If the attachment has been already uploaded, just return it.
         $attachment = $this->getAttachmentIfExists($image);
 
@@ -75,34 +76,91 @@ class ImageUploader
             return new \WP_Error(2002, 'File type is not allowed.');
         }
 
-        $imageUrl = (preg_match('(' . implode('|', array_map('preg_quote', self::$imagesDomains)) . ')i', $image)) ? esc_url_raw($image . '&auto=avif,compress&q=70') : esc_url_raw($image);
-        $imageSha = sha1($image);
+        if (!preg_match('(' . implode('|', array_map('preg_quote', self::$imagesDomains)) . ')i', $image)) {
+            $imageUrl = esc_url_raw($image);
+        } else {
+            $parsedUrl = wp_parse_url($image);
+            parse_str($parsedUrl['query'], $params);
 
+            if (!isset($params['w'])) {
+                $params['w'] = 1280;
+            }
+
+            if (isset($params['orientation'])) {
+                if ($params['orientation'] === 'portrait') {
+                    $params['h'] = 1440;
+                    unset($params['w']);
+                } elseif (in_array($params['orientation'], ['landscape', 'square'], true) && isset($params['w'])) {
+                    $params['w'] = 1440;
+                }
+
+                unset($params['orientation']);
+            }
+
+            $params['auto'] = 'auto,compress';
+            $params['q'] = 70;
+
+            $imageUrl = $parsedUrl['scheme'] . '://' . $parsedUrl['host'] . $parsedUrl['path'] . '?' . http_build_query($params);
+        }//end if
+
+        $imageSha = sha1($image);
+        $upload = $this->handleImageUpload($imageUrl, $imageSha, $fileMimeType);
+        if (is_wp_error($upload)) {
+            return $upload;
+        }
+
+        $attachmentId = $this->createAttachment($upload, $image, $author);
+        if (is_wp_error($attachmentId)) {
+            return $attachmentId;
+        }
+
+        $upload['attachment_id'] = $attachmentId;
+        return $upload;
+    }
+
+    /**
+     * Handle the image upload process.
+     *
+     * @param string $imageUrl     The image URL.
+     * @param string $imageSha     The image SHA.
+     * @param string $fileMimeType The file mime type.
+     * @return array|\WP_Error
+     */
+    protected function handleImageUpload($imageUrl, $imageSha, $fileMimeType)
+    {
         $upload = $this->upload($imageUrl, $imageSha, $fileMimeType);
 
         if ($upload['error']) {
-            return new \WP_Error(2003, 'There was an error while uploading the image.');
+            return new \WP_Error(2003, __('There was an error while uploading the image.', 'extendify-local'));
         }
 
         if (!wp_getimagesize($upload['file'])) {
-            // we need to delete the file and upload it again.
-            // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+			      // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
             @unlink($upload['file']);
-
             $imageUrl = str_replace('avif', 'jpg', $imageUrl);
             $upload = $this->upload($imageUrl, $imageSha, 'image/jpeg');
         }
 
-        // Check the size of the file to ensure the file was successfully uploaded.
-        // If the size of the uploaded file is 0 we need to delete it.
-        // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+		    // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
         if (!@filesize($upload['file']) || !wp_getimagesize($upload['file'])) {
-            // No need to keep the file, so we just delete it to be uploaded later.
-            // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+			      // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
             @unlink($upload['file']);
-            return new \WP_Error(2001, 'File is not a valid image.');
+            return new \WP_Error(2001, __('File is not a valid image.', 'extendify-local'));
         }
 
+        return $upload;
+    }
+
+    /**
+     * Create the attachment in WordPress.
+     *
+     * @param array       $upload The upload information.
+     * @param string      $image  The original image URL.
+     * @param string|null $author The post author.
+     * @return int|\WP_Error
+     */
+    protected function createAttachment($upload, $image, $author)
+    {
         $attachment = [
             'guid' => $upload['url'],
             'post_mime_type' => $upload['type'],
@@ -115,14 +173,15 @@ class ImageUploader
         $attachmentId = wp_insert_attachment($attachment, $upload['file']);
 
         if (is_wp_error($attachmentId) || !$attachmentId) {
-            return new \WP_Error(2004, 'There was an error while adding the attachment record in the database.');
+            return new \WP_Error(2004, __('There was an error while adding the attachment record in the database.', 'extendify-local'));
         }
 
-        wp_update_attachment_metadata($attachmentId, wp_generate_attachment_metadata($attachmentId, $upload['file']));
+        $metadata = wp_generate_attachment_metadata($attachmentId, $upload['file']);
+        if (!empty($metadata)) {
+            wp_update_attachment_metadata($attachmentId, $metadata);
+        }
 
-        $upload['attachment_id'] = $attachmentId;
-
-        return $upload;
+        return $attachmentId;
     }
 
     /**

@@ -1,5 +1,6 @@
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
+import { addQueryArgs } from '@wordpress/url';
 import { pageNames } from '@shared/lib/pages';
 import { sleep } from '@shared/lib/utils';
 import { Axios as api } from '@launch/api/axios';
@@ -105,8 +106,16 @@ export const getThemeVariations = async () => {
 		throw new Error('Could not get theme variations');
 	}
 
+	// Filter out color and typography presets, and keep only main style variations.
+	const mainStyleVariations = variations.filter((variation) => {
+		const settingsKeys = Object.keys(variation.settings || {});
+		const stylesKeys = Object.keys(variation.styles || {});
+		const combinedKeys = new Set([...settingsKeys, ...stylesKeys]);
+		return combinedKeys.has('color') && combinedKeys.has('typography');
+	});
+
 	// Adds slug to match with color palettes from airtable
-	const variationsWithSlugs = variations.map((variation) => {
+	const variationsWithSlugs = mainStyleVariations.map((variation) => {
 		const slug =
 			// The Fusion Sky variation is misspelled in Extendable, so it needs a special case.
 			variation.title === 'FusionSky'
@@ -292,18 +301,42 @@ export const postLaunchFunctions = () =>
 
 export const registerFontFamily = async (fontFamily) => {
 	try {
-		const response = await apiFetch({
+		const existingFontFamily = (
+			await apiFetch({
+				path: addQueryArgs('/wp/v2/font-families', {
+					slug: fontFamily.slug,
+					_embed: true,
+				}),
+				method: 'GET',
+			})
+		)?.[0];
+
+		if (existingFontFamily) {
+			return {
+				id: existingFontFamily.id,
+				...existingFontFamily.font_family_settings,
+				fontFace: existingFontFamily._embedded.font_faces.map(
+					({ id, font_face_settings }) => ({
+						id,
+						...font_face_settings,
+					}),
+				),
+			};
+		}
+
+		const newFontFamily = await apiFetch({
 			path: '/wp/v2/font-families',
 			method: 'POST',
 			body: makeFontFamilyFormData(fontFamily),
 		});
+
 		return {
-			id: response.id,
-			...response.font_family_settings,
-			fontFace: response.fontFaces,
+			id: newFontFamily.id,
+			...newFontFamily.font_family_settings,
+			fontFace: newFontFamily.fontFaces,
 		};
 	} catch (error) {
-		console.error('Failed to register font family. Error:', error);
+		console.error('Failed to register font family:', error.message);
 		return;
 	}
 };
@@ -331,8 +364,8 @@ export const registerFontFace = async ({ fontFamilyId, ...fontFace }) => {
 		} catch (error) {
 			if (attempt <= max_retries) {
 				console.error(
-					`Failed attempt to upload font file ${fontFaceSlug}. Error:`,
-					error,
+					`Failed attempt to upload font file ${fontFaceSlug}:`,
+					error.message,
 				);
 				continue;
 			}
@@ -364,6 +397,12 @@ export const installFontFamily = async (fontFamily) => {
 
 	// If we couldn't register the font family, we don't register the font faces.
 	if (!registeredFontFamily) return;
+
+	// If font family has font faces, it means it was already registered
+	// and doesn't need to be installed.
+	if (registeredFontFamily?.fontFace?.length) {
+		return registeredFontFamily;
+	}
 
 	const fontFaces = fontFacesWithFile.map((fontFace) => ({
 		fontFamilyId: registeredFontFamily.id,

@@ -11,6 +11,7 @@ const allowList = [
 	'siteId',
 	'wpLanguage',
 	'wpVersion',
+	'siteProfile',
 ];
 
 const extraBody = {
@@ -135,7 +136,7 @@ export const getGoals = async ({ title, siteTypeSlug, siteProfile }) => {
 	return goals.data;
 };
 
-export const generateCustomPatterns = async (page, userState) => {
+export const generateCustomPatterns = async (page, userState, siteProfile) => {
 	const res = await fetch(`${AI_HOST}/api/patterns`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
@@ -143,6 +144,7 @@ export const generateCustomPatterns = async (page, userState) => {
 			...extraBody,
 			page,
 			userState,
+			siteProfile,
 		}),
 	});
 

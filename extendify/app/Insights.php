@@ -88,13 +88,15 @@ class Insights
                 'launchRedirectedAt' => \get_option('extendify_attempted_redirect', null),
                 'launchLoadedAt' => \get_option('extendify_launch_loaded', null),
                 'partner' => defined('EXTENDIFY_PARTNER_ID') ? constant('EXTENDIFY_PARTNER_ID') : null,
-                'siteCreatedAt' => \get_user_option('user_registered', 1),
+                'siteCreatedAt' => SiteSettings::getSiteCreatedAt(),
                 'assistRouterData' => \get_option('extendify_assist_router', null),
                 'libraryData' => \get_option('extendify_library_site_data', null),
                 'draftSettingsData' => \get_option('extendify_draft_settings', null),
                 'activity' => \get_option('extendify_shared_activity', null),
                 'extendifyVersion' => ($version[1] ?? null),
                 'siteProfile' => \get_option('extendify_site_profile', null),
+                'pluginSearchTerms' => \get_option('extendify_plugin_search_terms', []),
+                'blockSearchTerms' => \get_option('extendify_block_search_terms', []),
             ]);
             return $insights;
         });

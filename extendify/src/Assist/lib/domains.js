@@ -71,11 +71,19 @@ export const showSecondaryDomainTask = (() => {
 })();
 
 /**
- * 	The domainSearchUrl will look something like
- * 	https://example.com?s={DOMAIN} where {DOMAIN} will be replaced with the domain name
+ * The domainSearchUrl may contain both {SLD} and {TLD} placeholders
+ * e.g., https://example.com?sld={SLD}&tld={TLD}
+ * If not present, fallback to {DOMAIN} format
  */
-export const createDomainUrlLink = (domainSearchUrl, domain) =>
-	domainSearchUrl.replace('{DOMAIN}', domain.toLowerCase());
+export const createDomainUrlLink = (domainSearchUrl, domain) => {
+	if (domainSearchUrl.includes('{SLD}') && domainSearchUrl.includes('{TLD}')) {
+		const parts = domain.toLowerCase().split('.');
+		const sld = parts[0];
+		const tld = parts.slice(1).join('.');
+		return domainSearchUrl.replace('{SLD}', sld).replace('{TLD}', `.${tld}`);
+	}
+	return domainSearchUrl.replace('{DOMAIN}', domain.toLowerCase());
+};
 
 export const deleteDomainCache = () =>
 	apiFetch({

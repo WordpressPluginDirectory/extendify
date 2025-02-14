@@ -35,13 +35,16 @@ class Admin
     {
         add_action('enqueue_block_editor_assets', [$this, 'enqueueGutenbergAssets']);
         $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
-        \wp_enqueue_style(
-            Config::$slug . '-draft-styles',
-            EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-draft.css'],
-            [],
-            Config::$version,
-            'all'
-        );
+        if (isset(Config::$assetManifest['extendify-draft.css'])) {
+            \wp_enqueue_style(
+                Config::$slug . '-draft-styles',
+                EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-draft.css'],
+                [],
+                $version,
+                'all'
+            );
+        }
+
     }
 
     /**

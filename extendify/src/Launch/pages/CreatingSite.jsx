@@ -35,6 +35,7 @@ import {
 	generateCustomPageContent,
 	replacePlaceholderPatterns,
 	updateGlobalStyleVariant,
+	setHelloWorldFeaturedImage,
 } from '@launch/lib/wp';
 import { usePagesStore } from '@launch/state/Pages';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
@@ -48,7 +49,6 @@ export const CreatingSite = () => {
 	const [warnOnLeaveReady, setWarnOnLeaveReady] = useState(true);
 	const {
 		goals,
-		businessInformation,
 		siteType,
 		siteInformation,
 		siteStructure,
@@ -85,6 +85,7 @@ export const CreatingSite = () => {
 			}
 
 			await waitFor200Response();
+			// TODO: Refactor to assume 0default for site type
 			const siteTypeUpdated = {
 				...(siteType ?? {}),
 				// Override with the ai site type if it exists
@@ -227,7 +228,7 @@ export const CreatingSite = () => {
 			};
 
 			await waitFor200Response();
-			if (businessInformation.description) {
+			if (siteProfile.aiDescription) {
 				informDesc(__('Creating pages with custom content', 'extendify-local'));
 				[homePage, ...pages].forEach((page) =>
 					setPagesToAnimate((previous) => [...previous, page.name]),
@@ -254,10 +255,10 @@ export const CreatingSite = () => {
 				pagesWithReplacedPatterns,
 				{
 					goals,
-					businessInformation,
-					siteType,
+					siteType: siteTypeUpdated.name,
 					siteInformation,
 				},
+				siteProfile,
 			);
 
 			const createdPages = await createWpPages(pagesWithCustomContent, {
@@ -272,6 +273,9 @@ export const CreatingSite = () => {
 				informDesc(__('Creating blog sample data', 'extendify-local'));
 				await createBlogSampleData(siteStrings, siteImages);
 			}
+
+			await waitFor200Response();
+			await setHelloWorldFeaturedImage(siteImages.siteImages);
 
 			setPagesToAnimate([]);
 			await waitFor200Response();
@@ -397,7 +401,6 @@ export const CreatingSite = () => {
 		getGoalsPlugins,
 		style,
 		goals,
-		businessInformation,
 		siteType,
 		siteInformation,
 		setPagesToAnimate,

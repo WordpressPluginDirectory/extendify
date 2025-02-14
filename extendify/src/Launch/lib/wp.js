@@ -1,3 +1,4 @@
+import apiFetch from '@wordpress/api-fetch';
 import { rawHandler, serialize } from '@wordpress/blocks';
 import { __, sprintf } from '@wordpress/i18n';
 import { pageNames } from '@shared/lib/pages';
@@ -279,9 +280,48 @@ export const createBlogSampleData = async (siteStrings, siteImages) => {
 	}
 };
 
-export const generateCustomPageContent = async (pages, userState) => {
-	// Either didn't see the ai copy page or skipped it
-	if (!userState.businessInformation.description) {
+export const setHelloWorldFeaturedImage = async (imageUrls) => {
+	try {
+		const translatedSlug = window.extOnbData?.helloWorldPostSlug;
+		let posts = await apiFetch({ path: `wp/v2/posts?slug=${translatedSlug}` });
+		if (!posts.length) {
+			posts = await apiFetch({ path: 'wp/v2/posts?slug=hello-world' });
+		}
+		if (!posts.length) return;
+		const helloPost = posts[0];
+		if (helloPost.featured_media && parseInt(helloPost.featured_media, 10) > 0)
+			return;
+		if (!Array.isArray(imageUrls) || imageUrls.length === 0) {
+			console.error('No image URLs provided.');
+			return;
+		}
+		const lastImageUrl = imageUrls[imageUrls.length - 1];
+		const mediaResponse = await importImage(lastImageUrl, {
+			alt: __('Hello World Featured Image', 'extendify-local'),
+			filename: 'hello-world-featured.jpg',
+			caption: '',
+		});
+		if (!mediaResponse || !mediaResponse.id) {
+			console.error('Image upload failed.');
+			return;
+		}
+		await apiFetch({
+			path: `wp/v2/posts/${helloPost.id}`,
+			method: 'POST',
+			data: { featured_media: mediaResponse.id },
+		});
+	} catch (error) {
+		console.error('Failed to set Hello World featured image:', error);
+	}
+};
+
+export const generateCustomPageContent = async (
+	pages,
+	userState,
+	siteProfile,
+) => {
+	// No ai-generated content
+	if (!siteProfile.aiDescription) {
 		return pages;
 	}
 
@@ -289,13 +329,17 @@ export const generateCustomPageContent = async (pages, userState) => {
 
 	const result = await Promise.allSettled(
 		pages.map((page) =>
-			generateCustomPatterns(page, {
-				...userState,
-				siteId,
-				partnerId,
-				siteVersion: wpVersion,
-				language: wpLanguage,
-			})
+			generateCustomPatterns(
+				page,
+				{
+					...userState,
+					siteId,
+					partnerId,
+					siteVersion: wpVersion,
+					language: wpLanguage,
+				},
+				siteProfile,
+			)
 				.then((response) => response)
 				.catch(() => page),
 		),

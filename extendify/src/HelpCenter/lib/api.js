@@ -10,6 +10,7 @@ const allowList = [
 	'devbuild',
 	'isBlockTheme',
 	'userId',
+	'siteProfile',
 ];
 
 const { showAIConsent, userGaveConsent } = useAIConsentStore.getState();

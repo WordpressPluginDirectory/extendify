@@ -20,11 +20,11 @@ class DomainsSuggestionController
     public static $host = 'https://ai.extendify.com';
 
     /**
-     * The list of strings to block from using the api.
+     * The list of url strings in the site name to block from using the api.
      *
      * @var array
      */
-    public static $blockList = ['instawp.xyz', 'my blog'];
+    public static $blockList = ['instawp.xyz'];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
     /**
@@ -50,14 +50,21 @@ class DomainsSuggestionController
             return new \WP_REST_Response([]);
         }
 
-        if (!self::hasValidSiteTitle(\get_bloginfo('name'))) {
+        $siteName = \get_bloginfo('name');
+
+        // in case of an exact match we should not do a request.
+        if (in_array(strtolower($siteName), ['wordpress', 'my blog'], true)) {
+            return new \WP_REST_Response([]);
+        }
+
+        if (!self::hasValidSiteTitle($siteName)) {
             return new \WP_REST_Response([]);
         }
 
         $userSelections = \get_option('extendify_user_selections', ['state' => []]);
         $businessDescription = ($userSelections['state']['businessInformation']['description'] ?? '');
         $data = [
-            'query' => self::cleanSiteTitle(\get_bloginfo('name')),
+            'query' => self::cleanSiteTitle($siteName),
             'devbuild' => defined('EXTENDIFY_DEVMODE') ? constant('EXTENDIFY_DEVMODE') : is_readable(EXTENDIFY_PATH . '.devbuild'),
             'siteId' => \get_option('extendify_site_id', ''),
             'tlds' => ($partnerData['domainTLDs'] ?? []),
@@ -96,8 +103,7 @@ class DomainsSuggestionController
      */
     public static function cleanSiteTitle($siteTitle)
     {
-        $siteTitle = html_entity_decode($siteTitle);
-        return preg_replace('/[^\p{L}\p{N}\-]+/u', '', $siteTitle);
+        return preg_replace('/[^\p{L}\p{N}\s\-]+/u', '', html_entity_decode($siteTitle));
     }
 
     /**
