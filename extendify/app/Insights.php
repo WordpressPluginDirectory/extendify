@@ -93,6 +93,7 @@ class Insights
                 'libraryData' => \get_option('extendify_library_site_data', null),
                 'draftSettingsData' => \get_option('extendify_draft_settings', null),
                 'activity' => \get_option('extendify_shared_activity', null),
+                'domainsActivities' => \get_option('extendify_domains_recommendations_activities', null),
                 'extendifyVersion' => ($version[1] ?? null),
                 'siteProfile' => \get_option('extendify_site_profile', null),
                 'pluginSearchTerms' => \get_option('extendify_plugin_search_terms', []),

@@ -5,6 +5,8 @@
 
 namespace Extendify\Assist\Controllers;
 
+use Extendify\Shared\Services\Sanitizer;
+
 defined('ABSPATH') || die('No direct access.');
 
 /**
@@ -61,8 +63,8 @@ class DomainsSuggestionController
             return new \WP_REST_Response([]);
         }
 
-        $userSelections = \get_option('extendify_user_selections', ['state' => []]);
-        $businessDescription = ($userSelections['state']['businessInformation']['description'] ?? '');
+        $siteProfile = \get_option('extendify_site_profile', ['aiDescription' => []]);
+        $businessDescription = ($siteProfile['aiDescription'] ?? '');
         $data = [
             'query' => self::cleanSiteTitle($siteName),
             'devbuild' => defined('EXTENDIFY_DEVMODE') ? constant('EXTENDIFY_DEVMODE') : is_readable(EXTENDIFY_PATH . '.devbuild'),
@@ -130,5 +132,18 @@ class DomainsSuggestionController
         \delete_transient('extendify_domains');
 
         return new \WP_REST_Response(['success' => true]);
+    }
+
+    /**
+     * Persist the tracking data
+     *
+     * @param \WP_REST_Request $request - The request.
+     * @return \WP_REST_Response
+     */
+    public static function tracking($request)
+    {
+        $data = json_decode($request->get_param('state'), true);
+        update_option('extendify_domains_recommendations_activities', Sanitizer::sanitizeArray($data));
+        return new \WP_REST_Response($data);
     }
 }

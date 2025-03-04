@@ -49,11 +49,6 @@ class AdminPageRouter
                 [$assist, 'pageContent']
             );
 
-            // If they finish launch then stop here (devmode gets through).
-            if (!Config::$showLaunch) {
-                return;
-            }
-
             $launch = new LaunchAdminPage();
             $this->addSubMenu(
                 // translators: Launch is a noun.

@@ -6,17 +6,22 @@ import {
 	deleteDomainCache,
 	domainSearchUrl,
 } from '@assist/lib/domains';
+import { useDomainActivities } from '@assist/state/domain-activities';
 import { useTasksStore } from '@assist/state/tasks';
 
 const domains = safeParseJson(window.extSharedData.resourceData)?.domains || [];
 
 export const DomainCard = ({ task }) => {
 	const { completeTask } = useTasksStore();
+	const { setDomainActivity } = useDomainActivities();
 
 	const handleInteract = () => {
 		completeTask(task.slug);
 		deleteDomainCache();
 	};
+
+	const recordActivity = (domain, type) =>
+		setDomainActivity({ domain, position: 'buy-task', type });
 
 	if (!domains?.length) {
 		return (
@@ -58,7 +63,10 @@ export const DomainCard = ({ task }) => {
 							href={createDomainUrlLink(domainSearchUrl, domains[0])}
 							target="_blank"
 							rel="noreferrer"
-							onClick={handleInteract}
+							onClick={() => {
+								handleInteract();
+								recordActivity(domains[0], 'primary');
+							}}
 							className="mt-3 inline-flex h-8 cursor-pointer items-center justify-between rounded-sm border-design-main bg-design-main px-3 py-2 text-center text-sm leading-tight text-design-text no-underline hover:opacity-90 md:mt-0 md:flex">
 							{__('Register this domain', 'extendify-local')}
 							<Icon
@@ -74,7 +82,10 @@ export const DomainCard = ({ task }) => {
 							target="_blank"
 							rel="noreferrer"
 							className="flex h-11 cursor-pointer items-center justify-between border-b border-gray-200 px-6 py-3.5 text-sm font-normal lowercase text-gray-800 no-underline last:border-transparent hover:bg-gray-50"
-							onClick={handleInteract}
+							onClick={() => {
+								handleInteract();
+								recordActivity(domain, 'secondary');
+							}}
 							key={domain}>
 							{domain}
 							<Icon icon={isRTL() ? chevronLeftSmall : chevronRightSmall} />

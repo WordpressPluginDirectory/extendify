@@ -6,12 +6,14 @@ import {
 	createDomainUrlLink,
 	deleteDomainCache,
 } from '@assist/lib/domains';
+import { useDomainActivities } from '@assist/state/domain-activities';
 import { useGlobalStore } from '@assist/state/globals';
 
 const domains = safeParseJson(window.extSharedData.resourceData)?.domains || [];
 
 export const SecondaryDomainBanner = () => {
 	const { dismissBanner } = useGlobalStore();
+	const { setDomainActivity } = useDomainActivities();
 
 	if (!domainSearchUrl || !domains?.length) return null;
 
@@ -61,7 +63,13 @@ export const SecondaryDomainBanner = () => {
 							</div>
 							<a
 								href={createDomainUrlLink(domainSearchUrl, domains[0])}
-								onClick={deleteDomainCache}
+								onClick={() => {
+									deleteDomainCache();
+									setDomainActivity({
+										domain: domains[0],
+										position: 'addon-banner',
+									});
+								}}
 								target="_blank"
 								rel="noreferrer"
 								className="inline-flex h-10 cursor-pointer items-center rounded-sm bg-design-main px-4 text-sm text-design-text no-underline hover:opacity-90">

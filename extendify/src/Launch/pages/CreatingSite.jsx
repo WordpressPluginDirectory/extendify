@@ -4,6 +4,7 @@ import { Transition } from '@headlessui/react';
 import { installPlugin, activatePlugin } from '@shared/api/wp';
 import { pageNames } from '@shared/lib/pages';
 import { deepMerge } from '@shared/lib/utils';
+import { useAIConsentStore } from '@shared/state/ai-consent';
 import { colord } from 'colord';
 import {
 	updateTemplatePart,
@@ -67,6 +68,7 @@ export const CreatingSite = () => {
 	const { setPage } = usePagesStore();
 	const customFontFamilies =
 		variation?.settings?.typography?.fontFamilies?.custom;
+	const { setUserGaveConsent } = useAIConsentStore();
 
 	useWarnOnLeave(warnOnLeaveReady);
 
@@ -79,6 +81,9 @@ export const CreatingSite = () => {
 			inform(__('Applying your website styles', 'extendify-local'));
 			informDesc(__('Creating a beautiful website', 'extendify-local'));
 			await new Promise((resolve) => setTimeout(resolve, 1000));
+
+			// If they are launching the site, it means they agreed to the terms
+			setUserGaveConsent(true);
 
 			if (siteInformation.title) {
 				await updateOption('blogname', siteInformation.title);
@@ -410,6 +415,7 @@ export const CreatingSite = () => {
 		siteStrings,
 		siteImages,
 		customFontFamilies,
+		setUserGaveConsent,
 	]);
 
 	useEffect(() => {

@@ -5,7 +5,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.17.1
+ * Version:           1.17.2
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       extendify-local
@@ -98,7 +98,7 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
     // Redirect logins to the Extendify Assist dashboard if they are an admin.
     // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundBeforeLastUsed
     \add_filter('login_redirect', function ($redirectTo, $requestedRedirectTo, $user) {
-        if (!$user || !is_a($user, 'WP_User')) {
+        if (!$user || !is_a($user, 'WP_User') || !defined('EXTENDIFY_PARTNER_ID')) {
             return $redirectTo;
         }
 
@@ -110,7 +110,16 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
         return \admin_url() . 'admin.php?page=extendify-assist';
     }, 10, 3);
 
-    // ALlow Extendify requests to have a longer timeout.
+    // Redirect to a safe place if the user doesn't have access.
+    add_action('admin_page_access_denied', function () {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if (isset($_GET['page']) && strpos(sanitize_text_field(wp_unslash($_GET['page'])), 'extendify') !== false) {
+            wp_safe_redirect(admin_url());
+            exit;
+        }
+    });
+
+    // Allow Extendify requests to have a longer timeout.
     add_filter('http_request_args', function ($args, $url) {
         if (strpos($url, 'extendify') !== false) {
             $args['timeout'] = 45;

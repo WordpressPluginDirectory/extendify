@@ -60,6 +60,7 @@ use Extendify\Shared\Controllers\ActivityController;
         ApiRouter::get('/assist/global-data', [GlobalsController::class, 'get']);
         ApiRouter::post('/assist/global-data', [GlobalsController::class, 'store']);
         ApiRouter::post('/assist/delete-domains-recommendations', [DomainsSuggestionController::class, 'deleteCache']);
+        ApiRouter::post('assists/domains-recommendations-activities', [DomainsSuggestionController::class, 'tracking']);
 
         // Help Center.
         ApiRouter::get('/help-center/tour-data', [TourController::class, 'get']);

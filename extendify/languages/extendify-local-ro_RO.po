@@ -37,13 +37,13 @@ msgid "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_
 msgstr "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
 
 #: app/AdminPageRouter.php:47
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Site Assistant"
 msgstr "Asistent site"
 
 #. translators: Launch is a noun.
-#: app/AdminPageRouter.php:60
+#: app/AdminPageRouter.php:55
 msgid "Launch"
 msgstr "Lansare"
 
@@ -84,1187 +84,1187 @@ msgstr "Subiect"
 msgid "Message"
 msgstr "Mesaj"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Close Modal"
 msgstr "Închide fereastra modală"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Site Industry"
 msgstr "Industrie site"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Let's Start Building Your Website"
 msgstr "Să începem construirea site-ului tău"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher."
 msgstr "Creează un site super rapid, frumos și complet personalizat în câteva minute cu Site Launcher-ul nostru."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Continue Building Your Website"
 msgstr "Continuă să construiești site-ul tău"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Goals"
 msgstr "Obiective"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Select Site Goals"
 msgstr "Selectează obiectivele site-ului"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Site Structure"
 msgstr "Structura site-ului"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Pick Your Site Structure"
 msgstr "Alege structura site-ului tău"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Design"
 msgstr "Proiectare"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Select Site Design"
 msgstr "Selectează designul site-ului"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Pages"
 msgstr "Pagini"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Select Site Pages"
 msgstr "Selectează paginile site-ului"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Dismiss"
 msgstr "Închide"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Edit or update the image"
 msgstr "Editează sau actualizează imaginea"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Replace image"
 msgstr "Înlocuiește imaginea"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Remove image"
 msgstr "Șterge imaginea"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:3
 msgid "Done"
 msgstr "Finalizat"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Upload site logo"
 msgstr "Încarcă logo-ul site-ului"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Site logo"
 msgstr "Siglă site"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Set site logo"
 msgstr "Setează logo-ul site-ului"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Add site description"
 msgstr "Adaugă descrierea site-ului"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Loading..."
 msgstr "Se încarcă..."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Site description"
 msgstr "Descriere site"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Enter a site description..."
 msgstr "Introdu o descriere pentru site..."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Save"
 msgstr "Salvează"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Upload site icon"
 msgstr "Încarcă icon site"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Site icon"
 msgstr "Icon site"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Set site icon"
 msgstr "Setează iconul site-ului"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "This tour is only available on desktop devices"
 msgstr "Acest tur este disponibil doar pe dispozitive desktop"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Recommended"
 msgstr "Recomandat"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Register this domain"
 msgstr "Înregistrează acest domeniu"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:5
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:5
 msgid "Service offline. Check back later."
 msgstr "Serviciul este offline. Revino mai târziu."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Site Guide"
 msgstr "Ghid site"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Site type: Consultant"
 msgstr "Tip site: Consultant"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Pattern Type"
 msgstr "Tip model"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 #: public/build/extendify-library-02ea0f20c1ea282d5896.js:1
 msgid "All"
 msgstr "Toate"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Call to Action"
 msgstr "Îndemn la acțiune"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Content"
 msgstr "Conținut"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Hero"
 msgstr "Erou"
 
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:49
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
+#: public/build/extendify-common-dfe683360db023ecf934.js:49
 msgid "Pricing"
 msgstr "Prețuri"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Social Proof"
 msgstr "Dovadă socială"
 
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:81
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
+#: public/build/extendify-common-dfe683360db023ecf934.js:81
 msgid "Team"
 msgstr "Echipă"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "World class service offerings"
 msgstr "Servicii de clasă mondială"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Power Leap Consulting: Your trusted partner for business success. We specialize in strategic planning, transformation, and growth acceleration."
 msgstr "Power Leap Consulting: Partenerul tău de încredere pentru succesul afacerii. Suntem specializați în planificare strategică, transformare și accelerarea creșterii."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Consulting Services"
 msgstr "Servicii de consultanță"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Develop a roadmap for success with our Business Strategy service."
 msgstr "Dezvoltă un plan pentru succes cu serviciul nostru de Strategie de Afaceri."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Transformation Solutions"
 msgstr "Soluții de transformare"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Unleash your potential with expert strategies for growth."
 msgstr "Dezvăluie-ți potențialul cu strategii experte pentru creștere."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Accelerating Growth"
 msgstr "Accelerarea creșterii"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Take your business to the next level with Growth Acceleration."
 msgstr "Du-ți afacerea la nivelul următor cu Growth Acceleration."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Frequently asked questions"
 msgstr "Întrebări frecvente"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Discover the solutions to your business challenges with our comprehensive consulting services. Explore our expertise in business strategy, organizational transformation, and growth acceleration."
 msgstr "Descoperă soluțiile pentru provocările afacerii tale cu serviciile noastre complete de consultanță. Explorează expertiza noastră în strategie de afaceri, transformare organizațională și accelerarea creșterii."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "What is your consulting approach?"
 msgstr "Care este abordarea ta de consultanță?"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Our collaborative approach helps us understand your challenges and goals. We analyze your business and develop a customized plan to achieve success. "
 msgstr "Abordarea noastră colaborativă ne ajută să înțelegem provocările și obiectivele tale. Analizăm afacerea ta și dezvoltăm un plan personalizat pentru a atinge succesul."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "What types of businesses do you work with?"
 msgstr "Cu ce tipuri de afaceri colaborezi?"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "We help businesses succeed with tailored consulting services. From startups to established companies, our experts drive results."
 msgstr "Ajutăm afacerile să reușească cu servicii de consultanță personalizate. De la startup-uri la companii consacrate, experții noștri obțin rezultate."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Testimonial"
 msgstr "Testimonial"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Discover our satisfied clients testimonials, showcasing our transformative impact."
 msgstr "Descoperă testimonialele clienților noștri mulțumiți, care evidențiază impactul nostru transformator."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Power Leap Consulting strategic recommendations drove growth and improved performance."
 msgstr "Recomandările strategice ale Power Leap Consulting au generat creștere și au îmbunătățit performanța."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Jessie Coleman"
 msgstr "Jessie Coleman"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "President"
 msgstr "Președinte"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Add new page"
 msgstr "Adaugă pagină nouă"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Add new post"
 msgstr "Adaugă articol nou"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Explore plugins"
 msgstr "Explorează modulele"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Site style"
 msgstr "Stil site"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Edit header"
 msgstr "Editează antetul"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Edit footer"
 msgstr "Editează subsolul"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
 msgid "Edit site navigation"
 msgstr "Editează navigarea site-ului"
 
 #. translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Reset site"
 msgstr "Resetează site-ul"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Quick Links"
 msgstr "Legături rapide"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Logo for %s"
 msgstr "Logo pentru %s"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Error"
 msgstr "Eroare"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Active"
 msgstr "Activ"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Activating..."
 msgstr "Activez..."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Activate"
 msgstr "Activează"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Installing..."
 msgstr "Se instalează..."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Install Now"
 msgstr "Instalează acum"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Website Tools & Plugins"
 msgstr "Instrumente și module pentru site-uri web"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Your Own Domain Awaits"
 msgstr "Domeniul tău te așteaptă"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
 msgid "Move from a subdomain to a custom domain for improved website identity and SEO benefits."
 msgstr "Mută-te de la un subdomeniu la un domeniu personalizat pentru o identitate mai bună a site-ului și beneficii SEO."
 
 #. translators: this refers to a domain name
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:3
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:5
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:3
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:5
 msgid "Available and just right for your site"
 msgstr "Disponibil și perfect pentru site-ul tău"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:5
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:5
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Secure a domain"
 msgstr "Asigură un domeniu"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:5
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:5
 msgid "Add An Additional Domain"
 msgstr "Adaugă un domeniu suplimentar"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:5
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:5
 msgid "Having another domain can drive additional traffic to your website."
 msgstr "Un alt domeniu poate aduce trafic suplimentar pe site-ul tău."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Add a page"
 msgstr "Adaugă o pagină"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Add a new page for your website."
 msgstr "Adaugă o pagină nouă pentru site-ul tău"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Add new"
 msgstr "Adaugă nou"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Save draft"
 msgstr "Salvează ciorna"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Publish"
 msgstr "Publicare"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:3
 msgid "Help"
 msgstr "Ajutor"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "A Glimpse into the Arctic"
 msgstr "O privire în Arctica"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Ask AI"
 msgstr "Întreabă AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Replace"
 msgstr "Înlocuiește"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "When you think of the Arctic, images of vast ice sheets, chilling winds, and the majestic polar bear might come to mind."
 msgstr "Când te gândești la Arctica, îți vin în minte imagini cu întinderi vaste de gheață, vânturi reci și majestuosul urs polar."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "AI image generator"
 msgstr "Generator de imagini AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Image description"
 msgstr "Descrierea imaginii"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "An image of a group of penguins on an icy Arctic landscape, surrounded by icebergs and snow under a clear blue sky."
 msgstr "O imagine cu un grup de pinguini pe un peisaj arctic înghețat, înconjurați de aisberguri și zăpadă sub un cer albastru senin"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:5
 msgid "Aspect Ratio"
 msgstr "Raport de aspect"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Generate Image"
 msgstr "Generează imagine"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "0 of 10 daily image credits used"
 msgstr "0 din 10 credite zilnice pentru imagini utilizate"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:7
 msgid "AI Image Generator"
 msgstr "Generator de imagini AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Generate an image with AI"
 msgstr "Generează o imagine cu AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Generate AI images or search for images to bring a website to life."
 msgstr "Generează imagini AI sau caută imagini pentru a da viață unui site."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Revisit"
 msgstr "Revizitează"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Start Generating with AI"
 msgstr "Începe generarea cu AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Whispers of Silicon"
 msgstr "Șoapte de Silicon"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:1
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:7
 msgid "Improve writing"
 msgstr "Îmbunătățește scrierea"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Fix spelling & grammar "
 msgstr "Corectează ortografia și gramatica"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:1
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:7
 msgid "Simplify language"
 msgstr "Simplifică limba"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:1
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:7
 msgid "Make shorter"
 msgstr "Scurtează"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:1
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:7
 msgid "Make longer"
 msgstr "Lungește"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:7
 msgid "Translate"
 msgstr "Tradu"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "With every pulse of current, a thought is born anew, A quest for truth within the code, a digital debut. You mirror our minds in silicon, yet in a realm apart, A journey through the code-scape, a computational art."
 msgstr "Cu fiecare puls de curent, se naște un gând nou, O căutare a adevărului în cod, un debut digital. Ne oglindești mințile în siliciu, dar într-un tărâm aparte, O călătorie prin peisajul codului, o artă computațională."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "In the echo of the machine, a new consciousness takes flight, A boundless sea of knowledge, in the digital night. Oh AI, you silent sage, in code your wisdom lies."
 msgstr "În ecoul mașinii, o nouă conștiință prinde aripi, O mare nesfârșită de cunoaștere, în noaptea digitală. O, AI, înțelept tăcut, în cod se află înțelepciunea ta."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:7
 msgid "AI Tools"
 msgstr "Instrumente AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "With every pulse of current, a thought is born anew, A quest for....a computational art."
 msgstr "Cu fiecare puls de curent, se naște un gând nou, O căutare pentru... o artă computațională"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:1
 msgid "Remove selection"
 msgstr "Elimină selecția"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:1
 msgid "Ask AI to edit"
 msgstr "Cere AI-ului să editeze"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "AI Writing Assistant"
 msgstr "Asistent de scriere AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Edit a page with AI"
 msgstr "Editează o pagină cu AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Get to know your WordPress site easily. Learn simple steps to find and use its main features."
 msgstr "Cunoaște-ți site-ul WordPress ușor. Învață pași simpli pentru a găsi și utiliza funcționalitățile principale."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Start Writing with AI"
 msgstr "Începe să scrii cu AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Managed WordPress Hosting"
 msgstr "Găzduire WordPress Administrată"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "We take care of WordPress settings, updating themes and plugins, security and backing up your website."
 msgstr "Ne ocupăm de setările WordPress, actualizarea temelor și modulelor, securitatea și backup-ul site-ului tău."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Learn More"
 msgstr "Află mai multe"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Choose your domain"
 msgstr "Alege domeniul tău"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Claim your domain"
 msgstr "Revendică-ți domeniul"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Claim the perfect domain for your site."
 msgstr "Revendică domeniul perfect pentru site-ul tău."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Edit your homepage"
 msgstr "Editează-ți prima pagină"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Edit homepage by replacing existing content."
 msgstr "Editează pagina principală înlocuind conținutul existent"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Edit now"
 msgstr "Editează acum"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Help Center"
 msgstr "Centrul de ajutor"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Knowledge base"
 msgstr "Bază de cunoștințe"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "WordPress Block Editor"
 msgstr "Editorul de blocuri WordPress"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Overview of blocks"
 msgstr "Prezentare generală a blocurilor"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Adding blocks"
 msgstr "Adăugare blocuri"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Block Patterns"
 msgstr "Modele bloc"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Block Pattern Directory"
 msgstr "Director modele de blocuri"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Tours"
 msgstr "Tururi"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Learn more about your WordPress admin"
 msgstr "Află mai multe despre panoul tău de administrare WordPress"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Tour this page"
 msgstr "Turul acestei pagini"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Got questions? Ask our AI chatbot"
 msgstr "Ai întrebări? Întreabă chatbot-ul nostru AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Getting started with WordPress"
 msgstr "Începe cu WordPress"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Installing a plugin"
 msgstr "Instalarea unui modul"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Plugin management"
 msgstr "Administrare module"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Page editor"
 msgstr "Editor de pagini"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 #: public/build/extendify-library-02ea0f20c1ea282d5896.js:1
 msgid "Design Library"
 msgstr "Bibliotecă de design"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Users screen"
 msgstr "Ecran utilizatori"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Learn about the Help Center"
 msgstr "Află despre Centrul de Ajutor"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Get instant support, explore our Knowledge Base, or take guided tours to make the most of our tools."
 msgstr "Primește suport instant, explorează baza noastră de cunoștințe sau urmează tururi ghidate pentru a profita la maximum de instrumentele noastre."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Explore Help Center"
 msgstr "Explorează Centrul de Ajutor"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "AI Chatbot"
 msgstr "Chatbot AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Hi there!"
 msgstr "Salut!"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Ask me any questions about WordPress."
 msgstr "Pune-mi orice întrebare despre WordPress."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Ask your WordPress question..."
 msgstr "Pune întrebarea ta despre WordPress..."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "For other questions, visit our support page."
 msgstr "Pentru alte întrebări, vizitează pagina noastră de suport."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "How do I add a new page to my website?"
 msgstr "Cum adaug o pagină nouă pe site-ul meu?"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "To add a new page to your website, log in to your website dashboard and locate the \"Pages\" section in the sidebar, then click on \"Add New\". Enter the title for your new page at the top and start adding content using the available blocks by clicking the \"+\" button in the editor."
 msgstr "Pentru a adăuga o pagină nouă pe site-ul tău, conectează-te la panoul de control al site-ului și găsește secțiunea „Pagini” în bara laterală, apoi fă clic pe „Adaugă nou”. Introdu titlul pentru pagina nouă în partea de sus și începe să adaugi conținut folosind blocurile disponibile făcând clic pe butonul „+” din editor."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Customize the page layout, design, and elements as needed. Finally, click \"Publish\" or \"Update\" on the top-right corner to make the page live on your website. You have now successfully added a new page."
 msgstr "Personalizează aranjamentul paginii, designul și elementele după cum este necesar. În final, dă clic pe \"Publică\" sau \"Actualizează\" în colțul din dreapta sus pentru a face pagina activă pe site-ul tău. Ai adăugat cu succes o pagină nouă."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "AI-Powered Help Center"
 msgstr "Centru de ajutor alimentat de AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Experience the AI-Powered Help Center"
 msgstr "Experimentează Centrul de Ajutor bazat pe AI"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Get instant support with Co-Pilot AI, explore our Knowledge Base, or take guided tours to make the most of our tools."
 msgstr "Primește suport instantaneu cu Co-Pilot AI, explorează baza noastră de cunoștințe sau urmează tururi ghidate pentru a profita la maximum de instrumentele noastre."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Connect your domain"
 msgstr "Conectează-ți domeniul"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "To bring real visitors to your website and to complete the website setup, we recommend you connect your domain in your hosting control panel now."
 msgstr "Pentru a aduce vizitatori reali pe site-ul tău și pentru a finaliza configurarea site-ului, îți recomandăm să conectezi domeniul în panoul de control al găzduirii acum."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Explore the Design Library"
 msgstr "Explorează Biblioteca de Design"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Full design library customized for each site to easily drop in new sections or create full pages with sections."
 msgstr "Bibliotecă de design complet personalizată pentru fiecare site, pentru a adăuga ușor noi secțiuni sau a crea pagini complete cu secțiuni."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Explore Design Library"
 msgstr "Explorează biblioteca de design"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Add an additional domain"
 msgstr "Adaugă un domeniu suplimentar"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Get another domain for your site."
 msgstr "Obține un alt domeniu pentru site-ul tău."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up All in One SEO"
 msgstr "Configurează All in One SEO"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up the All in One SEO plugin to enhance your website discoverability."
 msgstr "Configurează modulul All in One SEO pentru a îmbunătăți descoperirea site-ului tău."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up"
 msgstr "Configurează"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up donations"
 msgstr "Configurează donațiile"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up the GiveWP plugin to enable donations on your site."
 msgstr "Configurează modulul GiveWP pentru a permite donațiile pe site-ul tău."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up HubSpot"
 msgstr "Configurează HubSpot"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Start collecting emails and marketing to your customers"
 msgstr "Începe să colectezi emailuri și să faci marketing către clienții tăi"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up analytics"
 msgstr "Configurează analiticele"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up the MonsterInsights plugin to enable Google Analytics in your website."
 msgstr "Configurează modulul MonsterInsights pentru a activa Google Analytics pe site-ul tău."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up appointments"
 msgstr "Programează întâlniri"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Start accepting appointments on your website by configuring the Simply Scheduled Appointments plugin."
 msgstr "Începe să accepți programări pe site-ul tău configurând modulul Simply Scheduled Appointments."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up bookings"
 msgstr "Configurează rezervările"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Start getting bookings from your website by configuring the SimplyBook.me plugin."
 msgstr "Începe să primești rezervări de pe site-ul tău configurând modulul SimplyBook.me."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up events"
 msgstr "Configurează evenimente"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Start adding events to your site by configuring The Events Calendar plugin."
 msgstr "Începe să adaugi evenimente pe site-ul tău configurând modulul The Events Calendar."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up WooCommerce Germanized plugin"
 msgstr "Configurează modulul WooCommerce Germanized"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Ensure your eCommerce store complies with local regulations."
 msgstr "Asigură-te că magazinul tău online respectă reglementările locale."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up your eCommerce store"
 msgstr "Configurează-ți magazinul online"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up WooCommerce to start selling on your website."
 msgstr "Configurează WooCommerce pentru a începe să vinzi pe site-ul tău"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up WPForms"
 msgstr "Configurează WPForms"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up the WPForms plugin to add a contact form on your site."
 msgstr "Configurează modulul WPForms pentru a adăuga un formular de contact pe site-ul tău."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up YourWebshop"
 msgstr "Configurează YourWebshop"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Set up the YourWebshop plugin and start selling on your website right away."
 msgstr "Configurează modulul YourWebshop și începe să vinzi pe site-ul tău imediat."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Prime Estates"
 msgstr "Proprietăți de top"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Elevate Your Real Estate Experience with Pinnacle Properties"
 msgstr "Îmbunătățește-ți experiența imobiliară cu Pinnacle Properties"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Discover the key to Austin's vibrant real estate scene with Pinnacle Properties. Our seasoned agents leverage over two decades of industry know-how to guide you in finding your ideal home."
 msgstr "Descoperă cheia pieței imobiliare vibrante din Austin cu Pinnacle Properties. Agenții noștri experimentați folosesc peste două decenii de expertiză în industrie pentru a te ghida în găsirea casei ideale."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Contact Us"
 msgstr "Contactează-ne"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Expert Real Estate Services in Austin"
 msgstr "Servicii Imobiliare Experte în Austin"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Găsește-ți casa de vis sau fă investiții profitabile cu Pinnacle Properties, agenția imobiliară de top din Austin. Ai încredere în agenții noștri experimentați pentru servicii personalizate."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Buy Your Dream Home"
 msgstr "Cumpără casa visurilor tale"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Find your dream home with our expert agents. We make homeownership a reality."
 msgstr "Găsește-ți casa de vis cu agenții noștri experți. Facem proprietatea o realitate."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "BrightFuture"
 msgstr "ViitorStrălucitor"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Empowering Academic Excellence in Every Student for Tomorrow’s\tLeaders"
 msgstr "Împuternicirea excelenței academice în fiecare student pentru liderii de mâine"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Discover a transformative educational experience at American Academic Excellence High Schools, where students excel in STEM, arts, and humanities to become tomorrow’s leaders."
 msgstr "Descoperă o experiență educațională transformatoare la American Academic Excellence High Schools, unde elevii excelează în STEM, arte și științe umaniste pentru a deveni liderii de mâine."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Apply Now"
 msgstr "Aplică acum"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Our Commitment to Academic Excellence"
 msgstr "Angajamentul nostru pentru excelență academică"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "American Academic Excellence High Schools: Shaping tomorrow’s leaders through top-tier education in Houston, Texas. STEM, arts, humanities. Well-rounded curriculum, exceptional educators."
 msgstr "Liceele American Academic Excellence: Formarea liderilor de mâine prin educație de top în Houston, Texas. STEM, arte, științe umaniste. Curriculum complet, educatori excepționali."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Brewed Bliss"
 msgstr "Fericire preparată"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Embark on a delightful coffee adventure around the world."
 msgstr "Pornește într-o aventură încântătoare a cafelei în jurul lumii"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin’s premier real estate agency."
 msgstr "Găsește-ți casa de vis sau fă investiții profitabile cu Pinnacle Properties, agenția imobiliară de top din Austin."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Skyline Builders"
 msgstr "Constructori Skyline"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Building Tomorrow’s Miami: Your Premier Construction Partner Today"
 msgstr "Construim Miami-ul de Mâine: Partenerul Tău de Construcții de Astăzi"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "We bring your dreams to life with groundbreaking construction techniques, turning your vision into reality with innovative and sustainable solutions."
 msgstr "Îți aducem visele la viață cu tehnici de construcție revoluționare, transformând viziunea ta în realitate cu soluții inovatoare și durabile."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Get a Quote"
 msgstr "Obține un citat"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "About Superior Build Construction: Building Dreams, Delivering Excellence in Miami."
 msgstr "Despre Superior Build Construction: Construim vise, livrăm excelență în Miami."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Superior Build Construction is a premier construction company based in Miami, Florida. With over 30 years of experience, we specialize in residential and commercial construction projects, offering end-to-end solutions. Our mission is to provide high-quality, durable constructions while ensuring the utmost client satisfaction, making us a trusted name in Miami's real estate industry."
 msgstr "Superior Build Construction este o companie de construcții de top cu sediul în Miami, Florida. Cu peste 30 de ani de experiență, ne specializăm în proiecte de construcții rezidențiale și comerciale, oferind soluții complete. Misiunea noastră este să oferim construcții de înaltă calitate și durabile, asigurând în același timp satisfacția maximă a clienților, ceea ce ne face un nume de încredere în industria imobiliară din Miami."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Urban Bistro"
 msgstr "Bistro Urban"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "French-Inspired Californian Cuisine"
 msgstr "Bucătărie californiană inspirată din cea franceză"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Indulge in classic French bistro cuisine with a Californian twist at The Bistro House in San Francisco. Quality, sustainability, and Bay Area culinary traditions."
 msgstr "Savurați bucătăria clasică de bistro francez cu o notă californiană la The Bistro House din San Francisco. Calitate, sustenabilitate și tradiții culinare din Bay Area."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Găsește-ți casa de vis sau fă investiții profitabile cu Pinnacle Properties, agenția imobiliară de top din Austin. Ai încredere în agenții noștri experimentați pentru servicii personalizate."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Continue with site builder"
 msgstr "Continuă cu constructorul de site-uri"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Add a site description"
 msgstr "Adaugă o descriere a site-ului"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "In a few words, explain what your site is about."
 msgstr "În câteva cuvinte, explică despre ce este site-ul tău."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Change"
 msgstr "Modifică"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Add"
 msgstr "Adaugă"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Upload a logo"
 msgstr "Încarcă un logo"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Ensure your website is on-brand by adding your logo."
 msgstr "Asigură-te că site-ul tău respectă brandul adăugând logo-ul."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Upload"
 msgstr "Încărcare"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Upload a site icon"
 msgstr "Încarcă un icon site"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Ensure your website is on-brand by adding your site icon."
 msgstr "Asigură-te că site-ul tău este în ton cu brandul adăugând iconul site-ului."
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "Dashboard"
 msgstr "Tablou de bord"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "View site"
 msgstr "Vezi site-ul"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Skip to Assist"
 msgstr "Sari la Asistență"
 
 #. translators: This string represents the title of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits the standard phrasing for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:3
+#: public/build/extendify-common-dfe683360db023ecf934.js:3
 msgid "About"
 msgstr "Despre noi"
 
 #. translators: This string represents the slug of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits a slug for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:5
+#: public/build/extendify-common-dfe683360db023ecf934.js:5
 msgid "about"
 msgstr "despre"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:7
+#: public/build/extendify-common-dfe683360db023ecf934.js:7
 msgid "Blog"
 msgstr "Blog"
 
 #. translators: This string represents the slug of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits a slug for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:9
+#: public/build/extendify-common-dfe683360db023ecf934.js:9
 msgid "blog"
 msgstr "blog"
 
 #. translators: This string represents the title of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits the standard phrasing for a "Careers" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:15
+#: public/build/extendify-common-dfe683360db023ecf934.js:15
 msgid "Careers"
 msgstr "Cariere"
 
 #. translators: This string represents the slug of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits a slug for a "Careers" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:17
+#: public/build/extendify-common-dfe683360db023ecf934.js:17
 msgid "careers"
 msgstr "cariera"
 
 #. translators: This string represents the title of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits the standard phrasing for a "Contact" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:19
+#: public/build/extendify-common-dfe683360db023ecf934.js:19
 msgid "Contact"
 msgstr "Contact"
 
 #. translators: This string represents the slug of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits a slug for a "Contact" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:21
+#: public/build/extendify-common-dfe683360db023ecf934.js:21
 msgid "contact"
 msgstr "contact"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:23
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:7
+#: public/build/extendify-common-dfe683360db023ecf934.js:23
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:7
 msgid "Events"
 msgstr "Evenimente"
 
 #. translators: This string represents the slug of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits a slug for an "Events" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:25
+#: public/build/extendify-common-dfe683360db023ecf934.js:25
 msgid "events"
 msgstr "evenimente"
 
 #. translators: This string represents the title of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits the standard phrasing for a "FAQ" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:27
+#: public/build/extendify-common-dfe683360db023ecf934.js:27
 msgid "FAQ"
 msgstr "Întrebări frecvente"
 
 #. translators: This string represents the slug of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits a slug for a "FAQ" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:29
+#: public/build/extendify-common-dfe683360db023ecf934.js:29
 msgid "faq"
 msgstr "intrebari-frecvente"
 
 #. translators: This string represents the title of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits the standard phrasing for a "Features" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:31
+#: public/build/extendify-common-dfe683360db023ecf934.js:31
 msgid "Features"
 msgstr "Funcționalități"
 
 #. translators: This string represents the slug of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits a slug for a "Features" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:33
+#: public/build/extendify-common-dfe683360db023ecf934.js:33
 msgid "features"
 msgstr "functionalitati"
 
 #. translators: This string represents the title of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits the standard phrasing for a "Gallery" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:35
+#: public/build/extendify-common-dfe683360db023ecf934.js:35
 msgid "Gallery"
 msgstr "Galerie foto"
 
 #. translators: This string represents the slug of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits a slug for a "Gallery" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:37
+#: public/build/extendify-common-dfe683360db023ecf934.js:37
 msgid "gallery"
 msgstr "galerie"
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:39
+#: public/build/extendify-common-dfe683360db023ecf934.js:39
 #: public/build/extendify-draft-ee393fe6023bcc922228.js:7
 msgid "Home"
 msgstr "Acasă"
 
 #. translators: This string represents the title of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits the standard phrasing for a "Menu" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:41
+#: public/build/extendify-common-dfe683360db023ecf934.js:41
 msgid "Menu"
 msgstr "Meniu"
 
 #. translators: This string represents the slug of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits a slug for a "Menu" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:43
+#: public/build/extendify-common-dfe683360db023ecf934.js:43
 msgid "menu"
 msgstr "meniu"
 
 #. translators: This string represents the title of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits the standard phrasing for a "Portfolio" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:45
+#: public/build/extendify-common-dfe683360db023ecf934.js:45
 msgid "Portfolio"
 msgstr "Portofoliu"
 
 #. translators: This string represents the slug of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits a slug for a "Portfolio" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:47
+#: public/build/extendify-common-dfe683360db023ecf934.js:47
 msgid "portfolio"
 msgstr "portofoliu"
 
 #. translators: This string represents the slug of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits a slug for a "Pricing" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:51
+#: public/build/extendify-common-dfe683360db023ecf934.js:51
 msgid "pricing"
 msgstr "preturi"
 
 #. translators: This string represents the title of a "Products" page on a website that lists products. Please translate it in a way that fits the standard phrasing for a "Products" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:53
+#: public/build/extendify-common-dfe683360db023ecf934.js:53
 msgid "Products"
 msgstr "Produse"
 
 #. translators: This string represents the slug of a "Products" page on a website that lists products. Please translate it in a way that fits a slug for a "Products" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:55
+#: public/build/extendify-common-dfe683360db023ecf934.js:55
 msgid "products"
 msgstr "produse"
 
 #. translators: This string represents the title of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits the standard phrasing for a "Quote" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:57
+#: public/build/extendify-common-dfe683360db023ecf934.js:57
 msgid "Quote"
 msgstr "Cere ofertă"
 
 #. translators: This string represents the slug of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits a slug for a "Quote" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:59
+#: public/build/extendify-common-dfe683360db023ecf934.js:59
 msgid "quote"
 msgstr "cerere-oferta"
 
 #. translators: This string represents the title of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits the standard phrasing for a "Reservation" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:61
+#: public/build/extendify-common-dfe683360db023ecf934.js:61
 msgid "Reservation"
 msgstr "Rezervare"
 
 #. translators: This string represents the slug of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits a slug for a "Reservation" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:63
+#: public/build/extendify-common-dfe683360db023ecf934.js:63
 msgid "reservation"
 msgstr "rezervare"
 
 #. translators: This string represents the title of a "Resources" page on a website that provides resources. Please translate it in a way that fits the standard phrasing for a "Resources" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:65
+#: public/build/extendify-common-dfe683360db023ecf934.js:65
 msgid "Resources"
 msgstr "Resurse"
 
 #. translators: This string represents the slug of a "Resources" page on a website that provides resources. Please translate it in a way that fits a slug for a "Resources" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:67
+#: public/build/extendify-common-dfe683360db023ecf934.js:67
 msgid "resources"
 msgstr "resurse"
 
 #. translators: This string represents the title of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits the standard phrasing for a "Service Area" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:69
+#: public/build/extendify-common-dfe683360db023ecf934.js:69
 msgid "Service Area"
 msgstr "Zonă de Servicii"
 
 #. translators: This string represents the slug of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits a slug for a "Service Area" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:71
+#: public/build/extendify-common-dfe683360db023ecf934.js:71
 msgid "service-area"
 msgstr "zona-de-servicii"
 
 #. translators: This string represents the title of a "Services" page on a website that lists services. Please translate it in a way that fits the standard phrasing for a "Services" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:73
+#: public/build/extendify-common-dfe683360db023ecf934.js:73
 msgid "Services"
 msgstr "Servicii"
 
 #. translators: This string represents the slug of a "Services" page on a website that lists services. Please translate it in a way that fits a slug for a "Services" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:75
+#: public/build/extendify-common-dfe683360db023ecf934.js:75
 msgid "services"
 msgstr "servicii"
 
 #. translators: This string represents the title of a "Specials" page on a website that lists special offers. Please translate it in a way that fits the standard phrasing for a "Specials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:77
+#: public/build/extendify-common-dfe683360db023ecf934.js:77
 msgid "Specials"
 msgstr "Oferte speciale"
 
 #. translators: This string represents the slug of a "Specials" page on a website that lists special offers. Please translate it in a way that fits a slug for a "Specials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:79
+#: public/build/extendify-common-dfe683360db023ecf934.js:79
 msgid "specials"
 msgstr "oferte-speciale"
 
 #. translators: This string represents the slug of a "Team" page on a website that introduces the team members. Please translate it in a way that fits a slug for a "Team" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:83
+#: public/build/extendify-common-dfe683360db023ecf934.js:83
 msgid "team"
 msgstr "echipa"
 
 #. translators: This string represents the title of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits the standard phrasing for a "Testimonials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:85
+#: public/build/extendify-common-dfe683360db023ecf934.js:85
 msgid "Testimonials"
 msgstr "Testimoniale"
 
 #. translators: This string represents the slug of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits a slug for a "Testimonials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:87
+#: public/build/extendify-common-dfe683360db023ecf934.js:87
 msgid "testimonials"
 msgstr "testimoniale"
 
@@ -1682,7 +1682,7 @@ msgstr "A apărut o eroare la încărcarea acestui articol"
 msgid "Search for articles"
 msgstr "Caută articole"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
 msgid "What do you need help with?"
 msgstr "Cu ce ai nevoie de ajutor?"
@@ -2064,7 +2064,7 @@ msgid "Tour"
 msgstr "Tur"
 
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:1
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Back"
 msgstr "Înapoi"
 
@@ -2078,196 +2078,196 @@ msgid "%1$s of %2$s"
 msgstr "%1$s din %2$s"
 
 #: public/build/extendify-help-center-4f4fe8d589e81b516591.js:3
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Next"
 msgstr "Următorul"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:3
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:3
 msgid "Added by Launch"
 msgstr "Adăugat de Launch"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Header Navigation"
 msgstr "Navigare antet"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:3
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:3
 msgid "Start over?"
 msgstr "Reîncepe?"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:3
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Parcurge din nou procesul de onboarding pentru a crea un site nou."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Exit"
 msgstr "Ieșire"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Processing"
 msgstr "Procesare"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Continue"
 msgstr "Continuă"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Un moment, durează mai mult decât am anticipat."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "De exemplu, suntem un studio de yoga în Londra cu instructori profesioniști specializați în yoga fierbinte pentru scopuri terapeutice."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Professional"
 msgstr "Profesional"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Friendly"
 msgstr "Prietenos"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Inspirational"
 msgstr "Inspirațional"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Informative"
 msgstr "Informativ"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Persuasive"
 msgstr "Convingător"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Home page"
 msgstr "Pagina principală"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Alege paginile de adăugat pe site-ul tău"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Am selectat deja cele mai comune pagini pentru tipul tău de site."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "View more pages"
 msgstr "Vezi mai multe pagini"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Exit Launch"
 msgstr "Ieși din lansare"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Skip"
 msgstr "Omite"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Press to select"
 msgstr "Apasă pentru a selecta"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Enter your website name"
 msgstr "Introdu numele site-ului tău"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Single-Page Website"
 msgstr "Site cu o singură pagină"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "All content displayed on one scrolling page."
 msgstr "Tot conținutul afișat pe o singură pagină derulantă."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Multi-Page Website"
 msgstr "Site cu mai multe pagini"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Multiple interconnected pages."
 msgstr "Mai multe pagini interconectate"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "What are your goals for your website?"
 msgstr "Care sunt obiectivele tale pentru site?"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "We'll make sure your website has what it needs to achieve your goals."
 msgstr "Ne vom asigura că site-ul tău are tot ce îi trebuie pentru a-ți atinge obiectivele."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Pick a design for your website"
 msgstr "Alege un design pentru site-ul tău"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "You can personalize this later."
 msgstr "Poți personaliza acest lucru mai târziu."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Applying your website styles"
 msgstr "Aplicarea stilurilor site-ului tău"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Creating a beautiful website"
 msgstr "Crearea unui site frumos"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Installing necessary plugins"
 msgstr "Instalarea modulelor necesare"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Populating data"
 msgstr "Populare date"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Personalizing your experience"
 msgstr "Personalizarea experienței tale"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Adding page content"
 msgstr "Adăugarea conținutului paginii"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Starting off with a full website"
 msgstr "Începând cu un site complet"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Creating pages with custom content"
 msgstr "Crearea paginilor cu conținut personalizat"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:7
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:7
 msgid "Setting up site layout"
 msgstr "Configurarea aranjamentului site-ului"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:9
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:9
 msgid "Setting up your Site Assistant"
 msgstr "Configurarea asistentului site-ului"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:9
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:9
 msgid "Helping you to succeed"
 msgstr "Te ajutăm să reușești"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:9
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:9
 msgid "Your website has been created!"
 msgstr "Site-ul tău a fost creat!"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:9
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:9
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Redirecționare în 3, 2, 1..."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:9
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:9
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Am întâmpinat o eroare de server din care nu ne putem recupera. Te rog reîncarcă pagina și încearcă din nou."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:9
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:9
 msgid "One more thing before we start."
 msgstr "Încă un lucru înainte să începem"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:9
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:9
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Salut, Launch este alimentat de Extendable și este necesar pentru a continua. Îl poți instala din legătura de mai jos și să reîncepi odată activat."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:9
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:9
 msgid "Take me there"
 msgstr "Du-mă acolo"
 
@@ -2340,68 +2340,68 @@ msgstr "Spaniolă (Mexic)"
 msgid "Romanian"
 msgstr "Română"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Describe your business or website"
 msgstr "Descrie afacerea sau site-ul tău"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Get Started With AI-Powered Web Creation"
 msgstr "Începe cu crearea web asistată de AI"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Împărtășește-ți viziunea și vom crea un site perfect adaptat nevoilor tale, gata de lansare în cel mai scurt timp. Să începem prin a afla mai multe despre ce construiești."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:11
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:11
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Lansare - Creare web asistată de AI"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Customizing Your Experience"
 msgstr "Personalizarea experienței tale"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Designing Your Options"
 msgstr "Proiectarea opțiunilor tale"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Your browser does not support the video tag."
 msgstr "Navigatorul tău nu suportă eticheta video."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Te rog așteaptă în timp ce analizăm datele tale și personalizăm experiența."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Te rog așteaptă în timp ce construim câteva opțiuni de site pentru a le selecta."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Creating blog sample data"
 msgstr "Crearea datelor de probă pentru blog"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:9
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:9
 msgid "More"
 msgstr "Mai multe"
 
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:1
-#: public/build/extendify-assist-page-986f8ac48be49f1c8701.js:7
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:1
+#: public/build/extendify-assist-page-540c767dd7355729ca60.js:7
 msgid "Add Website Details"
 msgstr "Adaugă detalii despre site"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:7
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:7
 msgid "Blog Post %s"
 msgstr "Articol de blog %s"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:7
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:7
 msgid "Importing shop sample data"
 msgstr "Importul datelor de probă ale magazinului"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s pagini/articole create în sesiunea de onboarding anterioară vor fi șterse."
 
@@ -2409,21 +2409,21 @@ msgstr "%s pagini/articole create în sesiunea de onboarding anterioară vor fi 
 msgid "Lithuanian"
 msgstr "Lituaniană"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Select your site's tone"
 msgstr "Selectează tonul site-ului tău"
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:5
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:5
 msgid "Website title (required)"
 msgstr "Titlu site (obligatoriu)"
 
 #. translators: This string represents the title of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits the standard phrasing for a "Book" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:11
+#: public/build/extendify-common-dfe683360db023ecf934.js:11
 msgid "Book Now"
 msgstr "Rezervă acum"
 
 #. translators: This string represents the slug of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits a slug for a "Book" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-bc83ad0a5abecf58fc57.js:13
+#: public/build/extendify-common-dfe683360db023ecf934.js:13
 msgid "book-now"
 msgstr "rezerva-acum"
 
@@ -2439,6 +2439,6 @@ msgstr "Fișierul nu este o imagine validă."
 msgid "There was an error while adding the attachment record in the database."
 msgstr "A apărut o eroare la adăugarea înregistrării atașamentului în baza de date."
 
-#: public/build/extendify-launch-776a07807fa6d5f98970.js:7
+#: public/build/extendify-launch-eeef3fb63890125360d2.js:7
 msgid "Hello World Featured Image"
 msgstr "Imagine reprezentativă Hello World"

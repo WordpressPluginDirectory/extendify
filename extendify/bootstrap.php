@@ -91,7 +91,7 @@ if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
             if (PartnerData::setting('showDraft') || constant('EXTENDIFY_DEVMODE')) {
                 new DraftAdmin();
             }
-        } elseif (Config::$showLaunch) {
+        } else {
             new LaunchAdmin();
         }
     }//end if

@@ -74,6 +74,7 @@ class Admin
                     'routerData' => \wp_json_encode(RouterController::get()->get_data()),
                     'recommendationData' => \wp_json_encode(RouterController::get()->get_data()),
                     'tasksDependencies' => \wp_json_encode($this->getTasksDependencies()),
+                    'domainsRecommendationsActivities' => \wp_json_encode(get_option('extendify_domains_recommendations_activities', null)),
                 ],
                 'canSeeRestartLaunch' => (bool) $this->canRunLaunchAgain(),
                 'editSiteNavigationMenuLink' => \current_theme_supports('menus') ? \esc_url(\admin_url('nav-menus.php')) : \esc_url(\admin_url('site-editor.php?path=%2Fnavigation')),
@@ -99,10 +100,6 @@ class Admin
      */
     public function canRunLaunchAgain()
     {
-        if (\get_option('stylesheet') !== 'extendable') {
-            return false;
-        }
-
         $launchCompleted = \get_option('extendify_onboarding_completed', false);
         if (!$launchCompleted) {
             return false;

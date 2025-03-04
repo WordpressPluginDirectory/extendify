@@ -235,7 +235,7 @@ class Admin
             return;
         }
 
-        if (array_key_exists( 'action', $_POST) && $_POST['action'] === 'updates' && !\check_ajax_referer('updates', '_ajax_nonce')) {
+        if (array_key_exists('action', $_POST) && $_POST['action'] === 'updates' && !\check_ajax_referer('updates', '_ajax_nonce')) {
             return;
         }
 
@@ -264,14 +264,24 @@ class Admin
             return;
         }
 
+        // Exits early if it is not a GET request.
+        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] !== 'GET') {
+            return;
+        }
+
         $wp = $GLOBALS['wp'];
+
         // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         $restRoute = ($wp->query_vars['rest_route'] ?? '');
+        // Exits early if it's not the blocks search route.
+        if ($restRoute !== '/wp/v2/block-directory/search') {
+            return;
+        }
+
         // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         $searchTerm = \sanitize_text_field(\wp_unslash(($wp->query_vars['term'] ?? '')));
-
-        // Exits early if is not the blocks search route or if the search query is empty.
-        if ($restRoute !== '/wp/v2/block-directory/search' || empty($searchTerm)) {
+        // Exits early if the search term is empty or is not user input.
+        if (empty($searchTerm) || str_starts_with($searchTerm, 'block:')) {
             return;
         }
 
