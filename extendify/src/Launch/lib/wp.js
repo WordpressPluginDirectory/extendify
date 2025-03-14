@@ -2,6 +2,7 @@ import apiFetch from '@wordpress/api-fetch';
 import { rawHandler, serialize } from '@wordpress/blocks';
 import { __, sprintf } from '@wordpress/i18n';
 import { pageNames } from '@shared/lib/pages';
+import blogSampleData from '@launch/_data/blog-sample.json';
 import { generateCustomPatterns } from '@launch/api/DataApi';
 import {
 	updateOption,
@@ -14,7 +15,6 @@ import {
 	createTag,
 } from '@launch/api/WPApi';
 import { removeBlocks, addIdAttributeToBlock } from '@launch/lib/blocks';
-import blogSampleData from '../_data/blog-sample.json';
 
 // Currently this only processes patterns with placeholders
 // by swapping out the placeholders with the actual code

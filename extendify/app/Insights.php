@@ -84,7 +84,7 @@ class Insights
             preg_match('/Stable tag: ([0-9.:]+)/', $readme, $version);
 
             $insights = array_merge($data, [
-                'launch' => defined('EXTENDIFY_SHOW_ONBOARDING') && constant('EXTENDIFY_SHOW_ONBOARDING'),
+                'launch' => Config::$showLaunch,
                 'launchRedirectedAt' => \get_option('extendify_attempted_redirect', null),
                 'launchLoadedAt' => \get_option('extendify_launch_loaded', null),
                 'partner' => defined('EXTENDIFY_PARTNER_ID') ? constant('EXTENDIFY_PARTNER_ID') : null,

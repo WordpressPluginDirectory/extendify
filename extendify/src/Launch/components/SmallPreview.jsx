@@ -17,7 +17,13 @@ import { usePreviewIframe } from '@launch/hooks/usePreviewIframe';
 import { getFontOverrides } from '@launch/lib/preview-helpers';
 import { hexTomatrixValues, lowerImageQuality } from '@launch/lib/util';
 
-export const SmallPreview = ({ style, onSelect, selected, siteTitle }) => {
+export const SmallPreview = ({
+	style,
+	onSelect,
+	selected,
+	siteTitle,
+	showNav = true,
+}) => {
 	const previewContainer = useRef(null);
 	const blockRef = useRef(null);
 	const observer = useRef(null);
@@ -113,19 +119,28 @@ export const SmallPreview = ({ style, onSelect, selected, siteTitle }) => {
 			.replace(
 				// <!-- wp:navigation --> <!-- /wp:navigation -->
 				/<!-- wp:navigation[.\S\s]*?\/wp:navigation -->/g,
-				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="word-spacing: 1.25rem;">${links.join(' ')}</p ><!-- /wp:paragraph -->`,
+				showNav
+					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="word-spacing: 1.25rem;">${links.join(' ')}</p ><!-- /wp:paragraph -->`
+					: '',
 			)
 			.replace(
 				// <!-- wp:navigation /-->
 				/<!-- wp:navigation.*\/-->/g,
-				`<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="word-spacing: 1.25rem;">${links.join(' ')}</p ><!-- /wp:paragraph -->`,
+				showNav
+					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="word-spacing: 1.25rem;">${links.join(' ')}</p ><!-- /wp:paragraph -->`
+					: '',
+			)
+			.replace(
+				/<!--\s*wp:social-links\b[^>]*>.*?<!--\s*\/wp:social-links\s*-->/gis,
+				// dont replace if showNav is true
+				(match) => (showNav ? match : ''),
 			)
 			.replace(
 				/<!-- wp:site-logo.*\/-->/g,
 				'<!-- wp:paragraph {"className":"custom-logo"} --><p class="custom-logo" style="display:flex; align-items: center;"><img alt="" class="custom-logo" style="height: 32px;" src="https://assets.extendify.com/demo-content/logos/extendify-demo-logo.png"></p ><!-- /wp:paragraph -->',
 			);
 		return rawHandler({ HTML: lowerImageQuality(code) });
-	}, [style]);
+	}, [style, showNav]);
 
 	useEffect(() => {
 		if (observer.current) return;

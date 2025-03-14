@@ -10,7 +10,7 @@ export const PostEditor = () => {
 	const { incrementActivity } = useActivityStore();
 	return (
 		<Button
-			className="is-compact ml-1 inline-flex gap-1"
+			className="is-compact ml-1 hidden gap-1 md:visible md:inline-flex"
 			data-test="help-center-editor-page-button"
 			onClick={() => {
 				setVisibility('open');

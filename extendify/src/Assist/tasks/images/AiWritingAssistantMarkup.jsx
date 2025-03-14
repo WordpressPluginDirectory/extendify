@@ -29,7 +29,7 @@ import {
 	helpFilled,
 	drawerRight,
 } from '@wordpress/icons';
-import { magic, twoLines } from './icons';
+import { magic, twoLines } from '@assist/tasks/images/icons';
 
 export const AiWritingAssistantMarkup = (props) => (
 	<div {...props}>

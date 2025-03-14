@@ -1,6 +1,6 @@
 import { render, createRoot } from '@wordpress/element';
 import { LaunchPage } from '@launch/LaunchPage';
-import './launch.css';
+import '@launch/launch.css';
 
 requestAnimationFrame(() => {
 	const launch = document.getElementById('extendify-launch-page');

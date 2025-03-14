@@ -6,7 +6,7 @@ import {
 	lineSolid,
 	chevronLeft,
 } from '@wordpress/icons';
-import { send, robot, playIcon } from './icons';
+import { send, robot, playIcon } from '@assist/tasks/images/icons';
 
 export const HelpCenterAIMarkup = (props) => (
 	<div {...props}>

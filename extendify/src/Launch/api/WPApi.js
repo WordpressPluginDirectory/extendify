@@ -15,6 +15,9 @@ const { wpRoot } = window.extOnbData;
 export const updateOption = (option, value) =>
 	api.post('launch/options', { option, value });
 
+export const updatePattern = (option, value) =>
+	api.post('launch/save-pattern', { option, value });
+
 export const getOption = async (option) => {
 	const { data } = await api.get('launch/options', {
 		params: { option },

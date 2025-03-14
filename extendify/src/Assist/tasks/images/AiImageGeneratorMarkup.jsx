@@ -20,7 +20,7 @@ import {
 	crop,
 	chevronLeft,
 } from '@wordpress/icons';
-import { magic } from './icons';
+import { magic } from '@assist/tasks/images/icons';
 
 export const AiImageGeneratorMarkup = (props) => (
 	<div {...props}>

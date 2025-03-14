@@ -68,7 +68,7 @@ const state = (set, get) => ({
 
 export const useKnowledgeBaseStore = create(
 	persist(devtools(state, { name: 'Extendify Help Center Knowledge Base' }), {
-		name: 'extendify-help-center-knowledge-base',
+		name: `extendify-help-center-knowledge-base-${window.extSharedData.siteId}`,
 		storage: createJSONStorage(() => sessionStorage),
 	}),
 );

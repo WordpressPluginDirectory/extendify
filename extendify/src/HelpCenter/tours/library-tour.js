@@ -8,7 +8,8 @@ export default {
 		allowOverflow: true,
 		hideDotsNav: true,
 		startFrom: [
-			window.extSharedData.adminUrl + 'post-new.php?post_type=page&ext-close',
+			window.extSharedData.adminUrl +
+				'post-new.php?post_type=page&ext-page-creator-close&ext-close',
 			window.extSharedData.adminUrl + 'post-new.php?post_type=page',
 		],
 	},

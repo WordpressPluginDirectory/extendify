@@ -2,7 +2,7 @@ import { createRoot } from '@wordpress/element';
 import { registerPlugin } from '@wordpress/plugins';
 import { MainButton } from '@library/components/MainButton';
 import { Modal } from '@library/components/Modal';
-import './library.css';
+import '@library/library.css';
 
 registerPlugin('extendify-library', {
 	render: () => {

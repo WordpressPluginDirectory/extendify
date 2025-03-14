@@ -64,6 +64,7 @@ export const getHomeTemplates = async ({
 	siteImages,
 	siteStyles,
 	goals,
+	siteObjective,
 }) => {
 	const styles = await fetchTemplates('home', siteType, {
 		siteStructure,
@@ -72,6 +73,7 @@ export const getHomeTemplates = async ({
 		siteImages,
 		siteStyles,
 		goals,
+		siteObjective,
 	});
 	const { headers, footers } = await getHeadersAndFooters();
 	if (!styles?.length) {
@@ -122,12 +124,19 @@ export const getPageTemplates = async ({
 	};
 };
 
-export const getGoals = async ({ title, siteTypeSlug, siteProfile }) => {
+export const getGoals = async ({
+	title,
+	siteTypeSlug,
+	siteProfile,
+	siteObjective,
+}) => {
 	const goals = await api.get('launch/goals', {
 		params: {
 			title,
 			site_type: siteTypeSlug,
 			site_profile: siteProfile,
+			site_objective: siteObjective,
+			site_id: window.extSharedData.siteId,
 		},
 	});
 	if (!goals?.data?.length) {

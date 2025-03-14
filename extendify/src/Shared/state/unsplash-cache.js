@@ -14,7 +14,7 @@ const state = (set, get) => ({
 
 export const useUnsplashCacheStore = create(
 	persist(devtools(state, { name: 'Extendify Unsplash Images' }), {
-		name: 'extendify-unsplash-images',
+		name: `extendify-unsplash-images-${window.extSharedData.siteId}`,
 		storage: createJSONStorage(() => localStorage),
 	}),
 );

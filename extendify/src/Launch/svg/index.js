@@ -1,43 +1,53 @@
-import BarChart from './BarChart';
-import Checkmark from './Checkmark';
-import Design from './Design';
-import Donate from './Donate';
-import LeftCaret from './LeftCaret';
-import Logo from './Logo';
-import Monetization from './Monetization';
-import OpenEnvelope from './OpenEnvelope';
-import Pencil from './Pencil';
-import Planner from './Planner';
-import PreviewIcon from './PreviewIcon';
-import PriceTag from './PriceTag';
-import Radio from './Radio';
-import RefreshIcon from './RefreshIcon';
-import RightCaret from './RightCaret';
-import School from './School';
-import SearchIcon from './SearchIcon';
-import Shop from './Shop';
-import Speech from './Speech';
-import Spinner from './Spinner';
-import SpinnerIcon from './SpinnerIcon';
-import Ticket from './Ticket';
+import BarChart from '@launch/svg/BarChart';
+import Blog from '@launch/svg/Blog';
+import Business from '@launch/svg/Business';
+import Checkmark from '@launch/svg/Checkmark';
+import Design from '@launch/svg/Design';
+import Donate from '@launch/svg/Donate';
+import ECommerce from '@launch/svg/ECommerce';
+import LandingPage from '@launch/svg/LandingPage';
+import LeftCaret from '@launch/svg/LeftCaret';
+import Logo from '@launch/svg/Logo';
+import Monetization from '@launch/svg/Monetization';
+import OpenEnvelope from '@launch/svg/OpenEnvelope';
+import OtherSiteTypes from '@launch/svg/OtherSiteTypes';
+import Pencil from '@launch/svg/Pencil';
+import Planner from '@launch/svg/Planner';
+import PreviewIcon from '@launch/svg/PreviewIcon';
+import PriceTag from '@launch/svg/PriceTag';
+import Radio from '@launch/svg/Radio';
+import RefreshIcon from '@launch/svg/RefreshIcon';
+import RightCaret from '@launch/svg/RightCaret';
+import School from '@launch/svg/School';
+import SearchIcon from '@launch/svg/SearchIcon';
+import Shop from '@launch/svg/Shop';
+import Speech from '@launch/svg/Speech';
+import Spinner from '@launch/svg/Spinner';
+import SpinnerIcon from '@launch/svg/SpinnerIcon';
+import Ticket from '@launch/svg/Ticket';
 
 export {
 	BarChart,
+	Blog,
+	Business,
 	Checkmark,
 	Design,
 	Donate,
+	ECommerce,
+	LandingPage,
 	LeftCaret,
 	Logo,
 	Monetization,
 	OpenEnvelope,
+	OtherSiteTypes,
 	Pencil,
 	Planner,
 	PreviewIcon,
 	PriceTag,
 	Radio,
-	School,
 	RefreshIcon,
 	RightCaret,
+	School,
 	SearchIcon,
 	Shop,
 	Speech,

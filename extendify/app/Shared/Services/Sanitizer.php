@@ -86,6 +86,18 @@ class Sanitizer
     }
 
     /**
+     * This function will sanitize a gutenberg block.
+     *
+     * @param string $blockString - The strings we need to sanitize.
+     * @return string
+     */
+    public static function sanitizeBlocks($blockString)
+    {
+        $parsed = parse_blocks($blockString);
+        return \serialize_blocks($parsed);
+    }
+
+    /**
      * This function will sanitize the post content.
      *
      * @param string $content - The post content we need to sanitize.

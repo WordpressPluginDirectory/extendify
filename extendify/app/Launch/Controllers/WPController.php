@@ -29,6 +29,25 @@ class WPController
 
         return new \WP_REST_Response(['success' => true]);
     }
+    /**
+     * Save a block to the database
+     *
+     * @param \WP_REST_Request $request - The request.
+     * @return \WP_REST_Response
+     */
+    public static function savePattern($request)
+    {
+        $params = $request->get_json_params();
+        $key = $params['option'];
+        // Remove the 'extendify_' prefix if it exists.
+        if (strpos($key, 'extendify_') === 0) {
+            $key = substr($key, 10);
+        }
+
+        \update_option('extendify_' . $key, Sanitizer::sanitizeBlocks($params['value']));
+
+        return new \WP_REST_Response(['success' => true]);
+    }
 
     /**
      * Get a setting from the options table

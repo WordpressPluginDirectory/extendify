@@ -26,10 +26,14 @@ use Extendify\Launch\Controllers\WPController;
 use Extendify\Launch\Controllers\WooCommerceController;
 
 use Extendify\Library\Controllers\SiteController;
+
+use Extendify\PageCreator\Controllers\SiteController as PageCreatorSiteController;
+
 use Extendify\Shared\Controllers\PatternPlaceholderController;
 use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsController;
 use Extendify\Shared\Controllers\ActivityController;
+use Extendify\Shared\Controllers\SiteProfileController;
 
 
 \add_action(
@@ -39,12 +43,15 @@ use Extendify\Shared\Controllers\ActivityController;
         ApiRouter::get('/library/settings', [SiteController::class, 'get']);
         ApiRouter::post('/library/settings', [SiteController::class, 'store']);
         ApiRouter::post('/library/settings/single', [SiteController::class, 'single']);
-        // TODO: Remove this after a few months.
-        ApiRouter::post('/library/settings/add-utils-to-global-styles', [SiteController::class, 'addUtilsToGlobalStyles']);
+
+        // Page Creator.
+        ApiRouter::get('/page-creator/settings/get-option', [PageCreatorSiteController::class, 'get']);
+        ApiRouter::post('/page-creator/settings/single', [PageCreatorSiteController::class, 'single']);
 
         // Launch.
         ApiRouter::post('/launch/options', [WPController::class, 'updateOption']);
         ApiRouter::get('/launch/options', [WPController::class, 'getOption']);
+        ApiRouter::post('/launch/save-pattern', [WPController::class, 'savePattern']);
         ApiRouter::get('/launch/active-plugins', [WPController::class, 'getActivePlugins']);
         ApiRouter::get('/launch/goals', [DataController::class, 'getGoals']);
         ApiRouter::get('/launch/ping', [DataController::class, 'ping']);
@@ -85,5 +92,7 @@ use Extendify\Shared\Controllers\ActivityController;
         ApiRouter::post('/shared/process-placeholders', [PatternPlaceholderController::class, 'processPlaceholders']);
         ApiRouter::get('/shared/activity', [ActivityController::class, 'get']);
         ApiRouter::post('/shared/activity', [ActivityController::class, 'store']);
+        ApiRouter::post('/shared/site-profile', [SiteProfileController::class, 'store']);
+        ApiRouter::get('/shared/site-profile', [SiteProfileController::class, 'get']);
     }
 );

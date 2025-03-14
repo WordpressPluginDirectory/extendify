@@ -3,8 +3,8 @@ import { useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { useInView } from 'react-intersection-observer';
 import Masonry from 'react-masonry-css';
+import { BlockPreviewButton } from '@library/components/BlockPreviewButton';
 import { usePatterns } from '@library/hooks/usePatterns';
-import { BlockPreviewButton } from './BlockPreviewButton';
 
 export const ModalContent = ({ insertPattern, siteType, category }) => {
 	const { data, isLoading, setSize } = usePatterns({

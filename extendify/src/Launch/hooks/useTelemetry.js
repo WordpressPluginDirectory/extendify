@@ -7,8 +7,14 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 
 // Dev note: This entire section is opt-in only when partnerID is set as a constant
 export const useTelemetry = () => {
-	const { goals, getGoalsPlugins, siteStructure, variation, siteProfile } =
-		useUserSelectionStore();
+	const {
+		goals,
+		getGoalsPlugins,
+		siteStructure,
+		variation,
+		siteProfile,
+		siteObjective,
+	} = useUserSelectionStore();
 	const { pages: selectedPages, style: selectedStyle } =
 		usePagesSelectionStore();
 	const selectedPlugins = getGoalsPlugins();
@@ -70,7 +76,8 @@ export const useTelemetry = () => {
 					siteCategory: siteProfile?.aiSiteCategory,
 					siteCreatedAt: window.extSharedData?.siteCreatedAt,
 					style: variation?.title,
-					siteStructure: siteStructure,
+					siteStructure,
+					siteObjective,
 					pages: selectedPages?.map((p) => p.slug),
 					goals: goals?.map((g) => g.slug),
 					lastCompletedStep: stepProgress?.at(-1),
@@ -109,6 +116,7 @@ export const useTelemetry = () => {
 		siteProfile?.aiSiteType,
 		siteProfile?.aiSiteCategory,
 		siteStructure,
+		siteObjective,
 		variation,
 	]);
 };

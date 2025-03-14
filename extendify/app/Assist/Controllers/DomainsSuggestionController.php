@@ -63,7 +63,7 @@ class DomainsSuggestionController
             return new \WP_REST_Response([]);
         }
 
-        $siteProfile = \get_option('extendify_site_profile', ['aiDescription' => []]);
+        $siteProfile = \get_option('extendify_site_profile', ['aiDescription' => '']);
         $businessDescription = ($siteProfile['aiDescription'] ?? '');
         $data = [
             'query' => self::cleanSiteTitle($siteName),

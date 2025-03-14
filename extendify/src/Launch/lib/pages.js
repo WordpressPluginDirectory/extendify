@@ -5,6 +5,10 @@ import {
 import { Goals, state as goalsState } from '@launch/pages/Goals';
 import { HomeSelect, state as homeSelectState } from '@launch/pages/HomeSelect';
 import {
+	ObjectiveSelection,
+	state as objectiveSelectionState,
+} from '@launch/pages/ObjectiveSelection';
+import {
 	PagesSelect,
 	state as pagesSelectState,
 } from '@launch/pages/PagesSelect';
@@ -23,6 +27,11 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 // You can add pre-fetch functions to start fetching data for the next page
 // Supports both [] and single fetcher functions
 const initialPagesList = {
+	'website-objective': {
+		component: ObjectiveSelection,
+		state: objectiveSelectionState,
+		condition: ({ hideLaunchObjective }) => !hideLaunchObjective,
+	},
 	'site-information': {
 		component: SiteInformation,
 		state: siteInfoState,
@@ -38,6 +47,7 @@ const initialPagesList = {
 	'site-structure': {
 		component: SiteStructure,
 		state: siteStructureState,
+		condition: ({ siteObjective }) => siteObjective !== 'landing-page',
 	},
 	'content-fetching': {
 		component: ContentGathering,
@@ -50,14 +60,18 @@ const initialPagesList = {
 	'page-select': {
 		component: PagesSelect,
 		state: pagesSelectState,
-		condition: (siteStructure) => siteStructure === 'multi-page',
+		condition: ({ siteStructure }) => siteStructure === 'multi-page',
 	},
 };
 
 export const getPages = () => {
-	const siteStructure = useUserSelectionStore?.getState()?.siteStructure;
+	const { siteStructure, siteObjective } =
+		useUserSelectionStore?.getState() ?? {};
+	const { hideLaunchObjective } = window.extSharedData;
+	const conditionData = { siteStructure, siteObjective, hideLaunchObjective };
+
 	return Object.entries(initialPagesList).filter(
-		([_, page]) => !page.condition || page.condition(siteStructure),
+		([_, page]) => !page.condition || page.condition(conditionData),
 	);
 };
 

@@ -5,15 +5,28 @@ import {
 	PagesSelect,
 	state as pagesSelectState,
 } from '@launch/pages/PagesSelect';
+import {
+	SiteStructure,
+	state as siteStructureState,
+} from '@launch/pages/SiteStructure';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { RightCaret, LeftCaret } from '@launch/svg';
 
+// This is a bit hacky for faster development.
+// We should refactor to include custom flows for each objective
+// And allow the router to switch paths along the way
 const PagesPageData = {
 	component: PagesSelect,
 	state: pagesSelectState,
 };
+const StructurePageData = {
+	component: SiteStructure,
+	state: siteStructureState,
+};
+
+const hideLaunchObjective = window.extSharedData?.hideLaunchObjective || false;
 
 export const PageControl = () => {
 	const {
@@ -25,16 +38,31 @@ export const PageControl = () => {
 		previousPage,
 		replaceHistory,
 	} = usePagesStore();
-	const { siteStructure } = useUserSelectionStore();
+	const { siteStructure, siteObjective } = useUserSelectionStore();
 
 	useLayoutEffect(() => {
 		// If we later add more structures, consider having predefined paths
 		if (siteStructure === 'multi-page') {
 			addPage('page-select', PagesPageData, 'layout');
-			return;
 		}
-		removePage('page-select');
-	}, [siteStructure, addPage, removePage]);
+		// If the site objective is not 'landing-page', add the site structure page
+		if (siteObjective !== 'landing-page') {
+			addPage('site-structure', StructurePageData, 'site-prep');
+		}
+		// If hideLaunchObjective flag is false, remove the goals page
+		if (!hideLaunchObjective) {
+			removePage('goals');
+		}
+		// Landing pages are single-page structure, so we need to remove both page-select and site-structure pages
+		if (siteObjective === 'landing-page' && siteStructure === 'single-page') {
+			removePage('page-select');
+			removePage('site-structure');
+		}
+		// For any single-page structure (regardless of objective), remove the page-select page
+		if (siteStructure === 'single-page') {
+			removePage('page-select');
+		}
+	}, [siteStructure, siteObjective, addPage, removePage]);
 
 	useEffect(() => {
 		const replaceStateHistory = () => {

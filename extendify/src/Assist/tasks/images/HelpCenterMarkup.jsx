@@ -9,7 +9,7 @@ import {
 	postComments,
 	chevronLeft,
 } from '@wordpress/icons';
-import { playIcon, toursIcon } from './icons';
+import { playIcon, toursIcon } from '@assist/tasks/images/icons';
 
 export const HelpCenterMarkup = (props) => (
 	<div {...props}>

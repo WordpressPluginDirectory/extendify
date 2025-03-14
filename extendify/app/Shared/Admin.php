@@ -179,6 +179,7 @@ class Admin
                 'resourceData' => \wp_json_encode((new ResourceData())->getData()),
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
                 'aiChatEnabled' => (bool) (PartnerData::setting('aiChatEnabled') || constant('EXTENDIFY_DEVMODE')),
+                'aiPageCreatorEnabled' => (bool) (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')),
                 'consentTermsHTML' => \wp_kses((html_entity_decode(($partnerData['consentTermsHTML'] ?? '')) ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
                 'installedPlugins' => array_map('esc_attr', array_keys(\get_plugins())),
@@ -188,10 +189,18 @@ class Admin
                 'showLocalizedCopy' => (bool) array_key_exists('showLocalizedCopy', $partnerData),
                 'activity' => \wp_json_encode(\get_option('extendify_shared_activity', null)),
                 'showDraft' => isset($partnerData['showDraft']) ? (bool) $partnerData['showDraft'] : false,
+                'showLaunch' => Config::$showLaunch,
                 'apexDomain' => PartnerData::setting('enableApexDomain') ? rawurlencode(ApexDomain::getApexDomain(\get_home_url())) : null,
+                // Preview feature enabled.
+                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                'hideLaunchObjective' => isset($_GET['preview']) ? false : (isset($partnerData['hideLaunchObjective']) ? (bool) $partnerData['hideLaunchObjective'] : false),
+                'isLaunchCompleted' => (bool) \esc_attr(\get_option('extendify_onboarding_completed', false)),
             ]),
             'before'
         );
+
+        \wp_set_script_translations('extendify-common', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
+        \wp_set_script_translations(Config::$slug . '-shared-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
 
         $cssColorVars = PartnerData::cssVariableMapping();
         $cssString = implode('; ', array_map(function ($k, $v) {

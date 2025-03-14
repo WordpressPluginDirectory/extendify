@@ -1,6 +1,6 @@
 import { Icon } from '@wordpress/icons';
+import { CategoryControl } from '@library/components/sidebar/CategoryControl';
 import { extendifyLogo } from '@library/icons/extendify-logo';
-import { CategoryControl } from './CategoryControl';
 
 const { partnerLogo, partnerName } = window.extSharedData;
 export const Sidebar = () => {

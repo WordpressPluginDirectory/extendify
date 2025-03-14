@@ -27,6 +27,8 @@ class DataController
             'title' => $request->get_param('title'),
             'site_type' => $request->get_param('site_type'),
             'site_profile' => $request->get_param('site_profile'),
+            'site_objective' => $request->get_param('site_objective'),
+            'site_id' => $request->get_param('site_id'),
         ];
         $response = Http::get('/goals?' . http_build_query($params));
 

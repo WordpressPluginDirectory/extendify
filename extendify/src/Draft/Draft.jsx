@@ -5,6 +5,7 @@ import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { Completion } from '@draft/components/Completion';
+import { ConsentSidebar } from '@draft/components/ConsentSidebar';
 import { DraftMenu } from '@draft/components/DraftMenu';
 import { EditMenu } from '@draft/components/EditMenu';
 import { Input } from '@draft/components/Input';
@@ -13,7 +14,6 @@ import { SelectedText } from '@draft/components/SelectedText';
 import { useCompletion } from '@draft/hooks/useCompletion';
 import { useRouter } from '@draft/hooks/useRouter';
 import { useSelectedText } from '@draft/hooks/useSelectedText';
-import { ConsentSidebar } from './components/ConsentSidebar';
 
 export const Draft = () => {
 	const { selectedText } = useSelectedText();

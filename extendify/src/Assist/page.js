@@ -1,7 +1,7 @@
 import { render as renderDeprecated, createRoot } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { AssistLandingPage } from '@assist/AssistLandingPage';
-import './app.css';
+import '@assist/app.css';
 
 const render = (component, node) => {
 	if (typeof createRoot !== 'function') {

@@ -11,6 +11,7 @@ import {
 	addSectionLinksToNav,
 	addPageLinksToNav,
 	updateOption,
+	updatePattern,
 	getOption,
 	getPageById,
 	getActivePlugins,
@@ -58,6 +59,8 @@ export const CreatingSite = () => {
 		siteProfile,
 		siteStrings,
 		siteImages,
+		CTALink,
+		siteObjective,
 	} = useUserSelectionStore();
 	const { pages, style } = usePagesSelectionStore();
 	const [info, setInfo] = useState([]);
@@ -131,9 +134,18 @@ export const CreatingSite = () => {
 
 			const navigationId = await createNavigation();
 
-			const headerCode = updateNavAttributes(style?.headerCode, {
+			let headerCode = updateNavAttributes(style?.headerCode, {
 				ref: navigationId,
 			});
+			if (siteObjective === 'landing-page') {
+				// remove the header navigation from the landing page
+				headerCode = headerCode
+					.replace(/<!--\s*wp:navigation\b[^>]*.*\/-->/gis, '')
+					.replace(
+						/<!--\s*wp:social-links\b[^>]*>.*?<!--\s*\/wp:social-links\s*-->/gis,
+						'',
+					);
+			}
 
 			await waitFor200Response();
 			await updateTemplatePart('extendable/header', headerCode);
@@ -256,6 +268,13 @@ export const CreatingSite = () => {
 				pagesWithReplacedPatterns.push(updatedPage);
 			}
 
+			// Stash the page-title pattern for use in ai page creator
+			const firstPattern = pagesWithReplacedPatterns?.[0]?.patterns?.[0];
+			const pageTitle = firstPattern?.patternTypes?.includes('page-title')
+				? (firstPattern?.code ?? null)
+				: null;
+			await updatePattern('launch_page_title_pattern', pageTitle);
+
 			const pagesWithCustomContent = await generateCustomPageContent(
 				pagesWithReplacedPatterns,
 				{
@@ -267,7 +286,8 @@ export const CreatingSite = () => {
 			);
 
 			const createdPages = await createWpPages(pagesWithCustomContent, {
-				stickyNav: siteStructure === 'single-page',
+				stickyNav:
+					siteStructure === 'single-page' && siteObjective !== 'landing-page',
 			});
 
 			const hasBlogPattern = homePage?.patterns?.some((pattern) =>
@@ -351,23 +371,29 @@ export const CreatingSite = () => {
 					? await updateSinglePageLinksToSections(
 							createdPages,
 							pagesWithCustomContent,
+							{
+								linkOverride: CTALink,
+								siteObjective,
+							},
 						)
 					: await updateButtonLinks(createdPages, pluginPages);
 
-			if (siteStructure === 'single-page') {
-				await addSectionLinksToNav(
-					navigationId,
-					homePage?.patterns,
-					pluginPages,
-					createdPages,
-				);
-			} else {
-				await addPageLinksToNav(
-					navigationId,
-					navPagesMultiPageSite,
-					pagesWithLinksUpdated,
-					pluginPages,
-				);
+			if (siteObjective !== 'landing-page') {
+				if (siteStructure === 'single-page') {
+					await addSectionLinksToNav(
+						navigationId,
+						homePage?.patterns,
+						pluginPages,
+						createdPages,
+					);
+				} else {
+					await addPageLinksToNav(
+						navigationId,
+						navPagesMultiPageSite,
+						pagesWithLinksUpdated,
+						pluginPages,
+					);
+				}
 			}
 
 			inform(__('Setting up your Site Assistant', 'extendify-local'));
@@ -416,6 +442,8 @@ export const CreatingSite = () => {
 		siteImages,
 		customFontFamilies,
 		setUserGaveConsent,
+		siteObjective,
+		CTALink,
 	]);
 
 	useEffect(() => {

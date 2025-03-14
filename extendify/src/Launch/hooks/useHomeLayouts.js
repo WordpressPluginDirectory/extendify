@@ -7,7 +7,8 @@ import { useSiteStyles } from '@launch/hooks/useSiteStyles';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const useHomeLayouts = () => {
-	const { siteType, siteStructure, goals } = useUserSelectionStore();
+	const { siteType, siteStructure, goals, siteObjective } =
+		useUserSelectionStore();
 	const { siteStrings } = useSiteStrings();
 	const { siteProfile } = useSiteProfile();
 	const { siteImages } = useSiteImages();
@@ -29,6 +30,7 @@ export const useHomeLayouts = () => {
 		siteImages,
 		siteStyles,
 		goals,
+		siteObjective,
 	};
 
 	const { data, error } = useSWRImmutable(

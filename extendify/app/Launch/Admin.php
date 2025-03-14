@@ -67,7 +67,7 @@ class Admin
         \wp_add_inline_script(
             Config::$slug . '-launch-scripts',
             'window.extOnbData = ' . \wp_json_encode([
-                'editorStyles' => \wp_json_encode(\get_block_editor_settings([], new \stdClass())),
+                'editorStyles' => \wp_json_encode(\get_block_editor_settings([], new \WP_Block_Editor_Context())),
                 'wpRoot' => \esc_url_raw(\rest_url()),
                 'activeTests' => array_map('esc_attr', \get_option('extendify_active_tests', [])),
                 'resetSiteInformation' => [

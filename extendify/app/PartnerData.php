@@ -58,11 +58,14 @@ class PartnerData
         'domainSearchURL' => '',
         'showDraft' => false,
         'aiChatEnabled' => false,
+        'showAIPageCreation' => false,
         'enableImageImports-1-14-6' => false,
         'disableLibraryAutoOpen' => false,
         'enableApexDomain' => false,
         'allowedPluginsSlugs' => [],
         'requiredPlugins' => [],
+        'showLaunch' => false,
+        'hideLaunchObjective' => false,
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -73,7 +76,7 @@ class PartnerData
      */
     public function __construct()
     {
-        self::$id = Config::$partnerId;
+        self::$id = defined('EXTENDIFY_PARTNER_ID') ? constant('EXTENDIFY_PARTNER_ID') : null;
         $data = self::getPartnerData();
         self::$config['showDomainBanner'] = ($data['showDomainBanner'] ?? self::$config['showDomainBanner']);
         self::$config['showDomainTask'] = ($data['showDomainTask'] ?? self::$config['showDomainTask']);
@@ -97,6 +100,9 @@ class PartnerData
         ];
         self::$config['allowedPluginsSlugs'] = ($data['allowedPluginsSlugs'] ?? self::$config['allowedPluginsSlugs']);
         self::$config['requiredPlugins'] = ($data['requiredPlugins'] ?? self::$config['requiredPlugins']);
+        self::$config['showAIPageCreation'] = ($data['showAIPageCreation'] ?? self::$config['showAIPageCreation']);
+        self::$config['showLaunch'] = ($data['showLaunch'] ?? self::$config['showLaunch']);
+        self::$config['hideLaunchObjective'] = ($data['hideLaunchObjective'] ?? self::$config['hideLaunchObjective']);
     }
 
     /**
@@ -107,7 +113,7 @@ class PartnerData
     public static function getPartnerData()
     {
         // Do not make a request without a partner ID (i.e. it's opt in).
-        if (!self::$id || self::$id === 'no-partner') {
+        if (!self::$id) {
             return [];
         }
 

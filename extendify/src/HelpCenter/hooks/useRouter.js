@@ -69,7 +69,7 @@ const state = (set, get) => ({
 
 const useRouterState = create(
 	persist(devtools(state, { name: 'Extendify Help Center Router' }), {
-		name: 'extendify-help-center-router',
+		name: `extendify-help-center-router-${window.extSharedData.siteId}`,
 		storage: createJSONStorage(() => sessionStorage),
 		partialize: ({ history, current }) => {
 			// remove the component from the current page

@@ -16,6 +16,6 @@ const state = (set) => ({
 
 export const useGlobalSyncStore = create(
 	persist(devtools(state, { name: 'Extendify Help Center Globals Sync' }), {
-		name: 'extendify-help-center-globals-sync',
+		name: `extendify-help-center-globals-sync-${window.extSharedData.siteId}`,
 	}),
 );

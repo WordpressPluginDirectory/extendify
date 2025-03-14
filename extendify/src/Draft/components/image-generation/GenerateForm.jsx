@@ -6,8 +6,8 @@ import {
 } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { CreditCounter } from '@draft/components/image-generation/CreditCounter';
 import { useGlobalStore } from '@draft/state/global';
-import { CreditCounter } from './CreditCounter';
 
 export const GenerateForm = ({ isGenerating, errorMessage }) => {
 	const { imageCredits, resetImageCredits, aiImageOptions, setAiImageOption } =

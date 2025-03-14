@@ -14,6 +14,7 @@ use Extendify\HelpCenter\Admin as HelpCenterAdmin;
 use Extendify\Insights;
 use Extendify\Launch\Admin as LaunchAdmin;
 use Extendify\Library\Admin as LibraryAdmin;
+use Extendify\PageCreator\Admin as PageCreatorAdmin;
 use Extendify\Library\Frontend as LibraryFrontend;
 use Extendify\PartnerData;
 use Extendify\Shared\Admin as SharedAdmin;
@@ -55,6 +56,10 @@ ResourceData::scheduleCache();
 new VersionMigrator();
 
 if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
+    // This class will fetch and cache partner data to be used
+    // throughout every class below.
+    new PartnerData();
+
     // The config class will collect information about the
     // partner and plugin, so it's easier to access.
     new Config();
@@ -64,16 +69,15 @@ if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
 
     // This class handles the admin pages required for the plugin.
     new AdminPageRouter();
-    // This class will fetch and cache partner data to be used
-    // throughout every class below.
-    new PartnerData();
     // This is a global "loader" class that loads in any assets that are shared everywhere.
     new SharedAdmin();
     // This class will handle loading library assets.
     new LibraryAdmin();
+    // This class will handle loading  page creator assets.
+    new PageCreatorAdmin();
 
     // Only load these if the partner ID is set. These are all opt-in features.
-    if ((Config::$partnerId && Config::$partnerId !== 'no-partner') || constant('EXTENDIFY_DEVMODE')) {
+    if (Config::$partnerId || constant('EXTENDIFY_DEVMODE')) {
         // This class will update links based on the partner's specifications.
         new Affiliate();
         // The remaining classes handle loading assets for each individual products.

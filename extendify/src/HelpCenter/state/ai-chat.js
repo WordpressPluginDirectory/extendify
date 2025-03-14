@@ -35,7 +35,7 @@ const state = (set, get) => ({
 
 export const useAIChatStore = create(
 	persist(devtools(state, { name: 'Extendify Chat History' }), {
-		name: 'extendify-chat-history',
+		name: `extendify-chat-history-${window.extSharedData.siteId}`,
 		storage: createJSONStorage(() => localStorage),
 	}),
 );

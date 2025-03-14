@@ -116,9 +116,33 @@ export const updateButtonLinks = async (wpPages, pluginPages) => {
 	);
 };
 
-export const updateSinglePageLinksToSections = async (wpPages, pages) => {
+export const updateSinglePageLinksToSections = async (
+	wpPages,
+	pages,
+	options = {},
+) => {
 	let homePageContent = wpPages?.[0]?.content?.raw;
 	if (!homePageContent) return wpPages;
+
+	/**
+	 * Special case handling for landing page sites.
+	 *
+	 * For landing pages, all internal navigation links are either replaced with
+	 * a single, provided CTA link, or set to '#' if no CTA link is provided.
+	 * This function updates the home page content and returns the updated pages array.
+	 */
+	const { linkOverride, siteObjective } = options;
+	if (siteObjective === 'landing-page') {
+		wpPages[0] = updatePage({
+			id: wpPages[0].id,
+			content: homePageContent.replaceAll(
+				/href="(#extendify-[\w|-]+)"/gi,
+				linkOverride ? `href="${linkOverride}"` : 'href="#"',
+			),
+		});
+
+		return wpPages;
+	}
 
 	// get all the patterns that we have in the home page
 	const patternTypes = pages?.[0]?.patterns

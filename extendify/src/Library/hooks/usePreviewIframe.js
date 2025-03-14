@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from '@wordpress/element';
 import { debounce } from 'lodash';
+import { useIsMounted } from '@library/hooks/useIsMounted';
 import { useGlobalsStore } from '@library/state/global';
 import { requiredCSSVars } from '@library/util/css';
 import { hasCSSVar } from '@library/util/dom';
-import { useIsMounted } from './useIsMounted';
 
 const originalHeights = new WeakMap();
 

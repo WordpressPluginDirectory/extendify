@@ -50,7 +50,9 @@ const DesignSelector = ({ homeLayouts }) => {
 	const isMounted = useIsMountedLayout();
 	const [styles, setStyles] = useState([]);
 	const { setStyle, style: currentStyle } = usePagesSelectionStore();
-	const { siteInformation, setVariation, variation } = useUserSelectionStore();
+
+	const { siteInformation, siteObjective, setVariation, variation } =
+		useUserSelectionStore();
 
 	const onSelect = useCallback(
 		(style) => {
@@ -169,6 +171,7 @@ const DesignSelector = ({ homeLayouts }) => {
 							style={{ aspectRatio: '1.55' }}>
 							<SmallPreview
 								style={style}
+								showNav={siteObjective !== 'landing-page'}
 								siteTitle={siteInformation.title}
 								onSelect={onSelect}
 								selected={currentStyle?.id === style.id}

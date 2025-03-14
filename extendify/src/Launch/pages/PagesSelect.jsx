@@ -44,7 +44,7 @@ export const PagesSelect = () => {
 	const { data: availablePages, loading, error } = useFetch(fetchData, fetcher);
 	const [previewing, setPreviewing] = useState();
 	const [expandMore, setExpandMore] = useState();
-	const { siteInformation } = useUserSelectionStore();
+	const { siteInformation, siteObjective } = useUserSelectionStore();
 	const { pages, remove, removeAll, add, has, style } =
 		usePagesSelectionStore();
 	const pagePreviewRef = useRef();
@@ -122,6 +122,7 @@ export const PagesSelect = () => {
 							{previewing && (
 								<PagePreview
 									ref={pagePreviewRef}
+									showNav={siteObjective !== 'landing-page'}
 									style={styleMemo}
 									siteTitle={siteInformation.title}
 									loading={loading}

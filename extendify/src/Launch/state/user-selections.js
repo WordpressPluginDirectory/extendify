@@ -1,5 +1,6 @@
 import apiFetch from '@wordpress/api-fetch';
 import { safeParseJson } from '@shared/lib/parsing';
+import { getUrlParameter } from '@shared/utils/get-url-parameter';
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 
@@ -13,49 +14,38 @@ const initialState = {
 	siteStrings: undefined,
 	siteImages: undefined,
 	siteInformation: {
-		title: window.extSharedData.siteTitle || '',
+		title: getUrlParameter('title') || window.extSharedData.siteTitle || '',
 	},
 	businessInformation: {
-		description: undefined,
+		description: getUrlParameter('description') || undefined,
 		tones: [],
 		acceptTerms: false,
 	},
 	goals: [],
+	siteObjective: undefined,
+	CTALink: undefined,
 };
 
-// State to reset when the business description (site type) changes
-const resetState = {
-	siteStructure: undefined,
-	siteProfile: undefined,
-	siteStrings: undefined,
-	siteImages: undefined,
-	goals: [],
-	variation: null,
-};
-
-const key = `extendify-launch-user-selection-${window.extSharedData.siteId}`;
 const incoming = safeParseJson(window.extSharedData.userData.userSelectionData);
 const state = (set, get) => ({
 	...initialState,
 	// initialize the state with default values
 	...(incoming?.state ?? {}),
-	...(JSON.parse(localStorage.getItem(key) || '{}')?.state ?? {}), // For testing
-	setSiteStructure(siteStructure) {
-		if (!['single-page', 'multi-page'].includes(siteStructure)) {
-			throw new Error("Page structure doesn't exist");
-		}
-		set({ siteStructure });
-	},
-	setSiteInformation(name, value) {
+	setSiteStructure: (siteStructure) => set({ siteStructure }),
+	setSiteInformation: (name, value) => {
 		const siteInformation = { ...get().siteInformation, [name]: value };
 		set({ siteInformation });
 	},
-	setBusinessInformation(name, value) {
+	setBusinessInformation: (name, value) => {
 		const businessInformation = { ...get().businessInformation, [name]: value };
 		set({ businessInformation });
 	},
-	setSiteProfile(data) {
-		set(resetState);
+	setSiteProfile: (data) => {
+		set({
+			siteProfile: undefined,
+			siteStrings: undefined,
+			siteImages: undefined,
+		});
 		if (!data) data = {};
 		const siteProfile = Object.assign(
 			{
@@ -81,46 +71,48 @@ const state = (set, get) => ({
 		const siteImages = Object.assign({ siteImages: [] }, data);
 		set({ siteImages });
 	},
-	getGoalsPlugins() {
-		return get().goals.flatMap((goal) => goal.plugins);
+	getGoalsPlugins: () => get().goals.flatMap((goal) => goal.plugins),
+	setSiteObjective: (siteObjective) => set({ siteObjective }),
+	setCTALink: (CTALink) => {
+		set({ CTALink });
 	},
-	has(type, item) {
+	has: (type, item) => {
 		if (!item?.id) return false;
 		return (get()?.[type] ?? [])?.some((t) => t.id === item.id);
 	},
-	add(type, item) {
+	add: (type, item) => {
 		if (get().has(type, item)) return;
 		set({ [type]: [...(get()?.[type] ?? []), item] });
 	},
-	addMany(type, items, options = {}) {
+	addMany: (type, items, options = {}) => {
 		if (options.clearExisting) {
 			set({ [type]: items });
 			return;
 		}
 		set({ [type]: [...(get()?.[type] ?? []), ...items] });
 	},
-	remove(type, item) {
+	remove: (type, item) => {
 		set({ [type]: get()?.[type]?.filter((t) => t.id !== item.id) });
 	},
-	removeMany(type, items) {
+	removeMany: (type, items) => {
 		set({
 			[type]: get()?.[type]?.filter((t) => !items.some((i) => i.id === t.id)),
 		});
 	},
-	removeAll(type) {
+	removeAll: (type) => {
 		set({ [type]: [] });
 	},
-	toggle(type, item) {
+	toggle: (type, item) => {
 		if (get().has(type, item)) {
 			get().remove(type, item);
 			return;
 		}
 		get().add(type, item);
 	},
-	resetState() {
+	resetState: () => {
 		set(initialState);
 	},
-	setVariation(variation) {
+	setVariation: (variation) => {
 		set({ variation });
 	},
 });

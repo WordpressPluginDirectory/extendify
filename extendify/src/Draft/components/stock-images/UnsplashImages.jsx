@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { UnsplashImage } from './UnsplashImage';
+import { UnsplashImage } from '@draft/components/stock-images/UnsplashImage';
 
 export const UnsplashImages = ({
 	images,

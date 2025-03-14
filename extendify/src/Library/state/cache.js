@@ -7,6 +7,6 @@ export const useCacheStore = create(
 			categories: [],
 			setCategories: (categories) => set({ categories }),
 		}),
-		{ name: 'extendify-library-cache' },
+		{ name: `extendify-library-cache-${window.extSharedData.siteId}` },
 	),
 );

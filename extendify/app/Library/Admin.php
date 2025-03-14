@@ -74,7 +74,7 @@ class Admin
     {
         $userInfo = \get_user_option('extendify_library_user');
         $userInfo = $userInfo ? json_decode($userInfo, true) : [
-            'state' => ['openOnNewPage' => Config::$hasPartner && ! PartnerData::setting('disableLibraryAutoOpen')],
+            'state' => ['openOnNewPage' => Config::$partnerId && ! PartnerData::setting('disableLibraryAutoOpen')],
             'version' => 0,
         ];
         $siteInfo = \get_option('extendify_library_site_data', [

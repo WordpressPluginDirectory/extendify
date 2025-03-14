@@ -13,7 +13,7 @@ const state = (set, get) => ({
 
 export const useSiteAssistTourStorage = create(
 	persist(devtools(state, { name: 'Extendify Site Assist Tour' }), {
-		name: 'extendify-site-assist-tour',
+		name: `extendify-site-assist-tour-${window.extSharedData.siteId}`,
 		storage: createJSONStorage(() => localStorage),
 	}),
 	state,

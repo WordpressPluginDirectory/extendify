@@ -1,5 +1,5 @@
 import { __, sprintf } from '@wordpress/i18n';
-import { CloseButton } from './CloseButton';
+import { CloseButton } from '@library/components/topbar/CloseButton';
 
 export const Topbar = ({ openOnNewPage, updateUserOption, onClose }) => {
 	return (

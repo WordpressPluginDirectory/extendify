@@ -5,13 +5,13 @@ import { Dialog } from '@headlessui/react';
 import { useActivityStore } from '@shared/state/activity';
 import { motion } from 'framer-motion';
 import { updateOption } from '@library/api/WPApi';
+import { ModalContent } from '@library/components/ModalContent';
+import { Sidebar } from '@library/components/sidebar/Sidebar';
+import { Topbar } from '@library/components/topbar/Topbar';
 import { useGlobalsStore } from '@library/state/global';
 import { useSiteSettingsStore } from '@library/state/site';
 import { useUserStore } from '@library/state/user';
 import { insertBlocks } from '@library/util/insert';
-import { ModalContent } from './ModalContent';
-import { Sidebar } from './sidebar/Sidebar';
-import { Topbar } from './topbar/Topbar';
 
 const isNewPage = window?.location?.pathname?.includes('post-new.php');
 
@@ -23,9 +23,7 @@ export const Modal = () => {
 	const { createNotice } = dispatch('core/notices');
 	const once = useRef(false);
 
-	const onClose = () => {
-		setOpen(false);
-	};
+	const onClose = () => setOpen(false);
 	const insertPattern = async (blocks) => {
 		await insertBlocks(blocks);
 		incrementImports();
