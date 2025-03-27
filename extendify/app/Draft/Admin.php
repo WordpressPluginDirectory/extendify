@@ -34,17 +34,6 @@ class Admin
     public function loadScripts()
     {
         add_action('enqueue_block_editor_assets', [$this, 'enqueueGutenbergAssets']);
-        $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
-        if (isset(Config::$assetManifest['extendify-draft.css'])) {
-            \wp_enqueue_style(
-                Config::$slug . '-draft-styles',
-                EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-draft.css'],
-                [],
-                $version,
-                'all'
-            );
-        }
-
     }
 
     /**
@@ -88,5 +77,16 @@ class Admin
             'before'
         );
         \wp_set_script_translations(Config::$slug . '-draft-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
+
+        $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
+        if (isset(Config::$assetManifest['extendify-draft.css'])) {
+            \wp_enqueue_style(
+                Config::$slug . '-draft-styles',
+                EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-draft.css'],
+                [],
+                $version,
+                'all'
+            );
+        }
     }
 }

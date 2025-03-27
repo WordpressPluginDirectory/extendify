@@ -6,6 +6,7 @@ import { pageNames } from '@shared/lib/pages';
 import { deepMerge } from '@shared/lib/utils';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { colord } from 'colord';
+import { getPartnerPlugins } from '@launch/api/DataApi';
 import {
 	updateTemplatePart,
 	addSectionLinksToNav,
@@ -30,7 +31,11 @@ import {
 	updateSinglePageLinksToSections,
 } from '@launch/lib/linkPages';
 import { uploadLogo } from '@launch/lib/logo';
-import { waitFor200Response, wasInstalled } from '@launch/lib/util';
+import {
+	retryOperation,
+	waitFor200Response,
+	wasInstalled,
+} from '@launch/lib/util';
 import {
 	createWpPages,
 	createBlogSampleData,
@@ -43,6 +48,11 @@ import { usePagesStore } from '@launch/state/Pages';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
+
+const { homeUrl, adminUrl } = window.extSharedData;
+const redirectUrl = window.extOnbData.redirectToWebsite
+	? `${homeUrl}?extendify-launch-success`
+	: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success`;
 
 export const CreatingSite = () => {
 	const [isShowing] = useState(true);
@@ -181,33 +191,12 @@ export const CreatingSite = () => {
 						),
 					);
 
-					// Install plugin (2 attempts)
-					try {
-						await waitFor200Response();
-						await installPlugin(plugin?.wordpressSlug);
-					} catch (_) {
-						// If this fails, wait and try again
-						await waitFor200Response();
-						try {
-							await installPlugin(plugin?.wordpressSlug);
-						} catch (e) {
-							// Fail silently if the plugin is already installed
-						}
-					}
-
-					// Activate plugin  (2 attempts)
-					try {
-						await waitFor200Response();
-						await activatePlugin(plugin?.wordpressSlug);
-					} catch (_) {
-						// If this fails, wait and try again
-						await waitFor200Response();
-						try {
-							await activatePlugin(plugin?.wordpressSlug);
-						} catch (e) {
-							// Fail silently if the plugin can't be activated
-						}
-					}
+					await retryOperation(() => installPlugin(plugin?.wordpressSlug), {
+						maxAttempts: 2,
+					}).catch(console.error);
+					await retryOperation(() => activatePlugin(plugin?.wordpressSlug), {
+						maxAttempts: 2,
+					}).catch(console.error);
 				}
 			}
 
@@ -331,6 +320,25 @@ export const CreatingSite = () => {
 
 				informDesc(__('Importing shop sample data', 'extendify-local'));
 				await importTemporaryProducts();
+
+				// If we installed any plugins above, and a partner has supported plugins
+				// linked to those plugins, we should install them here. For example:
+				// A German specific WooCommerce plugin in case WooCommerce is installed.
+				const partnerPlugins = await getPartnerPlugins('products');
+				if (partnerPlugins) {
+					informDesc(__('Installing supporting plugins', 'extendify-local'));
+					for (const plugin of partnerPlugins) {
+						if (!wasInstalled(activePlugins, plugin)) {
+							const maxAttempts = 2;
+							await retryOperation(() => installPlugin(plugin), {
+								maxAttempts,
+							}).catch(console.error);
+							await retryOperation(() => activatePlugin(plugin), {
+								maxAttempts,
+							}).catch(console.error);
+						}
+					}
+				}
 			}
 
 			if (wasInstalled(activePlugins, 'the-events-calendar')) {
@@ -362,7 +370,7 @@ export const CreatingSite = () => {
 
 			// Upload Logo
 			await uploadLogo(
-				'https://assets.extendify.com/demo-content/logos/extendify-demo-logo.png',
+				'https://images.extendify-cdn.com/demo-content/logos/extendify-demo-logo.png',
 			);
 			await waitFor200Response();
 
@@ -451,10 +459,7 @@ export const CreatingSite = () => {
 			setPage(0);
 			// This will trigger the post launch php functions.
 			await postLaunchFunctions();
-			window.location.replace(
-				window.extSharedData.adminUrl +
-					'admin.php?page=extendify-assist&extendify-launch-success',
-			);
+			window.location.replace(redirectUrl);
 		});
 	}, [doEverything, setPage]);
 

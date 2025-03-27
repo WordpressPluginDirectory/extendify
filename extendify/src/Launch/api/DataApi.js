@@ -145,6 +145,17 @@ export const getGoals = async ({
 	return goals.data;
 };
 
+export const getPartnerPlugins = async (key) => {
+	const plugins = await api.get('launch/partner-plugins');
+	if (!Object.keys(plugins?.data ?? {}).length) {
+		throw new Error('Could not get plugins');
+	}
+	if (key && plugins.data[key].length) {
+		return plugins.data[key];
+	}
+	return plugins.data;
+};
+
 export const generateCustomPatterns = async (page, userState, siteProfile) => {
 	const res = await fetch(`${AI_HOST}/api/patterns`, {
 		method: 'POST',

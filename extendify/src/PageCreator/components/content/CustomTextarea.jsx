@@ -13,6 +13,7 @@ export const CustomTextarea = ({
 	required = false,
 	hideEditor = false,
 	setHideEditor = function () {},
+	id,
 }) => {
 	const handleEditClick = (e) => {
 		e.preventDefault();
@@ -20,7 +21,7 @@ export const CustomTextarea = ({
 	};
 
 	return (
-		<Field>
+		<Field id={id} className="p-3">
 			<Label
 				as="h4"
 				className="mb-2 mt-0 text-base font-medium data-[disabled]:opacity-50">

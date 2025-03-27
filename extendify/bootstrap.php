@@ -49,17 +49,19 @@ new Insights();
 // This class set up the image import check scheduler.
 new ImagesImporter();
 
-// Set up scheduled cache (if opt-in).
-ResourceData::scheduleCache();
-
 // Run various database updates depending on the plugin version.
 new VersionMigrator();
 
-if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
-    // This class will fetch and cache partner data to be used
-    // throughout every class below.
-    new PartnerData();
+// This class will fetch and cache partner data to be used
+// throughout every class below. If opt in.
+new PartnerData();
 
+// Set up scheduled cache (if opt-in and active).
+if (!PartnerData::setting('deactivated')) {
+    ResourceData::scheduleCache();
+}
+
+if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
     // The config class will collect information about the
     // partner and plugin, so it's easier to access.
     new Config();
@@ -67,17 +69,21 @@ if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
         define('EXTENDIFY_DEVMODE', Config::$environment === 'DEVELOPMENT');
     }
 
-    // This class handles the admin pages required for the plugin.
-    new AdminPageRouter();
     // This is a global "loader" class that loads in any assets that are shared everywhere.
     new SharedAdmin();
     // This class will handle loading library assets.
     new LibraryAdmin();
-    // This class will handle loading  page creator assets.
-    new PageCreatorAdmin();
 
     // Only load these if the partner ID is set. These are all opt-in features.
-    if (Config::$partnerId || constant('EXTENDIFY_DEVMODE')) {
+    if ((Config::$partnerId || constant('EXTENDIFY_DEVMODE')) && !PartnerData::setting('deactivated')) {
+        // This class handles the admin pages required for the plugin.
+        new AdminPageRouter();
+
+        // This class will handle loading  page creator assets.
+        if (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')) {
+            new PageCreatorAdmin();
+        }
+
         // This class will update links based on the partner's specifications.
         new Affiliate();
         // The remaining classes handle loading assets for each individual products.

@@ -57,7 +57,7 @@ class PartnerData
         'stagingSites' => ['wordpress'],
         'domainSearchURL' => '',
         'showDraft' => false,
-        'aiChatEnabled' => false,
+        'showChat' => false,
         'showAIPageCreation' => false,
         'enableImageImports-1-14-6' => false,
         'disableLibraryAutoOpen' => false,
@@ -66,6 +66,8 @@ class PartnerData
         'requiredPlugins' => [],
         'showLaunch' => false,
         'hideLaunchObjective' => false,
+        'deactivated' => true,
+        'launchRedirectWebsite' => false,
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -87,7 +89,7 @@ class PartnerData
         self::$config['domainSearchURL'] = ($data['domainSearchURL'] ?? self::$config['domainSearchURL']);
         self::$logo = isset($data['logo'][0]['thumbnails']['large']['url']) ? $data['logo'][0]['thumbnails']['large']['url'] : self::$logo;
         self::$config['showDraft'] = ($data['showDraft'] ?? self::$config['showDraft']);
-        self::$config['aiChatEnabled'] = ($data['showChat'] ?? self::$config['aiChatEnabled']);
+        self::$config['showChat'] = ($data['showChat'] ?? self::$config['showChat']);
         self::$config['enableImageImports-1-14-6'] = ($data['enableImageImports-1-14-6'] ?? self::$config['enableImageImports-1-14-6']);
         self::$config['disableLibraryAutoOpen'] = ($data['disableLibraryAutoOpen'] ?? self::$config['disableLibraryAutoOpen']);
         self::$config['enableApexDomain'] = ($data['enableApexDomain'] ?? self::$config['enableApexDomain']);
@@ -103,55 +105,82 @@ class PartnerData
         self::$config['showAIPageCreation'] = ($data['showAIPageCreation'] ?? self::$config['showAIPageCreation']);
         self::$config['showLaunch'] = ($data['showLaunch'] ?? self::$config['showLaunch']);
         self::$config['hideLaunchObjective'] = ($data['hideLaunchObjective'] ?? self::$config['hideLaunchObjective']);
+        self::$config['deactivated'] = ($data['deactivated'] ?? self::$config['deactivated']);
+        self::$config['launchRedirectWebsite'] = ($data['launchRedirectWebsite'] ?? self::$config['launchRedirectWebsite']);
+
+        // Add the job hook to fetch the partner data.
+        \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);
     }
 
     /**
-     * Retrieve partner data from a transient or from the API.
+     * Retrieve partner data from the options table or from the API.
      *
      * @return array
      */
     public static function getPartnerData()
     {
         // Do not make a request without a partner ID (i.e. it's opt in).
-        if (!self::$id) {
+        if (!defined('EXTENDIFY_PARTNER_ID')) {
             return [];
         }
 
-        // Return if we have the transient. Data might be empty.
-        if (get_transient('extendify_partner_data_cache_check') !== false) {
-            return array_merge(self::$config, get_option('extendify_partner_data_v2', []));
+        $partnerData = \get_option('extendify_partner_data_v2', 'empty');
+        if ($partnerData !== 'empty') {
+            // We have data, but if it's been 10 minutes, check for new data.
+            $partnerRefresh = \get_transient('extendify_partner_data_cache_check');
+            if (!$partnerRefresh && \is_admin()) {
+                \add_action('init', function () {
+                    if (!\wp_next_scheduled('extendify_fetch_partner_data')) {
+                        \wp_schedule_single_event(time(), 'extendify_fetch_partner_data');
+                        \spawn_cron();
+                    }
+                });
+            }
+
+            return array_merge(self::$config, $partnerData);
         }
 
-        $response = wp_remote_get(
-            add_query_arg(
-                [
-                    'partner' => self::$id,
-                    'wp_language' => \get_locale(),
-                ],
-                'https://dashboard.extendify.com/api/onboarding/partner-data/'
-            ),
-            ['headers' => ['Accept' => 'application/json']]
+        $freshData = self::fetchPartnerData();
+        $mergedData = array_merge(self::$config, $freshData);
+        // Cache here even if empty [] to prevent multiple requests.
+        \update_option('extendify_partner_data_v2', $mergedData);
+        return $mergedData;
+    }
+
+    /**
+     * Fetch or refresh the partner data
+     *
+     * @return array
+     */
+    public static function fetchPartnerData()
+    {
+        if (!defined('EXTENDIFY_PARTNER_ID')) {
+            return [];
+        }
+
+        // Set a 10 minute transient to prevent multiple requests.
+        set_transient('extendify_partner_data_cache_check', true, (10 * MINUTE_IN_SECONDS));
+
+        $url = add_query_arg(
+            [
+                'partner' => self::$id,
+                'wp_language' => \get_locale(),
+                'site_url' => \home_url(),
+            ],
+            'https://dashboard.extendify.com/api/onboarding/partner-data/'
         );
 
-        if (is_wp_error($response)) {
-            // If the request fails, try again in 30 minutes.
-            set_transient('extendify_partner_data_cache_check', true, (30 * MINUTE_IN_SECONDS));
-            return array_merge(self::$config, get_option('extendify_partner_data_v2', []));
+        $response = \wp_remote_get($url, ['headers' => ['Accept' => 'application/json']]);
+
+        // If there was an error, we dont update the cache.
+        if (\is_wp_error($response) || \wp_remote_retrieve_response_code($response) !== 200) {
+            return [];
         }
 
-        $result = json_decode(wp_remote_retrieve_body($response), true);
+        $result = json_decode(\wp_remote_retrieve_body($response), true);
 
-        if (!array_key_exists('data', $result)) {
-            // If the request didn't have the data key, try again in 30 minutes.
-            set_transient('extendify_partner_data_cache_check', true, (30 * MINUTE_IN_SECONDS));
-            return array_merge(self::$config, get_option('extendify_partner_data_v2', []));
-        }
-
-        // Cache the data for 2 days.
-        set_transient('extendify_partner_data_cache_check', true, (2 * DAY_IN_SECONDS));
-        // In the case they sent in a partner id that didn't exist, we get [].
-        if (empty($result['data'])) {
-            update_option('extendify_partner_data_v2', []);
+        // If the data didn't come back as we expected it to, don't update the cache.
+        if (!array_key_exists('data', $result) || empty($result['data'])) {
             return [];
         }
 
@@ -162,7 +191,7 @@ class PartnerData
 
         // Merge before persisting as this data is accessed directly elsewhere.
         $mergedData = array_merge(self::$config, $sanitizedData);
-        update_option('extendify_partner_data_v2', $mergedData);
+        \update_option('extendify_partner_data_v2', $mergedData);
 
         return $mergedData;
     }

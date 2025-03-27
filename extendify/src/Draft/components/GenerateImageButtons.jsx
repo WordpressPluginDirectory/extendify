@@ -9,7 +9,7 @@ import { useDispatch } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
 import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { render } from '@draft/lib/dom';
+import { render } from '@shared/lib/dom';
 import { magic } from '@draft/svg';
 
 const supportedBlocks = [

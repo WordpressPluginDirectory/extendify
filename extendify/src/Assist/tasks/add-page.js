@@ -19,5 +19,6 @@ export default {
 		if (launchCompleted) return true;
 		return false;
 	},
-	backgroundImage: 'https://assets.extendify.com/assist-tasks/add-page.webp',
+	backgroundImage:
+		'https://images.extendify-cdn.com/assist-tasks/add-page.webp',
 };

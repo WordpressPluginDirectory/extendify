@@ -19,7 +19,7 @@ export const useTelemetry = () => {
 		usePagesSelectionStore();
 	const selectedPlugins = getGoalsPlugins();
 	const { generating } = useGlobalStore();
-	const { pages, currentPageIndex } = usePagesStore();
+	const { pages, currentPageIndex, preselectedPages } = usePagesStore();
 	const [stepProgress, setStepProgress] = useState([]);
 	const [viewedStyles, setViewedStyles] = useState(new Set());
 	const running = useRef(false);
@@ -27,13 +27,15 @@ export const useTelemetry = () => {
 	useEffect(() => {
 		const p = [...pages].map((p) => p[0]);
 		// Add pages as they move around
-		setStepProgress((progress) =>
+		setStepProgress((progress) => {
+			const withoutSkipped = progress.filter((p) => !preselectedPages.has(p));
 			// Return early if launched, or on the same page
-			[p[currentPageIndex], 'launched'].includes(progress?.at(-1))
-				? progress
-				: [...progress, p[currentPageIndex]],
-		);
-	}, [currentPageIndex, pages]);
+			if ([p[currentPageIndex], 'launched'].includes(progress?.at(-1))) {
+				return withoutSkipped;
+			}
+			return [...withoutSkipped, p[currentPageIndex]];
+		});
+	}, [currentPageIndex, pages, preselectedPages]);
 
 	useEffect(() => {
 		if (!generating) return;
@@ -82,6 +84,7 @@ export const useTelemetry = () => {
 					goals: goals?.map((g) => g.slug),
 					lastCompletedStep: stepProgress?.at(-1),
 					progress: stepProgress,
+					preSelect: [...preselectedPages],
 					stylesViewed: [...viewedStyles]
 						.filter((s) => s?.variation)
 						.map((s) => s.variation.title),
@@ -118,5 +121,6 @@ export const useTelemetry = () => {
 		siteStructure,
 		siteObjective,
 		variation,
+		preselectedPages,
 	]);
 };

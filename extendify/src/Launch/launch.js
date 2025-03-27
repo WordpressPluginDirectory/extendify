@@ -1,13 +1,9 @@
-import { render, createRoot } from '@wordpress/element';
+import { render } from '@shared/lib/dom';
 import { LaunchPage } from '@launch/LaunchPage';
 import '@launch/launch.css';
 
 requestAnimationFrame(() => {
 	const launch = document.getElementById('extendify-launch-page');
 	if (!launch) return;
-	if (typeof createRoot !== 'function') {
-		render(<LaunchPage />, launch);
-		return;
-	}
-	createRoot(launch).render(<LaunchPage />);
+	render(<LaunchPage />, launch);
 });

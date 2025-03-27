@@ -5,6 +5,9 @@ import { pages } from '@launch/lib/pages';
 const store = (set, get) => ({
 	pages: new Map(pages),
 	currentPageIndex: 0,
+	// Just used for telemetry
+	preselectedPages: new Set(),
+	addPreselectedPage: (page) => get().preselectedPages.add(page),
 	count: () => get().pages.size,
 	getPageOrder: () => Array.from(get().pages.keys()),
 	getCurrentPageData: () => get().pages.get(get().getCurrentPageSlug()),

@@ -141,7 +141,7 @@ export const AiImageGeneratorMarkup = (props) => (
 							</div>
 							<img
 								className="h-auto w-full"
-								src="https://assets.extendify.com/assist-tasks/penguins.webp"
+								src="https://images.extendify-cdn.com/assist-tasks/penguins.webp"
 							/>
 							<p>
 								{__(

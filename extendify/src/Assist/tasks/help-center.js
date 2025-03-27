@@ -16,7 +16,7 @@ export default {
 	type: 'html-text-button',
 	event: new CustomEvent('extendify-hc:open'),
 	dependencies: { goals: [], plugins: [] },
-	show: () => !window.extSharedData?.aiChatEnabled,
+	show: () => !window.extSharedData?.showChat,
 	htmlBefore: () => (
 		<HelpCenterMarkup
 			className="border-gray300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-100 pt-5 lg:block"

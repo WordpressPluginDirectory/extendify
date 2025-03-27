@@ -27,5 +27,5 @@ export default {
 			.some((item) => plugins.concat(goals).includes(item));
 	},
 	backgroundImage:
-		'https://assets.extendify.com/assist-tasks/bg-for-forms.webp',
+		'https://images.extendify-cdn.com/assist-tasks/bg-for-forms.webp',
 };

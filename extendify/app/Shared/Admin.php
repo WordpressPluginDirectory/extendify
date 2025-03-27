@@ -46,17 +46,6 @@ class Admin
 
         $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
 
-        // Enqueue shared stylesheet if it exists in the asset manifest.
-        if (isset(Config::$assetManifest['extendify-common.css'])) {
-            \wp_enqueue_style(
-                Config::$slug . '-draft-styles',
-                EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-common.css'],
-                [],
-                $version,
-                'all'
-            );
-        }
-
         /**
          * Enqueue shared JavaScript files if they exist in the asset manifest
          * Ensures proper loading order: vendors -> common
@@ -178,8 +167,8 @@ class Admin
                 ],
                 'resourceData' => \wp_json_encode((new ResourceData())->getData()),
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
-                'aiChatEnabled' => (bool) (PartnerData::setting('aiChatEnabled') || constant('EXTENDIFY_DEVMODE')),
-                'aiPageCreatorEnabled' => (bool) (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')),
+                'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
+                'showAIPageCreation' => (bool) (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')),
                 'consentTermsHTML' => \wp_kses((html_entity_decode(($partnerData['consentTermsHTML'] ?? '')) ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
                 'installedPlugins' => array_map('esc_attr', array_keys(\get_plugins())),
@@ -202,13 +191,21 @@ class Admin
         \wp_set_script_translations('extendify-common', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
         \wp_set_script_translations(Config::$slug . '-shared-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
 
+        \wp_enqueue_style(
+            Config::$slug . '-shared-common-styles',
+            EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-shared.css'],
+            [],
+            Config::$version,
+            'all'
+        );
         $cssColorVars = PartnerData::cssVariableMapping();
         $cssString = implode('; ', array_map(function ($k, $v) {
             return "$k: $v";
         }, array_keys($cssColorVars), $cssColorVars));
-        \wp_register_style(Config::$slug . '-shared-styles', '', [], $version, 'all');
-        \wp_enqueue_style(Config::$slug . '-shared-styles');
-        \wp_add_inline_style(Config::$slug . '-shared-styles', wp_strip_all_tags("body { $cssString; }"));
+        \wp_add_inline_style(
+            Config::$slug . '-shared-common-styles',
+            wp_strip_all_tags("body { $cssString; }")
+        );
     }
 
     /**

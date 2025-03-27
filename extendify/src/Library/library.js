@@ -1,5 +1,6 @@
 import { createRoot } from '@wordpress/element';
 import { registerPlugin } from '@wordpress/plugins';
+import { render } from '@shared/lib/dom';
 import { MainButton } from '@library/components/MainButton';
 import { Modal } from '@library/components/Modal';
 import '@library/library.css';
@@ -20,14 +21,14 @@ registerPlugin('extendify-library', {
 			const btn = Object.assign(btnWrap, { id, className });
 			document.querySelector(page)?.append(btn);
 			document.querySelector(fse)?.append(btn);
-			createRoot(btn).render(<MainButton />);
+			render(<MainButton />, btn);
 
 			const mdl = 'extendify-library-modal';
 			if (document.getElementById(mdl)) return;
 			const modalWrap = document.createElement('div');
 			const modal = Object.assign(modalWrap, { id: mdl, className });
 			document.body.append(modal);
-			createRoot(modal).render(<Modal />);
+			render(<Modal />, modal);
 		});
 	},
 });

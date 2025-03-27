@@ -73,9 +73,7 @@ const state = (set, get) => ({
 	},
 	getGoalsPlugins: () => get().goals.flatMap((goal) => goal.plugins),
 	setSiteObjective: (siteObjective) => set({ siteObjective }),
-	setCTALink: (CTALink) => {
-		set({ CTALink });
-	},
+	setCTALink: (CTALink) => set({ CTALink }),
 	has: (type, item) => {
 		if (!item?.id) return false;
 		return (get()?.[type] ?? [])?.some((t) => t.id === item.id);
@@ -91,17 +89,14 @@ const state = (set, get) => ({
 		}
 		set({ [type]: [...(get()?.[type] ?? []), ...items] });
 	},
-	remove: (type, item) => {
-		set({ [type]: get()?.[type]?.filter((t) => t.id !== item.id) });
-	},
+	remove: (type, item) =>
+		set({ [type]: get()?.[type]?.filter((t) => t.id !== item.id) }),
 	removeMany: (type, items) => {
 		set({
 			[type]: get()?.[type]?.filter((t) => !items.some((i) => i.id === t.id)),
 		});
 	},
-	removeAll: (type) => {
-		set({ [type]: [] });
-	},
+	removeAll: (type) => set({ [type]: [] }),
 	toggle: (type, item) => {
 		if (get().has(type, item)) {
 			get().remove(type, item);
@@ -109,12 +104,8 @@ const state = (set, get) => ({
 		}
 		get().add(type, item);
 	},
-	resetState: () => {
-		set(initialState);
-	},
-	setVariation: (variation) => {
-		set({ variation });
-	},
+	resetState: () => set(initialState),
+	setVariation: (variation) => set({ variation }),
 });
 
 const path = '/extendify/v1/shared/user-selections-data';

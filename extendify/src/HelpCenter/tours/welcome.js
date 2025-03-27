@@ -33,7 +33,7 @@ export default {
 				"At any time, you can view your site (from a visitor's perspective) from the top admin bar under your site's name.",
 				'extendify-local',
 			),
-			image: 'https://assets.extendify.com/tours/welcome/view-site.gif',
+			image: 'https://images.extendify-cdn.com/tours/welcome/view-site.gif',
 			attachTo: {
 				element: '#wp-admin-bar-view-site',
 				offset: {
@@ -174,7 +174,7 @@ export default {
 				'Use the pages menu to add, delete, or edit the pages on your site.',
 				'extendify-local',
 			),
-			image: 'https://assets.extendify.com/tours/welcome/add-pages.gif',
+			image: 'https://images.extendify-cdn.com/tours/welcome/add-pages.gif',
 			attachTo: {
 				element: '#menu-pages',
 				offset: {

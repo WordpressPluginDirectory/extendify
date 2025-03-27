@@ -74,7 +74,7 @@ class ImagesImporter
         // Create a custom 10 minutes schedule that we use below.
         // phpcs:ignore WordPress.WP.CronInterval -- Verified > 10 min.
         \add_filter('cron_schedules', function ($schedules) {
-            $schedules['every_ten_minutes'] = [
+            $schedules['extendify_every_ten_minutes'] = [
                 'interval' => (10 * MINUTE_IN_SECONDS),
                 'display' => __('Every 10 minutes', 'extendify-local'),
             ];
@@ -85,7 +85,7 @@ class ImagesImporter
         if (! \wp_next_scheduled('extendify_images_importer_light')) {
             \wp_schedule_event(
                 // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp
-                time(), 'every_ten_minutes', 'extendify_images_importer_light'
+                time(), 'extendify_every_ten_minutes', 'extendify_images_importer_light'
             );
         }
 

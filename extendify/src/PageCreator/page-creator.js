@@ -3,11 +3,12 @@ import { registerPlugin } from '@wordpress/plugins';
 import '@page-creator/app.css';
 import { MainButton } from '@page-creator/components/MainButton';
 import { Modal } from '@page-creator/components/Modal';
+import { render } from '@shared/lib/dom';
+import { hasPageCreatorEnabled } from '@help-center/lib/utils';
 
 const isPageCreatorEnabled = () => {
 	return (
-		window.extSharedData?.isLaunchCompleted &&
-		window.extSharedData?.aiPageCreatorEnabled &&
+		hasPageCreatorEnabled &&
 		window.wp.data.select('core/editor').getCurrentPostType() === 'page'
 	);
 };
@@ -31,14 +32,14 @@ registerPlugin('extendify-page-creator', {
 			const btn = Object.assign(btnWrap, { id, className });
 			document.querySelector(page)?.append(btn);
 			document.querySelector(fse)?.append(btn);
-			createRoot(btn).render(<MainButton />);
+			render(<MainButton />, btn);
 
 			const mdl = 'extendify-page-creator-modal';
 			if (document.getElementById(mdl)) return;
 			const modalWrap = document.createElement('div');
 			const modal = Object.assign(modalWrap, { id: mdl, className });
 			document.body.append(modal);
-			createRoot(modal).render(<Modal />);
+			render(<Modal />, modal);
 		});
 	},
 });

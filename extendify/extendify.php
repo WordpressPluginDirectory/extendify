@@ -5,7 +5,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.18.0
+ * Version:           1.18.2
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       extendify-local
@@ -98,6 +98,11 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
     // Redirect logins to the Extendify Assist dashboard if they are an admin.
     // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundBeforeLastUsed
     \add_filter('login_redirect', function ($redirectTo, $requestedRedirectTo, $user) {
+        // Only redirect if going to the admin page.
+        if ($redirectTo !== \admin_url()) {
+            return $redirectTo;
+        }
+
         if (!$user || !is_a($user, 'WP_User') || !defined('EXTENDIFY_PARTNER_ID')) {
             return $redirectTo;
         }

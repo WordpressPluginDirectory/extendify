@@ -53,6 +53,7 @@ const sections = [
 export const ObjectiveSelection = () => {
 	const { siteObjective, siteStructure, setSiteObjective, setSiteStructure } =
 		useUserSelectionStore();
+
 	const { nextPage } = usePagesStore();
 
 	const handleClick = (slug) => {
@@ -66,9 +67,7 @@ export const ObjectiveSelection = () => {
 	useEffect(() => {
 		if (siteObjective === 'landing-page') {
 			setSiteStructure('single-page');
-			return;
 		}
-		setSiteStructure(undefined);
 	}, [siteObjective, setSiteStructure, siteStructure]);
 
 	useEffect(() => {

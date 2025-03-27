@@ -1,8 +1,9 @@
 import domReady from '@wordpress/dom-ready';
+import { render } from '@shared/lib/dom';
 import { HelpCenter } from '@help-center/HelpCenter';
 import '@help-center/app.css';
 import '@help-center/buttons';
-import { render, isOnLaunch } from '@help-center/lib/utils';
+import { isOnLaunch } from '@help-center/lib/utils';
 
 const isInsideIframe = () => window !== window.top;
 

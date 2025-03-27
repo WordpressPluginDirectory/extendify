@@ -15,7 +15,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useGlobalSyncStore } from '@help-center/state/globals-sync';
 import { useTourStore } from '@help-center/state/tours';
 import tours from '@help-center/tours/tours';
-import availableTours from '@help-center/tours/tours.js';
 
 const getBoundingClientRect = (element) => {
 	const { top, right, bottom, left, width, height, x, y } =
@@ -190,10 +189,10 @@ export const GuidedTour = () => {
 		if (redirecting) return;
 		const tour = queuedTour;
 		let rafId = 0;
-		if (!tour || !availableTours[tour]) return clearQueuedTour();
+		if (!tour || !tours[tour]) return clearQueuedTour();
 		const handle = () => {
 			requestAnimationFrame(() => {
-				startTour(availableTours[tour]);
+				startTour(tours[tour]);
 			});
 			clearQueuedTour();
 		};

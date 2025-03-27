@@ -47,7 +47,7 @@ class ResourceData
     {
         // phpcs:ignore WordPress.WP.CronInterval -- Verified > 30 days.
         \add_filter('cron_schedules', function ($schedules) {
-            $schedules['every_month'] = [
+            $schedules['extendify_every_month'] = [
                 'interval' => (30 * DAY_IN_SECONDS), // phpcs:ignore
                 'display' => __('Every month', 'extendify-local'),
             ];
@@ -57,7 +57,7 @@ class ResourceData
         if (! \wp_next_scheduled('extendify_cache_data')) {
             \wp_schedule_event(
                 (\current_time('timestamp') + DAY_IN_SECONDS), // phpcs:ignore
-                'every_month',
+                'extendify_every_month',
                 'extendify_cache_data'
             );
         }
@@ -78,11 +78,11 @@ class ResourceData
                 return;
             }
 
-            wp_schedule_single_event(time(), 'update_domains_cache');
+            wp_schedule_single_event(time(), 'extendify_update_domains_cache');
             spawn_cron();
         });
 
-        \add_action('update_domains_cache', function () {
+        \add_action('extendify_update_domains_cache', function () {
             if (!defined('EXTENDIFY_PARTNER_ID')) {
                 return;
             }
@@ -110,7 +110,7 @@ class ResourceData
 
         $domains = get_transient('extendify_domains');
         if (empty($domains)) {
-            wp_schedule_single_event(time(), 'update_domains_cache');
+            wp_schedule_single_event(time(), 'extendify_update_domains_cache');
             spawn_cron();
         }
 

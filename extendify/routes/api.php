@@ -54,6 +54,7 @@ use Extendify\Shared\Controllers\SiteProfileController;
         ApiRouter::post('/launch/save-pattern', [WPController::class, 'savePattern']);
         ApiRouter::get('/launch/active-plugins', [WPController::class, 'getActivePlugins']);
         ApiRouter::get('/launch/goals', [DataController::class, 'getGoals']);
+        ApiRouter::get('/launch/partner-plugins', [DataController::class, 'getPlugins']);
         ApiRouter::get('/launch/ping', [DataController::class, 'ping']);
         ApiRouter::get('/launch/prefetch-assist-data', [WPController::class, 'prefetchAssistData']);
         ApiRouter::post('/launch/create-navigation', [WPController::class, 'createNavigationWithMeta']);

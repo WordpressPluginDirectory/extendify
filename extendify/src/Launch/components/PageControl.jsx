@@ -1,5 +1,11 @@
-import { useEffect, useLayoutEffect, useState } from '@wordpress/element';
+import {
+	useEffect,
+	useLayoutEffect,
+	useRef,
+	useState,
+} from '@wordpress/element';
 import { __, isRTL } from '@wordpress/i18n';
+import { getUrlParameter } from '@shared/utils/get-url-parameter';
 import { NavigationButton } from '@launch/components/NavigationButton';
 import {
 	PagesSelect,
@@ -28,6 +34,9 @@ const StructurePageData = {
 
 const hideLaunchObjective = window.extSharedData?.hideLaunchObjective || false;
 
+const objectives = ['business', 'ecommerce', 'blog', 'landig-page', 'other'];
+const structures = ['single-page', 'multi-page'];
+
 export const PageControl = () => {
 	const {
 		currentPageIndex,
@@ -37,8 +46,14 @@ export const PageControl = () => {
 		getPageState,
 		previousPage,
 		replaceHistory,
+		addPreselectedPage,
 	} = usePagesStore();
-	const { siteStructure, siteObjective } = useUserSelectionStore();
+	const { siteStructure, siteObjective, setSiteObjective, setSiteStructure } =
+		useUserSelectionStore();
+
+	const siteObjectiveParam = getUrlParameter('objective', false);
+	const siteStructureParam = getUrlParameter('structure', false);
+	const removeStructurePage = useRef(false);
 
 	useLayoutEffect(() => {
 		// If we later add more structures, consider having predefined paths
@@ -49,6 +64,7 @@ export const PageControl = () => {
 		if (siteObjective !== 'landing-page') {
 			addPage('site-structure', StructurePageData, 'site-prep');
 		}
+
 		// If hideLaunchObjective flag is false, remove the goals page
 		if (!hideLaunchObjective) {
 			removePage('goals');
@@ -62,7 +78,35 @@ export const PageControl = () => {
 		if (siteStructure === 'single-page') {
 			removePage('page-select');
 		}
-	}, [siteStructure, siteObjective, addPage, removePage]);
+
+		// If a valid objective parameter is in the URL, set it as the site objective and skip the objective selection page
+		if (siteObjectiveParam && objectives.includes(siteObjectiveParam)) {
+			setSiteObjective(siteObjectiveParam);
+			addPreselectedPage('website-objective');
+			removePage('website-objective');
+		}
+
+		// If a structure parameter is in the URL, and it's valid, set the structure and skip the structure page
+		if (siteStructureParam && structures.includes(siteStructureParam)) {
+			setSiteStructure(siteStructureParam);
+			addPreselectedPage('site-structure');
+			removeStructurePage.current = true;
+		}
+	}, [
+		setSiteObjective,
+		setSiteStructure,
+		siteStructure,
+		siteObjective,
+		addPage,
+		removePage,
+		siteObjectiveParam,
+		siteStructureParam,
+		addPreselectedPage,
+	]);
+
+	useEffect(() => {
+		if (removeStructurePage.current) removePage('site-structure');
+	}, [removePage]);
 
 	useEffect(() => {
 		const replaceStateHistory = () => {

@@ -27,6 +27,21 @@ class AdminPageRouter
         // This does the initial redirect to Launch.
         \add_action('admin_init', [$this, 'redirectOnce']);
 
+        // Add a dropdown above Dashboard in the admin toolbar.
+        \add_action('admin_bar_menu', function ($wpAdminBar) {
+            if (!PartnerData::$id || is_admin()) {
+                return;
+            }
+
+            $wpAdminBar->add_node([
+                'id' => 'extendify-site-assistant',
+                'title' => \__('Site Assistant', 'extendify-local'),
+                'href' => \admin_url() . $this->getRoute(),
+                'parent' => 'site-name',
+                'meta' => ['position' => 1],
+            ]);
+        }, 11);
+
         // When Launch is finished, fire this to set the correct permalinks.
         // phpcs:ignore WordPress.Security.NonceVerification
         if (isset($_GET['extendify-launch-success'])) {

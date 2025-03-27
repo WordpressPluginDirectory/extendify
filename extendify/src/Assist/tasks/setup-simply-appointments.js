@@ -27,5 +27,5 @@ export default {
 			.some((item) => plugins.concat(goals).includes(item));
 	},
 	backgroundImage:
-		'https://assets.extendify.com/assist-tasks/calendar-events.webp',
+		'https://images.extendify-cdn.com/assist-tasks/calendar-events.webp',
 };

@@ -26,5 +26,6 @@ export default {
 			.concat(userGoals)
 			.some((item) => plugins.concat(goals).includes(item));
 	},
-	backgroundImage: 'https://assets.extendify.com/assist-tasks/woocommerce.webp',
+	backgroundImage:
+		'https://images.extendify-cdn.com/assist-tasks/woocommerce.webp',
 };

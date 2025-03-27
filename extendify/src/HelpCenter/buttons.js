@@ -1,8 +1,9 @@
 import { useEffect } from '@wordpress/element';
 import { registerPlugin } from '@wordpress/plugins';
+import { render } from '@shared/lib/dom';
 import { AdminBar } from '@help-center/components/buttons/AdminBar';
 import { PostEditor } from '@help-center/components/buttons/PostEditor';
-import { render, isOnLaunch } from '@help-center/lib/utils';
+import { isOnLaunch } from '@help-center/lib/utils';
 
 // Global toolbar
 (() => {

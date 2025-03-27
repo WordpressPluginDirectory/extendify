@@ -22,6 +22,12 @@ class Admin
      */
     public function __construct()
     {
+        if (!(bool) \esc_attr(\get_option('extendify_onboarding_completed', false))
+            || \esc_attr(\get_option('stylesheet')) !== 'extendable'
+        ) {
+            return;
+        }
+
         \add_action('rest_api_init', [$this, 'registerUserMeta']);
         \add_action('admin_enqueue_scripts', [$this, 'loadScripts']);
     }

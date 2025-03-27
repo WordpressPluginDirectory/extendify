@@ -76,3 +76,16 @@ export const hexTomatrixValues = (hex) => {
 		Math.round((b / 255) * 10000) / 10000,
 	];
 };
+
+export const retryOperation = async (operation, { maxAttempts = 1 }) => {
+	for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+		try {
+			await waitFor200Response();
+			await operation();
+		} catch (error) {
+			if (attempt === maxAttempts) {
+				throw error;
+			}
+		}
+	}
+};

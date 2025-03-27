@@ -76,6 +76,7 @@ class Admin
                     'templatePartsIds' => array_map('esc_attr', $this->getTemplatePartIds()),
                 ],
                 'helloWorldPostSlug' => \esc_attr(\_x('hello-world', 'Default post slug')), // phpcs:ignore WordPress.WP.I18n.MissingArgDomain
+                'redirectToWebsite' => (bool) PartnerData::setting('launchRedirectWebsite'),
             ]),
             'before'
         );

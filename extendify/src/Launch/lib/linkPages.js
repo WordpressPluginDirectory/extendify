@@ -1,4 +1,5 @@
 import { rawHandler, getBlockContent } from '@wordpress/blocks';
+import { prependHTTPS } from '@wordpress/url';
 import { pageNames } from '@shared/lib/pages';
 import { getLinkSuggestions } from '@launch/api/DataApi';
 import {
@@ -137,7 +138,7 @@ export const updateSinglePageLinksToSections = async (
 			id: wpPages[0].id,
 			content: homePageContent.replaceAll(
 				/href="(#extendify-[\w|-]+)"/gi,
-				linkOverride ? `href="${linkOverride}"` : 'href="#"',
+				linkOverride ? `href="${prependHTTPS(linkOverride)}"` : 'href="#"',
 			),
 		});
 

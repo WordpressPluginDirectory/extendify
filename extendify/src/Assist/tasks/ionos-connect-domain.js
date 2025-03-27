@@ -27,5 +27,5 @@ export default {
 		);
 	},
 	backgroundImage:
-		'https://assets.extendify.com/assist-tasks/connect-your-domain-ions.webp',
+		'https://images.extendify-cdn.com/assist-tasks/connect-your-domain-ions.webp',
 };

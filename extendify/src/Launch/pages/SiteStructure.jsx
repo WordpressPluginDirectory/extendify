@@ -43,7 +43,7 @@ export const SiteStructure = () => {
 				key="single-page"
 				onClick={() => setSiteStructure('single-page')}
 				selected={siteStructure === 'single-page'}
-				imageSrc="https://assets.extendify.com/launch/single-page-website.webp"
+				imageSrc="https://images.extendify-cdn.com/launch/single-page-website.webp"
 				title={__('Single-Page Website', 'extendify-local')}
 				description={__(
 					'All content displayed on one scrolling page.',
@@ -54,7 +54,7 @@ export const SiteStructure = () => {
 				key="multi-page"
 				onClick={() => setSiteStructure('multi-page')}
 				selected={siteStructure === 'multi-page'}
-				imageSrc="https://assets.extendify.com/launch/multi-page-website.webp"
+				imageSrc="https://images.extendify-cdn.com/launch/multi-page-website.webp"
 				title={__('Multi-Page Website', 'extendify-local')}
 				description={__('Multiple interconnected pages.', 'extendify-local')}
 			/>,

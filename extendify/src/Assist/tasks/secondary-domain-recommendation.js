@@ -20,5 +20,5 @@ export default {
 		return showSecondaryDomainTask;
 	},
 	backgroundImage:
-		'https://assets.extendify.com/assist-tasks/domains-recommendations.webp',
+		'https://images.extendify-cdn.com/assist-tasks/domains-recommendations.webp',
 };

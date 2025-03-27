@@ -1,5 +1,6 @@
 import { __, isRTL } from '@wordpress/i18n';
 import { waitUntilExists, waitUntilGone } from '@help-center/lib/tour-helpers';
+import { hasPageCreatorEnabled } from '@help-center/lib/utils';
 
 export default {
 	id: 'library-tour',
@@ -8,8 +9,11 @@ export default {
 		allowOverflow: true,
 		hideDotsNav: true,
 		startFrom: [
-			window.extSharedData.adminUrl +
-				'post-new.php?post_type=page&ext-page-creator-close&ext-close',
+			hasPageCreatorEnabled
+				? window.extSharedData.adminUrl +
+					'post-new.php?post_type=page&ext-page-creator-close'
+				: window.extSharedData.adminUrl +
+					'post-new.php?post_type=page&ext-close',
 			window.extSharedData.adminUrl + 'post-new.php?post_type=page',
 		],
 	},

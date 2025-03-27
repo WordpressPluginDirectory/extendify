@@ -23,5 +23,5 @@ export default {
 		return !!frontPage;
 	},
 	backgroundImage:
-		'https://assets.extendify.com/assist-tasks/edit-homepage.webp',
+		'https://images.extendify-cdn.com/assist-tasks/edit-homepage.webp',
 };

@@ -118,7 +118,7 @@ export default function DesignLibraryMarkup(props) {
 														<div>
 															<img
 																className="h-auto w-full max-w-full"
-																src="https://assets.extendify.com/assist-tasks/design-library/using-laptop.webp"
+																src="https://images.extendify-cdn.com/assist-tasks/design-library/using-laptop.webp"
 															/>
 															<div className="mb-2 mt-6 text-3xl font-semibold">
 																{__('Consulting Services', 'extendify-local')}
@@ -131,7 +131,7 @@ export default function DesignLibraryMarkup(props) {
 														<div>
 															<img
 																className="h-auto w-full max-w-full"
-																src="https://assets.extendify.com/assist-tasks/design-library/two-person-talking.webp"
+																src="https://images.extendify-cdn.com/assist-tasks/design-library/two-person-talking.webp"
 															/>
 															<div className="mb-2 mt-6 text-3xl font-semibold">
 																{__(
@@ -147,7 +147,7 @@ export default function DesignLibraryMarkup(props) {
 														<div>
 															<img
 																className="h-auto w-full max-w-full"
-																src="https://assets.extendify.com/assist-tasks/design-library/two-person-and-laptop.webp"
+																src="https://images.extendify-cdn.com/assist-tasks/design-library/two-person-and-laptop.webp"
 															/>
 															<div className="mb-2 mt-6 text-3xl font-semibold">
 																{__('Accelerating Growth', 'extendify-local')}
@@ -198,7 +198,7 @@ export default function DesignLibraryMarkup(props) {
 														</div>
 														<img
 															className="col-span-7 h-auto w-full max-w-full"
-															src="https://assets.extendify.com/assist-tasks/design-library/man-on-a-video-call.webp"
+															src="https://images.extendify-cdn.com/assist-tasks/design-library/man-on-a-video-call.webp"
 														/>
 													</div>
 												</div>
@@ -232,7 +232,7 @@ export default function DesignLibraryMarkup(props) {
 														<div className="w-5/12">
 															<img
 																className="h-auto w-full max-w-full"
-																src="https://assets.extendify.com/assist-tasks/design-library/portrait-of-man.webp"
+																src="https://images.extendify-cdn.com/assist-tasks/design-library/portrait-of-man.webp"
 															/>
 														</div>
 													</div>
@@ -251,7 +251,7 @@ export default function DesignLibraryMarkup(props) {
 															<div className="flex items-start gap-3">
 																<img
 																	className="h-auto max-h-10 w-full max-w-10 self-start rounded-full"
-																	src="https://assets.extendify.com/assist-tasks/design-library/portrait-of-girl.webp"
+																	src="https://images.extendify-cdn.com/assist-tasks/design-library/portrait-of-girl.webp"
 																/>
 																<div className="flex-1">
 																	<div className="font-semibold leading-none">
@@ -276,7 +276,7 @@ export default function DesignLibraryMarkup(props) {
 															<div className="flex items-start gap-3">
 																<img
 																	className="h-auto max-h-10 w-full max-w-10 self-start rounded-full"
-																	src="https://assets.extendify.com/assist-tasks/design-library/portrait-of-girl.webp"
+																	src="https://images.extendify-cdn.com/assist-tasks/design-library/portrait-of-girl.webp"
 																/>
 																<div className="flex-1">
 																	<div className="font-semibold leading-none">
@@ -301,7 +301,7 @@ export default function DesignLibraryMarkup(props) {
 															<div className="flex items-start gap-3">
 																<img
 																	className="h-auto max-h-10 w-full max-w-10 self-start rounded-full"
-																	src="https://assets.extendify.com/assist-tasks/design-library/portrait-of-girl.webp"
+																	src="https://images.extendify-cdn.com/assist-tasks/design-library/portrait-of-girl.webp"
 																/>
 																<div className="flex-1">
 																	<div className="font-semibold leading-none">

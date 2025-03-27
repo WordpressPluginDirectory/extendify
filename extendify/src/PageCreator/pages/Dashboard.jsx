@@ -62,6 +62,7 @@ export const Dashboard = () => {
 			</div>
 			<div className="grid grid-cols-1 gap-6">
 				<CustomTextarea
+					id="extendify-page-creator-page-descrition"
 					title={__('Describe Your Page', 'extendify-local')}
 					required={true}
 					className="input-focus h-[220px] w-full max-w-full resize-none border border-gray-600 py-3 pe-6 ps-3 text-base placeholder:italic placeholder:opacity-70"
@@ -74,6 +75,7 @@ export const Dashboard = () => {
 				/>
 
 				<CustomTextarea
+					id="extendify-page-creator-site-descrition"
 					hideEditor={hideEditor}
 					setHideEditor={setHideEditor}
 					title={
@@ -94,6 +96,7 @@ export const Dashboard = () => {
 				/>
 
 				<button
+					id="extendify-page-creator-generate-btn"
 					type="button"
 					disabled={disabled}
 					onClick={() => {

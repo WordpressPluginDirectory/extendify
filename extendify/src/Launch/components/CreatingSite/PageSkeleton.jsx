@@ -47,16 +47,16 @@ const PageSkeleton = ({ pageName }) => {
 					animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
 					exit={{ opacity: 0, x: -50 }}
 					transition={{ ease: 'easeInOut' }}
-					className="mt-12 w-96 rounded border-8 border-gray-200 border-opacity-25 p-4"
+					className="mt-12 w-96 rounded border-8 border-opacity-25 p-4"
 					style={{
-						mixBlendMode: isLightBg ? 'difference' : 'plus-lighter',
+						borderColor: 'rgba(204, 204, 204, 0.45) !important',
 					}}>
-					<h1
-						className="mb-8 text-banner-text opacity-60"
-						style={{ mixBlendMode: 'plus-lighter' }}>
-						{title}
-					</h1>
-					<div className="space-y-6">
+					<h1 className="mb-8 text-banner-text opacity-50">{title}</h1>
+					<div
+						className="space-y-6"
+						style={{
+							mixBlendMode: isLightBg ? 'difference' : 'plus-lighter',
+						}}>
 						{[0, 1, 2].map((item) => {
 							const delay = 3 * item;
 							return (

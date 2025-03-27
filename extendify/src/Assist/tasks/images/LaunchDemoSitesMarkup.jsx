@@ -37,7 +37,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 							<span>{pageNames.contact.title}</span>
 						</div>
 					</div>
-					<div className="relative flex flex-col bg-black bg-[url('https://assets.extendify.com/assist-tasks/demo-sites/real-estate-hero.webp')] bg-cover bg-center px-20 py-48 text-white">
+					<div className="relative flex flex-col bg-black bg-[url('https://images.extendify-cdn.com/assist-tasks/demo-sites/real-estate-hero.webp')] bg-cover bg-center px-20 py-48 text-white">
 						<div className="relative z-40 max-w-2xl">
 							<h1 className="text-6xl font-medium text-white">
 								{__(
@@ -82,7 +82,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 						<div className="grid grid-cols-3 gap-8">
 							<div className="flex flex-col">
 								<img
-									src="https://assets.extendify.com/assist-tasks/demo-sites/real-estate-1.webp"
+									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/real-estate-1.webp"
 									className="aspect-video object-cover object-center"
 								/>
 								<h3 className="mb-2 mt-6 text-xl font-semibold">
@@ -97,7 +97,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 							</div>
 							<div className="flex flex-col">
 								<img
-									src="https://assets.extendify.com/assist-tasks/demo-sites/real-estate-2.webp"
+									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/real-estate-2.webp"
 									className="aspect-video object-cover object-center"
 								/>
 								<h3 className="mb-2 mt-6 text-xl font-semibold">
@@ -112,7 +112,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 							</div>
 							<div className="flex flex-col">
 								<img
-									src="https://assets.extendify.com/assist-tasks/demo-sites/real-estate-3.webp"
+									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/real-estate-3.webp"
 									className="aspect-video object-cover object-center"
 								/>
 								<h3 className="mb-2 mt-6 text-xl font-semibold">
@@ -144,7 +144,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 						</div>
 					</div>
 
-					<div className="relative grid grid-cols-12 flex-col content-end gap-20 bg-black bg-[url('https://assets.extendify.com/assist-tasks/demo-sites/education-hero.webp')] bg-cover bg-center px-20 pb-24 pt-72 text-white">
+					<div className="relative grid grid-cols-12 flex-col content-end gap-20 bg-black bg-[url('https://images.extendify-cdn.com/assist-tasks/demo-sites/education-hero.webp')] bg-cover bg-center px-20 pb-24 pt-72 text-white">
 						<h1 className="relative z-40 col-span-8 mt-0 text-6xl font-semibold text-white">
 							{__(
 								'Empowering Academic Excellence in Every Student for Tomorrow’s	Leaders',
@@ -181,11 +181,11 @@ export const LaunchDemoSitesMarkup = (props) => (
 						</div>
 						<div className="col-span-4 grid grid-cols-2 gap-8">
 							<img
-								src="https://assets.extendify.com/assist-tasks/demo-sites/education-1.webp"
+								src="https://images.extendify-cdn.com/assist-tasks/demo-sites/education-1.webp"
 								className="aspect-[2/4] max-w-full object-cover object-center"
 							/>
 							<img
-								src="https://assets.extendify.com/assist-tasks/demo-sites/education-2.webp"
+								src="https://images.extendify-cdn.com/assist-tasks/demo-sites/education-2.webp"
 								className="aspect-[2/4] max-w-full object-cover object-center"
 							/>
 						</div>
@@ -218,21 +218,21 @@ export const LaunchDemoSitesMarkup = (props) => (
 						<div className="grid grid-cols-2 gap-8">
 							<div>
 								<img
-									src="https://assets.extendify.com/assist-tasks/demo-sites/cafe-1.webp"
+									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/cafe-1.webp"
 									className="mb-8 aspect-video max-w-full object-cover object-center"
 								/>
 								<img
-									src="https://assets.extendify.com/assist-tasks/demo-sites/cafe-2.webp"
+									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/cafe-2.webp"
 									className="aspect-square max-w-full object-cover object-center"
 								/>
 							</div>
 							<div>
 								<img
-									src="https://assets.extendify.com/assist-tasks/demo-sites/cafe-3.webp"
+									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/cafe-3.webp"
 									className="mb-8 aspect-square max-w-full object-cover object-center"
 								/>
 								<img
-									src="https://assets.extendify.com/assist-tasks/demo-sites/cafe-4.webp"
+									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/cafe-4.webp"
 									className="aspect-video max-w-full object-cover object-center"
 								/>
 							</div>
@@ -282,7 +282,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 						</div>
 						<div className="h-full">
 							<img
-								src="https://assets.extendify.com/assist-tasks/demo-sites/construction-hero.webp"
+								src="https://images.extendify-cdn.com/assist-tasks/demo-sites/construction-hero.webp"
 								className="h-full w-full object-cover"
 								alt="Construction Hero"
 							/>
@@ -334,7 +334,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 							<span>{pageNames.contact.title}</span>
 						</div>
 					</div>
-					<div className="relative bg-black bg-[url('https://assets.extendify.com/assist-tasks/demo-sites/restaurant-hero.webp')] bg-cover bg-center px-20 py-24 text-center text-white">
+					<div className="relative bg-black bg-[url('https://images.extendify-cdn.com/assist-tasks/demo-sites/restaurant-hero.webp')] bg-cover bg-center px-20 py-24 text-center text-white">
 						<div className="relative z-40 mx-auto flex w-full max-w-4xl flex-col items-center justify-between">
 							<h1 className="mt-0 text-center text-6xl font-semibold text-white">
 								{__('French-Inspired Californian Cuisine', 'extendify-local')}

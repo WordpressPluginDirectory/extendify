@@ -1,5 +1,5 @@
 import { PATTERNS_HOST, AI_HOST, IMAGES_HOST } from '@constants';
-import { getImages, getSiteStyle } from '@page-creator/api/WPApi';
+import { getSiteStyle } from '@page-creator/api/WPApi';
 
 const { siteTitle, siteType } = window.extSharedData;
 const extraBody = {
@@ -118,11 +118,6 @@ export const getPageProfile = async ({ description, siteProfile }) => {
 };
 
 export const getPageImages = async ({ pageProfile }) => {
-	// if we already have images we use them if not, we request new images.
-	const siteImages = await getImages();
-	if (siteImages?.siteImages) return siteImages;
-
-	// if not we request from our server.
 	const { aiSiteType, aiSiteCategory, aiDescription, aiKeywords } = pageProfile;
 	const search = new URLSearchParams({
 		aiSiteType,
