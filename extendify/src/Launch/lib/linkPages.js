@@ -171,11 +171,11 @@ export const updateSinglePageLinksToSections = async (
 
 	// check if woocommerce is active, if so we add it to the list of pages
 	if (wasInstalled(activePlugins, 'woocommerce')) {
-		const { slug } = await getPageById(
+		const page = await getPageById(
 			await getOption('woocommerce_shop_page_id'),
-		);
+		).catch(() => null);
 
-		pluginPages.push(slug);
+		page?.slug && pluginPages.push(page.slug);
 	}
 
 	// check if events calendar is active, if so we add it to the list of pages

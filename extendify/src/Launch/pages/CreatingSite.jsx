@@ -50,9 +50,6 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
 
 const { homeUrl, adminUrl } = window.extSharedData;
-const redirectUrl = window.extOnbData.redirectToWebsite
-	? `${homeUrl}?extendify-launch-success`
-	: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success`;
 
 export const CreatingSite = () => {
 	const [isShowing] = useState(true);
@@ -82,6 +79,11 @@ export const CreatingSite = () => {
 	const customFontFamilies =
 		variation?.settings?.typography?.fontFamilies?.custom;
 	const { setUserGaveConsent } = useAIConsentStore();
+	const redirectUrl =
+		// on landing pages for some users, we redirect to home_url
+		window.extOnbData.redirectToWebsite && siteObjective === 'landing-page'
+			? `${homeUrl}?extendify-launch-success`
+			: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success`;
 
 	useWarnOnLeave(warnOnLeaveReady);
 
@@ -289,7 +291,9 @@ export const CreatingSite = () => {
 			}
 
 			await waitFor200Response();
-			await setHelloWorldFeaturedImage(siteImages.siteImages);
+			if (siteImages?.siteImages) {
+				await setHelloWorldFeaturedImage(siteImages.siteImages);
+			}
 
 			setPagesToAnimate([]);
 			await waitFor200Response();
@@ -312,7 +316,9 @@ export const CreatingSite = () => {
 			// Add plugin related pages only if plugin is active
 			if (wasInstalled(activePlugins, 'woocommerce')) {
 				const shopPageId = await getOption('woocommerce_shop_page_id');
-				const shopPage = await getPageById(shopPageId);
+				const shopPage = shopPageId
+					? await getPageById(shopPageId).catch(() => null)
+					: null;
 
 				if (shopPage) {
 					pluginPages.push(shopPage);
@@ -461,7 +467,7 @@ export const CreatingSite = () => {
 			await postLaunchFunctions();
 			window.location.replace(redirectUrl);
 		});
-	}, [doEverything, setPage]);
+	}, [doEverything, setPage, redirectUrl]);
 
 	useEffect(() => {
 		const documentStyles = window.getComputedStyle(document.body);

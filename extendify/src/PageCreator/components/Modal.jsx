@@ -1,4 +1,4 @@
-import { dispatch, useSelect, useDispatch } from '@wordpress/data';
+import { dispatch, useSelect, useDispatch, select } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
 import { store as editorStore } from '@wordpress/editor';
 import { useLayoutEffect, useEffect, useRef } from '@wordpress/element';
@@ -118,6 +118,15 @@ export const Modal = () => {
 			window.removeEventListener('extendify::close-page-creator', closeModal);
 		};
 	}, [setOpen]);
+
+	useEffect(() => {
+		if (!open) return;
+		const welcomeGuide =
+			select('core/edit-post').isFeatureActive('welcomeGuide');
+		if (welcomeGuide) {
+			dispatch('core/edit-post').toggleFeature('welcomeGuide');
+		}
+	}, [open]);
 
 	if (!open) return null;
 

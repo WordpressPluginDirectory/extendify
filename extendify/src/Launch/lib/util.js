@@ -82,6 +82,7 @@ export const retryOperation = async (operation, { maxAttempts = 1 }) => {
 		try {
 			await waitFor200Response();
 			await operation();
+			break;
 		} catch (error) {
 			if (attempt === maxAttempts) {
 				throw error;

@@ -106,7 +106,7 @@ msgid "Continue Building Your Website"
 msgstr "Pokračujte v tvorbe vašej stránky"
 
 #: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Goals"
 msgstr "Ciele"
 
@@ -152,7 +152,7 @@ msgid "Add site description"
 msgstr "Pridať popis stránky"
 
 #: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Loading..."
 msgstr "Načítavanie..."
 
@@ -991,7 +991,7 @@ msgstr "Vyhľadať v Báze znalostí"
 
 #: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
 #: public/build/extendify-help-center-3609a854948a5e67f557.js:1
-#: public/build/extendify-library-bdf415886739312e0bc4.js:1
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
 msgid "Design Library"
 msgstr "Knižnica dizajnov"
 
@@ -1397,7 +1397,7 @@ msgid "Tour"
 msgstr "Prehliadka"
 
 #: public/build/extendify-help-center-3609a854948a5e67f557.js:1
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Back"
 msgstr "Späť"
 
@@ -1411,7 +1411,7 @@ msgid "%1$s of %2$s"
 msgstr "%1$s z %2$s"
 
 #: public/build/extendify-help-center-3609a854948a5e67f557.js:3
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Next"
 msgstr "Ďalej"
 
@@ -1421,242 +1421,242 @@ msgid "Help"
 msgstr "Pomoc"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:3
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:3
 msgid "Added by Launch"
 msgstr "Pridané pomocou Launch"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:3
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:3
 msgid "Start over?"
 msgstr "Začať znova?"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:3
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Prejdite znova procesom úvodného nastavenia, aby ste vytvorili novú stránku."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Exit"
 msgstr "Ukončiť"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Processing"
 msgstr "Spracovávanie"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Continue"
 msgstr "Pokračovať"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Chvíľku strpenia, prosím. Toto trvá dlhšie, než sme očakávali."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Napríklad: Sme štúdio jógy v Košiciach s profesionálne vyškolenými inštruktormi, ktorí sa špeocializujú na hot jógu pre terapeutické účely."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Professional"
 msgstr "Profesionálny"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Friendly"
 msgstr "Priateľský"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Inspirational"
 msgstr "Inšpiratívny"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Informative"
 msgstr "Informatívny"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Persuasive"
 msgstr "Presvedčivý"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Exit Launch"
 msgstr "Ukončiť Launch"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Skip"
 msgstr "Preskočiť"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Press to select"
 msgstr "Stlačte pre výber"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Enter your website name"
 msgstr "Zadajte názov vašej webovej stránky"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "What are your goals for your website?"
 msgstr "Aké sú vaše ciele pre vašu webovú stránku?"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "We'll make sure your website has what it needs to achieve your goals."
 msgstr "Postaráme sa o to, aby vaša stránka mala všetko potrebné na dosiahnutie vašich cieľov."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Pick a design for your website"
 msgstr "Vyberte dizajn pre vašu webovú stránku"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "You can personalize this later."
 msgstr "Toto môžete personalizovať neskôr."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Home page"
 msgstr "Domovská stránka"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Vyberte stránky, ktoré chcete pridať na váš web"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Už sme vybrali najčastejšie stránky pre váš typ webovej stránky."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "View more pages"
 msgstr "Zobraziť viac stránok"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Applying your website styles"
 msgstr "Aplikovanie štýlov vašej stránky"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Creating a beautiful website"
 msgstr "Vytvorenie krásnej webovej stránky"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Installing necessary plugins"
 msgstr "Inštalácia potrebných pluginov"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Populating data"
 msgstr "Vypĺňanie dát"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Personalizing your experience"
 msgstr "Prispôsobujeme váš zážitok"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Adding page content"
 msgstr "Pridávanie obsahu stránky"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Starting off with a full website"
 msgstr "Začíname s kompletnou webovou stránkou"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-07f137e55fae1c06d996.js:7
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Blog"
 msgstr "Blog"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Creating pages with custom content"
 msgstr "Vytváranie stránok s vlastným obsahom"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:7
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
 msgid "Setting up site layout"
 msgstr "Nastavenie rozloženia webovej stránky"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-07f137e55fae1c06d996.js:23
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:7
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
 msgid "Events"
 msgstr "Udalosti"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Header Navigation"
 msgstr "Navigácia v hlavičke"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:9
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
 msgid "Setting up your Site Assistant"
 msgstr "Nastavenie vášho Asistenta stránky"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:9
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
 msgid "Helping you to succeed"
 msgstr "Pomáhame vám uspieť"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:9
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
 msgid "Your website has been created!"
 msgstr "Vaša webová stránka bola vytvorená!"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:9
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Presmerovanie za 3, 2, 1..."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:9
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Narazili sme na serverovú chybu. Prosím, obnovte stránku a skúste to znova."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:9
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
 msgid "One more thing before we start."
 msgstr "Ešte jedna vec predtým, ako začneme."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:9
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Launch je poháňaný systémom Extendable a jeho inštalácia je potrebná na pokračovanie. Môžete ho nainštalovať z odkazu nižšie a po aktivácii začať znovu."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:9
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
 msgid "Take me there"
 msgstr "Zobrať ma tam"
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:1
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
 msgid "Insert Pattern"
 msgstr "Vložiť vzor"
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:1
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
 msgid "Loading Patterns..."
 msgstr "Načítavajú sa vzory..."
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:1
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
 msgid "Loading more patterns..."
 msgstr "Načítavajú sa ďalšie vzory..."
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:1
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
 msgid "Design Type"
 msgstr "Typ dizajnu"
 
 #: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-library-bdf415886739312e0bc4.js:1
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
 msgid "All"
 msgstr "Všetko"
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:1
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
 msgid "Retrying..."
 msgstr "Opakujem pokus..."
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:1
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
 msgid "Fetching..."
 msgstr "Získavanie..."
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:1
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:1
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
 msgid "Close"
 msgstr "Zavrieť"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
-#: public/build/extendify-library-bdf415886739312e0bc4.js:3
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Toggle %s on new pages"
 msgstr "Prepnúť %s na nových stránkach"
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:3
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Open for new pages"
 msgstr "Otvoriť pre nové stránky"
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:3
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:3
 msgid "Design Patterns"
 msgstr "Dizajnové vzory"
 
-#: public/build/extendify-library-bdf415886739312e0bc4.js:3
+#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:3
 msgid "Pattern added"
 msgstr "Vzor pridaný"
 
@@ -2185,24 +2185,24 @@ msgstr "Referencie"
 msgid "testimonials"
 msgstr "referencie"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Single-Page Website"
 msgstr "Jednostránkový web"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "All content displayed on one scrolling page."
 msgstr "Všetok obsah zobrazený na jednej rolovateľnej stránke."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Multi-Page Website"
 msgstr "Viacstránkový web"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Multiple interconnected pages."
 msgstr "Viacero prepojených stránok."
 
 #: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Pick Your Site Structure"
 msgstr "Vyberte štruktúru vašej stránky"
 
@@ -2350,42 +2350,42 @@ msgstr "Španielčina (Mexiko)"
 msgid "Romanian"
 msgstr "Rumunčina"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Podeľte sa o svoju víziu a my vytvoríme webovú stránku, ktorá bude presne prispôsobená vašim potrebám a pripravená na spustenie v krátkom čase. Začnime tým, že sa dozvieme viac o vašom projekte."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:11
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:11
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Launch - Tvorba webu s využitím AI"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Customizing Your Experience"
 msgstr "Prispôsobenie vášho zážitku"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Designing Your Options"
 msgstr "Navrhovanie možností"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Your browser does not support the video tag."
 msgstr "Váš prehliadač nepodporuje video značku."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Prosím, počkajte, kým analyzujeme vaše vstupy a prispôsobíme vašu skúsenosť."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Prosím, čakajte, kým pripravíme niekoľko možností webových stránok na výber."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Creating blog sample data"
 msgstr "Vytváranie ukážkových údajov blogu"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:9
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
 msgid "More"
 msgstr "Ďalšie"
 
@@ -2395,16 +2395,16 @@ msgid "Add Website Details"
 msgstr "Pridať podrobnosti o webovej stránke"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:7
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
 msgid "Blog Post %s"
 msgstr "Blogový príspevok %s"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:7
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
 msgid "Importing shop sample data"
 msgstr "Prebieha import ukážkových údajov obchodu"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s stránok/článkov vytvorených počas predchádzajúcej úvodnej relácie bude odstránených."
 
@@ -2434,15 +2434,15 @@ msgstr "Rezervovať teraz"
 msgid "book-now"
 msgstr "rezervovat-teraz"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Select your site's tone"
 msgstr "Vyberte tón vašej stránky"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Website title (required)"
 msgstr "Názov webovej stránky (povinné)"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:7
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
 msgid "Hello World Featured Image"
 msgstr "Ilustračný obrázok Hello World"
 
@@ -2450,176 +2450,176 @@ msgstr "Ilustračný obrázok Hello World"
 msgid "Extendify Page Creator User Settings"
 msgstr "Používateľské nastavenia Extendify Page Creator"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:1
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
 msgid "Confirmation"
 msgstr "Potvrdenie"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:1
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Chcete nahradiť existujúci obsah alebo vytvoriť novú stránku?"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:1
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
 msgid "Delete existing content"
 msgstr "Zmazať existujúci obsah"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:1
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
 msgid "Create a new page"
 msgstr "Vytvoriť novú stránku"
 
 #: public/build/extendify-help-center-3609a854948a5e67f557.js:1
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:1
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
 msgid "AI Page Generator"
 msgstr "Generátor stránok AI"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Edit"
 msgstr "Upraviť"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Clear"
 msgstr "Vymazať"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Generating AI page profile..."
 msgstr "Generujem profil AI stránky ..."
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "AI Page Creation"
 msgstr "Vytvorenie stránky pomocou AI"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Opíšte stránku, ktorú chcete vytvoriť, pridajte kľúčové detaily a AI pre vás vygeneruje jedinečnú, pripravenú stránku."
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Describe Your Page"
 msgstr "Opíšte svoju stránku"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Napr. vytvorte stránku \"O nás\", ktorá zvýrazní náš príbeh, poslanie, hodnoty a prehľad tímu."
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Site Description for %s"
 msgstr "Popis stránky pre %s"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Site Description"
 msgstr "Popis webovej stránky"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "This is the site description with all its ups and downs."
 msgstr "Toto je popis webovej stránky so všetkými jej výhodami a nevýhodami."
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Generate Page"
 msgstr "Generovať stránku"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Finding images..."
 msgstr "Vyhľadávanie obrázkov..."
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Creating a custom layout..."
 msgstr "Vytváranie vlastného rozloženia..."
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Writing custom content..."
 msgstr "Písanie vlastného obsahu..."
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Close AI Page Creator"
 msgstr "Zavrieť AI tvorcu stránok"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "AI Page Creator"
 msgstr "Tvorca stránok AI"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Page added"
 msgstr "Stránka pridaná"
 
-#: public/build/extendify-page-creator-6af00720315dbc216e7e.js:3
+#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
 msgid "Failed to add page"
 msgstr "Nepodarilo sa pridať stránku"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Business"
 msgstr "Podnikanie"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "eCommerce"
 msgstr "elektronický obchod"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Landing Page"
 msgstr "Vstupná stránka"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Other"
 msgstr "Iné"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Landing Page title (required)"
 msgstr "Nadpis vstupnej stránky (povinné)"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Napr. Sme online obchod špecializujúci sa na ekologické domáce potreby, ponúkame produkty z udržateľných zdrojov, aby sme vám pomohli žiť ekologickejší životný štýl."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "Napr. Osobný finančný blog s odbornými tipmi na rozpočtovanie, investovanie a dosiahnutie finančnej slobody pre mladých profesionálov."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Napr. bezplatná e-kniha plná praktických tipov a stratégií na zvýšenie produktivity, ktoré vám pomôžu zostať sústredený, efektívne riadiť čas a dosiahnuť vaše ciele."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Napr. osobné fotografické portfólio s kolekciou krajinnej, portrétnej a pouličnej fotografie, zachytávajúce momenty z celého sveta."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Describe your business"
 msgstr "Opíšte svoju firmu"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Describe your eCommerce website"
 msgstr "Opíšte vašu eCommerce webovú stránku"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Describe your blog"
 msgstr "Opíšte svoj blog"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Describe your Landing Page"
 msgstr "Opíšte svoju vstupnú stránku"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Describe your website"
 msgstr "Opíšte vašu webovú stránku"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Call-To-Action Link"
 msgstr "Odkaz na výzvu k akcii"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Tento odkaz sa použije vo všetkých tlačidlách výzvy k akcii a nasmeruje návštevníkov na vami zvolené miesto."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "What type of website are you creating?"
 msgstr "Aký typ webovej stránky vytvárate?"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Tell Us About Your Landing Page"
 msgstr "Povedzte nám o svojej vstupnej stránke"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Tell Us About Your Website"
 msgstr "Povedzte nám o vašej webovej stránke"
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:5
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Podeľte sa o svoju víziu a my vytvoríme vstupnú stránku presne na mieru vašim potrebám, pripravenú na rýchle spustenie. Začnime tým, že sa dozvieme viac o tom, čo budujete."
 
@@ -2647,18 +2647,18 @@ msgstr "Vytvorte svoju stránku"
 msgid "When ready, press here to generate your page."
 msgstr "Keď budete pripravení, stlačte sem na vytvorenie stránky."
 
-#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
+#: public/build/extendify-shared-159251bf9fd7827fa1e6.js:1
 msgid "Close ToolTip"
 msgstr "Zatvoriť ToolTip"
 
-#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
+#: public/build/extendify-shared-159251bf9fd7827fa1e6.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Popis tlačidla na úpravu stránky"
 
-#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
+#: public/build/extendify-shared-159251bf9fd7827fa1e6.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Vitajte na vašej novej webovej stránke! Keď budete pripravení, stlačte sem pre úpravu tejto stránky."
 
-#: public/build/extendify-launch-6ad03dbf8a6eb331d7c9.js:7
+#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
 msgid "Installing supporting plugins"
 msgstr "Inštalácia podporných pluginov"

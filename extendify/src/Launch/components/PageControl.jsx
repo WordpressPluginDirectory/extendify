@@ -34,7 +34,7 @@ const StructurePageData = {
 
 const hideLaunchObjective = window.extSharedData?.hideLaunchObjective || false;
 
-const objectives = ['business', 'ecommerce', 'blog', 'landig-page', 'other'];
+const objectives = ['business', 'ecommerce', 'blog', 'landing-page', 'other'];
 const structures = ['single-page', 'multi-page'];
 
 export const PageControl = () => {
@@ -78,7 +78,6 @@ export const PageControl = () => {
 		if (siteStructure === 'single-page') {
 			removePage('page-select');
 		}
-
 		// If a valid objective parameter is in the URL, set it as the site objective and skip the objective selection page
 		if (siteObjectiveParam && objectives.includes(siteObjectiveParam)) {
 			setSiteObjective(siteObjectiveParam);

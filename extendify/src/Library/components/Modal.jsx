@@ -1,4 +1,4 @@
-import { dispatch } from '@wordpress/data';
+import { dispatch, select } from '@wordpress/data';
 import { useLayoutEffect, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Dialog } from '@headlessui/react';
@@ -77,6 +77,15 @@ export const Modal = () => {
 			window.removeEventListener('extendify::close-library', handleClose);
 		};
 	}, [setOpen, open]);
+
+	useEffect(() => {
+		if (!open) return;
+		const welcomeGuide =
+			select('core/edit-post').isFeatureActive('welcomeGuide');
+		if (welcomeGuide) {
+			dispatch('core/edit-post').toggleFeature('welcomeGuide');
+		}
+	}, [open]);
 
 	if (!open) return null;
 
