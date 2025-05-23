@@ -53,6 +53,7 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 			</button>
 			{availableTours.length > 0 && (
 				<button
+					data-extendify-tour-id={availableTours[0].id}
 					type="button"
 					className="text-md m-0 flex w-full cursor-pointer items-center justify-between gap-2 rounded-md rounded-t-none border border-t-0 border-gray-200 bg-transparent p-3 px-4 pl-[4.25rem] text-left font-medium text-gray-900 hover:bg-gray-100 rtl:pl-4 rtl:pr-[4.25rem] rtl:text-right"
 					onClick={() => {
@@ -82,7 +83,7 @@ export const Tours = () => {
 				{Object.values(tours).map((tourData) => {
 					const { id, title } = tourData;
 					return (
-						<li key={id} className="m-0 p-0">
+						<li key={id} className="m-0 p-0" data-extendify-tour-id={id}>
 							<button
 								type="button"
 								className="m-0 flex w-full cursor-pointer items-center justify-between gap-2 bg-gray-100 px-4 py-3.5 text-sm font-medium text-gray-900 hover:bg-gray-150"

@@ -10,7 +10,7 @@ export const ToolTip = ({ children, title, onClose, anchor }) => {
 	const [top, setTop] = useState(0);
 	const onCloseModal = () => {
 		setOpen(false);
-		onClose();
+		onClose?.();
 	};
 
 	useLayoutEffect(() => {

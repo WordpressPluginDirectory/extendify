@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controls User Selection Data
  */
@@ -12,9 +13,9 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The controller for plugin dependency checking, etc
  */
+
 class UserSelectionController
 {
-
     /**
      * Return the data
      *

@@ -20,3 +20,10 @@ export const updateOption = async (option, value) =>
 		method: 'POST',
 		data: { key: option, value },
 	});
+
+export const processPlaceholders = (patterns) =>
+	apiFetch({
+		path: '/extendify/v1/shared/process-placeholders',
+		method: 'POST',
+		data: { patterns },
+	});

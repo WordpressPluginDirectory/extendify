@@ -82,14 +82,14 @@ export const LaunchPage = () => {
 
 	useEffect(() => {
 		const fetchers = [].concat(fetcher);
-		const fetchDatas = [].concat(fetchData);
+		const fetchDataArrays = [].concat(fetchData);
 		if (fetchers.length) {
 			fetchers.forEach((fetcher, i) => {
 				try {
 					const data =
-						typeof fetchDatas?.[i] === 'function'
-							? fetchDatas[i]()
-							: fetchDatas?.[i];
+						typeof fetchDataArrays?.[i] === 'function'
+							? fetchDataArrays[i]()
+							: fetchDataArrays?.[i];
 					mutate(data, (last) => last || fetcher(data), { revalidate: false });
 				} catch (e) {
 					//

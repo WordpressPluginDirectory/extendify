@@ -3,7 +3,7 @@ import { store as editPostStore } from '@wordpress/edit-post';
 import { store as editorStore } from '@wordpress/editor';
 import { useLayoutEffect, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { Dialog } from '@headlessui/react';
+import { Dialog, DialogTitle } from '@headlessui/react';
 import { Topbar } from '@page-creator/components/topbar/Topbar';
 import { MainPage } from '@page-creator/pages/MainPage';
 import { useGlobalsStore } from '@page-creator/state/global';
@@ -20,6 +20,20 @@ export const Modal = () => {
 	const { setPage } = usePagesStore();
 	const { resetBlocks } = dispatch('core/block-editor');
 	const { closeGeneralSidebar } = useDispatch(editPostStore);
+
+	const renderingModes = useSelect(
+		(s) => s('core/preferences').get('core', 'renderingModes') || {},
+		[],
+	);
+	const isTemplateShown =
+		renderingModes?.extendable?.page === 'template-locked';
+	const { set: setPreference } = useDispatch('core/preferences');
+
+	const setRenderingMode = (mode) =>
+		setPreference('core', 'renderingModes', {
+			...renderingModes,
+			extendable: { ...(renderingModes.extendable || {}), page: mode },
+		});
 
 	const { createNotice } = dispatch('core/notices');
 	const once = useRef(false);
@@ -45,14 +59,19 @@ export const Modal = () => {
 	const insertPage = async (blocks, title) => {
 		// Close sidebar
 		closeGeneralSidebar();
+
 		try {
-			if (!postAttribute.isEmptyPost) {
-				// Delete the blocks before we insert our own.
-				resetBlocks([]);
+			if (isTemplateShown) {
+				setRenderingMode('post-only');
+				// Use raf for a re-render
+				await new Promise((resolve) => requestAnimationFrame(resolve));
 			}
+			// Delete the blocks before we insert our own.
+			if (!postAttribute.isEmptyPost) resetBlocks([]);
 
 			// Insert the blocks into the editor
 			await insertBlocks(blocks);
+
 			// Update the post title
 			dispatch('core/editor').editPost({ title });
 
@@ -72,7 +91,8 @@ export const Modal = () => {
 				type: 'snackbar',
 			});
 		} finally {
-			// setProgress('');
+			// Set back to the previous rendering mode
+			if (isTemplateShown) setRenderingMode('template-locked');
 		}
 	};
 
@@ -104,6 +124,13 @@ export const Modal = () => {
 			search.delete('ext-page-creator-close');
 			window.history.replaceState({}, '', pathname + '?' + search.toString());
 			incrementActivity('page-creator-search-param-auto-close');
+		}
+
+		if (search.has('ext-open')) {
+			// Close library
+			window.dispatchEvent(new CustomEvent('extendify::open-library'));
+			search.delete('ext-open');
+			window.history.replaceState({}, '', pathname + '?' + search.toString());
 		}
 	}, [setOpen, incrementActivity]);
 
@@ -155,9 +182,9 @@ export const Modal = () => {
 					exit={{ y: 0, opacity: 0 }}
 					transition={{ duration: 0.3 }}
 					className="relative mx-auto h-full max-h-full w-full max-w-4xl rounded-lg bg-white shadow-2xl sm:flex sm:overflow-hidden md:h-auto">
-					<Dialog.Title className="sr-only">
+					<DialogTitle className="sr-only">
 						{__('AI Page Creator', 'extendify-local')}
-					</Dialog.Title>
+					</DialogTitle>
 
 					<div className="relative flex w-full flex-col bg-white">
 						<Topbar

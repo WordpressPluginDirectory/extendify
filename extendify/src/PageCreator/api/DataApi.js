@@ -1,5 +1,6 @@
 import { PATTERNS_HOST, AI_HOST, IMAGES_HOST } from '@constants';
 import { getSiteStyle } from '@page-creator/api/WPApi';
+import { useUserStore } from '@page-creator/state/user';
 
 const { siteTitle, siteType } = window.extSharedData;
 const extraBody = {
@@ -20,7 +21,9 @@ const extraBody = {
 };
 
 const fetchPageTemplates = async (details = {}) => {
-	const { showLocalizedCopy, activePlugins } = window.extSharedData;
+	const { showLocalizedCopy, activePlugins, allowedPlugins, installedPlugins } =
+		window.extSharedData;
+	const { allowsInstallingPlugins } = useUserStore.getState();
 
 	const plugins =
 		activePlugins?.map((path) => {
@@ -41,9 +44,11 @@ const fetchPageTemplates = async (details = {}) => {
 		body: JSON.stringify({
 			...extraBody,
 			siteType: siteType?.slug,
-			plugins: JSON.stringify(plugins),
 			showLocalizedCopy: !!showLocalizedCopy,
-			allowedPlugins: JSON.stringify(plugins),
+			allowsInstallingPlugins,
+			plugins: JSON.stringify(plugins),
+			installedPlugins: JSON.stringify(installedPlugins),
+			allowedPlugins: JSON.stringify(allowedPlugins),
 			...data,
 		}),
 	});
@@ -66,6 +71,13 @@ export const getGeneratedPageTemplate = async ({ pageProfile, siteImages }) => {
 
 	if (!page?.template) {
 		throw new Error('Could not get page');
+	}
+
+	const currentTheme = window.extSharedData?.themeSlug || 'extendable';
+	if (currentTheme !== 'extendable') {
+		page.template.patterns = page.template.patterns.filter(
+			(pattern) => !pattern.patternTypes.includes('page-title'),
+		);
 	}
 
 	return page;
@@ -125,6 +137,7 @@ export const getPageImages = async ({ pageProfile }) => {
 		aiDescription,
 		aiKeywords,
 		...extraBody,
+		source: 'page-creator',
 	});
 
 	if (siteTitle) search.append('title', siteTitle);

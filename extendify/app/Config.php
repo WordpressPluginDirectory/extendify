@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The App details file
  */
@@ -12,9 +13,9 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * Controller for handling various app data
  */
+
 class Config
 {
-
     /**
      * Plugin slug
      *
@@ -101,7 +102,10 @@ class Config
         preg_match('/Stable tag: ([0-9.:]+)/', $readme, $matches);
         self::$version = $matches[1];
 
-        self::$assetManifest = wp_json_file_decode(EXTENDIFY_PATH . 'public/build/manifest.json', ['associative' => true]);
+        self::$assetManifest = wp_json_file_decode(
+            EXTENDIFY_PATH . 'public/build/manifest.json',
+            ['associative' => true]
+        );
 
         if (!get_option('extendify_first_installed_version')) {
             update_option('extendify_first_installed_version', Sanitizer::sanitizeText(self::$version));

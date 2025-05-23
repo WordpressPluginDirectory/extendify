@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Assist admin page.
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * This class handles the Assist admin page.
  */
+
 class AdminPage
 {
     /**

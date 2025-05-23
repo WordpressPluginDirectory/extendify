@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Insights setup
  */
@@ -13,6 +14,7 @@ use Extendify\Shared\Services\Sanitizer;
  * Controller for handling various Insights related things.
  * WP code reviewers: This is used in another plugin and not invoked here.
  */
+
 class Insights
 {
     /**
@@ -35,7 +37,8 @@ class Insights
             \update_option('extendify_site_id', \wp_generate_uuid4());
         }
 
-        if (defined('EXTENDIFY_INSIGHTS_URL')
+        if (
+            defined('EXTENDIFY_INSIGHTS_URL')
             && class_exists('ExtendifyInsights')
             && !\get_option('extendify_insights_checkedin_once', 0)
         ) {
@@ -98,6 +101,8 @@ class Insights
                 'siteProfile' => \get_option('extendify_site_profile', null),
                 'pluginSearchTerms' => \get_option('extendify_plugin_search_terms', []),
                 'blockSearchTerms' => \get_option('extendify_block_search_terms', []),
+                'phpVersion' => PHP_VERSION,
+                'themeSearchTerms' => \get_option('extendify_theme_search_terms', []),
             ]);
             return $insights;
         });

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Filters for affiliate links.
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * The affiliate class.
  */
+
 class Affiliate
 {
     /**
@@ -84,7 +86,7 @@ class Affiliate
 
         add_filter('monsterinsights_shareasale_id', function () {
             return 3909268;
-        }, PHP_INT_MAX );
+        }, PHP_INT_MAX);
 
         add_filter('monsterinsights_shareasale_redirect_entire_url', function ($url) {
             return sprintf(
@@ -105,5 +107,4 @@ class Affiliate
     {
         return !array_key_exists('blockAffiliate_' . $pluginSlug, $this->data);
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Cache data.
  */
@@ -15,6 +16,7 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The cache data class.
  */
+
 class ResourceData
 {
     /**
@@ -45,13 +47,15 @@ class ResourceData
      */
     public static function scheduleCache()
     {
-        // phpcs:ignore WordPress.WP.CronInterval -- Verified > 30 days.
-        \add_filter('cron_schedules', function ($schedules) {
-            $schedules['extendify_every_month'] = [
-                'interval' => (30 * DAY_IN_SECONDS), // phpcs:ignore
-                'display' => __('Every month', 'extendify-local'),
-            ];
-            return $schedules;
+        \add_action('init', function () {
+		        // phpcs:ignore WordPress.WP.CronInterval -- Verified > 30 days.
+            \add_filter('cron_schedules', function ($schedules) {
+                $schedules['extendify_every_month'] = [
+                    'interval' => (30 * DAY_IN_SECONDS), // phpcs:ignore
+                    'display' => __('Every month', 'extendify-local'),
+                ];
+                return $schedules;
+            });
         });
 
         if (! \wp_next_scheduled('extendify_cache_data')) {
@@ -90,7 +94,6 @@ class ResourceData
             $data = DomainsSuggestionController::fetchDomainSuggestions()->get_data();
             set_transient('extendify_domains', Sanitizer::sanitizeArray($data));
         });
-
     }
 
     /**
@@ -165,6 +168,10 @@ class ResourceData
     protected function cacheData($functionName, $data)
     {
         // The scheduler runs monthly, one day before the cache expires.
-        set_transient('extendify_' . $functionName, Sanitizer::sanitizeArray($data), (DAY_IN_SECONDS + MONTH_IN_SECONDS));
+        set_transient(
+            'extendify_' . $functionName,
+            Sanitizer::sanitizeArray($data),
+            (DAY_IN_SECONDS + MONTH_IN_SECONDS)
+        );
     }
 }

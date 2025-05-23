@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Blocks uploader class
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * This class responsible for updating the blocks.
  */
+
 class BlocksUpdater
 {
     /**
@@ -27,10 +29,8 @@ class BlocksUpdater
      */
     public function getModifiedBlocksInPost($post)
     {
-        // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         $blocks = parse_blocks($post->post_content);
 
-        // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         $updatedBlocks = $this->processAndMutateBlocks($blocks, $post->post_author);
 
         return str_replace('\u002d\u002d', '--', serialize_blocks($updatedBlocks));
@@ -143,7 +143,12 @@ class BlocksUpdater
         $html->next_tag('img');
         $src = $html->get_attribute('src');
 
-        return $src && preg_match('(' . implode('|', array_map('preg_quote', ImageUploader::$imagesDomains, ['/'])) . ')i', $src) ? $src : '';
+        return $src && preg_match(
+            '(' . implode('|', array_map('preg_quote', ImageUploader::$imagesDomains, ['/'])) . ')i',
+            $src
+        )
+        ? $src
+        : '';
     }
 
     /**
@@ -191,7 +196,9 @@ class BlocksUpdater
     protected function removeClassAttributeFromAttrs($block)
     {
         if (isset($block['attrs']['className'])) {
-            $className = is_array($block['attrs']['className']) ? $block['attrs']['className'] : explode(' ', $block['attrs']['className']);
+            $className = is_array($block['attrs']['className'])
+                ? $block['attrs']['className']
+                : explode(' ', $block['attrs']['className']);
             $className = array_diff($className, $this->classesToTarget);
             $block['attrs']['className'] = implode(' ', $className);
         }
@@ -250,14 +257,17 @@ class BlocksUpdater
      */
     protected function hasTargetedClassName(array $block)
     {
-        if (array_reduce($this->classesToTarget, function (bool $carry, string $targetClass) use ($block) {
-            return $carry || (strpos(($block['innerHTML'] ?? ''), $targetClass) !== false);
-        }, false)
+        if (
+            array_reduce($this->classesToTarget, function (bool $carry, string $targetClass) use ($block) {
+                return $carry || (strpos(($block['innerHTML'] ?? ''), $targetClass) !== false);
+            }, false)
         ) {
             return true;
         }
 
-        $classList = is_array(($block['attrs']['className'] ?? null)) ? $block['attrs']['className'] : explode(' ', ($block['attrs']['className'] ?? ''));
+        $classList = is_array(($block['attrs']['className'] ?? null))
+            ? $block['attrs']['className']
+            : explode(' ', ($block['attrs']['className'] ?? ''));
 
         return !empty(array_intersect($this->classesToTarget, $classList));
     }
@@ -275,10 +285,11 @@ class BlocksUpdater
         $html = new \WP_HTML_Tag_Processor($htmlContent);
 
         // Media text block needs a bit more work to update the style attribute.
-        if ($isMediaText && $html->next_tag([
+        if (
+            $isMediaText && $html->next_tag([
             'tag_name' => 'figure',
             'class_name' => 'wp-block-media-text__media',
-        ])
+            ])
         ) {
             $style = $html->get_attribute('style');
             if (preg_match('/:url\(*.+\)/m', $style, $matches)) {

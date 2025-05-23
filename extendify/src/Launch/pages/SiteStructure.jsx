@@ -97,11 +97,11 @@ const ButtonSelect = ({ title, description, onClick, selected, imageSrc }) => (
 			onClick();
 		}}
 		onClick={onClick}>
-		<div className="w-full justify-center overflow-hidden bg-gray-100 group-hover:opacity-75 lg:flex">
+		<div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100 group-hover:opacity-75 lg:flex">
 			<img
 				alt=""
 				src={imageSrc}
-				className="h-auto w-full max-w-full object-cover"
+				className="absolute inset-0 h-full w-full object-cover"
 			/>
 		</div>
 		<div className="p-4 lg:p-6">

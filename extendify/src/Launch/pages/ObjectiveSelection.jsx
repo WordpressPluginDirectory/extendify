@@ -102,9 +102,9 @@ export const ObjectiveSelection = () => {
 	);
 };
 
-const ButtonSelect = ({ title, onClick, selected, icon }) => (
+const ButtonSelect = ({ title, onClick, selected, icon, slug }) => (
 	<div
-		data-test="site-template-type"
+		data-test={`site-template-type-${slug}`}
 		className={classNames(
 			'relative flex-1 cursor-pointer overflow-hidden rounded ring-offset-2 ring-offset-white focus-within:outline-none focus-within:ring-4 focus-within:ring-design-main focus-within:ring-offset-2 focus-within:ring-offset-white hover:outline-none hover:ring-4',
 			{

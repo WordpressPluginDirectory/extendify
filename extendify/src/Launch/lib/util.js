@@ -1,5 +1,4 @@
 import { decodeEntities } from '@wordpress/html-entities';
-import { pingServer } from '@launch/api/DataApi';
 
 /** Removes any hash or qs values from URL - Airtable adds timestamps */
 export const stripUrlParams = (url) => url?.[0]?.url?.split(/[?#]/)?.[0];
@@ -27,7 +26,7 @@ function cleanAndBuildUnsplashUrl(url) {
 	imageUrl.searchParams.delete('orientation');
 	imageUrl.searchParams.delete('ixid');
 	imageUrl.searchParams.delete('ixlib');
-	imageUrl.searchParams.append('q', '1');
+	imageUrl.searchParams.append('q', '0');
 	imageUrl.searchParams.append('auto', 'format,compress');
 	imageUrl.searchParams.append('fm', 'avif');
 	return imageUrl.toString();
@@ -39,26 +38,6 @@ export const lowerImageQuality = (html) => {
 		cleanAndBuildUnsplashUrl,
 	);
 };
-
-/**
- * Will ping every 1s until we get a 200 response from the server.
- * This is used because we were dealing with a particular issue where
- * servers we're very resource limited and rate limiting was common.
- * */
-export const waitFor200Response = async () => {
-	try {
-		// This will error if not 200
-		await pingServer();
-		return true;
-	} catch (error) {
-		//
-	}
-	await new Promise((resolve) => setTimeout(resolve, 1000));
-	return waitFor200Response();
-};
-
-export const wasInstalled = (activePlugins, pluginSlug) =>
-	activePlugins?.filter((p) => p.includes(pluginSlug))?.length;
 
 export const hexTomatrixValues = (hex) => {
 	// convert from hex
@@ -75,18 +54,4 @@ export const hexTomatrixValues = (hex) => {
 		Math.round((g / 255) * 10000) / 10000,
 		Math.round((b / 255) * 10000) / 10000,
 	];
-};
-
-export const retryOperation = async (operation, { maxAttempts = 1 }) => {
-	for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-		try {
-			await waitFor200Response();
-			await operation();
-			break;
-		} catch (error) {
-			if (attempt === maxAttempts) {
-				throw error;
-			}
-		}
-	}
 };

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controller for activity
  */
@@ -12,9 +13,9 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The controller for various user activity information
  */
+
 class ActivityController
 {
-
     /**
      * Return the data
      *

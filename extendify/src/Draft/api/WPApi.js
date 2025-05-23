@@ -39,7 +39,7 @@ export const importImage = async (imageUrl, metadata = {}) => {
 export const importImageServer = async (src, metadata = {}) => {
 	const formData = new FormData();
 	formData.append('source', src);
-	// Fallback doesn't suppport custom file_name
+	// Fallback doesn't support custom file_name
 	formData.append('alt_text', metadata.alt ?? '');
 	formData.append('caption', metadata.caption ?? '');
 

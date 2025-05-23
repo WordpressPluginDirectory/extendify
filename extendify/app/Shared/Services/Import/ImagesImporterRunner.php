@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Import\Images Runner
  */
@@ -10,9 +11,9 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * This class will handle the actual imports
  */
+
 class ImagesImporterRunner
 {
-
     /**
      * Process posts content to import external images.
      *
@@ -21,7 +22,8 @@ class ImagesImporterRunner
     public function run()
     {
         // Return early if conditions are not met for processing images.
-        if (!\get_option('extendify_check_for_image_imports')
+        if (
+            !\get_option('extendify_check_for_image_imports')
             || \get_transient('extendify_import_images_check_delay')
             || \wp_get_upload_dir()['error']
         ) {

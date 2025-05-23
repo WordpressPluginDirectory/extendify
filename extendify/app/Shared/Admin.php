@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Help Center Script loader.
  */
@@ -18,6 +19,7 @@ use Extendify\SiteSettings;
 /**
  * This class handles any file loading for the admin area.
  */
+
 class Admin
 {
     /**
@@ -30,8 +32,9 @@ class Admin
         \add_action('init', [$this, 'addExtraMetaFields']);
         \add_action('admin_enqueue_scripts', [$this, 'loadGlobalScripts']);
         \add_action('wp_enqueue_scripts', [$this, 'loadGlobalScripts']);
-        \add_action('admin_init', [$this, 'recordPluginsSearchTerms'], 9);
+        \add_action('wp_ajax_search-install-plugins', [$this, 'recordPluginsSearchTerms'], -1);
         \add_action('rest_api_init', [$this, 'recordBlocksSearchTerms']);
+        \add_action('wp_ajax_query-themes', [$this, 'recordThemesSearchTerms'], -1);
     }
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
@@ -43,6 +46,8 @@ class Admin
     public function loadGlobalScripts()
     {
         \wp_enqueue_media();
+
+        $this->updateUserMeta();
 
         $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
 
@@ -168,8 +173,12 @@ class Admin
                 'resourceData' => \wp_json_encode((new ResourceData())->getData()),
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
                 'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
-                'showAIPageCreation' => (bool) (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')),
-                'consentTermsHTML' => \wp_kses((html_entity_decode(($partnerData['consentTermsHTML'] ?? '')) ?? ''), $htmlAllowlist),
+                'showAIPageCreation' => (bool) (
+                    PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')
+                ),
+                'showAILogo' => (bool) PartnerData::setting('showAILogo'),
+                'consentTermsCustom' => \wp_kses((html_entity_decode(($partnerData['consentTermsCustom'] ?? ''))
+                    ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
                 'installedPlugins' => array_map('esc_attr', array_keys(\get_plugins())),
                 'activePlugins' => array_map('esc_attr', array_values(\get_option('active_plugins', []))),
@@ -179,17 +188,20 @@ class Admin
                 'activity' => \wp_json_encode(\get_option('extendify_shared_activity', null)),
                 'showDraft' => isset($partnerData['showDraft']) ? (bool) $partnerData['showDraft'] : false,
                 'showLaunch' => Config::$showLaunch,
-                'apexDomain' => PartnerData::setting('enableApexDomain') ? rawurlencode(ApexDomain::getApexDomain(\get_home_url())) : null,
-                // Preview feature enabled.
-                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-                'hideLaunchObjective' => isset($_GET['preview']) ? false : (isset($partnerData['hideLaunchObjective']) ? (bool) $partnerData['hideLaunchObjective'] : false),
+                'apexDomain' => PartnerData::setting('enableApexDomain')
+                    ? rawurlencode(ApexDomain::getApexDomain(\get_home_url()))
+                    : null,
                 'isLaunchCompleted' => (bool) \esc_attr(\get_option('extendify_onboarding_completed', false)),
             ]),
             'before'
         );
 
         \wp_set_script_translations('extendify-common', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
-        \wp_set_script_translations(Config::$slug . '-shared-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
+        \wp_set_script_translations(
+            Config::$slug . '-shared-scripts',
+            'extendify-local',
+            EXTENDIFY_PATH . 'languages/js'
+        );
 
         \wp_enqueue_style(
             Config::$slug . '-shared-common-styles',
@@ -236,25 +248,17 @@ class Admin
      */
     public function recordPluginsSearchTerms()
     {
-        // Exits early if it is not an Ajax request, has no payload or invalid nonce.
-        if (!\wp_doing_ajax() || empty($_POST)) {
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.NonceVerification.Missing
+        $searchTerm = isset($_POST['s']) ? \sanitize_text_field(\wp_unslash(urldecode($_POST['s']))) : '';
+        if (empty($searchTerm)) {
             return;
         }
 
-        if (array_key_exists('action', $_POST) && $_POST['action'] === 'updates' && !\check_ajax_referer('updates', '_ajax_nonce')) {
-            return;
-        }
-
-        $action = isset($_POST['action']) ? \sanitize_text_field(\wp_unslash($_POST['action'])) : '';
-        $searchTerm = isset($_POST['s']) ? \sanitize_text_field(\wp_unslash($_POST['s'])) : '';
-        // Exits early if it is not the right action or search is empty.
-        if (empty($action) || $action !== 'search-install-plugins' || empty($searchTerm)) {
-            return;
-        }
-
-        // Merges search term with existing search terms and stores it in the database.
         $searchTerms = \get_option('extendify_plugin_search_terms', []);
-        \update_option('extendify_plugin_search_terms', array_merge($searchTerms, [$searchTerm]));
+        $searchTerms[] = $searchTerm;
+        $searchTerms = array_unique($searchTerms);
+
+        \update_option('extendify_plugin_search_terms', $searchTerms);
     }
 
     /**
@@ -277,14 +281,12 @@ class Admin
 
         $wp = $GLOBALS['wp'];
 
-        // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         $restRoute = ($wp->query_vars['rest_route'] ?? '');
         // Exits early if it's not the blocks search route.
         if ($restRoute !== '/wp/v2/block-directory/search') {
             return;
         }
 
-        // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         $searchTerm = \sanitize_text_field(\wp_unslash(($wp->query_vars['term'] ?? '')));
         // Exits early if the search term is empty or is not user input.
         if (empty($searchTerm) || str_starts_with($searchTerm, 'block:')) {
@@ -294,5 +296,56 @@ class Admin
         // Get current search term from the url and merge it with existing search terms.
         $searchTerms = \get_option('extendify_block_search_terms', []);
         \update_option('extendify_block_search_terms', array_merge($searchTerms, [$searchTerm]));
+    }
+
+    /**
+     * Updates the user meta to disable the welcome guide from the Gutenberg editor
+     * and close the pattern modal.
+     *
+     * @return void
+     */
+    public function updateUserMeta()
+    {
+        $currentPreferences = get_user_meta(get_current_user_id(), 'wp_persisted_preferences', true);
+        if (!$currentPreferences) {
+            $currentPreferences = [];
+        }
+
+        $postPreferences = array_key_exists('core/edit-post', $currentPreferences)
+            ? $currentPreferences['core/edit-post']
+            : [];
+        $corePreferences = array_key_exists('core', $currentPreferences) ? $currentPreferences['core'] : [];
+
+        $newPreferences = array_merge($currentPreferences, [
+            'core/edit-post' => array_merge($postPreferences, ['welcomeGuide' => false]),
+            'core' => array_merge($corePreferences, ['enableChoosePatternModal' => false]),
+            '_modified' => wp_date('Y-m-d\TH:i:s.v\Z'),
+        ]);
+
+        update_user_meta(get_current_user_id(), 'wp_persisted_preferences', $newPreferences);
+    }
+
+    /**
+     * Records search terms used when browsing themes in the admin interface.
+     *
+     * This method listens for the 'query-themes' AJAX action, extracts the search term
+     * from the request, and stores it in the 'extendify_theme_search_terms' option.
+     * Duplicate terms are filtered out.
+     *
+     * @return void
+     */
+    public function recordThemesSearchTerms()
+    {
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.NonceVerification.Missing
+        $searchTerm = \sanitize_text_field(\wp_unslash(urldecode(($_POST['request']['search'] ?? ''))));
+        if (empty($searchTerm)) {
+            return;
+        }
+
+        $searchTerms = \get_option('extendify_theme_search_terms', []);
+        $searchTerms[] = $searchTerm;
+        $searchTerms = array_unique($searchTerms);
+
+        \update_option('extendify_theme_search_terms', $searchTerms);
     }
 }

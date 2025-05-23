@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Sanitizer class
  */
@@ -10,9 +11,9 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * Class for escaping various data attributes.
  */
+
 class Escaper
 {
-
     /**
      * This function will escape the attribute of a multidimensional array.
      *

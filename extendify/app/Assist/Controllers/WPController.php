@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WP Controller
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * The controller for interacting with WordPress.
  */
+
 class WPController
 {
     /**

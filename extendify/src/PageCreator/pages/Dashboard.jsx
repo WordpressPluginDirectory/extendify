@@ -1,17 +1,20 @@
 import { useState, useEffect, useLayoutEffect } from '@wordpress/element';
 import { decodeEntities } from '@wordpress/html-entities';
 import { __, sprintf } from '@wordpress/i18n';
+import { CheckboxInput } from '@page-creator/components/content/CheckboxInput';
 import { CustomTextarea } from '@page-creator/components/content/CustomTextarea';
 import { Title } from '@page-creator/components/content/Title';
 import { usePageDescriptionStore } from '@page-creator/state/cache';
 import { useGlobalsStore } from '@page-creator/state/global';
 import { usePagesStore } from '@page-creator/state/pages';
+import { useUserStore } from '@page-creator/state/user';
 import { useSiteProfileStore } from '@shared/state/site-profile';
 
 const { siteTitle } = window.extSharedData;
 
 export const Dashboard = () => {
 	const { nextPage } = usePagesStore();
+	const { allowsInstallingPlugins, updateUserOption } = useUserStore();
 	const { siteProfile, setSiteProfile } = useSiteProfileStore();
 	const { setDescription, description } = usePageDescriptionStore();
 	const [pageDescription, setPageDescription] = useState(description ?? '');
@@ -50,7 +53,7 @@ export const Dashboard = () => {
 	]);
 
 	return (
-		<div className="mx-auto flex max-w-xl flex-col">
+		<div className="mx-auto my-12 flex max-w-xl flex-col">
 			<div className="mb-12 grid grid-cols-1 gap-1 text-center">
 				<Title
 					title={__('AI Page Creation', 'extendify-local')}
@@ -60,9 +63,9 @@ export const Dashboard = () => {
 					)}
 				/>
 			</div>
-			<div className="grid grid-cols-1 gap-6">
+			<div className="grid grid-cols-1 gap-3">
 				<CustomTextarea
-					id="extendify-page-creator-page-descrition"
+					id="extendify-page-creator-page-description"
 					title={__('Describe Your Page', 'extendify-local')}
 					required={true}
 					className="input-focus h-[220px] w-full max-w-full resize-none border border-gray-600 py-3 pe-6 ps-3 text-base placeholder:italic placeholder:opacity-70"
@@ -75,12 +78,13 @@ export const Dashboard = () => {
 				/>
 
 				<CustomTextarea
-					id="extendify-page-creator-site-descrition"
+					id="extendify-page-creator-site-description"
 					hideEditor={hideEditor}
 					setHideEditor={setHideEditor}
 					title={
 						siteTitle
-							? sprintf(
+							? // translators: %s: The site title
+								sprintf(
 									__('Site Description for %s', 'extendify-local'),
 									decodeEntities(siteTitle),
 								)
@@ -93,6 +97,18 @@ export const Dashboard = () => {
 					)}
 					value={siteDescription}
 					onChange={(e) => setSiteDescription(e.currentTarget.value)}
+				/>
+
+				<CheckboxInput
+					label={__(
+						'Allow plugins to be installed for advanced page features',
+						'extendify-local',
+					)}
+					slug="extendify-page-creator-allow-plugins"
+					checked={allowsInstallingPlugins}
+					onChange={(e) =>
+						updateUserOption('allowsInstallingPlugins', e.target.checked)
+					}
 				/>
 
 				<button

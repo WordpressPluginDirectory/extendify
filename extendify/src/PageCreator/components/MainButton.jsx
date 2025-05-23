@@ -40,9 +40,9 @@ export const MainButton = () => {
 			<div
 				role="button"
 				onClick={handleClick}
-				className="components-button has-icon is-primary ml-3 h-8 min-w-0 cursor-pointer px-1 xs:h-9 xs:pl-2 xs:pr-3 sm:ml-2">
+				className="components-button has-icon is-primary ml-3 h-8 min-w-0 cursor-pointer px-2 xs:h-9 sm:ml-2 xl:pr-3">
 				<Icon icon={PageGen} size={24} className="fill-none" />
-				<span className="ml-1 hidden xs:inline">
+				<span className="ml-1 hidden xl:inline">
 					{__('AI Page Generator', 'extendify-local')}
 				</span>
 			</div>

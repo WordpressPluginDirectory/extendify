@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Import\Images
  */
@@ -11,6 +12,7 @@ defined('ABSPATH') || die('No direct access.');
  * This class will import external images added to WordPress posts,
  * using our Extendify library.
  */
+
 class ImagesImporter
 {
     /**
@@ -71,21 +73,25 @@ class ImagesImporter
      */
     public function everyTenMinImportCheck()
     {
-        // Create a custom 10 minutes schedule that we use below.
-        // phpcs:ignore WordPress.WP.CronInterval -- Verified > 10 min.
-        \add_filter('cron_schedules', function ($schedules) {
-            $schedules['extendify_every_ten_minutes'] = [
-                'interval' => (10 * MINUTE_IN_SECONDS),
-                'display' => __('Every 10 minutes', 'extendify-local'),
-            ];
+        \add_action('init', function () {
+            // Create a custom 10 minutes schedule that we use below.
+            // phpcs:ignore WordPress.WP.CronInterval -- Verified > 10 min.
+            \add_filter('cron_schedules', function ($schedules) {
+                $schedules['extendify_every_ten_minutes'] = [
+                    'interval' => (10 * MINUTE_IN_SECONDS),
+                    'display' => __('Every 10 minutes', 'extendify-local'),
+                ];
 
-            return $schedules;
+                return $schedules;
+            });
         });
 
         if (! \wp_next_scheduled('extendify_images_importer_light')) {
             \wp_schedule_event(
                 // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp
-                time(), 'extendify_every_ten_minutes', 'extendify_images_importer_light'
+                time(),
+                'extendify_every_ten_minutes',
+                'extendify_images_importer_light'
             );
         }
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Manage any frontend related tasks here.
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * This class handles any file loading for the frontend of the site.
  */
+
 class Frontend
 {
     /**

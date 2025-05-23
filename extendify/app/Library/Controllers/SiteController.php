@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controls Site options
  */
@@ -12,9 +13,9 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The controller for persisting site data
  */
+
 class SiteController
 {
-
     /**
      * Return the data
      *
@@ -74,12 +75,10 @@ class SiteController
         $extendifyCss = static::getDeactivationCss();
 
         foreach ($globalStyles as $post) {
-            // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
             if (!isset($post->post_content)) {
                 continue;
             }
 
-            // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
             $content = json_decode($post->post_content, true);
             if (!isset($content['styles']['css'])) {
                 if (!isset($content['styles'])) {
@@ -118,11 +117,12 @@ class SiteController
         $theme = get_option('template');
 
         if ($theme === 'twentytwenty') {
-            $css = '/* Twenty Twenty adds a lot of margin automatically to blocks. We only want our own margin added to our patterns. */
+            $css = '/* Twenty Twenty adds a lot of margin automatically to blocks.
+            We only want our own margin added to our patterns. */
 
             .ext .wp-block-group__inner-container figure.wp-block-gallery.alignfull {
-            margin-top: unset !important;
-            margin-bottom: unset !important;
+                margin-top: unset !important;
+                margin-bottom: unset !important;
             }';
         }
 

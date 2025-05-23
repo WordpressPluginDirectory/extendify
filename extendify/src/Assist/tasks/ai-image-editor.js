@@ -1,5 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { AiImageGeneratorMarkup } from '@assist/tasks/images/AiImageGeneratorMarkup';
+import { hasPageCreatorEnabled } from '@help-center/lib/utils';
 
 export default {
 	slug: 'ai-image-editor',
@@ -13,7 +14,9 @@ export default {
 		completed: __('Revisit', 'extendify-local'),
 		notCompleted: __('Start Generating with AI', 'extendify-local'),
 	},
-	link: 'post-new.php?post_type=page&ext-close&ext-add-image-block',
+	link: hasPageCreatorEnabled
+		? 'post-new.php?post_type=page&ext-page-creator-close&ext-close&ext-add-image-block'
+		: 'post-new.php?post_type=page&ext-close&ext-add-image-block',
 	type: 'html-text-button',
 	dependencies: { goals: [], plugins: [] },
 	show: () => !!window.extSharedData?.showDraft,

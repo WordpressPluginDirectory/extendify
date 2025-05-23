@@ -2,8 +2,8 @@
 Contributors: extendify, kbat82, clubkert, arturgrabo
 Tags: templates, patterns, layouts, blocks, gutenberg, layout, template, editor, library, page builder, gutenberg blocks, wordpress blocks
 Requires at least: 6.0
-Tested up to: 6.7
-Stable tag: 1.18.3
+Tested up to: 6.8
+Stable tag: 1.19.2
 Requires PHP: 7.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -97,33 +97,49 @@ Nope! Extendify imports lightweight block-based content that is served directly 
 
 == Changelog ==
 
-= 1.18.3 - 2024-03-28 =
+= 1.19.2 - 2025-05-19 =
 - Various bug fixes and improvements
 
-= 1.18.2 - 2024-03-27 =
-- Fixed a bug where scoll lock was happening in wp-admin
-
-= 1.18.1 - 2024-03-26 =
+= 1.19.1 - 2025-05-19 =
 - Various bug fixes and improvements
 
-= 1.18.0 - 2024-03-13 =
+= 1.19.0 - 2025-05-08 =
+- Various bug fixes and improvements
+
+= 1.18.5 - 2025-04-22 =
+- Various bug fixes and improvements
+- Fixed translation loading errors
+
+= 1.18.4 - 2025-04-14 =
+- Various bug fixes and improvements
+
+= 1.18.3 - 2025-03-28 =
+- Various bug fixes and improvements
+
+= 1.18.2 - 2025-03-27 =
+- Fixed a bug where scroll lock was happening in wp-admin
+
+= 1.18.1 - 2025-03-26 =
+- Various bug fixes and improvements
+
+= 1.18.0 - 2025-03-13 =
 - Fixed a bug where we passed in the wrong type to get_block_editor_settings
 - Updated translations
 - Various bug fixes and improvements
 
-= 1.17.2 - 2024-02-26 =
+= 1.17.2 - 2025-02-26 =
 - Fix a redirect bug
 - Various bug fixes and improvements
 
-= 1.17.1 - 2024-02-14 =
+= 1.17.1 - 2025-02-14 =
 - Update language files
 - Various bug fixes and improvements
 
-= 1.17.0 - 2024-02-01 =
+= 1.17.0 - 2025-02-01 =
 - Update language files
 - Various bug fixes and improvements
 
-= 1.16.1 - 2024-01-02 =
+= 1.16.1 - 2025-01-02 =
 - Fixes a bug when reading blog sample data
 
 = 1.16.0 - 2024-12-19 =
@@ -214,7 +230,7 @@ Nope! Extendify imports lightweight block-based content that is served directly 
 - Various bug fixes and improvements
 
 = 1.12.0 - 2023-12-12 =
-- Fixes a bug where an icon woudl show up within iframes
+- Fixes a bug where an icon would show up within iframes
 - Updates Swedish translations and others
 - Fixes a conflict with Kadence and Google fonts
 
@@ -341,7 +357,7 @@ Nope! Extendify imports lightweight block-based content that is served directly 
 - Improved loading of patterns in live previews
 - More templates and more site types to chose from
 - Improved compatibility with Extendable theme
-- Fixed issue where som users would see API errors randomly
+- Fixed issue where some users would see API errors randomly
 - Better handling of page redirects
 
 = 0.11.1 - 2022-10-08 =
@@ -367,7 +383,7 @@ Nope! Extendify imports lightweight block-based content that is served directly 
 = 0.9.5 - 2022-08-25 =
 - Various bug fixes and performance improvements
 - Update menu page logic
-- Update network request effeciency
+- Update network request efficiency
 
 = 0.9.4 - 2022-08-12 =
 - Fix server error issues
@@ -409,7 +425,7 @@ Nope! Extendify imports lightweight block-based content that is served directly 
 - Add faster server backend
 - Add Extendify welcome page
 - Remove content idle timer
-- Update sidebar handle accessability styling
+- Update sidebar handle accessibility styling
 - Updated wp tested up to value
 - Implement UI improvements to encourage discoverability
 

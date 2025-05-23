@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WooCommerce pattern replacement.
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * WooCommerce pattern replacement class.
  */
+
 class WooCommerce
 {
     /**
@@ -49,19 +51,27 @@ class WooCommerce
 
         $categories = array_map(function ($item) {
             return [
-                // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
                 'id' => $item->term_id,
-                // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
                 'url' => get_term_link($item->term_id, 'product_cat'),
             ];
         }, get_terms(['taxonomy' => 'product_cat']));
 
         foreach ($matches as $key => $value) {
             // Replace the temporary id with the category id.
-            $newCode = preg_replace('/' . preg_quote($value[0], '/') . '/', str_replace($value[1], $categories[$key]['id'], $value[0]), $newCode, 1);
+            $newCode = preg_replace(
+                '/' . preg_quote($value[0], '/') . '/',
+                str_replace($value[1], $categories[$key]['id'], $value[0]),
+                $newCode,
+                1
+            );
 
             // Replace the temporary placeholder URL with the actual category URL.
-            $newCode = preg_replace('/' . preg_quote('http://patterns.test/?product_cat=accessories', '/') . '/', $categories[$key]['url'], $newCode, 1);
+            $newCode = preg_replace(
+                '/' . preg_quote('http://patterns.test/?product_cat=accessories', '/') . '/',
+                $categories[$key]['url'],
+                $newCode,
+                1
+            );
         }
 
         return $newCode;

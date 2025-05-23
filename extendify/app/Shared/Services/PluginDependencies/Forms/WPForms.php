@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Create WPForm programmatically.
  */
@@ -12,6 +13,7 @@ use Extendify\Shared\Services\PluginDependencies\PluginInstaller;
 /**
  * Create WPForm programmatically.
  */
+
 class WPForms
 {
     /**
@@ -59,7 +61,7 @@ class WPForms
 
         // If we didn't get the form, send back an error to retry.
         if (!$formId) {
-            return new \WP_Error('form_error', 'Could not create form');
+            return new \WP_Error('form_error', 'Could not create wpforms form');
         }
 
         // Replace {"formId": "1234"} with the actual form ID.
@@ -98,7 +100,6 @@ class WPForms
 
         $formPost = \wpforms()->get('form')->get($formId);
         // We have to manually add the form id into the form data.
-        // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         $formContent = \wpforms_decode($formPost->post_content);
         $fields = self::getFormFields($template);
         $newFields = [

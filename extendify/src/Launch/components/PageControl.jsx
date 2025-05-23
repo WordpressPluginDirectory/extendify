@@ -32,8 +32,6 @@ const StructurePageData = {
 	state: siteStructureState,
 };
 
-const hideLaunchObjective = window.extSharedData?.hideLaunchObjective || false;
-
 const objectives = ['business', 'ecommerce', 'blog', 'landing-page', 'other'];
 const structures = ['single-page', 'multi-page'];
 
@@ -65,10 +63,6 @@ export const PageControl = () => {
 			addPage('site-structure', StructurePageData, 'site-prep');
 		}
 
-		// If hideLaunchObjective flag is false, remove the goals page
-		if (!hideLaunchObjective) {
-			removePage('goals');
-		}
 		// Landing pages are single-page structure, so we need to remove both page-select and site-structure pages
 		if (siteObjective === 'landing-page' && siteStructure === 'single-page') {
 			removePage('page-select');

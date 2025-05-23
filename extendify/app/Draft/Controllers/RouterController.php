@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controls Router details
  */
@@ -12,6 +13,7 @@ if (!defined('ABSPATH')) {
 /**
  * The controller for plugin dependency checking, etc
  */
+
 class RouterController
 {
     /**

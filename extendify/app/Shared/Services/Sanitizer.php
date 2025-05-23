@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Sanitizer class
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * Class for sanitizing various data types.
  */
+
 class Sanitizer
 {
     /**
@@ -72,6 +74,25 @@ class Sanitizer
     public static function sanitizeText($text)
     {
         return \sanitize_text_field($text);
+    }
+
+    /**
+     * This function will sanitize a text field that may contain
+     * the <strong>, <em> and <del> HTML tags, allowing the tags in
+     * the final result.
+     *
+     * @param string $text - The string we need to sanitize.
+     * @return string
+     */
+    public static function sanitizeTextWithFormattingTags($text)
+    {
+        $allowedTags = [
+            'strong'  => [],
+            'em'      => [],
+            'del'     => [],
+        ];
+
+        return \wp_kses($text, $allowedTags);
     }
 
     /**

@@ -33,7 +33,7 @@ export const MainPage = ({ insertPage }) => {
 					}, 5000);
 				},
 			}}>
-			<div className="my-12 flex md:mb-20 md:mt-16">{page()}</div>
+			{page()}
 			<RetryNotice show={retrying} />
 		</SWRConfig>
 	);

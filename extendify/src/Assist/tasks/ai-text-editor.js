@@ -1,5 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { AiWritingAssistantMarkup } from '@assist/tasks/images/AiWritingAssistantMarkup';
+import { hasPageCreatorEnabled } from '@help-center/lib/utils';
 
 export default {
 	slug: 'ai-text-editor',
@@ -13,7 +14,9 @@ export default {
 		completed: __('Revisit', 'extendify-local'),
 		notCompleted: __('Start Writing with AI', 'extendify-local'),
 	},
-	link: 'post-new.php?post_type=page&ext-close',
+	link: hasPageCreatorEnabled
+		? 'post-new.php?post_type=page&ext-page-creator-close'
+		: 'post-new.php?post_type=page&ext-close',
 	type: 'html-text-button',
 	dependencies: { goals: [], plugins: [] },
 	show: () => !!window.extSharedData?.showDraft,

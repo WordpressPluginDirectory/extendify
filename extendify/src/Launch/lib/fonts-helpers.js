@@ -47,6 +47,7 @@ export function makeFontFaceFormData({
 	fontStyle,
 	fontWeight,
 	fontDisplay,
+	unicodeRange,
 	src = [],
 	file = [],
 }) {
@@ -56,6 +57,7 @@ export function makeFontFaceFormData({
 		fontStyle,
 		fontWeight,
 		fontDisplay,
+		unicodeRange,
 		src: Array.isArray(src) ? src : [src],
 	};
 	const files = Array.isArray(file) ? file : [file];

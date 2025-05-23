@@ -19,13 +19,13 @@ const storage = {
 
 const state = (set, get) => ({
 	showAIConsent: window.extSharedData?.showAIConsent ?? false,
-	consentTermsHTML: window.extSharedData?.consentTermsHTML ?? '',
+	consentTermsCustom: window.extSharedData?.consentTermsCustom ?? '',
 	userGaveConsent: window.extSharedData?.userGaveConsent ?? false,
 	setUserGaveConsent: (userGaveConsent) => set({ userGaveConsent }),
 	// Context refers to the feature where the function is being used.
 	shouldShowAIConsent: (context) => {
-		const { showAIConsent, consentTermsHTML, userGaveConsent } = get();
-		const enabled = showAIConsent && consentTermsHTML;
+		const { showAIConsent, consentTermsCustom, userGaveConsent } = get();
+		const enabled = showAIConsent && consentTermsCustom;
 		const display = {
 			launch: enabled,
 			draft: enabled && !userGaveConsent,

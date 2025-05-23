@@ -1,15 +1,10 @@
 import { uploadMedia } from '@wordpress/media-utils';
-import { getFilename } from '@wordpress/url';
 import { getOption, updateOption } from '@launch/api/WPApi';
 import { uploadLogo } from '@launch/lib/logo';
 
 // Mock the dependencies
 jest.mock('@wordpress/media-utils', () => ({
 	uploadMedia: jest.fn(),
-}));
-
-jest.mock('@wordpress/url', () => ({
-	getFilename: jest.fn(),
 }));
 
 jest.mock('@launch/api/WPApi', () => ({
@@ -85,9 +80,6 @@ describe('uploadLogo', () => {
 			blob: () => Promise.resolve(mockBlob),
 		});
 
-		// Mock filename extraction
-		getFilename.mockReturnValue('logo.png');
-
 		// Mock successful media upload
 		uploadMedia.mockImplementation(({ onFileChange }) => {
 			onFileChange([{ id: '456' }]);
@@ -99,45 +91,8 @@ describe('uploadLogo', () => {
 		// Verify the workflow
 		expect(getOption).toHaveBeenCalledWith('site_logo');
 		expect(global.fetch).toHaveBeenCalledWith('https://example.com/logo.png');
-		expect(getFilename).toHaveBeenCalledWith('https://example.com/logo.png');
 		expect(uploadMedia).toHaveBeenCalled();
 		expect(updateOption).toHaveBeenCalledWith('site_logo', '456');
-	});
-
-	it('should use default name if getFilename returns nothing', async () => {
-		// Mock no existing logo
-		getOption.mockResolvedValue('0');
-
-		// Mock successful fetch
-		const mockBlob = new Blob(['test'], { type: 'image/png' });
-		global.fetch.mockResolvedValue({
-			ok: true,
-			blob: () => Promise.resolve(mockBlob),
-		});
-
-		// Mock no filename returned
-		getFilename.mockReturnValue(null);
-
-		// Spy on File constructor
-		const originalFile = global.File;
-		global.File = jest.fn(function (bits, name, options) {
-			return new originalFile(bits, name, options);
-		});
-
-		// Mock successful media upload
-		uploadMedia.mockImplementation(({ onFileChange }) => {
-			onFileChange([{ id: '456' }]);
-			return Promise.resolve();
-		});
-
-		await uploadLogo('https://example.com/logo');
-
-		// Verify default name was used
-		expect(global.File).toHaveBeenCalledWith(
-			expect.anything(),
-			'default-logo.png',
-			expect.anything(),
-		);
 	});
 
 	it('should handle upload errors gracefully', async () => {
@@ -162,5 +117,126 @@ describe('uploadLogo', () => {
 
 		// Verify error was handled
 		expect(console.error).toHaveBeenCalled();
+	});
+
+	it('should force upload even if logo already exists when forceReplace is true', async () => {
+		getOption.mockResolvedValue('123');
+
+		const mockBlob = new Blob(['test'], { type: 'image/png' });
+		global.fetch.mockResolvedValue({
+			ok: true,
+			blob: () => Promise.resolve(mockBlob),
+		});
+
+		uploadMedia.mockImplementation(({ onFileChange }) => {
+			onFileChange([{ id: '789' }]);
+			return Promise.resolve();
+		});
+
+		await uploadLogo('https://example.com/logo.png', { forceReplace: true });
+
+		expect(getOption).toHaveBeenCalledWith('site_logo');
+		expect(global.fetch).toHaveBeenCalledWith('https://example.com/logo.png');
+		expect(uploadMedia).toHaveBeenCalled();
+		expect(updateOption).toHaveBeenCalledWith('site_logo', '789');
+	});
+
+	it('should upload logo with webp format correctly', async () => {
+		getOption.mockResolvedValue('0');
+		const mockBlob = new Blob(['test'], { type: 'image/webp' });
+		global.fetch.mockResolvedValue({
+			ok: true,
+			blob: () => Promise.resolve(mockBlob),
+		});
+
+		const FileSpy = jest.fn(function (bits, name, options) {
+			this.name = name;
+			this.type = options?.type;
+			return this;
+		});
+		global.File = FileSpy;
+
+		uploadMedia.mockImplementation(({ onFileChange }) => {
+			onFileChange([{ id: '100' }]);
+			return Promise.resolve();
+		});
+
+		await uploadLogo('https://example.com/logo.webp');
+		expect(FileSpy).toHaveBeenCalledWith(
+			expect.anything(),
+			expect.stringMatching(/^ext-custom-logo-\d+\.webp$/),
+			expect.objectContaining({ type: 'image/webp' }),
+		);
+	});
+
+	it('should log error for unsupported MIME types like jpeg', async () => {
+		getOption.mockResolvedValue('0');
+		const mockBlob = new Blob(['test'], { type: 'image/jpeg' });
+
+		global.fetch.mockResolvedValue({
+			ok: true,
+			blob: () => Promise.resolve(mockBlob),
+		});
+
+		const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+		await uploadLogo('https://example.com/logo.jpg');
+
+		expect(errorSpy).toHaveBeenCalledWith(
+			'Error uploading logo: ',
+			expect.any(Error),
+		);
+		expect(errorSpy.mock.calls[0][1].message).toMatch(/Unsupported image type/);
+		expect(uploadMedia).not.toHaveBeenCalled();
+
+		errorSpy.mockRestore();
+	});
+
+	it('should generate dynamic filename with correct extension', async () => {
+		getOption.mockResolvedValue('0');
+		const mockBlob = new Blob(['test'], { type: 'image/avif' });
+		global.fetch.mockResolvedValue({
+			ok: true,
+			blob: () => Promise.resolve(mockBlob),
+		});
+
+		const FileSpy = jest.fn(function (bits, name, options) {
+			this.name = name;
+			this.type = options?.type;
+			return this;
+		});
+		global.File = FileSpy;
+
+		uploadMedia.mockImplementation(({ onFileChange }) => {
+			onFileChange([{ id: '200' }]);
+			return Promise.resolve();
+		});
+
+		await uploadLogo('https://example.com/blob-url', {
+			mimeType: 'image/avif',
+		});
+
+		expect(FileSpy).toHaveBeenCalledWith(
+			expect.anything(),
+			expect.stringMatching(/^ext-custom-logo-\d+\.avif$/),
+			expect.objectContaining({ type: 'image/avif' }),
+		);
+	});
+
+	it('should not call updateOption if fileObj.id is falsy', async () => {
+		getOption.mockResolvedValue('0');
+		const mockBlob = new Blob(['test'], { type: 'image/png' });
+		global.fetch.mockResolvedValue({
+			ok: true,
+			blob: () => Promise.resolve(mockBlob),
+		});
+
+		uploadMedia.mockImplementation(({ onFileChange }) => {
+			onFileChange([{}]);
+			return Promise.resolve();
+		});
+
+		await uploadLogo('https://example.com/logo.png');
+
+		expect(updateOption).not.toHaveBeenCalled();
 	});
 });

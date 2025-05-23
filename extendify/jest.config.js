@@ -40,4 +40,5 @@ module.exports = {
 		...defaultConfig.moduleNameMapper,
 		...aliasesModuleNameMapper,
 	},
+	setupFiles: ['<rootDir>/jest.setup.js'],
 };

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controls Draft Settings
  */
@@ -12,9 +13,9 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The controller for keeping draft settings in sync
  */
+
 class UserSettingsController
 {
-
     /**
      * Return the data
      *

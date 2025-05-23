@@ -31,7 +31,10 @@ const LinkCard = ({ recommendation }) => {
 				<img
 					className="h-8 w-8 rounded fill-current"
 					alt={
-						by ? sprintf(__('Logo for %s', 'extendify-local'), by) : undefined
+						by
+							? /* translators: %s: The name of the company/author */
+								sprintf(__('Logo for %s', 'extendify-local'), by)
+							: undefined
 					}
 					src={image}
 				/>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Admin.
  */
@@ -13,9 +14,9 @@ use Extendify\Draft\Controllers\UserSettingsController;
 /**
  * This class handles any file loading for the admin area.
  */
+
 class Admin
 {
-
     /**
      * Adds various actions to set up the page
      *
@@ -76,7 +77,11 @@ class Admin
             ]),
             'before'
         );
-        \wp_set_script_translations(Config::$slug . '-draft-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
+        \wp_set_script_translations(
+            Config::$slug . '-draft-scripts',
+            'extendify-local',
+            EXTENDIFY_PATH . 'languages/js'
+        );
 
         $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
         if (isset(Config::$assetManifest['extendify-draft.css'])) {

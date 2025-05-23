@@ -10,14 +10,14 @@ export const PostEditor = () => {
 	const { incrementActivity } = useActivityStore();
 	return (
 		<Button
-			className="is-compact ml-1 hidden gap-1 md:visible md:inline-flex"
+			className="is-compact ml-1 hidden gap-1 px-2 md:visible md:inline-flex xl:px-3"
 			data-test="help-center-editor-page-button"
 			onClick={() => {
 				setVisibility('open');
 				incrementActivity('hc-editor-page-button');
 			}}
 			variant="primary">
-			{__('Help', 'extendify-local')}
+			<span className="hidden xl:inline">{__('Help', 'extendify-local')}</span>
 			<Icon
 				icon={helpFilled}
 				width={18}

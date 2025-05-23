@@ -3,6 +3,4 @@ export const isOnLaunch = () => {
 	return ['page'].includes(q.get('extendify-launch'));
 };
 
-export const hasPageCreatorEnabled =
-	window.extSharedData?.showAIPageCreation &&
-	window.extSharedData?.isLaunchCompleted;
+export const hasPageCreatorEnabled = window.extSharedData?.showAIPageCreation;

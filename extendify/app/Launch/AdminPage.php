@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Obnboarding admin page.
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * This class handles the Assist admin page.
  */
+
 class AdminPage
 {
     /**
@@ -38,7 +40,11 @@ class AdminPage
     public function pageContent()
     {
         ?>
-        <div id="extendify-launch-page" class="extendify-launch" style="position:fixed;background:white;top:0;left:0;right:0;bottom:0;z-index:99999"></div>
+            <div
+                id="extendify-launch-page"
+                class="extendify-launch"
+                style="position:fixed;background:white;top:0;left:0;right:0;bottom:0;z-index:99999">
+            </div>
         <?php
     }
 }

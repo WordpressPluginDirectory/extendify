@@ -17,6 +17,7 @@ export const useUserStore = create(
 	persist(
 		(set, get) => ({
 			openOnNewPage: true,
+			allowsInstallingPlugins: true,
 			updateUserOption: (key, value) => {
 				if (!Object.keys(get()).includes(key)) return;
 				set({ [key]: value });

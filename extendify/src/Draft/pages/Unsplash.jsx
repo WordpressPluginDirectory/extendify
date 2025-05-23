@@ -19,7 +19,7 @@ export const Unsplash = () => {
 	const [search, setSearch] = useState('');
 	const [searchDebounced, setSearchDebounced] = useState('');
 	const [searching, setSearching] = useState(false);
-	const { data: images, loading } = useUnsplashImages(searchDebounced);
+	const { data: images, loading } = useUnsplashImages(searchDebounced, 'user');
 	const [isInsertingImage, setIsInsertingImage] = useState(null);
 
 	const selectedBlock = useSelect(

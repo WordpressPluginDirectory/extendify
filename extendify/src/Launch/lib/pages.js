@@ -2,7 +2,6 @@ import {
 	ContentGathering,
 	state as contentGatheringState,
 } from '@launch/pages/ContentGathering';
-import { Goals, state as goalsState } from '@launch/pages/Goals';
 import { HomeSelect, state as homeSelectState } from '@launch/pages/HomeSelect';
 import {
 	ObjectiveSelection,
@@ -30,7 +29,6 @@ const initialPagesList = {
 	'website-objective': {
 		component: ObjectiveSelection,
 		state: objectiveSelectionState,
-		condition: ({ hideLaunchObjective }) => !hideLaunchObjective,
 	},
 	'site-information': {
 		component: SiteInformation,
@@ -39,10 +37,6 @@ const initialPagesList = {
 	'site-prep': {
 		component: SitePrep,
 		state: sitePrepState,
-	},
-	goals: {
-		component: Goals,
-		state: goalsState,
 	},
 	'site-structure': {
 		component: SiteStructure,
@@ -67,8 +61,7 @@ const initialPagesList = {
 export const getPages = () => {
 	const { siteStructure, siteObjective } =
 		useUserSelectionStore?.getState() ?? {};
-	const { hideLaunchObjective } = window.extSharedData;
-	const conditionData = { siteStructure, siteObjective, hideLaunchObjective };
+	const conditionData = { siteStructure, siteObjective };
 
 	return Object.entries(initialPagesList).filter(
 		([_, page]) => !page.condition || page.condition(conditionData),

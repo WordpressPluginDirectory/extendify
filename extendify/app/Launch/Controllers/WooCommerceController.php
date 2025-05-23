@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WooCommerce  Controller
  */
@@ -12,6 +13,7 @@ use Extendify\Launch\Services\WooCommerceImporter;
 /**
  * The controller for interacting with WooCommerce to import temporary data.
  */
+
 class WooCommerceController
 {
     /**
@@ -38,5 +40,4 @@ class WooCommerceController
 
         return new \WP_REST_Response(['success' => true]);
     }
-
 }

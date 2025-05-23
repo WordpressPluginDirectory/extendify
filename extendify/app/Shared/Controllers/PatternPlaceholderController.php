@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controller for updating patterns based on their dependencies.
  */
@@ -15,8 +16,10 @@ use Extendify\Shared\Services\PluginDependencies\SimplyBook;
 /**
  * The controller for interacting with the pattern deps.
  */
+
 class PatternPlaceholderController
 {
+    // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
     const PLUGIN_HANDLERS = [
         'contact-form-7' => ContactForm7::class,
         'wpforms-lite' => WPForms::class,
@@ -33,6 +36,7 @@ class PatternPlaceholderController
     public static function processPlaceholders($request)
     {
         $patterns = $request->get_param('patterns');
+
         $patterns = array_map(function ($pattern) {
             $newCode = ($pattern['patternReplacementCode'] ?? null);
             $pluginDependency = ($pattern['pluginDependency'] ?? null);
@@ -45,7 +49,9 @@ class PatternPlaceholderController
                 $metadata = json_decode($pattern['patternMetadata'], true);
             }
 
-            $handlerClass = isset(self::PLUGIN_HANDLERS[$pluginDependency]) ? self::PLUGIN_HANDLERS[$pluginDependency] : null;
+            $handlerClass = isset(self::PLUGIN_HANDLERS[$pluginDependency])
+                ? self::PLUGIN_HANDLERS[$pluginDependency]
+                : null;
             if ($handlerClass && isset($metadata['key'])) {
                 $pattern['code'] = $handlerClass::create($pattern['code'], $metadata['key'], $newCode);
                 return $pattern;

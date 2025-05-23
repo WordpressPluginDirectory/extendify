@@ -41,8 +41,8 @@ export const Topbar = () => {
 					'cursor-pointer': isMinimized,
 				})}>
 				<div
-					className={classNames('flex w-full gap-1', {
-						'gap-4': history.length === 1,
+					className={classNames('flex w-full gap-3', {
+						'gap-3': history.length === 1,
 					})}>
 					<LogoOrBackButton />
 					{current?.title && (
@@ -108,7 +108,7 @@ const LogoOrBackButton = () => {
 	}
 
 	return partnerLogo ? (
-		<div className="flex h-6 justify-center bg-banner-main after:relative after:-right-2 after:top-0.5 after:mr-2 after:text-banner-text after:opacity-40 after:content-['|'] rtl:after:-right-0">
+		<div className="flex h-6 justify-center bg-banner-main after:relative after:-right-2.5 after:top-1 after:mr-2 after:text-banner-text after:opacity-40 after:content-['|'] rtl:after:-right-0">
 			<div className="flex h-6 max-w-[9rem] overflow-hidden">
 				<img
 					className="max-h-full max-w-full object-contain"

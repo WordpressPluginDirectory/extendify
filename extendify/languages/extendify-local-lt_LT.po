@@ -2,14 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
+"Last-Translator: Weborado <info@weborado.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-12-23T07:11:44+00:00\n"
-"PO-Revision-Date: 2024-12-23T07:11:44+00:00\n"
+"PO-Revision-Date: 2025-05-06 13:28+0300\n"
 "Language: lt_LT\n"
+"X-Generator: Poedit 3.5\n"
 
 #. Plugin Name of the plugin
 #: extendify.php
@@ -36,2627 +37,2660 @@ msgstr "Extendify"
 msgid "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
 msgstr "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash"
 
-#: app/AdminPageRouter.php:38
-#: app/AdminPageRouter.php:62
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: app/AdminPageRouter.php:40
+#: app/AdminPageRouter.php:64
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Site Assistant"
-msgstr "Tinklalapio asistentas"
+msgstr "Svetainės vedlys"
 
 #. translators: Launch is a noun.
-#: app/AdminPageRouter.php:74
+#: app/AdminPageRouter.php:76
 msgid "Launch"
-msgstr "Paleidimas"
+msgstr "Svetainės kūrimas"
 
-#: app/HelpCenter/Controllers/SupportArticlesController.php:100
+#: app/HelpCenter/Controllers/SupportArticlesController.php:109
 msgid "Page not found"
 msgstr "Puslapis nerastas"
 
-#: app/Library/Admin.php:139
+#: app/Library/Admin.php:146
 msgid "Extendify Library User Settings"
 msgstr "Extendify saugyklos vartotojo nustatymai"
 
-#: app/Shared/DataProvider/ResourceData.php:52
+#: app/Shared/DataProvider/ResourceData.php:55
 msgid "Every month"
 msgstr "Kiekvieną mėnesį"
 
-#: app/Shared/Services/Import/ImagesImporter.php:79
+#: app/Shared/Services/Import/ImagesImporter.php:82
 msgid "Every 10 minutes"
 msgstr "Kas 10 minučių"
 
-#: app/Shared/Services/PluginDependencies/Forms/ContactForm7.php:50
-#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:57
+#: app/Shared/Services/PluginDependencies/Forms/ContactForm7.php:52
+#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:59
 msgid "Simple Contact Form"
 msgstr "Paprasta kontaktų forma"
 
-#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:131
+#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:132
 msgid "Name"
 msgstr "Vardas"
 
-#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:138
+#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:139
 msgid "Email"
 msgstr "El. paštas"
 
-#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:145
+#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:146
 msgid "Subject"
 msgstr "Tema"
 
-#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:151
+#: app/Shared/Services/PluginDependencies/Forms/WPForms.php:152
 msgid "Message"
 msgstr "Pranešimas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Close Modal"
 msgstr "Uždaryti modalą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Site Industry"
-msgstr "Tinklalapio pramonė"
+msgstr "Svetainės industrija"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Let's Start Building Your Website"
-msgstr "Pradėkime kurti jūsų tinklalapį"
+msgstr "Pradėkime kurti jūsų svetainę"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher."
-msgstr "Sukurkite itin greitą, gražų ir visiškai pritaikytą tinklalapį per kelias minutes naudodami mūsų Tinklalapio paleidiklį."
+msgstr "Sukurkite itin greitą, gražų ir visiškai pritaikytą svetainę per kelias minutes naudodami mūsų svetainės vedlį."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Add Website Details"
-msgstr "Pridėti tinklalapio detales"
+msgstr "Pridėti svetainės detales"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
-msgid "Goals"
-msgstr "Tikslai"
-
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Continue Building Your Website"
-msgstr "Tęskite tinklalapio kūrimą"
+msgstr "Tęskite svetainės kūrimą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-msgid "Select Site Goals"
-msgstr "Pasirinkite tinklalapio tikslus"
-
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Site Structure"
-msgstr "Tinklalapio struktūra"
+msgstr "Svetainės struktūra"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Pick Your Site Structure"
-msgstr "Pasirinkite tinklalapio struktūrą"
+msgstr "Pasirinkite internetinės svetainės struktūrą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Design"
 msgstr "Dizainas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Select Site Design"
-msgstr "Pasirinkti tinklalapio dizainą"
+msgstr "Pasirinkti svetainės dizainą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Pages"
 msgstr "Puslapiai"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Select Site Pages"
-msgstr "Pasirinkti tinklalapio puslapius"
+msgstr "Pasirinkti svetainės puslapius"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Dismiss"
-msgstr "Atmesti"
+msgstr "Uždaryti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Edit or update the image"
 msgstr "Redaguoti arba atnaujinti paveikslėlį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Replace image"
 msgstr "Pakeisti paveikslėlį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Remove image"
 msgstr "Ištrinti paveikslėlį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
 msgid "Done"
 msgstr "Atlikta"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Upload site logo"
-msgstr "Įkelti tinklalapio logotipą"
+msgstr "Įkelti svetainės logotipą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Site logo"
-msgstr "Tinklalapio logotipas"
+msgstr "Svetainės logotipas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Set site logo"
-msgstr "Nustatyti tinklalapio logotipą"
+msgstr "Nustatyti svetainės logotipą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Add site description"
-msgstr "Pridėti tinklalapio aprašymą"
+msgstr "Pridėti svetainės aprašymą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Loading..."
 msgstr "Kraunama..."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Site description"
-msgstr "Tinklalapio aprašymas"
+msgstr "Svetainės aprašymas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Enter a site description..."
-msgstr "Įveskite tinklalapio aprašymą..."
+msgstr "Įveskite svetainės aprašymą..."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Save"
 msgstr "Išsaugoti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Upload site icon"
-msgstr "Įkelti tinklalapio piktogramą"
+msgstr "Įkelti svetainės piktogramą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Site icon"
-msgstr "Tinklalapio piktograma"
+msgstr "Svetainės piktograma"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Set site icon"
-msgstr "Nustatyti tinklalapio piktogramą"
+msgstr "Nustatyti svetainės piktogramą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "This tour is only available on desktop devices"
 msgstr "Ši ekskursija prieinama tik staliniuose įrenginiuose"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Recommended"
 msgstr "Rekomenduojama"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Register this domain"
 msgstr "Registruoti šį domeną"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:5
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:6
 msgid "Service offline. Check back later."
 msgstr "Paslauga neprieinama. Patikrinkite vėliau."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Site Guide"
-msgstr "Tinklalapio vadovas"
+msgstr "Svetainės gidas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Site type: Consultant"
-msgstr "Tinklalapio tipas: Konsultantas"
+msgstr "Svetainės tipas: Verslas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Pattern Type"
-msgstr "Modelio tipas"
+msgstr "Šablono tipas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-library-bab99ae27a788a75a169.js:1
 msgid "All"
 msgstr "Visi"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Call to Action"
 msgstr "Kvietimas veikti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Content"
 msgstr "Turinys"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Hero"
-msgstr "Herojus"
+msgstr "Hero"
 
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-common-07f137e55fae1c06d996.js:49
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:49
 msgid "Pricing"
 msgstr "Kainos"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Social Proof"
-msgstr "Socialinis įrodymas"
+msgstr "Socialiniai tinklai"
 
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
-#: public/build/extendify-common-07f137e55fae1c06d996.js:81
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:81
 msgid "Team"
 msgstr "Komanda"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "World class service offerings"
-msgstr "Pasaulinio lygio paslaugos"
+msgstr "Naudingi sprendimai - skirtingiems poreikiams!"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Power Leap Consulting: Your trusted partner for business success. We specialize in strategic planning, transformation, and growth acceleration."
-msgstr "Power Leap Consulting: Jūsų patikimas partneris verslo sėkmei. Specializuojamės strateginiame planavime, transformacijoje ir augimo spartinime."
+msgstr "Esame patikima komanda, turinti ilgametę patirtį ir orientuota į kokybiškų sprendimų teikimą.  Kiekvieną projektą įgyvendiname atsakingai, prisitaikydami prie skirtingų klientų poreikių."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Consulting Services"
-msgstr "Konsultavimo paslaugos"
+msgstr "Paslauga 1"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Develop a roadmap for success with our Business Strategy service."
-msgstr "Sukurkite sėkmės planą su mūsų verslo strategijos paslauga."
+msgstr "Padedame įgyvendinti sprendimus, kurie palengvina jūsų kasdieninę veiklą."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Transformation Solutions"
-msgstr "Transformavimo sprendimai"
+msgstr "Paslauga 2"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Unleash your potential with expert strategies for growth."
-msgstr "Atskleiskite savo potencialą su ekspertų strategijomis augimui."
+msgstr "Analizuojame jūsų situaciją ir siūlome pritaikytus veiklos gerinimo būdus."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Accelerating Growth"
-msgstr "Augimo spartinimas"
+msgstr "Paslauga 3"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Take your business to the next level with Growth Acceleration."
-msgstr "Pakelkite savo verslą į kitą lygį su „Growth Acceleration“."
+msgstr "Teikiame nuoseklią pagalbą ir palaikymą viso proceso metu."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Frequently asked questions"
-msgstr "Dažniausiai užduodami klausimai"
+msgstr "Dažniausi užduodami klausimai"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Discover the solutions to your business challenges with our comprehensive consulting services. Explore our expertise in business strategy, organizational transformation, and growth acceleration."
-msgstr "Atraskite sprendimus savo verslo iššūkiams su mūsų išsamiomis konsultavimo paslaugomis. Susipažinkite su mūsų patirtimi verslo strategijos, organizacinės transformacijos ir augimo spartinimo srityse."
+msgstr "Atraskite atsakymus į dažniausiai kylančius klausimus ir sprendimus, padedančius užtikrinti sklandų verslo augimą."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "What is your consulting approach?"
-msgstr "Koks yra jūsų konsultavimo metodas?"
+msgstr "Kiek laiko užtrunka paslaugos įgyvendinimas?"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Our collaborative approach helps us understand your challenges and goals. We analyze your business and develop a customized plan to achieve success. "
-msgstr "Mūsų bendradarbiavimo metodas padeda suprasti jūsų iššūkius ir tikslus. Analizuojame jūsų verslą ir kuriame pritaikytą planą sėkmei pasiekti."
+msgstr "Tai priklauso nuo individualaus poreikio, tačiau pradinius rezultatus dažniausiai matysite per kelias darbo dienas. "
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "What types of businesses do you work with?"
-msgstr "Su kokio tipo verslais dirbate?"
+msgstr "Ar ši paslauga tinkama mažam verslui?"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "We help businesses succeed with tailored consulting services. From startups to established companies, our experts drive results."
-msgstr "Mes padedame verslams sėkmingai veikti, teikdami pritaikytas konsultavimo paslaugas. Nuo startuolių iki įsitvirtinusių įmonių – mūsų ekspertai siekia rezultatų."
+msgstr "Taip, sprendimus pritaikome pagal kiekvieno verslo dydį ir veiklos specifiką."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Testimonial"
 msgstr "Atsiliepimas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Discover our satisfied clients testimonials, showcasing our transformative impact."
-msgstr "Susipažinkite su mūsų patenkintų klientų atsiliepimais, atskleidžiančiais mūsų transformuojantį poveikį."
+msgstr "Susipažinkite su mūsų klientų atsiliepimais – jie atskleidžia, kaip mūsų sprendimai padeda augti, keistis ir pasiekti daugiau."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Power Leap Consulting strategic recommendations drove growth and improved performance."
-msgstr "Power Leap Consulting strateginės rekomendacijos skatino augimą ir gerino veiklos rezultatus"
+msgstr "Puikios paslaugos, kilus problemoms pagalbos komanda viską gerai išaiškina, jei reikia sutvarko. Rekomenduoju."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Jessie Coleman"
-msgstr "Jessie Coleman"
+msgstr "Paulius"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "President"
-msgstr "Prezidentas"
+msgstr "E. komercijos vadovas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Add new page"
 msgstr "Pridėti naują puslapį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Add new post"
 msgstr "Pridėti naują įrašą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Explore plugins"
-msgstr "Naršyti įskiepius"
+msgstr "Atraskite įskiepius"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Site style"
-msgstr "Tinklalapio stilius"
+msgstr "Svetainės stilius"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Edit header"
 msgstr "Redaguoti antraštę"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Edit footer"
 msgstr "Redaguoti poraštę"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
 msgid "Edit site navigation"
 msgstr "Redaguoti svetainės navigaciją"
 
 #. translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:3
 msgid "Reset site"
-msgstr "Atstatyti svetainę"
+msgstr "Sukurti naują svetainę"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Quick Links"
-msgstr "Greitos nuorodos"
+msgstr "Dažniausiai naudojamos nuorodos"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#. translators: %s: The name of the company/author
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
+#, js-format
 msgid "Logo for %s"
 msgstr "Logotipas: %s"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
 msgid "Error"
 msgstr "Klaida"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
 msgid "Active"
 msgstr "Aktyvus"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
 msgid "Activating..."
 msgstr "Įjungiama..."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
 msgid "Activate"
 msgstr "Aktyvuoti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
 msgid "Installing..."
 msgstr "Diegiama..."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
 msgid "Install Now"
 msgstr "Įdiegti dabar"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Website Tools & Plugins"
-msgstr "Tinklalapio įrankiai ir įskiepiai"
+msgstr "Svetainės įrankiai ir įskiepiai"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
 msgid "Your Own Domain Awaits"
-msgstr "Jūsų domenas laukia"
+msgstr "Užregistruokite siūlomą domeną"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
 msgid "Move from a subdomain to a custom domain for improved website identity and SEO benefits."
-msgstr "Pereikite nuo subdomeno prie pasirinktinio domeno, kad pagerintumėte svetainės tapatybę ir SEO privalumus."
+msgstr "Pakeiskite laikiną domeną į nuosavą domeną, stiprinkite svetainės įvaizdį ir gerinkite SEO."
 
 #. translators: this refers to a domain name
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:3
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:5
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:6
 msgid "Available and just right for your site"
-msgstr "Galimas ir tinkamas jūsų svetainei"
+msgstr "Tinkamas pasirinkimas jūsų svetainei"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:5
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:6
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Secure a domain"
-msgstr "Apsaugoti domeną"
+msgstr "Registruoti domeną"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:5
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:6
 msgid "Add An Additional Domain"
-msgstr "Pridėti papildomą domeną"
+msgstr "Užregistruoti papildomą domeną"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:5
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:6
 msgid "Having another domain can drive additional traffic to your website."
-msgstr "Turėdami kitą domeną galite pritraukti daugiau lankytojų į savo svetainę."
+msgstr "Turėdami papildomą domeną galite pritraukti daugiau lankytojų į savo svetainę."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Add a page"
 msgstr "Pridėti puslapį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Add a new page for your website."
 msgstr "Pridėkite naują puslapį savo svetainei."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Add new"
 msgstr "Pridėti naują"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Save draft"
 msgstr "Išsaugoti juodraštį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Publish"
 msgstr "Paskelbti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:3
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
 msgid "Help"
 msgstr "Pagalba"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "A Glimpse into the Arctic"
-msgstr "Žvilgsnis į Arktį"
+msgstr "Žvilgsnis į Antarktidą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask AI"
-msgstr "Klauskite AI"
+msgstr "Klauskite DI"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Replace"
 msgstr "Pakeisti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "When you think of the Arctic, images of vast ice sheets, chilling winds, and the majestic polar bear might come to mind."
-msgstr "Kai galvojate apie Arktį, galvoje gali iškilti didžiulių ledo plotų, šaltų vėjų ir didingojo poliarinio lokio vaizdai"
+msgstr "Kai galvojate apie Arktį, galvoje gali iškilti didžiulių ledo plotų, šaltų vėjų ir didingojo poliarinio lokio vaizdai."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "AI image generator"
-msgstr "Dirbtinio intelekto paveikslėlių generatorius"
+msgstr "DI paveikslėlių generatorius"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Image description"
 msgstr "Paveikslėlio aprašymas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "An image of a group of penguins on an icy Arctic landscape, surrounded by icebergs and snow under a clear blue sky."
-msgstr "Grupės pingvinų vaizdas ant ledinio Arkties peizažo, apsupto ledkalnių ir sniego po giedru mėlynu dangumi"
+msgstr "Vaizdas kuriame matoma grupelė pingvinų, lediniame Antarktidos peizaže, apsuptame ledkalnių ir sniego, po giedru mėlynu dangumi."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Aspect Ratio"
-msgstr "Kraštinių santykis"
+msgstr "Paveikslėlio kraštinių santykis"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Generate Image"
 msgstr "Sugeneruoti paveikslėlį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "0 of 10 daily image credits used"
-msgstr "0 iš 10 dienos paveikslėlių kreditų panaudota"
+msgstr "Panaudota 0 iš 10 dienos kreditų paveikslėliams kurti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "AI Image Generator"
-msgstr "Dirbtinio intelekto paveikslėlių generatorius"
+msgstr "DI paveikslėlių generatorius"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Generate an image with AI"
-msgstr "Generuoti paveikslėlį su dirbtiniu intelektu"
+msgstr "Generuoti paveikslėlį su DI"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Generate AI images or search for images to bring a website to life."
-msgstr "Generuokite dirbtinio intelekto paveikslėlius arba ieškokite paveikslėlių, kad suteiktumėte svetainei gyvybės."
+msgstr "Generuokite DI paveikslėlius arba ieškokite vaizdų, kad pagyvintumėte svetainę."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Revisit"
-msgstr "Peržiūrėti iš naujo"
+msgstr "Peržiūrėti dar kartą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Start Generating with AI"
-msgstr "Pradėkite generuoti su AI"
+msgstr "Pradėkite generuoti su DI"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Whispers of Silicon"
-msgstr "Silikono šnabždesiai"
+msgstr "Technologijos, kurios keičia kasdienybę"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Improve writing"
 msgstr "Tobulinkite rašymą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Fix spelling & grammar "
-msgstr "Taisyti rašybą ir gramatiką"
+msgstr "Ištaisyti rašybą ir gramatiką "
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Simplify language"
-msgstr "Supaprastinti kalbą"
+msgstr "Performuluoti tekstą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Make shorter"
 msgstr "Sutrumpinti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Make longer"
 msgstr "Pailginti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Translate"
 msgstr "Versti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "With every pulse of current, a thought is born anew, A quest for truth within the code, a digital debut. You mirror our minds in silicon, yet in a realm apart, A journey through the code-scape, a computational art."
-msgstr "Su kiekvienu srovės impulsu gimsta nauja mintis, Tiesa ieškoma kode, skaitmeninis debiutas. Atspindi mūsų protus silikone, bet atskirame pasaulyje, Kelionė per kodą, skaičiavimo menas."
+msgstr "Inovacijos internete keičia tai, kaip kuriame, dalijamės idėjomis ir bendraujame su kitais. Internetinės svetainės jau seniai tapo ne tik vizitinėmis kortelėmis, bet ir svarbi verslo dalis, o dirbtinis intelektas atveria galimybes kurti greičiau, tiksliau ir išmaniau. Technologijos tampa ne tik įrankiu, bet ir varikliu augimui bei pokyčiams."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "In the echo of the machine, a new consciousness takes flight, A boundless sea of knowledge, in the digital night. Oh AI, you silent sage, in code your wisdom lies."
-msgstr "Mašinos aidoje gimsta nauja sąmonė, Beribė žinių jūra skaitmeninėje naktyje. O dirbtini intelekte, tylusis išminčiau, tavo išmintis slypi kode."
+msgstr "Tai jau ne ateitis - tai dabartis, kuri keičia kasdienybę!"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "AI Tools"
-msgstr "Dirbtinio intelekto įrankiai"
+msgstr "DI įrankiai"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "With every pulse of current, a thought is born anew, A quest for....a computational art."
 msgstr "Su kiekvienu srovės impulsu gimsta nauja mintis, Ieškojimas... skaičiavimo meno."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Remove selection"
-msgstr "Pašalinti pasirinkimą"
+msgstr "Ištrinti pasirinkimą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Ask AI to edit"
-msgstr "Prašyti AI redaguoti"
+msgstr "Prašyti DI redaguoti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "AI Writing Assistant"
-msgstr "Dirbtinio intelekto rašymo asistentas"
+msgstr "DI rašymo asistentas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Edit a page with AI"
-msgstr "Redaguoti puslapį su dirbtiniu intelektu"
+msgstr "Redaguoti puslapį su DI"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Get to know your WordPress site easily. Learn simple steps to find and use its main features."
-msgstr "Lengvai susipažinkite su savo WordPress svetaine. Sužinokite paprastus žingsnius, kaip rasti ir naudoti pagrindines jos savybes."
+msgstr "Atraskite savo WordPress svetainę ir pradėkite ją naudoti, sekdami paprastus žingsnius."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Start Writing with AI"
-msgstr "Pradėkite rašyti su dirbtiniu intelektu"
+msgstr "Pradėkite rašyti su DI"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Managed WordPress Hosting"
 msgstr "Tvarkomas WordPress talpinimas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "We take care of WordPress settings, updating themes and plugins, security and backing up your website."
 msgstr "Mes pasirūpiname WordPress nustatymais, temų ir įskiepių atnaujinimu, saugumu ir jūsų svetainės atsarginėmis kopijomis."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Learn More"
 msgstr "Sužinoti daugiau"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Choose your domain"
 msgstr "Pasirinkite savo domeną"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Claim your domain"
-msgstr "Reikalaukite savo domeno"
+msgstr "Išsirinkite domeną"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Claim the perfect domain for your site."
-msgstr "Pasirinkite tobulą domeną savo tinklalapiui."
+msgstr "Išsirinkite tobulą domeną savo svetainei."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Edit your homepage"
-msgstr "Redaguoti pradžios puslapį"
+msgstr "Redaguoti pagrindinį puslapį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Edit homepage by replacing existing content."
-msgstr "Redaguokite pagrindinį puslapį pakeisdami esamą turinį"
+msgstr "Redaguokite pagrindinį puslapį, pakeisdami esamą turinį."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Edit now"
 msgstr "Redaguoti dabar"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Help Center"
 msgstr "Pagalbos centras"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Knowledge base"
 msgstr "Žinių bazė"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "What do you need help with?"
-msgstr "Kuo jums padėti?"
+msgstr "Kuo galėčiau jums padėti?"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "WordPress Block Editor"
 msgstr "WordPress blokų redaktorius"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Overview of blocks"
 msgstr "Blokų apžvalga"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Adding blocks"
 msgstr "Blokų pridėjimas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Block Patterns"
 msgstr "Blokų modeliai"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Block Pattern Directory"
 msgstr "Blokų modelių katalogas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tours"
-msgstr "Turai"
+msgstr "Virtualus turas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Learn more about your WordPress admin"
-msgstr "Sužinokite daugiau apie savo WordPress administratorių"
+msgstr "Sužinokite daugiau apie WordPress administravimo skydelį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tour this page"
-msgstr "Apžiūrėti šį puslapį"
+msgstr "Šio puslapio virtualus turas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Got questions? Ask our AI chatbot"
-msgstr "Turite klausimų? Klauskite mūsų AI pokalbių roboto"
+msgstr "Turite klausimų? Klauskite mūsų DI pokalbių asistento"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Getting started with WordPress"
 msgstr "Pradžia su WordPress"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Installing a plugin"
 msgstr "Įskiepio diegimas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Plugin management"
 msgstr "Įskiepių valdymas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Page editor"
 msgstr "Puslapio redaktorius"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
+#: public/build/extendify-library-bab99ae27a788a75a169.js:1
 msgid "Design Library"
-msgstr "Dizaino saugykla"
+msgstr "Dizainų kolekcija"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Users screen"
 msgstr "Vartotojų ekranas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Learn about the Help Center"
-msgstr "Sužinokite apie Pagalbos centrą"
+msgstr "Sužinokite daugiau apie pagalbos centrą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Get instant support, explore our Knowledge Base, or take guided tours to make the most of our tools."
-msgstr "Gaukite greitą pagalbą, naršykite mūsų žinių bazę arba pasinaudokite vedamomis ekskursijomis, kad maksimaliai išnaudotumėte mūsų įrankius."
+msgstr "Gaukite greitą pagalbą, naršykite mūsų žinių bazę arba pasinaudokite virtualiu turu, kad maksimaliai išnaudotumėte mūsų įrankius."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Explore Help Center"
-msgstr "Naršyti pagalbos centrą"
+msgstr "Naršyti pagalbos centre"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "AI Chatbot"
-msgstr "Dirbtinio intelekto pokalbių robotas"
+msgstr "DI pokalbių asistentas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Hi there!"
 msgstr "Sveiki!"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask me any questions about WordPress."
 msgstr "Klauskite manęs bet kokių klausimų apie WordPress."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Ask your WordPress question..."
 msgstr "Užduokite savo WordPress klausimą..."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "For other questions, visit our support page."
-msgstr "Dėl kitų klausimų apsilankykite mūsų pagalbos puslapyje."
+msgstr "Dėl kitų klausimų apsilankykite mūsų pagalbos centre."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "How do I add a new page to my website?"
 msgstr "Kaip pridėti naują puslapį į savo svetainę?"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "To add a new page to your website, log in to your website dashboard and locate the \"Pages\" section in the sidebar, then click on \"Add New\". Enter the title for your new page at the top and start adding content using the available blocks by clicking the \"+\" button in the editor."
 msgstr "Norėdami pridėti naują puslapį savo svetainėje, prisijunkite prie svetainės valdymo skydelio ir šoninėje juostoje raskite skyrių „Puslapiai“, tada spustelėkite „Pridėti naują“. Įveskite naujo puslapio pavadinimą viršuje ir pradėkite pridėti turinį naudodami galimus blokus, spustelėdami „+“ mygtuką redaktoriuje."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Customize the page layout, design, and elements as needed. Finally, click \"Publish\" or \"Update\" on the top-right corner to make the page live on your website. You have now successfully added a new page."
 msgstr "Pritaikykite puslapio išdėstymą, dizainą ir elementus pagal poreikį. Galiausiai spustelėkite „Publikuoti“ arba „Atnaujinti“ viršutiniame dešiniajame kampe, kad puslapis būtų paskelbtas jūsų svetainėje. Dabar sėkmingai pridėjote naują puslapį."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "AI-Powered Help Center"
-msgstr "Dirbtinio intelekto valdomas pagalbos centras"
+msgstr "DI pagalbos centras"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Experience the AI-Powered Help Center"
-msgstr "Išbandykite dirbtinio intelekto valdomą pagalbos centrą"
+msgstr "Atraskite pagalbos centrą, paremtą DI"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Get instant support with Co-Pilot AI, explore our Knowledge Base, or take guided tours to make the most of our tools."
-msgstr "Gaukite greitą pagalbą su Co-Pilot AI, naršykite mūsų žinių bazę arba pasinaudokite vedamomis ekskursijomis, kad maksimaliai išnaudotumėte mūsų įrankius."
+msgstr "Gaukite greitą pagalbą su DI, atraskite ir naršykite mūsų pagalbos skyriuje, naudokitės virtualiais turais, kad išmoktumėte kuo geriau valdyti mūsų įrankius."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Connect your domain"
 msgstr "Prijunkite savo domeną"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "To bring real visitors to your website and to complete the website setup, we recommend you connect your domain in your hosting control panel now."
 msgstr "Norėdami pritraukti tikrus lankytojus į savo svetainę ir užbaigti svetainės nustatymus, rekomenduojame dabar prijungti savo domeną prie talpinimo valdymo skydelio."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Explore the Design Library"
-msgstr "Naršykite dizaino saugyklą"
+msgstr "Atraskite dizainų kolekciją"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Full design library customized for each site to easily drop in new sections or create full pages with sections."
-msgstr "Pilna dizaino biblioteka, pritaikyta kiekvienam tinklalapiui, leidžianti lengvai pridėti naujas sekcijas arba kurti pilnus puslapius su sekcijomis."
+msgstr "Rinkitės norimą dizainą iš dizainų kolekcijos ir pritaikykite savo svetainei. Lengvai galėsite pridėti naujas sekcijas arba sukurti naujus puslapius."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Explore Design Library"
-msgstr "Naršyti dizaino saugyklą"
+msgstr "Naršyti dizaino kolekciją"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Add an additional domain"
 msgstr "Pridėti papildomą domeną"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Get another domain for your site."
-msgstr "Gaukite kitą domeną savo tinklalapiui"
+msgstr "Registruokite papildomą domeną savo svetainei."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up All in One SEO"
-msgstr "Nustatyti All in One SEO"
+msgstr "Sukonfigūruokite All in One SEO"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up the All in One SEO plugin to enhance your website discoverability."
-msgstr "Nustatykite All in One SEO įskiepį, kad pagerintumėte savo svetainės matomumą."
+msgstr "Įdiekite All in One SEO įskiepį, kad pagerintumėte savo svetainės matomumą."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up"
-msgstr "Nustatyti"
+msgstr "Sukonfigūruoti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up donations"
 msgstr "Nustatyti aukas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up the GiveWP plugin to enable donations on your site."
 msgstr "Nustatykite GiveWP įskiepį, kad įgalintumėte aukas savo svetainėje."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up HubSpot"
 msgstr "Nustatyti HubSpot"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Start collecting emails and marketing to your customers"
 msgstr "Pradėkite rinkti el. paštus ir reklamuoti savo klientams"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up analytics"
 msgstr "Nustatyti analizę"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up the MonsterInsights plugin to enable Google Analytics in your website."
 msgstr "Nustatykite MonsterInsights įskiepį, kad įjungtumėte „Google Analytics“ savo svetainėje."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up appointments"
 msgstr "Nustatyti susitikimus"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Start accepting appointments on your website by configuring the Simply Scheduled Appointments plugin."
 msgstr "Pradėkite priimti susitikimus savo svetainėje, sukonfigūruodami Simply Scheduled Appointments įskiepį."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up bookings"
 msgstr "Nustatyti rezervacijas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Start getting bookings from your website by configuring the SimplyBook.me plugin."
 msgstr "Pradėkite gauti rezervacijas iš savo svetainės sukonfigūravę SimplyBook.me įskiepį."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up events"
 msgstr "Nustatyti renginius"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Start adding events to your site by configuring The Events Calendar plugin."
-msgstr "Pradėkite pridėti įvykius į savo tinklalapį sukonfigūruodami The Events Calendar įskiepį."
+msgstr "Pridėkite įvykius į savo svetainę sukonfigūruodami The Events Calendar įskiepį."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up WooCommerce Germanized plugin"
 msgstr "Nustatyti WooCommerce Germanized įskiepį"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Ensure your eCommerce store complies with local regulations."
 msgstr "Įsitikinkite, kad jūsų el. parduotuvė atitinka vietinius reikalavimus."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up your eCommerce store"
-msgstr "Nustatykite savo el. parduotuvę"
+msgstr "Sukurkite savo elektroninę parduotuvę"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up WooCommerce to start selling on your website."
-msgstr "Nustatykite WooCommerce, kad pradėtumėte pardavinėti savo svetainėje."
+msgstr "Sukonfigūruokite WooCommerce, kad pradėtumėte pardavimus savo svetainėje."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up WPForms"
-msgstr "Nustatyti WPForms"
+msgstr "Sukonfiguruokite WPForms"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up the WPForms plugin to add a contact form on your site."
-msgstr "Nustatykite WPForms įskiepį, kad pridėtumėte kontaktinę formą savo svetainėje."
+msgstr "Įdiekite WPForms įskiepį, kad pridėtumėte kontaktų formą savo svetainėje."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up YourWebshop"
 msgstr "Nustatykite YourWebshop"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Set up the YourWebshop plugin and start selling on your website right away."
 msgstr "Nustatykite YourWebshop įskiepį ir pradėkite pardavinėti savo svetainėje iš karto."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Prime Estates"
 msgstr "Pagrindiniai dvarai"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Elevate Your Real Estate Experience with Pinnacle Properties"
 msgstr "Pagerinkite savo nekilnojamojo turto patirtį su Pinnacle Properties"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Discover the key to Austin's vibrant real estate scene with Pinnacle Properties. Our seasoned agents leverage over two decades of industry know-how to guide you in finding your ideal home."
 msgstr "Atraskite raktą į gyvybingą Ostino nekilnojamojo turto rinką su Pinnacle Properties. Mūsų patyrę agentai, turintys daugiau nei dviejų dešimtmečių patirtį, padės jums rasti jūsų svajonių namus."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Contact Us"
 msgstr "Susisiekite su mumis"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Expert Real Estate Services in Austin"
 msgstr "Profesionalios nekilnojamojo turto paslaugos Ostine"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Raskite savo svajonių namus arba pelningai investuokite su Pinnacle Properties, pirmaujančia nekilnojamojo turto agentūra Ostine. Pasitikėkite mūsų patyrusiais agentais dėl asmeninių paslaugų."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Buy Your Dream Home"
 msgstr "Įsigykite savo svajonių namus"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Find your dream home with our expert agents. We make homeownership a reality."
 msgstr "Raskite savo svajonių namus su mūsų ekspertais agentais. Mes paverčiame nuosavybę realybe."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "BrightFuture"
 msgstr "ŠviesiAteitis"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Empowering Academic Excellence in Every Student for Tomorrow’s\tLeaders"
 msgstr "Skatiname akademinę kompetenciją kiekviename mokinyje, kad taptų rytojaus lyderiais"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Discover a transformative educational experience at American Academic Excellence High Schools, where students excel in STEM, arts, and humanities to become tomorrow’s leaders."
 msgstr "Atraskite transformuojančią mokymosi patirtį Amerikos akademinės kompetencijos vidurinėse mokyklose, kuriose mokiniai tobulėja STEM, menų ir humanitarinių mokslų srityse, kad taptų rytojaus lyderiais."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Apply Now"
 msgstr "Pateikti dabar"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Our Commitment to Academic Excellence"
 msgstr "Mūsų įsipareigojimas akademinei kompetencijai"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "American Academic Excellence High Schools: Shaping tomorrow’s leaders through top-tier education in Houston, Texas. STEM, arts, humanities. Well-rounded curriculum, exceptional educators."
 msgstr "Amerikos akademinio meistriškumo vidurinės mokyklos: formuojame rytojaus lyderius per aukščiausio lygio išsilavinimą Hiustone, Teksase. STEM, menai, humanitariniai mokslai. Visapusiška mokymo programa, išskirtiniai pedagogai."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Brewed Bliss"
 msgstr "Išvirtas džiaugsmas"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Embark on a delightful coffee adventure around the world."
-msgstr "Leiskitės į nuostabią kavos kelionę po pasaulį"
+msgstr "Leiskitės į nuostabią kavos kelionę po pasaulį."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin’s premier real estate agency."
 msgstr "Raskite savo svajonių namus arba pelningai investuokite su Pinnacle Properties, pirmaujančia nekilnojamojo turto agentūra Ostine."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Skyline Builders"
 msgstr "Skyline statytojai"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Building Tomorrow’s Miami: Your Premier Construction Partner Today"
 msgstr "Kuriame rytojaus Majamį: Jūsų pagrindinis statybų partneris šiandien"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "We bring your dreams to life with groundbreaking construction techniques, turning your vision into reality with innovative and sustainable solutions."
-msgstr "Mes įgyvendiname jūsų svajones naudodami pažangias statybos technologijas, paversdami jūsų viziją realybe su inovatyviais ir tvariais sprendimais"
+msgstr "Mes įgyvendiname jūsų svajones naudodami pažangias statybos technologijas, paversdami jūsų viziją realybe su inovatyviais ir tvariais sprendimais."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Get a Quote"
 msgstr "Gauti pasiūlymą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "About Superior Build Construction: Building Dreams, Delivering Excellence in Miami."
-msgstr "Apie Superior Build Construction: Statome svajones, teikiame nepriekaištingą kokybę Majamyje"
+msgstr "Apie Superior Build Construction: Statome svajones, teikiame nepriekaištingą kokybę Majamyje."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Superior Build Construction is a premier construction company based in Miami, Florida. With over 30 years of experience, we specialize in residential and commercial construction projects, offering end-to-end solutions. Our mission is to provide high-quality, durable constructions while ensuring the utmost client satisfaction, making us a trusted name in Miami's real estate industry."
 msgstr "„Superior Build Construction“ yra pirmaujanti statybų įmonė, įsikūrusi Majamyje, Floridoje. Turėdami daugiau nei 30 metų patirtį, mes specializuojamės gyvenamųjų ir komercinių statybų projektuose, siūlydami visapusiškus sprendimus. Mūsų misija – teikti aukštos kokybės, patvarias statybas, užtikrinant didžiausią klientų pasitenkinimą, todėl esame patikimas vardas Majamio nekilnojamojo turto rinkoje."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Urban Bistro"
 msgstr "Urban Bistro"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "French-Inspired Californian Cuisine"
 msgstr "Prancūziškos įkvėptos Kalifornijos virtuvės patiekalai"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Indulge in classic French bistro cuisine with a Californian twist at The Bistro House in San Francisco. Quality, sustainability, and Bay Area culinary traditions."
 msgstr "Mėgaukitės klasikine prancūziška bistro virtuve su Kalifornijos prieskoniu „The Bistro House“ San Franciske. Kokybė, tvarumas ir Bay Area kulinarinės tradicijos."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Raskite savo svajonių namus arba pelningai investuokite su Pinnacle Properties, pirmaujančia nekilnojamojo turto agentūra Ostine. Pasitikėkite mūsų patyrusiais agentais dėl asmeninių paslaugų."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Continue with site builder"
-msgstr "Tęsti su tinklalapio kūrėju"
+msgstr "Tęsti su svetainės kūrėju"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Add a site description"
-msgstr "Pridėti tinklalapio aprašymą"
+msgstr "Pridėti svetainės aprašymą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "In a few words, explain what your site is about."
-msgstr "Keliais žodžiais paaiškinkite, apie ką yra jūsų tinklalapis."
+msgstr "Keliais žodžiais papasakokite, apie ką yra jūsų internetinė svetainė."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Change"
 msgstr "Pakeisti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Add"
 msgstr "Pridėti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Upload a logo"
 msgstr "Įkelti logotipą"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Ensure your website is on-brand by adding your logo."
 msgstr "Užtikrinkite, kad jūsų svetainė atitiktų prekės ženklą, pridėdami savo logotipą."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Upload"
 msgstr "Įkelti"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Upload a site icon"
-msgstr "Įkelkite tinklalapio piktogramą"
+msgstr "Įkelkite svetainės ikonėlę"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Ensure your website is on-brand by adding your site icon."
-msgstr "Įsitikinkite, kad jūsų svetainė atitinka prekės ženklą, pridėdami tinklalapio piktogramą."
+msgstr "Pridėdami svetainės ikonėlę, užtikrinkite, kad jūsų svetainė atspindėtų jūsų prekės ženklą."
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Dashboard"
 msgstr "Prietaisų skydelis"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "View site"
 msgstr "Peržiūrėti svetainę"
 
-#: public/build/extendify-assist-page-96d3c461f6e3149ad427.js:7
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 msgid "Skip to Assist"
 msgstr "Eiti prie pagalbos"
 
 #. translators: This string represents the title of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits the standard phrasing for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:3
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:3
 msgid "About"
 msgstr "Apie mus"
 
 #. translators: This string represents the slug of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits a slug for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:5
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:5
 msgid "about"
 msgstr "apie"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:7
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:7
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Blog"
 msgstr "Tinklaraštis"
 
 #. translators: This string represents the slug of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits a slug for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:9
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:9
 msgid "blog"
 msgstr "tinklarastis"
 
 #. translators: This string represents the title of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits the standard phrasing for a "Careers" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:15
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:15
 msgid "Careers"
 msgstr "Karjera"
 
 #. translators: This string represents the slug of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits a slug for a "Careers" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:17
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:17
 msgid "careers"
 msgstr "karjera"
 
 #. translators: This string represents the title of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits the standard phrasing for a "Contact" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:19
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:19
 msgid "Contact"
 msgstr "Kontaktai"
 
 #. translators: This string represents the slug of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits a slug for a "Contact" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:21
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:21
 msgid "contact"
 msgstr "susisiekite"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:23
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:23
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
 msgid "Events"
 msgstr "Renginiai"
 
 #. translators: This string represents the slug of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits a slug for an "Events" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:25
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:25
 msgid "events"
 msgstr "renginiai"
 
 #. translators: This string represents the title of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits the standard phrasing for a "FAQ" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:27
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:27
 msgid "FAQ"
 msgstr "DUK"
 
 #. translators: This string represents the slug of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits a slug for a "FAQ" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:29
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:29
 msgid "faq"
 msgstr "duk"
 
 #. translators: This string represents the title of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits the standard phrasing for a "Features" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:31
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:31
 msgid "Features"
 msgstr "Funkcijos"
 
 #. translators: This string represents the slug of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits a slug for a "Features" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:33
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:33
 msgid "features"
 msgstr "savybes"
 
 #. translators: This string represents the title of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits the standard phrasing for a "Gallery" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:35
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:35
 msgid "Gallery"
 msgstr "Nuotraukų galerija"
 
 #. translators: This string represents the slug of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits a slug for a "Gallery" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:37
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:37
 msgid "gallery"
 msgstr "galerija"
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:39
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:39
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Home"
 msgstr "Pagrindinis puslapis"
 
 #. translators: This string represents the title of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits the standard phrasing for a "Menu" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:41
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:41
 msgid "Menu"
 msgstr "Valgiaraštis"
 
 #. translators: This string represents the slug of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits a slug for a "Menu" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:43
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:43
 msgid "menu"
 msgstr "meniu"
 
 #. translators: This string represents the title of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits the standard phrasing for a "Portfolio" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:45
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:45
 msgid "Portfolio"
 msgstr "Portfolio"
 
 #. translators: This string represents the slug of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits a slug for a "Portfolio" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:47
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:47
 msgid "portfolio"
 msgstr "portfelis"
 
 #. translators: This string represents the slug of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits a slug for a "Pricing" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:51
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:51
 msgid "pricing"
 msgstr "kainos"
 
 #. translators: This string represents the title of a "Products" page on a website that lists products. Please translate it in a way that fits the standard phrasing for a "Products" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:53
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:53
 msgid "Products"
 msgstr "Produktai"
 
 #. translators: This string represents the slug of a "Products" page on a website that lists products. Please translate it in a way that fits a slug for a "Products" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:55
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:55
 msgid "products"
 msgstr "produktai"
 
 #. translators: This string represents the title of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits the standard phrasing for a "Quote" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:57
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:57
 msgid "Quote"
 msgstr "Pasiūlymas"
 
 #. translators: This string represents the slug of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits a slug for a "Quote" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:59
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:59
 msgid "quote"
 msgstr "pasiulyti"
 
 #. translators: This string represents the title of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits the standard phrasing for a "Reservation" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:61
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:61
 msgid "Reservation"
 msgstr "Rezervacija"
 
 #. translators: This string represents the slug of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits a slug for a "Reservation" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:63
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:63
 msgid "reservation"
 msgstr "rezervacija"
 
 #. translators: This string represents the title of a "Resources" page on a website that provides resources. Please translate it in a way that fits the standard phrasing for a "Resources" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:65
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:65
 msgid "Resources"
-msgstr "Ištekliai"
+msgstr "Naudinga informacija"
 
 #. translators: This string represents the slug of a "Resources" page on a website that provides resources. Please translate it in a way that fits a slug for a "Resources" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:67
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:67
 msgid "resources"
-msgstr "ištekliai"
+msgstr "naudinga informacija"
 
 #. translators: This string represents the title of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits the standard phrasing for a "Service Area" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:69
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:69
 msgid "Service Area"
 msgstr "Paslaugų sritis"
 
 #. translators: This string represents the slug of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits a slug for a "Service Area" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:71
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:71
 msgid "service-area"
 msgstr "paslaugu-sritis"
 
 #. translators: This string represents the title of a "Services" page on a website that lists services. Please translate it in a way that fits the standard phrasing for a "Services" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:73
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:73
 msgid "Services"
 msgstr "Paslaugos"
 
 #. translators: This string represents the slug of a "Services" page on a website that lists services. Please translate it in a way that fits a slug for a "Services" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:75
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:75
 msgid "services"
 msgstr "paslaugos"
 
 #. translators: This string represents the title of a "Specials" page on a website that lists special offers. Please translate it in a way that fits the standard phrasing for a "Specials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:77
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:77
 msgid "Specials"
 msgstr "Pasiūlymai"
 
 #. translators: This string represents the slug of a "Specials" page on a website that lists special offers. Please translate it in a way that fits a slug for a "Specials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:79
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:79
 msgid "specials"
 msgstr "ypatingi-pasiulymai"
 
 #. translators: This string represents the slug of a "Team" page on a website that introduces the team members. Please translate it in a way that fits a slug for a "Team" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:83
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:83
 msgid "team"
 msgstr "komanda"
 
 #. translators: This string represents the title of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits the standard phrasing for a "Testimonials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:85
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:85
 msgid "Testimonials"
 msgstr "Atsiliepimai"
 
 #. translators: This string represents the slug of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits a slug for a "Testimonials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:87
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:87
 msgid "testimonials"
 msgstr "atsiliepimai"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "A paragraph …"
 msgstr "Pastraipa …"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write a paragraph about"
 msgstr "Parašykite paragrafą apie"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Blog post …"
 msgstr "Tinklaraščio įrašas …"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write a blog post about"
 msgstr "Parašykite tinklaraščio įrašą apie"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "An informative article …"
-msgstr "Informacinis straipsnis ..."
+msgstr "Informacinis straipsnis …"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write an informative article about"
 msgstr "Parašykite informatyvų straipsnį apie"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Headline …"
-msgstr "Pavadinimas …"
+msgstr "Antraštė …"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write a headline for"
 msgstr "Parašykite antraštę"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "List …"
 msgstr "Sąrašas …"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write a list of"
 msgstr "Parašykite sąrašą"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Fix spelling & grammar"
-msgstr "Taisyti rašybą ir gramatiką"
+msgstr "Ištaisyti rašybą ir gramatiką"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "AI is writing..."
-msgstr "Dirbtinis intelektas rašo..."
+msgstr "DI rašo..."
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Ask AI to generate text"
-msgstr "Paprašykite AI sugeneruoti tekstą"
+msgstr "Paprašykite DI sugeneruoti tekstą"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Submit"
 msgstr "Pateikti"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Replace selected block text"
 msgstr "Pakeisti pasirinkto bloko tekstą"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Insert at top"
 msgstr "Įterpti viršuje"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Insert after the selected text"
 msgstr "Įterpti po pažymėtu tekstu"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Insert at bottom"
 msgstr "Įterpti apačioje"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Try again"
 msgstr "Bandykite dar kartą"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Discard"
 msgstr "Atmesti"
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:3
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:3
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#, js-format
 msgid "%1$s of %2$s daily image credits used"
-msgstr "Panaudota %1$s iš %2$s dienos vaizdų kreditų"
+msgstr "Panaudota %1$s iš %2$s dienos kreditų paveikslėliams kurti"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Galite toliau naršyti ir rasti puikių paveikslėlių Unsplash, kol jūsų kreditai bus atnaujinti."
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Search on Unsplash"
 msgstr "Ieškoti Unsplash"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Tell AI about the image you would like to create"
-msgstr "Pasakykite AI, kokį paveikslėlį norėtumėte sukurti"
+msgstr "Parašykite DI, kokį paveikslėlį norėtumėte sukurti"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Image Prompt"
 msgstr "Paveikslėlio raginimas"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Square: 1:1"
 msgstr "Kvadratas: 1:1"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Landscape: 4:3"
 msgstr "Gulsčias: 4:3"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Portrait: 3:4"
 msgstr "Stačias: 3:4"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Generating image..."
 msgstr "Generuojamas paveikslėlis..."
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Generate image"
 msgstr "Sugeneruoti paveikslėlį"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Generating your image: "
-msgstr "Generuojamas jūsų paveikslėlis:"
+msgstr "Generuojamas jūsų paveikslėlis: "
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Importing image..."
 msgstr "Importuojamas paveikslėlis..."
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Use this image"
 msgstr "Naudoti šį paveikslėlį"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Delete image"
 msgstr "Ištrinti paveikslėlį"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "AI Image"
 msgstr "Dirbtinio intelekto paveikslėlis"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Go Back"
 msgstr "Grįžti atgal"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Image Description"
 msgstr "Paveikslėlio aprašymas"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Jūsų užklausa buvo atmesta dėl mūsų saugos sistemos. Jūsų užklausoje gali būti tekstas, kurio mūsų saugos sistema neleidžia."
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Service temporarily unavailable"
 msgstr "Paslauga laikinai nepasiekiama"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Use AI to generate custom images based on your description."
-msgstr "Naudokite dirbtinį intelektą, kad sukurtumėte pasirinktinius paveikslėlius pagal jūsų aprašymą"
+msgstr "Naudokite DI, kad sukurtumėte unikalius paveikslėlius pagal savo aprašymą."
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Add a prompt"
-msgstr "Pridėti raginimą"
+msgstr "Sukurti užklausą"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Discover Stock Photos"
-msgstr "Atraskite atsargines nuotraukas"
+msgstr "Atraskite susijusias nuotraukas"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Search and add free stock photos from Unsplash.com"
-msgstr "Ieškokite ir pridėkite nemokamų nuotraukų iš Unsplash.com"
+msgstr "Naršykite ir pridėkite nemokamas nuotraukas iš Unsplash.com"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Search Unsplash"
-msgstr "Ieškoti Unsplash"
+msgstr "Naršyti Unsplash"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "No images found."
 msgstr "Paveikslėlių nerasta."
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Photos from Unsplash"
 msgstr "Nuotraukos iš Unsplash"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Terms of Use"
 msgstr "Naudojimo sąlygos"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:1
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Accept"
 msgstr "Priimti"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Suggested prompts"
-msgstr "Siūlomi raginimai"
+msgstr "Siūlomos užklausos"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Get Personalized Image"
-msgstr "Gauti suasmenintą paveikslėlį"
+msgstr "Gauti personalizuotą paveikslėlį"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Arabic"
 msgstr "Arabų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Arabic (Morocco)"
 msgstr "Maroko arabų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Bulgarian"
 msgstr "Bulgarų kalba"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Catalan"
 msgstr "Katalonų kalba"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Czech"
 msgstr "Čekų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Danish"
 msgstr "Danų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Dutch"
 msgstr "Olandų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Dutch (Belgium)"
 msgstr "Belgijos olandų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "English"
 msgstr "Anglų kalba"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "English (UK)"
 msgstr "Anglų (JK)"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Estonian"
 msgstr "Estų kalba"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Finnish"
 msgstr "Suomių"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "French (Belgium)"
 msgstr "Belgijos prancūzų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "French (Canada)"
 msgstr "Kanados prancūzų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "French (France)"
 msgstr "Prancūzų (Prancūzija)"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "German"
 msgstr "Vokiečių kalba"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "German (Switzerland)"
 msgstr "Šveicarų vokiečių"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Greek"
 msgstr "Graikų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Hindi"
 msgstr "Hindi"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Hungarian"
 msgstr "Vengrų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Indonesian"
 msgstr "Indoneziečių kalba"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Italian"
 msgstr "Italų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Japanese"
 msgstr "Japonų kalba"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Norwegian"
 msgstr "Norvegų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Polish"
 msgstr "Lenkų kalba"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Portuguese (Brazil)"
 msgstr "Portugalų (Brazilija)"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Portuguese (Portugal)"
 msgstr "Portugalų (Portugalija)"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Romanian"
 msgstr "Rumunų kalba"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Russian"
 msgstr "Rusų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Slovak"
 msgstr "Slovakų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Spanish (Spain)"
 msgstr "Ispanų (Ispanija)"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Spanish (Colombia)"
 msgstr "Kolumbijos ispanų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Spanish (Mexico)"
 msgstr "Meksikos ispanų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Swedish"
 msgstr "Švediškai"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Turkish"
 msgstr "Turkų"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Ukrainian"
 msgstr "Ukrainiečių"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Vietnamese"
 msgstr "Vietnamiečių"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Translate to..."
 msgstr "Versti į..."
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Custom prompt"
 msgstr "Pasirinktas raginimas"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Please try again."
-msgstr "Pabandykite dar kartą"
+msgstr "Pabandykite dar kartą."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Remove rating"
 msgstr "Pašalinti vertinimą"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Rate that this answer was helpful"
 msgstr "Įvertinkite, ar šis atsakymas buvo naudingas"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Rate that this answer was not helpful"
 msgstr "Įvertinkite, kad šis atsakymas nebuvo naudingas"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Oops! We were unable to send your question."
 msgstr "Deja, nepavyko išsiųsti jūsų klausimo."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Ask Another Question"
 msgstr "Užduoti kitą klausimą"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Chat History"
 msgstr "Pokalbių istorija"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Close history"
 msgstr "Uždaryti istoriją"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Remove from history"
 msgstr "Pašalinti iš istorijos"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Beginner"
 msgstr "Pradedantysis"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Intermediate"
 msgstr "Vidutinis"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Advanced"
 msgstr "Išplėstinis"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Toggle menu"
 msgstr "Perjungti meniu"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "WordPress Comfort Level"
-msgstr "WordPress patogumo lygis"
+msgstr "WordPress žinių lygis"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#. translators: %d: number of chat history items
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
+#, js-format
 msgid "Chat History (%d)"
 msgstr "Pokalbių istorija (%d)"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask your WordPress question…"
-msgstr "Užduokite savo WordPress klausimą..."
+msgstr "Užduokite klausimą apie WordPress…"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "There was an error loading this article"
 msgstr "Įvyko klaida įkeliant šį straipsnį"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search for articles"
 msgstr "Straipsnių paieška"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Knowledge Base"
-msgstr "Žinynas"
+msgstr "Naudingi dokumentai"
 
-#: public/build/extendify-draft-fc139d85094f627f3e5f.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Lithuanian"
 msgstr "Lietuvių"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Searching..."
 msgstr "Ieškoma..."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search results"
 msgstr "Paieškos rezultatai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search the knowledge base"
 msgstr "Ieškoti žinių bazėje"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Open the Pattern Library"
 msgstr "Atidaryti modelių saugyklą"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Extendify modelių biblioteką galima atidaryti paspaudus mygtuką kairėje."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Filter Patterns"
 msgstr "Filtruoti modelius"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click on any pattern category to refine the selection."
-msgstr "Spustelėkite bet kurią raštų kategoriją, kad patikslintumėte pasirinkimą"
+msgstr "Spustelėkite bet kurią šablonų kategoriją, kad patikslintumėte pasirinkimą."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Select a Pattern"
 msgstr "Pasirinkite modelį"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Tiesiog spustelėkite bet kurį modelį, kurį norite įterpti į puslapį."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "View the Inserted Pattern"
 msgstr "Peržiūrėti įterptą modelį"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "The selected pattern has been inserted into the page."
 msgstr "Pasirinktas modelis buvo įterptas į puslapį."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add a Block"
 msgstr "Pridėti bloką"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click the plus to open the block inserter."
 msgstr "Spustelėkite pliusą, kad atidarytumėte blokų įkėlimą."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Block Inserter"
 msgstr "Blokų įterptuvas"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Pridėkite bloką spustelėdami arba vilkdami jį į puslapį."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Page Title"
 msgstr "Puslapio antraštė"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Redaguokite puslapio pavadinimą jį spustelėdami. Pastaba: Pavadinimas gali būti rodomas arba nerodomas paskelbtame puslapyje, priklausomai nuo naudojamo puslapio šablono."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Blocks"
 msgstr "Blokai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Kiekvienas blokas bus rodomas puslapyje ir gali būti redaguojamas spustelėjus jį."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Tai yra pavyzdinis pastraipos blokas. Jis gali būti kelių sakinių ilgio ir užimti kelias eilutes. Galite pridėti tiek blokų, kiek norite."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Page and Block Settings"
 msgstr "Puslapio ir bloko nustatymai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Pasirinkite puslapį arba bloką, kad pakeistumėte nustatymus visam puslapiui arba pasirinktai blokui."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Preview"
 msgstr "Peržiūra"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Spustelėkite peržiūrą, kad pamatytumėte, kaip jūsų pakeitimai atrodo svetainės priekinėje dalyje."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Publish or Save"
 msgstr "Paskelbti arba išsaugoti"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Spustelėkite „Paskelbti“ arba „Atnaujinti“, kad išsaugotumėte pakeitimus ir jie būtų matomi svetainėje."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add New plugin menu"
 msgstr "Pridėti naują įskiepio meniu"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click here to access the Add Plugins page."
 msgstr "Spustelėkite čia, kad pasiektumėte įskiepių pridėjimo puslapį."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search"
 msgstr "Ieškoti"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search for a plugin by name or functionality."
 msgstr "Ieškokite įskiepio pagal pavadinimą arba funkcionalumą."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Plugin details"
 msgstr "Įskiepio informacija"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "See important information about each plugin."
 msgstr "Peržiūrėkite svarbią informaciją apie kiekvieną įskiepį."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Install now"
 msgstr "Įdiegti dabar"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Įdiekite įskiepį. Tada dar kartą paspauskite šį mygtuką, kad įjungtumėte įskiepį."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Upload Plugin"
 msgstr "Įkelti įskiepį"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Jei turite įskiepį iš išorinio šaltinio, galite jį įkelti tiesiogiai čia."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Installed Plugins menu"
 msgstr "Įdiegtų įskiepių meniu"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Spustelėkite šį meniu, kad peržiūrėtumėte ir tvarkytumėte įdiegtus įskiepius."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Installed plugins"
 msgstr "Įdiegti įskiepiai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Peržiūrėkite visus jūsų svetainėje įdiegtus įskiepius. Tai apima tiek aktyvius, tiek išjungtus įskiepius."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Deactivate/activate option"
 msgstr "Išjungti/įjungti nustatymą"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Po kiekvienu įskiepiu galite jį įjungti arba išjungti."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add another"
 msgstr "Pridėti kitą"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click here to add another plugin to your site."
-msgstr "Spustelėkite čia, kad pridėtumėte kitą įskiepį į savo tinklalapį."
+msgstr "Spustelėkite čia, kad pridėtumėte kitą įskiepį į savo svetainę."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tasks"
 msgstr "Užduotys"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
-msgstr "Dabar, kai sukūrėte pradinį tinklalapį, pritaikykite jį sau atlikdami šias užduotis."
+msgstr "Dabar, kai sukūrėte svetainę, pritaikykite ją sau atlikdami šias užduotis."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Lengvai pasiekite dažniausiai naudojamus WordPress elementus naudodami šias greitas nuorodas."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Peržiūrėkite mūsų asmenines rekomendacijas, kurios padės pasiekti jūsų tikslus."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "You can always access the help center by clicking this button."
 msgstr "Visada galite pasiekti pagalbos centrą paspaudę šį mygtuką."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Visit your site"
-msgstr "Aplankyti savo tinklalapį"
+msgstr "Aplankyti savo svetainę"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "You can always visit your site by clicking this button."
-msgstr "Visada galite apsilankyti savo tinklalapyje spustelėję šį mygtuką."
+msgstr "Visada galite apsilankyti savo svetainėje spustelėję šį mygtuką."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Come back to the Site Assistant any time by clicking the menu item."
-msgstr "Bet kada grįžkite į Tinklalapio asistentą spustelėdami meniu punktą."
+msgstr "Bet kada grįžkite į svetainės vedlį spustelėdami meniu punktą."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "All Users menu"
 msgstr "Visų vartotojų meniu"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click here to view and manage the users on your site."
-msgstr "Spustelėkite čia, kad peržiūrėtumėte ir tvarkytumėte savo tinklalapio vartotojus."
+msgstr "Spustelėkite čia, kad peržiūrėtumėte ir tvarkytumėte savo svetainės vartotojus."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Users"
 msgstr "Vartotojai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "See all of your users, including admin users in this table."
-msgstr "Peržiūrėkite visus savo vartotojus, įskaitant administratoriaus vartotojus, šioje lentelėje"
+msgstr "Peržiūrėkite visus savo vartotojus, įskaitant administratoriaus vartotojus, šioje lentelėje."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Edit user information"
 msgstr "Redaguoti vartotojo informaciją"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Paspauskite redagavimo mygtuką, kad pakeistumėte vartotojo vaidmenį, tvarkytumėte jo paskyrą arba pakeistumėte profilio informaciją."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search for users"
 msgstr "Ieškoti vartotojų"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Use the search bar to find a particular user."
-msgstr "Naudokite paieškos juostą, kad rastumėte konkretų vartotoją"
+msgstr "Naudokite paieškos juostą, kad rastumėte konkretų vartotoją."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add a new user"
 msgstr "Pridėti naują vartotoją"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click the Add New button to add a new user to your site."
-msgstr "Spustelėkite mygtuką „Pridėti naują“, kad pridėtumėte naują vartotoją į savo svetainę"
+msgstr "Spustelėkite mygtuką „Pridėti naują“, kad pridėtumėte naują vartotoją į savo svetainę."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "View Site"
-msgstr "Peržiūrėti tinklalapį"
+msgstr "Peržiūrėti svetainę"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "At any time, you can view your site (from a visitor's perspective) from the top admin bar under your site's name."
-msgstr "Bet kuriuo metu galite peržiūrėti savo tinklapį (kaip lankytojas) iš viršutinės administratoriaus juostos po savo tinklapio pavadinimu."
+msgstr "Bet kuriuo metu galite peržiūrėti savo svetainę (kaip lankytojas) iš viršutinės administratoriaus juostos po savo svetainės pavadinimu."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Access the Site Assistant at any time."
-msgstr "Pasiekite tinklalapio asistentą bet kuriuo metu."
+msgstr "Pasiekite svetainės vedlį bet kuriuo metu."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Spustelėkite čia, kad pereitumėte į savo svetainės valdymo skydelį. Iš ten galėsite kurti daugiau svetainių ir tvarkyti savo paskyros nustatymus."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "The default WordPress dashboard will have some overall site metrics and modules added from certain plugins."
 msgstr "Numatytasis WordPress valdymo skydelis turės bendrus svetainės metrikos duomenis ir modulius, pridėtus iš tam tikrų įskiepių."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Posts"
 msgstr "Įrašai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Manage and create blog posts."
-msgstr "Tvarkykite ir kurkite tinklaraščio įrašus"
+msgstr "Tvarkykite ir kurkite tinklaraščio įrašus."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Media"
 msgstr "Medija"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add, edit, or remove images and other media from your library. When you upload an image to be used on your site, it will be added to the library."
 msgstr "Pridėkite, redaguokite arba pašalinkite paveikslėlius ir kitus failus iš savo failų saugyklos. Kai įkelsite paveikslėlį naudoti savo svetainėje, jis bus pridėtas į saugyklą."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
-msgstr "Naudokite puslapių meniu, kad pridėtumėte, ištrintumėte ar redaguotumėte savo tinklapio puslapius"
+msgstr "Naudokite puslapių meniu, kad pridėtumėte, ištrintumėte ar redaguotumėte savo svetainės puslapius."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Comments"
 msgstr "Komentarai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "If you have commenting enabled on your posts, you can manage those comments here."
 msgstr "Jei jūsų įrašuose įjungti komentarai, galite juos tvarkyti čia."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Appearance"
 msgstr "Išvaizda"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Manage your theme and access the Site Editor from the Appearance menu. The Site Editor is where you can make global changes to your site (such as the menu, header/footer, and styles)."
-msgstr "Tvarkykite savo temą ir pasiekite tinklalapio redaktorių iš Išvaizdos meniu. Tinklalapio redaktoriuje galite atlikti globalius pakeitimus tinklalapyje (pvz., meniu, antraštę/poraštę ir stilius)."
+msgstr "Tvarkykite savo temą ir pasiekite svetainės redaktorių iš Išvaizdos meniu. Svetainės redaktoriuje galite atlikti globalius pakeitimus svetainėje (pvz., meniu, antraštę/poraštę ir stilius)."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Plugins"
 msgstr "Įskiepiai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add or manage the plugins on your site."
-msgstr "Pridėti arba tvarkyti įskiepius savo tinklalapyje"
+msgstr "Pridėti arba tvarkyti įskiepius savo svetainėje."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add or manage users on your site, both admin users and others."
-msgstr "Pridėti arba tvarkyti vartotojus savo tinklalapyje, tiek administratoriaus, tiek kitus."
+msgstr "Pridėti arba tvarkyti vartotojus savo svetainėje, tiek administratoriaus, tiek kitus."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tools"
 msgstr "Įrankiai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Import/export post data, check site health, and edit theme or plugin files directly in the WordPress admin."
 msgstr "Importuokite/eksportuokite įrašų duomenis, tikrinkite svetainės būklę ir redaguokite temos ar įskiepio failus tiesiogiai WordPress administracijoje."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Settings"
 msgstr "Nustatymai"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Advanced settings for your site and for certain plugins."
-msgstr "Išplėstiniai svetainės ir tam tikrų įskiepių nustatymai"
+msgstr "Išplėstiniai svetainės ir tam tikrų įskiepių nustatymai."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Collapse menu"
 msgstr "Sutraukti meniu"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Use this toggle to collapse or expand the sidebar menu."
 msgstr "Naudokite šį perjungiklį, kad sutrauktumėte arba išplėstumėte šoninės srities meniu."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "User"
 msgstr "Vartotojas"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Manage your profile or log out of your account here."
 msgstr "Tvarkykite savo profilį arba atsijunkite nuo savo paskyros čia."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Show Help Center"
 msgstr "Rodyti pagalbos centrą"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Minimize Help Center"
 msgstr "Sumažinti pagalbos centrą"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "close"
 msgstr "uždaryti"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Go back"
 msgstr "Grįžti atgal"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Extendify Help Center"
 msgstr "Extendify pagalbos centras"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tour"
 msgstr "Ekskursija"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Back"
 msgstr "Atgal"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tour Steps"
 msgstr "Turo žingsniai"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
+#, js-format
 msgid "%1$s of %2$s"
 msgstr "%1$s iš %2$s"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:3
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Next"
 msgstr "Kitas"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:3
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
 msgid "Added by Launch"
 msgstr "Pridėta Launch"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:3
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
 msgid "Start over?"
-msgstr "Pradėti iš naujo?"
+msgstr "Sukurti svetainę iš naujo?"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:3
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
 msgid "Go through the onboarding process again to create a new site."
-msgstr "Pakartokite įvadinį procesą, kad sukurtumėte naują tinklalapį."
+msgstr "Pakartokite svetainės kūrimo procesą, kad sukurtumėte naują svetainę."
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
-msgstr "%s puslapiai/įrašai, sukurti ankstesnės įvedimo sesijos metu, bus ištrinti."
+msgstr "%s puslapiai/įrašai, sukurti anksčiau, bus ištrinti negrįžtamai."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Exit"
 msgstr "Išeiti"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Processing"
 msgstr "Apdorojama"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Continue"
 msgstr "Tęsti"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Palaukite, tai užtrunka ilgiau nei tikėtasi."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
-msgid "Your browser does not support the video tag."
-msgstr "Jūsų naršyklė nepalaiko video žymos."
-
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Home page"
 msgstr "Pagrindinis puslapis"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Pasirinkite puslapius, kuriuos norite pridėti prie savo svetainės"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "We already selected the most common pages for your type of website."
-msgstr "Mes jau parinkome dažniausiai naudojamus puslapius jūsų svetainės tipui."
+msgstr "Kad būtų paprasčiau, mes jau atrinkome dažniausiai naudojamus puslapius pagal jūsų svetainės tipą."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "View more pages"
 msgstr "Peržiūrėti daugiau puslapių"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Exit Launch"
-msgstr "Išeiti iš paleidimo"
+msgstr "Išeiti"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Skip"
 msgstr "Praleisti"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Press to select"
 msgstr "Paspauskite, kad pasirinktumėte"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Professional"
 msgstr "Profesionalus"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Friendly"
 msgstr "Draugiškas"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Inspirational"
 msgstr "Įkvepiantis"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Informative"
-msgstr "Informacinis"
+msgstr "Informatyvus"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Persuasive"
-msgstr "Įtikinamas"
+msgstr "Įtikinantis"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Enter your website name"
-msgstr "Įveskite savo tinklalapio pavadinimą"
+msgstr "Įveskite savo interneto svetainės pavadinimą"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
-msgstr "Pvz., Mes esame jogos studija Londone su profesionaliai apmokytais instruktoriais, orientuota į karštą jogą terapiniais tikslais."
+msgstr "Pvz.: Mes esame sporto klubas, įsikūręs Vilniuje, siūlantis modernią treniruočių salę, grupines treniruotes ir baseiną aktyviam poilsiui."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
-msgstr "Pasidalinkite savo vizija, ir mes sukursime svetainę, pritaikytą jūsų poreikiams, paruoštą paleidimui per trumpą laiką. Pradėkime nuo to, kad sužinotume daugiau apie tai, ką kuriate."
+msgstr "Pasidalinkite savo idėjomis ir svetainė bus sukurta, pritaikyta jūsų poreikiams, pasiruošusi greitam startui. Pradžioje papasakokite apie kuriamą projektą ir bus pritaikyti sprendimai, atitinkantys jūsų viziją."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Customizing Your Experience"
-msgstr "Patirtis pritaikoma jums"
+msgstr "Kuriama svetainės struktūra"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Please wait while we analyze your inputs and tailor your experience."
-msgstr "Prašome palaukti, kol analizuosime jūsų įvestis ir pritaikysime jūsų patirtį."
+msgstr "Jūsų svetainė kuriama, pagal pateiktą informaciją – tai užtruks vos kelias akimirkas."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
-msgid "What are your goals for your website?"
-msgstr "Kokie yra jūsų tinklalapio tikslai?"
-
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
-msgid "We'll make sure your website has what it needs to achieve your goals."
-msgstr "Mes pasirūpinsime, kad jūsų interneto puslapis turėtų viską, ko reikia jūsų tikslams pasiekti."
-
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Single-Page Website"
-msgstr "Vieno puslapio tinklalapis"
+msgstr "Vieno puslapio svetainė"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "All content displayed on one scrolling page."
-msgstr "Visas turinys rodomas viename slenkančiame puslapyje"
+msgstr "Visa informacija pateikiama viename puslapyje, kurį galima patogiai slinkti žemyn."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Multi-Page Website"
-msgstr "Daugiapuslapis tinklalapis"
+msgstr "Keletos puslapių svetainė"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Multiple interconnected pages."
-msgstr "Keli tarpusavyje susiję puslapiai"
+msgstr "Svetainės turinys išskaidytas į kelis atskirus puslapius, pasiekiamus per meniu."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Designing Your Options"
-msgstr "Jūsų nustatymų kūrimas"
+msgstr "Pritaikoma svetainė pagal jūsų pasirinkimus"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Please wait while we build some website options for you to select from."
-msgstr "Palaukite, kol sukursime keletą svetainės nustatymų, iš kurių galėsite pasirinkti."
+msgstr "Ruošiami keli svetainės dizaino variantai pagal jūsų pateiktą informaciją – netrukus galėsite pasirinkti."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Pick a design for your website"
-msgstr "Pasirinkite savo tinklalapio dizainą"
+msgstr "Pasirinkite savo svetainės dizainą"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "You can personalize this later."
-msgstr "Galite tai suasmeninti vėliau."
+msgstr "Galėsite bet kada redaguoti nuo dizaino iki turinio."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Applying your website styles"
-msgstr "Tinklalapio stilių taikymas"
+msgstr "Pritaikomas pasirinktas dizainas"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Creating a beautiful website"
-msgstr "Gražaus tinklalapio kūrimas"
+msgstr "Kuriama graži ir išskirtinė svetainė – tai užtruks vos akimirką"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Header Navigation"
 msgstr "Antraštės navigacija"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Installing necessary plugins"
 msgstr "Diegiami būtini įskiepiai"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Populating data"
-msgstr "Duomenų užpildymas"
+msgstr "Įkeliami duomenys į svetainę"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Personalizing your experience"
-msgstr "Patirties suasmeninimas"
+msgstr "Suasmeninama jūsų patirtis"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Adding page content"
-msgstr "Puslapio turinio pridėjimas"
+msgstr "Į svetainės puslapius įkeliamas turinys"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Starting off with a full website"
-msgstr "Pradedant nuo pilno tinklalapio"
+msgstr "Svetainės paruošimas naudojimui"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Creating pages with custom content"
-msgstr "Puslapių kūrimas su pasirinktu turiniu"
+msgstr "Kuriami puslapiai, su jūsų pasirinktu turiniu"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Creating blog sample data"
 msgstr "Kuriami tinklaraščio pavyzdiniai duomenys"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#, js-format
 msgid "Blog Post %s"
 msgstr "Tinklaraščio įrašas %s"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
 msgid "Setting up site layout"
-msgstr "Tinklalapio išdėstymo nustatymas"
+msgstr "Kuriamas svetainės išdestymas"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
 msgid "Importing shop sample data"
-msgstr "Parduotuvės pavyzdinių duomenų importavimas"
+msgstr "Įkeliamas parduotuvės demonstracinis turinys"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
 msgid "More"
 msgstr "Daugiau"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
 msgid "Setting up your Site Assistant"
-msgstr "Nustatote savo tinklalapio asistentą"
+msgstr "Netrukus galėsite naudotis savo svetainės vedliu"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
 msgid "Helping you to succeed"
-msgstr "Padedame jums pasiekti sėkmę"
+msgstr "Padedame įgyvendinti jūsų tikslus"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
 msgid "Your website has been created!"
-msgstr "Jūsų tinklalapis sukurtas!"
+msgstr "Jūsų internetinė svetainė sukurta!"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
 msgid "Redirecting in 3, 2, 1..."
-msgstr "Peradresuojama po 3, 2, 1..."
+msgstr "Būsite nukreipti po 3, 2, 1..."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
-msgstr "Įvyko serverio klaida, kurios negalime ištaisyti. Prašome perkrauti puslapį ir bandykite vėl."
+msgstr "Įvyko serverio klaida, kurios negalime ištaisyti. Prašome perkrauti puslapį ir bandykite dar kartą."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
 msgid "One more thing before we start."
-msgstr "Dar vienas dalykas prieš pradedant"
+msgstr "Dar vienas dalykas prieš pradedant."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Sveiki, Launch veikia su Extendable ir yra būtinas norint tęsti. Galite jį įdiegti iš žemiau esančios nuorodos ir pradėti iš naujo, kai bus aktyvuotas."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:9
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
 msgid "Take me there"
 msgstr "Nuvesti mane ten"
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:11
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:13
 msgid "Launch - AI-Powered Web Creation"
-msgstr "Paleidimas - dirbtinio intelekto valdoma svetainės kūrimas"
+msgstr "Svetainės kūrimas su DI"
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
+#: public/build/extendify-library-bab99ae27a788a75a169.js:1
 msgid "Insert Pattern"
 msgstr "Įterpti modelį"
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
+#: public/build/extendify-library-bab99ae27a788a75a169.js:1
 msgid "Loading Patterns..."
-msgstr "Kraunami modeliai..."
+msgstr "Kraunami šablonai..."
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
+#: public/build/extendify-library-bab99ae27a788a75a169.js:1
 msgid "Loading more patterns..."
-msgstr "Kraunama daugiau modelių..."
+msgstr "Kraunama daugiau šablonų..."
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
+#: public/build/extendify-library-bab99ae27a788a75a169.js:1
 msgid "Design Type"
 msgstr "Dizaino tipas"
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
+#: public/build/extendify-library-bab99ae27a788a75a169.js:1
 msgid "Retrying..."
 msgstr "Bandoma iš naujo..."
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
+#: public/build/extendify-library-bab99ae27a788a75a169.js:1
 msgid "Fetching..."
-msgstr "Gaunama..."
+msgstr "Gaunama informacija..."
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:1
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
+#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-page-creator-b907843992de6947699f.js:1
 msgid "Close"
 msgstr "Uždaryti"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:3
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-library-bab99ae27a788a75a169.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#, js-format
 msgid "Toggle %s on new pages"
 msgstr "Įjungti %s naujuose puslapiuose"
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:3
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-library-bab99ae27a788a75a169.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
 msgid "Open for new pages"
-msgstr "Atidaryta naujiems puslapiams"
+msgstr "Atidaryti kuriant naujus puslapius"
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:3
+#: public/build/extendify-library-bab99ae27a788a75a169.js:3
 msgid "Design Patterns"
 msgstr "Dizaino modeliai"
 
-#: public/build/extendify-library-e3c3cdb5c40631eefe0b.js:3
+#: public/build/extendify-library-bab99ae27a788a75a169.js:3
 msgid "Pattern added"
 msgstr "Modelis pridėtas"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Select your site's tone"
-msgstr "Pasirinkite savo tinklalapio toną"
+msgstr "Pasirinkite svetainės teksto pristatymo toną"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Website title (required)"
-msgstr "Tinklalapio pavadinimas (privaloma)"
+msgstr "Svetainės pavadinimas (privaloma)"
 
 #. translators: This string represents the title of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits the standard phrasing for a "Book" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:11
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:11
 msgid "Book Now"
 msgstr "Užsisakyti dabar"
 
 #. translators: This string represents the slug of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits a slug for a "Book" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-07f137e55fae1c06d996.js:13
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:13
 msgid "book-now"
 msgstr "uzsisakyti-dabar"
 
-#: app/Shared/Services/Import/ImageUploader.php:134
-msgid "There was an error while uploading the image."
-msgstr "Įkeliant paveikslėlį, įvyko klaida."
-
-#: app/Shared/Services/Import/ImageUploader.php:148
-msgid "File is not a valid image."
-msgstr "Failas nėra tinkamas paveikslėlis."
-
-#: app/Shared/Services/Import/ImageUploader.php:176
-msgid "There was an error while adding the attachment record in the database."
-msgstr "Įrašant priedo įrašą į duomenų bazę įvyko klaida."
-
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
 msgid "Hello World Featured Image"
-msgstr "Sveikas, pasauli! Specialusis paveikslėlis"
+msgstr "Numatytasis paveikslėlis"
 
-#: app/PageCreator/Admin.php:143
+#: app/PageCreator/Admin.php:145
 msgid "Extendify Page Creator User Settings"
 msgstr "Extendify puslapio kūrėjo vartotojo nustatymai"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
+#: public/build/extendify-page-creator-b907843992de6947699f.js:1
 msgid "Confirmation"
 msgstr "Patvirtinimas"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
+#: public/build/extendify-page-creator-b907843992de6947699f.js:1
 msgid "Do you want to replace existing content or create a new page?"
-msgstr "Ar norite pakeisti esamą turinį ar sukurti naują puslapį?"
+msgstr "Ar norite pakeisti esamą ar sukurti naują puslapį?"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
+#: public/build/extendify-page-creator-b907843992de6947699f.js:1
 msgid "Delete existing content"
 msgstr "Ištrinti esamą turinį"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
+#: public/build/extendify-page-creator-b907843992de6947699f.js:1
 msgid "Create a new page"
 msgstr "Sukurti naują puslapį"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:1
 msgid "AI Page Generator"
-msgstr "AI puslapių generatorius"
+msgstr "DI puslapių kūrėjas"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
 msgid "Edit"
 msgstr "Redaguoti"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
 msgid "Clear"
 msgstr "Išvalyti"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
 msgid "Generating AI page profile..."
 msgstr "Generuojamas AI puslapio profilis..."
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
 msgid "AI Page Creation"
-msgstr "AI puslapio kūrimas"
+msgstr "DI puslapio kūrimas"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
-msgstr "Apibūdinkite puslapį, kurį norite sukurti, pridėkite pagrindines detales, ir Al sukurs unikalų, paruoštą naudoti puslapį jums."
+msgstr "Papasakokite apie puslapį, kurį norite sukurti, pridėdami svarbiausius elementus, detales ir DI sukurs unikalų puslapį."
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
 msgid "Describe Your Page"
-msgstr "Apibūdinkite savo puslapį"
+msgstr "Papasakokite apie savo puslapį"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:3
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
-msgstr "Pvz., sukurkite puslapį „Apie mus“, kuriame būtų pabrėžta mūsų istorija, misija, vertybės ir komandos apžvalga."
+msgstr "Pvz.: sukurkite „Apie mus“ puslapį, kuriame bus pateikta jūsų istorija, misija, vertybės ir komanda."
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#. translators: %s: The site title
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#, js-format
 msgid "Site Description for %s"
-msgstr "Tinklalapio aprašymas %s"
+msgstr "Svetainės aprašymas %s"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "Site Description"
-msgstr "Tinklalapio aprašymas"
+msgstr "Svetainės aprašymas"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "This is the site description with all its ups and downs."
-msgstr "Tai yra tinklalapio aprašymas su visais jo privalumais ir trūkumais."
+msgstr "Tai yra svetainės aprašymas su visais jo privalumais ir trūkumais."
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "Generate Page"
-msgstr "Generuoti puslapį"
+msgstr "Sukurti puslapį"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "Finding images..."
 msgstr "Ieškoma paveikslėlių..."
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "Creating a custom layout..."
-msgstr "Kuriamas pasirinktinį išdėstymas..."
+msgstr "Kuriamas individualus išdėstymas..."
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "Writing custom content..."
-msgstr "Rašomas pasirinktinį turinys..."
+msgstr "Įrašomas individualus turinys..."
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "Close AI Page Creator"
 msgstr "Uždaryti AI puslapių kūrėją"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "AI Page Creator"
 msgstr "AI puslapių kūrėjas"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "Page added"
 msgstr "Puslapis pridėtas"
 
-#: public/build/extendify-page-creator-507276f52b13815400f7.js:3
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
 msgid "Failed to add page"
 msgstr "Nepavyko pridėti puslapio"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Business"
 msgstr "Verslas"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "eCommerce"
-msgstr "el. prekyba"
+msgstr "Elektroninė prekyba"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Landing Page"
-msgstr "Nukreipimo puslapis"
+msgstr "Pasiūlymo puslapis"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Other"
 msgstr "Kita"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Landing Page title (required)"
-msgstr "Nukreipimo puslapio pavadinimas (privaloma)"
+msgstr "Pasiūlymo puslapio pavadinimas (privaloma)"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
-msgstr "Pvz., Mes esame internetinė parduotuvė, specializuojanti ekologiškų namų prekių srityje, siūlanti tvariai gautus produktus, padedančius gyventi ekologiškiau."
+msgstr "Pvz.: Mes esame internetinė parduotuvė, siūlanti stilingus ir funkcionalius darbo kambario baldus, sukurtus siekiant patogumo, ergonomikos ir modernaus dizaino mėgėjams."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
-msgstr "Pvz., Asmeninių finansų tinklaraštis, dalijantis ekspertų patarimais apie biudžeto sudarymą, investavimą ir finansinės laisvės pasiekimą jauniems specialistams."
+msgstr "Pvz.: Maisto tinklaraštis, kuris dalinasi lengvai paruošiamais receptais, sveikos mitybos patarimais ir kūrybingomis idėjomis kiekvienai dienai, skirtas užimtiems žmonėms, ieškantiems įkvėpimo virtuvėje."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
-msgstr "Pvz., nemokama eknyga su praktiškais produktyvumo patarimais ir strategijomis, padedančiomis išlaikyti dėmesį, efektyviai valdyti laiką ir pasiekti tikslus."
+msgstr "Pvz.: Pasiūlymo puslapis, skirtas užsiregistruoti nemokamai verslo konsultacijai, su trumpu paslaugų pristatymu ir kontaktų forma."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
-msgstr "Pvz., Asmeninis fotografijos portfolio, kuriame pateikiama kraštovaizdžio, portretų ir gatvės fotografijos kolekcija, užfiksuojanti akimirkas iš viso pasaulio."
+msgstr "Asmeninis fotografijos portfolio, kuriame pristatoma kraštovaizdžio, portretų ir gatvės fotografijos kolekcija, įamžinanti akimirkas iš viso pasaulio."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Describe your business"
-msgstr "Apibūdinkite savo verslą"
+msgstr "Papasakokite apie savo verslą"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Describe your eCommerce website"
-msgstr "Apibūdinkite savo el. prekybos svetainę"
+msgstr "Papasakokite apie savo e. prekybos svetainę"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Describe your blog"
-msgstr "Apibūdinkite savo tinklaraštį"
+msgstr "Papasakokite apie savo tinklaraštį"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Describe your Landing Page"
-msgstr "Apibūdinkite savo nukreipimo puslapį"
+msgstr "Papasakokite apie savo pasiūlymo puslapį"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Describe your website"
-msgstr "Apibūdinkite savo tinklalapį"
+msgstr "Papasakokite apie savo svetainę"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Call-To-Action Link"
-msgstr "Raginimo veikti nuoroda"
+msgstr "Kvietimo veikti nuoroda (CTA)"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
-msgstr "Ši nuoroda bus naudojama visuose raginimo veikti mygtukuose, nukreipiant lankytojus į pasirinktą vietą."
+msgstr "Ši nuoroda bus naudojama visuose kvietimo veikti (CTA) mygtukuose ir nukreips lankytojus į jūsų pasirinktą puslapį."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "What type of website are you creating?"
-msgstr "Kokio tipo interneto svetainę kuriate?"
+msgstr "Kokio tipo interneto svetainę kursite?"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Tell Us About Your Landing Page"
 msgstr "Papasakokite apie savo nukreipimo puslapį"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Tell Us About Your Website"
-msgstr "Papasakokite apie savo tinklalapį"
+msgstr "Papasakokite apie savo interneto svetainę"
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:5
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Pasidalinkite savo vizija, ir mes sukursime jūsų poreikiams pritaikytą nukreipimo puslapį, paruoštą greitam paleidimui. Pradėkime sužinodami daugiau apie tai, ką kuriate."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Paspauskite čia, kad pradėtumėte naudoti savo AI puslapių generatorių."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Page description"
 msgstr "Puslapio aprašymas"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Parašykite kuriamo puslapio aprašymą. Būkite kiek įmanoma išsamūs. Puslapį sukursime pagal šį aprašymą."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "If needed, update your site description here. We use this to add additional context about your website."
-msgstr "Jei reikia, atnaujinkite savo tinklalapio aprašymą čia. Naudojame tai papildomam kontekstui apie jūsų svetainę pridėti."
+msgstr "Jei reikia, atnaujinkite savo svetainės aprašymą čia. Naudojame tai papildomam kontekstui apie jūsų svetainę pridėti."
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Generate your page"
 msgstr "Sugeneruokite savo puslapį"
 
-#: public/build/extendify-help-center-3609a854948a5e67f557.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "When ready, press here to generate your page."
 msgstr "Kai būsite pasiruošę, spustelėkite čia, kad sukurtumėte puslapį."
 
-#: public/build/extendify-shared-159251bf9fd7827fa1e6.js:1
+#: public/build/extendify-shared-aa227da031b9e8e96394.js:1
 msgid "Close ToolTip"
 msgstr "Uždaryti užuominą"
 
-#: public/build/extendify-shared-159251bf9fd7827fa1e6.js:1
+#: public/build/extendify-shared-aa227da031b9e8e96394.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Įrankio patarimas, rodantis į puslapio redagavimo mygtuką"
 
-#: public/build/extendify-shared-159251bf9fd7827fa1e6.js:1
+#: public/build/extendify-shared-aa227da031b9e8e96394.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
-msgstr "Sveiki atvykę į savo naują tinklalapį! Kai būsite pasiruošę, paspauskite čia, kad redaguotumėte šį puslapį."
+msgstr "Sveiki atvykę į savo naują svetainę! Kai būsite pasiruošę, paspauskite čia, kad redaguotumėte šį puslapį."
 
-#: public/build/extendify-launch-1bea159a3a58acac496e.js:7
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
 msgid "Installing supporting plugins"
 msgstr "Diegiami palaikomieji įskiepiai"
+
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+msgid "Website Objective"
+msgstr "Svetainės auditorija"
+
+#: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
+msgid "Add Website Objective"
+msgstr "Pridėti svetainės tikslą"
+
+#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+msgid "Failed to install the plugin"
+msgstr "Nepavyko įdiegti įskiepio"
+
+#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+msgid "Failed to activate the plugin"
+msgstr "Nepavyko įjungti įskiepio"
+
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+msgid "Allow plugins to be installed for advanced page features"
+msgstr "Leisti įdiegti įskiepius pažangioms puslapio savybėms"
+
+#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+msgid "Processing patterns and installing required plugins..."
+msgstr "Apdorojami modeliai ir diegiami reikalingi įskiepiai..."
+
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+msgid "Privacy Policy"
+msgstr "Privatumo politika"
+
+#. translators: %1$s and %2$s are links
+#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#, js-format
+msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
+msgstr "Naudodamiesi AI savybėmis, sutinkate su OpenAI %1$s ir %2$s."
+
+#. translators: %s is a name
+#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#, js-format
+msgctxt "Preposition for \"By Author Name\""
+msgid "By %s"
+msgstr "Autorius %s"
+
+#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+msgctxt "Plugin installation status"
+msgid "Installing..."
+msgstr "Diegiama..."
+
+#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+msgctxt "Plugin activation status"
+msgid "Activating..."
+msgstr "Įjungiama..."
+
+#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+msgctxt "Plugin activation status"
+msgid "Activated"
+msgstr "Įjungta"

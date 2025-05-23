@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Create Contact Form 7 programmatically.
  */
@@ -12,6 +13,7 @@ use Extendify\Shared\Services\PluginDependencies\PluginInstaller;
 /**
  * Create Contact Form 7 programmatically.
  */
+
 class ContactForm7
 {
     /**
@@ -61,7 +63,11 @@ class ContactForm7
         // Update the hash.
         $updatedContent = preg_replace('/"hash":"[a-f0-9]+"/', '"hash":"' . $hash . '"', $updatedContent);
         // Update the id in the shortcode (which uses the hash value).
-        $updatedContent = preg_replace('/\[contact-form-7 id="[a-f0-9]+"/', '[contact-form-7 id="' . $hash . '"', $updatedContent);
+        $updatedContent = preg_replace(
+            '/\[contact-form-7 id="[a-f0-9]+"/',
+            '[contact-form-7 id="' . $hash . '"',
+            $updatedContent
+        );
 
         return $updatedContent;
     }

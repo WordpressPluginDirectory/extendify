@@ -58,7 +58,7 @@ export default {
 				'extendify-local',
 			),
 			attachTo: {
-				element: '#extendify-page-creator-page-descrition',
+				element: '#extendify-page-creator-page-description',
 				position: {
 					x: isRTL() ? 'left' : 'right',
 					y: 'top',
@@ -74,7 +74,7 @@ export default {
 					dispatchEvent(new CustomEvent('extendify::open-page-creator'));
 
 					return await waitUntilExists(
-						'#extendify-page-creator-page-descrition',
+						'#extendify-page-creator-page-description',
 					);
 				},
 			},
@@ -86,7 +86,7 @@ export default {
 				'extendify-local',
 			),
 			attachTo: {
-				element: '#extendify-page-creator-site-descrition',
+				element: '#extendify-page-creator-site-description',
 				offset: {
 					marginTop: -15,
 					marginLeft: 0,
@@ -99,7 +99,7 @@ export default {
 			},
 			events: {
 				beforeAttach: async () => {
-					await waitUntilExists('#extendify-page-creator-site-descrition');
+					await waitUntilExists('#extendify-page-creator-site-description');
 				},
 			},
 		},

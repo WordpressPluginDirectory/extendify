@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Posts class
  */
@@ -26,7 +27,7 @@ class Post
             $wpdb->prepare(
                 "SELECT * FROM {$wpdb->posts} WHERE post_status != 'trash'
                   AND (INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0)
-                  AND post_type NOT IN ('revision', 'attachment')",
+                  AND post_type NOT IN ('revision', 'attachment')", // phpcs:ignoreFile Generic.Files.LineLength.TooLong
                 'extendify-image-import',
                 ' ext-import"',
                 ' ext-import ',
@@ -49,7 +50,7 @@ class Post
             $wpdb->prepare(
                 "SELECT count(ID) as posts_count FROM {$wpdb->posts} WHERE post_status != 'trash'
                   AND (INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0 OR INSTR(post_content, %s) > 0)
-                  AND post_type NOT IN ('revision', 'attachment')",
+                  AND post_type NOT IN ('revision', 'attachment')", // phpcs:ignoreFile Generic.Files.LineLength.TooLong
                 'extendify-image-import',
                 ' ext-import"',
                 ' ext-import ',
@@ -85,7 +86,6 @@ class Post
          * we abort the update completely.
          */
         $currentUpdatedAt = get_post_field('post_modified', $post->ID);
-        // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         if (strtotime($currentUpdatedAt) !== strtotime($post->post_modified)) {
             return new \WP_Error(1006, 'Post has been modified.');
         }

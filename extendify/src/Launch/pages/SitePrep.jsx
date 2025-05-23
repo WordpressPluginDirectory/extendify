@@ -4,6 +4,7 @@ import { updateOption } from '@launch/api/WPApi';
 import { Title } from '@launch/components/Title';
 import { VideoPlayer } from '@launch/components/VideoPlayer';
 import { useGoals } from '@launch/hooks/useGoals';
+import { useSiteLogo } from '@launch/hooks/useSiteLogo';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { usePagesStore } from '@launch/state/Pages';
@@ -17,13 +18,12 @@ export const state = pageState('Content Gathering', () => ({
 	onRemove: () => {},
 }));
 
-const hideLaunchObjective = window.extSharedData?.hideLaunchObjective || false;
-
 export const SitePrep = () => {
 	const { nextPage } = usePagesStore();
 	const { setSiteProfile, addMany } = useUserSelectionStore();
 	const { siteProfile } = useSiteProfile();
 	const { goals } = useGoals();
+	useSiteLogo();
 
 	useEffect(() => {
 		if (!siteProfile) return;
@@ -33,7 +33,7 @@ export const SitePrep = () => {
 
 	useEffect(() => {
 		if (!goals) return;
-		if (goals && !hideLaunchObjective) {
+		if (goals) {
 			addMany('goals', goals, { clearExisting: true });
 		}
 		let id = setTimeout(nextPage, 1000);
@@ -45,8 +45,9 @@ export const SitePrep = () => {
 			<div className="mx-auto grow overflow-y-auto px-4 py-8 md:p-12 md:px-6 3xl:p-16">
 				<div className="mx-auto flex h-full flex-col justify-center">
 					<VideoPlayer
+						poster={`${window.extSharedData.assetPath}/data-processing.webp`}
 						path="https://images.extendify-cdn.com/launch/data-processing.webm"
-						className="mx-auto h-auto w-72"
+						className="mx-auto h-auto w-72 md:h-[288px]"
 					/>
 
 					<Title

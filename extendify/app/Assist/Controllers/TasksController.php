@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controls Tasks
  */
@@ -12,6 +13,7 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The controller for plugin dependency checking, etc
  */
+
 class TasksController
 {
     /**

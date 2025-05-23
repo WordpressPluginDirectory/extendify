@@ -1,12 +1,18 @@
+import { dispatch, select } from '@wordpress/data';
 import { useEffect, useState, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
+import { getPartnerPlugins } from '@shared/api/DataApi';
 import { installPlugin, activatePlugin } from '@shared/api/wp';
 import { pageNames } from '@shared/lib/pages';
 import { deepMerge } from '@shared/lib/utils';
+import {
+	retryOperation,
+	wasPluginInstalled,
+	waitFor200Response,
+} from '@shared/lib/utils';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { colord } from 'colord';
-import { getPartnerPlugins } from '@launch/api/DataApi';
 import {
 	updateTemplatePart,
 	addSectionLinksToNav,
@@ -25,17 +31,13 @@ import {
 import { importTemporaryProducts } from '@launch/api/WooCommerce';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
 import { useConfetti } from '@launch/hooks/useConfetti';
+import { useSiteLogo } from '@launch/hooks/useSiteLogo';
 import { useWarnOnLeave } from '@launch/hooks/useWarnOnLeave';
 import {
 	updateButtonLinks,
 	updateSinglePageLinksToSections,
 } from '@launch/lib/linkPages';
 import { uploadLogo } from '@launch/lib/logo';
-import {
-	retryOperation,
-	waitFor200Response,
-	wasInstalled,
-} from '@launch/lib/util';
 import {
 	createWpPages,
 	createBlogSampleData,
@@ -49,7 +51,14 @@ import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
 
-const { homeUrl, adminUrl } = window.extSharedData;
+const {
+	homeUrl,
+	adminUrl,
+	partnerLogo,
+	partnerName,
+	installedPlugins = [],
+	requiredPlugins = [],
+} = window.extSharedData;
 
 export const CreatingSite = () => {
 	const [isShowing] = useState(true);
@@ -84,12 +93,15 @@ export const CreatingSite = () => {
 		window.extOnbData.redirectToWebsite && siteObjective === 'landing-page'
 			? `${homeUrl}?extendify-launch-success`
 			: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success`;
+	const { loading: logoLoading, logoUrl } = useSiteLogo();
 
 	useWarnOnLeave(warnOnLeaveReady);
 
 	const doEverything = useCallback(async () => {
 		try {
 			const hasBlogGoal = goals?.find((goal) => goal.slug === 'blog');
+
+			await uploadLogo(logoUrl, { forceReplace: true });
 
 			await updateOption('permalink_structure', '/%postname%/');
 			await waitFor200Response();
@@ -128,7 +140,7 @@ export const CreatingSite = () => {
 						variation,
 						// We set to null first to reset the field.
 						{ settings: { typography: { fontFamilies: { custom: null } } } },
-						// We add the intalled font families here to activate them.
+						// We add the installed font families here to activate them.
 						{
 							settings: {
 								typography: {
@@ -166,7 +178,6 @@ export const CreatingSite = () => {
 			await updateTemplatePart('extendable/footer', style?.footerCode);
 
 			const goalsPlugins = getGoalsPlugins();
-			const requiredPlugins = window.extSharedData?.requiredPlugins ?? [];
 
 			// Add required plugins to the end of the list to give them lower priority
 			// when filtering out duplicates.
@@ -186,6 +197,7 @@ export const CreatingSite = () => {
 				inform(__('Installing necessary plugins', 'extendify-local'));
 
 				for (const [index, plugin] of sortedPlugins.entries()) {
+					const slug = plugin?.wordpressSlug;
 					informDesc(
 						__(
 							`${index + 1}/${sortedPlugins.length}: ${plugin.name}`,
@@ -193,10 +205,13 @@ export const CreatingSite = () => {
 						),
 					);
 
-					await retryOperation(() => installPlugin(plugin?.wordpressSlug), {
-						maxAttempts: 2,
-					}).catch(console.error);
-					await retryOperation(() => activatePlugin(plugin?.wordpressSlug), {
+					// Don't install if already installed
+					if (!installedPlugins?.some((s) => s.includes(slug))) {
+						await retryOperation(() => installPlugin(slug), {
+							maxAttempts: 2,
+						}).catch(console.error);
+					}
+					await retryOperation(() => activatePlugin(slug), {
 						maxAttempts: 2,
 					}).catch(console.error);
 				}
@@ -314,7 +329,7 @@ export const CreatingSite = () => {
 			let { data: activePlugins } = await getActivePlugins();
 
 			// Add plugin related pages only if plugin is active
-			if (wasInstalled(activePlugins, 'woocommerce')) {
+			if (wasPluginInstalled(activePlugins, 'woocommerce')) {
 				const shopPageId = await getOption('woocommerce_shop_page_id');
 				const shopPage = shopPageId
 					? await getPageById(shopPageId).catch(() => null)
@@ -330,11 +345,13 @@ export const CreatingSite = () => {
 				// If we installed any plugins above, and a partner has supported plugins
 				// linked to those plugins, we should install them here. For example:
 				// A German specific WooCommerce plugin in case WooCommerce is installed.
-				const partnerPlugins = await getPartnerPlugins('products');
+				const partnerPlugins = await getPartnerPlugins('products').catch(
+					() => null,
+				);
 				if (partnerPlugins) {
 					informDesc(__('Installing supporting plugins', 'extendify-local'));
 					for (const plugin of partnerPlugins) {
-						if (!wasInstalled(activePlugins, plugin)) {
+						if (!wasPluginInstalled(activePlugins, plugin)) {
 							const maxAttempts = 2;
 							await retryOperation(() => installPlugin(plugin), {
 								maxAttempts,
@@ -347,38 +364,32 @@ export const CreatingSite = () => {
 				}
 			}
 
-			if (wasInstalled(activePlugins, 'the-events-calendar')) {
+			if (wasPluginInstalled(activePlugins, 'the-events-calendar')) {
 				const eventsPage = {
 					title: {
 						rendered: __('Events', 'extendify-local'),
 					},
 					slug: 'events',
-					link: `${window.extSharedData.homeUrl}/events`,
+					link: `${homeUrl}/events`,
 				};
 
 				pluginPages.push(eventsPage);
 			}
 
-			if (wasInstalled(activePlugins, 'wpforms-lite')) {
+			if (wasPluginInstalled(activePlugins, 'wpforms-lite')) {
 				await updateOption('wpforms_activation_redirect', 'skip');
 			}
 
-			if (wasInstalled(activePlugins, 'all-in-one-seo-pack')) {
+			if (wasPluginInstalled(activePlugins, 'all-in-one-seo-pack')) {
 				await updateOption('aioseo_activation_redirect', 'skip');
 			}
 
-			if (wasInstalled(activePlugins, 'google-analytics-for-wordpress')) {
+			if (wasPluginInstalled(activePlugins, 'google-analytics-for-wordpress')) {
 				await updateOption(
 					'_transient__monsterinsights_activation_redirect',
 					null,
 				);
 			}
-
-			// Upload Logo
-			await uploadLogo(
-				'https://images.extendify-cdn.com/demo-content/logos/extendify-demo-logo.png',
-			);
-			await waitFor200Response();
 
 			const pagesWithLinksUpdated =
 				siteStructure === 'single-page'
@@ -410,6 +421,21 @@ export const CreatingSite = () => {
 				}
 			}
 
+			await waitFor200Response();
+
+			const renderingModes =
+				select('core/preferences').get('core', 'renderingModes') || {};
+
+			if (renderingModes?.extendable?.page !== 'template-locked') {
+				dispatch('core/preferences').set('core', 'renderingModes', {
+					...renderingModes,
+					extendable: {
+						...(renderingModes.extendable || {}),
+						page: 'template-locked',
+					},
+				});
+			}
+
 			inform(__('Setting up your Site Assistant', 'extendify-local'));
 			informDesc(__('Helping you to succeed', 'extendify-local'));
 			await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -436,7 +462,7 @@ export const CreatingSite = () => {
 					'extendify-local',
 				);
 				alert(alertMsg);
-				location.href = window.extSharedData.adminUrl;
+				location.href = adminUrl;
 			}
 			await new Promise((resolve) => setTimeout(resolve, 2000));
 			return doEverything();
@@ -458,16 +484,18 @@ export const CreatingSite = () => {
 		setUserGaveConsent,
 		siteObjective,
 		CTALink,
+		logoUrl,
 	]);
 
 	useEffect(() => {
+		if (logoLoading) return;
 		doEverything().then(async () => {
 			setPage(0);
 			// This will trigger the post launch php functions.
 			await postLaunchFunctions();
 			window.location.replace(redirectUrl);
 		});
-	}, [doEverything, setPage, redirectUrl]);
+	}, [doEverything, setPage, redirectUrl, logoLoading]);
 
 	useEffect(() => {
 		const documentStyles = window.getComputedStyle(document.body);
@@ -505,12 +533,12 @@ export const CreatingSite = () => {
 			className="flex shrink-0 flex-col justify-between bg-banner-main px-10 py-12 text-banner-text md:h-screen">
 			<div className="max-w-prose">
 				<div className="md:min-h-48">
-					{window.extSharedData?.partnerLogo ? (
+					{partnerLogo ? (
 						<div className="mb-8">
 							<img
 								style={{ maxWidth: '200px' }}
-								src={window.extSharedData.partnerLogo}
-								alt={window.extSharedData?.partnerName ?? ''}
+								src={partnerLogo}
+								alt={partnerName ?? ''}
 							/>
 						</div>
 					) : (

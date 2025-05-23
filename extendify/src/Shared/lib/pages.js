@@ -76,7 +76,7 @@ export const pageNames = {
 		slug: __('menu', 'extendify-local'),
 		alias: ['menu'],
 	},
-	porfolio: {
+	portfolio: {
 		// translators: This string represents the title of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits the standard phrasing for a "Portfolio" page in the target language, considering the common usage in websites for that language.
 		title: __('Portfolio', 'extendify-local'),
 		// translators: This string represents the slug of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits a slug for a "Portfolio" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.

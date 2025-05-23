@@ -3,23 +3,23 @@ import { __ } from '@wordpress/i18n';
 import { useTasksStore } from '@assist/state/tasks';
 
 const launchSteps = {
-	'site-information': {
-		step: __('Site Industry', 'extendify-local'),
+	'website-objective': {
+		step: __('Website Objective', 'extendify-local'),
 		title: __("Let's Start Building Your Website", 'extendify-local'),
 		description: __(
 			'Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher.',
 			'extendify-local',
 		),
-		buttonText: __('Add Website Details', 'extendify-local'),
+		buttonText: __('Add Website Objective', 'extendify-local'),
 	},
-	goals: {
-		step: __('Goals', 'extendify-local'),
+	'site-information': {
+		step: __('Site Industry', 'extendify-local'),
 		title: __('Continue Building Your Website', 'extendify-local'),
 		description: __(
 			'Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher.',
 			'extendify-local',
 		),
-		buttonText: __('Select Site Goals', 'extendify-local'),
+		buttonText: __('Add Website Details', 'extendify-local'),
 	},
 	'site-structure': {
 		step: __('Site Structure', 'extendify-local'),
@@ -58,7 +58,7 @@ const getCurrentLaunchStep = () => {
 
 	// If their last step doesn't exist in our options, just use step 1
 	if (!Object.keys(launchSteps).includes(currentPageSlug)) {
-		return 'site-information';
+		return 'website-objective';
 	}
 
 	return currentPageSlug;

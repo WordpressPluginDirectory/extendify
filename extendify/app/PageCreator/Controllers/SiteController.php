@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controls Site options
  */
@@ -12,6 +13,7 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The controller for persisting site data
  */
+
 class SiteController
 {
     /**

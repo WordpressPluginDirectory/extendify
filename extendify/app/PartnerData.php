@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Partner Settings
  */
@@ -12,9 +13,9 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * Controller for handling partner settings
  */
+
 class PartnerData
 {
-
     /**
      * The partner id
      *
@@ -65,9 +66,15 @@ class PartnerData
         'allowedPluginsSlugs' => [],
         'requiredPlugins' => [],
         'showLaunch' => false,
-        'hideLaunchObjective' => false,
         'deactivated' => true,
         'launchRedirectWebsite' => false,
+        'showAILogo' => false,
+        'showProductRecommendations' => false,
+        'productRecommendations' => [
+            'showPartnerBranding' => false,
+            'disabledProducts' => [],
+            'customProducts' => [],
+        ],
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -82,16 +89,22 @@ class PartnerData
         $data = self::getPartnerData();
         self::$config['showDomainBanner'] = ($data['showDomainBanner'] ?? self::$config['showDomainBanner']);
         self::$config['showDomainTask'] = ($data['showDomainTask'] ?? self::$config['showDomainTask']);
-        self::$config['showSecondaryDomainTask'] = ($data['showSecondaryDomainTask'] ?? self::$config['showSecondaryDomainTask']);
-        self::$config['showSecondaryDomainBanner'] = ($data['showSecondaryDomainBanner'] ?? self::$config['showSecondaryDomainBanner']);
+        self::$config['showSecondaryDomainTask'] = ($data['showSecondaryDomainTask']
+            ?? self::$config['showSecondaryDomainTask']);
+        self::$config['showSecondaryDomainBanner'] = ($data['showSecondaryDomainBanner']
+            ?? self::$config['showSecondaryDomainBanner']);
         self::$config['domainTLDs'] = ($data['domainTLDs'] ?? self::$config['domainTLDs']);
         self::$config['stagingSites'] = array_map('trim', ($data['stagingSites'] ?? self::$config['stagingSites']));
         self::$config['domainSearchURL'] = ($data['domainSearchURL'] ?? self::$config['domainSearchURL']);
-        self::$logo = isset($data['logo'][0]['thumbnails']['large']['url']) ? $data['logo'][0]['thumbnails']['large']['url'] : self::$logo;
+        self::$logo = isset($data['logo'][0]['thumbnails']['large']['url'])
+            ? $data['logo'][0]['thumbnails']['large']['url']
+            : self::$logo;
         self::$config['showDraft'] = ($data['showDraft'] ?? self::$config['showDraft']);
         self::$config['showChat'] = ($data['showChat'] ?? self::$config['showChat']);
-        self::$config['enableImageImports-1-14-6'] = ($data['enableImageImports-1-14-6'] ?? self::$config['enableImageImports-1-14-6']);
-        self::$config['disableLibraryAutoOpen'] = ($data['disableLibraryAutoOpen'] ?? self::$config['disableLibraryAutoOpen']);
+        self::$config['enableImageImports-1-14-6'] = ($data['enableImageImports-1-14-6']
+            ?? self::$config['enableImageImports-1-14-6']);
+        self::$config['disableLibraryAutoOpen'] = ($data['disableLibraryAutoOpen']
+            ?? self::$config['disableLibraryAutoOpen']);
         self::$config['enableApexDomain'] = ($data['enableApexDomain'] ?? self::$config['enableApexDomain']);
         self::$name = ($data['Name'] ?? self::$name);
         self::$colors = [
@@ -104,9 +117,20 @@ class PartnerData
         self::$config['requiredPlugins'] = ($data['requiredPlugins'] ?? self::$config['requiredPlugins']);
         self::$config['showAIPageCreation'] = ($data['showAIPageCreation'] ?? self::$config['showAIPageCreation']);
         self::$config['showLaunch'] = ($data['showLaunch'] ?? self::$config['showLaunch']);
-        self::$config['hideLaunchObjective'] = ($data['hideLaunchObjective'] ?? self::$config['hideLaunchObjective']);
         self::$config['deactivated'] = ($data['deactivated'] ?? self::$config['deactivated']);
-        self::$config['launchRedirectWebsite'] = ($data['launchRedirectWebsite'] ?? self::$config['launchRedirectWebsite']);
+        self::$config['launchRedirectWebsite'] = ($data['launchRedirectWebsite']
+            ?? self::$config['launchRedirectWebsite']);
+        self::$config['showAILogo'] = ($data['showAILogo'] ?? self::$config['showAILogo']);
+        self::$config['showProductRecommendations'] = ($data['showProductRecommendations']
+            ?? self::$config['showProductRecommendations']);
+        self::$config['productRecommendations'] = [
+            'showPartnerBranding' => ($data['productRecommendationShowPartnerBranding']
+                ?? self::$config['productRecommendations']['showPartnerBranding']),
+            'disabledProducts' => ($data['productRecommendationDisabledSlugs']
+                ?? self::$config['productRecommendations']['disabledProducts']),
+            'customProducts' => ($data['productRecommendationCustomSlugs']
+                ?? self::$config['productRecommendations']['customProducts']),
+        ];
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);
@@ -186,7 +210,7 @@ class PartnerData
 
         $sanitizedData = array_merge(
             Sanitizer::sanitizeUnknown($result['data']),
-            ['consentTermsHTML' => \sanitize_text_field(htmlentities(($result['data']['consentTermsHTML'] ?? '')))]
+            ['consentTermsCustom' => \sanitize_text_field(htmlentities(($result['data']['consentTermsCustom'] ?? '')))]
         );
 
         // Merge before persisting as this data is accessed directly elsewhere.
@@ -233,7 +257,6 @@ class PartnerData
 
         return $cssVariables;
     }
-
 
     /**
      * Retrieves the value of a setting.

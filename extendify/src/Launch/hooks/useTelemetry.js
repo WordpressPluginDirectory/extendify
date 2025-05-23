@@ -23,6 +23,7 @@ export const useTelemetry = () => {
 	const [stepProgress, setStepProgress] = useState([]);
 	const [viewedStyles, setViewedStyles] = useState(new Set());
 	const running = useRef(false);
+	const firstRun = useRef(true);
 
 	useEffect(() => {
 		const p = [...pages].map((p) => p[0]);
@@ -56,7 +57,15 @@ export const useTelemetry = () => {
 	useEffect(() => {
 		let id = 0;
 		let innerId = 0;
-		const timeout = currentPageIndex ? 1000 : 0;
+		const timeout = firstRun.current
+			? // Send the first request immediately,
+				0
+			: // if on page 0, wait 2s
+				currentPageIndex === 0
+				? 2000
+				: // Every other request will be 1s
+					1000;
+		firstRun.current = false;
 		id = window.setTimeout(() => {
 			if (running.current) return;
 			running.current = true;

@@ -13,6 +13,18 @@ export const getPlugin = async (slug) => {
 	return plugin;
 };
 
+export const getAllPlugins = async () => {
+	const response = await apiFetch({
+		path: '/wp/v2/plugins',
+	});
+
+	if (!response) {
+		throw new Error('Failed to fetch installed plugins');
+	}
+
+	return response;
+};
+
 export const installPlugin = async (slug) => {
 	return await apiFetch({
 		path: '/wp/v2/plugins',

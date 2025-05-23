@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Admin.
  */
@@ -16,6 +17,7 @@ use Extendify\PartnerData;
 /**
  * This class handles any file loading for the admin area.
  */
+
 class Admin
 {
     /**
@@ -74,15 +76,23 @@ class Admin
                     'routerData' => \wp_json_encode(RouterController::get()->get_data()),
                     'recommendationData' => \wp_json_encode(RouterController::get()->get_data()),
                     'tasksDependencies' => \wp_json_encode($this->getTasksDependencies()),
-                    'domainsRecommendationsActivities' => \wp_json_encode(get_option('extendify_domains_recommendations_activities', null)),
+                    'domainsRecommendationsActivities' => \wp_json_encode(
+                        get_option('extendify_domains_recommendations_activities', null)
+                    ),
                 ],
                 'canSeeRestartLaunch' => (bool) $this->canRunLaunchAgain(),
-                'editSiteNavigationMenuLink' => \current_theme_supports('menus') ? \esc_url(\admin_url('nav-menus.php')) : \esc_url(\admin_url('site-editor.php?path=%2Fnavigation')),
+                'editSiteNavigationMenuLink' => \current_theme_supports('menus')
+                    ? \esc_url(\admin_url('nav-menus.php'))
+                    : \esc_url(\admin_url('site-editor.php?path=%2Fnavigation')),
             ]),
             'before'
         );
 
-        \wp_set_script_translations(Config::$slug . '-assist-page-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
+        \wp_set_script_translations(
+            Config::$slug . '-assist-page-scripts',
+            'extendify-local',
+            EXTENDIFY_PATH . 'languages/js'
+        );
 
         \wp_enqueue_style(
             Config::$slug . '-assist-page-styles',
@@ -125,23 +135,27 @@ class Admin
         $completedSetupGivewp = isset($give['form_id']) && $give['form_id'] > 0;
 
         $woo = \get_option('woocommerce_onboarding_profile', false);
-        $completedWoocommerceStore = (isset($woo['completed']) && $woo['completed']) || (isset($woo['skipped']) && $woo['skipped']);
+        $completedWoocommerceStore = (
+            isset($woo['completed']) && $woo['completed']) || (isset($woo['skipped']) && $woo['skipped']
+        );
 
         $aioseo = \get_option('aioseo_blc_options_internal', false);
         $completedSetupAIOSeo = false;
         if ($aioseo) {
             $aioseo = \json_decode($aioseo, true);
-            $completedSetupAIOSeo = isset($aioseo['internal']) && array_key_exists('firstActivated', $aioseo['internal']);
+            $completedSetupAIOSeo = isset($aioseo['internal'])
+                && array_key_exists('firstActivated', $aioseo['internal']);
         }
 
-        $completedWPFormsLite = (bool) \get_option('wpforms_forms_first_created', false) || (bool) (\wp_count_posts('wpforms')->publish ?? 0);
+        $completedWPFormsLite = (bool) \get_option('wpforms_forms_first_created', false)
+            || (bool) (\wp_count_posts('wpforms')->publish ?? 0);
 
         // The two extra keys that will be added after connecting the store
         // are the `admin_menu` and `hide_out_of_stock`.
         $yourWebShop = \get_option('ecwid_plugin_data', false);
         $completedYourWebShop = isset($yourWebShop['admin_menu']) && $yourWebShop['admin_menu'];
 
-        $monsterInsightsSiteProfile = \get_option( 'monsterinsights_site_profile', false );
+        $monsterInsightsSiteProfile = \get_option('monsterinsights_site_profile', false);
         $completedMonsterInsights = isset($monsterInsightsSiteProfile['token']) && $monsterInsightsSiteProfile['token'];
 
         return compact(

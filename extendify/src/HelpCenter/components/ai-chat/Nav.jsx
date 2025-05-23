@@ -53,10 +53,13 @@ export const Nav = ({ setShowHistory }) => {
 									setShowHistory(true);
 									onClose();
 								}}>
-								{sprintf(
-									__('Chat History (%d)', 'extendify-local'),
-									historyCount,
-								)}
+								{
+									// translators: %d: number of chat history items
+									sprintf(
+										__('Chat History (%d)', 'extendify-local'),
+										historyCount,
+									)
+								}
 							</MenuItem>
 						</MenuGroup>
 					)}

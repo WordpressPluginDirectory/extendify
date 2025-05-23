@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WooCommerce Importer class.
  */
@@ -14,6 +15,7 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * WooCommerceImporter class.
  */
+
 class WooCommerceImporter
 {
     /**
@@ -87,7 +89,9 @@ class WooCommerceImporter
                 '_price' => Sanitizer::sanitizeUnknown($productData['price']),
                 '_manage_stock' => 'yes',
                 '_stock' => Sanitizer::sanitizeUnknown($productData['stock']),
-                '_stock_status' => (int) Sanitizer::sanitizeUnknown($productData['stock']) > 0 ? 'instock' : 'outofstock',
+                '_stock_status' => (int) Sanitizer::sanitizeUnknown($productData['stock']) > 0
+                    ? 'instock'
+                    : 'outofstock',
                 '_virtual' => 'no',
             ],
         ];

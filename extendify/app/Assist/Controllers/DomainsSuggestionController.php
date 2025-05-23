@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controls Suggest Domains
  */
@@ -12,6 +13,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * The controller for fetching quick links
  */
+
 class DomainsSuggestionController
 {
     /**
@@ -44,7 +46,8 @@ class DomainsSuggestionController
         $partnerData = \get_option('extendify_partner_data_v2', []);
 
         // Return early if neither of the banners are enabled.
-        if (!($partnerData['showDomainBanner'] ?? false)
+        if (
+            !($partnerData['showDomainBanner'] ?? false)
             && !($partnerData['showDomainTask'] ?? false)
             && !($partnerData['showSecondaryDomainBanner'] ?? false)
             && !($partnerData['showSecondaryDomainTask'] ?? false)
@@ -67,7 +70,9 @@ class DomainsSuggestionController
         $businessDescription = ($siteProfile['aiDescription'] ?? '');
         $data = [
             'query' => self::cleanSiteTitle($siteName),
-            'devbuild' => defined('EXTENDIFY_DEVMODE') ? constant('EXTENDIFY_DEVMODE') : is_readable(EXTENDIFY_PATH . '.devbuild'),
+            'devbuild' => defined('EXTENDIFY_DEVMODE')
+                ? constant('EXTENDIFY_DEVMODE')
+                : is_readable(EXTENDIFY_PATH . '.devbuild'),
             'siteId' => \get_option('extendify_site_id', ''),
             'tlds' => ($partnerData['domainTLDs'] ?? []),
             'partnerId' => \esc_attr(constant('EXTENDIFY_PARTNER_ID')),

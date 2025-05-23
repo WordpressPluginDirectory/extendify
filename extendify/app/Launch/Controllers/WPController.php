@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WP Controller
  */
@@ -13,6 +14,7 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The controller for interacting with WordPress.
  */
+
 class WPController
 {
     /**

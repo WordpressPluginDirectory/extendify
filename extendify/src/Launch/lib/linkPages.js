@@ -1,6 +1,7 @@
 import { rawHandler, getBlockContent } from '@wordpress/blocks';
 import { prependHTTPS } from '@wordpress/url';
 import { pageNames } from '@shared/lib/pages';
+import { wasPluginInstalled } from '@shared/lib/utils';
 import { getLinkSuggestions } from '@launch/api/DataApi';
 import {
 	getActivePlugins,
@@ -8,7 +9,6 @@ import {
 	getPageById,
 	updatePage,
 } from '@launch/api/WPApi';
-import { wasInstalled } from '@launch/lib/util';
 
 const { homeUrl } = window.extSharedData;
 const buttonRegex = /href="(#extendify-[\w-]+)"/gi;
@@ -44,7 +44,7 @@ export const updateButtonLinks = async (wpPages, pluginPages) => {
 		.map(({ slug }) => `/${slug}`);
 
 	// Add plugin related pages only if plugin is active
-	if (wasInstalled(activePlugins, 'woocommerce')) {
+	if (wasPluginInstalled(activePlugins, 'woocommerce')) {
 		const shopPage = await getPageById(
 			await getOption('woocommerce_shop_page_id'),
 		);
@@ -170,7 +170,7 @@ export const updateSinglePageLinksToSections = async (
 	const pluginPages = [];
 
 	// check if woocommerce is active, if so we add it to the list of pages
-	if (wasInstalled(activePlugins, 'woocommerce')) {
+	if (wasPluginInstalled(activePlugins, 'woocommerce')) {
 		const page = await getPageById(
 			await getOption('woocommerce_shop_page_id'),
 		).catch(() => null);
@@ -179,7 +179,7 @@ export const updateSinglePageLinksToSections = async (
 	}
 
 	// check if events calendar is active, if so we add it to the list of pages
-	if (wasInstalled(activePlugins, 'the-events-calendar')) {
+	if (wasPluginInstalled(activePlugins, 'the-events-calendar')) {
 		pluginPages.push('events');
 	}
 

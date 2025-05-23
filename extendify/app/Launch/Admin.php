@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Admin.
  */
@@ -13,6 +14,7 @@ use Extendify\PartnerData;
 /**
  * This class handles any file loading for the admin area.
  */
+
 class Admin
 {
     /**
@@ -75,12 +77,24 @@ class Admin
                     'navigationsIds' => array_map('esc_attr', $this->getLaunchCreatedNavigations()),
                     'templatePartsIds' => array_map('esc_attr', $this->getTemplatePartIds()),
                 ],
-                'helloWorldPostSlug' => \esc_attr(\_x('hello-world', 'Default post slug')), // phpcs:ignore WordPress.WP.I18n.MissingArgDomain
+                'helloWorldPostSlug' => \esc_attr(
+                    // phpcs:ignore WordPress.WP.I18n.MissingArgDomain
+                    \_x(
+                        'hello-world',
+                        'Default post slug'
+                    )
+                ),
                 'redirectToWebsite' => (bool) PartnerData::setting('launchRedirectWebsite'),
             ]),
             'before'
         );
-        \wp_set_script_translations(Config::$slug . '-launch-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
+
+        \wp_set_script_translations(
+            Config::$slug . '-launch-scripts',
+            'extendify-local',
+            EXTENDIFY_PATH . 'languages/js'
+        );
+
         \wp_enqueue_style(
             Config::$slug . '-launch-styles',
             EXTENDIFY_BASE_URL . 'public/build/' . Config::$assetManifest['extendify-launch.css'],

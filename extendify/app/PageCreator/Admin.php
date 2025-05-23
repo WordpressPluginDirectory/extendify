@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Admin.
  */
@@ -8,11 +9,11 @@ namespace Extendify\PageCreator;
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
-use Extendify\PartnerData;
 
 /**
  * This class handles any file loading for the admin area.
  */
+
 class Admin
 {
     /**
@@ -22,14 +23,10 @@ class Admin
      */
     public function __construct()
     {
-        if (!(bool) \esc_attr(\get_option('extendify_onboarding_completed', false))
-            || \esc_attr(\get_option('stylesheet')) !== 'extendable'
-        ) {
-            return;
-        }
-
         \add_action('rest_api_init', [$this, 'registerUserMeta']);
         \add_action('admin_enqueue_scripts', [$this, 'loadScripts']);
+        // Disable the woocommerce setup wizard if installed via the page creator.
+        \add_filter('woocommerce_enable_setup_wizard', '__return_false');
     }
 
     /**
@@ -110,7 +107,11 @@ class Admin
             ]),
             'before'
         );
-        \wp_set_script_translations(Config::$slug . 'page-creator-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
+        \wp_set_script_translations(
+            Config::$slug . 'page-creator-scripts',
+            'extendify-local',
+            EXTENDIFY_PATH . 'languages/js'
+        );
 
         // Inline the library styles to keep them out of the iframe live preview.
         // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
@@ -130,7 +131,8 @@ class Admin
      */
     public function registerUserMeta()
     {
-        register_rest_field('user',
+        register_rest_field(
+            'user',
             'extendify_page_creator_user',
             [
                 'get_callback' => function ($user) {

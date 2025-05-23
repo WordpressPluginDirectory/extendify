@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Api routes
  */
@@ -34,7 +35,7 @@ use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsController;
 use Extendify\Shared\Controllers\ActivityController;
 use Extendify\Shared\Controllers\SiteProfileController;
-
+use Extendify\Shared\Controllers\DataController as SharedDataController;
 
 \add_action(
     'rest_api_init',
@@ -54,8 +55,6 @@ use Extendify\Shared\Controllers\SiteProfileController;
         ApiRouter::post('/launch/save-pattern', [WPController::class, 'savePattern']);
         ApiRouter::get('/launch/active-plugins', [WPController::class, 'getActivePlugins']);
         ApiRouter::get('/launch/goals', [DataController::class, 'getGoals']);
-        ApiRouter::get('/launch/partner-plugins', [DataController::class, 'getPlugins']);
-        ApiRouter::get('/launch/ping', [DataController::class, 'ping']);
         ApiRouter::get('/launch/prefetch-assist-data', [WPController::class, 'prefetchAssistData']);
         ApiRouter::post('/launch/create-navigation', [WPController::class, 'createNavigationWithMeta']);
         ApiRouter::post('/launch/post-launch-functions', [WPController::class, 'postLaunch']);
@@ -95,5 +94,7 @@ use Extendify\Shared\Controllers\SiteProfileController;
         ApiRouter::post('/shared/activity', [ActivityController::class, 'store']);
         ApiRouter::post('/shared/site-profile', [SiteProfileController::class, 'store']);
         ApiRouter::get('/shared/site-profile', [SiteProfileController::class, 'get']);
+        ApiRouter::get('/shared/ping', [SharedDataController::class, 'ping']);
+        ApiRouter::get('/shared/partner-plugins', [SharedDataController::class, 'getPartnerPlugins']);
     }
 );

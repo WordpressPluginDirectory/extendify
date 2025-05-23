@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controls Recommendations
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * The controller for fetching recommendations
  */
+
 class RecommendationsController
 {
     /**

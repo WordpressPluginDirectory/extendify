@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Image Controller
  */
@@ -7,14 +8,21 @@ namespace Extendify\Draft\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+// Try to execute set the limit to something that will work for 60s duration.
+// phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+if (strpos(@ini_get('disable_functions'), 'set_time_limit') === false) {
+    // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+    @set_time_limit(60);
+}
+
 use Extendify\Shared\Services\Sanitizer;
 
 /**
  * The controller for uploading images to the Media Library.
  */
+
 class ImageController
 {
-
     /**
      * Upload the provided image
      *
@@ -32,7 +40,11 @@ class ImageController
         $imageId = \media_sideload_image($request->get_param('source'), 0, null, 'id');
 
         if ($request->get_param('alt_text')) {
-            update_post_meta($imageId, '_wp_attachment_image_alt', Sanitizer::sanitizeText($request->get_param('alt_text')));
+            update_post_meta(
+                $imageId,
+                '_wp_attachment_image_alt',
+                Sanitizer::sanitizeText($request->get_param('alt_text'))
+            );
         }
 
         if ($request->get_param('caption')) {
@@ -45,12 +57,13 @@ class ImageController
         }
 
         $imageObject = \get_post($imageId);
-        $altText     = (get_post_meta($imageId, '_wp_attachment_image_alt', true)) ? get_post_meta($imageId, '_wp_attachment_image_alt', true) : '';
+        $altText = (get_post_meta($imageId, '_wp_attachment_image_alt', true))
+            ? get_post_meta($imageId, '_wp_attachment_image_alt', true)
+            : '';
 
         return new \WP_REST_Response(
             [
                 'id'         => $imageId,
-                // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
                 'caption'    => ['raw' => $imageObject->post_excerpt],
                 'source_url' => wp_get_attachment_url($imageId),
                 'alt_text'   => $altText,

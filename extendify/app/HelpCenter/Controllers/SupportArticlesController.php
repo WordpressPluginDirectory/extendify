@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Controls Support Articles
  */
@@ -12,6 +13,7 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The controller for fetching support articles
  */
+
 class SupportArticlesController
 {
     /**
@@ -50,7 +52,14 @@ class SupportArticlesController
      */
     public static function article($request)
     {
-        $response = wp_remote_get(sprintf('%s/api/posts/%s?lang=%s', static::$host, $request->get_param('slug'), \get_locale()));
+        $response = wp_remote_get(
+            sprintf(
+                '%s/api/posts/%s?lang=%s',
+                static::$host,
+                $request->get_param('slug'),
+                \get_locale()
+            )
+        );
 
         if (is_wp_error($response)) {
             return new \WP_REST_Response([]);
@@ -109,5 +118,4 @@ class SupportArticlesController
         $request->set_param('path', \wp_parse_url($location, PHP_URL_PATH));
         return self::getRedirect($request);
     }
-
 }

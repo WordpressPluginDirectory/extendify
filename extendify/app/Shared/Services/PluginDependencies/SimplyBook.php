@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SimplyBook pattern replacement.
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * SimplyBook pattern replacement class.
  */
+
 class SimplyBook
 {
     /**

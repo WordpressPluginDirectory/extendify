@@ -26,10 +26,11 @@ const extraBody = {
 	userGaveConsent,
 };
 
-export const fetchImages = async (search) => {
+export const fetchImages = async (search, source = null) => {
 	const queryString = new URLSearchParams({
 		...extraBody,
 		query: search,
+		source,
 	});
 
 	const res = await fetch(
@@ -70,7 +71,9 @@ export const preFetchImages = async () => {
 
 	const { aiKeywords } = window.extSharedData?.siteProfile ?? {};
 	const queries = aiKeywords?.length ? aiKeywords : [];
-	const images = (await Promise.all(queries.map(fetchImages))).flat();
+	const images = (
+		await Promise.all(queries.map((query) => fetchImages(query, 'prefetch')))
+	).flat();
 
 	const uniqueImagesMap = images.reduce((acc, image) => {
 		if (!acc.has(image.id)) {

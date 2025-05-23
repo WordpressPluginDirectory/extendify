@@ -102,13 +102,13 @@ export const InsertMenu = ({
 			Object.prototype.hasOwnProperty.call(one?.attributes, 'content') &&
 			Object.prototype.hasOwnProperty.call(two?.attributes, 'content');
 		// If both have content, and it's only one block, they can be merged
-		const mergable =
+		const mergeable =
 			blocks.length === 1 && bothHaveContent(targetBlock, blocks[0]);
 
 		// Apply formatting to all the blocks
 		const formattedBlocks = blocks.map((incomingBlock) => ({
 			...incomingBlock,
-			name: mergable ? targetBlock.name : incomingBlock.name,
+			name: mergeable ? targetBlock.name : incomingBlock.name,
 			attributes: {
 				...targetBlock.attributes,
 				content:

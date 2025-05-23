@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Class specifically to update/migrate database values
  * that may have changed over time. Use the version of
@@ -13,6 +14,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * Migration class.
  */
+
 class VersionMigrator
 {
     /**
@@ -106,7 +108,6 @@ class VersionMigrator
                 update_option("extendify_{$key}_router", Sanitizer::sanitizeArray($router));
             }
         }
-
     }
 
     /**

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Help Center Script loader.
  */
@@ -16,6 +17,7 @@ use Extendify\PartnerData;
 /**
  * This class handles any file loading for the admin area.
  */
+
 class Admin
 {
     /**
@@ -60,7 +62,6 @@ class Admin
         \wp_add_inline_script(
             Config::$slug . '-help-center-scripts',
             'window.extHelpCenterData = ' . \wp_json_encode([
-                'supportUrl' => isset($partnerData['supportUrl']) ? \esc_attr($partnerData['supportUrl']) : '',
                 'userData' => [
                     'tourData' => \wp_json_encode(TourController::get()->get_data()),
                     'supportArticlesData' => \wp_json_encode(SupportArticlesController::get()->get_data()),
@@ -83,6 +84,5 @@ class Admin
             Config::$version,
             'all'
         );
-
     }
 }

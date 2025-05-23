@@ -145,17 +145,6 @@ export const getGoals = async ({
 	return goals.data;
 };
 
-export const getPartnerPlugins = async (key) => {
-	const plugins = await api.get('launch/partner-plugins');
-	if (!Object.keys(plugins?.data ?? {}).length) {
-		throw new Error('Could not get plugins');
-	}
-	if (key && plugins.data[key].length) {
-		return plugins.data[key];
-	}
-	return plugins.data;
-};
-
 export const generateCustomPatterns = async (page, userState, siteProfile) => {
 	const res = await fetch(`${AI_HOST}/api/patterns`, {
 		method: 'POST',
@@ -173,8 +162,6 @@ export const generateCustomPatterns = async (page, userState, siteProfile) => {
 };
 
 export const getLinkSuggestions = async (pageContent, availablePages) => {
-	const abort = new AbortController();
-	const timeout = setTimeout(() => abort.abort(), 10000);
 	const { siteType } = useUserSelectionStore.getState();
 	try {
 		const res = await fetch(`${AI_HOST}/api/link-pages`, {
@@ -186,16 +173,14 @@ export const getLinkSuggestions = async (pageContent, availablePages) => {
 				pageContent,
 				availablePages,
 			}),
-			signal: abort.signal,
 		});
 		if (!res.ok) throw new Error('Bad response from server');
 		return await res.json();
-	} finally {
-		clearTimeout(timeout);
+	} catch (error) {
+		// fail gracefully
+		return {};
 	}
 };
-
-export const pingServer = () => api.get('launch/ping');
 
 export const getSiteProfile = async ({ title, description }) => {
 	const url = `${AI_HOST}/api/site-profile`;
@@ -261,6 +246,7 @@ export const getSiteImages = async (siteProfile) => {
 		aiDescription,
 		aiKeywords,
 		...extraBody,
+		source: 'launch',
 	});
 	if (siteInformation?.title) search.append('title', siteInformation.title);
 	const url = `${IMAGES_HOST}/api/search?${search}`;
@@ -309,6 +295,46 @@ export const getSiteStyles = async ({ title, siteProfile }) => {
 	try {
 		return await response.json();
 	} catch (_) {
+		return fallback;
+	}
+};
+
+export const getSiteLogo = async (objectName) => {
+	const url = `${AI_HOST}/api/site-profile/generate-logo`;
+	const method = 'POST';
+	const headers = { 'Content-Type': 'application/json' };
+	const siteId = window.extSharedData?.siteId ?? '';
+	const partnerId = window.extSharedData?.partnerId ?? '';
+	const showAILogo = window.extSharedData?.showAILogo ?? false;
+	const fallback =
+		'https://images.extendify-cdn.com/demo-content/logos/ext-custom-logo-default.webp';
+
+	if (!showAILogo) {
+		return fallback;
+	}
+
+	if (!siteId || !partnerId || !objectName) {
+		throw new Error(
+			'Missing required parameter (siteId, partnerId or objectName)',
+		);
+	}
+
+	const body = JSON.stringify({ objectName, siteId, partnerId });
+
+	let response;
+	try {
+		response = await fetch(url, { method, headers, body });
+		if (!response.ok) throw new Error('Bad response from server');
+	} catch (error) {
+		response = await fetch(url, { method, headers, body });
+	}
+
+	if (!response.ok) return fallback;
+
+	try {
+		const data = await response.json();
+		return data?.logoUrl ?? fallback;
+	} catch (error) {
 		return fallback;
 	}
 };

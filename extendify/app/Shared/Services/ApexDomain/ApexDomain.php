@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Imports the public suffix list.
  */
@@ -12,9 +13,9 @@ use Extendify\PartnerData;
 /**
  * Get the apex domain for a given URL.
  */
+
 class ApexDomain
 {
-
     /**
      * Get the apex domain for a given URL.
      *
