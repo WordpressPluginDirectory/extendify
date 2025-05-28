@@ -5,7 +5,7 @@ import {
 	MenuItem,
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
-import { useDispatch, useSelect } from '@wordpress/data';
+import { useDispatch, useSelect, select, dispatch } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import { __, isRTL } from '@wordpress/i18n';
 import {
@@ -71,7 +71,7 @@ export const InsertMenu = ({
 		return blocks;
 	};
 
-	const insertCompletion = ({ replaceContent = false, position }) => {
+	const insertCompletion = async ({ replaceContent = false, position }) => {
 		setPrompt({ text: '', promptType: '', systemMessageKey: '' });
 
 		const targetBlockId = selectedBlock
@@ -79,14 +79,44 @@ export const InsertMenu = ({
 			: selectedBlockIds[0];
 		const targetBlock = getBlock(targetBlockId);
 
+		const renderingModes = select('core/preferences').get(
+			'core',
+			'renderingModes',
+		);
+		const currentTheme = select('core').getCurrentTheme()?.stylesheet;
+		const isTemplateShown =
+			renderingModes[currentTheme]?.page === 'template-locked';
+
+		const { set: setPreference } = dispatch('core/preferences');
+		const setRenderingMode = (mode) =>
+			setPreference('core', 'renderingModes', {
+				...renderingModes,
+				[currentTheme]: { ...(renderingModes[currentTheme] || {}), page: mode },
+			});
+
 		const blocks = plainTextToBlocks(completion);
-		if (!targetBlockId || position === 'end') {
-			insertBlocks(blocks);
-			return;
-		}
-		if (position === 'top') {
-			insertBlocks(blocks, 0);
-			return;
+		try {
+			if (!targetBlockId || position === 'end') {
+				if (isTemplateShown) {
+					setRenderingMode('post-only');
+					await new Promise((resolve) => requestAnimationFrame(resolve));
+				}
+
+				insertBlocks(blocks);
+				return;
+			}
+
+			if (position === 'top') {
+				if (isTemplateShown) {
+					setRenderingMode('post-only');
+					await new Promise((resolve) => requestAnimationFrame(resolve));
+				}
+
+				insertBlocks(blocks, 0);
+				return;
+			}
+		} finally {
+			if (isTemplateShown) setRenderingMode('template-locked');
 		}
 
 		const targetIsEmpty = targetBlock?.attributes?.content === '';

@@ -25,7 +25,7 @@ export const Home = () => {
 					id="extendify-draft-image-gen-button"
 					className="w-full justify-center"
 					onClick={() => navigateTo('ai-image')}>
-					{__('Add a prompt', 'extendify-local')}
+					{__('Generate an image', 'extendify-local')}
 				</Button>
 			</BaseControl>
 			<Spacer marginY="5" />

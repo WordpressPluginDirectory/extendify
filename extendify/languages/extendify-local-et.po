@@ -13,40 +13,40 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.0.0-alpha.11\n"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:3
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
 msgid "Pattern added"
 msgstr "Muster lisatud"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:3
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
 msgid "Design Patterns"
 msgstr "Disainimustrid"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Fetching..."
 msgstr "Hangin..."
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Retrying..."
 msgstr "Proovin uuesti..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "All"
 msgstr "Kõik"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Design Type"
 msgstr "Kujunduse tüüp"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Loading more patterns..."
 msgstr "Laadin rohkem mustreid..."
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Loading Patterns..."
 msgstr "Laadin mustreid..."
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Insert Pattern"
 msgstr "Lisa muster"
 
@@ -54,12 +54,12 @@ msgstr "Lisa muster"
 msgid "Extendify Library User Settings"
 msgstr "Extendify teegi kasutaja sätted"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Accept"
 msgstr "Nõustun"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 #: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Terms of Use"
@@ -121,65 +121,65 @@ msgstr "Isikupärastame sinu kogemust"
 msgid "Populating data"
 msgstr "Täidame veebisaidi andmetega"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Service temporarily unavailable"
 msgstr "Teenus pole ajutiselt saadaval"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Discard"
 msgstr "Loobu"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Try again"
 msgstr "Proovi uuesti"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "AI Tools"
 msgstr "AI tööriistad"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Replace selected block text"
 msgstr "Asenda valitud ploki tekst"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Ask AI to generate text"
 msgstr "Lase tekst luua AI abil"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "AI is writing..."
 msgstr "AI kirjutab..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Simplify language"
 msgstr "Lihtsusta keelekasutust"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Make longer"
 msgstr "Pikenda"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Make shorter"
 msgstr "Tee lühemaks"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Fix spelling & grammar"
 msgstr "Paranda õigekirja ja grammatikat"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Improve writing"
 msgstr "Paranda kirjutusstiili"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write a blog post about"
 msgstr "Kirjuta blogipostitus teemal"
 
@@ -385,7 +385,7 @@ msgstr "Loo Site Launcher'i abil mõne minutiga kiire, kaunis ja täielikult koh
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:39
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Home"
 msgstr "Avaleht"
 
@@ -616,15 +616,15 @@ msgstr "Tuuri sammud"
 msgid "Tour"
 msgstr "Tuur"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:3
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Open for new pages"
 msgstr "Ava uutele lehtedele"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
-#: public/build/extendify-library-bab99ae27a788a75a169.js:3
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 #, js-format
 msgid "Toggle %s on new pages"
 msgstr "Lülita %s uutel lehtedel sisse"
@@ -801,13 +801,13 @@ msgid "Press to select"
 msgstr "Vajuta valimiseks"
 
 #: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Üks hetk, see võtab oodatust kauem aega."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Design Library"
 msgstr "Kujunduste kogu"
 
@@ -815,12 +815,12 @@ msgstr "Kujunduste kogu"
 msgid "Design"
 msgstr "Kujundus"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Close"
 msgstr "Sulge"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Submit"
 msgstr "Sisesta"
 
@@ -916,216 +916,216 @@ msgid "Continue"
 msgstr "Jätka"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask AI"
 msgstr "Küsi AI-lt"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Insert at top"
 msgstr "Lisa ülaossa"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Insert after the selected text"
 msgstr "Lisa valitud teksti järele"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Insert at bottom"
 msgstr "Lisa alla"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "A paragraph …"
 msgstr "Üks lõik …"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write a paragraph about"
 msgstr "Kirjuta lõik teemal"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Blog post …"
 msgstr "Ajaveebi postitus ..."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "An informative article …"
 msgstr "Hariv artikkel …"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write an informative article about"
 msgstr "Kirjuta informatiivne artikkel teemal"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Headline …"
 msgstr "Pealkiri …"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write a headline for"
 msgstr "Kirjuta pealkiri järgmisele"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "List …"
 msgstr "Loend …"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write a list of"
 msgstr "Koosta nimekiri"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Catalan"
 msgstr "Katalaani"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Danish"
 msgstr "Taani"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Dutch"
 msgstr "Hollandi"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Dutch (Belgium)"
 msgstr "Hollandi (Belgia)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "English"
 msgstr "Inglise"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Estonian"
 msgstr "Eesti"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Finnish"
 msgstr "Soome"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "French (Belgium)"
 msgstr "Prantsuse (Belgia)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "French (France)"
 msgstr "Prantsuse (Prantsusmaa)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "German"
 msgstr "Saksa"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "German (Switzerland)"
 msgstr "Saksa (Šveits)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Indonesian"
 msgstr "Indoneesia"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Italian"
 msgstr "Itaalia"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Japanese"
 msgstr "Jaapani"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Polish"
 msgstr "Poola"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Portuguese (Brazil)"
 msgstr "Portugali (Brasiilia)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Portuguese (Portugal)"
 msgstr "Portugali (Portugal)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Spanish (Spain)"
 msgstr "Hispaania (Hispaania)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Swedish"
 msgstr "Rootsi"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Ukrainian"
 msgstr "Ukraina"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Vietnamese"
 msgstr "Vietnami"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Translate"
 msgstr "Tõlgi"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Translate to..."
 msgstr "Tõlgi keelde..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Ask AI to edit"
 msgstr "Palu AI-l muuta"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Remove selection"
 msgstr "Eemalda valik"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Suggested prompts"
 msgstr "Soovitatud vihjed"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Custom prompt"
 msgstr "Kohandatud käsklus"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Saad jätkuvalt uurida ja leida suurepäraseid pilte Unsplashist kuni sinu krediitide lähtestamiseni."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Search on Unsplash"
 msgstr "Otsi Unsplashist"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "Kirjelda tehisintellektile pilti, mida soovid luua"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Image Prompt"
 msgstr "Pildi viip"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Generating image..."
 msgstr "Pildi loomine..."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Generate image"
 msgstr "Loo pilt"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Generating your image: "
 msgstr "Sinu pildi loomine:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Importing image..."
 msgstr "Pildi importimine..."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Use this image"
 msgstr "Kasuta seda pilti"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Delete image"
 msgstr "Kustuta pilt"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Image Description"
 msgstr "Pildi kirjeldus"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Teie päring lükati tagasi meie turvasüsteemi tõttu. Teie sisestatud tekst võib sisaldada lubamatut sisu meie turvasüsteemi reeglite järgi."
 
@@ -1424,26 +1424,26 @@ msgid "Service offline. Check back later."
 msgstr "Teenindus ei ole hetkel saadaval. Kontrolli hiljem uuesti."
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:3
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:3
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 #, js-format
 msgid "%1$s of %2$s daily image credits used"
 msgstr "%1$s %2$s-st päevasest pildikrediidi limiidist kasutatud"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Aspect Ratio"
 msgstr "Kuvasuhe"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Square: 1:1"
 msgstr "Ruut: 1:1"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Landscape: 4:3"
 msgstr "Rõhtne: 4:3"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Portrait: 3:4"
 msgstr "Püstine: 3:4"
 
@@ -1499,52 +1499,52 @@ msgstr "Paigaldan..."
 msgid "Install Now"
 msgstr "Paigalda kohe"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "AI Image"
 msgstr "AI pilt"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Go Back"
 msgstr "Mine tagasi"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "AI Image Generator"
 msgstr "Tehisintellekti pildigeneraator"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "Kasuta tehisintellekti, et genereerida kohandatud pilte vastavalt sinu kirjeldusele."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
-msgid "Add a prompt"
-msgstr "Lisa käsklus"
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+msgid "Generate an image"
+msgstr "Loo pilt"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Discover Stock Photos"
 msgstr "Avasta varufotosid"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Otsi ja lisa tasuta varufotosid saidilt Unsplash.com"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Search Unsplash"
 msgstr "Otsi Unsplashist"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "No images found."
 msgstr "Pilte ei leitud."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Photos from Unsplash"
 msgstr "Unsplashi fotod"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Get Personalized Image"
 msgstr "Hangi isikupärastatud pilt"
 
@@ -1973,35 +1973,35 @@ msgstr "Täielik kujundusteek, mis on kohandatud igale saidile, et hõlpsasti li
 msgid "Explore Design Library"
 msgstr "Uuri kujundusteeki"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Bulgarian"
 msgstr "Bulgaaria"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Czech"
 msgstr "Tšehhi"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "French (Canada)"
 msgstr "Prantsuse (Kanada)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Hungarian"
 msgstr "Ungari"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Norwegian"
 msgstr "Norra"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Russian"
 msgstr "Vene"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Slovak"
 msgstr "Slovaki"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Turkish"
 msgstr "Türgi"
 
@@ -2308,35 +2308,35 @@ msgstr "Nautige klassikalist Prantsuse bistrookööki koos California nüansside
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Leia oma unistuste kodu või tee kasumlikke investeeringuid Pinnacle Properties'iga, Austini juhtiva kinnisvarabürooga. Usalda meie kogenud agente isikupärastatud teenuste saamiseks."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Greek"
 msgstr "Kreeka keel"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Hindi"
 msgstr "Hindi"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Arabic"
 msgstr "Araabia"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Arabic (Morocco)"
 msgstr "Maroko araabia"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "English (UK)"
 msgstr "Inglise (UK)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Spanish (Colombia)"
 msgstr "Hispaania (Colombia)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Spanish (Mexico)"
 msgstr "Mehhiko hispaania"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Romanian"
 msgstr "Rumeenia keel"
 
@@ -2395,7 +2395,7 @@ msgstr "Poenäidiste andmete importimine"
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "Eelmise sisseelamisprotsessi käigus loodud %s lehte/postitust kustutatakse."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Lithuanian"
 msgstr "Leedu keel"
 
@@ -2425,98 +2425,98 @@ msgstr "Tere, Maailm tunnuspilt"
 msgid "Extendify Page Creator User Settings"
 msgstr "Extendify lehekülje looja kasutaja sätted"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Confirmation"
 msgstr "Kinnitus"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Kas soovid olemasoleva sisu asendada või luua uue lehe?"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Delete existing content"
 msgstr "Kustuta olemasolev sisu"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Create a new page"
 msgstr "Loo uus leht"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "AI Page Generator"
 msgstr "AI lehe generaator"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Edit"
 msgstr "Muuda"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Clear"
 msgstr "Tühjenda"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Generating AI page profile..."
 msgstr "Koostan tehisintellekti leheprofiili..."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "AI Page Creation"
 msgstr "Tehisintellekti lehe loomine"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Kirjelda lehte, mida soovid luua, lisa olulised üksikasjad ja tehisintellekt loob sulle ainulaadse, kasutusvalmis lehe."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Describe Your Page"
 msgstr "Kirjelda oma lehte"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Nt. loo \"Meist\" leht, mis toob esile meie loo, missiooni, väärtused ja meeskonna ülevaate."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 #, js-format
 msgid "Site Description for %s"
 msgstr "Veebisaidi kirjeldus %s jaoks"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Site Description"
 msgstr "Veebisaidi kirjeldus"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "This is the site description with all its ups and downs."
 msgstr "See on saidi kirjeldus koos kõigi selle tõusude ja mõõnadega."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Generate Page"
 msgstr "Loo leht"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Finding images..."
 msgstr "Piltide leidmine..."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Creating a custom layout..."
 msgstr "Kohandatud paigutuse loomine..."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Writing custom content..."
 msgstr "Kohandatud sisu kirjutamine..."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Close AI Page Creator"
 msgstr "Sulge AI lehe looja"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "AI Page Creator"
 msgstr "AI lehe looja"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Page added"
 msgstr "Leht lisatud"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Failed to add page"
 msgstr "Lehe lisamine ebaõnnestus"
 
@@ -2656,11 +2656,11 @@ msgstr "Plugina paigaldamine ebaõnnestus"
 msgid "Failed to activate the plugin"
 msgstr "Plugina aktiveerimine ebaõnnestus"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Luba paigaldada pluginaid lehe täiustatud funktsioonide jaoks"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Processing patterns and installing required plugins..."
 msgstr "Mustrite töötlemine ja vajalike pistikprogrammide paigaldamine..."
 

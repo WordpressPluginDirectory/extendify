@@ -13,40 +13,40 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.0.0-alpha.11\n"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:3
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
 msgid "Pattern added"
 msgstr "Патерн додано"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:3
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
 msgid "Design Patterns"
 msgstr "Дизайн патернів"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Fetching..."
 msgstr "Отримання..."
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Retrying..."
 msgstr "Повторна спроба..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "All"
 msgstr "Все"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Design Type"
 msgstr "Тип дизайну"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Loading more patterns..."
 msgstr "Завантаження більшої кількості патернів..."
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Loading Patterns..."
 msgstr "Завантаження патернів..."
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Insert Pattern"
 msgstr "Вставити патерн"
 
@@ -54,12 +54,12 @@ msgstr "Вставити патерн"
 msgid "Extendify Library User Settings"
 msgstr "Налаштування користувача бібліотеки Extendify"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Accept"
 msgstr "Прийняти"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 #: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
 msgid "Terms of Use"
@@ -121,65 +121,65 @@ msgstr "Персоналізація вашого досвіду"
 msgid "Populating data"
 msgstr "Заповнення даними"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Service temporarily unavailable"
 msgstr "Сервіс тимчасово недоступний"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Discard"
 msgstr "Скасувати"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Try again"
 msgstr "Спробувати знову"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "AI Tools"
 msgstr "Інструменти AI"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Replace selected block text"
 msgstr "Замінити текст вибраного блоку"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Ask AI to generate text"
 msgstr "Попросіть штучний інтелект генерувати текст"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "AI is writing..."
 msgstr "AI пише..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Simplify language"
 msgstr "Спростіть мову"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Make longer"
 msgstr "Зробити довшим"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Make shorter"
 msgstr "Зробити коротшим"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Fix spelling & grammar"
 msgstr "Виправити правопис та граматику"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Improve writing"
 msgstr "Покращити письмо"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write a blog post about"
 msgstr "Напишіть блоговий запис про"
 
@@ -385,7 +385,7 @@ msgstr "Створіть собі швидкий та гарний сайт за
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:39
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Home"
 msgstr "Головна"
 
@@ -616,15 +616,15 @@ msgstr "Етапи огляду"
 msgid "Tour"
 msgstr "Огляд"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:3
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Open for new pages"
 msgstr "Запускати бібліотеку на нових сторінках"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
-#: public/build/extendify-library-bab99ae27a788a75a169.js:3
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 #, js-format
 msgid "Toggle %s on new pages"
 msgstr "Відкривати %s на нових сторінках"
@@ -801,13 +801,13 @@ msgid "Press to select"
 msgstr "Натисність, щоб обрати"
 
 #: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Хвилинку, це займає більше часу, ніж очікувалось."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
 msgid "Design Library"
 msgstr "Бібліотека дизайнів"
 
@@ -815,12 +815,12 @@ msgstr "Бібліотека дизайнів"
 msgid "Design"
 msgstr "Дизайн"
 
-#: public/build/extendify-library-bab99ae27a788a75a169.js:1
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Close"
 msgstr "Закрити"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Submit"
 msgstr "Відправити"
 
@@ -916,216 +916,216 @@ msgid "Continue"
 msgstr "Продовжити"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask AI"
 msgstr "Запитати у ШІ"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Insert at top"
 msgstr "Вставити на початок"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Insert after the selected text"
 msgstr "Вставити після виділеного тексту"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Insert at bottom"
 msgstr "Вставити внизу"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "A paragraph …"
 msgstr "Абзац …"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write a paragraph about"
 msgstr "Напишіть параграф про"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Blog post …"
 msgstr "Запис у блозі…"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "An informative article …"
 msgstr "Інформативна стаття …"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write an informative article about"
 msgstr "Напишіть інформативну статтю про"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Headline …"
 msgstr "Заголовок …"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write a headline for"
 msgstr "Напишіть заголовок для"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "List …"
 msgstr "Перелік ..."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Write a list of"
 msgstr "Напишіть перелік"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Catalan"
 msgstr "Каталанська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Danish"
 msgstr "Данська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Dutch"
 msgstr "Нідерландська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Dutch (Belgium)"
 msgstr "Нідерландський (Бельгія)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "English"
 msgstr "Англійська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Estonian"
 msgstr "Естонська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Finnish"
 msgstr "Фінська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "French (Belgium)"
 msgstr "Французький (Бельгія)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "French (France)"
 msgstr "Французька (Франція)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "German"
 msgstr "Німецька"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "German (Switzerland)"
 msgstr "Німецька (Швейцарія)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Indonesian"
 msgstr "Індонезійська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Italian"
 msgstr "Італійська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Japanese"
 msgstr "Японська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Polish"
 msgstr "Польська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Portuguese (Brazil)"
 msgstr "Португальська (Бразилія)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Portuguese (Portugal)"
 msgstr "Португальська (Португалія)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Spanish (Spain)"
 msgstr "Іспанський (Іспанія)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Swedish"
 msgstr "Шведська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Vietnamese"
 msgstr "В'єтнамська"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Translate"
 msgstr "Перекласти"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Translate to..."
 msgstr "Перекласти на..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Ask AI to edit"
 msgstr "Попросити ШІ відредагувати"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 msgid "Remove selection"
 msgstr "Вилучити вибране"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Suggested prompts"
 msgstr "Рекомендовані підказки"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Custom prompt"
 msgstr "Спеціальний запит"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Ви все ще можете шукати та знаходити чудові зображення на Unsplash, поки ваші кредити не скинуться."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Search on Unsplash"
 msgstr "Шукати на Unsplash"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "Розкажіть штучному інтелекту про зображення, яке ви хочете створити"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Image Prompt"
 msgstr "Запит зображення"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Generating image..."
 msgstr "Генерування зображення..."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Generate image"
 msgstr "Створити зображення"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Generating your image: "
 msgstr "Генерація вашого зображення:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Importing image..."
 msgstr "Імпортування зображення..."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Use this image"
 msgstr "Використати це зображення"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Delete image"
 msgstr "Видалити зображення"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Image Description"
 msgstr "Опис зображення"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Ваш запит було відхилено через нашу систему безпеки. Ваше повідомлення може містити текст, який не дозволений нашою системою безпеки."
 
@@ -1424,26 +1424,26 @@ msgid "Service offline. Check back later."
 msgstr "Сервіс поза мережею. Зайдіть пізніше."
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:3
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:3
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 #, js-format
 msgid "%1$s of %2$s daily image credits used"
 msgstr "Використано %1$s з %2$s денних кредитів на зображення"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Aspect Ratio"
 msgstr "Співвідношення сторін"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Square: 1:1"
 msgstr "Квадрат: 1:1"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Landscape: 4:3"
 msgstr "Ландшафт: 4:3"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
 msgid "Portrait: 3:4"
 msgstr "Портрет: 3:4"
 
@@ -1499,52 +1499,52 @@ msgstr "Встановлення..."
 msgid "Install Now"
 msgstr "Встановити зараз"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "AI Image"
 msgstr "ШІ-зображення"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Go Back"
 msgstr "Повернутися назад"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "AI Image Generator"
 msgstr "Генератор зображень на базі ШІ"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "Використовуйте штучний інтелект для створення власних зображень на основі вашого опису."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
-msgid "Add a prompt"
-msgstr "Додати запит"
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+msgid "Generate an image"
+msgstr "Створити зображення"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Discover Stock Photos"
 msgstr "Знайти стокові фотографії"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Шукати та додавати безкоштовні стокові фото з Unsplash.com"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Search Unsplash"
 msgstr "Шукати на Unsplash"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "No images found."
 msgstr "Зображень не знайдено."
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Photos from Unsplash"
 msgstr "Фотографії з Unsplash"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Get Personalized Image"
 msgstr "Отримати персоналізоване зображення"
 
@@ -1980,35 +1980,35 @@ msgstr "Повна бібліотека дизайну, налаштована �
 msgid "Explore Design Library"
 msgstr "Оглянути бібліотеку дизайнів"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Bulgarian"
 msgstr "Болгарська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Czech"
 msgstr "Чеська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "French (Canada)"
 msgstr "Французька (Канада)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Hungarian"
 msgstr "Угорська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Norwegian"
 msgstr "Норвезька"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Russian"
 msgstr "Російська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Slovak"
 msgstr "Словацька"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Turkish"
 msgstr "Турецька"
 
@@ -2315,35 +2315,35 @@ msgstr "Скуштуйте класичну французьку бістро-к
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Знайдіть будинок своєї мрії або зробіть вигідні інвестиції з Pinnacle Properties, провідним агентством нерухомості в Остіні. Довіртеся нашим досвідченим агентам для отримання персоналізованих послуг"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Greek"
 msgstr "Грецька"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Hindi"
 msgstr "Гінді"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Arabic"
 msgstr "Арабська"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Arabic (Morocco)"
 msgstr "Арабська (Марокко)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "English (UK)"
 msgstr "Англійська (Велика Британія)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Spanish (Colombia)"
 msgstr "Іспанський (Колумбія)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Spanish (Mexico)"
 msgstr "Іспанський (Мексика)"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Romanian"
 msgstr "Румунська"
 
@@ -2402,7 +2402,7 @@ msgstr "Імпорт зразкових даних магазину"
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s сторінок/записів, створених під час попереднього сеансу налаштування, буде видалено"
 
-#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
 msgid "Lithuanian"
 msgstr "Литовська"
 
@@ -2432,98 +2432,98 @@ msgstr "Головне зображення Hello World"
 msgid "Extendify Page Creator User Settings"
 msgstr "Налаштування користувача Extendify Page Creator"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Confirmation"
 msgstr "Підтвердження"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Бажаєте замінити існуючий вміст чи створити нову сторінку?"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Delete existing content"
 msgstr "Видалити наявний вміст"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "Create a new page"
 msgstr "Створити нову сторінку"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-page-creator-b907843992de6947699f.js:1
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
 msgid "AI Page Generator"
 msgstr "Генератор сторінок AI"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Edit"
 msgstr "Редагувати"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Clear"
 msgstr "Очистити"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Generating AI page profile..."
 msgstr "Генерування AI профілю сторінки..."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "AI Page Creation"
 msgstr "Створення сторінки за допомогою ШІ"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Опишіть сторінку, яку хочете створити, додайте ключові деталі, і Al згенерує унікальну, готову до використання сторінку для вас."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "Describe Your Page"
 msgstr "Опишіть вашу сторінку"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:3
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Наприклад, створіть сторінку \"Про нас\", де висвітліть нашу історію, місію, цінності та огляд команди."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 #, js-format
 msgid "Site Description for %s"
 msgstr "Опис сайту для %s"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Site Description"
 msgstr "Опис сайту"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "This is the site description with all its ups and downs."
 msgstr "Це опис сайту з усіма його перевагами та недоліками."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Generate Page"
 msgstr "Згенерувати сторінку"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Finding images..."
 msgstr "Пошук зображень ..."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Creating a custom layout..."
 msgstr "Створення власного компонування..."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Writing custom content..."
 msgstr "Написання власного вмісту..."
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Close AI Page Creator"
 msgstr "Закрити AI Page Creator"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "AI Page Creator"
 msgstr "AI створювач сторінок"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Page added"
 msgstr "Сторінку додано"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Failed to add page"
 msgstr "Не вдалося додати сторінку"
 
@@ -2663,11 +2663,11 @@ msgstr "Не вдалося встановити плагін"
 msgid "Failed to activate the plugin"
 msgstr "Не вдалося активувати плагін"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Дозволити встановлення плагінів для передових функцій сторінки"
 
-#: public/build/extendify-page-creator-b907843992de6947699f.js:5
+#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
 msgid "Processing patterns and installing required plugins..."
 msgstr "Обробка патернів та встановлення необхідних плагінів..."
 

@@ -44,6 +44,17 @@ export const Modal = () => {
 		setPage(0);
 	};
 
+	const hasOnlyTopEmptyParagraph = () => {
+		const { getBlocks } = select('core/block-editor');
+		const blocks = getBlocks();
+
+		return (
+			blocks.length === 1 &&
+			blocks[0].name === 'core/paragraph' &&
+			blocks[0].attributes?.content?.text === ''
+		);
+	};
+
 	// Get post attributes using WordPress's useSelect hook
 	const postAttribute = useSelect((select) => {
 		const editor = select(editorStore);
@@ -67,7 +78,8 @@ export const Modal = () => {
 				await new Promise((resolve) => requestAnimationFrame(resolve));
 			}
 			// Delete the blocks before we insert our own.
-			if (!postAttribute.isEmptyPost) resetBlocks([]);
+			if (hasOnlyTopEmptyParagraph() || !postAttribute.isEmptyPost)
+				resetBlocks([]);
 
 			// Insert the blocks into the editor
 			await insertBlocks(blocks);
