@@ -61,27 +61,27 @@ msgstr "Terima"
 
 #: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Terms of Use"
 msgstr "Ketentuan Penggunaan"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "View more pages"
 msgstr "Lihat halaman lainnya"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Kami sudah memilih halaman yang paling umum untuk jenis website Anda."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Pilih halaman yang ingin ditambahkan ke website Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Home page"
 msgstr "Halaman utama"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Pick a design for your website"
 msgstr "Pilih desain untuk website Anda"
 
@@ -89,35 +89,35 @@ msgstr "Pilih desain untuk website Anda"
 msgid "Searching..."
 msgstr "Mencari..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Enter your website name"
 msgstr "Masukkan nama website Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Helping you to succeed"
 msgstr "Membantu Anda untuk sukses"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Adding page content"
 msgstr "Menambahkan konten halaman"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Installing necessary plugins"
 msgstr "Menginstal plugin yang diperlukan"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Creating a beautiful website"
 msgstr "Membuat website yang indah"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Applying your website styles"
 msgstr "Mengaplikasikan gaya website Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Personalizing your experience"
 msgstr "Mempersonalisasi pengalaman Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Populating data"
 msgstr "Mengisi data"
 
@@ -573,7 +573,7 @@ msgstr "Halaman tidak ditemukan"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:23
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Events"
 msgstr "Event"
 
@@ -617,19 +617,19 @@ msgid "Tour"
 msgstr "Tutorial"
 
 #: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Open for new pages"
 msgstr "Buka Halaman Baru"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
 #: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 #, js-format
 msgid "Toggle %s on new pages"
 msgstr "Beralih %s dalam Halaman baru"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Kita menemukan masalah server yang tidak dapat di pulihkan. Silakan reload halaman dan mencoba lagi."
 
@@ -654,8 +654,8 @@ msgstr "Tambah Deskripsi Website"
 msgid "Upload site logo"
 msgstr "Upload Logo Website"
 
-#: app/AdminPageRouter.php:40
-#: app/AdminPageRouter.php:64
+#: app/AdminPageRouter.php:41
+#: app/AdminPageRouter.php:65
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Site Assistant"
@@ -663,7 +663,7 @@ msgstr "Asisten Website"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:7
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Blog"
 msgstr "Blog"
 
@@ -728,28 +728,28 @@ msgstr "Lanjut membuat website anda"
 msgid "Let's Start Building Your Website"
 msgstr "Ayo mulai membangun website anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Exit Launch"
 msgstr "Tutup Perilisan"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Redirect dalam 3,2,1..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Your website has been created!"
 msgstr "Website Anda telah dibuat!"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Setting up your Site Assistant"
 msgstr "Mengatur Asisten Situs Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Starting off with a full website"
 msgstr "Memulai dengan website yang lengkap"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Back"
 msgstr "Kembali"
 
@@ -757,15 +757,15 @@ msgstr "Kembali"
 msgid "Site Industry"
 msgstr "Industri Website"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Take me there"
 msgstr "Bawa sana kesana"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Halo, Launch dari Extendable dan diperlukan untuk melanjutkan, anda dapat menginstallnya lewat link dibawah ini dan memulai setelah diaktifkan."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "One more thing before we start."
 msgstr "Satu hal lagi sebelum kita mulai."
 
@@ -778,7 +778,7 @@ msgid "View Site"
 msgstr "Lihat Website"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Next"
 msgstr "Selanjutnya"
 
@@ -787,21 +787,21 @@ msgstr "Selanjutnya"
 msgid "Pages"
 msgstr "Halaman"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "You can personalize this later."
 msgstr "Anda dapat mengubah ini nanti."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Loading..."
 msgstr "Loading..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Press to select"
 msgstr "Tekan untuk pilih"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Mohon menunggu, ini perlu Waktu lebih Panjang dari biasanya."
 
@@ -816,7 +816,7 @@ msgid "Design"
 msgstr "Desain"
 
 #: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Close"
 msgstr "Tutup"
 
@@ -853,65 +853,65 @@ msgstr "Extendify"
 msgid "%1$s of %2$s"
 msgstr "%1$s dari %2$s"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Creating pages with custom content"
 msgstr "Membuat halaman dengan konten khusus"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Setting up site layout"
 msgstr "Mengatur tata letak situs"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Professional"
 msgstr "Profesional"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Friendly"
 msgstr "Ramah"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Inspirational"
 msgstr "Inspiratif"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Informative"
 msgstr "Informatif"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Persuasive"
 msgstr "Meyakinkan"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Skip"
 msgstr "Lewati"
 
 #. translators: Launch is a noun.
-#: app/AdminPageRouter.php:76
+#: app/AdminPageRouter.php:77
 msgid "Launch"
 msgstr "Peluncuran"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:3
 msgid "Added by Launch"
 msgstr "Ditambahkan oleh Launch"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:3
 msgid "Start over?"
 msgstr "Mulai dari awal?"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Ikuti proses orientasi lagi untuk membuat situs baru."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Exit"
 msgstr "Keluar"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Processing"
 msgstr "Sedang diproses"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Continue"
 msgstr "Lanjutkan"
 
@@ -1457,7 +1457,7 @@ msgstr "Tersedia dan sangat cocok untuk situs Anda"
 msgid "Get another domain for your site."
 msgstr "Dapatkan domain lain untuk situs Anda."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Header Navigation"
 msgstr "Navigasi Header"
 
@@ -1552,7 +1552,7 @@ msgstr "Dapatkan Gambar Personalisasi"
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Klik di sini untuk menuju dasbor manajemen situs web Anda. Dari sana Anda akan dapat membuat lebih banyak situs web, dan mengelola pengaturan akun Anda."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Misalnya, kami adalah studio yoga di London dengan instruktur terlatih secara profesional yang fokus pada yoga panas untuk tujuan terapeutik."
 
@@ -2175,24 +2175,24 @@ msgstr "Testimoni"
 msgid "testimonials"
 msgstr "testimoni"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Single-Page Website"
 msgstr "Situs Satu Halaman"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "All content displayed on one scrolling page."
 msgstr "Semua konten ditampilkan dalam satu laman bergulir."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Multi-Page Website"
 msgstr "Situs Multi-Halaman"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Multiple interconnected pages."
 msgstr "Beberapa laman yang saling terhubung."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Pick Your Site Structure"
 msgstr "Pilih Struktur Situs Anda"
 
@@ -2340,37 +2340,37 @@ msgstr "Bahasa Spanyol (Meksiko)"
 msgid "Romanian"
 msgstr "Rumania"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Bagikan visi Anda, dan kami akan membuat situs web yang sesuai dengan kebutuhan Anda, siap diluncurkan dalam waktu singkat. Mari mulai dengan mempelajari lebih lanjut tentang apa yang Anda bangun."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:13
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:13
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Peluncuran - Pembuatan Web dengan AI"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Customizing Your Experience"
 msgstr "Menyesuaikan Pengalaman Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Designing Your Options"
 msgstr "Merancang Pilihan Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Harap tunggu sementara kami menganalisis input Anda dan menyesuaikan pengalaman Anda."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Harap tunggu sementara kami membuat beberapa pilihan situs web untuk Anda pilih."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Creating blog sample data"
 msgstr "Membuat data contoh blog"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "More"
 msgstr "Lainnya"
 
@@ -2380,17 +2380,17 @@ msgid "Add Website Details"
 msgstr "Tambahkan Detail Situs Web"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 #, js-format
 msgid "Blog Post %s"
 msgstr "Pos Blog %s"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Importing shop sample data"
 msgstr "Mengimpor data contoh toko"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s halaman/artikel yang dibuat dalam sesi onboarding sebelumnya akan dihapus."
@@ -2399,11 +2399,11 @@ msgstr "%s halaman/artikel yang dibuat dalam sesi onboarding sebelumnya akan dih
 msgid "Lithuanian"
 msgstr "Lithuania"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Select your site's tone"
 msgstr "Pilih nada situs Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Website title (required)"
 msgstr "Judul situs (wajib)"
 
@@ -2417,7 +2417,7 @@ msgstr "Pesan Sekarang"
 msgid "book-now"
 msgstr "pesan-sekarang"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Hello World Featured Image"
 msgstr "Gambar Andalan Hello World"
 
@@ -2425,178 +2425,178 @@ msgstr "Gambar Andalan Hello World"
 msgid "Extendify Page Creator User Settings"
 msgstr "Pengaturan Pengguna Pembuat Halaman Extendify"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Confirmation"
 msgstr "Konfirmasi"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Apakah Anda ingin mengganti konten yang ada atau membuat halaman baru?"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Delete existing content"
 msgstr "Hapus konten yang ada"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Create a new page"
 msgstr "Buat laman baru"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "AI Page Generator"
 msgstr "Generator Laman AI"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Edit"
 msgstr "Edit"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Clear"
 msgstr "Bersihkan"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Generating AI page profile..."
 msgstr "Membuat profil halaman AI..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "AI Page Creation"
 msgstr "Pembuatan Laman AI"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Jelaskan laman yang ingin Anda buat, tambahkan detail penting, dan AI akan menghasilkan laman unik yang siap digunakan untuk Anda."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Describe Your Page"
 msgstr "Deskripsikan Laman Anda"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Misalnya, buat halaman \"Tentang Kami\" yang menyoroti cerita, misi, nilai, dan ringkasan tim kami."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 #, js-format
 msgid "Site Description for %s"
 msgstr "Deskripsi Situs untuk %s"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Site Description"
 msgstr "Deskripsi Situs"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "This is the site description with all its ups and downs."
 msgstr "Ini adalah deskripsi situs dengan segala naik turunnya."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Generate Page"
 msgstr "Hasilkan Laman"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Finding images..."
 msgstr "Menemukan gambar..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Creating a custom layout..."
 msgstr "Membuat tata letak khusus..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Writing custom content..."
 msgstr "Menulis konten khusus..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Close AI Page Creator"
 msgstr "Tutup Pembuat Laman AI"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "AI Page Creator"
 msgstr "Pembuat Laman AI"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Page added"
 msgstr "Laman ditambahkan"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Failed to add page"
 msgstr "Gagal menambahkan halaman"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Business"
 msgstr "Bisnis"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "eCommerce"
 msgstr "eCommerce"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Landing Page"
 msgstr "Halaman Arahan"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Other"
 msgstr "Lainnya"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Landing Page title (required)"
 msgstr "Judul Laman Landas (wajib)"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Misalnya, Kami adalah toko online yang mengkhususkan diri pada barang-barang ramah lingkungan, menawarkan produk berkelanjutan untuk membantu Anda menjalani gaya hidup lebih hijau."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "Misalnya, blog keuangan pribadi yang membagikan petunjuk ahli tentang anggaran, investasi, dan mencapai kebebasan finansial untuk profesional muda."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Misalnya, ebook gratis berisi petunjuk produktivitas dan strategi yang dapat diterapkan untuk membantu Anda fokus, mengelola waktu secara efektif, dan mencapai tujuan Anda."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Misalnya, portofolio fotografi pribadi yang menampilkan koleksi foto landscape, portrait, dan street, menangkap momen dari seluruh dunia."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your business"
 msgstr "Deskripsikan bisnis Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your eCommerce website"
 msgstr "Deskripsikan situs web eCommerce Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your blog"
 msgstr "Deskripsikan blog Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your Landing Page"
 msgstr "Deskripsikan Halaman Arahan Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your website"
 msgstr "Deskripsikan situs web Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Call-To-Action Link"
 msgstr "Tautan Call-To-Action"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Tautan ini akan digunakan di semua tombol Call-to-Action, mengarahkan pengunjung ke tujuan yang Anda pilih."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "What type of website are you creating?"
 msgstr "Tipe situs web apa yang Anda buat?"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Tell Us About Your Landing Page"
 msgstr "Ceritakan Tentang Laman Landas Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Tell Us About Your Website"
 msgstr "Ceritakan Tentang Situs Web Anda"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Bagikan visi Anda, dan kami akan membuat halaman arahan yang sesuai dengan kebutuhan Anda, siap diluncurkan dalam waktu singkat. Mari mulai dengan mempelajari lebih lanjut tentang apa yang Anda bangun."
 
@@ -2636,7 +2636,7 @@ msgstr "Tooltip menunjuk ke tombol edit halaman"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Selamat datang di situs baru Anda! Saat Anda siap, tekan di sini untuk mengedit halaman ini."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Installing supporting plugins"
 msgstr "Menginstal plugin pendukung"
 
@@ -2648,50 +2648,50 @@ msgstr "Tujuan Situs Web"
 msgid "Add Website Objective"
 msgstr "Tambahkan Tujuan Situs Web"
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgid "Failed to install the plugin"
 msgstr "Gagal menginstal plugin"
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgid "Failed to activate the plugin"
 msgstr "Gagal mengaktifkan plugin"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Izinkan plugin diinstal untuk fitur halaman tingkat lanjut"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Processing patterns and installing required plugins..."
 msgstr "Memproses pola dan menginstal plugin yang diperlukan..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Privacy Policy"
 msgstr "Kebijakan Privasi"
 
 #. translators: %1$s and %2$s are links
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 #, js-format
 msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
 msgstr "Dengan menggunakan fitur AI, Anda setuju dengan %1$s dan %2$s OpenAI"
 
 #. translators: %s is a name
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 #, js-format
 msgctxt "Preposition for \"By Author Name\""
 msgid "By %s"
 msgstr "Oleh %s"
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgctxt "Plugin installation status"
 msgid "Installing..."
 msgstr "Sedang menginstal..."
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgctxt "Plugin activation status"
 msgid "Activating..."
 msgstr "Mengaktifkan..."
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgctxt "Plugin activation status"
 msgid "Activated"
 msgstr "Diaktifkan"

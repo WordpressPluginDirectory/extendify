@@ -61,27 +61,27 @@ msgstr "Accepter"
 
 #: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Terms of Use"
 msgstr "Conditions d'utilisation"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "View more pages"
 msgstr "Voir plus de pages"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Nous avons déjà sélectionné les pages les plus courantes pour votre type de site web."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Choisissez les pages à ajouter à votre site web"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Home page"
 msgstr "Page d’accueil"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Pick a design for your website"
 msgstr "Choisissez un design pour votre site web"
 
@@ -89,35 +89,35 @@ msgstr "Choisissez un design pour votre site web"
 msgid "Searching..."
 msgstr "Recherche…"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Enter your website name"
 msgstr "Entrez le nom de votre site web"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Helping you to succeed"
 msgstr "Aide à réussir"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Adding page content"
 msgstr "Ajout du contenu à la page"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Installing necessary plugins"
 msgstr "Installation des extensions nécessaires"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Creating a beautiful website"
 msgstr "Création d’un beau site web"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Applying your website styles"
 msgstr "Application des styles de votre site web"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Personalizing your experience"
 msgstr "Personnalisation de votre expérience"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Populating data"
 msgstr "Remplissage des données"
 
@@ -573,7 +573,7 @@ msgstr "Page introuvable"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:23
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Events"
 msgstr "Événements"
 
@@ -617,19 +617,19 @@ msgid "Tour"
 msgstr "Présentation"
 
 #: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Open for new pages"
 msgstr "Ouvrir pour de nouvelles pages"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
 #: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 #, js-format
 msgid "Toggle %s on new pages"
 msgstr "Permuter %s sur les nouvelles pages"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Nous avons rencontré une erreur de serveur dont nous ne pouvons pas nous remettre. Veuillez recharger la page et réessayer."
 
@@ -654,8 +654,8 @@ msgstr "Ajoutez une description au site"
 msgid "Upload site logo"
 msgstr "Téléversez le logo du site"
 
-#: app/AdminPageRouter.php:40
-#: app/AdminPageRouter.php:64
+#: app/AdminPageRouter.php:41
+#: app/AdminPageRouter.php:65
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Site Assistant"
@@ -663,7 +663,7 @@ msgstr "Assistant du site"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:7
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Blog"
 msgstr "Blog"
 
@@ -728,28 +728,28 @@ msgstr "Continuer à construire votre site"
 msgid "Let's Start Building Your Website"
 msgstr "Commençons à construire votre site"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Exit Launch"
 msgstr "Quitter le lancement"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Redirection dans 3, 2, 1..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Your website has been created!"
 msgstr "Votre site web a été créé !"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Setting up your Site Assistant"
 msgstr "Configuration de votre assistant de site"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Starting off with a full website"
 msgstr "Démarrer par un site complet"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Back"
 msgstr "Retour"
 
@@ -757,15 +757,15 @@ msgstr "Retour"
 msgid "Site Industry"
 msgstr "Secteur d’activité"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Take me there"
 msgstr "Emmène-moi là-bas"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Ohé, Launch est propulsé par Extendable et est nécessaire pour continuer. Vous pouvez l’installer à partir du lien ci-dessous et recommencer une fois activé."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "One more thing before we start."
 msgstr "Une dernière chose avant de commencer."
 
@@ -778,7 +778,7 @@ msgid "View Site"
 msgstr "Voir le site"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Next"
 msgstr "Suivant"
 
@@ -787,21 +787,21 @@ msgstr "Suivant"
 msgid "Pages"
 msgstr "Pages"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "You can personalize this later."
 msgstr "Vous pourrez le personnaliser ultérieurement."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Loading..."
 msgstr "Chargement…"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Press to select"
 msgstr "Appuyer pour sélectionner"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Un instant, cela prend plus de temps que prévu."
 
@@ -816,7 +816,7 @@ msgid "Design"
 msgstr "Design"
 
 #: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Close"
 msgstr "Fermer"
 
@@ -853,65 +853,65 @@ msgstr "Extendify"
 msgid "%1$s of %2$s"
 msgstr "%1$s sur %2$s"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Creating pages with custom content"
 msgstr "Création de pages avec du contenu personnalisé"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Setting up site layout"
 msgstr "Configuration de la mise en page du site"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Professional"
 msgstr "Professionnel"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Friendly"
 msgstr "Amical"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Inspirational"
 msgstr "Inspirant"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Informative"
 msgstr "Informatif"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Persuasive"
 msgstr "Convaincant"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Skip"
 msgstr "Passer"
 
 #. translators: Launch is a noun.
-#: app/AdminPageRouter.php:76
+#: app/AdminPageRouter.php:77
 msgid "Launch"
 msgstr "Lancement"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:3
 msgid "Added by Launch"
 msgstr "Ajouté par Launch"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:3
 msgid "Start over?"
 msgstr "Recommencer ?"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Reparcourez le processus d'intégration pour créer un nouveau site."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Exit"
 msgstr "Quitter"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Processing"
 msgstr "Traitement en cours"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Continue"
 msgstr "Continuer"
 
@@ -1457,7 +1457,7 @@ msgstr "Disponible et parfaitement adapté à votre site"
 msgid "Get another domain for your site."
 msgstr "Obtenez un autre domaine pour votre site."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Header Navigation"
 msgstr "Navigation d'en-tête"
 
@@ -1552,7 +1552,7 @@ msgstr "Obtenir une image personnalisée"
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Cliquez ici pour accéder à votre tableau de bord de gestion de site. Vous pourrez y créer d'autres sites et gérer les paramètres de votre compte."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Par exemple, nous sommes un studio de yoga à Londres avec des instructeurs professionnels spécialisés dans le yoga chaud à des fins thérapeutiques."
 
@@ -2175,24 +2175,24 @@ msgstr "Témoignages"
 msgid "testimonials"
 msgstr "temoignages"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Single-Page Website"
 msgstr "Site web à page unique"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "All content displayed on one scrolling page."
 msgstr "Tout le contenu affiché sur une page à défilement unique."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Multi-Page Website"
 msgstr "Site Web multi-pages"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Multiple interconnected pages."
 msgstr "Plusieurs pages interconnectées."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Pick Your Site Structure"
 msgstr "Choisissez la structure de votre site"
 
@@ -2340,37 +2340,37 @@ msgstr "Espagnol (Mexique)"
 msgid "Romanian"
 msgstr "Roumain"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Partagez votre vision et nous créerons un site web parfaitement adapté à vos besoins, prêt à être lancé rapidement. Commençons par en apprendre davantage sur ce que vous construisez."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:13
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:13
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Lancement - Création Web alimentée par l'IA"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Customizing Your Experience"
 msgstr "Personnalisation de votre expérience"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Designing Your Options"
 msgstr "Conception de vos options"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Veuillez patienter pendant que nous analysons vos entrées et personnalisons votre expérience."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Veuillez patienter pendant que nous créons des options de site web parmi lesquelles vous pourrez choisir."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Creating blog sample data"
 msgstr "Création de données d'exemple de blogue"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "More"
 msgstr "Plus"
 
@@ -2380,17 +2380,17 @@ msgid "Add Website Details"
 msgstr "Ajouter les détails du site Web"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 #, js-format
 msgid "Blog Post %s"
 msgstr "Article de blog %s"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Importing shop sample data"
 msgstr "Importation des données d'exemple de la boutique"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s pages/publications créées lors de la session d'intégration précédente seront supprimées."
@@ -2399,11 +2399,11 @@ msgstr "%s pages/publications créées lors de la session d'intégration précé
 msgid "Lithuanian"
 msgstr "Lituanien"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Select your site's tone"
 msgstr "Sélectionnez le ton de votre site"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Website title (required)"
 msgstr "Titre du site Web (obligatoire)"
 
@@ -2417,7 +2417,7 @@ msgstr "Réservez maintenant"
 msgid "book-now"
 msgstr "réserver-maintenant"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Hello World Featured Image"
 msgstr "Image mise en avant de Hello World"
 
@@ -2425,178 +2425,178 @@ msgstr "Image mise en avant de Hello World"
 msgid "Extendify Page Creator User Settings"
 msgstr "Paramètres utilisateur d'Extendify Page Creator"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Confirmation"
 msgstr "Confirmation"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Voulez-vous remplacer le contenu existant ou créer une nouvelle page?"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Delete existing content"
 msgstr "Supprimer le contenu existant"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Create a new page"
 msgstr "Créer une nouvelle page"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "AI Page Generator"
 msgstr "Générateur de pages IA"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Edit"
 msgstr "Modifier"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Clear"
 msgstr "Effacer"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Generating AI page profile..."
 msgstr "Génération du profil de page IA..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "AI Page Creation"
 msgstr "Création de page IA"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Décrivez la page que vous souhaitez créer en ajoutant des détails clés, et l'IA générera une page unique prête à l'emploi pour vous."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Describe Your Page"
 msgstr "Décrivez votre page"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Par exemple, créer une page \"À propos\" mettant en avant notre histoire, mission, valeurs et aperçu de l'équipe."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 #, js-format
 msgid "Site Description for %s"
 msgstr "Description du site pour %s"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Site Description"
 msgstr "Description du site Web"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "This is the site description with all its ups and downs."
 msgstr "Voici la description du site avec ses hauts et ses bas."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Generate Page"
 msgstr "Générer la page"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Finding images..."
 msgstr "Recherche d'images…"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Creating a custom layout..."
 msgstr "Création d'une disposition personnalisée..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Writing custom content..."
 msgstr "Rédaction de contenu personnalisé..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Close AI Page Creator"
 msgstr "Fermer le créateur de page IA"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "AI Page Creator"
 msgstr "Créateur de page IA"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Page added"
 msgstr "Page ajoutée"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Failed to add page"
 msgstr "Échec de l'ajout de la page"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Business"
 msgstr "Entreprise"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "eCommerce"
 msgstr "Commerce électronique"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Landing Page"
 msgstr "Page d'accueil"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Other"
 msgstr "Autre"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Landing Page title (required)"
 msgstr "Titre de la page d'accueil (obligatoire)"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Par exemple, nous sommes une boutique en ligne spécialisée dans les articles écologiques pour la maison, offrant des produits issus de sources durables pour vous aider à adopter un mode de vie plus vert."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "P. ex., un blogue de finances personnelles partageant des conseils d'experts sur le budget, l'investissement et l'atteinte de la liberté financière pour les jeunes professionnels."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Par exemple, un ebook gratuit rempli de conseils pratiques et de stratégies de productivité pour vous aider à rester concentré, gérer votre temps efficacement et atteindre vos objectifs."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Par exemple, un portfolio personnel de photographie présentant une collection de photos de paysages, de portraits et de rue, capturant des moments du monde entier."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your business"
 msgstr "Décrivez votre entreprise"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your eCommerce website"
 msgstr "Décrivez votre site web de commerce électronique"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your blog"
 msgstr "Décrivez votre blogue"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your Landing Page"
 msgstr "Décrivez votre page de destination"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your website"
 msgstr "Décrivez votre site web"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Call-To-Action Link"
 msgstr "Lien d'appel à l'action"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Ce lien sera utilisé dans tous les boutons d'appel à l'action, dirigeant les visiteurs vers votre destination choisie."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "What type of website are you creating?"
 msgstr "Quel type de site web créez-vous ?"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Tell Us About Your Landing Page"
 msgstr "Parlez-nous de votre page d'atterrissage"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Tell Us About Your Website"
 msgstr "Parlez-nous de votre site Web"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Partagez votre vision, et nous créerons une page d'accueil parfaitement adaptée à vos besoins, prête à être lancée rapidement. Commençons par en savoir plus sur ce que vous construisez."
 
@@ -2636,7 +2636,7 @@ msgstr "Info-bulle pointant vers le bouton de modification de la page"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Bienvenue sur votre nouveau site! Lorsque vous êtes prêt, appuyez ici pour modifier cette page."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Installing supporting plugins"
 msgstr "Installation des extensions de soutien"
 
@@ -2648,50 +2648,50 @@ msgstr "Objectif du site Web"
 msgid "Add Website Objective"
 msgstr "Ajouter un objectif de site Web"
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgid "Failed to install the plugin"
 msgstr "Échec de l’installation de l’extension"
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgid "Failed to activate the plugin"
 msgstr "Échec de l’activation de l’extension"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Permettre l'installation d'extensions pour des fonctionnalités avancées de page"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Processing patterns and installing required plugins..."
 msgstr "Traitement des compositions et installation des extensions requises..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
 
 #. translators: %1$s and %2$s are links
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 #, js-format
 msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
 msgstr "En utilisant les fonctionnalités d'IA, vous acceptez les %1$s et %2$s d'OpenAI."
 
 #. translators: %s is a name
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 #, js-format
 msgctxt "Preposition for \"By Author Name\""
 msgid "By %s"
 msgstr "Par %s"
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgctxt "Plugin installation status"
 msgid "Installing..."
 msgstr "Installation en cours..."
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgctxt "Plugin activation status"
 msgid "Activating..."
 msgstr "Activation en cours..."
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgctxt "Plugin activation status"
 msgid "Activated"
 msgstr "Activé"

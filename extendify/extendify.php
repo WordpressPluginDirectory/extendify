@@ -7,8 +7,8 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.19.3
- * Requires at least: 6.0
+ * Version:           1.19.4
+ * Requires at least: 6.5
  * Requires PHP:      7.0
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -59,7 +59,7 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
                 return;
             }
 
-            if (version_compare(PHP_VERSION, '7.0', '<') || version_compare($GLOBALS['wp_version'], '6.0', '<')) {
+            if (version_compare(PHP_VERSION, '7.0', '<') || version_compare($GLOBALS['wp_version'], '6.5', '<')) {
                 return;
             }
 

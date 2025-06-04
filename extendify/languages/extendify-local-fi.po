@@ -61,27 +61,27 @@ msgstr "Hyväksy"
 
 #: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Terms of Use"
 msgstr "Käyttöehdot"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "View more pages"
 msgstr "Näytä lisää sivuja"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Olemme jo valinneet verkkosivustosi tyypille sopivat yleisimmät sivut."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Valitse sivut, jotka haluat lisätä verkkosivustollesi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Home page"
 msgstr "Kotisivu"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Pick a design for your website"
 msgstr "Valitse verkkosivustosi design"
 
@@ -89,35 +89,35 @@ msgstr "Valitse verkkosivustosi design"
 msgid "Searching..."
 msgstr "Etsitään..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Enter your website name"
 msgstr "Syötä verkkosivustosi nimi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Helping you to succeed"
 msgstr "Autamme sinua menestymään"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Adding page content"
 msgstr "Lisätään sivun sisältöä"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Installing necessary plugins"
 msgstr "Asennetaan tarvittavia lisäosia"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Creating a beautiful website"
 msgstr "Luodaan kaunis verkkosivusto"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Applying your website styles"
 msgstr "Sovelletaan verkkosivustosi tyylejä"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Personalizing your experience"
 msgstr "Mukautetaan kokemustasi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Populating data"
 msgstr "Tietojen täyttäminen"
 
@@ -573,7 +573,7 @@ msgstr "Sivua ei löydy"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:23
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Events"
 msgstr "Tapahtumat"
 
@@ -617,19 +617,19 @@ msgid "Tour"
 msgstr "Kierros"
 
 #: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Open for new pages"
 msgstr "Avoin uusille sivuille"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
 #: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 #, js-format
 msgid "Toggle %s on new pages"
 msgstr "Näytä/piilota %s uusilla sivuilla"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Kohtasimme palvelinvirheen, josta emme voi palautua. Lataa sivu uudelleen ja yritä uudestaan."
 
@@ -654,8 +654,8 @@ msgstr "Lisää sivuston kuvaus"
 msgid "Upload site logo"
 msgstr "Siirrä sivuston logo"
 
-#: app/AdminPageRouter.php:40
-#: app/AdminPageRouter.php:64
+#: app/AdminPageRouter.php:41
+#: app/AdminPageRouter.php:65
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Site Assistant"
@@ -663,7 +663,7 @@ msgstr "Site Assistant"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:7
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Blog"
 msgstr "Blogi"
 
@@ -728,28 +728,28 @@ msgstr "Jatka kotisivusi rakentamista"
 msgid "Let's Start Building Your Website"
 msgstr "Aloitetaan sivustosi rakentaminen"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Exit Launch"
 msgstr "Poistu käyttöönotosta"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Uudelleenohjaus 3, 2, 1..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Your website has been created!"
 msgstr "Verkkosivustosi on luotu!"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Setting up your Site Assistant"
 msgstr "Asetetaan sivuston avustajaa"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Starting off with a full website"
 msgstr "Aloittaminen täydellä verkkosivustolla"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Back"
 msgstr "Takaisin"
 
@@ -757,15 +757,15 @@ msgstr "Takaisin"
 msgid "Site Industry"
 msgstr "Sivuston toimiala"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Take me there"
 msgstr "Vie minut sinne"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Hei, Launch käyttää Extendablea ja sitä tarvitaan jatkamiseen. Voit asentaa sen alla olevasta linkistä ja aloittaa alusta, kun se on aktivoitu."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "One more thing before we start."
 msgstr "Vielä yksi asia ennen aloittamista."
 
@@ -778,7 +778,7 @@ msgid "View Site"
 msgstr "Näytä sivusto"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Next"
 msgstr "Seuraava"
 
@@ -787,21 +787,21 @@ msgstr "Seuraava"
 msgid "Pages"
 msgstr "Sivut"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "You can personalize this later."
 msgstr "Voit muokata ulkoasua myöhemmin."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Loading..."
 msgstr "Ladataan..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Press to select"
 msgstr "Paina valitaksesi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Odota hetki, tämä kestää odotettua pidempään."
 
@@ -816,7 +816,7 @@ msgid "Design"
 msgstr "Suunnittelu"
 
 #: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Close"
 msgstr "Sulje"
 
@@ -853,65 +853,65 @@ msgstr "Extendify"
 msgid "%1$s of %2$s"
 msgstr "%1$s / %2$s"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Creating pages with custom content"
 msgstr "Mukautetun sisällön sisältävien sivujen luominen"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Setting up site layout"
 msgstr "Sivuston ulkoasun asettaminen"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Professional"
 msgstr "Ammattilainen"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Friendly"
 msgstr "Ystävällinen"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Inspirational"
 msgstr "Inspirovia"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Informative"
 msgstr "Informatiivinen"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Persuasive"
 msgstr "Vakuuttava"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Skip"
 msgstr "Ohita"
 
 #. translators: Launch is a noun.
-#: app/AdminPageRouter.php:76
+#: app/AdminPageRouter.php:77
 msgid "Launch"
 msgstr "Käynnistys"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:3
 msgid "Added by Launch"
 msgstr "Lisännyt Launch"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:3
 msgid "Start over?"
 msgstr "Aloitetaanko alusta?"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:3
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Käy läpi perehdytysprosessi uudelleen uuden sivuston luomiseksi."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Exit"
 msgstr "Poistu"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Processing"
 msgstr "Käsittely"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Continue"
 msgstr "Jatka"
 
@@ -1457,7 +1457,7 @@ msgstr "Saatavilla ja juuri sopiva sivustollesi"
 msgid "Get another domain for your site."
 msgstr "Hanki toinen domain sivustollesi."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Header Navigation"
 msgstr "Ylätunnistenavigaatio"
 
@@ -1552,7 +1552,7 @@ msgstr "Hanki personoitu kuva"
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Napsauta tästä siirtyäksesi sivustonhallintapaneeliisi. Sieltä voit luoda lisää sivustoja ja hallita tilisi asetuksia."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Esimerkiksi, olemme joogastudio Lontoossa, jossa on ammattitaitoisesti koulutettuja ohjaajia, jotka keskittyvät lämpöjoogaan terapeuttisista syistä."
 
@@ -2175,24 +2175,24 @@ msgstr "Asiakaspalautteet"
 msgid "testimonials"
 msgstr "kokemuksia"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Single-Page Website"
 msgstr "Yksisivuinen verkkosivusto"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "All content displayed on one scrolling page."
 msgstr "Kaikki sisältö näytetään yhdellä vieritettävällä sivulla."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Multi-Page Website"
 msgstr "Monisivuinen verkkosivusto"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Multiple interconnected pages."
 msgstr "Useita yhteenliitettyjä sivuja."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Pick Your Site Structure"
 msgstr "Valitse sivustosi rakenne"
 
@@ -2340,37 +2340,37 @@ msgstr "espanja (Meksiko)"
 msgid "Romanian"
 msgstr "romania"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Jaa visiosi, ja me luomme sivuston, joka on täydellisesti räätälöity tarpeisiisi ja valmis julkaistavaksi nopeasti. Aloitetaan oppimalla lisää siitä, mitä olet rakentamassa."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:13
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:13
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Julkaisu - tekoälyllä toimiva verkkosivujen luonti"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Customizing Your Experience"
 msgstr "Kokemuksesi mukauttaminen"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Designing Your Options"
 msgstr "Asetustesi suunnittelu"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Odota hetki, kun analysoimme syötteesi ja räätälöimme kokemuksesi."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Odota hetki, kun luomme sinulle valittavia sivuston asetuksia."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Creating blog sample data"
 msgstr "Luodaan blogin esimerkkitietoja"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:11
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:11
 msgid "More"
 msgstr "Lisää"
 
@@ -2380,17 +2380,17 @@ msgid "Add Website Details"
 msgstr "Lisää verkkosivuston tiedot"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 #, js-format
 msgid "Blog Post %s"
 msgstr "Blogiartikkeli %s"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Importing shop sample data"
 msgstr "Tuodaan kaupan esimerkkitietoja"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "Aiemmassa perehdytysistunnossa luodut %s sivut/artikkelit poistetaan."
@@ -2399,11 +2399,11 @@ msgstr "Aiemmassa perehdytysistunnossa luodut %s sivut/artikkelit poistetaan."
 msgid "Lithuanian"
 msgstr "liettua"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Select your site's tone"
 msgstr "Valitse sivustosi sävy"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Website title (required)"
 msgstr "Verkkosivuston otsikko (pakollinen)"
 
@@ -2417,7 +2417,7 @@ msgstr "Varaa nyt"
 msgid "book-now"
 msgstr "varaa-nyt"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Hello World Featured Image"
 msgstr "Hei maailma -artikkelikuva"
 
@@ -2425,178 +2425,178 @@ msgstr "Hei maailma -artikkelikuva"
 msgid "Extendify Page Creator User Settings"
 msgstr "Extendify Page Creator -käyttäjäasetukset"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Confirmation"
 msgstr "Vahvistus"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Haluatko korvata olemassa olevan sisällön vai luoda uuden sivun?"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Delete existing content"
 msgstr "Poista olemassa oleva sisältö"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Create a new page"
 msgstr "Luo uusi sivu"
 
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:1
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "AI Page Generator"
 msgstr "AI-sivugeneraattori"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Edit"
 msgstr "Muokkaa"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Clear"
 msgstr "Tyhjennä"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Generating AI page profile..."
 msgstr "Luodaan tekoälyprofiilia sivulle..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "AI Page Creation"
 msgstr "Sivun luonti tekoälyllä"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Kuvaile luotavaa sivua lisäämällä keskeiset tiedot, ja AI luo sinulle ainutlaatuisen, käyttövalmiin sivun."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Describe Your Page"
 msgstr "Kuvaile sivuasi"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:3
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Esim. Luo \"Tietoa meistä\" -sivu, joka korostaa tarinaamme, missiotamme, arvojamme ja tiimimme esittelyä."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 #, js-format
 msgid "Site Description for %s"
 msgstr "Sivuston kuvaus: %s"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Site Description"
 msgstr "Sivuston kuvaus"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "This is the site description with all its ups and downs."
 msgstr "Tämä on sivuston kuvaus kaikilla ylä- ja alamäillään."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Generate Page"
 msgstr "Luo sivu"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Finding images..."
 msgstr "Etsitään kuvia..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Creating a custom layout..."
 msgstr "Luodaan mukautettua asettelua..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Writing custom content..."
 msgstr "Kirjoitetaan mukautettua sisältöä..."
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Close AI Page Creator"
 msgstr "Sulje AI-sivunluoja"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "AI Page Creator"
 msgstr "AI-sivunluoja"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Page added"
 msgstr "Sivu lisätty"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Failed to add page"
 msgstr "Sivun lisääminen epäonnistui."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Business"
 msgstr "Liiketoiminta"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "eCommerce"
 msgstr "Verkkokauppa"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Landing Page"
 msgstr "Aloitussivu"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Other"
 msgstr "Muu"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Landing Page title (required)"
 msgstr "Aloitussivun otsikko (pakollinen)"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Esim. Olemme verkkokauppa, joka on erikoistunut ympäristöystävällisiin kodintuotteisiin. Tarjoamme kestävästi hankittuja tuotteita, jotka auttavat sinua elämään vihreämmin."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "Esim. Henkilökohtaisen talouden blogi, joka jakaa asiantuntijavinkkejä budjetointiin, sijoittamiseen ja taloudellisen vapauden saavuttamiseen nuorille ammattilaisille."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Esim. maksuton sähkökirja, joka sisältää käytännöllisiä tuottavuusvinkkejä ja -strategioita auttamaan sinua pysymään keskittyneenä, hallitsemaan aikaasi tehokkaasti ja saavuttamaan tavoitteesi."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Esim. henkilökohtainen valokuvausportfolio, joka sisältää kokoelman maisema-, muotokuva- ja katukuvia, tallentaen hetkiä ympäri maailmaa."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your business"
 msgstr "Kuvaile yritystäsi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your eCommerce website"
 msgstr "Kuvaile verkkokauppasivustoasi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your blog"
 msgstr "Kuvaile blogiasi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your Landing Page"
 msgstr "Kuvaile aloitussivuasi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Describe your website"
 msgstr "Kuvaile sivustoasi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Call-To-Action Link"
 msgstr "Toimintakehotelinkki"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Tätä linkkiä käytetään kaikissa toimintakehotepainikkeissa ohjaamaan kävijät valitsemaasi kohteeseen."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "What type of website are you creating?"
 msgstr "Minkä tyyppistä sivustoa olet luomassa?"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Tell Us About Your Landing Page"
 msgstr "Kerro meille aloitussivustasi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Tell Us About Your Website"
 msgstr "Kerro meille verkkosivustostasi"
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Jaa visiosi, ja me luomme laskeutumissivun, joka on räätälöity tarpeisiisi ja valmis julkaistavaksi nopeasti. Aloitetaan oppimalla lisää siitä, mitä olet rakentamassa."
 
@@ -2636,7 +2636,7 @@ msgstr "Työkaluvihje, joka osoittaa sivun muokkauspainiketta"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Tervetuloa uudelle sivustollesi! Kun olet valmis, paina tästä muokataksesi tätä sivua."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:9
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:9
 msgid "Installing supporting plugins"
 msgstr "Asennetaan tukilisäosia"
 
@@ -2648,50 +2648,50 @@ msgstr "Kotisivun tavoite"
 msgid "Add Website Objective"
 msgstr "Lisää kotisivun tavoite"
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgid "Failed to install the plugin"
 msgstr "Lisäosan asennus epäonnistui"
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgid "Failed to activate the plugin"
 msgstr "Lisäosan käyttöönotto epäonnistui"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Salli lisäosien asentaminen edistyneille sivuominaisuuksille"
 
-#: public/build/extendify-page-creator-1b7174130846b7d9f9af.js:5
+#: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:5
 msgid "Processing patterns and installing required plugins..."
 msgstr "Käsitellään lohkomalleja ja asennetaan tarvittavia lisäosia..."
 
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:5
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Privacy Policy"
 msgstr "Tietosuojakäytäntö"
 
 #. translators: %1$s and %2$s are links
-#: public/build/extendify-launch-a3d4e3615ce71027f69f.js:7
+#: public/build/extendify-launch-96e851589a4daeadd2c0.js:7
 #, js-format
 msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
 msgstr "Käyttämällä tekoälytoimintoja hyväksyt OpenAI:n %1$s ja %2$s."
 
 #. translators: %s is a name
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 #, js-format
 msgctxt "Preposition for \"By Author Name\""
 msgid "By %s"
 msgstr "%s"
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgctxt "Plugin installation status"
 msgid "Installing..."
 msgstr "Asennetaan..."
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgctxt "Plugin activation status"
 msgid "Activating..."
 msgstr "Otetaan käyttöön..."
 
-#: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3
+#: public/build/extendify-recommendations-1627952ae997c361e519.js:3
 msgctxt "Plugin activation status"
 msgid "Activated"
 msgstr "Käytössä"

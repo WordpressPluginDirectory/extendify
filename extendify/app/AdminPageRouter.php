@@ -27,7 +27,8 @@ class AdminPageRouter
     public function __construct()
     {
         // This does the initial redirect to Launch.
-        \add_action('admin_init', [$this, 'redirectOnce']);
+        \add_action('admin_init', [$this, 'redirectOnce'], 10);
+        \add_action('admin_init', [$this, 'maybeForceFlush'], 5);
 
         // Add a dropdown above Dashboard in the admin toolbar.
         \add_action('admin_bar_menu', function ($wpAdminBar) {
@@ -174,6 +175,10 @@ class AdminPageRouter
      */
     public function redirectOnce()
     {
+        if (wp_doing_ajax()) {
+            return;
+        }
+
         if (defined('EXTENDIFY_IS_THEME_EXTENDABLE') && !EXTENDIFY_IS_THEME_EXTENDABLE) {
             return;
         }
@@ -203,7 +208,32 @@ class AdminPageRouter
 
             \update_option('extendify_attempted_redirect_count', ($currentCount + 1));
             \update_option('extendify_attempted_redirect', gmdate('Y-m-d H:i:s'));
+
+            // Update permalink structure to postname when auto-redirecting to Launch
+            if (get_option('permalink_structure') !== '/%postname%/') {
+                \update_option('permalink_structure', '/%postname%/');
+                \update_option('extendify_needs_rewrite_flush', true);
+            }
+
             \wp_safe_redirect(\admin_url() . 'admin.php?page=extendify-launch');
+        }
+    }
+
+    /**
+     * Flushes WordPress rewrite rules if previously scheduled by `redirectOnce()`.
+     *
+     * This is triggered based on a flag (`extendify_needs_rewrite_flush`) that is set
+     * when the permalink structure is modified. Flushing rewrite rules in the same
+     * request where the permalink structure is updated can be ineffective due to
+     * internal WordPress caching, so the flush is deferred to a subsequent request.
+     *
+     * @return void
+     */
+    public function maybeForceFlush()
+    {
+        if (\get_option('extendify_needs_rewrite_flush', false)) {
+            \flush_rewrite_rules(true);
+            \delete_option('extendify_needs_rewrite_flush');
         }
     }
 }

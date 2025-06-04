@@ -196,6 +196,7 @@ export const getSiteProfile = async ({ title, description }) => {
 		aiSiteCategory: null,
 		aiDescription: null,
 		aiKeywords: [],
+		logoObjectName: null,
 	};
 	let response;
 	try {
@@ -204,14 +205,14 @@ export const getSiteProfile = async ({ title, description }) => {
 		// try one more time
 		response = await fetch(url, { method, headers, body });
 	}
+
 	if (!response.ok) return fallback;
-	let data;
+
 	try {
-		data = await response.json();
+		return (await response.json()) || fallback;
 	} catch (error) {
 		return fallback;
 	}
-	return data?.aiSiteType ? data : fallback;
 };
 
 export const getSiteStrings = async (siteProfile) => {
@@ -309,11 +310,11 @@ export const getSiteLogo = async (objectName) => {
 	const fallback =
 		'https://images.extendify-cdn.com/demo-content/logos/ext-custom-logo-default.webp';
 
-	if (!showAILogo) {
+	if (!showAILogo || !objectName) {
 		return fallback;
 	}
 
-	if (!siteId || !partnerId || !objectName) {
+	if (!siteId || !partnerId) {
 		throw new Error(
 			'Missing required parameter (siteId, partnerId or objectName)',
 		);

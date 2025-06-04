@@ -46,7 +46,7 @@ export const GeneratingPage = ({ insertPage }) => {
 			// Check if the pattern is a page title, and use the stashed one
 			let pattern = code;
 			if (pageTitlePattern && code.includes('"name":"Page Title"')) {
-				const titleRegex = /<h1([^>]*)>[\da-zA-z]+<\/h1>/g;
+				const titleRegex = /<h1([^>]*)>[^<]*<\/h1>/g;
 				const titleCb = (_, attributes) =>
 					`<h1${attributes}>${page.title}</h1>`;
 				pattern = decodeEntities(pageTitlePattern).replaceAll(

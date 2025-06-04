@@ -7,9 +7,12 @@ export const useSiteLogo = () => {
 	const { siteProfile, loading: profileLoading } = useSiteProfile();
 
 	const { data, error } = useSWRImmutable(
-		!siteProfile?.logoObjectName || profileLoading
+		profileLoading || !siteProfile
 			? null
-			: { key: 'site-logo', logoObjectName: siteProfile.logoObjectName },
+			: {
+					key: 'site-logo',
+					logoObjectName: siteProfile?.logoObjectName,
+				},
 		async ({ logoObjectName }) => {
 			const rawLogoUrl = await getSiteLogo(logoObjectName);
 			return await resizeImage(rawLogoUrl, {

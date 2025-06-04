@@ -1,4 +1,8 @@
 export const extractPluginSlugs = (container) => {
+	if (!container || !container.querySelectorAll) {
+		return [];
+	}
+
 	const pluginSlugs = container
 		.querySelectorAll('.plugin-card')
 		.values()

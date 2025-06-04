@@ -45,10 +45,22 @@ const state = (set, get) => ({
 					return;
 				}
 
-				settings.success = (data) => {
+				settings.success = (xhr) => {
+					const doingRedirect =
+						typeof xhr === 'string' && xhr?.startsWith('<!DOCTYPE html>');
+					if (doingRedirect) {
+						// plugin is attempting to redirect - trigger a search
+						const i = window.jQuery('#search-plugins');
+						const value = i.val();
+						// either remove trailing space or add one
+						i.val(value.endsWith(' ') ? value.trim() : value + ' ');
+						i.trigger('keyup');
+						return;
+					}
+
 					try {
 						const parsedData = parser.parseFromString(
-							data.data.items,
+							xhr?.data?.items || '',
 							'text/html',
 						);
 						const pluginSlugs = extractPluginSlugs(parsedData);
@@ -78,7 +90,7 @@ const state = (set, get) => ({
 				set({
 					query: search ? search : null,
 					searchPlugins: [],
-					isSearchPluginsLoading: search ? true : false,
+					isSearchPluginsLoading: !!search,
 					isSearchPluginsError: false,
 				});
 			},

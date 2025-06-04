@@ -80,5 +80,5 @@ export const recordActivity = ({ slot, event, product }) => {
 		},
 		signal: controller.signal,
 		body: JSON.stringify(payload),
-	});
+	}).catch(() => null);
 };
