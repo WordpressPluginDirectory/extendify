@@ -194,7 +194,7 @@ class PartnerData
             'https://dashboard.extendify.com/api/onboarding/partner-data/'
         );
 
-        $response = \wp_remote_get($url, ['headers' => ['Accept' => 'application/json']]);
+        $response = \wp_safe_remote_get($url, ['headers' => ['Accept' => 'application/json']]);
 
         // If there was an error, we dont update the cache.
         if (\is_wp_error($response) || \wp_remote_retrieve_response_code($response) !== 200) {
@@ -203,8 +203,13 @@ class PartnerData
 
         $result = json_decode(\wp_remote_retrieve_body($response), true);
 
-        // If the data didn't come back as we expected it to, don't update the cache.
-        if (!array_key_exists('data', $result) || empty($result['data'])) {
+        // If the data didn't come back as we expected it to, or if we have an error, don't update the cache.
+        if (
+            json_last_error() !== JSON_ERROR_NONE
+            || !is_array($result)
+            || !array_key_exists('data', $result)
+            || empty($result['data'])
+        ) {
             return [];
         }
 

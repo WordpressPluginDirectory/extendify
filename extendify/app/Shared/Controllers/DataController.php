@@ -6,7 +6,7 @@
 
 namespace Extendify\Shared\Controllers;
 
-use Extendify\Http;
+use Extendify\Shared\Services\HttpClient;
 use Extendify\PartnerData;
 
 defined('ABSPATH') || die('No direct access.');
@@ -24,13 +24,12 @@ class DataController
      */
     public static function getPartnerPlugins()
     {
-        $response = Http::get('/partner-plugins?' . http_build_query(['partner' => PartnerData::$id]));
+        $response = HttpClient::get(
+            'https://dashboard.extendify.com/api/onboarding/partner-plugins',
+            ['params' => ['partner' => PartnerData::$id]]
+        );
 
-        if (is_wp_error($response)) {
-            return new \WP_REST_Response([], 500);
-        }
-
-        return new \WP_REST_Response($response);
+        return new \WP_REST_Response($response['response'], $response['code']);
     }
 
     /**

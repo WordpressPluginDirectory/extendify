@@ -13,40 +13,40 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/4.0.0-alpha.11\n"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-library-48a96d31461a887305c6.js:3
 msgid "Pattern added"
 msgstr "パターンが追加されました"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-library-48a96d31461a887305c6.js:3
 msgid "Design Patterns"
 msgstr "デザインパターン"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Fetching..."
 msgstr "取得中..."
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Retrying..."
 msgstr "再試行中..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "All"
 msgstr "すべて"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Design Type"
 msgstr "デザインタイプ"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Loading more patterns..."
 msgstr "さらにパターンを読み込んでいます..."
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Loading Patterns..."
 msgstr "パターンを読み込み中..."
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Insert Pattern"
 msgstr "パターンを挿入"
 
@@ -54,12 +54,12 @@ msgstr "パターンを挿入"
 msgid "Extendify Library User Settings"
 msgstr "Extendifyライブラリユーザー設定"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Accept"
 msgstr "受け入れる"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 #: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Terms of Use"
@@ -121,65 +121,65 @@ msgstr "あなたの体験をパーソナライズ中"
 msgid "Populating data"
 msgstr "データの取り込み中"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Service temporarily unavailable"
 msgstr "一時的にサービスが利用できません"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Discard"
 msgstr "破棄"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Try again"
 msgstr "再試行"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "AI Tools"
 msgstr "AIツール"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Replace selected block text"
 msgstr "選択したブロックテキストを置き換える"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Ask AI to generate text"
 msgstr "AIにテキスト生成を依頼する"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "AI is writing..."
 msgstr "AIが作成中..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Simplify language"
 msgstr "言語を簡素化する"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Make longer"
 msgstr "長くする"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Make shorter"
 msgstr "短くする"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Fix spelling & grammar"
 msgstr "スペルと文法を修正"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Improve writing"
 msgstr "ライティングを改善"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write a blog post about"
 msgstr "ブログポストを書く："
 
@@ -385,7 +385,7 @@ msgstr "サイトランチャーを使って、数分以内に最高速で美し
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:39
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Home"
 msgstr "ホーム"
 
@@ -618,14 +618,14 @@ msgstr "ツアーのステップ"
 msgid "Tour"
 msgstr "ツアー"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-library-48a96d31461a887305c6.js:3
 #: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Open for new pages"
 msgstr "新規ページを開く"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-library-48a96d31461a887305c6.js:3
 #: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 #, js-format
 msgid "Toggle %s on new pages"
@@ -809,7 +809,7 @@ msgstr "今しばらくお待ちください、予想以上に時間がかかっ
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Design Library"
 msgstr "デザインライブラリ"
 
@@ -817,12 +817,12 @@ msgstr "デザインライブラリ"
 msgid "Design"
 msgstr "デザイン"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 #: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Close"
 msgstr "閉じる"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Submit"
 msgstr "送信"
 
@@ -918,216 +918,216 @@ msgid "Continue"
 msgstr "続ける"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask AI"
 msgstr "AIに尋ねる"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Insert at top"
 msgstr "先頭に挿入"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Insert after the selected text"
 msgstr "選択したテキストの後に挿入"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Insert at bottom"
 msgstr "下部に挿入"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "A paragraph …"
 msgstr "段落…"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write a paragraph about"
 msgstr "についてのパラグラフを書く"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Blog post …"
 msgstr "ブログ投稿…"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "An informative article …"
 msgstr "有益な記事..."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write an informative article about"
 msgstr "有益な記事を書く"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Headline …"
 msgstr "見出し..."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write a headline for"
 msgstr "見出しを書く"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "List …"
 msgstr "リスト…"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write a list of"
 msgstr "のリストを書く"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Catalan"
 msgstr "カタルーニャ語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Danish"
 msgstr "デンマーク語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Dutch"
 msgstr "オランダ語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Dutch (Belgium)"
 msgstr "オランダ語（ベルギー）"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "English"
 msgstr "英語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Estonian"
 msgstr "エストニア語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Finnish"
 msgstr "フィンランド語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "French (Belgium)"
 msgstr "フランス語 (ベルギー)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "French (France)"
 msgstr "フランス語 (フランス)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "German"
 msgstr "ドイツ語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "German (Switzerland)"
 msgstr "スイスドイツ語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Indonesian"
 msgstr "インドネシア語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Italian"
 msgstr "イタリア語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Japanese"
 msgstr "日本語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Polish"
 msgstr "ポーランド語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Portuguese (Brazil)"
 msgstr "ポルトガル語（ブラジル）"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Portuguese (Portugal)"
 msgstr "ポルトガル語 (ポルトガル)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Spanish (Spain)"
 msgstr "スペイン語 (スペイン)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Swedish"
 msgstr "スウェーデン語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Ukrainian"
 msgstr "ウクライナ語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Vietnamese"
 msgstr "ベトナム語"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Translate"
 msgstr "翻訳"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Translate to..."
 msgstr "に翻訳..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Ask AI to edit"
 msgstr "AIに編集を依頼"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Remove selection"
 msgstr "選択を削除"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Suggested prompts"
 msgstr "提案されたプロンプト"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Custom prompt"
 msgstr "カスタムプロンプト"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "クレジットがリセットされるまで、アンスプラッシュで素晴らしい画像を引き続き探索し、見つけることができます。"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Search on Unsplash"
 msgstr "アンスプラッシュで検索"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "作成したい画像についてAIに伝えてください"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Image Prompt"
 msgstr "画像プロンプト"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Generating image..."
 msgstr "画像を生成中..."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Generate image"
 msgstr "画像を生成"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Generating your image: "
 msgstr "画像を生成中:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Importing image..."
 msgstr "画像をインポートしています..."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Use this image"
 msgstr "この画像を使用"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Delete image"
 msgstr "画像を削除"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Image Description"
 msgstr "画像の説明"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "お客様のリクエストは、セーフティシステムによって拒否されました。プロンプトには、セーフティシステムで許可されていないテキストが含まれている可能性があります。"
 
@@ -1426,26 +1426,26 @@ msgid "Service offline. Check back later."
 msgstr "サービスはオフラインです。後で再度ご確認してください。"
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:3
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:3
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 #, js-format
 msgid "%1$s of %2$s daily image credits used"
 msgstr "使用済みの日次画像クレジット %1$s / %2$s"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Aspect Ratio"
 msgstr "縦横の比"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Square: 1:1"
 msgstr "正方形: 1:1"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Landscape: 4:3"
 msgstr "ランドスケープ: 4:3"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Portrait: 3:4"
 msgstr "ポートレート: 3:4"
 
@@ -1501,52 +1501,52 @@ msgstr "インストール中..."
 msgid "Install Now"
 msgstr "今すぐインストール"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "AI Image"
 msgstr "AI画像"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Go Back"
 msgstr "戻る"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "AI Image Generator"
 msgstr "AI画像ジェネレーター"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "説明に基づいてAIを駆使してカスタム画像を生成します。"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Generate an image"
 msgstr "画像を生成"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Discover Stock Photos"
 msgstr "保存された写真を探す"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Unsplash.comから無料の保存された写真を検索して追加"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Search Unsplash"
 msgstr "Unsplashを検索"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "No images found."
 msgstr "画像が見つかりませんでした。"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Photos from Unsplash"
 msgstr "Unsplashからの写真"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Get Personalized Image"
 msgstr "パーソナライズされた画像を取得"
 
@@ -1977,35 +1977,35 @@ msgstr "各サイトに合わせてカスタマイズされた豊富なデザイ
 msgid "Explore Design Library"
 msgstr "デザインライブラリを探索"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Bulgarian"
 msgstr "ブルガリア語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Czech"
 msgstr "チェコ語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "French (Canada)"
 msgstr "フランス語（カナダ）"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Hungarian"
 msgstr "ハンガリー語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Norwegian"
 msgstr "ノルウェー語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Russian"
 msgstr "ロシア語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Slovak"
 msgstr "スロバキア語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Turkish"
 msgstr "トルコ語"
 
@@ -2312,35 +2312,35 @@ msgstr "サンフランシスコのThe Bistro Houseで、カリフォルニア�
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "ピナクルプロパティーズで夢の家を見つけるか、利益率の高い投資をしましょう。オースティンの一流不動産会社です。経験豊富なエージェントが個別サービスを提供します。"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Greek"
 msgstr "ギリシャ語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Hindi"
 msgstr "ヒンディー語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Arabic"
 msgstr "アラビア語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Arabic (Morocco)"
 msgstr "アラビア語（モロッコ）"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "English (UK)"
 msgstr "英語 (英国)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Spanish (Colombia)"
 msgstr "スペイン語（コロンビア）"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Spanish (Mexico)"
 msgstr "メキシコのスペイン語"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Romanian"
 msgstr "ルーマニア語"
 
@@ -2399,7 +2399,7 @@ msgstr "ショップのサンプルデータをインポート中"
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "前回のオンボーディングセッションで作成された%s件のページ/投稿が削除されます。"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Lithuanian"
 msgstr "リトアニア語"
 

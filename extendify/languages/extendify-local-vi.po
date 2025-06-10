@@ -13,40 +13,40 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/4.0.0-alpha.11\n"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-library-48a96d31461a887305c6.js:3
 msgid "Pattern added"
 msgstr "Mẫu đã được thêm"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-library-48a96d31461a887305c6.js:3
 msgid "Design Patterns"
 msgstr "Mẫu thiết kế"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Fetching..."
 msgstr "Đang tải..."
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Retrying..."
 msgstr "Đang thử lại..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "All"
 msgstr "Tất cả"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Design Type"
 msgstr "Loại thiết kế"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Loading more patterns..."
 msgstr "Đang tải thêm mẫu..."
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Loading Patterns..."
 msgstr "Đang tải Mẫu..."
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Insert Pattern"
 msgstr "Chèn mẫu"
 
@@ -54,12 +54,12 @@ msgstr "Chèn mẫu"
 msgid "Extendify Library User Settings"
 msgstr "Cài đặt người dùng Thư viện Extendify"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Accept"
 msgstr "Chấp nhận"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 #: public/build/extendify-launch-96e851589a4daeadd2c0.js:5
 msgid "Terms of Use"
@@ -121,65 +121,65 @@ msgstr "Cá nhân hóa trải nghiệm của bạn"
 msgid "Populating data"
 msgstr "Đang điền dữ liệu"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Service temporarily unavailable"
 msgstr "Dịch vụ tạm thời không khả dụng"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Discard"
 msgstr "Loại bỏ"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Try again"
 msgstr "Thử lại"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "AI Tools"
 msgstr "Công cụ AI"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Replace selected block text"
 msgstr "Thay thế văn bản khối đã chọn"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Ask AI to generate text"
 msgstr "Yêu cầu AI tạo văn bản"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "AI is writing..."
 msgstr "AI đang viết..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Simplify language"
 msgstr "Đơn giản hóa ngôn ngữ"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Make longer"
 msgstr "Làm dài hơn"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Make shorter"
 msgstr "Làm ngắn hơn"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Fix spelling & grammar"
 msgstr "Sửa chính tả & ngữ pháp"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Improve writing"
 msgstr "Cải thiện kỹ năng viết"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write a blog post about"
 msgstr "Viết một bài blog về"
 
@@ -385,7 +385,7 @@ msgstr "Tạo một trang web siêu nhanh, đẹp và hoàn toàn tùy chỉnh t
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:39
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Home"
 msgstr "Trang chủ"
 
@@ -616,14 +616,14 @@ msgstr "Các bước của Tour"
 msgid "Tour"
 msgstr "Tour"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-library-48a96d31461a887305c6.js:3
 #: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 msgid "Open for new pages"
 msgstr "Mở cho trang mới"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:3
+#: public/build/extendify-library-48a96d31461a887305c6.js:3
 #: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:3
 #, js-format
 msgid "Toggle %s on new pages"
@@ -807,7 +807,7 @@ msgstr "Chỉ một chút, việc này mất thời gian hơn dự kiến."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 msgid "Design Library"
 msgstr "Thư viện thiết kế"
 
@@ -815,12 +815,12 @@ msgstr "Thư viện thiết kế"
 msgid "Design"
 msgstr "Thiết kế"
 
-#: public/build/extendify-library-1bf52fdbc4a638cac810.js:1
+#: public/build/extendify-library-48a96d31461a887305c6.js:1
 #: public/build/extendify-page-creator-0275e3e5be93452bbb4c.js:1
 msgid "Close"
 msgstr "Đóng"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Submit"
 msgstr "Gửi"
 
@@ -916,216 +916,216 @@ msgid "Continue"
 msgstr "Tiếp tục"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 #: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask AI"
 msgstr "Hỏi AI"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Insert at top"
 msgstr "Chèn ở đầu trang"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Insert after the selected text"
 msgstr "Chèn sau văn bản đã chọn"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Insert at bottom"
 msgstr "Chèn ở cuối"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "A paragraph …"
 msgstr "Một đoạn văn …"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write a paragraph about"
 msgstr "Viết một đoạn về"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Blog post …"
 msgstr "Bài viết trên blog …"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "An informative article …"
 msgstr "Một bài viết thông tin …"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write an informative article about"
 msgstr "Viết một bài báo mang tính thông tin về"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Headline …"
 msgstr "Tiêu đề …"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write a headline for"
 msgstr "Viết tiêu đề cho"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "List …"
 msgstr "Liệt kê …"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Write a list of"
 msgstr "Viết một danh sách các"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Catalan"
 msgstr "Tiếng Catalan"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Danish"
 msgstr "Tiếng Đan Mạch"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Dutch"
 msgstr "Tiếng Hà Lan"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Dutch (Belgium)"
 msgstr "Tiếng Hà Lan (Bỉ)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "English"
 msgstr "Tiếng Anh"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Estonian"
 msgstr "Tiếng Estonia"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Finnish"
 msgstr "Tiếng Phần Lan"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "French (Belgium)"
 msgstr "Tiếng Pháp (Bỉ)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "French (France)"
 msgstr "Tiếng Pháp (Pháp)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "German"
 msgstr "Tiếng Đức"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "German (Switzerland)"
 msgstr "Tiếng Đức (Thụy Sĩ)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Indonesian"
 msgstr "Tiếng Indonesia"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Italian"
 msgstr "Tiếng Ý"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Japanese"
 msgstr "Tiếng Nhật"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Polish"
 msgstr "Tiếng Ba Lan"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Portuguese (Brazil)"
 msgstr "Tiếng Bồ Đào Nha (Brazil)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Portuguese (Portugal)"
 msgstr "Tiếng Bồ Đào Nha (Bồ Đào Nha)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Spanish (Spain)"
 msgstr "Tiếng Tây Ban Nha (Tây Ban Nha)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Swedish"
 msgstr "Tiếng Thụy Điển"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Ukrainian"
 msgstr "Tiếng Ukraine"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Vietnamese"
 msgstr "Tiếng Việt"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Translate"
 msgstr "Dịch"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Translate to..."
 msgstr "Dịch sang..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Ask AI to edit"
 msgstr "Yêu cầu AI chỉnh sửa"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:1
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:1
 msgid "Remove selection"
 msgstr "Xóa lựa chọn"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Suggested prompts"
 msgstr "Lời nhắc gợi ý"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Custom prompt"
 msgstr "Nhắc nhở tùy chỉnh"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Bạn vẫn có thể khám phá và tìm những hình ảnh tuyệt vời trên Unsplash cho đến khi số lần tải của bạn được đặt lại."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Search on Unsplash"
 msgstr "Tìm kiếm trên Unsplash"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "Hãy mô tả cho AI về hình ảnh bạn muốn tạo."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Image Prompt"
 msgstr "Lời nhắc hình ảnh"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Generating image..."
 msgstr "Đang tạo ảnh..."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Generate image"
 msgstr "Tạo ảnh"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Generating your image: "
 msgstr "Đang tạo ảnh của bạn:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Importing image..."
 msgstr "Đang nhập ảnh..."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Use this image"
 msgstr "Sử dụng ảnh này"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Delete image"
 msgstr "Xóa ảnh"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Image Description"
 msgstr "Mô tả hình ảnh"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Yêu cầu của bạn đã bị từ chối do hệ thống an toàn của chúng tôi. Lời nhắc của bạn có thể chứa văn bản không được hệ thống an toàn của chúng tôi cho phép."
 
@@ -1424,26 +1424,26 @@ msgid "Service offline. Check back later."
 msgstr "Dịch vụ hiện không hoạt động. Vui lòng quay lại sau."
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:3
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:3
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 #, js-format
 msgid "%1$s of %2$s daily image credits used"
 msgstr "%1$s trong tổng số %2$s lượt tín dụng hình ảnh hàng ngày đã sử dụng"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Aspect Ratio"
 msgstr "Tỉ lệ khung hình"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Square: 1:1"
 msgstr "Vuông: 1:1"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Landscape: 4:3"
 msgstr "Cảnh góc rộng: 4:3"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:5
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:5
 msgid "Portrait: 3:4"
 msgstr "Chân dung: 3:4"
 
@@ -1499,52 +1499,52 @@ msgstr "Đang cài đặt..."
 msgid "Install Now"
 msgstr "Cài đặt ngay"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "AI Image"
 msgstr "Ảnh AI"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Go Back"
 msgstr "Quay lại"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "AI Image Generator"
 msgstr "Trình tạo hình ảnh AI"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "Sử dụng AI để tạo hình ảnh tùy chỉnh dựa trên mô tả của bạn."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Generate an image"
 msgstr "Tạo hình ảnh"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Discover Stock Photos"
 msgstr "Khám phá Ảnh Kho(stock)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Tìm kiếm và thêm ảnh miễn phí từ Unsplash.com"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Search Unsplash"
 msgstr "Tìm kiếm trên Unsplash"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "No images found."
 msgstr "Không tìm thấy hình ảnh nào."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Photos from Unsplash"
 msgstr "Ảnh từ Unsplash"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Get Personalized Image"
 msgstr "Lấy ảnh cá nhân hóa"
 
@@ -1973,35 +1973,35 @@ msgstr "Thư viện thiết kế đầy đủ được tùy chỉnh cho từng t
 msgid "Explore Design Library"
 msgstr "Khám phá Thư viện thiết kế"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Bulgarian"
 msgstr "Bulgaria"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Czech"
 msgstr "Tiếng Séc"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "French (Canada)"
 msgstr "Tiếng Pháp (Canada)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Hungarian"
 msgstr "Tiếng Hungary"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Norwegian"
 msgstr "Tiếng Na Uy"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Russian"
 msgstr "Tiếng Nga"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Slovak"
 msgstr "Tiếng Slovak"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Turkish"
 msgstr "Tiếng Thổ Nhĩ Kỳ"
 
@@ -2308,35 +2308,35 @@ msgstr "Thưởng thức ẩm thực bistro Pháp cổ điển kết hợp phong
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Tìm ngôi nhà mơ ước của bạn hoặc đầu tư sinh lời với Pinnacle Properties, công ty bất động sản hàng đầu tại Austin. Tin tưởng các đại lý giàu kinh nghiệm của chúng tôi để nhận dịch vụ cá nhân hóa."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Greek"
 msgstr "Tiếng Hy Lạp"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Hindi"
 msgstr "Tiếng Hindi"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Arabic"
 msgstr "Tiếng Ả Rập"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Arabic (Morocco)"
 msgstr "Tiếng Ả Rập (Ma-rốc)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "English (UK)"
 msgstr "Tiếng Anh (Anh)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Spanish (Colombia)"
 msgstr "Tiếng Tây Ban Nha (Colombia)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Spanish (Mexico)"
 msgstr "Tiếng Tây Ban Nha (Mexico)"
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Romanian"
 msgstr "Tiếng Romania"
 
@@ -2395,7 +2395,7 @@ msgstr "Đang nhập dữ liệu mẫu cửa hàng"
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s trang/bài viết được tạo trong phiên giới thiệu trước sẽ bị xoá."
 
-#: public/build/extendify-draft-9c4f6f870ffcbc03199c.js:7
+#: public/build/extendify-draft-c74b1c615d440a6f2009.js:7
 msgid "Lithuanian"
 msgstr "Tiếng Lithuania"
 

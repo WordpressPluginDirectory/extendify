@@ -14,13 +14,11 @@ export const insertBlocks = async (blocks) => {
 		getBlocks,
 	} = select('core/block-editor');
 
-	const renderingModes = select('core/preferences').get(
-		'core',
-		'renderingModes',
-	);
+	const renderingModes =
+		select('core/preferences').get('core', 'renderingModes') || {};
 	const currentTheme = select('core').getCurrentTheme()?.stylesheet;
 	const isTemplateShown =
-		renderingModes[currentTheme]?.page === 'template-locked';
+		renderingModes?.[currentTheme]?.page === 'template-locked';
 
 	const { set: setPreference } = dispatch('core/preferences');
 	const setRenderingMode = (mode) =>
