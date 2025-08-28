@@ -210,10 +210,8 @@ class AdminPageRouter
             \update_option('extendify_attempted_redirect', gmdate('Y-m-d H:i:s'));
 
             // Update permalink structure to postname when auto-redirecting to Launch
-            if (get_option('permalink_structure') !== '/%postname%/') {
-                \update_option('permalink_structure', '/%postname%/');
-                \update_option('extendify_needs_rewrite_flush', true);
-            }
+            \update_option('permalink_structure', '/%postname%/');
+            \update_option('extendify_needs_rewrite_flush', true);
 
             \wp_safe_redirect(\admin_url() . 'admin.php?page=extendify-launch');
         }

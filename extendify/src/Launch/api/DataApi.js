@@ -1,6 +1,6 @@
 import { PATTERNS_HOST, AI_HOST, IMAGES_HOST } from '@constants';
+import { formatSiteQuestionsForAPI } from '@shared/utils/format-site-questions-for-api';
 import { getHeadersAndFooters } from '@launch/api/WPApi';
-import { Axios as api } from '@launch/api/axios';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
 // Optionally add items to request body
@@ -23,9 +23,7 @@ const extraBody = {
 };
 
 const fetchTemplates = async (type, siteType, otherData = {}) => {
-	const { showLocalizedCopy, allowedPlugins } = window.extSharedData;
-	const { goals, getGoalsPlugins } = useUserSelectionStore.getState();
-	const plugins = getGoalsPlugins();
+	const { showLocalizedCopy } = window.extSharedData;
 	const otherDataProcessed = Object.entries(otherData).reduce(
 		(result, [key, value]) => {
 			if (value == null) result;
@@ -43,10 +41,7 @@ const fetchTemplates = async (type, siteType, otherData = {}) => {
 		body: JSON.stringify({
 			...extraBody,
 			siteType: siteType?.slug,
-			goals: JSON.stringify(goals?.length ? goals : []),
-			plugins: JSON.stringify(plugins?.length ? plugins : []),
 			showLocalizedCopy: !!showLocalizedCopy,
-			allowedPlugins: JSON.stringify(allowedPlugins ?? []),
 			...otherDataProcessed,
 		}),
 	});
@@ -63,8 +58,9 @@ export const getHomeTemplates = async ({
 	siteStrings,
 	siteImages,
 	siteStyles,
-	goals,
 	siteObjective,
+	siteQuestions = [],
+	sitePlugins = [],
 }) => {
 	const styles = await fetchTemplates('home', siteType, {
 		siteStructure,
@@ -72,10 +68,20 @@ export const getHomeTemplates = async ({
 		siteStrings,
 		siteImages,
 		siteStyles,
-		goals,
 		siteObjective,
+		siteQuestions,
+		sitePlugins,
 	});
-	const { headers, footers } = await getHeadersAndFooters();
+	const { wpLanguage, showImprint } = window.extSharedData || {};
+
+	// Check if we should show footer navigation
+	// This is based on the imprint page and the language of the site
+	const hasFooterNav = Array.isArray(showImprint)
+		? showImprint.includes(wpLanguage ?? '') &&
+			siteProfile?.aiSiteCategory === 'Business'
+		: false;
+
+	const { headers, footers } = await getHeadersAndFooters(hasFooterNav);
 	if (!styles?.length) {
 		throw new Error('Could not get styles');
 	}
@@ -97,6 +103,8 @@ export const getPageTemplates = async ({
 	siteStrings,
 	siteImages,
 	siteStyle,
+	siteQuestions = [],
+	sitePlugins = [],
 }) => {
 	const { siteInformation, siteProfile } = useUserSelectionStore.getState();
 	const pages = await fetchTemplates('page', siteType, {
@@ -106,6 +114,8 @@ export const getPageTemplates = async ({
 		siteImages,
 		siteStyle,
 		siteProfile,
+		siteQuestions,
+		sitePlugins,
 	});
 	if (!pages?.recommended) {
 		throw new Error('Could not get pages');
@@ -122,27 +132,6 @@ export const getPageTemplates = async ({
 			id: slug,
 		})),
 	};
-};
-
-export const getGoals = async ({
-	title,
-	siteTypeSlug,
-	siteProfile,
-	siteObjective,
-}) => {
-	const goals = await api.get('launch/goals', {
-		params: {
-			title,
-			site_type: siteTypeSlug,
-			site_profile: siteProfile,
-			site_objective: siteObjective,
-			site_id: window.extSharedData.siteId,
-		},
-	});
-	if (!goals?.data?.length) {
-		throw new Error('Could not get goals');
-	}
-	return goals.data;
 };
 
 export const generateCustomPatterns = async (page, userState, siteProfile) => {
@@ -338,4 +327,105 @@ export const getSiteLogo = async (objectName) => {
 	} catch (error) {
 		return fallback;
 	}
+};
+
+export const getSiteQuestions = async ({ siteProfile }) => {
+	const url = `${AI_HOST}/api/site-questions`;
+	const method = 'POST';
+	const headers = { 'Content-Type': 'application/json' };
+	const fallback = { questions: [] };
+
+	if (!siteProfile) {
+		return fallback;
+	}
+
+	const { wpLanguage } = window.extSharedData;
+	const { businessInformation, siteObjective } =
+		useUserSelectionStore.getState();
+	const body = JSON.stringify({
+		...siteProfile,
+		description: businessInformation?.description || '',
+		siteObjective: siteObjective || '',
+		wpLanguage,
+	});
+
+	let response;
+	try {
+		response = await fetch(url, { method, headers, body });
+		if (!response.ok) throw new Error('Bad response from server');
+	} catch (error) {
+		response = await fetch(url, { method, headers, body });
+	}
+
+	if (!response.ok) return fallback;
+
+	try {
+		const data = await response.json();
+		return data?.questions ?? fallback;
+	} catch (error) {
+		return fallback;
+	}
+};
+
+export const getSitePlugins = async ({ siteProfile, siteQA }) => {
+	const url = `${AI_HOST}/api/site-plugins`;
+	const method = 'POST';
+	const headers = { 'Content-Type': 'application/json' };
+	const fallback = [];
+
+	if (!siteProfile) {
+		return fallback;
+	}
+
+	const { wpLanguage, partnerId } = window.extSharedData;
+	const { siteObjective } = useUserSelectionStore.getState();
+
+	const body = JSON.stringify({
+		...siteProfile,
+		siteQuestions: formatSiteQuestionsForAPI(siteQA),
+		siteObjective: siteObjective || '',
+		wpLanguage,
+		partnerId,
+	});
+
+	let response;
+
+	try {
+		response = await fetch(url, { method, headers, body });
+		if (!response.ok) throw new Error('Bad response from server');
+	} catch (error) {
+		response = await fetch(url, { method, headers, body });
+	}
+
+	if (!response.ok) return fallback;
+
+	try {
+		const data = await response.json();
+		return data?.selectedPlugins ?? fallback;
+	} catch (error) {
+		return fallback;
+	}
+};
+
+export const getImprintPageTemplate = async (siteStyle = {}) => {
+	const endpoint = `${PATTERNS_HOST}/api/page-imprint`;
+
+	const res = await fetch(endpoint, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			...extraBody,
+			siteStyle: JSON.stringify(siteStyle),
+		}),
+	});
+
+	if (!res.ok) throw new Error('Could not get imprint page');
+
+	const response = await res.json();
+
+	if (!response?.template) {
+		throw new Error('No template found for imprint page');
+	}
+
+	return { ...response.template };
 };

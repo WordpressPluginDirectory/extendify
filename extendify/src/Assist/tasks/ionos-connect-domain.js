@@ -17,7 +17,7 @@ export default {
 	},
 	link: undefined,
 	type: 'no-action-btn-card',
-	dependencies: { goals: [], plugins: [] },
+	dependencies: { plugins: [] },
 	show: () => {
 		// They need either extendable or launch completed
 		if (themeSlug !== 'extendable' && !launchCompleted) return false;

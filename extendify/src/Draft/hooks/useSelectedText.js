@@ -13,8 +13,9 @@ export const useSelectedText = () => {
 	const getSelectedContent = useCallback(() => {
 		const selectedBlocks = getBlocksByClientId(selectedBlockId);
 		return selectedBlocks
-			.map(({ attributes }) => attributes.content)
-			.join('\n\n');
+			?.filter(Boolean)
+			?.map(({ attributes }) => attributes.content)
+			?.join('\n\n');
 	}, [getBlocksByClientId, selectedBlockId]);
 
 	return {

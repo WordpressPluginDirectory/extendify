@@ -1,8 +1,9 @@
 import { Tooltip } from '@wordpress/components';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect, useState, useLayoutEffect } from '@wordpress/element';
 import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
 import { Icon, info } from '@wordpress/icons';
+import { getUrlParameter } from '@shared/utils/get-url-parameter';
 import { updateOption, getOption } from '@launch/api/WPApi';
 import { AcceptTerms } from '@launch/components/BusinessInformation/AcceptTerms';
 import { SiteTones } from '@launch/components/BusinessInformation/Tones';
@@ -22,6 +23,8 @@ export const state = pageState('Site Information', () => ({
 	useNav: true,
 	onRemove: () => {},
 }));
+const descriptionUrlParameter = getUrlParameter('description', false);
+const titleUrlParameter = getUrlParameter('title', false);
 
 export const SiteInformation = () => {
 	const { loading } = useFetch(fetchData, fetcher);
@@ -35,14 +38,19 @@ export const SiteInformation = () => {
 		siteObjective,
 		setCTALink,
 		CTALink,
+		setUrlParameters,
 	} = useUserSelectionStore();
 	const isLandingPage = siteObjective === 'landing-page';
 
-	const [title, setTitle] = useState(
-		decodeEntities(siteInformation.title || ''),
-	);
+	let resolvedTitle = siteInformation.title;
+	const isTitleEmpty = !resolvedTitle;
+	const isTitleDefault = resolvedTitle === window.extSharedData.siteTitle;
+	if ((isTitleEmpty || isTitleDefault) && titleUrlParameter) {
+		resolvedTitle = titleUrlParameter;
+	}
+	const [title, setTitle] = useState(decodeEntities(resolvedTitle || ''));
 	const [description, setDescription] = useState(
-		businessInformation.description || '',
+		businessInformation.description || descriptionUrlParameter || '',
 	);
 	const [callToActionLink, setCallToActionLink] = useState(CTALink || '');
 
@@ -55,6 +63,8 @@ export const SiteInformation = () => {
 				setCTALink(callToActionLink);
 			}
 			state.setState({ ready: !!title.length });
+			setSiteProfile(undefined); // this also resets SOME state
+			updateOption('extendify_site_profile', null);
 		}, 1000);
 		return () => clearTimeout(timer);
 	}, [
@@ -65,12 +75,17 @@ export const SiteInformation = () => {
 		isLandingPage,
 		setCTALink,
 		callToActionLink,
+		setSiteProfile,
 	]);
 
-	useEffect(() => {
-		setSiteProfile(undefined); // this also resets SOME state
-		updateOption('extendify_site_profile', null);
-	}, [setSiteProfile, description, title]);
+	useLayoutEffect(() => {
+		if (!titleUrlParameter || !descriptionUrlParameter) return;
+
+		setUrlParameters({
+			title: titleUrlParameter,
+			description: descriptionUrlParameter,
+		});
+	}, [setUrlParameters]);
 
 	const pageTitle = isLandingPage
 		? __('Tell Us About Your Landing Page', 'extendify-local')
@@ -111,7 +126,7 @@ export const SiteInformation = () => {
 								setDescription={setDescription}
 								siteObjective={siteObjective}
 							/>
-							{isLandingPage && (
+							{isLandingPage && !showSiteQuestions && (
 								<SiteCTA
 									title={callToActionLink}
 									setCTA={setCallToActionLink}
@@ -183,13 +198,17 @@ const objectiveLabels = {
 	other: __('Describe your website', 'extendify-local'),
 };
 
+const showSiteQuestions = window.extSharedData?.showSiteQuestions ?? false;
+
 const BusinessInfo = ({ description, setDescription, siteObjective }) => {
 	return (
 		<div>
 			<label
 				htmlFor="extendify-site-info-input"
 				className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
-				{objectiveLabels[siteObjective] ?? objectiveLabels.business}
+				{showSiteQuestions
+					? objectiveLabels.other
+					: (objectiveLabels[siteObjective] ?? objectiveLabels.business)}
 			</label>
 			<textarea
 				data-test="site-info-input"
@@ -203,7 +222,10 @@ const BusinessInfo = ({ description, setDescription, siteObjective }) => {
 				value={description}
 				onChange={(e) => setDescription(e.target.value)}
 				placeholder={
-					objectivePlaceholders[siteObjective] ?? objectivePlaceholders.business
+					showSiteQuestions
+						? objectivePlaceholders.other
+						: (objectivePlaceholders[siteObjective] ??
+							objectivePlaceholders.business)
 				}
 			/>
 		</div>

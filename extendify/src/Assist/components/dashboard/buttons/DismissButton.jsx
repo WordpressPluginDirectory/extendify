@@ -12,7 +12,7 @@ export const DismissButton = ({ variant = 'default', onClick }) => {
 		<button
 			type="button"
 			onClick={onClick}
-			className={`${variants[variant]} cursor-pointer bg-transparent text-sm text-design-main underline-offset-4 hover:underline`}>
+			className={`${variants[variant]} bg-transparent text-sm text-design-main underline-offset-4 hover:underline`}>
 			{__('Dismiss', 'extendify-local')}
 		</button>
 	);

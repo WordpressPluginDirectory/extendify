@@ -16,15 +16,13 @@ export default {
 		completed: __('Revisit', 'extendify-local'),
 	},
 	type: 'internalLink',
-	dependencies: { goals: [], plugins: ['all-in-one-seo-pack'] },
-	show: ({ plugins, goals, activePlugins, userGoals }) => {
+	dependencies: { plugins: ['all-in-one-seo-pack'] },
+	show: ({ plugins, activePlugins }) => {
 		// They need either extendable or launch completed
 		if (themeSlug !== 'extendable' && !launchCompleted) return false;
-		if (!plugins.length && !goals.length) return true;
+		if (!plugins.length) return true;
 
-		return activePlugins
-			.concat(userGoals)
-			.some((item) => plugins.concat(goals).includes(item));
+		return activePlugins.some((item) => plugins.includes(item));
 	},
 	backgroundImage:
 		'https://images.extendify-cdn.com/assist-tasks/bg-for-seo.webp',

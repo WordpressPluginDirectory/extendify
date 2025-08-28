@@ -1,9 +1,14 @@
 import apiFetch from '@wordpress/api-fetch';
 import { rawHandler, serialize } from '@wordpress/blocks';
 import { __, sprintf } from '@wordpress/i18n';
+import { recordPluginActivity } from '@shared/api/DataApi';
 import { pageNames } from '@shared/lib/pages';
 import blogSampleData from '@launch/_data/blog-sample.json';
-import { generateCustomPatterns } from '@launch/api/DataApi';
+import {
+	generateCustomPatterns,
+	getImprintPageTemplate,
+} from '@launch/api/DataApi';
+import { getActivePlugins } from '@launch/api/WPApi';
 import {
 	updateOption,
 	createPage,
@@ -14,7 +19,7 @@ import {
 	createCategory,
 	createTag,
 } from '@launch/api/WPApi';
-import { removeBlocks, addIdAttributeToBlock } from '@launch/lib/blocks';
+import { addIdAttributeToBlock } from '@launch/lib/blocks';
 
 // Currently this only processes patterns with placeholders
 // by swapping out the placeholders with the actual code
@@ -37,6 +42,21 @@ export const replacePlaceholderPatterns = async (patterns) => {
 	const hasPlaceholders = patterns.filter((p) => p.patternReplacementCode);
 	if (!hasPlaceholders?.length) return patterns;
 
+	const activePlugins =
+		(await getActivePlugins())?.data?.map((path) => path.split('/')[0]) || [];
+
+	const pluginsActivity = patterns
+		.filter((p) => p.pluginDependency)
+		.map((p) => p.pluginDependency)
+		.filter((p) => !activePlugins.includes(p));
+
+	for (const plugin of pluginsActivity) {
+		recordPluginActivity({
+			slug: plugin,
+			source: 'launch',
+		});
+	}
+
 	try {
 		return await processPlaceholders(patterns);
 	} catch (e) {
@@ -52,7 +72,7 @@ export const createWpPages = async (pages, { stickyNav }) => {
 
 	for (const page of pages) {
 		const HTML = page.patterns.map(({ code }) => code).join('');
-		const blocks = removeBlocks(rawHandler({ HTML }), ['core/html']);
+		const blocks = rawHandler({ HTML });
 
 		const content = [];
 		// Use this to avoid adding duplicate Ids to patterns
@@ -82,7 +102,12 @@ export const createWpPages = async (pages, { stickyNav }) => {
 			title: page.name,
 			status: 'publish',
 			content: content.join(''),
-			template: stickyNav ? 'no-title-sticky-header' : 'no-title',
+			template:
+				page.slug === 'home'
+					? 'no-title'
+					: stickyNav
+						? 'no-title-sticky-header'
+						: 'page-with-title',
 			meta: { made_with_extendify_launch: true },
 		};
 		let newPage;
@@ -350,3 +375,20 @@ export const generateCustomPageContent = async (
 
 export const updateGlobalStyleVariant = (variation) =>
 	updateThemeVariation(window.extSharedData.globalStylesPostID, variation);
+
+export const addImprintPage = async (siteStyle) => {
+	try {
+		// Get the imprint page template
+		const imprintPage = await getImprintPageTemplate(siteStyle);
+
+		// Create the page in WordPress with the fetched template
+		const [createdImprintPage] = await createWpPages([imprintPage], {
+			stickyNav: false,
+		});
+
+		return createdImprintPage;
+	} catch (error) {
+		console.error('Failed to add imprint page:', error);
+		return null;
+	}
+};

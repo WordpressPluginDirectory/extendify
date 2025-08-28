@@ -6,24 +6,12 @@ import { isAtLeastNDaysAgo } from '@assist/lib/recommendations';
 const siteCreatedAt = window.extSharedData?.siteCreatedAt ?? '';
 const recommendations =
 	safeParseJson(window.extSharedData.resourceData)?.recommendations || [];
-const goals =
-	safeParseJson(window.extSharedData?.userData?.userSelectionData)?.state
-		?.goals || [];
 const plugins =
 	window.extSharedData?.activePlugins?.map((plugin) => plugin.split('/')[0]) ||
 	[];
 
 const getRecommendations = () =>
-	// Filter out recs that have goal deps that don't appear in the user's goals list
-	// If no goal deps, show the rec
 	recommendations
-		.filter((rec) =>
-			rec?.goalDepSlugs?.length
-				? rec?.goalDepSlugs?.every((dep) =>
-						goals.find(({ slug }) => slug === dep),
-					)
-				: true,
-		)
 		// Filter out recs that have pluginExclusions, and the plugin is already installed
 		.filter((rec) =>
 			rec?.pluginExclusions?.length

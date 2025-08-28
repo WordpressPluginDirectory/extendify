@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.extendify-draft button:not(:disabled) {
+	@apply cursor-pointer;
+}
+
 .extendify-draft {
 	--tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
 	--tw-ring-offset-width: 0px;

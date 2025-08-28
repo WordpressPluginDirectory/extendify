@@ -1,3 +1,4 @@
+import { formatSiteQuestionsForAPI } from '@shared/utils/format-site-questions-for-api';
 import useSWRImmutable from 'swr/immutable';
 import { getHomeTemplates } from '@launch/api/DataApi';
 import { useSiteImages } from '@launch/hooks/useSiteImages';
@@ -6,8 +7,8 @@ import { useSiteStrings } from '@launch/hooks/useSiteStrings';
 import { useSiteStyles } from '@launch/hooks/useSiteStyles';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
-export const useHomeLayouts = () => {
-	const { siteType, siteStructure, goals, siteObjective } =
+export const useHomeLayouts = ({ disableFetch = false } = {}) => {
+	const { siteType, siteStructure, siteObjective, siteQA, sitePlugins } =
 		useUserSelectionStore();
 	const { siteStrings } = useSiteStrings();
 	const { siteProfile } = useSiteProfile();
@@ -19,7 +20,8 @@ export const useHomeLayouts = () => {
 		!siteProfile ||
 		!siteStrings ||
 		!siteImages ||
-		!siteStyles;
+		!siteStyles ||
+		disableFetch;
 
 	const params = {
 		key: 'home-layouts',
@@ -29,8 +31,9 @@ export const useHomeLayouts = () => {
 		siteStrings,
 		siteImages,
 		siteStyles,
-		goals,
 		siteObjective,
+		siteQuestions: formatSiteQuestionsForAPI(siteQA),
+		sitePlugins,
 	};
 
 	const { data, error } = useSWRImmutable(

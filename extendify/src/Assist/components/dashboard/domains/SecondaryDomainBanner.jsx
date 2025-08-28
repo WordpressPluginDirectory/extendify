@@ -24,7 +24,7 @@ export const SecondaryDomainBanner = () => {
 			<button
 				type="button"
 				onClick={() => dismissBanner('secondary-domain-banner')}
-				className="absolute right-0 top-0 flex h-8 w-8 cursor-pointer items-center justify-center rounded-bl rounded-se bg-gray-100 text-center hover:bg-gray-300 rtl:left-0 rtl:right-auto rtl:rounded-bl-none rtl:rounded-br">
+				className="absolute right-0 top-0 flex h-8 w-8 items-center justify-center rounded-bl rounded-se bg-gray-100 text-center hover:bg-gray-300 rtl:left-0 rtl:right-auto rtl:rounded-bl-none rtl:rounded-br">
 				<Icon icon={close} size={32} className="fill-current" />
 			</button>
 			<div className="grid gap-4 md:grid-cols-2 md:gap-12">
@@ -71,7 +71,6 @@ export const SecondaryDomainBanner = () => {
 									});
 								}}
 								target="_blank"
-								rel="noreferrer"
 								className="inline-flex h-10 cursor-pointer items-center rounded-sm bg-design-main px-4 text-sm text-design-text no-underline hover:opacity-90">
 								{__('Secure a domain', 'extendify-local')}
 							</a>

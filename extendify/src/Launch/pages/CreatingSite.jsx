@@ -2,7 +2,7 @@ import { dispatch, select } from '@wordpress/data';
 import { useEffect, useState, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
-import { getPartnerPlugins } from '@shared/api/DataApi';
+import { getPartnerPlugins, recordPluginActivity } from '@shared/api/DataApi';
 import { installPlugin, activatePlugin } from '@shared/api/wp';
 import { pageNames } from '@shared/lib/pages';
 import { deepMerge } from '@shared/lib/utils';
@@ -18,7 +18,6 @@ import {
 	addSectionLinksToNav,
 	addPageLinksToNav,
 	updateOption,
-	updatePattern,
 	getOption,
 	getPageById,
 	getActivePlugins,
@@ -27,6 +26,7 @@ import {
 	createNavigation,
 	updateNavAttributes,
 	installFontFamilies,
+	updatePageTitlePattern,
 } from '@launch/api/WPApi';
 import { importTemporaryProducts } from '@launch/api/WooCommerce';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
@@ -45,6 +45,7 @@ import {
 	replacePlaceholderPatterns,
 	updateGlobalStyleVariant,
 	setHelloWorldFeaturedImage,
+	addImprintPage,
 } from '@launch/lib/wp';
 import { usePagesStore } from '@launch/state/Pages';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
@@ -57,7 +58,8 @@ const {
 	partnerLogo,
 	partnerName,
 	installedPlugins = [],
-	requiredPlugins = [],
+	showImprint,
+	wpLanguage,
 } = window.extSharedData;
 
 export const CreatingSite = () => {
@@ -66,17 +68,17 @@ export const CreatingSite = () => {
 	const [confettiColors, setConfettiColors] = useState(['#ffffff']);
 	const [warnOnLeaveReady, setWarnOnLeaveReady] = useState(true);
 	const {
-		goals,
 		siteType,
 		siteInformation,
 		siteStructure,
-		getGoalsPlugins,
+		sitePlugins,
 		variation,
 		siteProfile,
 		siteStrings,
 		siteImages,
 		CTALink,
 		siteObjective,
+		siteQA,
 	} = useUserSelectionStore();
 	const { pages, style } = usePagesSelectionStore();
 	const [info, setInfo] = useState([]);
@@ -88,18 +90,22 @@ export const CreatingSite = () => {
 	const customFontFamilies =
 		variation?.settings?.typography?.fontFamilies?.custom;
 	const { setUserGaveConsent } = useAIConsentStore();
-	const redirectUrl =
-		// on landing pages for some users, we redirect to home_url
-		window.extOnbData.redirectToWebsite && siteObjective === 'landing-page'
-			? `${homeUrl}?extendify-launch-success`
-			: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success`;
 	const { loading: logoLoading, logoUrl } = useSiteLogo();
 
 	useWarnOnLeave(warnOnLeaveReady);
 
 	const doEverything = useCallback(async () => {
 		try {
-			const hasBlogGoal = goals?.find((goal) => goal.slug === 'blog');
+			const blogQuestion = siteQA?.questions.find(
+				(question) => question.id === 'blog',
+			);
+			const hasBlogGoal = blogQuestion
+				? (blogQuestion?.answerUser ?? blogQuestion?.answerAI) === 'yes'
+				: false;
+			const needsImprintPage = Array.isArray(showImprint)
+				? showImprint.includes(wpLanguage ?? '') &&
+					siteProfile?.aiSiteCategory === 'Business'
+				: false;
 
 			await uploadLogo(logoUrl, { forceReplace: true });
 
@@ -171,17 +177,30 @@ export const CreatingSite = () => {
 					);
 			}
 
+			let footerCode = style?.footerCode;
+			let footerNavigationId = null;
+			let footerNavPages = [];
+
+			if (needsImprintPage) {
+				footerNavigationId = await createNavigation(
+					'content',
+					__('Footer Navigation', 'extendify-local'),
+					'footer-navigation',
+				);
+				footerCode = updateNavAttributes(footerCode, {
+					ref: footerNavigationId,
+				});
+			}
+
 			await waitFor200Response();
 			await updateTemplatePart('extendable/header', headerCode);
 
 			await waitFor200Response();
-			await updateTemplatePart('extendable/footer', style?.footerCode);
-
-			const goalsPlugins = getGoalsPlugins();
+			await updateTemplatePart('extendable/footer', footerCode);
 
 			// Add required plugins to the end of the list to give them lower priority
 			// when filtering out duplicates.
-			const sortedPlugins = [...goalsPlugins, ...requiredPlugins]
+			const sortedPlugins = [...sitePlugins]
 				// Remove duplicates
 				.reduce((acc, plugin) => {
 					const found = acc.find(
@@ -210,7 +229,10 @@ export const CreatingSite = () => {
 						await retryOperation(() => installPlugin(slug), {
 							maxAttempts: 2,
 						}).catch(console.error);
+
+						recordPluginActivity({ slug, source: 'launch' });
 					}
+
 					await retryOperation(() => activatePlugin(slug), {
 						maxAttempts: 2,
 					}).catch(console.error);
@@ -258,8 +280,28 @@ export const CreatingSite = () => {
 				);
 			}
 
+			const pagesWithoutPageTitlePattern = pages.map((page) => ({
+				...page,
+				patterns: page.patterns.filter(
+					(p) => !p.patternTypes?.includes('page-title'),
+				),
+			}));
+
+			// Update the page-with-title template with the selected page-title pattern
+			const firstPageTitlePattern = pages?.[0]?.patterns?.find((p) =>
+				p.patternTypes?.includes('page-title'),
+			);
+
+			const hasPageWithTitleTemplate = firstPageTitlePattern
+				? await updatePageTitlePattern(firstPageTitlePattern.code)
+				: false;
+
+			const pagesToUse = hasPageWithTitleTemplate
+				? pagesWithoutPageTitlePattern
+				: pages;
+
 			const pagesToCreate = [
-				...pages,
+				...pagesToUse,
 				homePage,
 				hasBlogGoal ? blogPage : null,
 			].filter(Boolean);
@@ -274,17 +316,10 @@ export const CreatingSite = () => {
 				pagesWithReplacedPatterns.push(updatedPage);
 			}
 
-			// Stash the page-title pattern for use in ai page creator
-			const firstPattern = pagesWithReplacedPatterns?.[0]?.patterns?.[0];
-			const pageTitle = firstPattern?.patternTypes?.includes('page-title')
-				? (firstPattern?.code ?? null)
-				: null;
-			await updatePattern('launch_page_title_pattern', pageTitle);
-
 			const pagesWithCustomContent = await generateCustomPageContent(
 				pagesWithReplacedPatterns,
 				{
-					goals,
+					sitePlugins,
 					siteType: siteTypeUpdated.name,
 					siteInformation,
 				},
@@ -308,6 +343,22 @@ export const CreatingSite = () => {
 			await waitFor200Response();
 			if (siteImages?.siteImages) {
 				await setHelloWorldFeaturedImage(siteImages.siteImages);
+			}
+
+			if (needsImprintPage) {
+				informDesc(__('Adding imprint page', 'extendify-local'));
+				const createdImprintPage = await addImprintPage(style?.siteStyle);
+				if (createdImprintPage) {
+					createdPages.push(createdImprintPage);
+					footerNavPages = [
+						{
+							name: createdImprintPage.title.rendered,
+							slug: createdImprintPage.originalSlug,
+							id: createdImprintPage.originalSlug,
+							patterns: [],
+						},
+					];
+				}
 			}
 
 			setPagesToAnimate([]);
@@ -348,6 +399,7 @@ export const CreatingSite = () => {
 				const partnerPlugins = await getPartnerPlugins('products').catch(
 					() => null,
 				);
+
 				if (partnerPlugins) {
 					informDesc(__('Installing supporting plugins', 'extendify-local'));
 					for (const plugin of partnerPlugins) {
@@ -356,6 +408,12 @@ export const CreatingSite = () => {
 							await retryOperation(() => installPlugin(plugin), {
 								maxAttempts,
 							}).catch(console.error);
+
+							recordPluginActivity({
+								slug: plugin,
+								source: 'launch',
+							});
+
 							await retryOperation(() => activatePlugin(plugin), {
 								maxAttempts,
 							}).catch(console.error);
@@ -419,6 +477,14 @@ export const CreatingSite = () => {
 						pluginPages,
 					);
 				}
+				if (footerNavigationId) {
+					await addPageLinksToNav(
+						footerNavigationId,
+						footerNavPages,
+						pagesWithLinksUpdated,
+						[],
+					);
+				}
 			}
 
 			await waitFor200Response();
@@ -469,9 +535,7 @@ export const CreatingSite = () => {
 		}
 	}, [
 		pages,
-		getGoalsPlugins,
 		style,
-		goals,
 		siteType,
 		siteInformation,
 		setPagesToAnimate,
@@ -485,6 +549,8 @@ export const CreatingSite = () => {
 		siteObjective,
 		CTALink,
 		logoUrl,
+		sitePlugins,
+		siteQA,
 	]);
 
 	useEffect(() => {
@@ -493,9 +559,9 @@ export const CreatingSite = () => {
 			setPage(0);
 			// This will trigger the post launch php functions.
 			await postLaunchFunctions();
-			window.location.replace(redirectUrl);
+			window.location.replace(`${homeUrl}?extendify-launch-success`);
 		});
-	}, [doEverything, setPage, redirectUrl, logoLoading]);
+	}, [doEverything, setPage, logoLoading]);
 
 	useEffect(() => {
 		const documentStyles = window.getComputedStyle(document.body);

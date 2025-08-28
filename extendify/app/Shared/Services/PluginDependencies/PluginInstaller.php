@@ -17,8 +17,8 @@ class PluginInstaller
     /**
      * Install or activate a required plugin
      *
-     * @param [type] $slug         - The plugin slug.
-     * @param [type] $fallbackPath - The fallback path.
+     * @param string $slug         - The plugin slug.
+     * @param string $fallbackPath - The fallback path.
      * @return mixed
      */
     public static function installPlugin($slug, $fallbackPath)

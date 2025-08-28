@@ -13,7 +13,6 @@ const storage = {
 const startingState = {
 	aiImageOptions: {
 		prompt: '',
-		style: 'vivid',
 		size: '1024x1024',
 	},
 	imageCredits: {

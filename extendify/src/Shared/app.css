@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.extendify-shared button:not(:disabled) {
+	@apply cursor-pointer;
+}
+
 .extendify-shared {
 	--tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
 	--tw-ring-offset-width: 0px;

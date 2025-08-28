@@ -14,6 +14,7 @@ use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\ApexDomain\ApexDomain;
 use Extendify\Shared\Services\Escaper;
+use Extendify\Shared\Services\PluginDependencies\SimplyBook;
 use Extendify\SiteSettings;
 
 /**
@@ -35,6 +36,8 @@ class Admin
         \add_action('wp_ajax_search-install-plugins', [$this, 'recordPluginsSearchTerms'], -1);
         \add_action('rest_api_init', [$this, 'recordBlocksSearchTerms']);
         \add_action('wp_ajax_query-themes', [$this, 'recordThemesSearchTerms'], -1);
+
+        \add_action('simplybook_activation', [SimplyBook::class, 'getIndustryCode'], 10, 0);
     }
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
@@ -165,8 +168,6 @@ class Admin
                 'partnerLogo' => \esc_attr(PartnerData::$logo),
                 'partnerId' => \esc_attr(PartnerData::$id),
                 'partnerName' => \esc_attr(PartnerData::$name),
-                'allowedPlugins' => array_map('esc_attr', PartnerData::setting('allowedPluginsSlugs')),
-                'requiredPlugins' => Escaper::recursiveEscAttr(PartnerData::setting('requiredPlugins')),
                 'userData' => [
                     'userSelectionData' => \wp_json_encode((UserSelectionController::get()->get_data() ?? [])),
                 ],
@@ -177,6 +178,7 @@ class Admin
                     PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')
                 ),
                 'showAILogo' => (bool) PartnerData::setting('showAILogo'),
+                'showImprint' => array_map('esc_attr', (array) PartnerData::setting('showImprint')),
                 'consentTermsCustom' => \wp_kses((html_entity_decode(($partnerData['consentTermsCustom'] ?? ''))
                     ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
@@ -188,10 +190,14 @@ class Admin
                 'activity' => \wp_json_encode(\get_option('extendify_shared_activity', null)),
                 'showDraft' => isset($partnerData['showDraft']) ? (bool) $partnerData['showDraft'] : false,
                 'showLaunch' => Config::$showLaunch,
+                'phpVersion' => \esc_attr(PHP_VERSION),
                 'apexDomain' => PartnerData::setting('enableApexDomain')
                     ? rawurlencode(ApexDomain::getApexDomain(\get_home_url()))
                     : null,
                 'isLaunchCompleted' => (bool) \esc_attr(\get_option('extendify_onboarding_completed', false)),
+                'showSiteQuestions' => (bool) (
+                    PartnerData::setting('showLaunchQuestions') || Config::preview('launch-questions')
+                ),
             ]),
             'before'
         );

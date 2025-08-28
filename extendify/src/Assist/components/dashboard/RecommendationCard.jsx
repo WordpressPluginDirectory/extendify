@@ -2,6 +2,7 @@ import { Button } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 import { Icon, check, warning } from '@wordpress/icons';
+import { recordPluginActivity } from '@shared/api/DataApi';
 import { installPlugin, activatePlugin } from '@shared/api/wp';
 import { useActivityStore } from '@shared/state/activity';
 
@@ -25,7 +26,6 @@ const LinkCard = ({ recommendation }) => {
 			)}
 			onClick={() => incrementActivity(`recommendations-${slug}`)}
 			target="_blank"
-			rel="noopener noreferrer"
 			className="cursor-pointer rounded border border-gray-200 bg-transparent p-4 text-left text-base no-underline hover:border-design-main hover:bg-gray-50 rtl:text-right">
 			<div className="h-full w-full">
 				<img
@@ -64,34 +64,39 @@ const InstallCard = ({ recommendation }) => {
 				<div className="mt-2 font-semibold">{title}</div>
 				{by && <div className="text-sm text-gray-700">{by}</div>}
 				<div className="mb-3 mt-2 text-sm text-gray-800">{description}</div>
-				<InstallButton pluginSlug={pluginSlug} />
+				<InstallButton slug={pluginSlug} />
 			</div>
 		</div>
 	);
 };
 
-const InstallButton = ({ pluginSlug }) => {
+const InstallButton = ({ slug }) => {
 	const [installing, setInstalling] = useState(false);
 	const [status, setStatus] = useState('');
 
 	useEffect(() => {
 		const { installedPlugins, activePlugins } = window.extSharedData;
-		const hasPlugin = (p) => p?.includes(pluginSlug);
+		const hasPlugin = (p) => p?.includes(slug);
 		const installed = Object.values(installedPlugins).some(hasPlugin);
 		const active = Object.values(activePlugins).some(hasPlugin);
 		if (installed) setStatus('inactive');
 		if (active) setStatus('active');
-	}, [pluginSlug, setStatus]);
+	}, [slug, setStatus]);
 
 	const handleClick = async () => {
 		setInstalling(true);
 		try {
-			await installPlugin(pluginSlug);
+			await installPlugin(slug);
+			recordPluginActivity({
+				slug,
+				source: 'assist-recommendation-card',
+			});
 		} catch (_) {
 			// Fail silently if the plugin is already installed
+			console.error('Error installing plugin:', _);
 		}
 		try {
-			await activatePlugin(pluginSlug);
+			await activatePlugin(slug);
 			setStatus('active');
 		} catch (_) {
 			setStatus('error');

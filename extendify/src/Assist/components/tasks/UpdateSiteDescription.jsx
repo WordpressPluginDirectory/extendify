@@ -73,7 +73,7 @@ export const UpdateSiteDescription = ({ popModal, setModalTitle }) => {
 				<button
 					disabled={siteDescription === initialValue}
 					className={classNames(
-						'button-focus relative w-1/5 cursor-pointer rounded border-0 bg-design-main px-4 py-3 text-white',
+						'button-focus relative w-1/5 rounded border-0 bg-design-main px-4 py-3 text-white',
 						{
 							'cursor-default opacity-50': siteDescription === initialValue,
 						},

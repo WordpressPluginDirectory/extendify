@@ -31,7 +31,7 @@ export const Modal = () => {
 							{title}
 						</DialogTitle>
 						<Button
-							className="m-4 cursor-pointer border-0"
+							className="m-4 border-0"
 							onClick={popModal}
 							icon={<Icon icon={close} size={24} />}
 							label={__('Close Modal', 'extendify-local')}

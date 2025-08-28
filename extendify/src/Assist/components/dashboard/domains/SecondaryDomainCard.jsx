@@ -64,7 +64,6 @@ export const SecondaryDomainCard = ({ task }) => {
 						<a
 							href={createDomainUrlLink(domainSearchUrl, domains[0])}
 							target="_blank"
-							rel="noreferrer"
 							onClick={() => {
 								handleInteract();
 								recordActivity(domains[0], 'primary');
@@ -79,7 +78,6 @@ export const SecondaryDomainCard = ({ task }) => {
 						<a
 							href={createDomainUrlLink(domainSearchUrl, domain)}
 							target="_blank"
-							rel="noreferrer"
 							className="flex h-11 cursor-pointer items-center justify-between border-b border-gray-200 px-6 py-3.5 text-sm font-normal lowercase text-gray-800 no-underline last:border-transparent hover:bg-gray-50"
 							onClick={() => {
 								handleInteract();

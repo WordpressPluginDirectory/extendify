@@ -98,7 +98,7 @@ export const LaunchCard = ({ task }) => {
 							onClick={() => {
 								dismissTask('site-builder-launcher');
 							}}
-							className="cursor-pointer bg-transparent text-sm text-design-main underline-offset-4 hover:underline">
+							className="bg-transparent text-sm text-design-main underline-offset-4 hover:underline">
 							{__('Dismiss', 'extendify-local')}
 						</button>
 					</div>

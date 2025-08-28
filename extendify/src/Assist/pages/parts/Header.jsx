@@ -47,8 +47,7 @@ export const Header = () => {
 							}}
 							className="block cursor-pointer rounded-sm border border-gray-500 bg-white px-4 py-2 text-center text-sm text-gray-900 no-underline transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-900 focus:ring-offset-1 lg:inline-block lg:rounded-sm"
 							href={window.extSharedData.homeUrl}
-							target="_blank"
-							rel="noreferrer">
+							target="_blank">
 							{__('View site', 'extendify-local')}
 						</a>
 					</div>

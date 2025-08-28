@@ -1,5 +1,5 @@
 import { useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { safeDecodeURIComponent } from '@wordpress/url';
 import { RecommendationsGrid } from '@recommendations/components/RecommendationsGrid';
 import {
@@ -27,11 +27,13 @@ export const PluginSearchBanner = () => {
 	);
 
 	useEffect(() => {
+		if (!query || isLoading) return;
+		recordActivity({ slot: 'plugin-search', event: 'search' });
+	}, [query, isLoading]);
+
+	useEffect(() => {
 		if (!query) return;
-		(async () => {
-			await fetchInstalledPlugins(true);
-			recordActivity({ slot: 'plugin-search', event: 'search' });
-		})();
+		fetchInstalledPlugins(true);
 	}, [query, fetchInstalledPlugins]);
 
 	if (!query || !recommendations?.length || isLoading || isError) {
@@ -55,8 +57,11 @@ export const PluginSearchBanner = () => {
 				) : null}
 				<h2
 					className={`m-0 flex h-full items-center ${showPartnerBranding ? 'text-banner-text' : ''} `}>
-					{__('Recommended Solutions for: ', 'extendify')}
-					{safeDecodeURIComponent(query)}
+					{sprintf(
+						// translators: %s: The search query term
+						__('Recommended Solutions for: %s', 'extendify-local'),
+						safeDecodeURIComponent(query),
+					)}
 				</h2>
 			</div>
 			<RecommendationsGrid

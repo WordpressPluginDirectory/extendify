@@ -6,6 +6,10 @@
 
 namespace Extendify\Shared\Services\PluginDependencies;
 
+use Extendify\PartnerData;
+use Extendify\Shared\Services\HttpClient;
+use Extendify\Shared\Services\Sanitizer;
+
 defined('ABSPATH') || die('No direct access.');
 
 /**
@@ -46,5 +50,37 @@ class SimplyBook
         }
 
         return $newCode;
+    }
+
+    public static function getIndustryCode()
+    {
+        if (!empty(\get_option('extendify_simplybook_data', []))) {
+            return;
+        }
+
+        $response = HttpClient::post('https://ai.extendify.com/api/plugins/simplybook', [
+            'params' => [
+                'title' => \get_bloginfo('name'),
+                'wpLanguage' => \get_locale(),
+                'version' => \Extendify\Config::$version,
+                'siteProfile' => \get_option('extendify_site_profile', [
+                    'aiSiteType' => '',
+                    'aiSiteCategory' => '',
+                    'aiDescription' => '',
+                    'aiKeywords' => [],
+                ]),
+                'siteId' => \get_option('extendify_site_id', ''),
+                'partnerId' => PartnerData::$id,
+                'devbuild' => (bool) is_readable(EXTENDIFY_PATH . '.devbuild'),
+            ]
+        ], null, true);
+
+        if (empty($response['response'])) {
+            return;
+        }
+
+        \update_option('extendify_simplybook_data', Sanitizer::sanitizeUnknown($response['response'] ?? []), false);
+
+        return;
     }
 }

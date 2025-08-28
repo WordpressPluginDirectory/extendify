@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.extendify-launch button:not(:disabled) {
+	@apply cursor-pointer;
+}
+
 .extendify-launch {
 	--tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
 	--tw-ring-offset-width: 0px;
@@ -29,7 +33,7 @@
 }
 
 .extendify-launch .button-focus {
-	@apply cursor-pointer rounded-lg text-center text-base no-underline outline-none ring-design-main ring-offset-2 ring-offset-white focus:shadow-none focus:ring-wp;
+	@apply rounded-lg text-center text-base no-underline outline-none ring-design-main ring-offset-2 ring-offset-white focus:shadow-none focus:ring-wp;
 }
 
 .extendify-launch .input-focus {

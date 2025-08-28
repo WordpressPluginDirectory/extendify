@@ -1,4 +1,5 @@
 import apiFetch from '@wordpress/api-fetch';
+import { createBlock, parse, serialize } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import { addQueryArgs } from '@wordpress/url';
 import { pageNames } from '@shared/lib/pages';
@@ -45,13 +46,17 @@ export const createCategory = (CategoryData) =>
 
 export const createTag = (tagData) => api.post(`${wpRoot}wp/v2/tags`, tagData);
 
-export const createNavigation = async (content = '') => {
+export const createNavigation = async (
+	content = '',
+	title = __('Header Navigation', 'extendify-local'),
+	slug = 'site-navigation',
+) => {
 	const payload = await apiFetch({
 		path: 'extendify/v1/launch/create-navigation',
 		method: 'POST',
 		data: {
-			title: __('Header Navigation', 'extendify-local'),
-			slug: 'site-navigation',
+			title,
+			slug,
 			content,
 		},
 	});
@@ -89,12 +94,112 @@ const allowedFooters = [
 	'footer-social-icons',
 	'footer-with-center-logo-and-menu',
 ];
+const allowedNavFooters = [
+	'footer-with-nav',
+	'footer-with-center-logo-social-nav',
+];
 
-export const getHeadersAndFooters = async () => {
+// finds the core/heading in the pattern and replaces it with a core/post-title block
+const transformHeadingToPostTitle = (rawHTML) => {
+	let done = false;
+
+	const walk = (block) => {
+		if (done) return block;
+
+		if (block.name === 'core/heading') {
+			done = true;
+			const attrs = {
+				level: block.attributes.level,
+				textAlign: block.attributes.textAlign,
+				textColor: block.attributes.textColor,
+				backgroundColor: block.attributes.backgroundColor,
+				isLink: block.attributes.isLink,
+				linkTarget: block.attributes.linkTarget,
+				rel: block.attributes.rel,
+			};
+
+			if (block.attributes.fontSize) {
+				attrs.fontSize = block.attributes.fontSize;
+			}
+
+			const customSize = block.attributes.style?.typography?.fontSize;
+			const linkStyle = block.attributes.style?.elements?.link;
+
+			if (customSize || linkStyle) {
+				attrs.style = {};
+
+				if (customSize) {
+					attrs.style.typography = { fontSize: customSize };
+				}
+				if (linkStyle) {
+					attrs.style.elements = { link: linkStyle };
+				}
+			}
+
+			return createBlock('core/post-title', attrs);
+		}
+
+		if (block.innerBlocks?.length) {
+			block.innerBlocks = block.innerBlocks.map(walk);
+		}
+		return block;
+	};
+
+	return serialize(parse(rawHTML).map(walk));
+};
+
+// Replace the page-title pattern in “page-with-title” template with the incoming page-title pattern
+export const updatePageTitlePattern = async (pageTitlePattern) => {
+	const updatedPattern = transformHeadingToPostTitle(pageTitlePattern);
+
+	const templateContent = `
+		<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+		<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"0"}}} -->
+		<main class="wp-block-group" style="margin-top:0px;margin-bottom:0px">
+			${updatedPattern}
+			<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+		</main>
+		<!-- /wp:group -->
+		<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+		`;
+
+	try {
+		await apiFetch({
+			path: '/wp/v2/templates/extendable/page-with-title',
+			method: 'POST',
+			data: {
+				slug: 'page-with-title',
+				theme: 'extendable',
+				type: 'wp_template',
+				status: 'publish',
+				description: __('Added by Launch', 'extendify-local'),
+				content: templateContent,
+			},
+		});
+		return true;
+	} catch {
+		return false;
+	}
+};
+
+export const getHeadersAndFooters = async (hasFooterNav = false) => {
 	let patterns = await getTemplateParts();
 	patterns = patterns?.filter((p) => p.theme === 'extendable');
 	const headers = patterns?.filter((p) => allowedHeaders.includes(p?.slug));
-	const footers = patterns?.filter((p) => allowedFooters.includes(p?.slug));
+
+	let footerSlugsToUse = allowedFooters;
+
+	if (hasFooterNav) {
+		const navFooters = patterns?.filter((p) =>
+			allowedNavFooters.includes(p?.slug),
+		);
+		// Use navFooters only if any are found; otherwise fall back to allowedFooters
+		if (navFooters.length > 0) {
+			footerSlugsToUse = allowedNavFooters;
+		}
+	}
+
+	const footers = patterns?.filter((p) => footerSlugsToUse.includes(p?.slug));
 	return { headers, footers };
 };
 
@@ -117,14 +222,10 @@ export const getThemeVariations = async () => {
 		return combinedKeys.has('color') && combinedKeys.has('typography');
 	});
 
-	// Adds slug to match with color palettes from airtable
+	// Use slug from theme if available, otherwise generate one from the title
 	const variationsWithSlugs = mainStyleVariations.map((variation) => {
-		const slug =
-			// The Fusion Sky variation is misspelled in Extendable, so it needs a special case.
-			variation.title === 'FusionSky'
-				? 'fusion-sky'
-				: variation.title.toLowerCase().trim().replace(/\s+/, '-');
-
+		if (variation.slug) return variation;
+		const slug = variation.title.toLowerCase().trim().replace(/\s+/, '-');
 		return { ...variation, slug };
 	});
 

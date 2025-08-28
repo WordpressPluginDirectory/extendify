@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.extendify-assist button:not(:disabled) {
+	@apply cursor-pointer;
+}
+
 .extendify-assist {
 	--tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
 	--tw-ring-offset-width: 0px;
@@ -41,8 +45,9 @@ body[class*="_page_extendify-assist"] #wpcontent {
 	@apply overflow-auto;
 }
 .extendify-assist *:not(.dashicons) {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+		Cantarell, "Helvetica Neue", sans-serif;
 }
 .extendify-assist .input-focus {
 	@apply text-sm outline-none ring-design-main focus:shadow-none focus:ring-wp;

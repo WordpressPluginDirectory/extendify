@@ -27,7 +27,7 @@ export const Rating = ({ answerId }) => {
 						: __('Rate that this answer was helpful', 'extendify-local')
 				}
 				className={classnames(
-					'm-0 h-5 w-5 cursor-pointer border-0 bg-transparent p-0 hover:text-design-main',
+					'm-0 h-5 w-5 border-0 bg-transparent p-0 hover:text-design-main',
 					{
 						'text-design-main': rating === 1,
 						'text-gray-500': rating !== 1,
@@ -47,7 +47,7 @@ export const Rating = ({ answerId }) => {
 						: __('Rate that this answer was not helpful', 'extendify-local')
 				}
 				className={classnames(
-					'm-0 h-5 w-5 cursor-pointer border-0 bg-transparent p-0 hover:text-design-main',
+					'm-0 h-5 w-5 border-0 bg-transparent p-0 hover:text-design-main',
 					{
 						'text-design-main': rating === -1,
 						'text-gray-500': rating !== -1,

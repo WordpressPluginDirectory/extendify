@@ -12,14 +12,14 @@ export const useCompletion = (
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		let cancelled = false;
+		let canceled = false;
 		let reader;
 		const decoder = new TextDecoder();
 
 		if (!prompt) {
 			setLoading(false);
 			setResult('');
-			cancelled = true;
+			canceled = true;
 			return;
 		}
 
@@ -42,7 +42,7 @@ export const useCompletion = (
 
 				done = readerDone;
 
-				if (value && !cancelled) {
+				if (value && !canceled) {
 					const decodedValue = decoder.decode(value);
 					setResult((prevResult) => prevResult + decodedValue);
 				}
@@ -51,18 +51,18 @@ export const useCompletion = (
 
 		fetchData()
 			.finally(() => {
-				if (!cancelled) {
+				if (!canceled) {
 					setLoading(false);
 				}
 			})
 			.catch((error) => {
-				if (!cancelled) {
+				if (!canceled) {
 					setError(error);
 				}
 			});
 
 		return () => {
-			cancelled = true;
+			canceled = true;
 			if (reader) {
 				reader.cancel();
 			}

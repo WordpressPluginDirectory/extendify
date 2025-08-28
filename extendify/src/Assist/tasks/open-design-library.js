@@ -18,7 +18,7 @@ export default {
 		? 'post-new.php?post_type=page&ext-open&ext-page-creator-close'
 		: 'post-new.php?post_type=page&ext-open',
 	type: 'html-text-button',
-	dependencies: { goals: [], plugins: [] },
+	dependencies: { plugins: [] },
 	show: () => true,
 	backgroundImage: null,
 	htmlBefore: () => (

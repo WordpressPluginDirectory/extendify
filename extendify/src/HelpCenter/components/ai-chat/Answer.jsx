@@ -77,7 +77,7 @@ export const Answer = ({ question, answer, reset, error, answerId }) => {
 				<button
 					type="button"
 					onClick={reset}
-					className="flex cursor-pointer items-center gap-2 rounded-sm border-none bg-design-main px-4 py-2 text-sm text-design-text rtl:flex-row-reverse">
+					className="flex items-center gap-2 rounded-sm border-none bg-design-main px-4 py-2 text-sm text-design-text rtl:flex-row-reverse">
 					{__('Ask Another Question', 'extendify-local')}
 					<Icon
 						icon={send}

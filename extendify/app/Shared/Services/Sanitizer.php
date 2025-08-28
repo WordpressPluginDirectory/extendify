@@ -39,7 +39,7 @@ class Sanitizer
             } elseif (is_int($value) || is_float($value)) {
                 return $value;
             } else {
-                return \sanitize_text_field($value);
+                return \sanitize_textarea_field($value);
             }
         }, $array);
     }

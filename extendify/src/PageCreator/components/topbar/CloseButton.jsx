@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 
 export const CloseButton = ({ onClose }) => (
 	<button
-		className="block h-6 w-6 cursor-pointer bg-transparent p-px text-inherit outline-none focus:shadow-none focus:ring-wp focus:ring-design-main"
+		className="block h-6 w-6 bg-transparent p-px text-inherit outline-none focus:shadow-none focus:ring-wp focus:ring-design-main"
 		type="button"
 		onClick={onClose}
 		data-test="modal-close-button"

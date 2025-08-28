@@ -13,7 +13,7 @@ export default {
 		notCompleted: __('Register this domain', 'extendify-local'),
 	},
 	type: 'domain-task',
-	dependencies: { goals: [], plugins: [] },
+	dependencies: { plugins: [] },
 	show: ({ showDomainTask }) => {
 		// They need either extendable or launch completed
 		if (themeSlug !== 'extendable' && !launchCompleted) return false;

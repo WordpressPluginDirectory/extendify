@@ -101,6 +101,11 @@ export const DropdownTranslate = ({
 			languageName: 'Greek',
 		},
 		{
+			language: __('Hebrew', 'extendify-local'),
+			code: 'he_IL',
+			languageName: 'Hebrew',
+		},
+		{
 			language: __('Hindi', 'extendify-local'),
 			code: 'hi_IN',
 			languageName: 'Hindi',

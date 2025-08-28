@@ -16,7 +16,7 @@ export default {
 	},
 	link: 'https://hosting.aruba.it/en/wordpress/managed-wordpress-hosting.aspx',
 	type: 'demo-card',
-	dependencies: { goals: [], plugins: [] },
+	dependencies: { plugins: [] },
 	show: () => {
 		// They need either extendable or launch completed
 		if (themeSlug !== 'extendable' && !launchCompleted) return false;

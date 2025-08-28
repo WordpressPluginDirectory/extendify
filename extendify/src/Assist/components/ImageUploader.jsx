@@ -87,7 +87,7 @@ export const ImageUploader = ({ type, onUpdate, title, actionLabel }) => {
 						<div className="relative block">
 							<Button
 								className={
-									'editor-post-featured-image__toggle extendify-assist-upload-logo relative m-0 flex h-48 w-full min-w-full cursor-pointer justify-center border-0 bg-gray-100 p-0 text-center text-gray-900 hover:bg-gray-300 hover:text-current'
+									'editor-post-featured-image__toggle extendify-assist-upload-logo relative m-0 flex h-48 w-full min-w-full justify-center border-0 bg-gray-100 p-0 text-center text-gray-900 hover:bg-gray-300 hover:text-current'
 								}
 								onClick={open}
 								aria-label={

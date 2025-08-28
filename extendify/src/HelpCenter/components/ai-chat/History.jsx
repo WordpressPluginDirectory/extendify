@@ -22,7 +22,7 @@ export const History = ({ setShowHistory }) => {
 				<button
 					type="button"
 					onClick={() => setShowHistory(false)}
-					className="m-0 cursor-pointer border-0 bg-transparent fill-current p-0 text-design-text">
+					className="m-0 border-0 bg-transparent fill-current p-0 text-design-text">
 					<Icon icon={close} size={16} />
 					<span className="sr-only">
 						{__('Close history', 'extendify-local')}
@@ -39,7 +39,7 @@ export const History = ({ setShowHistory }) => {
 							<button
 								type="button"
 								onClick={() => deleteFromHistory(item)}
-								className="m-0 cursor-pointer border-0 bg-transparent p-0 opacity-0 group-hover:opacity-100">
+								className="m-0 border-0 bg-transparent p-0 opacity-0 group-hover:opacity-100">
 								<Icon icon={close} size={12} />
 								<span className="sr-only">
 									{__('Remove from history', 'extendify-local')}
@@ -47,7 +47,7 @@ export const History = ({ setShowHistory }) => {
 							</button>
 							<button
 								type="button"
-								className="m-0 flex w-full cursor-pointer items-center justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100"
+								className="m-0 flex w-full items-center justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100"
 								onClick={() => setCurrentQuestion(item)}>
 								<div>
 									<span className="overflow-hidden truncate text-ellipsis">

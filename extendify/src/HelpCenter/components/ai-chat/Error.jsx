@@ -8,7 +8,7 @@ export const Error = ({ text, reset }) => {
 				<p className="m-0">
 					<button
 						type="button"
-						className="cursor-pointer border-none bg-transparent p-0 underline"
+						className="border-none bg-transparent p-0 underline"
 						onClick={reset}>
 						{__('Please try again.', 'extendify-local')}
 					</button>

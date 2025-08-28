@@ -54,7 +54,7 @@ export const UnsplashImage = ({
 				<button
 					type="button"
 					className={classNames('relative block border-0 p-0', {
-						'cursor-pointer bg-transparent': !isInsertingImage,
+						'bg-transparent': !isInsertingImage,
 						'bg-black': isInsertingImage,
 					})}
 					onClick={() => onClick(image)}
@@ -82,8 +82,7 @@ export const UnsplashImage = ({
 								'group-focus-within:opacity-100 group-hover:opacity-100':
 									!isInsertingImage,
 							},
-						)}
-						rel="noopener noreferrer">{`${image.user?.name}`}</a>
+						)}>{`${image.user?.name}`}</a>
 				) : null}
 			</div>
 		</motion.div>

@@ -74,7 +74,7 @@ export const Input = ({
 					className={classnames(
 						'absolute right-2 top-3.5 border-none bg-transparent p-0 rtl:left-2 rtl:right-auto',
 						{
-							'cursor-pointer text-gray-700 hover:text-design-main': ready,
+							'text-gray-700 hover:text-design-main': ready,
 							'text-gray-500': !ready,
 						},
 					)}>

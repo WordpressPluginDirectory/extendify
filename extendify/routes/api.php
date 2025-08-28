@@ -30,6 +30,10 @@ use Extendify\Library\Controllers\SiteController;
 
 use Extendify\PageCreator\Controllers\SiteController as PageCreatorSiteController;
 
+use Extendify\Agent\Controllers\WPController as AgentWPController;
+use Extendify\Agent\Controllers\ChatHistoryController as AgentChatController;
+use Extendify\Agent\Controllers\WorkflowHistoryController as AgentWorkflowController;
+
 use Extendify\Shared\Controllers\PatternPlaceholderController;
 use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsController;
@@ -54,11 +58,10 @@ use Extendify\Shared\Controllers\DataController as SharedDataController;
         ApiRouter::get('/launch/options', [WPController::class, 'getOption']);
         ApiRouter::post('/launch/save-pattern', [WPController::class, 'savePattern']);
         ApiRouter::get('/launch/active-plugins', [WPController::class, 'getActivePlugins']);
-        ApiRouter::get('/launch/goals', [DataController::class, 'getGoals']);
         ApiRouter::get('/launch/prefetch-assist-data', [WPController::class, 'prefetchAssistData']);
         ApiRouter::post('/launch/create-navigation', [WPController::class, 'createNavigationWithMeta']);
         ApiRouter::post('/launch/post-launch-functions', [WPController::class, 'postLaunch']);
-        APIRouter::get('/launch/import-woocommerce', [WooCommerceController::class, 'importTemporaryProducts']);
+        ApiRouter::get('/launch/import-woocommerce', [WooCommerceController::class, 'importTemporaryProducts']);
 
         // Assist.
         ApiRouter::get('/assist/task-data', [TasksController::class, 'get']);
@@ -84,6 +87,12 @@ use Extendify\Shared\Controllers\DataController as SharedDataController;
         ApiRouter::post('/draft/upload-image', [ImageController::class, 'uploadMedia']);
         ApiRouter::post('/draft/router-data', [DraftRouterController::class, 'store']);
         ApiRouter::get('/draft/router-data', [DraftRouterController::class, 'get']);
+
+        // Agent.
+        ApiRouter::get('/agent/theme-variations', [AgentWPController::class, 'getVariations']);
+        ApiRouter::get('/agent/chat-events', [AgentChatController::class, 'get']);
+        ApiRouter::post('/agent/chat-events', [AgentChatController::class, 'store']);
+        ApiRouter::post('/agent/workflows', [AgentWorkflowController::class, 'add']);
 
         // Shared.
         ApiRouter::get('/shared/user-selections-data', [UserSelectionController::class, 'get']);

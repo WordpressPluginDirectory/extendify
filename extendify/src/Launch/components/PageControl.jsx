@@ -46,14 +46,25 @@ export const PageControl = () => {
 		replaceHistory,
 		addPreselectedPage,
 	} = usePagesStore();
-	const { siteStructure, siteObjective, setSiteObjective, setSiteStructure } =
-		useUserSelectionStore();
+	const {
+		siteStructure,
+		siteObjective,
+		setSiteObjective,
+		setSiteStructure,
+		setUrlParameters,
+	} = useUserSelectionStore();
 
 	const siteObjectiveParam = getUrlParameter('objective', false);
 	const siteStructureParam = getUrlParameter('structure', false);
 	const removeStructurePage = useRef(false);
+	const showSiteQuestions = window.extSharedData?.showSiteQuestions ?? false;
 
 	useLayoutEffect(() => {
+		setUrlParameters({
+			objective: siteObjectiveParam,
+			structure: siteStructureParam,
+		});
+
 		// If we later add more structures, consider having predefined paths
 		if (siteStructure === 'multi-page') {
 			addPage('page-select', PagesPageData, 'layout');
@@ -85,6 +96,10 @@ export const PageControl = () => {
 			addPreselectedPage('site-structure');
 			removeStructurePage.current = true;
 		}
+
+		if (showSiteQuestions) {
+			removePage('site-structure');
+		}
 	}, [
 		setSiteObjective,
 		setSiteStructure,
@@ -95,6 +110,8 @@ export const PageControl = () => {
 		siteObjectiveParam,
 		siteStructureParam,
 		addPreselectedPage,
+		showSiteQuestions,
+		setUrlParameters,
 	]);
 
 	useEffect(() => {
@@ -185,6 +202,7 @@ const PrevButton = () => {
 				onClick={() =>
 					(window.location.href = `${window.extSharedData.adminUrl}admin.php?page=extendify-assist`)
 				}
+				id="extendify-exit-launch-button"
 				className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
 				<>
 					{isRTL() ? (

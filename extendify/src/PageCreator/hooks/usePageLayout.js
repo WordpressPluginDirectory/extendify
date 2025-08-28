@@ -1,27 +1,34 @@
 import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { getGeneratedPageTemplate } from '@page-creator/api/DataApi';
+import {
+	getGeneratedPageTemplate,
+	getImprintPageTemplate,
+} from '@page-creator/api/DataApi';
 import { usePageProfile } from '@page-creator/hooks/usePageProfile';
 import { useSiteImages } from '@page-creator/hooks/useSiteImages';
+import { useSitePlugins } from '@page-creator/hooks/useSitePlugins';
 import { useGlobalsStore } from '@page-creator/state/global';
 import useSWRImmutable from 'swr/immutable';
 
 export const usePageLayout = () => {
 	const { pageProfile } = usePageProfile();
 	const { siteImages } = useSiteImages();
-	const loading = !pageProfile || !siteImages;
+	const { sitePlugins } = useSitePlugins();
+	const loading = !pageProfile || !siteImages || !sitePlugins;
 	const { setProgress, regenerationCount } = useGlobalsStore();
 
 	const params = {
 		key: `page-creator-page-layout-${regenerationCount}`,
 		pageProfile,
 		siteImages,
+		sitePlugins,
 	};
 
-	const { data, error } = useSWRImmutable(
-		loading ? null : params,
-		getGeneratedPageTemplate,
-	);
+	const fetcher = pageProfile?.isImprintPage
+		? () => getImprintPageTemplate()
+		: getGeneratedPageTemplate;
+
+	const { data, error } = useSWRImmutable(loading ? null : params, fetcher);
 
 	useEffect(() => {
 		if (data) return;

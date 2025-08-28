@@ -16,15 +16,13 @@ export default {
 		completed: __('Revisit', 'extendify-local'),
 	},
 	type: 'internalLink',
-	dependencies: { goals: [], plugins: ['simplybook'] },
-	show: ({ plugins, goals, activePlugins, userGoals }) => {
+	dependencies: { plugins: ['simplybook'] },
+	show: ({ plugins, activePlugins }) => {
 		// They need either extendable or launch completed
 		if (themeSlug !== 'extendable' && !launchCompleted) return false;
-		if (!plugins.length && !goals.length) return true;
+		if (!plugins.length) return true;
 
-		return activePlugins
-			.concat(userGoals)
-			.some((item) => plugins.concat(goals).includes(item));
+		return activePlugins.some((item) => plugins.includes(item));
 	},
 	backgroundImage:
 		'https://images.extendify-cdn.com/assist-tasks/calendar-events.webp',

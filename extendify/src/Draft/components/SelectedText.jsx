@@ -48,7 +48,7 @@ export const SelectedText = ({ loading }) => {
 						disabled={loading}
 						icon={trash}
 						iconPosition={isRTL() ? 'right' : 'left'}
-						className="relative cursor-pointer flex-row-reverse rounded bg-gray-300 text-gray-800 hover:bg-gray-400"
+						className="relative flex-row-reverse rounded bg-gray-300 text-gray-800 hover:bg-gray-400"
 						data-test="remove-selection">
 						{__('Remove selection', 'extendify-local')}
 					</Button>

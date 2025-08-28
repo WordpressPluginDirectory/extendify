@@ -57,7 +57,8 @@ export function makeFontFaceFormData({
 		fontStyle,
 		fontWeight,
 		fontDisplay,
-		unicodeRange,
+		unicodeRange:
+			unicodeRange === undefined || unicodeRange === null ? '' : unicodeRange,
 		src: Array.isArray(src) ? src : [src],
 	};
 	const files = Array.isArray(file) ? file : [file];

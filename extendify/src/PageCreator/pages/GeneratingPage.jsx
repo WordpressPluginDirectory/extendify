@@ -2,7 +2,6 @@ import { rawHandler } from '@wordpress/blocks';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { store as editorStore } from '@wordpress/editor';
 import { useEffect, useRef, useState } from '@wordpress/element';
-import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
 import { updateOption } from '@page-creator/api/WPApi';
 import { VideoPlayer } from '@page-creator/components/content/VideoPlayer';
@@ -10,6 +9,7 @@ import { usePageCustomContent } from '@page-creator/hooks/usePageCustomContent';
 import { processPatterns } from '@page-creator/lib/processPatterns';
 import { useGlobalsStore } from '@page-creator/state/global';
 import { installBlocks } from '@page-creator/util/installBlocks';
+import { syncPageTitleTemplate } from '@page-creator/util/syncPageTitleTemplate';
 
 const { pageTitlePattern } = window.extPageCreator;
 
@@ -19,7 +19,20 @@ export const GeneratingPage = ({ insertPage }) => {
 	const { editPost } = useDispatch(editorStore);
 	const [patterns, setPatterns] = useState([]);
 	const once = useRef(false);
-	const theme = useSelect((select) => select('core').getCurrentTheme());
+	const templateSet = useRef(false);
+	const { theme, templates } = useSelect((select) => {
+		const core = select('core');
+		const current = core.getCurrentTheme();
+
+		return {
+			theme: current,
+			templates: core.getEntityRecords('postType', 'wp_template', {
+				per_page: -1,
+				context: 'edit',
+				theme: current?.stylesheet,
+			}),
+		};
+	}, []);
 
 	useEffect(() => {
 		if (!page && loading) return;
@@ -33,6 +46,9 @@ export const GeneratingPage = ({ insertPage }) => {
 			),
 		);
 		(async () => {
+			// If page-with-title template isn’t customized and a page-title pattern is stashed, update the template with it.
+			await syncPageTitleTemplate(pageTitlePattern);
+
 			const patterns = await processPatterns(page?.patterns);
 			await installBlocks({ patterns });
 			setPatterns(patterns);
@@ -41,30 +57,30 @@ export const GeneratingPage = ({ insertPage }) => {
 
 	useEffect(() => {
 		if (!patterns?.length || !once.current) return;
+		if (!theme || !Array.isArray(templates)) return;
 
-		const code = patterns.flatMap(({ code }) => {
-			// Check if the pattern is a page title, and use the stashed one
-			let pattern = code;
-			if (pageTitlePattern && code.includes('"name":"Page Title"')) {
-				const titleRegex = /<h1([^>]*)>[^<]*<\/h1>/g;
-				const titleCb = (_, attributes) =>
-					`<h1${attributes}>${page.title}</h1>`;
-				pattern = decodeEntities(pageTitlePattern).replaceAll(
-					titleRegex,
-					titleCb,
-				);
-			}
+		const isExtendable = theme.textdomain === 'extendable';
+		const hasPageWithTitle =
+			isExtendable && templates.some((t) => t.slug === 'page-with-title');
 
+		const patternsToInsert = hasPageWithTitle
+			? patterns.filter((p) => !p.patternTypes?.includes('page-title'))
+			: patterns;
+
+		const code = patternsToInsert.flatMap(({ code }) => {
 			// find links with #extendify- like href="#extendify-hero-cta"
 			const linksRegex = /href="#extendify-([^"]+)"/g;
-			const c = pattern.replaceAll(linksRegex, 'href="#"');
+			const c = code.replaceAll(linksRegex, 'href="#"');
 
 			return rawHandler({ HTML: c });
 		});
 
-		if (theme?.textdomain && theme?.textdomain === 'extendable') {
-			// Set page template to no-title if they have it
-			editPost({ template: 'no-title' }).catch(() => {});
+		if (!templateSet.current && isExtendable) {
+			const slug = hasPageWithTitle ? 'page-with-title' : 'no-title';
+			editPost({ template: slug }).catch(() => {
+				/* silent */
+			});
+			templateSet.current = true;
 		}
 
 		// Signal to the importer to check for images
@@ -73,7 +89,7 @@ export const GeneratingPage = ({ insertPage }) => {
 		let id = setTimeout(() => insertPage(code, page.title), 1000);
 
 		return () => clearTimeout(id);
-	}, [insertPage, patterns, editPost, page, theme]);
+	}, [insertPage, patterns, editPost, page, theme, templates]);
 
 	return (
 		<div className="mx-auto flex flex-grow items-center justify-center">

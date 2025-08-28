@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.extendify-recommendations button:not(:disabled) {
+	@apply cursor-pointer;
+}
+
 .extendify-recommendations *,
 .extendify-recommendations *:after,
 .extendify-recommendations *:before {

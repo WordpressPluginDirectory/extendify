@@ -302,7 +302,7 @@ export const GuidedTour = () => {
 								}}>
 								<button
 									data-test="close-tour"
-									className="absolute right-0 top-0 z-20 m-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-0 bg-white p-0 leading-none outline-none ring-1 ring-gray-200 focus:shadow-none focus:ring-wp focus:ring-design-main rtl:left-0 rtl:right-auto"
+									className="absolute right-0 top-0 z-20 m-2 flex h-6 w-6 items-center justify-center rounded-full border-0 bg-white p-0 leading-none outline-none ring-1 ring-gray-200 focus:shadow-none focus:ring-wp focus:ring-design-main rtl:left-0 rtl:right-auto"
 									onClick={() => closeCurrentTour('closed-manually')}
 									aria-label={__('Close Modal', 'extendify-local')}>
 									<Icon icon={close} className="h-4 w-4 fill-current" />
@@ -443,7 +443,7 @@ const BottomNav = ({ initialFocus }) => {
 									steps.length,
 								)}
 								aria-current={index === currentStep}
-								className={`m-0 block h-2.5 w-2.5 cursor-pointer rounded-full p-0 ring-offset-1 ring-offset-white focus:outline-none focus:ring-wp focus:ring-design-main ${
+								className={`m-0 block h-2.5 w-2.5 rounded-full p-0 ring-offset-1 ring-offset-white focus:outline-none focus:ring-wp focus:ring-design-main ${
 									index === currentStep ? 'bg-design-main' : 'bg-gray-300'
 								}`}
 								onClick={() => goToStep(index)}

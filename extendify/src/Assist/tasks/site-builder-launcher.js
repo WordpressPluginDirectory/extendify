@@ -17,7 +17,7 @@ export default {
 	},
 	link: 'admin.php?page=extendify-launch',
 	type: 'site-launcher-task',
-	dependencies: { goals: [], plugins: [] },
+	dependencies: { plugins: [] },
 	show: () => {
 		return themeSlug === 'extendable' && !launchCompleted && showLaunch;
 	},

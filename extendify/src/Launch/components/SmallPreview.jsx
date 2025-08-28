@@ -37,8 +37,12 @@ export const SmallPreview = ({
 			// This is a brute force check that the styles are there
 			let lastRun = performance.now();
 			let counter = 0;
+			const variationTitle = variation?.slug
+				?.split('-')
+				.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+				.join(' ');
 
-			const variationStyles = themeJSON[variation?.title];
+			const variationStyles = themeJSON[variationTitle];
 			const { customFontLinks, fontOverrides } = getFontOverrides(variation);
 
 			const checkOnStyles = () => {
@@ -124,14 +128,14 @@ export const SmallPreview = ({
 				// <!-- wp:navigation --> <!-- /wp:navigation -->
 				/<!-- wp:navigation[.\S\s]*?\/wp:navigation -->/g,
 				showNav
-					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="word-spacing: 1.25rem;">${links.join(' ')}</p ><!-- /wp:paragraph -->`
+					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="display: flex; gap: 2rem;">${links.map((link) => `<span>${link}</span>`).join('')}</p ><!-- /wp:paragraph -->`
 					: '',
 			)
 			.replace(
 				// <!-- wp:navigation /-->
 				/<!-- wp:navigation.*\/-->/g,
 				showNav
-					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="word-spacing: 1.25rem;">${links.join(' ')}</p ><!-- /wp:paragraph -->`
+					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="display: flex; gap: 2rem;">${links.map((link) => `<span>${link}</span>`).join('')}</p ><!-- /wp:paragraph -->`
 					: '',
 			)
 			.replace(

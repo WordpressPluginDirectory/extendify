@@ -32,9 +32,9 @@ import uploadLogo from '@assist/tasks/upload-logo';
 import uploadSiteIcon from '@assist/tasks/upload-site-icon';
 
 const activePlugins = window.extSharedData?.activePlugins || [];
-const userGoals =
+const sitePlugins =
 	safeParseJson(window.extSharedData.userData.userSelectionData)?.state
-		?.goals || {};
+		?.sitePlugins || [];
 
 export const useTasks = () => {
 	const tasks = Object.values({
@@ -68,25 +68,27 @@ export const useTasks = () => {
 		'setup-monsterinsights': { ...setupMonsterInsights },
 	});
 
-	const pluginsToCheck = activePlugins?.map((plugin) => {
+	const activePluginSlugs = activePlugins?.map((plugin) => {
 		try {
 			return plugin.split('/')[0];
 		} catch (e) {
 			return plugin;
 		}
 	});
+	const sitePluginSlugs = sitePlugins?.map((p) => p.slug) || [];
+	const pluginsToCheck = [
+		...new Set([...activePluginSlugs, ...sitePluginSlugs]),
+	];
 
 	return {
 		tasks: tasks.filter((task) => {
 			const {
-				dependencies: { plugins, goals },
+				dependencies: { plugins },
 			} = task;
 
 			return task.show({
 				plugins,
-				goals,
 				activePlugins: pluginsToCheck,
-				userGoals,
 				showDomainTask: showDomainTask && domainSearchUrl,
 				showSecondaryDomainTask: showSecondaryDomainTask && domainSearchUrl,
 			});

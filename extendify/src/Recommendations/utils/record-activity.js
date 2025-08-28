@@ -19,6 +19,26 @@ const stores = {
 
 const validSlots = Object.keys(stores);
 
+export const getRecommendation = ({ product, slot = 'plugin-search' }) => {
+	const state = stores[slot].getState();
+	const recommendations = selectAllRecommendations(state).map(
+		(recommendation) =>
+			objectFromKeys(recommendation, [
+				'slug',
+				'title',
+				'description',
+				'ctaContent',
+				'ctaType',
+				'triggerContent',
+				'triggerType',
+			]),
+	);
+
+	return recommendations.find(
+		(recommendation) => recommendation.slug === product,
+	)?.slug;
+};
+
 export const recordActivity = ({ slot, event, product }) => {
 	if (!event || !validSlots.includes(slot)) {
 		return;

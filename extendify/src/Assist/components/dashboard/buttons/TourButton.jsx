@@ -12,7 +12,7 @@ export const TourButton = ({ task, completed }) => {
 		<div className="">
 			<button
 				type="button"
-				className="hidden min-w-24 cursor-pointer rounded-sm bg-design-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90 md:block"
+				className="hidden min-w-24 rounded-sm bg-design-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90 md:block"
 				onClick={() => startTour(task.slug)}>
 				{completed
 					? task.buttonLabels.completed

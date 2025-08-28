@@ -15,7 +15,7 @@ export const ArticlesList = ({ articles }) => {
 				<li key={slug} className="m-0 py-1 pl-2 pr-3">
 					<button
 						type="button"
-						className="flex cursor-pointer gap-2 bg-transparent text-sm text-gray-800 hover:underline hover:underline-offset-4"
+						className="flex gap-2 bg-transparent text-sm text-gray-800 hover:underline hover:underline-offset-4"
 						onClick={() => {
 							pushArticle({ slug, title });
 							navigateTo('knowledge-base-article');

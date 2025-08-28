@@ -21,9 +21,10 @@ const extraBody = {
 };
 
 const fetchPageTemplates = async (details = {}) => {
-	const { showLocalizedCopy, activePlugins, allowedPlugins, installedPlugins } =
+	const { showLocalizedCopy, activePlugins, installedPlugins } =
 		window.extSharedData;
 	const { allowsInstallingPlugins } = useUserStore.getState();
+	const sitePlugins = details?.sitePlugins || [];
 
 	const plugins =
 		activePlugins?.map((path) => {
@@ -48,7 +49,7 @@ const fetchPageTemplates = async (details = {}) => {
 			allowsInstallingPlugins,
 			plugins: JSON.stringify(plugins),
 			installedPlugins: JSON.stringify(installedPlugins),
-			allowedPlugins: JSON.stringify(allowedPlugins),
+			allowedPlugins: JSON.stringify(sitePlugins),
 			...data,
 		}),
 	});
@@ -58,7 +59,11 @@ const fetchPageTemplates = async (details = {}) => {
 	return await res.json();
 };
 
-export const getGeneratedPageTemplate = async ({ pageProfile, siteImages }) => {
+export const getGeneratedPageTemplate = async ({
+	pageProfile,
+	siteImages,
+	sitePlugins,
+}) => {
 	const siteStyle = await getSiteStyle();
 
 	// we need the new generated AI description from the page profile
@@ -67,6 +72,7 @@ export const getGeneratedPageTemplate = async ({ pageProfile, siteImages }) => {
 		siteImages,
 		siteStyle,
 		pageProfile,
+		sitePlugins,
 	});
 
 	if (!page?.template) {
@@ -153,4 +159,68 @@ export const getPageImages = async ({ pageProfile }) => {
 
 	const data = await response.json();
 	return data?.siteImages ? data : { siteImages: [] };
+};
+
+export const getSitePlugins = async ({ pageProfile }) => {
+	const url = `${AI_HOST}/api/site-plugins`;
+	const method = 'POST';
+	const headers = { 'Content-Type': 'application/json' };
+	const fallback = [];
+
+	if (!pageProfile) {
+		return fallback;
+	}
+
+	const { wpLanguage, partnerId } = window.extSharedData;
+
+	const body = JSON.stringify({
+		aiSiteType: pageProfile?.aiPageType || '',
+		aiDescription: pageProfile?.aiDescription || '',
+		aiKeywords: pageProfile?.aiKeywords || [],
+		siteQuestions: [],
+		wpLanguage,
+		partnerId,
+	});
+
+	let response;
+
+	try {
+		response = await fetch(url, { method, headers, body });
+		if (!response.ok) throw new Error('Bad response from server');
+	} catch (error) {
+		response = await fetch(url, { method, headers, body });
+	}
+
+	if (!response.ok) return fallback;
+
+	try {
+		const data = await response.json();
+		return data?.selectedPlugins ?? fallback;
+	} catch (error) {
+		return fallback;
+	}
+};
+
+export const getImprintPageTemplate = async () => {
+	const siteStyle = await getSiteStyle();
+	const endpoint = `${PATTERNS_HOST}/api/page-imprint`;
+
+	const res = await fetch(endpoint, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			...extraBody,
+			siteStyle: JSON.stringify(siteStyle),
+		}),
+	});
+
+	if (!res.ok) throw new Error('Could not get imprint page');
+
+	const response = await res.json();
+
+	if (!response?.template) {
+		throw new Error('No template found for imprint page');
+	}
+
+	return { ...response.template };
 };

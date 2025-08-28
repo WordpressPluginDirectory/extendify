@@ -1,35 +1,4 @@
-import { removeBlocks, addIdAttributeToBlock } from '@launch/lib/blocks';
-
-describe('removeBlocks', () => {
-	const sampleBlocks = [
-		{ name: 'core/paragraph', innerBlocks: [] },
-		{
-			name: 'core/group',
-			innerBlocks: [
-				{ name: 'core/image', innerBlocks: [] },
-				{ name: 'core/button', innerBlocks: [] },
-			],
-		},
-		{ name: 'core/html', innerBlocks: [] },
-	];
-
-	it('removes top-level blocks by name', () => {
-		const result = removeBlocks(sampleBlocks, ['core/html']);
-		expect(result.some((b) => b.name === 'core/html')).toBe(false);
-	});
-
-	it('removes nested blocks by name', () => {
-		const result = removeBlocks(sampleBlocks, ['core/image']);
-		const group = result.find((b) => b.name === 'core/group');
-		expect(group.innerBlocks.some((b) => b.name === 'core/image')).toBe(false);
-	});
-
-	it('keeps structure of remaining blocks', () => {
-		const result = removeBlocks(sampleBlocks, ['core/html']);
-		const group = result.find((b) => b.name === 'core/group');
-		expect(Array.isArray(group.innerBlocks)).toBe(true);
-	});
-});
+import { addIdAttributeToBlock } from '@launch/lib/blocks';
 
 describe('addIdAttributeToBlock', () => {
 	const blockCode = '<div class="wp-block-group something">Content</div>';

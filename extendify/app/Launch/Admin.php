@@ -76,6 +76,7 @@ class Admin
                     'pagesIds' => array_map('esc_attr', $this->getLaunchCreatedPages()),
                     'navigationsIds' => array_map('esc_attr', $this->getLaunchCreatedNavigations()),
                     'templatePartsIds' => array_map('esc_attr', $this->getTemplatePartIds()),
+                    'pageWithTitleTemplateId' => esc_attr($this->getPageWithTitleTemplateId()),
                 ],
                 'helloWorldPostSlug' => \esc_attr(
                     // phpcs:ignore WordPress.WP.I18n.MissingArgDomain
@@ -154,5 +155,17 @@ class Admin
             (get_block_template(get_stylesheet() . '//header', 'wp_template_part')->id ?? ''),
             (get_block_template(get_stylesheet() . '//footer', 'wp_template_part')->id ?? ''),
         ];
+    }
+
+
+    /**
+     * Returns the id of the page-with-title template for the current theme.
+     *
+     * @return string
+     */
+    public static function getPageWithTitleTemplateId()
+    {
+        $template = get_block_template(get_stylesheet() . '//page-with-title', 'wp_template');
+        return $template && !empty($template->id) ? $template->id : '';
     }
 }

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { formatSiteQuestionsForAPI } from '@shared/utils/format-site-questions-for-api';
 import { getPageTemplates } from '@launch/api/DataApi';
 import { PagePreview } from '@launch/components/PagePreview';
 import { PageSelectButton } from '@launch/components/PageSelectButton';
@@ -13,8 +14,14 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 
 const fetcher = getPageTemplates;
 const fetchData = () => {
-	const { siteType, siteStructure, siteStrings, siteImages, goals } =
-		useUserSelectionStore?.getState() || {};
+	const {
+		siteType,
+		siteStructure,
+		siteStrings,
+		siteImages,
+		siteQA,
+		sitePlugins,
+	} = useUserSelectionStore?.getState() || {};
 	const {
 		style: { siteStyle },
 	} = usePagesSelectionStore.getState();
@@ -25,7 +32,8 @@ const fetchData = () => {
 		siteStrings,
 		siteImages,
 		siteStyle,
-		goals,
+		siteQuestions: formatSiteQuestionsForAPI(siteQA),
+		sitePlugins,
 	};
 };
 
@@ -177,7 +185,7 @@ export const PagesSelect = () => {
 								type="button"
 								data-test="expand-more"
 								onClick={setExpandMore}
-								className="button-focus my-4 cursor-pointer bg-transparent text-center text-sm font-medium text-gray-900 hover:text-design-main">
+								className="button-focus my-4 bg-transparent text-center text-sm font-medium text-gray-900 hover:text-design-main">
 								{__('View more pages', 'extendify-local')}
 							</button>
 						</div>

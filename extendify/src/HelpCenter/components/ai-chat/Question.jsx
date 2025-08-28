@@ -36,7 +36,7 @@ export const Question = ({ onSubmit }) => {
 				/>
 				<button
 					type="submit"
-					className="absolute bottom-3.5 right-2.5 flex h-6 cursor-pointer items-center border-none bg-transparent fill-current text-gray-700 hover:text-gray-900 rtl:bottom-2 rtl:left-2.5 rtl:right-auto"
+					className="absolute bottom-3.5 right-2.5 flex h-6 items-center border-none bg-transparent fill-current text-gray-700 hover:text-gray-900 rtl:bottom-2 rtl:left-2.5 rtl:right-auto"
 					disabled={!inputValue}>
 					<Icon icon={send} className="h-4 w-4" />
 				</button>

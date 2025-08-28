@@ -14,8 +14,7 @@ const startingState = {
 	variation: null,
 	style: null,
 	pages: [],
-	plugins: [],
-	goals: [],
+	sitePlugins: [],
 	// initialize the state with default values
 	...(safeParseJson(window.extSharedData.userData.userSelectionData)?.state ??
 		{}),

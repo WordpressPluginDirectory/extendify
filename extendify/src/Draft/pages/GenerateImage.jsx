@@ -55,7 +55,7 @@ export const GenerateImage = () => {
 			updateImageCredits(imageCredits);
 			setImageDetails({ src: images[0].url, id });
 		} catch (error) {
-			// If the request was aborted (cancelled), don't show an error
+			// If the request was aborted (canceled), don't show an error
 			if (error?.code === 20) return;
 			// If we didn't get back any credit info, it was a server error
 			if (!error?.imageCredits) {
@@ -84,7 +84,7 @@ export const GenerateImage = () => {
 		<Panel>
 			<div className="flex h-12 items-center gap-1 pl-1">
 				<button
-					className="h-9 w-9 cursor-pointer border-0 bg-transparent"
+					className="h-9 w-9 border-0 bg-transparent"
 					onClick={goBack}
 					type="button"
 					aria-label={__('Go Back', 'extendify-local')}>

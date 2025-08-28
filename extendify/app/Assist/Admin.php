@@ -111,17 +111,7 @@ class Admin
     public function canRunLaunchAgain()
     {
         $launchCompleted = \get_option('extendify_onboarding_completed', false);
-        if (!$launchCompleted) {
-            return false;
-        }
-
-        try {
-            $datetime1 = new \DateTime($launchCompleted);
-            $interval = $datetime1->diff(new \DateTime());
-            return $interval->format('%d') <= 2;
-        } catch (\Exception $exception) {
-            return false;
-        }
+        return (!$launchCompleted || $launchCompleted === 'false') ? false : true;
     }
 
     /**

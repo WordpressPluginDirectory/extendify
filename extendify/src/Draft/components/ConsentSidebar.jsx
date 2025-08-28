@@ -16,7 +16,7 @@ export const ConsentSidebar = () => {
 					dangerouslySetInnerHTML={{ __html: consentTermsHTML }}
 				/>
 				<button
-					className="mt-4 w-full cursor-pointer rounded border-0 bg-wp-theme-main px-4 py-2 text-center text-white"
+					className="mt-4 w-full rounded border-0 bg-wp-theme-main px-4 py-2 text-center text-white"
 					type="button"
 					onClick={() => setUserGaveConsent(true)}
 					data-test="draft-terms-button">

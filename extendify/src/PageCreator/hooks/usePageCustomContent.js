@@ -20,13 +20,13 @@ export const usePageCustomContent = () => {
 	const { template } = usePageLayout();
 	const { setProgress, regenerationCount } = useGlobalsStore();
 	const loading = !pageProfile || !template;
+	const skipCustomContent = pageProfile?.isImprintPage;
 
 	const params = {
 		key: `page-creator-page-custom-content-${regenerationCount}`,
 		pageProfile,
 		userState: {
 			businessInformation: state?.businessInformation,
-			goals: state?.goals,
 			siteInformation: state?.siteInformation,
 			siteId,
 		},
@@ -34,31 +34,38 @@ export const usePageCustomContent = () => {
 	};
 
 	const { data, error } = useSWRImmutable(
-		loading ? null : params,
+		loading || skipCustomContent ? null : params,
 		generateCustomContent,
 	);
+
+	const pageData = useMemo(() => {
+		if (skipCustomContent && template) {
+			return { patterns: template.patterns || [] };
+		}
+		return data;
+	}, [skipCustomContent, template, data]);
 
 	useEffect(() => {
 		if (loading) return;
 		setProgress(__('Writing custom content...', 'extendify-local'));
-	}, [data, setProgress, loading]);
+	}, [pageData, setProgress, loading]);
 
 	const themeAdjustedPatterns = useMemo(() => {
-		if (!data?.patterns) return [];
-		return data.patterns.map((pattern) => ({
+		if (!pageData?.patterns) return [];
+		return pageData.patterns.map((pattern) => ({
 			...pattern,
 			code: replaceThemeVariables(pattern.code, currentTheme),
 		}));
-	}, [data?.patterns]);
+	}, [pageData?.patterns]);
 
 	return {
-		page: data
+		page: pageData
 			? {
 					patterns: themeAdjustedPatterns,
 					title: pageProfile.aiTitle,
 				}
-			: data,
+			: pageData,
 		error,
-		loading: !data && !error,
+		loading: !pageData && !error,
 	};
 };

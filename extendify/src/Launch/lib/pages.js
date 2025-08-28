@@ -17,10 +17,16 @@ import {
 } from '@launch/pages/SiteInformation';
 import { SitePrep, state as sitePrepState } from '@launch/pages/SitePrep';
 import {
+	SiteQuestions,
+	state as siteQuestionsState,
+} from '@launch/pages/SiteQuestions';
+import {
 	SiteStructure,
 	state as siteStructureState,
 } from '@launch/pages/SiteStructure';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+
+const showSiteQuestions = window.extSharedData?.showSiteQuestions ?? false;
 
 // This is the default pages array
 // You can add pre-fetch functions to start fetching data for the next page
@@ -29,6 +35,7 @@ const initialPagesList = {
 	'website-objective': {
 		component: ObjectiveSelection,
 		state: objectiveSelectionState,
+		condition: () => !showSiteQuestions,
 	},
 	'site-information': {
 		component: SiteInformation,
@@ -38,10 +45,16 @@ const initialPagesList = {
 		component: SitePrep,
 		state: sitePrepState,
 	},
+	'site-questions': {
+		component: SiteQuestions,
+		state: siteQuestionsState,
+		condition: () => showSiteQuestions,
+	},
 	'site-structure': {
 		component: SiteStructure,
 		state: siteStructureState,
-		condition: ({ siteObjective }) => siteObjective !== 'landing-page',
+		condition: ({ siteObjective }) =>
+			siteObjective !== 'landing-page' || !showSiteQuestions,
 	},
 	'content-fetching': {
 		component: ContentGathering,

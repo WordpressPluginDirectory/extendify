@@ -119,7 +119,7 @@ export const Dashboard = () => {
 						incrementRegenerationCount();
 						nextPage();
 					}}
-					className="mt-2.5 rounded-sm bg-editor-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90 disabled:cursor-not-allowed disabled:bg-gray-300">
+					className="mt-2.5 rounded-sm bg-editor-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90 disabled:bg-gray-300">
 					{__('Generate Page', 'extendify-local')}
 				</button>
 			</div>

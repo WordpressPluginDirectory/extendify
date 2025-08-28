@@ -17,7 +17,7 @@ export const AdminBar = () => {
 				setVisibility('open');
 				incrementActivity('hc-admin-bar-button');
 			}}
-			className="m-1.5 -mt-1 inline-flex h-6 cursor-pointer items-center justify-center gap-1 rounded-sm border-0 bg-wp-theme-main p-1 px-2 leading-extra-tight text-white ring-offset-1 ring-offset-wp-theme-bg focus:outline-none focus:ring-wp focus:ring-wp-theme-main">
+			className="m-1.5 -mt-1 inline-flex h-6 items-center justify-center gap-1 rounded-sm border-0 bg-wp-theme-main p-1 px-2 leading-extra-tight text-white ring-offset-1 ring-offset-wp-theme-bg focus:outline-none focus:ring-wp focus:ring-wp-theme-main">
 			{__('Help', 'extendify-local')}
 			<Icon
 				icon={helpFilled}

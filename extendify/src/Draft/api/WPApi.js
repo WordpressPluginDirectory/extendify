@@ -116,16 +116,6 @@ export const addImageToBlock = (
 			id: image.id,
 			url: image.source_url,
 			alt: image.alt_text,
-			backgroundType: 'image',
-			dimRatio: 50,
-			hasParallax: false,
-			isDark: true,
-			isRepeated: false,
-			layout: {
-				type: 'constrained',
-			},
-			tagName: 'div',
-			useFeaturedImage: false,
 		});
 	}
 };

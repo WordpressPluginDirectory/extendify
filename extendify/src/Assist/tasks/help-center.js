@@ -15,7 +15,7 @@ export default {
 	},
 	type: 'html-text-button',
 	event: new CustomEvent('extendify-hc:open'),
-	dependencies: { goals: [], plugins: [] },
+	dependencies: { plugins: [] },
 	show: () => !window.extSharedData?.showChat,
 	htmlBefore: () => (
 		<HelpCenterMarkup

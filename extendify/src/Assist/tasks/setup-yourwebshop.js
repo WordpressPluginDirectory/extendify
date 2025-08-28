@@ -17,18 +17,15 @@ export default {
 	},
 	type: 'internalLink',
 	dependencies: {
-		goals: [],
 		plugins: ['YourWebshop-updater', 'ecwid-shopping-cart'],
 	},
-	show: ({ plugins, goals, activePlugins, userGoals }) => {
+	show: ({ plugins, activePlugins }) => {
 		// They need either extendable or launch completed
 		if (themeSlug !== 'extendable' && !launchCompleted) return false;
 
-		if (!plugins.length && !goals.length) return true;
+		if (!plugins.length) return true;
 
-		return activePlugins
-			.concat(userGoals)
-			.some((item) => plugins.concat(goals).includes(item));
+		return activePlugins.some((item) => plugins.includes(item));
 	},
 	backgroundImage:
 		'https://images.extendify-cdn.com/assist-tasks/e-commerce-2.webp',

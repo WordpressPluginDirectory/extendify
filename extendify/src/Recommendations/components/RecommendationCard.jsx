@@ -3,7 +3,11 @@ import { useEffect, useState, useCallback } from '@wordpress/element';
 import { decodeEntities } from '@wordpress/html-entities';
 import { __, _x, sprintf } from '@wordpress/i18n';
 import { Icon, check, warning, external } from '@wordpress/icons';
-import { recordActivity } from '@recommendations/utils/record-activity';
+import {
+	recordActivity,
+	getRecommendation,
+} from '@recommendations/utils/record-activity';
+import { recordPluginActivity } from '@shared/api/DataApi';
 import { installPlugin, activatePlugin } from '@shared/api/wp';
 import { sleep, retryOperation } from '@shared/lib/utils';
 
@@ -129,7 +133,7 @@ const InstallPluginAction = ({ product, ctaContent, ctaPluginSlug }) => {
 	const [error, setError] = useState(null);
 
 	const handleInstall = useCallback(async () => {
-		await recordActivity({
+		recordActivity({
 			slot: 'plugin-search',
 			event: 'click-install',
 			product,
@@ -147,6 +151,12 @@ const InstallPluginAction = ({ product, ctaContent, ctaPluginSlug }) => {
 			setStatus('error');
 			return;
 		}
+
+		const recommendation = getRecommendation({ product });
+		recordPluginActivity({
+			slug: recommendation || product,
+			source: 'search-recommendation-card',
+		});
 
 		try {
 			setStatus('activating');
@@ -229,7 +239,6 @@ const ExternalLinkAction = ({ product, ctaContent, ctaExternalLink }) => {
 			}
 			href={ctaExternalLinkWithPartner}
 			target="_blank"
-			rel="noreferrer"
 			className="relative flex min-h-8 min-w-24 cursor-pointer items-center justify-center whitespace-normal break-words rounded-sm bg-wp-theme-main fill-design-text py-[6px] pl-3 pr-9 text-center text-sm leading-tight text-design-text no-underline hover:opacity-90 focus:shadow-none">
 			{ctaContent}
 			<Icon className="absolute right-3 h-5 w-5" icon={external} />

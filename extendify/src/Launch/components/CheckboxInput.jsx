@@ -11,7 +11,6 @@ export const CheckboxInput = ({
 	return (
 		<label
 			className={classNames('flex items-center px-4 py-3.5', {
-				'cursor-not-allowed': locked,
 				'focus-within:text-design-main hover:text-design-main': !locked,
 			})}
 			htmlFor={slug}>

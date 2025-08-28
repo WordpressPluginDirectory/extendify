@@ -16,7 +16,7 @@ export const AcceptTerms = () => {
 	};
 
 	const createLink = (url, text) =>
-		`<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+		`<a href="${url}" target="_blank">${text}</a>`;
 
 	const defaultConsentTermsHTML = sprintf(
 		// translators: %1$s and %2$s are links

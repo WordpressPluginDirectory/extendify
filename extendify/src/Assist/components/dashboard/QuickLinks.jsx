@@ -12,7 +12,7 @@ import {
 } from '@wordpress/icons';
 import classNames from 'classnames';
 
-const { themeSlug, devbuild, adminUrl, isBlockTheme } = window.extSharedData;
+const { themeSlug, adminUrl, devbuild, isBlockTheme } = window.extSharedData;
 const { hasCustomizer, editSiteNavigationMenuLink } = window.extAssistData;
 
 const showRestartLaunch =
@@ -82,7 +82,7 @@ export const QuickLinks = ({ className }) => {
 			link: `${adminUrl}admin.php?page=extendify-launch`,
 			slug: 'reset-site',
 			icon: reusableBlock,
-			show: showRestartLaunch,
+			show: showRestartLaunch && themeSlug === 'extendable',
 		},
 	];
 

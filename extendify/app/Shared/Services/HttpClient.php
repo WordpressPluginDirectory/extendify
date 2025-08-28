@@ -99,4 +99,38 @@ class HttpClient
 
         return ['response' => $result, 'code' => 200];
     }
+
+    /**
+     * Make a POST request with WordPress parameters and proper error handling
+     *
+     * @param string $url - Base URL for the request
+     * @param array $extra - Array containing 'params' and/or 'headers' keys for additional data
+     * @param \WP_REST_Request|null $request - Optional request object for headers
+     * @param bool $encode - Whether to JSON encode the body (default: false)
+     * @return array - Array containing 'response' data and 'code' status
+     */
+    public static function post($url, $extra = [], $request = null, $encode = false)
+    {
+        $body = self::buildParams($request, $extra['params'] ?? []);
+        $headers = self::buildHeaders($request, $extra['headers'] ?? []);
+
+        $response = \wp_safe_remote_post($url, [
+            'headers' => $headers,
+            'body' => $encode ? \wp_json_encode($body) : $body,
+        ]);
+
+        // If there was an error, return 500
+        if (\is_wp_error($response) || \wp_remote_retrieve_response_code($response) !== 200) {
+            return ['response' => [], 'code' => 500];
+        }
+
+        $result = json_decode(\wp_remote_retrieve_body($response), true);
+
+        // Validate JSON decode was successful and has expected structure
+        if (json_last_error() !== JSON_ERROR_NONE || !is_array($result)) {
+            return ['response' => [], 'code' => 500];
+        }
+
+        return ['response' => $result, 'code' => 200];
+    }
 }

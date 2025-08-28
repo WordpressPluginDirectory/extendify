@@ -9,20 +9,21 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\AdminPageRouter;
 use Extendify\Affiliate;
 use Extendify\Assist\Admin as AssistAdmin;
+use Extendify\Agent\Admin as AgentAdmin;
 use Extendify\Config;
 use Extendify\Draft\Admin as DraftAdmin;
 use Extendify\HelpCenter\Admin as HelpCenterAdmin;
 use Extendify\Insights;
 use Extendify\Launch\Admin as LaunchAdmin;
 use Extendify\Library\Admin as LibraryAdmin;
-use Extendify\PageCreator\Admin as PageCreatorAdmin;
 use Extendify\Library\Frontend as LibraryFrontend;
+use Extendify\PageCreator\Admin as PageCreatorAdmin;
 use Extendify\PartnerData;
+use Extendify\Recommendations\Admin as RecommendationsAdmin;
 use Extendify\Shared\Admin as SharedAdmin;
 use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\Import\ImagesImporter;
 use Extendify\Shared\Services\VersionMigrator;
-use Extendify\Recommendations\Admin as RecommendationsAdmin;
 
 if (!defined('EXTENDIFY_REQUIRED_CAPABILITY')) {
     define('EXTENDIFY_REQUIRED_CAPABILITY', 'manage_options');
@@ -103,13 +104,23 @@ if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
         // Don't load on Launch.
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         if (!isset($_GET['page']) || $_GET['page'] !== 'extendify-launch') {
-            new HelpCenterAdmin();
+            $extendifyShowAgent = constant('EXTENDIFY_IS_THEME_EXTENDABLE')
+                && Config::$launchCompleted
+                && (PartnerData::setting('showAIAgents') || Config::preview('ai-agent'));
+            if (!$extendifyShowAgent) {
+                new HelpCenterAdmin();
+            }
+
             if (PartnerData::setting('showProductRecommendations') || constant('EXTENDIFY_DEVMODE')) {
                 new RecommendationsAdmin();
             }
 
             if (PartnerData::setting('showDraft') || constant('EXTENDIFY_DEVMODE')) {
                 new DraftAdmin();
+            }
+
+            if ($extendifyShowAgent || constant('EXTENDIFY_DEVMODE')) {
+                new AgentAdmin();
             }
         } else {
             new LaunchAdmin();

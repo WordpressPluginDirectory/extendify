@@ -20,8 +20,7 @@ export const DemoCard = ({ task }) => {
 						target="_blank"
 						className="min-w-24 cursor-pointer rounded-sm bg-design-main px-4 py-2.5 text-center text-sm font-medium text-design-text no-underline hover:opacity-90 md:block"
 						href={task.link}
-						onClick={() => completeTask(task.slug)}
-						rel="noreferrer">
+						onClick={() => completeTask(task.slug)}>
 						{isCompleted(task.slug)
 							? task.buttonLabels.completed
 							: task.buttonLabels.notCompleted}

@@ -63,14 +63,14 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 							type="button"
 							icon={AspectRatioLandscape}
 							label={__('Landscape: 4:3', 'extendify-local')}
-							value="1792x1024"
+							value="1536x1024"
 						/>
 						<ToggleGroupControlOptionIcon
 							className="m-auto"
 							type="button"
 							icon={AspectRatioPortrait}
 							label={__('Portrait: 3:4', 'extendify-local')}
-							value="1024x1792"
+							value="1024x1536"
 						/>
 					</ToggleGroupControl>
 				</div>

@@ -54,7 +54,7 @@ export const Topbar = () => {
 			</div>
 			<div className="flex items-center justify-end gap-2.5">
 				<button
-					className="m-0 cursor-pointer border-0 bg-transparent fill-banner-text p-0 text-banner-text"
+					className="m-0 border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 					type="button"
 					data-test="help-center-toggle-minimize-button"
 					onClick={toggleMinimized}>
@@ -79,7 +79,7 @@ export const Topbar = () => {
 					)}
 				</button>
 				<button
-					className="m-0 cursor-pointer border-0 bg-transparent fill-banner-text p-0 text-banner-text"
+					className="m-0 border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 					type="button"
 					data-test="help-center-close-button"
 					onClick={handleClose}>
@@ -98,7 +98,7 @@ const LogoOrBackButton = () => {
 	if (history.length > 1 && visibility === 'open') {
 		return (
 			<button
-				className="m-0 cursor-pointer border-0 bg-transparent fill-banner-text p-0 text-banner-text"
+				className="m-0 border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 				type="button"
 				onClick={goBack}>
 				<Icon icon={isRTL() ? chevronRight : chevronLeft} />

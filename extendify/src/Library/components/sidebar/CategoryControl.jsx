@@ -55,7 +55,7 @@ export const CategoryControl = () => {
 const CategoryList = ({ categories, errorCount, current, setCurrent }) => {
 	const classes = (slug) =>
 		classNames(
-			'text-sm w-full text-left rtl:text-right px-3 py-1 mb-0.5 block cursor-pointer rounded',
+			'text-sm w-full text-left rtl:text-right px-3 py-1 mb-0.5 block rounded',
 			{
 				'bg-design-main text-design-text': current === slug,
 				'bg-transparent text-gray-900 hover:bg-gray-100': current !== slug,

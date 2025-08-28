@@ -1,5 +1,10 @@
 import { pingServer } from '@shared/api/DataApi';
 
+export const isOnLaunch = () => {
+	const q = new URLSearchParams(window.location.search);
+	return ['page'].includes(q.get('extendify-launch'));
+};
+
 export const deepMerge = (target, ...sources) => {
 	return sources.reduce((acc, source) => {
 		if (!isObject(acc) || !isObject(source)) {

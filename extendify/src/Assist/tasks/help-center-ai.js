@@ -15,7 +15,7 @@ export default {
 	},
 	type: 'html-text-button',
 	event: new CustomEvent('extendify-hc:open', { detail: { page: 'ai-chat' } }),
-	dependencies: { goals: [], plugins: [] },
+	dependencies: { plugins: [] },
 	show: () => !!window.extSharedData?.showChat,
 	htmlBefore: () => (
 		<HelpCenterAIMarkup

@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.extendify-page-creator button:not(:disabled) {
+	@apply cursor-pointer;
+}
+
 .extendify-page-creator {
 	--tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
 	--tw-ring-offset-width: 0px;

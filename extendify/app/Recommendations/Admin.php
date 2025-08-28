@@ -146,5 +146,10 @@ class Admin
             ),
             'before'
         );
+        \wp_set_script_translations(
+            Config::$slug . '-recommendations-scripts',
+            'extendify-local',
+            EXTENDIFY_PATH . 'languages/js'
+        );
     }
 }
