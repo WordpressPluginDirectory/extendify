@@ -6,7 +6,10 @@ export const ReOpenToolTip = () => {
 		<ToolTip
 			name="reopen"
 			title={__('Tooltip pointing to the agent button', 'extendify-local')}
-			anchor={document.querySelector('#wp-admin-bar-extendify-agent-btn')}>
+			anchors={[
+				'#extendify-agent-editor-btn > button',
+				'#wp-admin-bar-extendify-agent-btn',
+			]}>
 			<div className="mb-1 text-base font-semibold">
 				{__('Need help again?', 'extendify-local')}
 			</div>

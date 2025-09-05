@@ -1,4 +1,5 @@
 import { __ } from '@wordpress/i18n';
+import classNames from 'classnames';
 import { ErrorMessage } from '@agent/components/ErrorMessage';
 import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
 
@@ -14,6 +15,11 @@ export const StatusMessage = ({ status, animate }) => {
 		'credits-exhausted': __('Usage limit reached', 'extendify-local'),
 		'credits-restored': __('Usage limit restored', 'extendify-local'),
 	};
+	const canAnimate = [
+		'calling-agent',
+		'agent-working',
+		'tool-started',
+	].includes(type);
 
 	if (type === 'error')
 		return (
@@ -33,11 +39,15 @@ export const StatusMessage = ({ status, animate }) => {
 		);
 	if (type === 'workflow-tool-completed')
 		return <WorkflowToolCompleted label={label} />;
+
 	const content = statusContent[type];
 	if (!content) return null;
 
 	return (
-		<div className="status-animation p-2 text-center text-xs italic text-gray-700">
+		<div
+			className={classNames('p-2 text-center text-xs italic text-gray-700', {
+				'status-animation': canAnimate,
+			})}>
 			{animate ? (
 				<AnimateChunks words={content.split('')} delay={0.02} />
 			) : (

@@ -74,36 +74,36 @@ msgstr "Accepteren"
 
 #: public/build/extendify-draft-6fa869f73eddf5022681.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Draft/components/ConsentSidebar.jsx:12
 #: src/HelpCenter/pages/AIChat.jsx:161
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:10
 msgid "Terms of Use"
 msgstr "Algemene voorwaarden"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/PagesSelect.jsx:189
 msgid "View more pages"
 msgstr "Meer pagina's bekijken"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/PagesSelect.jsx:148
 msgid "We already selected the most common pages for your type of website."
 msgstr "We hebben de meest voorkomende pagina's voor je type site al geselecteerd."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/PagesSelect.jsx:144
 msgid "Pick the pages to add to your website"
 msgstr "Kies de pagina's die je aan je site wil toevoegen"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
 #: src/Launch/pages/PagesSelect.jsx:68
 msgid "Home page"
 msgstr "Homepage"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/HomeSelect.jsx:33
 msgid "Pick a design for your website"
 msgstr "Kies een ontwerp voor je site"
@@ -113,43 +113,43 @@ msgstr "Kies een ontwerp voor je site"
 msgid "Searching..."
 msgstr "Aan het zoeken..."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:165
 msgid "Enter your website name"
 msgstr "Voer de naam van je site in"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:506
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:513
 msgid "Helping you to succeed"
 msgstr "Je helpen om te slagen"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:247
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:254
 msgid "Adding page content"
 msgstr "Pagina-inhoud toevoegen"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:216
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:223
 msgid "Installing necessary plugins"
 msgstr "Noodzakelijke plugins installeren"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:115
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:122
 msgid "Creating a beautiful website"
 msgstr "Een prachtige site maken"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:114
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:121
 msgid "Applying your website styles"
 msgstr "De stijlen van je site toepassen"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:243
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:250
 msgid "Personalizing your experience"
 msgstr "Je ervaring personaliseren"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:242
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:249
 msgid "Populating data"
 msgstr "Gegevens vullen"
 
@@ -269,21 +269,21 @@ msgstr "Gemiddeld"
 msgid "Beginner"
 msgstr "Beginner"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:3
+#: public/build/extendify-agent-d886439429f5826be8ab.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
 #: src/Agent/components/Rating.jsx:48
 #: src/HelpCenter/components/ai-chat/Rating.jsx:47
 msgid "Rate that this answer was not helpful"
 msgstr "Waardeer dat dit antwoord niet nuttig was"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:3
+#: public/build/extendify-agent-d886439429f5826be8ab.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Waardeer of dit antwoord nuttig was"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:3
+#: public/build/extendify-agent-d886439429f5826be8ab.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:47
@@ -343,56 +343,56 @@ msgstr "Menu samenvouwen"
 msgid "Search for articles"
 msgstr "Zoek naar artikelen"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:100
 msgid "The selected pattern has been inserted into the page."
 msgstr "Het geselecteerde patroon is ingevoegd in de pagina."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:99
 msgid "View the Inserted Pattern"
 msgstr "Bekijk het ingevoegde patroon"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:80
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Selecteer eenvoudig een patroon dat je in een pagina wilt invoegen door erop te klikken."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:79
 msgid "Select a Pattern"
 msgstr "Selecteer een patroon"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:54
 msgid "Click on any pattern category to refine the selection."
 msgstr "Klik op een willekeurige patroon categorie om de selectie te verfijnen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:53
 msgid "Filter Patterns"
 msgstr "Patronen filteren"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:32
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "De patroonbibliotheek van Extendify kan worden geopend door op de knop aan de linkerkant te klikken."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:31
@@ -508,21 +508,21 @@ msgstr "Het standaard WordPress dashboard zal enkele algemene websitestatistieke
 msgid "Access the Site Assistant at any time."
 msgstr "Toegang tot de Site Assistent op elk gewenst moment."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Je kunt op elk gewenst moment teruggaan naar de Site Assistent door op het menu-item te klikken."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Bekijk onze gepersonaliseerde aanbevelingen voor jou die je zullen helpen je doelen te bereiken."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
@@ -536,7 +536,7 @@ msgstr "Krijg eenvoudig toegang tot enkele van de meest voorkomende items in Wor
 msgid "Knowledge Base"
 msgstr "Kennisbank"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
@@ -555,7 +555,7 @@ msgid "Create a super-fast, beautiful, and fully customized site in minutes with
 msgstr "Maak binnen enkele minuten een razendsnelle, prachtige en volledig op maat gemaakte website met onze Site Launcher."
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:39
+#: public/build/extendify-common-4a151c468790b9033231.js:39
 #: public/build/extendify-draft-6fa869f73eddf5022681.js:10
 #: src/Draft/pages/Home.jsx:55
 msgid "Home"
@@ -585,56 +585,56 @@ msgstr "Rondleidingen"
 msgid "Help Center"
 msgstr "Helpcentrum"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Klik op de knop nieuwe toevoegen om een ​​nieuwe gebruiker aan je website toe te voegen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Voeg een nieuwe gebruiker toe"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Gebruik de zoekbalk om een ​​bepaalde gebruiker te vinden."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Zoek naar gebruikers"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Klik op de knop bewerken om de rol van de gebruiker te wijzigen, hun account te beheren of hun profielgegevens te wijzigen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Gebruikersgegevens bewerken"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "Bekijk al je gebruikers, inclusief beheerders in deze tabel."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:251
@@ -643,231 +643,231 @@ msgstr "Bekijk al je gebruikers, inclusief beheerders in deze tabel."
 msgid "Users"
 msgstr "Gebruikers"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Klik hier om de gebruikers op je website te bekijken en te beheren."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Alle gebruikers menu"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Klik hier om nog een plugin aan je website toe te voegen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Voeg een andere toe"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Onder elke plugin kun je deze activeren of deactiveren."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Deactiveren/activeren optie"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Bekijk alle plugins die op je website zijn geïnstalleerd. Dit is inclusief plugins die actief en gedeactiveerd zijn."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Geïnstalleerde plugins"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Klik op dit menu om de door jouw geïnstalleerde plugins te bekijken en te beheren."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Geïnstalleerde plugins menu"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Als je een plugin van een externe bron hebt, kun je dat hier gelijk uploaden."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Plugin uploaden"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Installeer de plugin. Druk vervolgens nogmaals op deze knop om de plugin te activeren."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Installeer nu"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Bekijk belangrijke informatie over elke plugin."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Plugin details"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Zoek naar een plugin op naam of functionaliteit."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Klik hier om toegang te krijgen tot de pagina plugins toevoegen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Nieuw plugin menu toevoegen"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:251
 #: src/HelpCenter/tours/page-editor.js:254
 msgid "Publish or Save"
 msgstr "Publiceer of opslaan"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:231
 #: src/HelpCenter/tours/page-editor.js:234
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Klik op voorvertoning om te zien hoe je wijzigingen er aan de voorkant van je website uitzien."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:230
 #: src/HelpCenter/tours/page-editor.js:233
 msgid "Preview"
 msgstr "Voorvertoning"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:188
 #: src/HelpCenter/tours/page-editor.js:191
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Selecteer een pagina of blok om de instellingen voor de gehele pagina of het geselecteerde blok te wijzigen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:187
 #: src/HelpCenter/tours/page-editor.js:190
 msgid "Page and Block Settings"
 msgstr "Pagina en blokinstellingen"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:172
 #: src/HelpCenter/tours/page-editor.js:175
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Dit is een voorbeeld van een paragraaf blok. Het kan meerdere zinnen lang zijn en uit meerdere rijen bestaan. Je kan zoveel blokken aan de pagina toevoegen als je wilt."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:131
 #: src/HelpCenter/tours/page-editor.js:134
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Elk blok verschijnt op de pagina en kan worden bewerkt door erop te klikken."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:130
 #: src/HelpCenter/tours/page-editor.js:133
 msgid "Blocks"
 msgstr "Blokken"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:91
 #: src/HelpCenter/tours/page-editor.js:94
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Bewerk de paginatitel door erop te klikken. Opmerking: de titel wordt wel of niet getoond op de gepubliceerde pagina, afhankelijk van het gebruikte pagina template."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:90
 #: src/HelpCenter/tours/page-editor.js:93
 msgid "Page Title"
 msgstr "Paginatitel"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:50
 #: src/HelpCenter/tours/page-editor.js:50
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Voeg een blok toe door erop te klikken of het naar de pagina te slepen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:49
 #: src/HelpCenter/tours/page-editor.js:49
 msgid "Block Inserter"
 msgstr "Blok invoeger"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:29
 #: src/HelpCenter/tours/page-editor.js:29
 msgid "Click the plus to open the block inserter."
 msgstr "Klik op de plus om de blok invoeger te openen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:28
 #: src/HelpCenter/tours/page-editor.js:28
@@ -879,9 +879,9 @@ msgid "Page not found"
 msgstr "Pagina niet gevonden"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:23
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:428
+#: public/build/extendify-common-4a151c468790b9033231.js:23
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:435
 msgid "Events"
 msgstr "Evenementen"
 
@@ -898,14 +898,14 @@ msgstr "Ga naar Hulp"
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Taken"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -926,7 +926,7 @@ msgstr "Je kan je website op elk moment bekijken (vanuit het perspectief van een
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Gebruik het pagina menu om pagina's op je website toe te voegen, te verwijderen of te bewerken."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:13
+#: public/build/extendify-agent-d886439429f5826be8ab.js:13
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
 #: src/Agent/components/GuidedTour.jsx:478
@@ -935,14 +935,14 @@ msgstr "Gebruik het pagina menu om pagina's op je website toe te voegen, te verw
 msgid "Done"
 msgstr "Gedaan"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:10
+#: public/build/extendify-agent-d886439429f5826be8ab.js:10
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/components/GuidedTour.jsx:431
 #: src/HelpCenter/components/tours/GuidedTour.jsx:434
 msgid "Tour Steps"
 msgstr "Tour stappen"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:10
+#: public/build/extendify-agent-d886439429f5826be8ab.js:10
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/components/GuidedTour.jsx:310
 #: src/HelpCenter/components/tours/GuidedTour.jsx:311
@@ -966,14 +966,15 @@ msgstr "Open voor nieuwe pagina's"
 msgid "Toggle %s on new pages"
 msgstr "Wissel %s op nieuwe pagina's"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:526
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:533
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Er is een serverfout opgetreden die we niet kunnen herstellen. Herlaad de pagina en probeer het nogmaals."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: src/Agent/components/workflows/SelectThemeVariation.jsx:96
+#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:86
 #: src/Agent/components/workflows/UpdatePostConfirm.jsx:46
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:82
 msgid "Save"
@@ -984,7 +985,7 @@ msgstr "Opslaan"
 msgid "Enter a site description..."
 msgstr "Voer een websitebeschrijving in..."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:83
@@ -1005,7 +1006,7 @@ msgstr "Website logo uploaden"
 
 #: app/AdminPageRouter.php:41
 #: app/AdminPageRouter.php:65
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -1020,8 +1021,8 @@ msgid "Site Assistant"
 msgstr "Website assistent"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:7
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-common-4a151c468790b9033231.js:7
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:37
 msgid "Blog"
 msgstr "Blog"
@@ -1071,7 +1072,7 @@ msgstr "Afbeelding vervangen"
 msgid "Edit or update the image"
 msgstr "De afbeelding bewerken of bijwerken"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:10
+#: public/build/extendify-agent-d886439429f5826be8ab.js:10
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/components/GuidedTour.jsx:306
@@ -1109,34 +1110,34 @@ msgstr "Doorgaan met het bouwen van je website"
 msgid "Let's Start Building Your Website"
 msgstr "Laten we beginnen met het bouwen van je website"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/components/PageControl.jsx:213
 msgid "Exit Launch"
 msgstr "Verlaat Launch"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:510
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:517
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Je wordt omgeleid in 3, 2, 1..."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:509
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:516
 msgid "Your website has been created!"
 msgstr "Je website is aangemaakt!"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:505
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:512
 msgid "Setting up your Site Assistant"
 msgstr "Je website assistent instellen"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:248
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:255
 msgid "Starting off with a full website"
 msgstr "Begin met een volledige website"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:10
+#: public/build/extendify-agent-d886439429f5826be8ab.js:10
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Agent/components/GuidedTour.jsx:421
 #: src/HelpCenter/components/tours/GuidedTour.jsx:424
 #: src/Launch/components/PageControl.jsx:230
@@ -1148,8 +1149,8 @@ msgstr "Terug"
 msgid "Site Industry"
 msgstr "Website branche"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
 #: src/Agent/components/messages/AgentMessage.jsx:15
 #: src/Agent/components/messages/AgentMessage.jsx:19
 #: src/Agent/components/messages/AgentMessage.jsx:23
@@ -1162,12 +1163,12 @@ msgstr "Website branche"
 msgid "Take me there"
 msgstr "Breng me ernaar toe"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
 #: src/Launch/pages/NeedsTheme.jsx:14
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Hey daar, Launch wordt mogelijk gemaakt door Extendable en is benodigd om door te gaan. Je kan het via de onderstaande link installeren en opnieuw beginnen zodra het is geactiveerd."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
 #: src/Launch/pages/NeedsTheme.jsx:10
 msgid "One more thing before we start."
 msgstr "Hey, nog één ding voordat we starten."
@@ -1184,9 +1185,9 @@ msgstr "Plugins"
 msgid "View Site"
 msgstr "Website bekijken"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:13
+#: public/build/extendify-agent-d886439429f5826be8ab.js:13
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Agent/components/GuidedTour.jsx:467
 #: src/HelpCenter/components/tours/GuidedTour.jsx:470
 #: src/Launch/components/PageControl.jsx:284
@@ -1201,35 +1202,37 @@ msgstr "Volgende"
 msgid "Pages"
 msgstr "Pagina's"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/HomeSelect.jsx:34
 msgid "You can personalize this later."
 msgstr "Dit kan je later personaliseren."
 
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:48
 #: src/Launch/components/LoadingIndicator.jsx:5
 #: src/Launch/pages/SiteQuestions.jsx:156
 msgid "Loading..."
 msgstr "Aan het laden..."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/components/SmallPreview.jsx:171
 #: src/Launch/pages/ObjectiveSelection.jsx:118
 #: src/Launch/pages/SiteStructure.jsx:92
 msgid "Press to select"
 msgstr "Klik om te selecteren"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
 #: src/Launch/components/RetryNotice.jsx:12
 #: src/PageCreator/components/RetryNotice.jsx:12
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Een ogenblik geduld alsjeblieft, dit duurt langer dan verwacht."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
@@ -1265,7 +1268,7 @@ msgstr "Indienen"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
@@ -1288,7 +1291,7 @@ msgid "Extendify"
 msgstr "Extendify"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-441598553caaf07d1197.js:13
+#: public/build/extendify-agent-d886439429f5826be8ab.js:13
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
 #: src/Agent/components/GuidedTour.jsx:438
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
@@ -1296,42 +1299,42 @@ msgstr "Extendify"
 msgid "%1$s of %2$s"
 msgstr "%1$s van %2$s"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:277
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:284
 msgid "Creating pages with custom content"
 msgstr "Pagina's maken met aangepaste inhoud"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:366
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:373
 msgid "Setting up site layout"
 msgstr "Lay-out van de website instellen"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:11
 msgid "Professional"
 msgstr "Professioneel"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:15
 msgid "Friendly"
 msgstr "Vriendelijk"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:19
 msgid "Inspirational"
 msgstr "Inspirerend"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:23
 msgid "Informative"
 msgstr "Informatief"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:27
 msgid "Persuasive"
 msgstr "Overtuigend"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/components/PageControl.jsx:269
 msgid "Skip"
 msgstr "Overslaan"
@@ -1342,8 +1345,8 @@ msgid "Launch"
 msgstr "Lancering"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-93a8134d903111a88b84.js:3
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:3
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
 #: src/Launch/api/WPApi.js:87
 #: src/Launch/api/WPApi.js:175
@@ -1351,27 +1354,27 @@ msgstr "Lancering"
 msgid "Added by Launch"
 msgstr "Toegevoegd door Launch"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:5
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:151
 msgid "Start over?"
 msgstr "Opnieuw beginnen?"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:5
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:155
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Doorloop het onboardingproces opnieuw om een nieuwe website te creëren."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:179
 msgid "Exit"
 msgstr "Afsluiten"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:191
 msgid "Processing"
 msgstr "Verwerking"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:187
 msgid "Continue"
 msgstr "Doorgaan"
@@ -1708,7 +1711,7 @@ msgstr "Footer bewerken"
 msgid "Reset site"
 msgstr "Website resetten"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -1967,7 +1970,7 @@ msgstr "Zoekresultaten"
 msgid "Search the knowledge base"
 msgstr "Doorzoek de kennisbank"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -1977,14 +1980,14 @@ msgstr "Doorzoek de kennisbank"
 msgid "Page editor"
 msgstr "Pagina-editor"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:252
 #: src/HelpCenter/tours/page-editor.js:255
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Klik op 'Publiceren' of 'Bijwerken' om de wijzigingen die je hebt aangebracht aan de pagina op te slaan en ze zichtbaar te maken op de website."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -1994,7 +1997,7 @@ msgstr "Klik op 'Publiceren' of 'Bijwerken' om de wijzigingen die je hebt aangeb
 msgid "Installing a plugin"
 msgstr "Een plugin installeren"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -2009,21 +2012,21 @@ msgstr "Pluginbeheer"
 msgid "You can always access the help center by clicking this button."
 msgstr "U kunt altijd het helpcentrum bereiken door op deze knop te klikken."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Bezoek je website"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Je kunt je website altijd bezoeken door op deze knop te klikken."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -2138,7 +2141,7 @@ msgstr "Beschikbaar en perfect voor je website"
 msgid "Get another domain for your site."
 msgstr "Registreer een ander domein voor je website."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:1
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:1
 #: src/Launch/api/WPApi.js:51
 msgid "Header Navigation"
 msgstr "Navigatie in de koptekst"
@@ -2263,7 +2266,7 @@ msgstr "Gepersonaliseerde afbeelding ophalen"
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Klik hier om naar je dashboard voor websitebeheer te gaan. Van daaruit kan je meer websites aanmaken en je accountinstellingen beheren."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:172
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Bijvoorbeeld, wij zijn een yogastudio in Londen met professioneel opgeleide instructeurs, gespecialiseerd in hot yoga voor therapeutische doeleinden."
@@ -2408,12 +2411,12 @@ msgid "Start getting bookings from your website by configuring the SimplyBook.me
 msgstr "Begin met het ontvangen van boekingen via je website door de SimplyBook.me plugin te configureren."
 
 #. translators: This string represents the title of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits the standard phrasing for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:3
+#: public/build/extendify-common-4a151c468790b9033231.js:3
 msgid "About"
 msgstr "Over ons"
 
 #. translators: This string represents the title of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits the standard phrasing for a "Contact" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:19
+#: public/build/extendify-common-4a151c468790b9033231.js:19
 msgid "Contact"
 msgstr "Contacteer ons"
 
@@ -2465,7 +2468,7 @@ msgstr "Held"
 
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:49
+#: public/build/extendify-common-4a151c468790b9033231.js:49
 #: src/Assist/svg/DesignLibraryMarkup.jsx:89
 msgid "Pricing"
 msgstr "Prijzen"
@@ -2477,7 +2480,7 @@ msgstr "Sociaal bewijs"
 
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:81
+#: public/build/extendify-common-4a151c468790b9033231.js:81
 #: src/Assist/svg/DesignLibraryMarkup.jsx:95
 msgid "Team"
 msgstr "Team"
@@ -2833,197 +2836,197 @@ msgid "Turkish"
 msgstr "Turks"
 
 #. translators: This string represents the slug of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits a slug for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:5
+#: public/build/extendify-common-4a151c468790b9033231.js:5
 msgid "about"
 msgstr "over-ons"
 
 #. translators: This string represents the slug of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits a slug for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:9
+#: public/build/extendify-common-4a151c468790b9033231.js:9
 msgid "blog"
 msgstr "blog"
 
 #. translators: This string represents the title of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits the standard phrasing for a "Careers" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:15
+#: public/build/extendify-common-4a151c468790b9033231.js:15
 msgid "Careers"
 msgstr "Carrière mogelijkheden"
 
 #. translators: This string represents the slug of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits a slug for a "Careers" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:17
+#: public/build/extendify-common-4a151c468790b9033231.js:17
 msgid "careers"
 msgstr "carriere"
 
 #. translators: This string represents the slug of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits a slug for a "Contact" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:21
+#: public/build/extendify-common-4a151c468790b9033231.js:21
 msgid "contact"
 msgstr "contact"
 
 #. translators: This string represents the slug of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits a slug for an "Events" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:25
+#: public/build/extendify-common-4a151c468790b9033231.js:25
 msgid "events"
 msgstr "evenementen"
 
 #. translators: This string represents the title of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits the standard phrasing for a "FAQ" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:27
+#: public/build/extendify-common-4a151c468790b9033231.js:27
 msgid "FAQ"
 msgstr "Veelgestelde vragen"
 
 #. translators: This string represents the slug of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits a slug for a "FAQ" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:29
+#: public/build/extendify-common-4a151c468790b9033231.js:29
 msgid "faq"
 msgstr "veelgestelde-vragen"
 
 #. translators: This string represents the title of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits the standard phrasing for a "Features" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:31
+#: public/build/extendify-common-4a151c468790b9033231.js:31
 msgid "Features"
 msgstr "Functies"
 
 #. translators: This string represents the slug of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits a slug for a "Features" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:33
+#: public/build/extendify-common-4a151c468790b9033231.js:33
 msgid "features"
 msgstr "functies"
 
 #. translators: This string represents the title of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits the standard phrasing for a "Gallery" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:35
+#: public/build/extendify-common-4a151c468790b9033231.js:35
 msgid "Gallery"
 msgstr "Galerij"
 
 #. translators: This string represents the slug of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits a slug for a "Gallery" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:37
+#: public/build/extendify-common-4a151c468790b9033231.js:37
 msgid "gallery"
 msgstr "galerij"
 
 #. translators: This string represents the title of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits the standard phrasing for a "Menu" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:41
+#: public/build/extendify-common-4a151c468790b9033231.js:41
 msgid "Menu"
 msgstr "Menu"
 
 #. translators: This string represents the slug of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits a slug for a "Menu" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:43
+#: public/build/extendify-common-4a151c468790b9033231.js:43
 msgid "menu"
 msgstr "menu"
 
 #. translators: This string represents the title of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits the standard phrasing for a "Portfolio" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:45
+#: public/build/extendify-common-4a151c468790b9033231.js:45
 msgid "Portfolio"
 msgstr "Portfolio"
 
 #. translators: This string represents the slug of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits a slug for a "Portfolio" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:47
+#: public/build/extendify-common-4a151c468790b9033231.js:47
 msgid "portfolio"
 msgstr "portfolio"
 
 #. translators: This string represents the slug of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits a slug for a "Pricing" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:51
+#: public/build/extendify-common-4a151c468790b9033231.js:51
 msgid "pricing"
 msgstr "prijzen"
 
 #. translators: This string represents the title of a "Products" page on a website that lists products. Please translate it in a way that fits the standard phrasing for a "Products" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:53
+#: public/build/extendify-common-4a151c468790b9033231.js:53
 msgid "Products"
 msgstr "Producten"
 
 #. translators: This string represents the slug of a "Products" page on a website that lists products. Please translate it in a way that fits a slug for a "Products" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:55
+#: public/build/extendify-common-4a151c468790b9033231.js:55
 msgid "products"
 msgstr "producten"
 
 #. translators: This string represents the title of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits the standard phrasing for a "Quote" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:57
+#: public/build/extendify-common-4a151c468790b9033231.js:57
 msgid "Quote"
 msgstr "Offerte"
 
 #. translators: This string represents the slug of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits a slug for a "Quote" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:59
+#: public/build/extendify-common-4a151c468790b9033231.js:59
 msgid "quote"
 msgstr "offerte"
 
 #. translators: This string represents the title of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits the standard phrasing for a "Reservation" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:61
+#: public/build/extendify-common-4a151c468790b9033231.js:61
 msgid "Reservation"
 msgstr "Reservering"
 
 #. translators: This string represents the slug of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits a slug for a "Reservation" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:63
+#: public/build/extendify-common-4a151c468790b9033231.js:63
 msgid "reservation"
 msgstr "reservering"
 
 #. translators: This string represents the title of a "Resources" page on a website that provides resources. Please translate it in a way that fits the standard phrasing for a "Resources" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:65
+#: public/build/extendify-common-4a151c468790b9033231.js:65
 msgid "Resources"
 msgstr "Bronnen"
 
 #. translators: This string represents the slug of a "Resources" page on a website that provides resources. Please translate it in a way that fits a slug for a "Resources" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:67
+#: public/build/extendify-common-4a151c468790b9033231.js:67
 msgid "resources"
 msgstr "hulpbronnen"
 
 #. translators: This string represents the title of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits the standard phrasing for a "Service Area" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:69
+#: public/build/extendify-common-4a151c468790b9033231.js:69
 msgid "Service Area"
 msgstr "Dienstgebied"
 
 #. translators: This string represents the slug of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits a slug for a "Service Area" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:71
+#: public/build/extendify-common-4a151c468790b9033231.js:71
 msgid "service-area"
 msgstr "dienstgebied"
 
 #. translators: This string represents the title of a "Services" page on a website that lists services. Please translate it in a way that fits the standard phrasing for a "Services" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:73
+#: public/build/extendify-common-4a151c468790b9033231.js:73
 msgid "Services"
 msgstr "Diensten"
 
 #. translators: This string represents the slug of a "Services" page on a website that lists services. Please translate it in a way that fits a slug for a "Services" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:75
+#: public/build/extendify-common-4a151c468790b9033231.js:75
 msgid "services"
 msgstr "diensten"
 
 #. translators: This string represents the title of a "Specials" page on a website that lists special offers. Please translate it in a way that fits the standard phrasing for a "Specials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:77
+#: public/build/extendify-common-4a151c468790b9033231.js:77
 msgid "Specials"
 msgstr "Aanbiedingen"
 
 #. translators: This string represents the slug of a "Specials" page on a website that lists special offers. Please translate it in a way that fits a slug for a "Specials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:79
+#: public/build/extendify-common-4a151c468790b9033231.js:79
 msgid "specials"
 msgstr "aanbiedingen"
 
 #. translators: This string represents the slug of a "Team" page on a website that introduces the team members. Please translate it in a way that fits a slug for a "Team" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:83
+#: public/build/extendify-common-4a151c468790b9033231.js:83
 msgid "team"
 msgstr "team"
 
 #. translators: This string represents the title of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits the standard phrasing for a "Testimonials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:85
+#: public/build/extendify-common-4a151c468790b9033231.js:85
 msgid "Testimonials"
 msgstr "Getuigenissen"
 
 #. translators: This string represents the slug of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits a slug for a "Testimonials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:87
+#: public/build/extendify-common-4a151c468790b9033231.js:87
 msgid "testimonials"
 msgstr "getuigenissen"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/SiteStructure.jsx:47
 msgid "Single-Page Website"
 msgstr "Website met één pagina"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/SiteStructure.jsx:48
 msgid "All content displayed on one scrolling page."
 msgstr "Alle inhoud getoond op één scrollende pagina."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/SiteStructure.jsx:58
 msgid "Multi-Page Website"
 msgstr "Website met meerdere pagina's"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/SiteStructure.jsx:59
 msgid "Multiple interconnected pages."
 msgstr "Meerdere onderling verbonden pagina's."
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:31
 #: src/Launch/pages/SiteStructure.jsx:70
 msgid "Pick Your Site Structure"
@@ -3215,44 +3218,44 @@ msgstr "Spaans (Mexico)"
 msgid "Romanian"
 msgstr "Roemeens"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:99
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Deel je visie, en wij maken een website die perfect is afgestemd op je behoeften, klaar om snel te lanceren. Laten we beginnen met meer te leren over wat je aan het bouwen bent."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-93a8134d903111a88b84.js:16
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:16
 #: src/Launch/LaunchPage.jsx:56
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Lancering - AI-gestuurde webcreatie"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SitePrep.jsx:87
 msgid "Customizing Your Experience"
 msgstr "Uw ervaring personaliseren"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/ContentGathering.jsx:65
 msgid "Designing Your Options"
 msgstr "Uw opties ontwerpen"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SitePrep.jsx:88
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Even geduld terwijl we je invoer analyseren en je ervaring aanpassen."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/ContentGathering.jsx:66
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Even geduld terwijl we enkele website-opties voor je samenstellen om uit te kiezen."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:339
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:346
 msgid "Creating blog sample data"
 msgstr "Voorbeeldgegevens voor blog aanmaken"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-93a8134d903111a88b84.js:5
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:5
 #: src/Launch/api/WPApi.js:360
 msgid "More"
 msgstr "Meer"
@@ -3266,18 +3269,18 @@ msgid "Add Website Details"
 msgstr "Websitegegevens toevoegen"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
 #, js-format
 msgid "Blog Post %s"
 msgstr "Blogbericht %s"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:393
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:400
 msgid "Importing shop sample data"
 msgstr "Voorbeeldgegevens van winkel importeren"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:164
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
@@ -3288,27 +3291,27 @@ msgstr "%s pagina's/berichten gemaakt in de vorige onboarding sessie zullen word
 msgid "Lithuanian"
 msgstr "Litouws"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:44
 msgid "Select your site's tone"
 msgstr "Selecteer de toon van je website"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:153
 msgid "Website title (required)"
 msgstr "Website titel (verplicht)"
 
 #. translators: This string represents the title of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits the standard phrasing for a "Book" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:11
+#: public/build/extendify-common-4a151c468790b9033231.js:11
 msgid "Book Now"
 msgstr "Boek Nu"
 
 #. translators: This string represents the slug of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits a slug for a "Book" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-59454a2e48c4a14ab4ac.js:13
+#: public/build/extendify-common-4a151c468790b9033231.js:13
 msgid "book-now"
 msgstr "boek-nu"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
 msgid "Hello World Featured Image"
 msgstr "Hallo Wereld Uitgelichte Afbeelding"
 
@@ -3336,7 +3339,7 @@ msgstr "Bestaande inhoud verwijderen"
 msgid "Create a new page"
 msgstr "Een nieuwe pagina aanmaken"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
 #: src/Agent/tours/page-creator.js:6
@@ -3439,155 +3442,157 @@ msgstr "Pagina toegevoegd"
 msgid "Failed to add page"
 msgstr "Pagina toevoegen mislukt"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:27
 msgid "Business"
 msgstr "Zakelijk"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:32
 msgid "eCommerce"
 msgstr "e-commerce"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:42
 msgid "Landing Page"
 msgstr "Landingspagina"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:47
 msgid "Other"
 msgstr "Andere"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:152
 msgid "Landing Page title (required)"
 msgstr "Landingspagina titel (verplicht)"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:176
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Bijv. Wij zijn een online winkel gespecialiseerd in milieuvriendelijke huishoudelijke artikelen. We bieden duurzaam geproduceerde producten aan om je te helpen een groener leven te leiden."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:180
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "Bijv. een persoonlijke finance blog die expert tips deelt over budgetteren, investeren en financiële vrijheid bereiken voor jonge professionals."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:184
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Bijv., Een gratis e-book boordevol praktische productiviteitstips en strategieën om je te helpen gefocust te blijven, je tijd effectief te beheren en je doelen te bereiken."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:188
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Bijv. een persoonlijk fotografieportfolio met een verzameling van landschaps-, portret- en straatfotografie, die momenten van over de hele wereld vastlegt."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:194
 msgid "Describe your business"
 msgstr "Beschrijf je bedrijf"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:195
 msgid "Describe your eCommerce website"
 msgstr "Beschrijf je e-commerce website"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:196
 msgid "Describe your blog"
 msgstr "Beschrijf je blog"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:197
 msgid "Describe your Landing Page"
 msgstr "Beschrijf je landingspagina"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:198
 msgid "Describe your website"
 msgstr "Beschrijf je website"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:242
 msgid "Call-To-Action Link"
 msgstr "Call-to-Action link"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:246
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Deze link wordt gebruikt in alle Call-to-Action knoppen en leidt bezoekers naar je gekozen bestemming."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/ObjectiveSelection.jsx:82
 msgid "What type of website are you creating?"
 msgstr "Welk type website maak je?"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:91
 msgid "Tell Us About Your Landing Page"
 msgstr "Vertel ons over je landingspagina"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:92
 msgid "Tell Us About Your Website"
 msgstr "Vertel ons over je website"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteInformation.jsx:95
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Deel je visie, en we maken een landingspagina die perfect op je behoeften is afgestemd, klaar om snel te lanceren. Laten we beginnen met meer te leren over wat je aan het bouwen bent."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:32
 #: src/HelpCenter/tours/page-creator.js:32
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Druk hier om te beginnen met je AI-paginagenerator."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:55
 #: src/HelpCenter/tours/page-creator.js:55
 msgid "Page description"
 msgstr "Paginabeschrijving"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:56
 #: src/HelpCenter/tours/page-creator.js:56
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Schrijf een beschrijving van de pagina die je wilt maken. Wees zo gedetailleerd als je wilt. We maken een pagina op basis van deze beschrijving."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:84
 #: src/HelpCenter/tours/page-creator.js:84
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Werk indien nodig je website beschrijving hier bij. We gebruiken dit om extra context over je website toe te voegen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:107
 #: src/HelpCenter/tours/page-creator.js:107
 msgid "Generate your page"
 msgstr "Genereer je pagina"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:108
 #: src/HelpCenter/tours/page-creator.js:108
 msgid "When ready, press here to generate your page."
 msgstr "Druk hier om je pagina te genereren zodra je klaar bent."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:13
-#: src/Agent/components/tooltip/ToolTip.jsx:88
+#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-shared-5ce167fe6ca53b5403c7.js:1
+#: src/Agent/components/tooltip/ToolTip.jsx:101
+#: src/Shared/components/ToolTip.jsx:63
 msgid "Close ToolTip"
 msgstr "ToolTip sluiten"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:404
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:411
 msgid "Installing supporting plugins"
 msgstr "Ondersteunende plugins installeren"
 
@@ -3621,13 +3626,13 @@ msgstr "Sta toe dat plugins worden geïnstalleerd voor geavanceerde paginakenmer
 msgid "Processing patterns and installing required plugins..."
 msgstr "Patronen verwerken en vereiste plugins installeren..."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:8
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:14
 msgid "Privacy Policy"
 msgstr "Privacybeleid"
 
 #. translators: %1$s and %2$s are links
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:23
 #, js-format
 msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
@@ -3640,7 +3645,7 @@ msgstr "Door AI-functies te gebruiken, ga je akkoord met de OpenAI %1$s en %2$s.
 msgid "Recommended Solutions for: %s"
 msgstr "Aanbevolen oplossingen voor: %s"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteQuestions.jsx:172
 msgid "Show more questions"
 msgstr "Meer vragen tonen"
@@ -3650,311 +3655,308 @@ msgstr "Meer vragen tonen"
 msgid "Hebrew"
 msgstr "Hebreeuws"
 
-#: app/Agent/Admin.php:189
+#: app/Agent/Admin.php:195
 msgid "What tours are available?"
 msgstr "Welke rondleidingen zijn beschikbaar?"
 
-#: app/Agent/Admin.php:196
+#: app/Agent/Admin.php:202
 msgid "I want to change my theme styling"
 msgstr "Ik wil mijn themastijl wijzigen"
 
-#: app/Agent/Admin.php:204
+#: app/Agent/Admin.php:210
 msgid "Edit text on this page"
 msgstr "Tekst op deze pagina bewerken"
 
-#: app/Agent/Admin.php:212
+#: app/Agent/Admin.php:218
 msgid "How can I create a post?"
 msgstr "Hoe maak ik een bericht aan?"
 
-#: app/Agent/Admin.php:216
+#: app/Agent/Admin.php:222
 msgid "How can I create a page?"
 msgstr "Hoe maak ik een pagina?"
 
-#: app/Agent/Admin.php:223
+#: app/Agent/Admin.php:229
 msgid "How can I install a plugin?"
 msgstr "Hoe installeer ik een plugin?"
 
-#: app/Agent/Admin.php:230
+#: app/Agent/Admin.php:236
 msgid "How can I change my theme?"
 msgstr "Hoe kan ik mijn thema wijzigen?"
 
-#: app/Agent/Admin.php:234
+#: app/Agent/Admin.php:240
 msgid "How can I change the site footer?"
 msgstr "Hoe kan ik de footer van de website wijzigen?"
 
-#: app/Agent/Admin.php:238
+#: app/Agent/Admin.php:244
 msgid "How can I change the site header?"
 msgstr "Hoe kan ik de website header wijzigen?"
 
-#: app/Agent/Admin.php:245
+#: app/Agent/Admin.php:251
 msgid "How can I upload an image?"
 msgstr "Hoe kan ik een afbeelding uploaden?"
 
-#: app/Agent/Admin.php:249
+#: app/Agent/Admin.php:255
 msgid "How can I change the site icon?"
 msgstr "Hoe kan ik de favicon wijzigen?"
 
-#: app/Agent/Admin.php:256
+#: app/Agent/Admin.php:262
 msgid "How can I change my site title?"
 msgstr "Hoe kan ik mijn websitetitel wijzigen?"
 
-#: app/Agent/Admin.php:260
+#: app/Agent/Admin.php:266
 msgid "How can I change my site tagline?"
 msgstr "Hoe kan ik mijn website slogan wijzigen?"
 
-#: app/Agent/Admin.php:264
+#: app/Agent/Admin.php:270
 msgid "How can I change my site language?"
 msgstr "Hoe kan ik mijn websitetaal wijzigen?"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/tools/get-theme-variations.js:16
 msgid "Failed to fetch theme variations."
 msgstr "Kon themavariaties niet ophalen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Hallo! Het lijkt erop dat je de themakleuren wilt wijzigen, maar je bent niet op een pagina waar dat kan."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 msgid "Suggestion:"
 msgstr "Suggestie:"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/workflows/SelectThemeVariation.jsx:34
 msgid "Loading variations..."
 msgstr "Variaties laden..."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/workflows/SelectThemeVariation.jsx:42
 msgid "No variations found"
 msgstr "Geen variaties gevonden"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/workflows/SelectThemeVariation.jsx:45
 msgid "We were unable to find any variations for your theme."
 msgstr "We konden geen variaties voor je thema vinden."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/workflows/SelectThemeVariation.jsx:89
+#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:80
 #: src/Agent/components/workflows/UpdatePostConfirm.jsx:40
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/redirects/RedirectStrings.jsx:20
-msgid "Hey there! It looks like you are trying to edit the strings of a post, but you are not on a page we can edit."
-msgstr "Hallo! Het lijkt erop dat je de strings van een bericht probeert te bewerken, maar je bevindt je niet op een pagina die we kunnen bewerken."
-
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:69
 #: src/Agent/components/workflows/UpdatePostConfirm.jsx:28
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "De agent heeft de wijzigingen in de browser aangebracht. Gelieve te beoordelen en te bevestigen."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Verken de ontwerp bibliotheek"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Meer informatie over de AI-paginagenerator"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Rondleiding door de pagina-editor"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Zie hoe je een plugin installeert"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Leer hoe je plugins beheert"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Rondleiding met site-assistent"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Rondleiding door het gebruikersscherm"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/ChatInput.jsx:152
 msgid "Ask anything"
 msgstr "Stel een vraag"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/ChatInput.jsx:170
 msgid "Send message"
 msgstr "Bericht verzenden"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/ScrollDownButton.jsx:21
 msgid "Scroll down"
 msgstr "Scroll omlaag"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/messages/AgentMessage.jsx:67
 msgid "Agent"
 msgstr "Agent"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:8
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:9
 msgid "Finding an agent..."
 msgstr "Een agent zoeken..."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:9
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:10
 msgid "Working on it..."
 msgstr "Bezig ermee..."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:10
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:11
 msgid "Gathering data..."
 msgstr "Gegevens verzamelen..."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:11
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:12
 msgid "Analyzing..."
 msgstr "Analyseren..."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:12
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:13
+#: src/Agent/components/messages/StatusMessage.jsx:14
 msgid "Canceled"
 msgstr "Geannuleerd"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:14
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:15
 msgid "Usage limit reached"
 msgstr "Gebruikslimiet bereikt"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:15
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:16
 msgid "Usage limit restored"
 msgstr "Gebruiksbeperking hersteld"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:23
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:29
 msgid "Something went wrong"
 msgstr "Er ging iets fout"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:26
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:32
 msgid "An unexpected error occurred while processing your request."
 msgstr "Er is een onverwachte fout opgetreden tijdens het verwerken van je aanvraag."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:72
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:82
 msgid "Workflow completed successfully"
 msgstr "Workflow succesvol voltooid"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Component niet beschikbaar"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:20
 msgid "It may have been removed or is not available for your account."
 msgstr "Het is mogelijk verwijderd of niet beschikbaar voor je account."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:3
+#: public/build/extendify-agent-d886439429f5826be8ab.js:3
 #: src/Agent/components/messages/WorkflowMessage.jsx:8
 msgid "Agent X"
 msgstr "Agent X"
 
 #. translators: %s: The name of the agent
-#: public/build/extendify-agent-441598553caaf07d1197.js:5
+#: public/build/extendify-agent-d886439429f5826be8ab.js:5
 #: src/Agent/components/messages/WorkflowMessage.jsx:13
 #, js-format
 msgid "%s has joined"
 msgstr "%s is toegetreden"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:5
+#: public/build/extendify-agent-d886439429f5826be8ab.js:5
 #: src/Agent/components/messages/WorkflowMessage.jsx:14
 #, js-format
 msgid "%s has rejoined"
 msgstr "%s is opnieuw toegetreden"
 
 #. translators: %s: The name of the agent
-#: public/build/extendify-agent-441598553caaf07d1197.js:7
+#: public/build/extendify-agent-d886439429f5826be8ab.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:16
 #, js-format
 msgid "%s has left"
 msgstr "%s is vertrokken"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:7
+#: public/build/extendify-agent-d886439429f5826be8ab.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:18
 msgid "Transferred to a new agent"
 msgstr "Overgedragen aan een nieuwe agent"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:7
+#: public/build/extendify-agent-d886439429f5826be8ab.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:37
 msgid "What's next? Would you like to do something else?"
 msgstr "Wat is het volgende? Wil je iets anders doen?"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:117
 #: src/Agent/components/layouts/DragResizeLayout.jsx:128
-#: src/Agent/components/layouts/MobileLayout.jsx:53
-#: src/Agent/components/layouts/MobileLayout.jsx:64
+#: src/Agent/components/layouts/MobileLayout.jsx:50
+#: src/Agent/components/layouts/MobileLayout.jsx:61
 msgid "Close window"
 msgstr "Venster sluiten"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:168
 msgid "Drag to move"
 msgstr "Sleep om te verplaatsen"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:7
-#: src/Agent/components/WelcomeScreen.jsx:10
+#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: src/Agent/components/WelcomeScreen.jsx:22
 msgid "Site is live!"
 msgstr "Website is live!"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:7
-#: src/Agent/components/WelcomeScreen.jsx:13
+#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: src/Agent/components/WelcomeScreen.jsx:26
 msgid "Your expert AI team is here"
 msgstr "Je expert AI-team is hier"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-441598553caaf07d1197.js:10
+#: public/build/extendify-agent-d886439429f5826be8ab.js:10
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Je hebt je dagelijkse berichtenlimiet bereikt. Je limiet wordt gereset over %s."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:10
-#: src/Agent/components/buttons/AdminBar.jsx:51
+#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: src/Agent/components/buttons/AdminBar.jsx:50
 #: src/Agent/components/buttons/Mobile.jsx:36
-#: src/Agent/components/buttons/PostEditor.jsx:18
+#: src/Agent/components/buttons/PostEditor.jsx:47
 msgid "Open Agent"
 msgstr "Agent openen"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:10
-#: src/Agent/components/buttons/AdminBar.jsx:64
+#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: src/Agent/components/buttons/AdminBar.jsx:63
 #: src/Agent/components/buttons/Mobile.jsx:43
-#: src/Agent/components/buttons/PostEditor.jsx:20
+#: src/Agent/components/buttons/PostEditor.jsx:52
 msgid "AI Agent"
 msgstr "AI-agent"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:13
+#: public/build/extendify-agent-d886439429f5826be8ab.js:13
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:8
 msgid "Tooltip pointing to the agent button"
 msgstr "Tooltip wijst naar de agentknop"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:13
-#: src/Agent/components/tooltip/ReOpenToolTip.jsx:11
+#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: src/Agent/components/tooltip/ReOpenToolTip.jsx:14
 msgid "Need help again?"
 msgstr "Opnieuw hulp nodig?"
 
@@ -4059,40 +4061,66 @@ msgstr "Van hieruit kan je de afmetingen, padding en margins voor de lay-out van
 msgid "Take the welcome tour"
 msgstr "Volg de welkomsttour"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:10
+#: public/build/extendify-agent-d886439429f5826be8ab.js:10
 #: src/Agent/components/buttons/Mobile.jsx:46
 msgid "How can we help you today?"
 msgstr "Hoe kunnen we je vandaag helpen?"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteQuestions.jsx:28
 msgid "Let's review your AI-powered recommendations"
 msgstr "Laten we je AI-aangedreven aanbevelingen beoordelen"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
 #: src/Launch/pages/SiteQuestions.jsx:33
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "Op basis van de door jou verstrekte gegevens heeft onze AI de beste instellingen voor je website voorgesteld. Bekijk snel of alles klopt voordat je verdergaat."
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:11
-#: src/Launch/pages/CreatingSite.jsx:187
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: src/Launch/pages/CreatingSite.jsx:194
 msgid "Footer Navigation"
 msgstr "Footernavigatie"
 
-#: public/build/extendify-launch-93a8134d903111a88b84.js:14
-#: src/Launch/pages/CreatingSite.jsx:349
+#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: src/Launch/pages/CreatingSite.jsx:356
 msgid "Adding imprint page"
 msgstr "Afdrukpagina toevoegen"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:13
-#: src/Agent/components/tooltip/ReOpenToolTip.jsx:14
+#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: src/Agent/components/tooltip/ReOpenToolTip.jsx:17
 msgid "You can always access your AI Agent if you need help with anything on your site."
 msgstr "Je kan altijd je AI-agent raadplegen als je hulp nodig hebt met je website."
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:7
-#: src/Agent/components/WelcomeScreen.jsx:16
+#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: src/Agent/components/WelcomeScreen.jsx:29
 msgid "Your team of site experts — designers, developers, and marketers — ready to help from content to layouts. Tell us what you need or pick a task to start."
 msgstr "Je team van website-experts — ontwerpers, ontwikkelaars en marketeers — staat klaar om te helpen, van inhoud tot lay-outs. Vertel ons wat je nodig hebt of kies een taak om te beginnen."
+
+#: public/build/extendify-shared-5ce167fe6ca53b5403c7.js:1
+#: src/Shared/components/EditPageToolTip.jsx:8
+msgid "Tooltip pointing to the edit page button"
+msgstr "Tooltip wijst naar de knop 'Pagina bewerken'"
+
+#: public/build/extendify-shared-5ce167fe6ca53b5403c7.js:1
+#: src/Shared/components/EditPageToolTip.jsx:10
+msgid "Welcome to your new site! When you're ready, press here to edit this page."
+msgstr "Welkom op je nieuwe website! Wanneer je klaar bent, druk hier om deze pagina te bewerken."
+
+#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: src/Agent/components/PageDocument.jsx:14
+#: src/Agent/components/PageDocument.jsx:25
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: src/Agent/components/DOMHighlighter.jsx:166
+#: src/Agent/components/DOMHighlighter.jsx:192
+msgid "Remove highlight"
+msgstr "Hoogtepunt verwijderen"
+
+#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: src/Agent/Agent.jsx:464
+msgid "AI Agent can make mistakes. Check changes before saving."
+msgstr "De AI-agent kan fouten maken. Controleer de wijzigingen voordat je opslaat."
 
 #. translators: %s is a name
 #: public/build/extendify-recommendations-b646230433527220e538.js:4
@@ -4120,9 +4148,9 @@ msgctxt "Plugin activation status"
 msgid "Activated"
 msgstr "Geactiveerd"
 
-#: public/build/extendify-agent-441598553caaf07d1197.js:1
+#: public/build/extendify-agent-d886439429f5826be8ab.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:110
-#: src/Agent/components/layouts/MobileLayout.jsx:49
+#: src/Agent/components/layouts/MobileLayout.jsx:46
 msgctxt "Feature in beta status"
 msgid "beta"
 msgstr "bèta"

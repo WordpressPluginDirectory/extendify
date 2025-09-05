@@ -9,10 +9,7 @@ import { useGlobalStore } from '@agent/state/global';
 export const MobileLayout = ({ children }) => {
 	const mountNode = usePortal('extendify-agent-mount');
 	const { open, setOpen } = useGlobalStore();
-	const closeAgent = () => {
-		setOpen(false);
-		window.dispatchEvent(new CustomEvent('extendify-agent:closed-button'));
-	};
+	const closeAgent = () => setOpen(false);
 
 	useEffect(() => {
 		if (!mountNode || !open) return;
@@ -24,7 +21,7 @@ export const MobileLayout = ({ children }) => {
 	if (!mountNode || !open) return null;
 
 	return createPortal(
-		<div className="fixed inset-0 z-high flex items-center justify-center">
+		<div className="fixed inset-0 z-max-1 flex items-center justify-center">
 			<div className="pointer-events-none absolute inset-0 bg-black/70" />
 			<AnimatePresence>
 				<motion.div

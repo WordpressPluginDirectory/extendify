@@ -89,7 +89,7 @@ export const DragResizeLayout = ({ children }) => {
 				animate={{ opacity: 1 }}
 				exit={{ y: 0, opacity: 0 }}
 				transition={{ duration: 0.4, delay: 0.1 }}
-				className="fixed bottom-0 right-0 z-high flex max-h-full max-w-full flex-col rounded-lg border border-solid border-gray-300 bg-white shadow-2xl-flipped rtl:left-0 rtl:right-auto"
+				className="fixed bottom-0 right-0 z-higher flex max-h-full max-w-full flex-col rounded-lg border border-solid border-gray-300 bg-white shadow-2xl-flipped rtl:left-0 rtl:right-auto"
 				style={{ top, left, width, height }}
 				ref={ref}>
 				<>
@@ -133,8 +133,8 @@ export const DragResizeLayout = ({ children }) => {
 					{children}
 					<div
 						data-extendify-agent-resize
-						className="absolute -bottom-2 -right-2 z-high h-4 w-4">
-						<div className="h-4 w-4 cursor-se-resize" />
+						className="absolute -bottom-2 -right-2 z-high h-6 w-6">
+						<div className="h-6 w-6 cursor-se-resize" />
 					</div>
 				</>
 			</motion.div>

@@ -9,7 +9,6 @@ export const AdminBar = () => {
 	const { toggleOpen, open, isMobile } = useGlobalStore();
 	const [animate, setAnimate] = useState(false);
 	const [animateIcon, setAnimateIcon] = useState(false);
-	// eslint-disable-next-line no-undef
 	const pageLoaded = useRef(false);
 
 	useEffect(() => {

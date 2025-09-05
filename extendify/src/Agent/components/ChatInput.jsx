@@ -136,13 +136,13 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 	return (
 		<form
 			onSubmit={submitForm}
-			className="relative flex w-full flex-col gap-4 p-4 pt-0">
+			className="relative flex w-full flex-col gap-4 p-4 pb-2 pt-0">
 			<textarea
 				ref={textareaRef}
 				id="extendify-agent-chat-textarea"
 				disabled={disabled}
 				className={classNames(
-					'flex max-h-[calc(75dvh)] w-full resize-none overflow-hidden rounded border border-gray-300 px-3 py-[9px] text-base placeholder:text-gray-700 focus-within:outline-design-main focus:rounded focus:border-design-main focus:ring-design-main disabled:opacity-50 md:text-sm',
+					'flex max-h-[calc(75dvh)] min-h-10 w-full resize-none overflow-hidden rounded border border-gray-300 px-3 py-[9px] text-base placeholder:text-gray-700 focus-within:outline-design-main focus:rounded focus:border-design-main focus:ring-design-main disabled:opacity-50 md:text-sm',
 					{
 						'bg-gray-300': disabled,
 						'bg-gray-50': !disabled,
@@ -160,7 +160,7 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 				}}
 				onKeyDown={handleKeyDown}
 			/>
-			<div className="absolute bottom-6 right-6 flex flex-row justify-end rtl:left-6 rtl:right-auto">
+			<div className="absolute bottom-[1.625rem] right-6 flex flex-row justify-end md:bottom-4 rtl:left-6 rtl:right-auto">
 				<button
 					type="submit"
 					className="inline-flex h-fit items-center justify-center gap-2 whitespace-nowrap rounded-full border bg-design-main p-0.5 text-sm font-medium text-white transition-colors focus-visible:ring-design-main disabled:opacity-20"

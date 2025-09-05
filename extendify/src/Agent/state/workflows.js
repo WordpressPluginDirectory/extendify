@@ -6,10 +6,32 @@ import { workflows } from '@agent/workflows/workflows';
 
 const state = (set, get) => ({
 	workflow: null,
+	block: null, // data-extendify-agent-block-id value
+	setBlock: (block) => set({ block }),
 	getWorkflow: () => {
 		const curr = get().workflow;
 		const currentWorkflow = workflows.find((w) => w.id === curr?.id);
 		return deepMerge(curr, currentWorkflow || {});
+	},
+	// Gets the workflows available to the user
+	getAvailableWorkflows: () => {
+		let wfs = workflows.filter(({ available }) => available());
+		// If a block is set, only include those with 'block'
+		const blockWorkflows = wfs.filter(({ requires }) =>
+			requires?.includes('block'),
+		);
+		if (get().block) return blockWorkflows;
+		// otherwise remove all of the above
+		return wfs.filter(({ id }) => !blockWorkflows.some((w) => w.id === id));
+	},
+	getWorkflowsByFeature: ({ requires } = {}) => {
+		if (!requires) return workflows.filter(({ available }) => available());
+		// e.g. requires: ['block']
+		return workflows.filter(
+			({ available, requires: workflowRequires }) =>
+				available() &&
+				(!requires || workflowRequires?.some((s) => requires.includes(s))),
+		);
 	},
 	workflowData: null,
 	// This is the history of the results
@@ -76,5 +98,10 @@ const state = (set, get) => ({
 export const useWorkflowStore = create()(
 	persist(devtools(state, { name: 'Extendify Agent Workflows' }), {
 		name: `extendify-agent-workflows-${window.extSharedData.siteId}`,
+		partialize: (state) => {
+			// eslint-disable-next-line
+			const { block, ...rest } = state;
+			return { ...rest };
+		},
 	}),
 );

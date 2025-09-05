@@ -5,7 +5,7 @@ import { close } from '@wordpress/icons';
 import { Dialog, DialogTitle } from '@headlessui/react';
 import { useGlobalStore } from '@agent/state/global';
 
-export const ToolTip = ({ children, title, name, onClose, anchor }) => {
+export const ToolTip = ({ children, title, name, onClose, anchors = [] }) => {
 	const { seenToolTips, setSeenToolTip, isMobile } = useGlobalStore();
 	const [open, setOpen] = useState(false);
 	const [left, setLeft] = useState(0);
@@ -19,31 +19,44 @@ export const ToolTip = ({ children, title, name, onClose, anchor }) => {
 	};
 
 	useLayoutEffect(() => {
-		if (!anchor || !open || isMobile) return;
-		// set the anchor's outline to something thick
-		const prevOutline = anchor.style.outline;
-		anchor.style.outline = '99999px solid rgba(0, 0, 0, 0.4)';
+		const anchorEl = anchors
+			.map((s) => document.querySelector(s))
+			.find(Boolean);
+		if (!anchorEl || !open || isMobile) return;
+		// In case the editor sidebar is open
+		const sideBar = document.querySelector(
+			'.interface-interface-skeleton__secondary-sidebar, .interface-interface-skeleton__sidebar',
+		);
+		const prevZ = sideBar?.style.zIndex;
+		// Lower so it doesn't cover up the outline
+		if (sideBar) sideBar.style.zIndex = 20;
+		const prevOutline = anchorEl.style.outline;
+		anchorEl.style.outline = '99999px solid rgba(0, 0, 0, 0.4)';
 		// find the anchor's center (now only support bottom center)
-		const rect = anchor.getBoundingClientRect();
+		const rect = anchorEl.getBoundingClientRect();
 		const x = rect.left + rect.width / 2;
 		const y = rect.top + rect.height;
 		setAnchorWidth(rect.width);
 		setLeft(x);
 		setTop(y);
 		return () => {
-			anchor.style.outline = prevOutline;
+			anchorEl.style.outline = prevOutline;
+			if (sideBar) sideBar.style.zIndex = prevZ;
 		};
-	}, [anchor, open, isMobile]);
+	}, [anchors, open, isMobile]);
 
 	useEffect(() => {
 		if (seenToolTips.includes(name) || isMobile) return;
 		const handleOpen = () => {
-			if (!anchor) return;
-			const visible = anchor
+			const anchorEl = anchors
+				.map((s) => document.querySelector(s))
+				.find(Boolean);
+			if (!anchorEl) return;
+			const visible = anchorEl
 				? !!(
-						anchor.offsetWidth ||
-						anchor.offsetHeight ||
-						anchor.getClientRects().length
+						anchorEl.offsetWidth ||
+						anchorEl.offsetHeight ||
+						anchorEl.getClientRects().length
 					)
 				: false;
 			if (!visible) return;
@@ -53,7 +66,7 @@ export const ToolTip = ({ children, title, name, onClose, anchor }) => {
 		return () => {
 			window.removeEventListener('extendify-agent:closed-button', handleOpen);
 		};
-	}, [setOpen, seenToolTips, name, anchor, isMobile]);
+	}, [setOpen, seenToolTips, name, anchors, isMobile]);
 
 	if (!open || isMobile) return;
 	return (

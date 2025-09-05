@@ -10,7 +10,7 @@ export const usePortal = (id) => {
 				className: 'extendify-agent',
 			});
 			node.id = id;
-			document.body.appendChild(node);
+			document.getElementById('extendify-agent-main').prepend(node);
 		}
 		setMounted(node);
 		return () => node.remove();

@@ -91,17 +91,24 @@ export const CreatingSite = () => {
 		variation?.settings?.typography?.fontFamilies?.custom;
 	const { setUserGaveConsent } = useAIConsentStore();
 	const { loading: logoLoading, logoUrl } = useSiteLogo();
+	const redirectUrl =
+		// on landing pages for some users, we redirect to home_url
+		(window.extOnbData?.redirectToWebsite &&
+			siteObjective === 'landing-page') ||
+		window.extSharedData?.showAIAgents
+			? `${homeUrl}?extendify-launch-success`
+			: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success`;
 
 	useWarnOnLeave(warnOnLeaveReady);
 
 	const doEverything = useCallback(async () => {
 		try {
-			const blogQuestion = siteQA?.questions.find(
+			const blogQuestion = siteQA?.questions?.find(
 				(question) => question.id === 'blog',
 			);
 			const hasBlogGoal = blogQuestion
 				? (blogQuestion?.answerUser ?? blogQuestion?.answerAI) === 'yes'
-				: false;
+				: siteObjective === 'blog' || false;
 			const needsImprintPage = Array.isArray(showImprint)
 				? showImprint.includes(wpLanguage ?? '') &&
 					siteProfile?.aiSiteCategory === 'Business'
@@ -559,9 +566,9 @@ export const CreatingSite = () => {
 			setPage(0);
 			// This will trigger the post launch php functions.
 			await postLaunchFunctions();
-			window.location.replace(`${homeUrl}?extendify-launch-success`);
+			window.location.replace(redirectUrl);
 		});
-	}, [doEverything, setPage, logoLoading]);
+	}, [doEverything, setPage, logoLoading, redirectUrl]);
 
 	useEffect(() => {
 		const documentStyles = window.getComputedStyle(document.body);

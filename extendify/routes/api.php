@@ -22,7 +22,6 @@ use Extendify\Draft\Controllers\ImageController;
 use Extendify\Draft\Controllers\UserSettingsController;
 use Extendify\Draft\Controllers\RouterController as DraftRouterController;
 
-use Extendify\Launch\Controllers\DataController;
 use Extendify\Launch\Controllers\WPController;
 use Extendify\Launch\Controllers\WooCommerceController;
 
@@ -90,6 +89,8 @@ use Extendify\Shared\Controllers\DataController as SharedDataController;
 
         // Agent.
         ApiRouter::get('/agent/theme-variations', [AgentWPController::class, 'getVariations']);
+        ApiRouter::get('/agent/get-block-code', [AgentWPController::class, 'getBlockCode']);
+        ApiRouter::post('/agent/get-block-html', [AgentWPController::class, 'getBlockHtml']);
         ApiRouter::get('/agent/chat-events', [AgentChatController::class, 'get']);
         ApiRouter::post('/agent/chat-events', [AgentChatController::class, 'store']);
         ApiRouter::post('/agent/workflows', [AgentWorkflowController::class, 'add']);

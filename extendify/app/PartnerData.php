@@ -77,6 +77,8 @@ class PartnerData
         'showAIAgents' => false,
         'showImprint' => [],
         'showLaunchQuestions' => false,
+        'pluginGroupId' => null,
+        'requiredPlugins' => null,
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -135,6 +137,8 @@ class PartnerData
         self::$config['showImprint'] = ($data['showImprint'] ?? self::$config['showImprint']);
         self::$config['showLaunchQuestions'] = ($data['showLaunchQuestions'] ?? self::$config['showLaunchQuestions']);
         self::$config['showAIAgents'] = ($data['showAIAgents'] ?? self::$config['showAIAgents']);
+        self::$config['pluginGroupId'] = ($data['pluginGroup'] ?? self::$config['pluginGroupId']);
+        self::$config['requiredPlugins'] = ($data['requiredPlugins'] ?? self::$config['requiredPlugins']);
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);

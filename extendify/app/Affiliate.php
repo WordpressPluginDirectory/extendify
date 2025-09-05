@@ -30,7 +30,6 @@ class Affiliate
 
         $this->wpforms();
         $this->aioseo();
-        $this->monsterInsights();
     }
 
     /**
@@ -45,11 +44,7 @@ class Affiliate
         }
 
         add_filter('wpforms_upgrade_link', function ($url) {
-            return sprintf(
-                'http://www.shareasale.com/r.cfm?B=837827&U=3909268&M=64312&urllink=%s&afftrack=%s',
-                rawurlencode($url),
-                Config::$partnerId
-            );
+            return add_query_arg('campaign', Config::$partnerId, add_query_arg('ref', '51', $url));
         }, PHP_INT_MAX);
     }
 
@@ -65,36 +60,8 @@ class Affiliate
         }
 
         add_filter('aioseo_upgrade_link', function ($url) {
-            return sprintf(
-                'https://shareasale.com/r.cfm?b=1491200&u=3909268&m=94778&urllink=%s&afftrack=%s',
-                rawurlencode($url),
-                Config::$partnerId
-            );
+            return add_query_arg('campaign', Config::$partnerId, add_query_arg('ref', '67', $url));
         }, PHP_INT_MAX);
-    }
-
-    /**
-     * Add the affiliate links to MonsterInsights.
-     *
-     * @return void
-     */
-    private function monsterInsights()
-    {
-        if (! $this->isEnabled('google-analytics-for-wordpress')) {
-            return;
-        }
-
-        add_filter('monsterinsights_shareasale_id', function () {
-            return 3909268;
-        }, PHP_INT_MAX);
-
-        add_filter('monsterinsights_shareasale_redirect_entire_url', function ($url) {
-            return sprintf(
-                'https://shareasale.com/r.cfm?b=966004&u=3909268&m=69975&urllink=%s&afftrack=%s',
-                rawurlencode($url),
-                Config::$partnerId
-            );
-        }, PHP_INT_MAX, 1);
     }
 
     /**

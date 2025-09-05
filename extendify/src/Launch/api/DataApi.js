@@ -1,5 +1,6 @@
 import { PATTERNS_HOST, AI_HOST, IMAGES_HOST } from '@constants';
 import { formatSiteQuestionsForAPI } from '@shared/utils/format-site-questions-for-api';
+import { mergeRequiredPlugins } from '@shared/utils/merge-required-plugins';
 import { getHeadersAndFooters } from '@launch/api/WPApi';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
@@ -371,13 +372,13 @@ export const getSitePlugins = async ({ siteProfile, siteQA }) => {
 	const url = `${AI_HOST}/api/site-plugins`;
 	const method = 'POST';
 	const headers = { 'Content-Type': 'application/json' };
-	const fallback = [];
+	const fallback = mergeRequiredPlugins([]);
 
 	if (!siteProfile) {
 		return fallback;
 	}
 
-	const { wpLanguage, partnerId } = window.extSharedData;
+	const { wpLanguage, partnerId, pluginGroupId } = window.extSharedData;
 	const { siteObjective } = useUserSelectionStore.getState();
 
 	const body = JSON.stringify({
@@ -386,6 +387,7 @@ export const getSitePlugins = async ({ siteProfile, siteQA }) => {
 		siteObjective: siteObjective || '',
 		wpLanguage,
 		partnerId,
+		pluginGroupId,
 	});
 
 	let response;
@@ -401,7 +403,8 @@ export const getSitePlugins = async ({ siteProfile, siteQA }) => {
 
 	try {
 		const data = await response.json();
-		return data?.selectedPlugins ?? fallback;
+		const suggestedPlugins = data?.selectedPlugins ?? fallback;
+		return mergeRequiredPlugins(suggestedPlugins);
 	} catch (error) {
 		return fallback;
 	}

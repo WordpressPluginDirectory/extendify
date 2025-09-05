@@ -140,4 +140,56 @@ class WPController
 
         return new \WP_REST_Response(array_values($deduped));
     }
+
+    /**
+     * Get the HTML of a specific tagged block code
+     *
+     * @param \WP_REST_Request $request The REST API request object.
+     * @return \WP_REST_Response
+     */
+    public static function getBlockCode($request)
+    {
+        $blockId = $request->get_param('blockId');
+        $postId = $request->get_param('postId');
+        $post = \get_post($postId);
+        $ast = array_filter(
+            parse_blocks($post->post_content),
+            function ($block) {
+                return isset($block['blockName']);
+            }
+        );
+        $seq = 0;
+        $found = null;
+        $walk = function (array $list) use (&$walk, &$seq, $blockId, &$found) {
+            foreach ($list as $b) {
+                $seq++;
+                if ($seq === (int) $blockId) {
+                    $found = $b;
+                    return true;
+                }
+
+                if (!empty($b['innerBlocks']) && $walk($b['innerBlocks'])) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        $walk($ast);
+
+        return new \WP_REST_Response(['block' => serialize_block($found)]);
+    }
+
+    /**
+     * Get the rendered HTML of some block code
+     *
+     * @param \WP_REST_Request $request The REST API request object.
+     * @return \WP_REST_Response
+     */
+    public static function getBlockHtml($request)
+    {
+        $blockCode = $request->get_param('blockCode');
+        $content = \do_blocks($blockCode);
+
+        return new \WP_REST_Response(['content' => $content]);
+    }
 }

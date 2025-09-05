@@ -22,6 +22,7 @@ domReady(() => {
 		className: 'extendify-agent',
 		id,
 	});
+	document.body.appendChild(agent);
 	render(<Agent />, agent);
 	// tours
 	const tourId = 'extendify-agent-tour';

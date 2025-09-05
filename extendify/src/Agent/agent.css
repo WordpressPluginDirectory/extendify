@@ -126,7 +126,6 @@ body.extendify-agent-mobile-btn-open #site-editor {
 		100vh - var(--extendify-agent-mobile-btn-height, 64px)
 	) !important;
 }
-body.extendify-agent-mobile-btn-open .interface-interface-skeleton__body,
 body.extendify-agent-mobile-btn-open .block-editor-block-inspector {
 	padding-bottom: var(--extendify-agent-mobile-btn-height, 64px);
 }
@@ -136,4 +135,21 @@ body.extendify-agent-mobile-btn-open
 	bottom: calc(
 		var(--extendify-agent-mobile-btn-height, 64px) + 16px
 	) !important;
+}
+
+.extendify-agent-highlighter-mode {
+	cursor: crosshair !important;
+	user-select: none !important;
+}
+.extendify-agent-highlighter-mode.extendify-agent-busy {
+	cursor: not-allowed !important;
+}
+
+.extendify-agent-highlighter-mode a,
+.extendify-agent-highlighter-mode button,
+.extendify-agent-highlighter-mode [role="button"],
+.extendify-agent-highlighter-mode [role="link"] {
+	cursor: crosshair !important;
+	text-decoration: none !important;
+	pointer-events: none !important;
 }

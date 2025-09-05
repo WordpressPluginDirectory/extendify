@@ -5,20 +5,19 @@ import {
 	useRef,
 	useCallback,
 } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import { Chat } from '@agent/Chat';
 import { pickWorkflow, handleWorkflow, callTool, digest } from '@agent/api';
 import { ChatInput } from '@agent/components/ChatInput';
 import { ChatMessages } from '@agent/components/ChatMessages';
 import { ChatSuggestions } from '@agent/components/ChatSuggestions';
+import { PageDocument } from '@agent/components/PageDocument';
 import { WelcomeScreen } from '@agent/components/WelcomeScreen';
 import { UsageMessage } from '@agent/components/messages/UsageMessage';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
-import { workflows as wfs } from '@agent/workflows/workflows';
 
-const workflows = wfs.filter(({ available }) => available());
-const workflowIds = workflows.map((w) => w.id);
 const devmode = window.extSharedData.devbuild;
 
 export const Agent = () => {
@@ -31,7 +30,11 @@ export const Agent = () => {
 		addWorkflowResult,
 		setWhenFinishedToolProps,
 		whenFinishedToolProps,
+		getAvailableWorkflows,
+		block,
+		setBlock,
 	} = useWorkflowStore();
+	const workflowIds = getAvailableWorkflows().map((w) => w.id);
 	const {
 		open,
 		setOpen,
@@ -52,6 +55,8 @@ export const Agent = () => {
 		setCanType(true);
 		agentWorking.current = false;
 		setWaitingOnToolOrUser(false);
+		setBlock(null);
+		window.dispatchEvent(new Event('extendify-agent:remove-block-highlight'));
 		const c = Array.from(
 			document.querySelectorAll(
 				'#extendify-agent-chat-scroll-area div:last-child',
@@ -59,7 +64,7 @@ export const Agent = () => {
 		)?.at(-1);
 		c?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 		c?.scrollBy({ top: -5, behavior: 'smooth' });
-	}, []);
+	}, [setBlock]);
 
 	const findAgent = useCallback(
 		async (options = {}) => {
@@ -93,7 +98,7 @@ export const Agent = () => {
 			}
 			if (!wf?.id) setCanType(true);
 		},
-		[addMessage, updateRetryAfter, setWorkflow],
+		[addMessage, updateRetryAfter, setWorkflow, workflowIds],
 	);
 
 	const handleSubmit = useCallback(
@@ -234,7 +239,11 @@ export const Agent = () => {
 		if (waitingOnToolOrUser || !open || !workflow?.id) return;
 		// Some workflows require they dont change pages
 		const theyMoved = workflow?.startingPage !== window.location.href;
-		if (workflow?.cancelOnPageChange && theyMoved) {
+		// Requires a block to be selected
+		const blockMissing = !block && workflow?.requires?.includes('block');
+		const cancelWorkflow =
+			(workflow?.cancelOnPageChange && theyMoved) || blockMissing;
+		if (cancelWorkflow) {
 			addMessage('workflow', { status: 'canceled', agent: workflow.agent });
 			setWorkflow(null);
 			cleanup();
@@ -397,6 +406,7 @@ export const Agent = () => {
 		setShowSuggestions,
 		whenFinishedToolProps,
 		setWhenFinishedToolProps,
+		block,
 	]);
 
 	useEffect(() => {
@@ -406,10 +416,15 @@ export const Agent = () => {
 
 	const showWelcomeScreen = !hasMessages();
 	const showPromptSuggestions =
-		!workflow?.id && !showWelcomeScreen && chatAvailable && showSuggestions;
+		!workflow?.id &&
+		!showWelcomeScreen &&
+		chatAvailable &&
+		showSuggestions &&
+		!block;
+	const busy = !canType || !chatAvailable || workflow?.id;
 
 	return (
-		<Chat>
+		<Chat busy={busy}>
 			<div className="relative z-50 flex h-full flex-col overflow-auto border-t border-solid border-gray-300">
 				{showWelcomeScreen ? (
 					<div
@@ -429,8 +444,9 @@ export const Agent = () => {
 				)}
 
 				<div>
-					<div className="relative flex flex-col px-2.5 pb-2 pt-2.5 shadow-lg-flipped">
-						<ChatSuggestions show={showPromptSuggestions} />
+					<div className="relative flex flex-col px-3 pb-2 pt-2.5 shadow-lg-flipped">
+						{showPromptSuggestions ? <ChatSuggestions /> : null}
+						{block ? <PageDocument busy={busy} blockId={block} /> : null}
 						<UsageMessage
 							onReady={() => {
 								cleanup();
@@ -444,6 +460,12 @@ export const Agent = () => {
 						disabled={!canType || !chatAvailable}
 						handleSubmit={handleSubmit}
 					/>
+					<div className="text-pretty px-4 pb-2 text-center text-xss leading-none text-gray-600">
+						{__(
+							'AI Agent can make mistakes. Check changes before saving.',
+							'extendify-local',
+						)}
+					</div>
 				</div>
 			</div>
 		</Chat>

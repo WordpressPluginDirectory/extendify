@@ -39,7 +39,7 @@ export const WorkflowMessage = ({ message, animate }) => {
 							'extendify-local',
 						)}
 					</p>
-					<ChatSuggestions show={true} />
+					<ChatSuggestions />
 				</div>
 			) : null}
 		</div>

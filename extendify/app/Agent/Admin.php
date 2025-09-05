@@ -30,6 +30,12 @@ class Admin
         \add_action('wp_enqueue_scripts', [$this, 'loadScriptsAndStyles']);
         ChatHistoryController::init();
         WorkflowHistoryController::init();
+
+        // Tag blocks on the frontend for dom highlighter
+        // \add_filter('the_content', [$this, 'tagBlocksUidEnable'], 0);
+        // \add_filter('the_content', [$this, 'tagBlocksUidDisable'], constant('PHP_INT_MAX'));
+        // \add_filter('pre_render_block', [$this, 'tagBlocksUidPre'], 10, 2);
+        // \add_filter('render_block', [$this, 'tagBlocksUidPost'], 10, 2);
     }
 
     /**
@@ -267,5 +273,101 @@ class Admin
 
         shuffle($suggestions);
         return $suggestions;
+    }
+
+    /**
+     * Enable the block counter (UID tagging)
+     * @param string $content
+     * @return string
+     */
+    public function tagBlocksUidEnable($content)
+    {
+        if (is_admin()) {
+            return $content;
+        }
+
+        $GLOBALS['extendify_agent_block_counter_enabled'] = true;
+        $GLOBALS['extendify_agent_block_counter'] = [
+            'seq'   => 0,
+            'stack' => [],
+        ];
+        return $content;
+    }
+
+    /**
+     * Disable block UID tagging.
+     * @param string $content
+     * @return string
+     */
+    public function tagBlocksUidDisable($content)
+    {
+        if (is_admin()) {
+            return $content;
+        }
+
+        $GLOBALS['extendify_agent_block_counter_enabled'] = false;
+        return $content;
+    }
+
+    /**
+     * Counts (tags later) each block in the content area
+     *
+     * @param string $pre
+     * @param array $parsed_block
+     * @return string
+     */
+    public function tagBlocksUidPre($pre, $parsed_block)
+    {
+        if (is_admin() || empty($parsed_block['blockName'])) {
+            return $pre;
+        }
+
+        if (! ($GLOBALS['extendify_agent_block_counter_enabled'] ?? false)) {
+            return $pre;
+        }
+
+        // Init on first block
+        if (empty($GLOBALS['extendify_agent_block_counter'])) {
+            $GLOBALS['extendify_agent_block_counter'] = [
+                'seq' => 0,
+                'stack' => []
+            ];
+        }
+
+        $GLOBALS['extendify_agent_block_counter']['seq']++;
+        $id = $GLOBALS['extendify_agent_block_counter']['seq'];
+
+        // Inner blocks will push more IDs. pop on render_block.
+        $GLOBALS['extendify_agent_block_counter']['stack'][] = $id;
+        return $pre;
+    }
+
+    /**
+     * Tag blocks with a unique ID.
+     *
+     * @param string $content
+     * @param array $parsed_block
+     * @return string
+     */
+    public function tagBlocksUidPost($content, $parsed_block)
+    {
+        if (is_admin() || ! $content || empty($parsed_block['blockName'])) {
+            return $content;
+        }
+
+        if (! ($GLOBALS['extendify_agent_block_counter_enabled'] ?? false)) {
+            return $content;
+        }
+
+        if (empty($GLOBALS['extendify_agent_block_counter']['stack'])) {
+            return $content;
+        }
+
+        $id = array_pop($GLOBALS['extendify_agent_block_counter']['stack']);
+        $attr = sprintf(' data-extendify-agent-block-id="%s" ', esc_attr($id));
+
+        // Inject right after the first tag name.
+        $content = preg_replace('/^(\s*<(?!\!|\/|\?)[\w:-]+)/', '$1' . $attr, $content, 1);
+        return $content;
     }
 }
