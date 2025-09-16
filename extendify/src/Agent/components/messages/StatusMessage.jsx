@@ -6,7 +6,7 @@ import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
 export const StatusMessage = ({ status, animate }) => {
 	const { type, label } = status.details;
 	const statusContent = {
-		'calling-agent': __('Finding an agent...', 'extendify-local'),
+		'calling-agent': __('Thinking...', 'extendify-local'),
 		'agent-working': __('Working on it...', 'extendify-local'),
 		'tool-started': label || __('Gathering data...', 'extendify-local'),
 		'tool-completed': label || __('Analyzing...', 'extendify-local'),

@@ -39,8 +39,7 @@ export const Home = () => {
 				)}>
 				<Button
 					variant="primary"
-					__next40pxDefaultSize
-					className="w-full justify-center"
+					className="h-auto min-h-10 w-full justify-center whitespace-normal break-words py-2.5"
 					onClick={() => navigateTo('unsplash')}>
 					{__('Search Unsplash', 'extendify-local')}
 				</Button>

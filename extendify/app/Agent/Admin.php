@@ -103,7 +103,7 @@ class Admin
                 'abilities' => $abilities,
                 // List of suggestions the AI can make for this user.
                 // For example, we could check whether they need to set up a specific plugin.
-                'suggestions' => Escaper::recursiveEscAttr($this->getSuggestions($context, $abilities)),
+                'suggestions' => $this->getSuggestions($context, $abilities),
                 'chatHistory' => Escaper::recursiveEscAttr(ChatHistoryController::getChatHistory()),
                 'workflowHistory' => Escaper::recursiveEscAttr(WorkflowHistoryController::getWorkflowHistory()),
                 'userData' => [
@@ -195,6 +195,15 @@ class Admin
                 'message' => __('What tours are available?', 'extendify-local'),
             ]
         ];
+
+        if ($abilities['canEditSettings']) {
+            $suggestions[] = [
+                'icon' => 'edit',
+                'message' => __('I want to change my site title', 'extendify-local'),
+                "feature" => true,
+            ];
+        }
+
         // If they have theme variations, suggest they can change the theme styling.
         if ($context['hasThemeVariations']) {
             $suggestions[] = [
@@ -204,7 +213,7 @@ class Admin
             ];
         }
 
-        if ($context['postId'] && $abilities['canEditPost']) {
+        if ($context['postId'] && $abilities['canEditPost'] && $context['usingBlockEditor']) {
             $suggestions[] = [
                 'icon' => 'edit',
                 'message' => __('Edit text on this page', 'extendify-local'),

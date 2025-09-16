@@ -65,45 +65,45 @@ msgstr "Вставити патерн"
 msgid "Extendify Library User Settings"
 msgstr "Налаштування користувача бібліотеки Extendify"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Draft/components/ConsentSidebar.jsx:23
 #: src/HelpCenter/pages/AIChat.jsx:174
 msgid "Accept"
 msgstr "Прийняти"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Draft/components/ConsentSidebar.jsx:12
 #: src/HelpCenter/pages/AIChat.jsx:161
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:10
 msgid "Terms of Use"
 msgstr "Умови використання"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/PagesSelect.jsx:189
 msgid "View more pages"
 msgstr "Переглянути більше сторінок"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/PagesSelect.jsx:148
 msgid "We already selected the most common pages for your type of website."
 msgstr "Ми вже вибрали найпоширеніші сторінки для вашого типу вебсайту."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/PagesSelect.jsx:144
 msgid "Pick the pages to add to your website"
 msgstr "Виберіть сторінки, які хочете додати на свій вебсайт"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
 #: src/Launch/pages/PagesSelect.jsx:68
 msgid "Home page"
 msgstr "Головна сторінка"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/HomeSelect.jsx:33
 msgid "Pick a design for your website"
 msgstr "Виберіть дизайн для вашого вебсайту"
@@ -113,88 +113,88 @@ msgstr "Виберіть дизайн для вашого вебсайту"
 msgid "Searching..."
 msgstr "Пошук..."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:165
 msgid "Enter your website name"
 msgstr "Введіть назву вашого вебсайту"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:513
 msgid "Helping you to succeed"
 msgstr "Допомога вам досягти успіху"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:254
 msgid "Adding page content"
 msgstr "Додавання вмісту сторінки"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:223
 msgid "Installing necessary plugins"
 msgstr "Установка необхідних плагінів"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:122
 msgid "Creating a beautiful website"
 msgstr "Створення прекрасного вебсайту"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:121
 msgid "Applying your website styles"
 msgstr "Застосування стилів вашого вебсайту"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:250
 msgid "Personalizing your experience"
 msgstr "Персоналізація вашого досвіду"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:249
 msgid "Populating data"
 msgstr "Заповнення даними"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/api/Data.js:50
 #: src/Draft/api/Data.js:88
 msgid "Service temporarily unavailable"
 msgstr "Сервіс тимчасово недоступний"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:241
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:250
 msgid "Discard"
 msgstr "Скасувати"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:233
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:242
 msgid "Try again"
 msgstr "Спробувати знову"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:196
 #: src/Draft/app.js:23
 #: src/Draft/app.js:28
 msgid "AI Tools"
 msgstr "Інструменти AI"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:192
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:194
 msgid "Replace selected block text"
 msgstr "Замінити текст вибраного блоку"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/Input.jsx:49
 msgid "Ask AI to generate text"
 msgstr "Попросіть штучний інтелект генерувати текст"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/Input.jsx:46
 msgid "AI is writing..."
 msgstr "AI пише..."
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:150
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:246
 #: src/Draft/components/EditMenu.jsx:52
@@ -203,8 +203,8 @@ msgid "Simplify language"
 msgstr "Спростіть мову"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:158
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:254
 #: src/Draft/components/EditMenu.jsx:62
@@ -213,8 +213,8 @@ msgid "Make longer"
 msgstr "Зробити довшим"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:154
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:250
 #: src/Draft/components/EditMenu.jsx:57
@@ -222,16 +222,16 @@ msgstr "Зробити довшим"
 msgid "Make shorter"
 msgstr "Зробити коротшим"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/EditMenu.jsx:47
 #: src/Draft/components/ToolbarMenu.jsx:110
 msgid "Fix spelling & grammar"
 msgstr "Виправити правопис та граматику"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:142
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:238
 #: src/Draft/components/EditMenu.jsx:41
@@ -239,7 +239,7 @@ msgstr "Виправити правопис та граматику"
 msgid "Improve writing"
 msgstr "Покращити письмо"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:18
 msgid "Write a blog post about"
 msgstr "Напишіть блоговий запис про"
@@ -269,21 +269,21 @@ msgstr "Проміжний"
 msgid "Beginner"
 msgstr "Початківець"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:3
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
 #: src/Agent/components/Rating.jsx:48
 #: src/HelpCenter/components/ai-chat/Rating.jsx:47
 msgid "Rate that this answer was not helpful"
 msgstr "Оцініть, наскільки ця відповідь була не корисною"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:3
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Оцініть наскільки корисною була ця відповідь"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:3
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:47
@@ -343,56 +343,56 @@ msgstr "Згорнути меню"
 msgid "Search for articles"
 msgstr "Шукати статті"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:100
 msgid "The selected pattern has been inserted into the page."
 msgstr "Обраний патерн було додано на сторінку."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:99
 msgid "View the Inserted Pattern"
 msgstr "Переглянути доданий патерн"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:80
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Просто оберіть будь-який патерн, який хочете додати на сторінку, натиснувши на нього."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:79
 msgid "Select a Pattern"
 msgstr "Обрати патерн"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:54
 msgid "Click on any pattern category to refine the selection."
 msgstr "Натисніть на будь-яку категорію патернів, щоб уточнити вибір."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:53
 msgid "Filter Patterns"
 msgstr "Фільтрувати патерни"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:32
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Бібліотеку дизайнів Extendify можна відкрити, натиснувши на кнопку ліворуч."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:31
@@ -508,21 +508,21 @@ msgstr "На головній сторінці панелі керування W
 msgid "Access the Site Assistant at any time."
 msgstr "Користуйтеся помічником по сайту в будь-який час."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Знову відкрийте Помічник сайту, натиснувши на цей пункт меню у будь-який час."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Подивіться наші індивідуальні рекомендації, які допоможуть вам у створенні сайту."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
@@ -536,7 +536,7 @@ msgstr "Отримайте швидкий доступ до найбільш п�
 msgid "Knowledge Base"
 msgstr "База знань"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
@@ -555,9 +555,9 @@ msgid "Create a super-fast, beautiful, and fully customized site in minutes with
 msgstr "Створіть собі швидкий та гарний сайт за лічені хвилини за допомогою нашого інструмента «Site Launcher»."
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:39
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
-#: src/Draft/pages/Home.jsx:55
+#: public/build/extendify-common-659bd241faa47e112e9f.js:39
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
+#: src/Draft/pages/Home.jsx:54
 msgid "Home"
 msgstr "Головна"
 
@@ -585,56 +585,56 @@ msgstr "Огляди"
 msgid "Help Center"
 msgstr "Довідковий центр"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Натисність кнопку «Додати», щоб створити нового користувача для вашого сайту."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Додати нового користувача"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Скористуйтеся пошуком, щоб швидко знайти конкретного користувача."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Шукати користувачів"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Натисність кнопку «Редагувати», щоб змінити роль користувача або змінити інформацію в його обліковому записі."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Редагувати інформацію користувача"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "У цій таблиці ви побачите всіх ваших користувачів, в тому числі адміністраторів."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:251
@@ -643,231 +643,231 @@ msgstr "У цій таблиці ви побачите всіх ваших ко�
 msgid "Users"
 msgstr "Користувачі"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Перейдіть у цей розділ, щоб переглянути користувачів вашого сайту та керувати ними."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Розділ «Всі користувачі»"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Натисність тут, щоб додати ще один плагін на сайт."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Додати плагін"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Під кожним плагіном ви можете його активувати або деактивувати."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Опція активувати/деактивувати"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "У цій таблиці ви знайдете всі плагіни, що встановлені у вас на сайті. Як ввімкнені, так і вимкнені."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Встановлені плагіни"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Перейдіть у цей розділ, щоб переглянути встановлені плагіни на та керувати ними."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Розділ «Встановлені плагіни»"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Якщо у вас є плагін, який ви скачали з іншого сайту, ви можете завантажити його тут."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Завантажити плагін"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Натисніть «Встановити», щоб додати плагін на сайт. Потім натисніть «Активувати», щоб увімкнути плагін."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Встановити плагін"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Тут ви знайдете важливу інформацію про кожен плагін."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Інформація про плагін"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Шукати плагін за назвою або функціоналом."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Натисніть тут, щоб перейти в розділ «Додати плагіни»."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Розділ «Додати новий»"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:251
 #: src/HelpCenter/tours/page-editor.js:254
 msgid "Publish or Save"
 msgstr "Опублікувати або Зберегти"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:231
 #: src/HelpCenter/tours/page-editor.js:234
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Натисність «Переглянути», щоб побачити, як внесені зміни будуть виглядати на сайті."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:230
 #: src/HelpCenter/tours/page-editor.js:233
 msgid "Preview"
 msgstr "Перегляд"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:188
 #: src/HelpCenter/tours/page-editor.js:191
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Оберіть «Сторінка» або «Блок», щоб змінити налаштування для всієї сторінки або обраного блока."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:187
 #: src/HelpCenter/tours/page-editor.js:190
 msgid "Page and Block Settings"
 msgstr "Наташтування сторінки або блока"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:172
 #: src/HelpCenter/tours/page-editor.js:175
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Це зразок блоку «Параграф». Він може складатись з кількох речень і займати кілька рядків. Ви можете додати на сторінку стільки блоків, скільки забажаєте."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:131
 #: src/HelpCenter/tours/page-editor.js:134
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Кожен блок відображатиметься тут і його можна буде відредагувати, натиснувши на нього."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:130
 #: src/HelpCenter/tours/page-editor.js:133
 msgid "Blocks"
 msgstr "Блоки"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:91
 #: src/HelpCenter/tours/page-editor.js:94
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Редагуйте назву сторінки, натиснувши на неї. Ця назва може бути або не бути відображена на опублікованій сторінці, в залежності від шаблону сторінки."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:90
 #: src/HelpCenter/tours/page-editor.js:93
 msgid "Page Title"
 msgstr "Назва сторінки"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:50
 #: src/HelpCenter/tours/page-editor.js:50
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Додайте блок, натиснувши на нього або перетягнувши на сторінку."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:49
 #: src/HelpCenter/tours/page-editor.js:49
 msgid "Block Inserter"
 msgstr "Розділ з блоками"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:29
 #: src/HelpCenter/tours/page-editor.js:29
 msgid "Click the plus to open the block inserter."
 msgstr "Натисніть на плюс, щоб додати новий блок."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:28
 #: src/HelpCenter/tours/page-editor.js:28
@@ -879,8 +879,8 @@ msgid "Page not found"
 msgstr "Сторінку не знайдено"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:23
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-common-659bd241faa47e112e9f.js:23
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:435
 msgid "Events"
 msgstr "Події"
@@ -898,14 +898,14 @@ msgstr "Перейти до розділу «Допомога»"
 msgid "Dashboard"
 msgstr "Майстерня"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Завдання"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -926,7 +926,7 @@ msgstr "У будь-який час ви можете побачити свій 
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Створюйте нові сторінки на вашому сайті або редагуйте вже створені."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
 #: src/Agent/components/GuidedTour.jsx:478
@@ -935,14 +935,14 @@ msgstr "Створюйте нові сторінки на вашому сайт�
 msgid "Done"
 msgstr "Готово"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/components/GuidedTour.jsx:431
 #: src/HelpCenter/components/tours/GuidedTour.jsx:434
 msgid "Tour Steps"
 msgstr "Етапи огляду"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/components/GuidedTour.jsx:310
 #: src/HelpCenter/components/tours/GuidedTour.jsx:311
@@ -950,7 +950,7 @@ msgid "Tour"
 msgstr "Огляд"
 
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:4
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/Library/components/topbar/Topbar.jsx:22
 #: src/PageCreator/components/topbar/Topbar.jsx:60
 msgid "Open for new pages"
@@ -959,23 +959,23 @@ msgstr "Запускати бібліотеку на нових сторінка
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:4
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/Library/components/topbar/Topbar.jsx:12
 #: src/PageCreator/components/topbar/Topbar.jsx:48
 #, js-format
 msgid "Toggle %s on new pages"
 msgstr "Відкривати %s на нових сторінках"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:533
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "На сервері виникла помилка. Будь-ласка, перезавантажте сторінку та спробуйте знову."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:96
-#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:86
-#: src/Agent/components/workflows/UpdatePostConfirm.jsx:46
+#: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:46
+#: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:86
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:96
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:82
 msgid "Save"
 msgstr "Зберегти"
@@ -985,7 +985,7 @@ msgstr "Зберегти"
 msgid "Enter a site description..."
 msgstr "Введіть опис сайту…"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:83
@@ -1006,7 +1006,7 @@ msgstr "Завантажити логотип сайту"
 
 #: app/AdminPageRouter.php:41
 #: app/AdminPageRouter.php:65
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -1021,8 +1021,8 @@ msgid "Site Assistant"
 msgstr "Помічник сайту"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:7
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-common-659bd241faa47e112e9f.js:7
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:37
 msgid "Blog"
 msgstr "Блог"
@@ -1072,7 +1072,7 @@ msgstr "Замінити зображення"
 msgid "Edit or update the image"
 msgstr "Редагувати або оновити зображення"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/components/GuidedTour.jsx:306
@@ -1110,37 +1110,32 @@ msgstr "Продовжити будувати сайт"
 msgid "Let's Start Building Your Website"
 msgstr "Давайте почнемо будувати ваш сайт"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
-#: src/Launch/components/PageControl.jsx:213
-msgid "Exit Launch"
-msgstr "Вийти з меню Запуску"
-
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:517
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Перенаправлення через 3, 2, 1…"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:516
 msgid "Your website has been created!"
 msgstr "Ваш вебсайт створено!"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:512
 msgid "Setting up your Site Assistant"
 msgstr "Налаштування вашого помічника сайту"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:255
 msgid "Starting off with a full website"
 msgstr "Початок роботи з повноцінним вебсайтом"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Agent/components/GuidedTour.jsx:421
 #: src/HelpCenter/components/tours/GuidedTour.jsx:424
-#: src/Launch/components/PageControl.jsx:230
+#: src/Launch/components/PageControl.jsx:231
 msgid "Back"
 msgstr "Назад"
 
@@ -1149,8 +1144,8 @@ msgstr "Назад"
 msgid "Site Industry"
 msgstr "Галузь сайту"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Agent/components/messages/AgentMessage.jsx:15
 #: src/Agent/components/messages/AgentMessage.jsx:19
 #: src/Agent/components/messages/AgentMessage.jsx:23
@@ -1163,12 +1158,12 @@ msgstr "Галузь сайту"
 msgid "Take me there"
 msgstr "Перейти туди"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/NeedsTheme.jsx:14
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Вітаємо, додаток «Запуск» працює за допомогою теми Extendable і вона потрібна для того, щоб продовжити. Її можна встановити за посиланням нижче і почати знову, коли вона буде ввімкнена."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/NeedsTheme.jsx:10
 msgid "One more thing before we start."
 msgstr "Ще одна річ, перш ніж ми почнемо."
@@ -1185,12 +1180,12 @@ msgstr "Плагіни"
 msgid "View Site"
 msgstr "Показати сайт"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Agent/components/GuidedTour.jsx:467
 #: src/HelpCenter/components/tours/GuidedTour.jsx:470
-#: src/Launch/components/PageControl.jsx:284
+#: src/Launch/components/PageControl.jsx:285
 msgid "Next"
 msgstr "Далі"
 
@@ -1202,37 +1197,37 @@ msgstr "Далі"
 msgid "Pages"
 msgstr "Сторінки"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/HomeSelect.jsx:34
 msgid "You can personalize this later."
 msgstr "Ви можете персоналізувати це пізніше."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
-#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:61
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:48
 #: src/Launch/components/LoadingIndicator.jsx:5
 #: src/Launch/pages/SiteQuestions.jsx:156
 msgid "Loading..."
 msgstr "Завантаження…"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/SmallPreview.jsx:171
 #: src/Launch/pages/ObjectiveSelection.jsx:118
 #: src/Launch/pages/SiteStructure.jsx:92
 msgid "Press to select"
 msgstr "Натисність, щоб обрати"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/Launch/components/RetryNotice.jsx:12
 #: src/PageCreator/components/RetryNotice.jsx:12
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Хвилинку, це займає більше часу, ніж очікувалось."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
@@ -1251,13 +1246,13 @@ msgid "Design"
 msgstr "Дизайн"
 
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/Library/components/topbar/CloseButton.jsx:9
 #: src/PageCreator/components/topbar/CloseButton.jsx:9
 msgid "Close"
 msgstr "Закрити"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/Input.jsx:73
 msgid "Submit"
 msgstr "Відправити"
@@ -1268,7 +1263,7 @@ msgstr "Відправити"
 msgid "Settings"
 msgstr "Налаштування"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
@@ -1291,7 +1286,7 @@ msgid "Extendify"
 msgstr "Extendify"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
 #: src/Agent/components/GuidedTour.jsx:438
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
@@ -1299,43 +1294,43 @@ msgstr "Extendify"
 msgid "%1$s of %2$s"
 msgstr "%1$s з %2$s"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:284
 msgid "Creating pages with custom content"
 msgstr "Створення сторінок з власним вмістом"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:373
 msgid "Setting up site layout"
 msgstr "Налаштування компонування сайту"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:11
 msgid "Professional"
 msgstr "Професійний"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:15
 msgid "Friendly"
 msgstr "Дружній"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:19
 msgid "Inspirational"
 msgstr "Надихаючий"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:23
 msgid "Informative"
 msgstr "Інформативний"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:27
 msgid "Persuasive"
 msgstr "Переконливий"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
-#: src/Launch/components/PageControl.jsx:269
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: src/Launch/components/PageControl.jsx:270
 msgid "Skip"
 msgstr "Пропустити"
 
@@ -1345,42 +1340,42 @@ msgid "Launch"
 msgstr "Запуск"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:3
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-launch-178234bad6040f2e6113.js:3
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/Launch/api/WPApi.js:87
 #: src/Launch/api/WPApi.js:175
 #: src/PageCreator/api/WPApi.js:52
 msgid "Added by Launch"
 msgstr "Доданий Launch"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:5
+#: public/build/extendify-launch-178234bad6040f2e6113.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:151
 msgid "Start over?"
 msgstr "Почати спочатку?"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:5
+#: public/build/extendify-launch-178234bad6040f2e6113.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:155
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Пройдіть процес введення в курс справ ще раз, щоб створити новий сайт."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:179
 msgid "Exit"
 msgstr "Вийти"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:191
 msgid "Processing"
 msgstr "Обробка"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:187
 msgid "Continue"
 msgstr "Продовжити"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:130
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:136
@@ -1391,264 +1386,264 @@ msgstr "Продовжити"
 msgid "Ask AI"
 msgstr "Запитати у ШІ"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:204
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:209
 msgid "Insert at top"
 msgstr "Вставити на початок"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:214
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:222
 msgid "Insert after the selected text"
 msgstr "Вставити після виділеного тексту"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:224
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:233
 msgid "Insert at bottom"
 msgstr "Вставити внизу"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:13
 msgid "A paragraph …"
 msgstr "Абзац …"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:14
 msgid "Write a paragraph about"
 msgstr "Напишіть параграф про"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:17
 msgid "Blog post …"
 msgstr "Запис у блозі…"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:21
 msgid "An informative article …"
 msgstr "Інформативна стаття …"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:22
 msgid "Write an informative article about"
 msgstr "Напишіть інформативну статтю про"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:25
 msgid "Headline …"
 msgstr "Заголовок …"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:26
 msgid "Write a headline for"
 msgstr "Напишіть заголовок для"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:29
 msgid "List …"
 msgstr "Перелік ..."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:30
 msgid "Write a list of"
 msgstr "Напишіть перелік"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:29
 msgid "Catalan"
 msgstr "Каталанська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:39
 msgid "Danish"
 msgstr "Данська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:44
 msgid "Dutch"
 msgstr "Нідерландська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:49
 msgid "Dutch (Belgium)"
 msgstr "Нідерландський (Бельгія)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:54
 msgid "English"
 msgstr "Англійська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:64
 msgid "Estonian"
 msgstr "Естонська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:69
 msgid "Finnish"
 msgstr "Фінська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:74
 msgid "French (Belgium)"
 msgstr "Французький (Бельгія)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:84
 msgid "French (France)"
 msgstr "Французька (Франція)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:89
 msgid "German"
 msgstr "Німецька"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:94
 msgid "German (Switzerland)"
 msgstr "Німецька (Швейцарія)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:119
 msgid "Indonesian"
 msgstr "Індонезійська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:124
 msgid "Italian"
 msgstr "Італійська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:129
 msgid "Japanese"
 msgstr "Японська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:144
 msgid "Polish"
 msgstr "Польська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:149
 msgid "Portuguese (Brazil)"
 msgstr "Португальська (Бразилія)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:154
 msgid "Portuguese (Portugal)"
 msgstr "Португальська (Португалія)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:174
 msgid "Spanish (Spain)"
 msgstr "Іспанський (Іспанія)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:189
 msgid "Swedish"
 msgstr "Шведська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:199
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:204
 msgid "Vietnamese"
 msgstr "В'єтнамська"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:163
 #: src/Draft/components/TranslationDropdown.jsx:224
 msgid "Translate"
 msgstr "Перекласти"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:239
 msgid "Translate to..."
 msgstr "Перекласти на..."
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:228
 #: src/Draft/components/Input.jsx:48
 msgid "Ask AI to edit"
 msgstr "Попросити ШІ відредагувати"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:220
 #: src/Draft/components/SelectedText.jsx:53
 msgid "Remove selection"
 msgstr "Вилучити вибране"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/Draft.jsx:148
 msgid "Suggested prompts"
 msgstr "Рекомендовані підказки"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/ToolbarMenu.jsx:162
 msgid "Custom prompt"
 msgstr "Спеціальний запит"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/CreditCounter.jsx:37
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Ви все ще можете шукати та знаходити чудові зображення на Unsplash, поки ваші кредити не скинуться."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/CreditCounter.jsx:47
 msgid "Search on Unsplash"
 msgstr "Шукати на Unsplash"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:38
 msgid "Tell AI about the image you would like to create"
 msgstr "Розкажіть штучному інтелекту про зображення, яке ви хочете створити"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:42
 msgid "Image Prompt"
 msgstr "Запит зображення"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:88
 msgid "Generating image..."
 msgstr "Генерування зображення..."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:89
 msgid "Generate image"
 msgstr "Створити зображення"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/ImagePreview.jsx:72
 msgid "Generating your image: "
 msgstr "Генерація вашого зображення:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/image-generation/ImagePreview.jsx:85
 msgid "Importing image..."
 msgstr "Імпортування зображення..."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/image-generation/ImagePreview.jsx:86
 msgid "Use this image"
 msgstr "Використати це зображення"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/image-generation/ImagePreview.jsx:92
 msgid "Delete image"
 msgstr "Видалити зображення"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/GenerateImage.jsx:98
 msgid "Image Description"
 msgstr "Опис зображення"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/api/Data.js:80
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Ваш запит було відхилено через нашу систему безпеки. Ваше повідомлення може містити текст, який не дозволений нашою системою безпеки."
@@ -1711,7 +1706,7 @@ msgstr "Редагувати підвал"
 msgid "Reset site"
 msgstr "Скинути сайт"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -1970,7 +1965,7 @@ msgstr "Результати пошуку"
 msgid "Search the knowledge base"
 msgstr "Шукати в базі знань"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -1980,14 +1975,14 @@ msgstr "Шукати в базі знань"
 msgid "Page editor"
 msgstr "Редактор сторінок"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:252
 #: src/HelpCenter/tours/page-editor.js:255
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Натисніть \"Опублікувати\" або \"Оновити\", щоб зберегти зроблені вами зміни на сторінці та застосувати їх на сайті."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -1997,7 +1992,7 @@ msgstr "Натисніть \"Опублікувати\" або \"Оновити\
 msgid "Installing a plugin"
 msgstr "Встановлення плагіна"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -2012,21 +2007,21 @@ msgstr "Керування плагінами"
 msgid "You can always access the help center by clicking this button."
 msgstr "Ви завжди можете отримати доступ до центру допомоги, натиснувши цю кнопку."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Відвідайте ваш сайт"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Ви завжди можете відвідати свій сайт, натиснувши цю кнопку."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -2098,8 +2093,8 @@ msgid "Service offline. Check back later."
 msgstr "Сервіс поза мережею. Зайдіть пізніше."
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:4
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:4
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/CreditCounter.jsx:13
 #: src/Draft/components/image-generation/CreditCounter.jsx:31
 #, js-format
@@ -2107,23 +2102,23 @@ msgid "%1$s of %2$s daily image credits used"
 msgstr "Використано %1$s з %2$s денних кредитів на зображення"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:171
 #: src/Draft/components/image-generation/GenerateForm.jsx:51
 msgid "Aspect Ratio"
 msgstr "Співвідношення сторін"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:58
 msgid "Square: 1:1"
 msgstr "Квадрат: 1:1"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:65
 msgid "Landscape: 4:3"
 msgstr "Ландшафт: 4:3"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:72
 msgid "Portrait: 3:4"
 msgstr "Портрет: 3:4"
@@ -2141,7 +2136,7 @@ msgstr "Доступний та ідеально підходить для ва�
 msgid "Get another domain for your site."
 msgstr "Отримайте інший домен для вашого сайту."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:1
+#: public/build/extendify-launch-178234bad6040f2e6113.js:1
 #: src/Launch/api/WPApi.js:51
 msgid "Header Navigation"
 msgstr "Навігація у шапці сайту"
@@ -2195,66 +2190,66 @@ msgstr "Встановлення..."
 msgid "Install Now"
 msgstr "Встановити зараз"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/GenerateImage.jsx:124
 msgid "AI Image"
 msgstr "ШІ-зображення"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/GenerateImage.jsx:90
 #: src/Draft/pages/Unsplash.jsx:66
 msgid "Go Back"
 msgstr "Повернутися назад"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/ai-image-editor.js:7
 #: src/Draft/pages/GenerateImage.jsx:94
 #: src/Draft/pages/Home.jsx:17
 msgid "AI Image Generator"
 msgstr "Генератор зображень на базі ШІ"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Home.jsx:18
 msgid "Use AI to generate custom images based on your description."
 msgstr "Використовуйте штучний інтелект для створення власних зображень на основі вашого опису."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Home.jsx:28
 msgid "Generate an image"
 msgstr "Створити зображення"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Home.jsx:35
 msgid "Discover Stock Photos"
 msgstr "Знайти стокові фотографії"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Home.jsx:36
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Шукати та додавати безкоштовні стокові фото з Unsplash.com"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
-#: src/Draft/pages/Home.jsx:45
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
+#: src/Draft/pages/Home.jsx:44
 msgid "Search Unsplash"
 msgstr "Шукати на Unsplash"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/stock-images/UnsplashImages.jsx:13
 msgid "No images found."
 msgstr "Зображень не знайдено."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Unsplash.jsx:103
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Unsplash.jsx:70
 msgid "Photos from Unsplash"
 msgstr "Фотографії з Unsplash"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/GenerateImageButtons.jsx:59
 #: src/Draft/components/GenerateImageButtons.jsx:97
 msgid "Get Personalized Image"
@@ -2266,7 +2261,7 @@ msgstr "Отримати персоналізоване зображення"
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Натисніть тут, щоб перейти до панелі керування вашим сайтом. Звідти ви зможете створювати більше сайтів та керувати налаштуваннями облікового запису."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:172
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Наприклад, ми - студія йоги в Лондоні з професійно підготовленими інструкторами, які спеціалізуються на гарячій йозі з терапевтичною метою."
@@ -2411,12 +2406,12 @@ msgid "Start getting bookings from your website by configuring the SimplyBook.me
 msgstr "Почніть отримувати бронювання з вашого сайту, налаштувавши плагін SimplyBook.me."
 
 #. translators: This string represents the title of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits the standard phrasing for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:3
+#: public/build/extendify-common-659bd241faa47e112e9f.js:3
 msgid "About"
 msgstr "Про нас"
 
 #. translators: This string represents the title of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits the standard phrasing for a "Contact" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:19
+#: public/build/extendify-common-659bd241faa47e112e9f.js:19
 msgid "Contact"
 msgstr "Контакти"
 
@@ -2468,7 +2463,7 @@ msgstr "Герой"
 
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-common-4a151c468790b9033231.js:49
+#: public/build/extendify-common-659bd241faa47e112e9f.js:49
 #: src/Assist/svg/DesignLibraryMarkup.jsx:89
 msgid "Pricing"
 msgstr "Ціноутворення"
@@ -2480,7 +2475,7 @@ msgstr "Соціальний доказ"
 
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-common-4a151c468790b9033231.js:81
+#: public/build/extendify-common-659bd241faa47e112e9f.js:81
 #: src/Assist/svg/DesignLibraryMarkup.jsx:95
 msgid "Team"
 msgstr "Команда"
@@ -2802,238 +2797,238 @@ msgstr "Повна бібліотека дизайну, налаштована �
 msgid "Explore Design Library"
 msgstr "Оглянути бібліотеку дизайнів"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:24
 msgid "Bulgarian"
 msgstr "Болгарська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:34
 msgid "Czech"
 msgstr "Чеська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:79
 msgid "French (Canada)"
 msgstr "Французька (Канада)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:114
 msgid "Hungarian"
 msgstr "Угорська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:139
 msgid "Norwegian"
 msgstr "Норвезька"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:164
 msgid "Russian"
 msgstr "Російська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:169
 msgid "Slovak"
 msgstr "Словацька"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:194
 msgid "Turkish"
 msgstr "Турецька"
 
 #. translators: This string represents the slug of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits a slug for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:5
+#: public/build/extendify-common-659bd241faa47e112e9f.js:5
 msgid "about"
 msgstr "pro-nas"
 
 #. translators: This string represents the slug of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits a slug for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:9
+#: public/build/extendify-common-659bd241faa47e112e9f.js:9
 msgid "blog"
 msgstr "blog"
 
 #. translators: This string represents the title of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits the standard phrasing for a "Careers" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:15
+#: public/build/extendify-common-659bd241faa47e112e9f.js:15
 msgid "Careers"
 msgstr "Кар'єра"
 
 #. translators: This string represents the slug of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits a slug for a "Careers" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:17
+#: public/build/extendify-common-659bd241faa47e112e9f.js:17
 msgid "careers"
 msgstr "kariera"
 
 #. translators: This string represents the slug of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits a slug for a "Contact" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:21
+#: public/build/extendify-common-659bd241faa47e112e9f.js:21
 msgid "contact"
 msgstr "kontakt"
 
 #. translators: This string represents the slug of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits a slug for an "Events" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:25
+#: public/build/extendify-common-659bd241faa47e112e9f.js:25
 msgid "events"
 msgstr "podii"
 
 #. translators: This string represents the title of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits the standard phrasing for a "FAQ" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:27
+#: public/build/extendify-common-659bd241faa47e112e9f.js:27
 msgid "FAQ"
 msgstr "Часті запитання"
 
 #. translators: This string represents the slug of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits a slug for a "FAQ" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:29
+#: public/build/extendify-common-659bd241faa47e112e9f.js:29
 msgid "faq"
 msgstr "faq"
 
 #. translators: This string represents the title of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits the standard phrasing for a "Features" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:31
+#: public/build/extendify-common-659bd241faa47e112e9f.js:31
 msgid "Features"
 msgstr "Функції"
 
 #. translators: This string represents the slug of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits a slug for a "Features" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:33
+#: public/build/extendify-common-659bd241faa47e112e9f.js:33
 msgid "features"
 msgstr "funktsii"
 
 #. translators: This string represents the title of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits the standard phrasing for a "Gallery" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:35
+#: public/build/extendify-common-659bd241faa47e112e9f.js:35
 msgid "Gallery"
 msgstr "Галерея"
 
 #. translators: This string represents the slug of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits a slug for a "Gallery" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:37
+#: public/build/extendify-common-659bd241faa47e112e9f.js:37
 msgid "gallery"
 msgstr "galeriya"
 
 #. translators: This string represents the title of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits the standard phrasing for a "Menu" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:41
+#: public/build/extendify-common-659bd241faa47e112e9f.js:41
 msgid "Menu"
 msgstr "Меню"
 
 #. translators: This string represents the slug of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits a slug for a "Menu" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:43
+#: public/build/extendify-common-659bd241faa47e112e9f.js:43
 msgid "menu"
 msgstr "menu"
 
 #. translators: This string represents the title of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits the standard phrasing for a "Portfolio" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:45
+#: public/build/extendify-common-659bd241faa47e112e9f.js:45
 msgid "Portfolio"
 msgstr "Портфоліо"
 
 #. translators: This string represents the slug of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits a slug for a "Portfolio" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:47
+#: public/build/extendify-common-659bd241faa47e112e9f.js:47
 msgid "portfolio"
 msgstr "portfolio"
 
 #. translators: This string represents the slug of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits a slug for a "Pricing" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:51
+#: public/build/extendify-common-659bd241faa47e112e9f.js:51
 msgid "pricing"
 msgstr "tsiny"
 
 #. translators: This string represents the title of a "Products" page on a website that lists products. Please translate it in a way that fits the standard phrasing for a "Products" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:53
+#: public/build/extendify-common-659bd241faa47e112e9f.js:53
 msgid "Products"
 msgstr "Продукція"
 
 #. translators: This string represents the slug of a "Products" page on a website that lists products. Please translate it in a way that fits a slug for a "Products" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:55
+#: public/build/extendify-common-659bd241faa47e112e9f.js:55
 msgid "products"
 msgstr "produkty"
 
 #. translators: This string represents the title of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits the standard phrasing for a "Quote" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:57
+#: public/build/extendify-common-659bd241faa47e112e9f.js:57
 msgid "Quote"
 msgstr "Запит ціни"
 
 #. translators: This string represents the slug of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits a slug for a "Quote" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:59
+#: public/build/extendify-common-659bd241faa47e112e9f.js:59
 msgid "quote"
 msgstr "zapyt-ciny"
 
 #. translators: This string represents the title of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits the standard phrasing for a "Reservation" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:61
+#: public/build/extendify-common-659bd241faa47e112e9f.js:61
 msgid "Reservation"
 msgstr "Бронювання"
 
 #. translators: This string represents the slug of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits a slug for a "Reservation" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:63
+#: public/build/extendify-common-659bd241faa47e112e9f.js:63
 msgid "reservation"
 msgstr "rezervatsiya"
 
 #. translators: This string represents the title of a "Resources" page on a website that provides resources. Please translate it in a way that fits the standard phrasing for a "Resources" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:65
+#: public/build/extendify-common-659bd241faa47e112e9f.js:65
 msgid "Resources"
 msgstr "Ресурси"
 
 #. translators: This string represents the slug of a "Resources" page on a website that provides resources. Please translate it in a way that fits a slug for a "Resources" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:67
+#: public/build/extendify-common-659bd241faa47e112e9f.js:67
 msgid "resources"
 msgstr "resursy"
 
 #. translators: This string represents the title of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits the standard phrasing for a "Service Area" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:69
+#: public/build/extendify-common-659bd241faa47e112e9f.js:69
 msgid "Service Area"
 msgstr "Зона обслуговування"
 
 #. translators: This string represents the slug of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits a slug for a "Service Area" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:71
+#: public/build/extendify-common-659bd241faa47e112e9f.js:71
 msgid "service-area"
 msgstr "zona-obslugovuvannya"
 
 #. translators: This string represents the title of a "Services" page on a website that lists services. Please translate it in a way that fits the standard phrasing for a "Services" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:73
+#: public/build/extendify-common-659bd241faa47e112e9f.js:73
 msgid "Services"
 msgstr "Послуги"
 
 #. translators: This string represents the slug of a "Services" page on a website that lists services. Please translate it in a way that fits a slug for a "Services" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:75
+#: public/build/extendify-common-659bd241faa47e112e9f.js:75
 msgid "services"
 msgstr "poslugi"
 
 #. translators: This string represents the title of a "Specials" page on a website that lists special offers. Please translate it in a way that fits the standard phrasing for a "Specials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:77
+#: public/build/extendify-common-659bd241faa47e112e9f.js:77
 msgid "Specials"
 msgstr "Спеціальні пропозиції"
 
 #. translators: This string represents the slug of a "Specials" page on a website that lists special offers. Please translate it in a way that fits a slug for a "Specials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:79
+#: public/build/extendify-common-659bd241faa47e112e9f.js:79
 msgid "specials"
 msgstr "spetsialni-propozytsii"
 
 #. translators: This string represents the slug of a "Team" page on a website that introduces the team members. Please translate it in a way that fits a slug for a "Team" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:83
+#: public/build/extendify-common-659bd241faa47e112e9f.js:83
 msgid "team"
 msgstr "komanda"
 
 #. translators: This string represents the title of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits the standard phrasing for a "Testimonials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:85
+#: public/build/extendify-common-659bd241faa47e112e9f.js:85
 msgid "Testimonials"
 msgstr "Відгуки клієнтів"
 
 #. translators: This string represents the slug of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits a slug for a "Testimonials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:87
+#: public/build/extendify-common-659bd241faa47e112e9f.js:87
 msgid "testimonials"
 msgstr "відгуки"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/SiteStructure.jsx:47
 msgid "Single-Page Website"
 msgstr "Сайт з однією сторінкою"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/SiteStructure.jsx:48
 msgid "All content displayed on one scrolling page."
 msgstr "Весь вміст відображено на одній прокручуваній сторінці."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/SiteStructure.jsx:58
 msgid "Multi-Page Website"
 msgstr "Багатосторінковий вебсайт"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/SiteStructure.jsx:59
 msgid "Multiple interconnected pages."
 msgstr "Багато взаємопов'язаних сторінок."
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:31
 #: src/Launch/pages/SiteStructure.jsx:70
 msgid "Pick Your Site Structure"
@@ -3185,84 +3180,84 @@ msgstr "Скуштуйте класичну французьку бістро-к
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Знайдіть будинок своєї мрії або зробіть вигідні інвестиції з Pinnacle Properties, провідним агентством нерухомості в Остіні. Довіртеся нашим досвідченим агентам для отримання персоналізованих послуг"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:99
 msgid "Greek"
 msgstr "Грецька"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:109
 msgid "Hindi"
 msgstr "Гінді"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:14
 msgid "Arabic"
 msgstr "Арабська"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:19
 msgid "Arabic (Morocco)"
 msgstr "Арабська (Марокко)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:59
 msgid "English (UK)"
 msgstr "Англійська (Велика Британія)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:179
 msgid "Spanish (Colombia)"
 msgstr "Іспанський (Колумбія)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:184
 msgid "Spanish (Mexico)"
 msgstr "Іспанський (Мексика)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:159
 msgid "Romanian"
 msgstr "Румунська"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:99
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Поділіться своїм баченням, і ми створимо сайт, який ідеально відповідатиме вашим потребам, готовий до запуску в найкоротші терміни. Почнемо з того, що дізнаємося більше про ваш проект."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:16
+#: public/build/extendify-launch-178234bad6040f2e6113.js:16
 #: src/Launch/LaunchPage.jsx:56
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Запуск - створення вебсайтів на основі ШІ"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SitePrep.jsx:87
 msgid "Customizing Your Experience"
 msgstr "Налаштовування вашого досвіду"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/ContentGathering.jsx:65
 msgid "Designing Your Options"
 msgstr "Проєктування ваших параметрів"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SitePrep.jsx:88
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Будь ласка, зачекайте, поки ми аналізуємо ваші дані та налаштовуємо ваш досвід."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/ContentGathering.jsx:66
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Будь ласка, зачекайте, поки ми створюємо параметри сайту для вашого вибору."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:346
 msgid "Creating blog sample data"
 msgstr "Створення зразкових даних блогу"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:5
+#: public/build/extendify-launch-178234bad6040f2e6113.js:5
 #: src/Launch/api/WPApi.js:360
 msgid "More"
 msgstr "Ще"
@@ -3276,49 +3271,49 @@ msgid "Add Website Details"
 msgstr "Додати деталі сайту"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #, js-format
 msgid "Blog Post %s"
 msgstr "Публікація %s"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:400
 msgid "Importing shop sample data"
 msgstr "Імпорт зразкових даних магазину"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:164
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s сторінок/записів, створених під час попереднього сеансу налаштування, буде видалено"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:134
 msgid "Lithuanian"
 msgstr "Литовська"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:44
 msgid "Select your site's tone"
 msgstr "Виберіть тон вашого сайту"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:153
 msgid "Website title (required)"
 msgstr "Назва вебсайту (обов'язково)"
 
 #. translators: This string represents the title of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits the standard phrasing for a "Book" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:11
+#: public/build/extendify-common-659bd241faa47e112e9f.js:11
 msgid "Book Now"
 msgstr "Забронювати зараз"
 
 #. translators: This string represents the slug of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits a slug for a "Book" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:13
+#: public/build/extendify-common-659bd241faa47e112e9f.js:13
 msgid "book-now"
 msgstr "забронювати-зараз"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 msgid "Hello World Featured Image"
 msgstr "Головне зображення Hello World"
 
@@ -3326,29 +3321,29 @@ msgstr "Головне зображення Hello World"
 msgid "Extendify Page Creator User Settings"
 msgstr "Налаштування користувача Extendify Page Creator"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:28
 msgid "Confirmation"
 msgstr "Підтвердження"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:31
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Бажаєте замінити існуючий вміст чи створити нову сторінку?"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:38
 msgid "Delete existing content"
 msgstr "Видалити наявний вміст"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:45
 msgid "Create a new page"
 msgstr "Створити нову сторінку"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/Agent/tours/page-creator.js:6
 #: src/Agent/tours/page-creator.js:31
 #: src/HelpCenter/tours/page-creator.js:7
@@ -3357,248 +3352,248 @@ msgstr "Створити нову сторінку"
 msgid "AI Page Generator"
 msgstr "Генератор сторінок AI"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:44
 msgid "Edit"
 msgstr "Редагувати"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:62
 msgid "Clear"
 msgstr "Очистити"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/hooks/usePageProfile.js:22
 msgid "Generating AI page profile..."
 msgstr "Генерування AI профілю сторінки..."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/pages/Dashboard.jsx:59
 msgid "AI Page Creation"
 msgstr "Створення сторінки за допомогою ШІ"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/pages/Dashboard.jsx:60
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Опишіть сторінку, яку хочете створити, додайте ключові деталі, і Al згенерує унікальну, готову до використання сторінку для вас."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/pages/Dashboard.jsx:69
 msgid "Describe Your Page"
 msgstr "Опишіть вашу сторінку"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/pages/Dashboard.jsx:72
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Наприклад, створіть сторінку \"Про нас\", де висвітліть нашу історію, місію, цінності та огляд команди."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:88
 #, js-format
 msgid "Site Description for %s"
 msgstr "Опис сайту для %s"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:91
 msgid "Site Description"
 msgstr "Опис сайту"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:94
 msgid "This is the site description with all its ups and downs."
 msgstr "Це опис сайту з усіма його перевагами та недоліками."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:123
 msgid "Generate Page"
 msgstr "Згенерувати сторінку"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/hooks/useSiteImages.js:19
 msgid "Finding images..."
 msgstr "Пошук зображень ..."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/hooks/usePageLayout.js:35
 msgid "Creating a custom layout..."
 msgstr "Створення власного компонування..."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/hooks/usePageCustomContent.js:50
 msgid "Writing custom content..."
 msgstr "Написання власного вмісту..."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/components/Modal.jsx:185
 msgid "Close AI Page Creator"
 msgstr "Закрити AI Page Creator"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/components/Modal.jsx:198
 msgid "AI Page Creator"
 msgstr "AI створювач сторінок"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/components/Modal.jsx:95
 msgid "Page added"
 msgstr "Сторінку додано"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/components/Modal.jsx:101
 msgid "Failed to add page"
 msgstr "Не вдалося додати сторінку"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:27
 msgid "Business"
 msgstr "Бізнес"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:32
 msgid "eCommerce"
 msgstr "eCommerce"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:42
 msgid "Landing Page"
 msgstr "Лендінг сторінка"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:47
 msgid "Other"
 msgstr "Інше"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:152
 msgid "Landing Page title (required)"
 msgstr "Назва цільової сторінки (обов'язково)"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:176
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Наприклад, ми — інтернет-магазин, що спеціалізується на екологічних товарах для дому, пропонуємо продукцію з екологічно чистих джерел, щоб допомогти вам жити більш екологічно."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:180
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "Наприклад, блог про особисті фінанси з порадами експертів щодо бюджетування, інвестування та досягнення фінансової свободи для молодих професіоналів."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:184
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Наприклад, безкоштовний ebook з практичними порадами та стратегіями підвищення продуктивності, які допоможуть вам залишатися зосередженими, ефективно керувати часом і досягати своїх цілей."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:188
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Наприклад, персональне портфоліо фотографій, що містить колекцію ландшафтних, портретних і вуличних фото, які захоплюють моменти з усього світу"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:194
 msgid "Describe your business"
 msgstr "Опишіть свій бізнес"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:195
 msgid "Describe your eCommerce website"
 msgstr "Опишіть ваш інтернет-магазин"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:196
 msgid "Describe your blog"
 msgstr "Опишіть ваш блог"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:197
 msgid "Describe your Landing Page"
 msgstr "Опишіть вашу цільову сторінку"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:198
 msgid "Describe your website"
 msgstr "Опишіть ваш сайт"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:242
 msgid "Call-To-Action Link"
 msgstr "Посилання заклику до дії"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:246
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Це посилання буде використовуватися у всіх кнопках заклику до дії, спрямовуючи відвідувачів до обраного вами місця."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/ObjectiveSelection.jsx:82
 msgid "What type of website are you creating?"
 msgstr "Який тип сайту ви створюєте?"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:91
 msgid "Tell Us About Your Landing Page"
 msgstr "Розкажіть про вашу цільову сторінку"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:92
 msgid "Tell Us About Your Website"
 msgstr "Розкажіть про ваш вебсайт"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:95
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Поділіться своїм баченням, і ми створимо цільову сторінку, яка ідеально відповідатиме вашим потребам, готова до запуску в найкоротші терміни. Почнемо з того, що дізнаємося більше про ваш проект."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:32
 #: src/HelpCenter/tours/page-creator.js:32
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Натисніть тут, щоб почати роботу з вашим AI Page Generator."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:55
 #: src/HelpCenter/tours/page-creator.js:55
 msgid "Page description"
 msgstr "Опис сторінки"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:56
 #: src/HelpCenter/tours/page-creator.js:56
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Напишіть опис сторінки, яку хочете створити. Будьте якомога детальнішими. Ми створимо сторінку на основі цього опису."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:84
 #: src/HelpCenter/tours/page-creator.js:84
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "За потреби оновіть опис вашого сайту тут. Ми використовуємо це для додавання додаткового контексту про ваш вебсайт."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:107
 #: src/HelpCenter/tours/page-creator.js:107
 msgid "Generate your page"
 msgstr "Створити вашу сторінку"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:108
 #: src/HelpCenter/tours/page-creator.js:108
 msgid "When ready, press here to generate your page."
 msgstr "Коли будете готові, натисніть тут, щоб створити сторінку."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
-#: public/build/extendify-shared-5ce167fe6ca53b5403c7.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-shared-8d49300600182f94ffe4.js:1
 #: src/Agent/components/tooltip/ToolTip.jsx:101
 #: src/Shared/components/ToolTip.jsx:63
 msgid "Close ToolTip"
 msgstr "Закрити підказку"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:411
 msgid "Installing supporting plugins"
 msgstr "Встановлення допоміжних плагінів"
@@ -3623,23 +3618,23 @@ msgstr "Не вдалося встановити плагін"
 msgid "Failed to activate the plugin"
 msgstr "Не вдалося активувати плагін"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:103
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Дозволити встановлення плагінів для передових функцій сторінки"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/GeneratingPage.jsx:43
 msgid "Processing patterns and installing required plugins..."
 msgstr "Обробка патернів та встановлення необхідних плагінів..."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:14
 msgid "Privacy Policy"
 msgstr "Політика конфіденційності"
 
 #. translators: %1$s and %2$s are links
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:23
 #, js-format
 msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
@@ -3652,12 +3647,12 @@ msgstr "Використовуючи функції штучного інтел�
 msgid "Recommended Solutions for: %s"
 msgstr "Рекомендовані рішення для: %s"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteQuestions.jsx:172
 msgid "Show more questions"
 msgstr "Показати більше запитань"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:104
 msgid "Hebrew"
 msgstr "Іврит"
@@ -3666,254 +3661,221 @@ msgstr "Іврит"
 msgid "What tours are available?"
 msgstr "Які тури доступні?"
 
-#: app/Agent/Admin.php:202
+#: app/Agent/Admin.php:211
 msgid "I want to change my theme styling"
 msgstr "Я хочу змінити стилізацію своєї теми"
 
-#: app/Agent/Admin.php:210
+#: app/Agent/Admin.php:219
 msgid "Edit text on this page"
 msgstr "Редагувати текст на цій сторінці"
 
-#: app/Agent/Admin.php:218
+#: app/Agent/Admin.php:227
 msgid "How can I create a post?"
 msgstr "Як я можу створити запис?"
 
-#: app/Agent/Admin.php:222
+#: app/Agent/Admin.php:231
 msgid "How can I create a page?"
 msgstr "Як створити сторінку?"
 
-#: app/Agent/Admin.php:229
+#: app/Agent/Admin.php:238
 msgid "How can I install a plugin?"
 msgstr "Як встановити плагін?"
 
-#: app/Agent/Admin.php:236
+#: app/Agent/Admin.php:245
 msgid "How can I change my theme?"
 msgstr "Як змінити мою тему?"
 
-#: app/Agent/Admin.php:240
+#: app/Agent/Admin.php:249
 msgid "How can I change the site footer?"
 msgstr "Як змінити футер сайту?"
 
-#: app/Agent/Admin.php:244
+#: app/Agent/Admin.php:253
 msgid "How can I change the site header?"
 msgstr "Як змінити хедер сайту?"
 
-#: app/Agent/Admin.php:251
+#: app/Agent/Admin.php:260
 msgid "How can I upload an image?"
 msgstr "Як завантажити зображення?"
 
-#: app/Agent/Admin.php:255
+#: app/Agent/Admin.php:264
 msgid "How can I change the site icon?"
 msgstr "Як змінити іконку сайту?"
 
-#: app/Agent/Admin.php:262
+#: app/Agent/Admin.php:271
 msgid "How can I change my site title?"
 msgstr "Як змінити назву мого сайту?"
 
-#: app/Agent/Admin.php:266
+#: app/Agent/Admin.php:275
 msgid "How can I change my site tagline?"
 msgstr "Як змінити ключову фразу сайту?"
 
-#: app/Agent/Admin.php:270
+#: app/Agent/Admin.php:279
 msgid "How can I change my site language?"
 msgstr "Як змінити мову сайту?"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/tools/get-theme-variations.js:16
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Не вдалося отримати варіації теми."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Привіт! Схоже, ви намагаєтеся змінити кольори теми, але ви не на тій сторінці, де це можливо."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 msgid "Suggestion:"
 msgstr "Пропозиція:"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:34
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:34
 msgid "Loading variations..."
 msgstr "Завантаження варіацій..."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:42
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:42
 msgid "No variations found"
 msgstr "Варіації не знайдено"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:45
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:45
 msgid "We were unable to find any variations for your theme."
 msgstr "Ми не змогли знайти жодних варіацій для вашої теми."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:89
-#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:80
-#: src/Agent/components/workflows/UpdatePostConfirm.jsx:40
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
+#: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:80
+#: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:30
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:89
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:69
-#: src/Agent/components/workflows/UpdatePostConfirm.jsx:28
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:28
+#: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:69
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Агент вніс зміни в браузері. Будь ласка, перегляньте та підтвердьте."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Огляд бібліотеки дизайнів"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Дізнайтеся про генератор сторінок AI"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Огляд редактора сторінки"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Дізнайтеся, як встановити плагін"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Дізнайтеся, як керувати плагінами"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Ознайомитися з Помічником сайту"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Огляд екрана \"Користувачі\""
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/ChatInput.jsx:152
 msgid "Ask anything"
 msgstr "Запитайте що завгодно"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/ChatInput.jsx:170
 msgid "Send message"
 msgstr "Надіслати повідомлення"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/ScrollDownButton.jsx:21
 msgid "Scroll down"
 msgstr "Прокрутити вниз"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/messages/AgentMessage.jsx:67
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/components/messages/AgentMessage.jsx:73
 msgid "Agent"
 msgstr "Агент"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:9
-msgid "Finding an agent..."
-msgstr "Пошук агента..."
-
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:10
 msgid "Working on it..."
 msgstr "Працюємо над цим..."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:11
 msgid "Gathering data..."
 msgstr "Збирання даних..."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:12
 msgid "Analyzing..."
 msgstr "Аналіз…"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:13
 #: src/Agent/components/messages/StatusMessage.jsx:14
 msgid "Canceled"
 msgstr "Скасовано"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:15
 msgid "Usage limit reached"
 msgstr "Досягнуто ліміту використання"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:16
 msgid "Usage limit restored"
 msgstr "Ліміт використання відновлено"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:29
 msgid "Something went wrong"
 msgstr "Щось пішло не так"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:32
 msgid "An unexpected error occurred while processing your request."
 msgstr "Під час обробки вашого запиту сталася несподівана помилка."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:82
 msgid "Workflow completed successfully"
 msgstr "Робочий процес успішно завершено"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Компонент недоступний"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:20
 msgid "It may have been removed or is not available for your account."
 msgstr "Можливо, його видалено або він недоступний для вашого облікового запису."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:3
-#: src/Agent/components/messages/WorkflowMessage.jsx:8
-msgid "Agent X"
-msgstr "Агент X"
-
-#. translators: %s: The name of the agent
-#: public/build/extendify-agent-d886439429f5826be8ab.js:5
-#: src/Agent/components/messages/WorkflowMessage.jsx:13
-#, js-format
-msgid "%s has joined"
-msgstr "%s приєднався"
-
-#: public/build/extendify-agent-d886439429f5826be8ab.js:5
-#: src/Agent/components/messages/WorkflowMessage.jsx:14
-#, js-format
-msgid "%s has rejoined"
-msgstr "%s знову приєднався"
-
-#. translators: %s: The name of the agent
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
-#: src/Agent/components/messages/WorkflowMessage.jsx:16
-#, js-format
-msgid "%s has left"
-msgstr "%s вийшов"
-
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
-#: src/Agent/components/messages/WorkflowMessage.jsx:18
-msgid "Transferred to a new agent"
-msgstr "Передано новому агенту"
-
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
-#: src/Agent/components/messages/WorkflowMessage.jsx:37
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: src/Agent/components/messages/WorkflowMessage.jsx:15
 msgid "What's next? Would you like to do something else?"
 msgstr "Що далі? Хочете зробити щось інше?"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:117
 #: src/Agent/components/layouts/DragResizeLayout.jsx:128
 #: src/Agent/components/layouts/MobileLayout.jsx:50
@@ -3921,48 +3883,48 @@ msgstr "Що далі? Хочете зробити щось інше?"
 msgid "Close window"
 msgstr "Закрити вікно"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:168
 msgid "Drag to move"
 msgstr "Перетягніть, щоб перемістити"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: src/Agent/components/WelcomeScreen.jsx:22
 msgid "Site is live!"
 msgstr "Сайт опубліковано!"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: src/Agent/components/WelcomeScreen.jsx:26
 msgid "Your expert AI team is here"
 msgstr "Ваша команда експертів AI тут"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Ви досягли щоденного ліміту повідомлень. Ваш ліміт скинеться через %s."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: src/Agent/components/buttons/AdminBar.jsx:50
 #: src/Agent/components/buttons/Mobile.jsx:36
 #: src/Agent/components/buttons/PostEditor.jsx:47
 msgid "Open Agent"
 msgstr "Відкрити агента"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: src/Agent/components/buttons/AdminBar.jsx:63
 #: src/Agent/components/buttons/Mobile.jsx:43
 #: src/Agent/components/buttons/PostEditor.jsx:52
 msgid "AI Agent"
 msgstr "AI агент"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:8
 msgid "Tooltip pointing to the agent button"
 msgstr "Підказка, що вказує на кнопку агента"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:14
 msgid "Need help again?"
 msgstr "Потрібна допомога знову?"
@@ -4068,52 +4030,52 @@ msgstr "Тут можна налаштувати розміри, внутріш�
 msgid "Take the welcome tour"
 msgstr "Пройдіть ознайомлювальний тур"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: src/Agent/components/buttons/Mobile.jsx:46
 msgid "How can we help you today?"
 msgstr "Чим ми можемо вам допомогти сьогодні?"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteQuestions.jsx:28
 msgid "Let's review your AI-powered recommendations"
 msgstr "Давайте переглянемо ваші рекомендації на основі ШІ"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteQuestions.jsx:33
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "Використовуючи надані вами дані, наш ШІ запропонував найкращі налаштування для вашого сайту. Швидко перегляньте та підтвердьте, що все виглядає правильно, перш ніж продовжити."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:194
 msgid "Footer Navigation"
 msgstr "Навігація в підвалі"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:356
 msgid "Adding imprint page"
 msgstr "Додавання сторінки вихідних даних"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:17
 msgid "You can always access your AI Agent if you need help with anything on your site."
 msgstr "Ви завжди можете звернутися до вашого AI-агента, якщо вам потрібна допомога з чимось на вашому сайті."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: src/Agent/components/WelcomeScreen.jsx:29
 msgid "Your team of site experts — designers, developers, and marketers — ready to help from content to layouts. Tell us what you need or pick a task to start."
 msgstr "Ваша команда експертів сайту — дизайнери, розробники та маркетологи — готова допомогти з вмістом і компонуванням. Скажіть, що вам потрібно, або оберіть завдання для початку."
 
-#: public/build/extendify-shared-5ce167fe6ca53b5403c7.js:1
+#: public/build/extendify-shared-8d49300600182f94ffe4.js:1
 #: src/Shared/components/EditPageToolTip.jsx:8
 msgid "Tooltip pointing to the edit page button"
 msgstr "Підказка, що вказує на кнопку редагування сторінки"
 
-#: public/build/extendify-shared-5ce167fe6ca53b5403c7.js:1
+#: public/build/extendify-shared-8d49300600182f94ffe4.js:1
 #: src/Shared/components/EditPageToolTip.jsx:10
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Ласкаво просимо на ваш новий сайт! Коли будете готові, натисніть тут, щоб відредагувати цю сторінку."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: src/Agent/components/PageDocument.jsx:14
 #: src/Agent/components/PageDocument.jsx:25
 msgid "Remove"
@@ -4124,10 +4086,36 @@ msgstr "Видалити"
 msgid "Remove highlight"
 msgstr "Видалити виділення"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
-#: src/Agent/Agent.jsx:464
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: src/Agent/Agent.jsx:458
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "Агент ШІ може робити помилки. Перевірте зміни перед збереженням."
+
+#: app/Agent/Admin.php:202
+msgid "I want to change my site title"
+msgstr "Я хочу змінити назву свого сайту"
+
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:36
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#. translators: 1: setting name, 2: new setting value
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:15
+#, js-format
+msgid "The AI Agent wants to change the setting \"%1$s\" to \"%2$s\". Please confirm."
+msgstr "AI агент хоче змінити налаштування \"%1$s\" на \"%2$s\". Будь ласка, підтвердіть."
+
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:9
+msgid "Thinking..."
+msgstr "Обробка…"
+
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: src/Launch/components/PageControl.jsx:214
+msgid "WP Admin Dashboard"
+msgstr "Консоль WP"
 
 #. translators: %s is a name
 #: public/build/extendify-recommendations-b646230433527220e538.js:4
@@ -4155,7 +4143,7 @@ msgctxt "Plugin activation status"
 msgid "Activated"
 msgstr "Активовано"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:110
 #: src/Agent/components/layouts/MobileLayout.jsx:46
 msgctxt "Feature in beta status"

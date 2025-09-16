@@ -210,7 +210,8 @@ const PrevButton = () => {
 					) : (
 						<LeftCaret className="mt-px h-5 w-5" />
 					)}
-					<span>{__('Exit Launch', 'extendify-local')}</span>
+
+					<span>{__('WP Admin Dashboard', 'extendify-local')}</span>
 				</>
 			</NavigationButton>
 		);

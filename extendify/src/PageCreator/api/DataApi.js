@@ -1,6 +1,7 @@
 import { PATTERNS_HOST, AI_HOST, IMAGES_HOST } from '@constants';
 import { getSiteStyle } from '@page-creator/api/WPApi';
 import { useUserStore } from '@page-creator/state/user';
+import { mergeRequiredPlugins } from '@shared/utils/merge-required-plugins';
 
 const { siteTitle, siteType } = window.extSharedData;
 const extraBody = {
@@ -165,13 +166,13 @@ export const getSitePlugins = async ({ pageProfile }) => {
 	const url = `${AI_HOST}/api/site-plugins`;
 	const method = 'POST';
 	const headers = { 'Content-Type': 'application/json' };
-	const fallback = [];
+	const fallback = mergeRequiredPlugins([]);
 
 	if (!pageProfile) {
 		return fallback;
 	}
 
-	const { wpLanguage, partnerId } = window.extSharedData;
+	const { wpLanguage, partnerId, pluginGroupId } = window.extSharedData;
 
 	const body = JSON.stringify({
 		aiSiteType: pageProfile?.aiPageType || '',
@@ -180,6 +181,7 @@ export const getSitePlugins = async ({ pageProfile }) => {
 		siteQuestions: [],
 		wpLanguage,
 		partnerId,
+		pluginGroupId,
 	});
 
 	let response;
@@ -195,7 +197,8 @@ export const getSitePlugins = async ({ pageProfile }) => {
 
 	try {
 		const data = await response.json();
-		return data?.selectedPlugins ?? fallback;
+		const suggestedPlugins = data?.selectedPlugins ?? fallback;
+		return mergeRequiredPlugins(suggestedPlugins);
 	} catch (error) {
 		return fallback;
 	}

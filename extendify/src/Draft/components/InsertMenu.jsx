@@ -188,8 +188,11 @@ export const InsertMenu = ({
 				disabled={loading || !canReplaceContent()}
 				icon={replace}
 				iconPosition="left"
-				data-test="replace-selected">
-				{__('Replace selected block text', 'extendify-local')}
+				data-test="replace-selected"
+				className="h-auto min-h-10 items-start">
+				<span className="whitespace-normal break-words text-start">
+					{__('Replace selected block text', 'extendify-local')}
+				</span>
 			</MenuItem>
 			<MenuItem
 				onClick={() =>
@@ -197,11 +200,14 @@ export const InsertMenu = ({
 				}
 				disabled={loading}
 				iconPosition="left"
-				data-test="insert-top">
+				data-test="insert-top"
+				className="h-auto min-h-10 items-start">
 				<div className={isRTL() ? '-mr-1' : '-ml-1'}>
 					<Icon icon={addSubmenu} className="rotate-180" />
 				</div>
-				<div className="px-1">{__('Insert at top', 'extendify-local')}</div>
+				<div className="whitespace-normal break-words px-1 text-start">
+					{__('Insert at top', 'extendify-local')}
+				</div>
 			</MenuItem>
 			<MenuItem
 				onClick={() => insertCompletion({ replaceContent: false })}
@@ -210,8 +216,11 @@ export const InsertMenu = ({
 				disabled={loading || !canInsertAfter()}
 				icon={insertAfter}
 				iconPosition="left"
-				data-test="insert-after">
-				{__('Insert after the selected text', 'extendify-local')}
+				data-test="insert-after"
+				className="h-auto min-h-10 items-start">
+				<span className="whitespace-normal break-words text-start">
+					{__('Insert after the selected text', 'extendify-local')}
+				</span>
 			</MenuItem>
 			<MenuItem
 				onClick={() =>

@@ -1,27 +1,7 @@
 import { AI_HOST } from '@constants';
 import { useChatStore } from '@agent/state/chat';
 import { useWorkflowStore } from '@agent/state/workflows';
-import { getBlockContent } from '@agent/tools/get-block-content';
-import { getPostStrings } from '@agent/tools/get-post-strings';
-import { getPostStringsEditor } from '@agent/tools/get-post-strings-editor';
-import { getThemeVariations } from '@agent/tools/get-theme-variations';
-import { searchWpDocs } from '@agent/tools/search-wp-docs';
-import { updateBlockContent } from '@agent/tools/update-block-content';
-import { updatePostStrings } from '@agent/tools/update-post-strings';
-import { updatePostStringsEditor } from '@agent/tools/update-post-strings-editor';
-import { updateThemeVariation } from '@agent/tools/update-theme-variation';
-
-const tools = {
-	'search-wp-docs': searchWpDocs,
-	'get-post-strings': getPostStrings,
-	'get-post-strings-editor': getPostStringsEditor,
-	'update-post-strings': updatePostStrings,
-	'update-post-strings-editor': updatePostStringsEditor,
-	'get-theme-variations': getThemeVariations,
-	'update-theme-variation': updateThemeVariation,
-	'get-block-content': getBlockContent,
-	'update-block-content': updateBlockContent,
-};
+import { tools } from '@agent/workflows/workflows';
 
 const extraBody = {
 	...Object.fromEntries(

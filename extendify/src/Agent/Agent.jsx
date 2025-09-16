@@ -55,7 +55,7 @@ export const Agent = () => {
 		setCanType(true);
 		agentWorking.current = false;
 		setWaitingOnToolOrUser(false);
-		setBlock(null);
+		block && setBlock(null);
 		window.dispatchEvent(new Event('extendify-agent:remove-block-highlight'));
 		const c = Array.from(
 			document.querySelectorAll(
@@ -64,7 +64,7 @@ export const Agent = () => {
 		)?.at(-1);
 		c?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 		c?.scrollBy({ top: -5, behavior: 'smooth' });
-	}, [setBlock]);
+	}, [setBlock, block]);
 
 	const findAgent = useCallback(
 		async (options = {}) => {
@@ -87,11 +87,7 @@ export const Agent = () => {
 			if (!response) return;
 
 			const { workflow: wf, reply } = response;
-			if (wf?.id) {
-				setWorkflow(wf);
-				const data = { status: 'started', agent: wf.agent };
-				addMessage('workflow', data);
-			}
+			if (wf?.id) setWorkflow(wf);
 			if (reply) {
 				const data = { role: 'assistant', content: reply, agent: wf?.agent };
 				addMessage('message', data);
@@ -325,8 +321,6 @@ export const Agent = () => {
 				const currentWorkflowId = workflow.id;
 				setWorkflow(null);
 				cleanup();
-				addMessage('workflow', { status: 'handoff', answerId });
-				await new Promise((resolve) => setTimeout(resolve, 1000));
 				await findAgent({ handoff: currentWorkflowId });
 				return;
 			}

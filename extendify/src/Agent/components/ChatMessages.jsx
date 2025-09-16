@@ -102,13 +102,7 @@ export const ChatMessages = () => {
 						);
 					}
 					if (message.type === 'workflow') {
-						return (
-							<WorkflowMessage
-								key={message.id}
-								animate={isLastMessage && !freshLoad}
-								message={message}
-							/>
-						);
+						return <WorkflowMessage key={message.id} message={message} />;
 					}
 					if (message.type === 'workflow-component') {
 						return <WorkflowComponent key={message.id} message={message} />;

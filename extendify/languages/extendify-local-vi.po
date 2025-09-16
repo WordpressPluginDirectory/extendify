@@ -65,45 +65,45 @@ msgstr "Chèn mẫu"
 msgid "Extendify Library User Settings"
 msgstr "Cài đặt người dùng Thư viện Extendify"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Draft/components/ConsentSidebar.jsx:23
 #: src/HelpCenter/pages/AIChat.jsx:174
 msgid "Accept"
 msgstr "Chấp nhận"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Draft/components/ConsentSidebar.jsx:12
 #: src/HelpCenter/pages/AIChat.jsx:161
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:10
 msgid "Terms of Use"
 msgstr "Điều khoản sử dụng"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/PagesSelect.jsx:189
 msgid "View more pages"
 msgstr "Xem thêm trang"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/PagesSelect.jsx:148
 msgid "We already selected the most common pages for your type of website."
 msgstr "Chúng tôi đã chọn sẵn những trang phổ biến nhất cho loại trang web của bạn."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/PagesSelect.jsx:144
 msgid "Pick the pages to add to your website"
 msgstr "Chọn các trang để thêm vào trang web của bạn"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
 #: src/Launch/pages/PagesSelect.jsx:68
 msgid "Home page"
 msgstr "Trang chủ"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/HomeSelect.jsx:33
 msgid "Pick a design for your website"
 msgstr "Chọn một thiết kế cho trang web của bạn"
@@ -113,88 +113,88 @@ msgstr "Chọn một thiết kế cho trang web của bạn"
 msgid "Searching..."
 msgstr "Đang tìm kiếm..."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:165
 msgid "Enter your website name"
 msgstr "Nhập tên trang web của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:513
 msgid "Helping you to succeed"
 msgstr "Giúp bạn thành công"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:254
 msgid "Adding page content"
 msgstr "Thêm nội dung trang"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:223
 msgid "Installing necessary plugins"
 msgstr "Đang cài đặt các plugin cần thiết"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:122
 msgid "Creating a beautiful website"
 msgstr "Tạo một trang web đẹp mắt"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:121
 msgid "Applying your website styles"
 msgstr "Áp dụng kiểu dáng cho website của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:250
 msgid "Personalizing your experience"
 msgstr "Cá nhân hóa trải nghiệm của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:249
 msgid "Populating data"
 msgstr "Đang điền dữ liệu"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/api/Data.js:50
 #: src/Draft/api/Data.js:88
 msgid "Service temporarily unavailable"
 msgstr "Dịch vụ tạm thời không khả dụng"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:241
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:250
 msgid "Discard"
 msgstr "Loại bỏ"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:233
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:242
 msgid "Try again"
 msgstr "Thử lại"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:196
 #: src/Draft/app.js:23
 #: src/Draft/app.js:28
 msgid "AI Tools"
 msgstr "Công cụ AI"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:192
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:194
 msgid "Replace selected block text"
 msgstr "Thay thế văn bản khối đã chọn"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/Input.jsx:49
 msgid "Ask AI to generate text"
 msgstr "Yêu cầu AI tạo văn bản"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/Input.jsx:46
 msgid "AI is writing..."
 msgstr "AI đang viết..."
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:150
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:246
 #: src/Draft/components/EditMenu.jsx:52
@@ -203,8 +203,8 @@ msgid "Simplify language"
 msgstr "Đơn giản hóa ngôn ngữ"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:158
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:254
 #: src/Draft/components/EditMenu.jsx:62
@@ -213,8 +213,8 @@ msgid "Make longer"
 msgstr "Làm dài hơn"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:154
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:250
 #: src/Draft/components/EditMenu.jsx:57
@@ -222,16 +222,16 @@ msgstr "Làm dài hơn"
 msgid "Make shorter"
 msgstr "Làm ngắn hơn"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/EditMenu.jsx:47
 #: src/Draft/components/ToolbarMenu.jsx:110
 msgid "Fix spelling & grammar"
 msgstr "Sửa chính tả & ngữ pháp"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:142
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:238
 #: src/Draft/components/EditMenu.jsx:41
@@ -239,7 +239,7 @@ msgstr "Sửa chính tả & ngữ pháp"
 msgid "Improve writing"
 msgstr "Cải thiện kỹ năng viết"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:18
 msgid "Write a blog post about"
 msgstr "Viết một bài blog về"
@@ -269,21 +269,21 @@ msgstr "Trung cấp"
 msgid "Beginner"
 msgstr "Người mới học"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:3
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
 #: src/Agent/components/Rating.jsx:48
 #: src/HelpCenter/components/ai-chat/Rating.jsx:47
 msgid "Rate that this answer was not helpful"
 msgstr "Đánh giá rằng câu trả lời này không hữu ích"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:3
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Đánh giá mức độ hữu ích của câu trả lời này"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:3
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:47
@@ -343,56 +343,56 @@ msgstr "Thu gọn menu"
 msgid "Search for articles"
 msgstr "Tìm kiếm bài viết"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:100
 msgid "The selected pattern has been inserted into the page."
 msgstr "Mẫu đã chọn đã được chèn vào trang."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:99
 msgid "View the Inserted Pattern"
 msgstr "Xem Mẫu đã được Chèn"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:80
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Chỉ cần chọn bất kỳ mẫu nào bạn muốn chèn vào trang bằng cách nhấp vào nó."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:79
 msgid "Select a Pattern"
 msgstr "Chọn một mẫu"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:54
 msgid "Click on any pattern category to refine the selection."
 msgstr "Nhấp vào bất kỳ chuyên mục mẫu nào để tinh chỉnh lựa chọn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:53
 msgid "Filter Patterns"
 msgstr "Lọc mẫu"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:32
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Thư viện mẫu Extendify có thể được mở bằng cách nhấn vào nút ở bên trái."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:31
@@ -508,21 +508,21 @@ msgstr "Bảng điều khiển mặc định của WordPress sẽ có một số
 msgid "Access the Site Assistant at any time."
 msgstr "Truy cập vào Trợ lý trang web bất cứ lúc nào."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Quay lại Trợ lý Trang bất cứ lúc nào bằng cách nhấp vào mục menu."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Xem các gợi ý cá nhân hóa của chúng tôi dành cho bạn để giúp bạn đạt được mục tiêu."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
@@ -536,7 +536,7 @@ msgstr "Truy cập dễ dàng một số mục phổ biến nhất trong WordPre
 msgid "Knowledge Base"
 msgstr "Cơ sở kiến thức"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
@@ -555,9 +555,9 @@ msgid "Create a super-fast, beautiful, and fully customized site in minutes with
 msgstr "Tạo một trang web siêu nhanh, đẹp và hoàn toàn tùy chỉnh trong vài phút với Site Launcher của chúng tôi."
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:39
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
-#: src/Draft/pages/Home.jsx:55
+#: public/build/extendify-common-659bd241faa47e112e9f.js:39
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
+#: src/Draft/pages/Home.jsx:54
 msgid "Home"
 msgstr "Trang chủ"
 
@@ -585,56 +585,56 @@ msgstr "Chuyến tham quan"
 msgid "Help Center"
 msgstr "Trung tâm trợ giúp"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Nhấn vào nút Thêm mới để thêm người dùng mới vào trang web của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Thêm người dùng mới"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Sử dụng thanh tìm kiếm để tìm một tài khoản cụ thể."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Tìm kiếm người dùng"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Nhấp vào nút sửa để thay đổi vai trò của người dùng, quản lý tài khoản của họ, hoặc thay đổi thông tin hồ sơ của họ."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Chỉnh sửa thông tin người dùng"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "Xem tất cả thành viên của bạn, bao gồm cả người quản trị trong bảng này."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:251
@@ -643,231 +643,231 @@ msgstr "Xem tất cả thành viên của bạn, bao gồm cả người quản 
 msgid "Users"
 msgstr "Người dùng"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Nhấp vào đây để xem và quản lý người dùng trên trang web của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Menu tất cả người dùng"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Nhấp vào đây để thêm một plugin khác vào trang web của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Thêm một cái khác"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Dưới mỗi plugin, bạn có thể kích hoạt hoặc tắt nó."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Tùy chọn hủy kích hoạt/kích hoạt"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Xem tất cả plugin đã được cài trên trang web của bạn. Điều này bao gồm cả plugin đang hoạt động và đã bị vô hiệu hóa."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Plugin đã cài đặt"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Nhấp vào menu này để xem và quản lý các plugin bạn đã cài đặt."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Menu plugin đã cài đặt"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Nếu bạn có một plugin từ nguồn bên ngoài, bạn có thể tải lên trực tiếp tại đây."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Tải lên Plugin"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Cài đặt plugin. Sau đó, nhấn nút này một lần nữa để kích hoạt plugin."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Cài đặt ngay bây giờ"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Xem thông tin quan trọng về từng plugin."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Chi tiết plugin"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Tìm kiếm plugin theo tên hoặc chức năng."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Nhấp vào đây để truy cập trang Thêm Plugin."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Thêm menu plugin mới"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:251
 #: src/HelpCenter/tours/page-editor.js:254
 msgid "Publish or Save"
 msgstr "Công bố hoặc Lưu"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:231
 #: src/HelpCenter/tours/page-editor.js:234
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Nhấp vào xem trước để xem các thay đổi của bạn trông như thế nào ở phía trước của trang web của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:230
 #: src/HelpCenter/tours/page-editor.js:233
 msgid "Preview"
 msgstr "Xem thử"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:188
 #: src/HelpCenter/tours/page-editor.js:191
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Chọn trang hoặc khối để thay đổi cài đặt cho toàn bộ trang hoặc khối được chọn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:187
 #: src/HelpCenter/tours/page-editor.js:190
 msgid "Page and Block Settings"
 msgstr "Cài đặt Trang và Khối"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:172
 #: src/HelpCenter/tours/page-editor.js:175
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Đây là một khối văn bản mẫu. Nó có thể dài nhiều câu và kéo dài qua nhiều hàng. Bạn có thể thêm bao nhiêu khối bạn muốn vào trang."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:131
 #: src/HelpCenter/tours/page-editor.js:134
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Mỗi khối sẽ xuất hiện trên trang và có thể được chỉnh sửa bằng cách nhấp vào nó."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:130
 #: src/HelpCenter/tours/page-editor.js:133
 msgid "Blocks"
 msgstr "Khối"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:91
 #: src/HelpCenter/tours/page-editor.js:94
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Chỉnh sửa tiêu đề trang bằng cách nhấp vào nó. Lưu ý: Tiêu đề có thể hiển thị hoặc không hiển thị trên trang đã xuất bản, tùy thuộc vào mẫu trang được sử dụng."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:90
 #: src/HelpCenter/tours/page-editor.js:93
 msgid "Page Title"
 msgstr "Tiêu đề trang"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:50
 #: src/HelpCenter/tours/page-editor.js:50
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Thêm một block bằng cách nhấp hoặc kéo nó lên trang."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:49
 #: src/HelpCenter/tours/page-editor.js:49
 msgid "Block Inserter"
 msgstr "Thanh chèn khối"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:29
 #: src/HelpCenter/tours/page-editor.js:29
 msgid "Click the plus to open the block inserter."
 msgstr "Nhấn vào dấu cộng để mở thanh chèn khối."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:28
 #: src/HelpCenter/tours/page-editor.js:28
@@ -879,8 +879,8 @@ msgid "Page not found"
 msgstr "Không tìm thấy trang"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:23
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-common-659bd241faa47e112e9f.js:23
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:435
 msgid "Events"
 msgstr "Sự kiện"
@@ -898,14 +898,14 @@ msgstr "Chuyển đến Trợ giúp"
 msgid "Dashboard"
 msgstr "Bảng tin"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Công việc"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:3
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -926,7 +926,7 @@ msgstr "Bất cứ lúc nào, bạn có thể xem trang web của mình (từ g�
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Sử dụng menu trang để thêm, xóa hoặc chỉnh sửa các trang trên website của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
 #: src/Agent/components/GuidedTour.jsx:478
@@ -935,14 +935,14 @@ msgstr "Sử dụng menu trang để thêm, xóa hoặc chỉnh sửa các trang
 msgid "Done"
 msgstr "Đã xong"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/components/GuidedTour.jsx:431
 #: src/HelpCenter/components/tours/GuidedTour.jsx:434
 msgid "Tour Steps"
 msgstr "Các bước của Tour"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/components/GuidedTour.jsx:310
 #: src/HelpCenter/components/tours/GuidedTour.jsx:311
@@ -950,7 +950,7 @@ msgid "Tour"
 msgstr "Tour"
 
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:4
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/Library/components/topbar/Topbar.jsx:22
 #: src/PageCreator/components/topbar/Topbar.jsx:60
 msgid "Open for new pages"
@@ -959,23 +959,23 @@ msgstr "Mở cho trang mới"
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:4
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/Library/components/topbar/Topbar.jsx:12
 #: src/PageCreator/components/topbar/Topbar.jsx:48
 #, js-format
 msgid "Toggle %s on new pages"
 msgstr "Bật/tắt %s trên các trang mới"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:533
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Chúng tôi đã gặp lỗi máy chủ mà không thể khắc phục. Vui lòng tải lại trang và thử lại."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:96
-#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:86
-#: src/Agent/components/workflows/UpdatePostConfirm.jsx:46
+#: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:46
+#: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:86
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:96
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:82
 msgid "Save"
 msgstr "Lưu"
@@ -985,7 +985,7 @@ msgstr "Lưu"
 msgid "Enter a site description..."
 msgstr "Nhập mô tả website..."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:83
@@ -1006,7 +1006,7 @@ msgstr "Tải lên logo trang web"
 
 #: app/AdminPageRouter.php:41
 #: app/AdminPageRouter.php:65
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -1021,8 +1021,8 @@ msgid "Site Assistant"
 msgstr "Trợ lý trang web"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:7
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-common-659bd241faa47e112e9f.js:7
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:37
 msgid "Blog"
 msgstr "Blog"
@@ -1072,7 +1072,7 @@ msgstr "Thay thế ảnh"
 msgid "Edit or update the image"
 msgstr "Sửa hoặc cập nhật ảnh"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/components/GuidedTour.jsx:306
@@ -1110,37 +1110,32 @@ msgstr "Tiếp tục xây dựng website của bạn"
 msgid "Let's Start Building Your Website"
 msgstr "Hãy Bắt Đầu Xây Dựng Website Của Bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
-#: src/Launch/components/PageControl.jsx:213
-msgid "Exit Launch"
-msgstr "Thoát khởi chạy"
-
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:517
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Đang chuyển hướng trong 3, 2, 1..."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:516
 msgid "Your website has been created!"
 msgstr "Website của bạn đã được tạo!"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:512
 msgid "Setting up your Site Assistant"
 msgstr "Cài đặt Trợ lý trang web của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:255
 msgid "Starting off with a full website"
 msgstr "Bắt đầu với một trang web đầy đủ"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Agent/components/GuidedTour.jsx:421
 #: src/HelpCenter/components/tours/GuidedTour.jsx:424
-#: src/Launch/components/PageControl.jsx:230
+#: src/Launch/components/PageControl.jsx:231
 msgid "Back"
 msgstr "Quay lại"
 
@@ -1149,8 +1144,8 @@ msgstr "Quay lại"
 msgid "Site Industry"
 msgstr "Ngành công nghiệp của trang web"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Agent/components/messages/AgentMessage.jsx:15
 #: src/Agent/components/messages/AgentMessage.jsx:19
 #: src/Agent/components/messages/AgentMessage.jsx:23
@@ -1163,12 +1158,12 @@ msgstr "Ngành công nghiệp của trang web"
 msgid "Take me there"
 msgstr "Đưa tôi tới đó"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/NeedsTheme.jsx:14
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Xin chào, Launch được hỗ trợ bởi Extendable và cần thiết để tiếp tục. Bạn có thể cài đặt nó từ liên kết dưới đây và bắt đầu lại sau khi kích hoạt."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/NeedsTheme.jsx:10
 msgid "One more thing before we start."
 msgstr "Còn một điều nữa trước khi chúng ta bắt đầu."
@@ -1185,12 +1180,12 @@ msgstr "Plugin"
 msgid "View Site"
 msgstr "Xem trang web"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Agent/components/GuidedTour.jsx:467
 #: src/HelpCenter/components/tours/GuidedTour.jsx:470
-#: src/Launch/components/PageControl.jsx:284
+#: src/Launch/components/PageControl.jsx:285
 msgid "Next"
 msgstr "Sau"
 
@@ -1202,37 +1197,37 @@ msgstr "Sau"
 msgid "Pages"
 msgstr "Trang"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/HomeSelect.jsx:34
 msgid "You can personalize this later."
 msgstr "Bạn có thể cá nhân hóa điều này sau."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
-#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:61
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:48
 #: src/Launch/components/LoadingIndicator.jsx:5
 #: src/Launch/pages/SiteQuestions.jsx:156
 msgid "Loading..."
 msgstr "Đang tải..."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/SmallPreview.jsx:171
 #: src/Launch/pages/ObjectiveSelection.jsx:118
 #: src/Launch/pages/SiteStructure.jsx:92
 msgid "Press to select"
 msgstr "Nhấn để chọn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/Launch/components/RetryNotice.jsx:12
 #: src/PageCreator/components/RetryNotice.jsx:12
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Chỉ một chút, việc này mất thời gian hơn dự kiến."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
@@ -1251,13 +1246,13 @@ msgid "Design"
 msgstr "Thiết kế"
 
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/Library/components/topbar/CloseButton.jsx:9
 #: src/PageCreator/components/topbar/CloseButton.jsx:9
 msgid "Close"
 msgstr "Đóng"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/Input.jsx:73
 msgid "Submit"
 msgstr "Gửi"
@@ -1268,7 +1263,7 @@ msgstr "Gửi"
 msgid "Settings"
 msgstr "Thiết lập"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
@@ -1291,7 +1286,7 @@ msgid "Extendify"
 msgstr "Extendify"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
 #: src/Agent/components/GuidedTour.jsx:438
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
@@ -1299,43 +1294,43 @@ msgstr "Extendify"
 msgid "%1$s of %2$s"
 msgstr "%1$s của %2$s"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:284
 msgid "Creating pages with custom content"
 msgstr "Tạo trang với nội dung tùy chỉnh"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:373
 msgid "Setting up site layout"
 msgstr "Cài đặt bố cục trang web"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:11
 msgid "Professional"
 msgstr "Chuyên nghiệp"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:15
 msgid "Friendly"
 msgstr "Thân thiện"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:19
 msgid "Inspirational"
 msgstr "Truyền cảm hứng"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:23
 msgid "Informative"
 msgstr "Thông tin chi tiết"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:27
 msgid "Persuasive"
 msgstr "Thuyết phục"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
-#: src/Launch/components/PageControl.jsx:269
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: src/Launch/components/PageControl.jsx:270
 msgid "Skip"
 msgstr "Bỏ qua"
 
@@ -1345,42 +1340,42 @@ msgid "Launch"
 msgstr "Khởi chạy"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:3
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-launch-178234bad6040f2e6113.js:3
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/Launch/api/WPApi.js:87
 #: src/Launch/api/WPApi.js:175
 #: src/PageCreator/api/WPApi.js:52
 msgid "Added by Launch"
 msgstr "Đã thêm bởi Launch"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:5
+#: public/build/extendify-launch-178234bad6040f2e6113.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:151
 msgid "Start over?"
 msgstr "Bắt đầu lại từ đầu?"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:5
+#: public/build/extendify-launch-178234bad6040f2e6113.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:155
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Thực hiện lại quy trình nhập môn để tạo một trang web mới."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:179
 msgid "Exit"
 msgstr "Thoát"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:191
 msgid "Processing"
 msgstr "Đang xử lý"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:187
 msgid "Continue"
 msgstr "Tiếp tục"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:130
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:136
@@ -1391,264 +1386,264 @@ msgstr "Tiếp tục"
 msgid "Ask AI"
 msgstr "Hỏi AI"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:204
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:209
 msgid "Insert at top"
 msgstr "Chèn ở đầu trang"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:214
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:222
 msgid "Insert after the selected text"
 msgstr "Chèn sau văn bản đã chọn"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
-#: src/Draft/components/InsertMenu.jsx:224
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
+#: src/Draft/components/InsertMenu.jsx:233
 msgid "Insert at bottom"
 msgstr "Chèn ở cuối"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:13
 msgid "A paragraph …"
 msgstr "Một đoạn văn …"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:14
 msgid "Write a paragraph about"
 msgstr "Viết một đoạn về"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:17
 msgid "Blog post …"
 msgstr "Bài viết trên blog …"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:21
 msgid "An informative article …"
 msgstr "Một bài viết thông tin …"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:22
 msgid "Write an informative article about"
 msgstr "Viết một bài báo mang tính thông tin về"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:25
 msgid "Headline …"
 msgstr "Tiêu đề …"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:26
 msgid "Write a headline for"
 msgstr "Viết tiêu đề cho"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:29
 msgid "List …"
 msgstr "Liệt kê …"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Draft/components/DraftMenu.jsx:30
 msgid "Write a list of"
 msgstr "Viết một danh sách các"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:29
 msgid "Catalan"
 msgstr "Tiếng Catalan"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:39
 msgid "Danish"
 msgstr "Tiếng Đan Mạch"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:44
 msgid "Dutch"
 msgstr "Tiếng Hà Lan"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:49
 msgid "Dutch (Belgium)"
 msgstr "Tiếng Hà Lan (Bỉ)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:54
 msgid "English"
 msgstr "Tiếng Anh"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:64
 msgid "Estonian"
 msgstr "Tiếng Estonia"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:69
 msgid "Finnish"
 msgstr "Tiếng Phần Lan"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:74
 msgid "French (Belgium)"
 msgstr "Tiếng Pháp (Bỉ)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:84
 msgid "French (France)"
 msgstr "Tiếng Pháp (Pháp)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:89
 msgid "German"
 msgstr "Tiếng Đức"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:94
 msgid "German (Switzerland)"
 msgstr "Tiếng Đức (Thụy Sĩ)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:119
 msgid "Indonesian"
 msgstr "Tiếng Indonesia"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:124
 msgid "Italian"
 msgstr "Tiếng Ý"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:129
 msgid "Japanese"
 msgstr "Tiếng Nhật"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:144
 msgid "Polish"
 msgstr "Tiếng Ba Lan"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:149
 msgid "Portuguese (Brazil)"
 msgstr "Tiếng Bồ Đào Nha (Brazil)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:154
 msgid "Portuguese (Portugal)"
 msgstr "Tiếng Bồ Đào Nha (Bồ Đào Nha)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:174
 msgid "Spanish (Spain)"
 msgstr "Tiếng Tây Ban Nha (Tây Ban Nha)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:189
 msgid "Swedish"
 msgstr "Tiếng Thụy Điển"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:199
 msgid "Ukrainian"
 msgstr "Tiếng Ukraine"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:204
 msgid "Vietnamese"
 msgstr "Tiếng Việt"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:163
 #: src/Draft/components/TranslationDropdown.jsx:224
 msgid "Translate"
 msgstr "Dịch"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:239
 msgid "Translate to..."
 msgstr "Dịch sang..."
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:228
 #: src/Draft/components/Input.jsx:48
 msgid "Ask AI to edit"
 msgstr "Yêu cầu AI chỉnh sửa"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:1
+#: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:220
 #: src/Draft/components/SelectedText.jsx:53
 msgid "Remove selection"
 msgstr "Xóa lựa chọn"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/Draft.jsx:148
 msgid "Suggested prompts"
 msgstr "Lời nhắc gợi ý"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/ToolbarMenu.jsx:162
 msgid "Custom prompt"
 msgstr "Nhắc nhở tùy chỉnh"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/CreditCounter.jsx:37
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Bạn vẫn có thể khám phá và tìm những hình ảnh tuyệt vời trên Unsplash cho đến khi số lần tải của bạn được đặt lại."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/CreditCounter.jsx:47
 msgid "Search on Unsplash"
 msgstr "Tìm kiếm trên Unsplash"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:38
 msgid "Tell AI about the image you would like to create"
 msgstr "Hãy mô tả cho AI về hình ảnh bạn muốn tạo."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:42
 msgid "Image Prompt"
 msgstr "Lời nhắc hình ảnh"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:88
 msgid "Generating image..."
 msgstr "Đang tạo ảnh..."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:89
 msgid "Generate image"
 msgstr "Tạo ảnh"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/ImagePreview.jsx:72
 msgid "Generating your image: "
 msgstr "Đang tạo ảnh của bạn:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/image-generation/ImagePreview.jsx:85
 msgid "Importing image..."
 msgstr "Đang nhập ảnh..."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/image-generation/ImagePreview.jsx:86
 msgid "Use this image"
 msgstr "Sử dụng ảnh này"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/image-generation/ImagePreview.jsx:92
 msgid "Delete image"
 msgstr "Xóa ảnh"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/GenerateImage.jsx:98
 msgid "Image Description"
 msgstr "Mô tả hình ảnh"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/api/Data.js:80
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Yêu cầu của bạn đã bị từ chối do hệ thống an toàn của chúng tôi. Lời nhắc của bạn có thể chứa văn bản không được hệ thống an toàn của chúng tôi cho phép."
@@ -1711,7 +1706,7 @@ msgstr "Chỉnh sửa chân trang"
 msgid "Reset site"
 msgstr "Cài đặt lại trang web"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -1970,7 +1965,7 @@ msgstr "Kết quả tìm kiếm"
 msgid "Search the knowledge base"
 msgstr "Tìm kiếm cơ sở kiến thức"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -1980,14 +1975,14 @@ msgstr "Tìm kiếm cơ sở kiến thức"
 msgid "Page editor"
 msgstr "Công cụ soạn thảo trang"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-editor.js:252
 #: src/HelpCenter/tours/page-editor.js:255
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Nhấn đăng hoặc cập nhật để lưu những thay đổi bạn đã thực hiện trên trang và áp dụng chúng trực tiếp trên trang web."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -1997,7 +1992,7 @@ msgstr "Nhấn đăng hoặc cập nhật để lưu những thay đổi bạn �
 msgid "Installing a plugin"
 msgstr "Đang cài đặt một plugin"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -2012,21 +2007,21 @@ msgstr "Quản lý plugin"
 msgid "You can always access the help center by clicking this button."
 msgstr "Bạn luôn có thể truy cập trung tâm trợ giúp bằng cách nhấp vào nút này."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Xem trang web của bạn"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Bạn có thể luôn truy cập trang web của mình bằng cách nhấp vào nút này."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -2098,8 +2093,8 @@ msgid "Service offline. Check back later."
 msgstr "Dịch vụ hiện không hoạt động. Vui lòng quay lại sau."
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:4
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:4
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/CreditCounter.jsx:13
 #: src/Draft/components/image-generation/CreditCounter.jsx:31
 #, js-format
@@ -2107,23 +2102,23 @@ msgid "%1$s of %2$s daily image credits used"
 msgstr "%1$s trong tổng số %2$s lượt tín dụng hình ảnh hàng ngày đã sử dụng"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:171
 #: src/Draft/components/image-generation/GenerateForm.jsx:51
 msgid "Aspect Ratio"
 msgstr "Tỉ lệ khung hình"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:58
 msgid "Square: 1:1"
 msgstr "Vuông: 1:1"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:65
 msgid "Landscape: 4:3"
 msgstr "Cảnh góc rộng: 4:3"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:7
+#: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Draft/components/image-generation/GenerateForm.jsx:72
 msgid "Portrait: 3:4"
 msgstr "Chân dung: 3:4"
@@ -2141,7 +2136,7 @@ msgstr "Có sẵn và rất phù hợp cho trang web của bạn"
 msgid "Get another domain for your site."
 msgstr "Lấy một tên miền khác cho trang web của bạn."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:1
+#: public/build/extendify-launch-178234bad6040f2e6113.js:1
 #: src/Launch/api/WPApi.js:51
 msgid "Header Navigation"
 msgstr "Điều hướng tiêu đề"
@@ -2195,66 +2190,66 @@ msgstr "Đang cài đặt..."
 msgid "Install Now"
 msgstr "Cài đặt ngay"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/GenerateImage.jsx:124
 msgid "AI Image"
 msgstr "Ảnh AI"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/GenerateImage.jsx:90
 #: src/Draft/pages/Unsplash.jsx:66
 msgid "Go Back"
 msgstr "Quay lại"
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/ai-image-editor.js:7
 #: src/Draft/pages/GenerateImage.jsx:94
 #: src/Draft/pages/Home.jsx:17
 msgid "AI Image Generator"
 msgstr "Trình tạo hình ảnh AI"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Home.jsx:18
 msgid "Use AI to generate custom images based on your description."
 msgstr "Sử dụng AI để tạo hình ảnh tùy chỉnh dựa trên mô tả của bạn."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Home.jsx:28
 msgid "Generate an image"
 msgstr "Tạo hình ảnh"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Home.jsx:35
 msgid "Discover Stock Photos"
 msgstr "Khám phá Ảnh Kho(stock)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Home.jsx:36
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Tìm kiếm và thêm ảnh miễn phí từ Unsplash.com"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
-#: src/Draft/pages/Home.jsx:45
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
+#: src/Draft/pages/Home.jsx:44
 msgid "Search Unsplash"
 msgstr "Tìm kiếm trên Unsplash"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/stock-images/UnsplashImages.jsx:13
 msgid "No images found."
 msgstr "Không tìm thấy hình ảnh nào."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Unsplash.jsx:103
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/pages/Unsplash.jsx:70
 msgid "Photos from Unsplash"
 msgstr "Ảnh từ Unsplash"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/GenerateImageButtons.jsx:59
 #: src/Draft/components/GenerateImageButtons.jsx:97
 msgid "Get Personalized Image"
@@ -2266,7 +2261,7 @@ msgstr "Lấy ảnh cá nhân hóa"
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Nhấp vào đây để chuyển đến bảng điều khiển quản lý trang web của bạn. Từ đó bạn có thể tạo thêm trang web và quản lý cài đặt tài khoản của mình."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:172
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Ví dụ, Chúng tôi là một studio yoga tại London với đội ngũ giáo viên được đào tạo chuyên nghiệp, chú trọng vào yoga nóng với mục đích trị liệu."
@@ -2411,12 +2406,12 @@ msgid "Start getting bookings from your website by configuring the SimplyBook.me
 msgstr "Bắt đầu nhận đặt chỗ từ trang web của bạn bằng cách cấu hình plugin SimplyBook.me."
 
 #. translators: This string represents the title of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits the standard phrasing for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:3
+#: public/build/extendify-common-659bd241faa47e112e9f.js:3
 msgid "About"
 msgstr "Về chúng tôi"
 
 #. translators: This string represents the title of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits the standard phrasing for a "Contact" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:19
+#: public/build/extendify-common-659bd241faa47e112e9f.js:19
 msgid "Contact"
 msgstr "Liên hệ"
 
@@ -2468,7 +2463,7 @@ msgstr "Anh hùng"
 
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-common-4a151c468790b9033231.js:49
+#: public/build/extendify-common-659bd241faa47e112e9f.js:49
 #: src/Assist/svg/DesignLibraryMarkup.jsx:89
 msgid "Pricing"
 msgstr "Giá cả"
@@ -2480,7 +2475,7 @@ msgstr "Chứng thực xã hội"
 
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-common-4a151c468790b9033231.js:81
+#: public/build/extendify-common-659bd241faa47e112e9f.js:81
 #: src/Assist/svg/DesignLibraryMarkup.jsx:95
 msgid "Team"
 msgstr "Đội"
@@ -2795,238 +2790,238 @@ msgstr "Thư viện thiết kế đầy đủ được tùy chỉnh cho từng t
 msgid "Explore Design Library"
 msgstr "Khám phá Thư viện thiết kế"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:24
 msgid "Bulgarian"
 msgstr "Bulgaria"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:34
 msgid "Czech"
 msgstr "Tiếng Séc"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:79
 msgid "French (Canada)"
 msgstr "Tiếng Pháp (Canada)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:114
 msgid "Hungarian"
 msgstr "Tiếng Hungary"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:139
 msgid "Norwegian"
 msgstr "Tiếng Na Uy"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:164
 msgid "Russian"
 msgstr "Tiếng Nga"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:169
 msgid "Slovak"
 msgstr "Tiếng Slovak"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:194
 msgid "Turkish"
 msgstr "Tiếng Thổ Nhĩ Kỳ"
 
 #. translators: This string represents the slug of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits a slug for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:5
+#: public/build/extendify-common-659bd241faa47e112e9f.js:5
 msgid "about"
 msgstr "gioi-thieu"
 
 #. translators: This string represents the slug of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits a slug for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:9
+#: public/build/extendify-common-659bd241faa47e112e9f.js:9
 msgid "blog"
 msgstr "blog"
 
 #. translators: This string represents the title of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits the standard phrasing for a "Careers" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:15
+#: public/build/extendify-common-659bd241faa47e112e9f.js:15
 msgid "Careers"
 msgstr "Tuyển dụng"
 
 #. translators: This string represents the slug of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits a slug for a "Careers" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:17
+#: public/build/extendify-common-659bd241faa47e112e9f.js:17
 msgid "careers"
 msgstr "tuyen-dung"
 
 #. translators: This string represents the slug of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits a slug for a "Contact" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:21
+#: public/build/extendify-common-659bd241faa47e112e9f.js:21
 msgid "contact"
 msgstr "lien-he"
 
 #. translators: This string represents the slug of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits a slug for an "Events" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:25
+#: public/build/extendify-common-659bd241faa47e112e9f.js:25
 msgid "events"
 msgstr "su-kien"
 
 #. translators: This string represents the title of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits the standard phrasing for a "FAQ" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:27
+#: public/build/extendify-common-659bd241faa47e112e9f.js:27
 msgid "FAQ"
 msgstr "Câu hỏi thường gặp"
 
 #. translators: This string represents the slug of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits a slug for a "FAQ" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:29
+#: public/build/extendify-common-659bd241faa47e112e9f.js:29
 msgid "faq"
 msgstr "cau-hoi-thuong-gap"
 
 #. translators: This string represents the title of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits the standard phrasing for a "Features" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:31
+#: public/build/extendify-common-659bd241faa47e112e9f.js:31
 msgid "Features"
 msgstr "Tính năng"
 
 #. translators: This string represents the slug of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits a slug for a "Features" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:33
+#: public/build/extendify-common-659bd241faa47e112e9f.js:33
 msgid "features"
 msgstr "tinh-nang"
 
 #. translators: This string represents the title of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits the standard phrasing for a "Gallery" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:35
+#: public/build/extendify-common-659bd241faa47e112e9f.js:35
 msgid "Gallery"
 msgstr "Bộ sưu tập hình ảnh"
 
 #. translators: This string represents the slug of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits a slug for a "Gallery" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:37
+#: public/build/extendify-common-659bd241faa47e112e9f.js:37
 msgid "gallery"
 msgstr "bo-suu-tap"
 
 #. translators: This string represents the title of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits the standard phrasing for a "Menu" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:41
+#: public/build/extendify-common-659bd241faa47e112e9f.js:41
 msgid "Menu"
 msgstr "Thực đơn"
 
 #. translators: This string represents the slug of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits a slug for a "Menu" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:43
+#: public/build/extendify-common-659bd241faa47e112e9f.js:43
 msgid "menu"
 msgstr "thuc-don"
 
 #. translators: This string represents the title of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits the standard phrasing for a "Portfolio" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:45
+#: public/build/extendify-common-659bd241faa47e112e9f.js:45
 msgid "Portfolio"
 msgstr "Danh mục dự án"
 
 #. translators: This string represents the slug of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits a slug for a "Portfolio" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:47
+#: public/build/extendify-common-659bd241faa47e112e9f.js:47
 msgid "portfolio"
 msgstr "danh-muc-du-an"
 
 #. translators: This string represents the slug of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits a slug for a "Pricing" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:51
+#: public/build/extendify-common-659bd241faa47e112e9f.js:51
 msgid "pricing"
 msgstr "gia-cuoc"
 
 #. translators: This string represents the title of a "Products" page on a website that lists products. Please translate it in a way that fits the standard phrasing for a "Products" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:53
+#: public/build/extendify-common-659bd241faa47e112e9f.js:53
 msgid "Products"
 msgstr "Sản phẩm"
 
 #. translators: This string represents the slug of a "Products" page on a website that lists products. Please translate it in a way that fits a slug for a "Products" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:55
+#: public/build/extendify-common-659bd241faa47e112e9f.js:55
 msgid "products"
 msgstr "san-pham"
 
 #. translators: This string represents the title of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits the standard phrasing for a "Quote" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:57
+#: public/build/extendify-common-659bd241faa47e112e9f.js:57
 msgid "Quote"
 msgstr "Báo giá"
 
 #. translators: This string represents the slug of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits a slug for a "Quote" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:59
+#: public/build/extendify-common-659bd241faa47e112e9f.js:59
 msgid "quote"
 msgstr "bao-gia"
 
 #. translators: This string represents the title of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits the standard phrasing for a "Reservation" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:61
+#: public/build/extendify-common-659bd241faa47e112e9f.js:61
 msgid "Reservation"
 msgstr "Đặt chỗ"
 
 #. translators: This string represents the slug of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits a slug for a "Reservation" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:63
+#: public/build/extendify-common-659bd241faa47e112e9f.js:63
 msgid "reservation"
 msgstr "dat-cho"
 
 #. translators: This string represents the title of a "Resources" page on a website that provides resources. Please translate it in a way that fits the standard phrasing for a "Resources" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:65
+#: public/build/extendify-common-659bd241faa47e112e9f.js:65
 msgid "Resources"
 msgstr "Tài nguyên"
 
 #. translators: This string represents the slug of a "Resources" page on a website that provides resources. Please translate it in a way that fits a slug for a "Resources" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:67
+#: public/build/extendify-common-659bd241faa47e112e9f.js:67
 msgid "resources"
 msgstr "tai-nguyen"
 
 #. translators: This string represents the title of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits the standard phrasing for a "Service Area" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:69
+#: public/build/extendify-common-659bd241faa47e112e9f.js:69
 msgid "Service Area"
 msgstr "Khu vực phục vụ"
 
 #. translators: This string represents the slug of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits a slug for a "Service Area" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:71
+#: public/build/extendify-common-659bd241faa47e112e9f.js:71
 msgid "service-area"
 msgstr "khu-vuc-phuc-vu"
 
 #. translators: This string represents the title of a "Services" page on a website that lists services. Please translate it in a way that fits the standard phrasing for a "Services" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:73
+#: public/build/extendify-common-659bd241faa47e112e9f.js:73
 msgid "Services"
 msgstr "Dịch vụ"
 
 #. translators: This string represents the slug of a "Services" page on a website that lists services. Please translate it in a way that fits a slug for a "Services" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:75
+#: public/build/extendify-common-659bd241faa47e112e9f.js:75
 msgid "services"
 msgstr "dich-vu"
 
 #. translators: This string represents the title of a "Specials" page on a website that lists special offers. Please translate it in a way that fits the standard phrasing for a "Specials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:77
+#: public/build/extendify-common-659bd241faa47e112e9f.js:77
 msgid "Specials"
 msgstr "Khuyến mãi"
 
 #. translators: This string represents the slug of a "Specials" page on a website that lists special offers. Please translate it in a way that fits a slug for a "Specials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:79
+#: public/build/extendify-common-659bd241faa47e112e9f.js:79
 msgid "specials"
 msgstr "khuyen-mai"
 
 #. translators: This string represents the slug of a "Team" page on a website that introduces the team members. Please translate it in a way that fits a slug for a "Team" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:83
+#: public/build/extendify-common-659bd241faa47e112e9f.js:83
 msgid "team"
 msgstr "doi-ngu"
 
 #. translators: This string represents the title of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits the standard phrasing for a "Testimonials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:85
+#: public/build/extendify-common-659bd241faa47e112e9f.js:85
 msgid "Testimonials"
 msgstr "Phản hồi khách hàng"
 
 #. translators: This string represents the slug of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits a slug for a "Testimonials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:87
+#: public/build/extendify-common-659bd241faa47e112e9f.js:87
 msgid "testimonials"
 msgstr "khach-hang-danh-gia"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/SiteStructure.jsx:47
 msgid "Single-Page Website"
 msgstr "Trang web đơn trang"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/SiteStructure.jsx:48
 msgid "All content displayed on one scrolling page."
 msgstr "Tất cả nội dung được hiển thị trên một trang cuộn."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/SiteStructure.jsx:58
 msgid "Multi-Page Website"
 msgstr "Website đa trang"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/SiteStructure.jsx:59
 msgid "Multiple interconnected pages."
 msgstr "Nhiều trang liên kết với nhau."
 
 #: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:31
 #: src/Launch/pages/SiteStructure.jsx:70
 msgid "Pick Your Site Structure"
@@ -3178,84 +3173,84 @@ msgstr "Thưởng thức ẩm thực bistro Pháp cổ điển kết hợp phong
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Tìm ngôi nhà mơ ước của bạn hoặc đầu tư sinh lời với Pinnacle Properties, công ty bất động sản hàng đầu tại Austin. Tin tưởng các đại lý giàu kinh nghiệm của chúng tôi để nhận dịch vụ cá nhân hóa."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:99
 msgid "Greek"
 msgstr "Tiếng Hy Lạp"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:109
 msgid "Hindi"
 msgstr "Tiếng Hindi"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:14
 msgid "Arabic"
 msgstr "Tiếng Ả Rập"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:19
 msgid "Arabic (Morocco)"
 msgstr "Tiếng Ả Rập (Ma-rốc)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:59
 msgid "English (UK)"
 msgstr "Tiếng Anh (Anh)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:179
 msgid "Spanish (Colombia)"
 msgstr "Tiếng Tây Ban Nha (Colombia)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:184
 msgid "Spanish (Mexico)"
 msgstr "Tiếng Tây Ban Nha (Mexico)"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:159
 msgid "Romanian"
 msgstr "Tiếng Romania"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:99
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Chia sẻ tầm nhìn của bạn, và chúng tôi sẽ tạo ra một trang web hoàn hảo phù hợp với nhu cầu của bạn, sẵn sàng ra mắt ngay lập tức. Hãy bắt đầu bằng cách tìm hiểu thêm về những gì bạn đang xây dựng."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:16
+#: public/build/extendify-launch-178234bad6040f2e6113.js:16
 #: src/Launch/LaunchPage.jsx:56
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Khởi chạy - Tạo web bằng AI"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SitePrep.jsx:87
 msgid "Customizing Your Experience"
 msgstr "Tùy chỉnh trải nghiệm của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/ContentGathering.jsx:65
 msgid "Designing Your Options"
 msgstr "Thiết kế tùy chọn của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SitePrep.jsx:88
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Vui lòng đợi trong khi chúng tôi phân tích đầu vào của bạn và điều chỉnh trải nghiệm của bạn."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/ContentGathering.jsx:66
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Vui lòng đợi trong khi chúng tôi tạo một số tùy chọn trang web để bạn chọn."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:346
 msgid "Creating blog sample data"
 msgstr "Tạo dữ liệu mẫu cho blog"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:5
+#: public/build/extendify-launch-178234bad6040f2e6113.js:5
 #: src/Launch/api/WPApi.js:360
 msgid "More"
 msgstr "Thêm"
@@ -3269,49 +3264,49 @@ msgid "Add Website Details"
 msgstr "Thêm chi tiết trang web"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #, js-format
 msgid "Blog Post %s"
 msgstr "Bài viết %s"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:400
 msgid "Importing shop sample data"
 msgstr "Đang nhập dữ liệu mẫu cửa hàng"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:164
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s trang/bài viết được tạo trong phiên giới thiệu trước sẽ bị xoá."
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:134
 msgid "Lithuanian"
 msgstr "Tiếng Lithuania"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/Tones.jsx:44
 msgid "Select your site's tone"
 msgstr "Chọn tông màu cho trang web của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:153
 msgid "Website title (required)"
 msgstr "Tiêu đề trang web (bắt buộc)"
 
 #. translators: This string represents the title of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits the standard phrasing for a "Book" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-4a151c468790b9033231.js:11
+#: public/build/extendify-common-659bd241faa47e112e9f.js:11
 msgid "Book Now"
 msgstr "Đặt ngay"
 
 #. translators: This string represents the slug of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits a slug for a "Book" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-4a151c468790b9033231.js:13
+#: public/build/extendify-common-659bd241faa47e112e9f.js:13
 msgid "book-now"
 msgstr "dat-ngay"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 msgid "Hello World Featured Image"
 msgstr "Ảnh đại diện Hello World"
 
@@ -3319,29 +3314,29 @@ msgstr "Ảnh đại diện Hello World"
 msgid "Extendify Page Creator User Settings"
 msgstr "Cài đặt người dùng Extendify Page Creator"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:28
 msgid "Confirmation"
 msgstr "Xác nhận"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:31
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Bạn muốn thay thế nội dung hiện có hay tạo trang mới?"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:38
 msgid "Delete existing content"
 msgstr "Xóa nội dung hiện có"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:45
 msgid "Create a new page"
 msgstr "Tạo trang mới"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:1
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
 #: src/Agent/tours/page-creator.js:6
 #: src/Agent/tours/page-creator.js:31
 #: src/HelpCenter/tours/page-creator.js:7
@@ -3350,248 +3345,248 @@ msgstr "Tạo trang mới"
 msgid "AI Page Generator"
 msgstr "Trình tạo Trang AI"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:44
 msgid "Edit"
 msgstr "Sửa"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:62
 msgid "Clear"
 msgstr "Xóa"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/hooks/usePageProfile.js:22
 msgid "Generating AI page profile..."
 msgstr "Đang tạo hồ sơ trang AI..."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/pages/Dashboard.jsx:59
 msgid "AI Page Creation"
 msgstr "Tạo trang AI"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/pages/Dashboard.jsx:60
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Mô tả trang bạn muốn tạo, thêm các chi tiết quan trọng, và AI sẽ tạo ra một trang độc đáo, sẵn sàng sử dụng cho bạn."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/pages/Dashboard.jsx:69
 msgid "Describe Your Page"
 msgstr "Mô tả Trang của bạn"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:4
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
 #: src/PageCreator/pages/Dashboard.jsx:72
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Ví dụ: Tạo trang \"Về Chúng Tôi\" nêu bật câu chuyện, sứ mệnh, giá trị và tổng quan về đội ngũ của chúng tôi."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:88
 #, js-format
 msgid "Site Description for %s"
 msgstr "Mô tả trang cho %s"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:91
 msgid "Site Description"
 msgstr "Mô tả trang web"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:94
 msgid "This is the site description with all its ups and downs."
 msgstr "Đây là mô tả trang web với mọi thăng trầm."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:123
 msgid "Generate Page"
 msgstr "Tạo trang"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/hooks/useSiteImages.js:19
 msgid "Finding images..."
 msgstr "Đang tìm ảnh..."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/hooks/usePageLayout.js:35
 msgid "Creating a custom layout..."
 msgstr "Đang tạo bố cục riêng..."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/hooks/usePageCustomContent.js:50
 msgid "Writing custom content..."
 msgstr "Đang viết nội dung tùy chỉnh..."
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/components/Modal.jsx:185
 msgid "Close AI Page Creator"
 msgstr "Đóng AI Page Creator"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/components/Modal.jsx:198
 msgid "AI Page Creator"
 msgstr "Trình tạo trang AI"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/components/Modal.jsx:95
 msgid "Page added"
 msgstr "Trang đã được thêm"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/components/Modal.jsx:101
 msgid "Failed to add page"
 msgstr "Không thể thêm trang"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:27
 msgid "Business"
 msgstr "Doanh nghiệp"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:32
 msgid "eCommerce"
 msgstr "Thương mại điện tử"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:42
 msgid "Landing Page"
 msgstr "Trang đích"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:47
 msgid "Other"
 msgstr "Khác"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:152
 msgid "Landing Page title (required)"
 msgstr "Tiêu đề Trang đích (bắt buộc)"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:176
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Ví dụ: Chúng tôi là cửa hàng trực tuyến chuyên về hàng gia dụng thân thiện với môi trường, cung cấp sản phẩm có nguồn gốc bền vững để giúp bạn sống xanh hơn."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:180
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "Ví dụ: Blog tài chính cá nhân chia sẻ mẹo chuyên gia về lập ngân sách, đầu tư và đạt tự do tài chính cho các chuyên gia trẻ."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:184
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Ví dụ: Một ebook miễn phí chứa đầy mẹo và chiến lược năng suất có thể thực hiện để giúp bạn tập trung, quản lý thời gian hiệu quả và đạt được mục tiêu."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:188
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Ví dụ: Một danh mục nhiếp ảnh cá nhân với bộ sưu tập ảnh phong cảnh, chân dung và đường phố, ghi lại khoảnh khắc từ khắp nơi trên thế giới."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:194
 msgid "Describe your business"
 msgstr "Mô tả doanh nghiệp của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:195
 msgid "Describe your eCommerce website"
 msgstr "Mô tả trang web thương mại điện tử của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:196
 msgid "Describe your blog"
 msgstr "Mô tả blog của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:197
 msgid "Describe your Landing Page"
 msgstr "Mô tả Trang đích của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:198
 msgid "Describe your website"
 msgstr "Mô tả trang web của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:242
 msgid "Call-To-Action Link"
 msgstr "Liên kết kêu gọi hành động"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:246
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Liên kết này sẽ được sử dụng trong các nút Kêu gọi hành động, dẫn khách truy cập đến điểm đến bạn chọn."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/ObjectiveSelection.jsx:82
 msgid "What type of website are you creating?"
 msgstr "Bạn đang tạo loại trang web nào?"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:91
 msgid "Tell Us About Your Landing Page"
 msgstr "Cho chúng tôi biết về Trang đích của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:92
 msgid "Tell Us About Your Website"
 msgstr "Cho chúng tôi biết về trang web của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteInformation.jsx:95
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Chia sẻ tầm nhìn của bạn, chúng tôi sẽ tạo một trang đích phù hợp với nhu cầu của bạn, sẵn sàng ra mắt ngay. Hãy bắt đầu bằng cách tìm hiểu thêm về những gì bạn đang xây dựng."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:32
 #: src/HelpCenter/tours/page-creator.js:32
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Nhấn vào đây để bắt đầu với Trình Tạo Trang AI của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:55
 #: src/HelpCenter/tours/page-creator.js:55
 msgid "Page description"
 msgstr "Mô tả trang"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:56
 #: src/HelpCenter/tours/page-creator.js:56
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Viết mô tả cho trang bạn muốn tạo. Càng chi tiết càng tốt. Chúng tôi sẽ tạo trang dựa trên mô tả này."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:84
 #: src/HelpCenter/tours/page-creator.js:84
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Nếu cần, cập nhật mô tả trang web của bạn tại đây. Chúng tôi sử dụng điều này để thêm ngữ cảnh bổ sung về trang web của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:107
 #: src/HelpCenter/tours/page-creator.js:107
 msgid "Generate your page"
 msgstr "Tạo trang của bạn"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
 #: src/Agent/tours/page-creator.js:108
 #: src/HelpCenter/tours/page-creator.js:108
 msgid "When ready, press here to generate your page."
 msgstr "Khi sẵn sàng, nhấn vào đây để tạo trang của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
-#: public/build/extendify-shared-5ce167fe6ca53b5403c7.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-shared-8d49300600182f94ffe4.js:1
 #: src/Agent/components/tooltip/ToolTip.jsx:101
 #: src/Shared/components/ToolTip.jsx:63
 msgid "Close ToolTip"
 msgstr "Đóng chú giải công cụ"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:411
 msgid "Installing supporting plugins"
 msgstr "Cài plugin hỗ trợ"
@@ -3616,23 +3611,23 @@ msgstr "Cài đặt plugin thất bại"
 msgid "Failed to activate the plugin"
 msgstr "Kích hoạt plugin không thành công"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/Dashboard.jsx:103
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Cho phép cài đặt plugin để có các tính năng trang nâng cao"
 
-#: public/build/extendify-page-creator-2d24809f3eeb3becd118.js:7
+#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
 #: src/PageCreator/pages/GeneratingPage.jsx:43
 msgid "Processing patterns and installing required plugins..."
 msgstr "Đang xử lý mẫu và cài đặt plugin cần thiết..."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:8
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:14
 msgid "Privacy Policy"
 msgstr "Chính sách Bảo mật"
 
 #. translators: %1$s and %2$s are links
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:23
 #, js-format
 msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
@@ -3645,12 +3640,12 @@ msgstr "Bằng cách sử dụng các tính năng AI, bạn đồng ý với %1$
 msgid "Recommended Solutions for: %s"
 msgstr "Giải pháp đề xuất cho: %s"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteQuestions.jsx:172
 msgid "Show more questions"
 msgstr "Xem thêm câu hỏi"
 
-#: public/build/extendify-draft-6fa869f73eddf5022681.js:10
+#: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Draft/components/TranslationDropdown.jsx:104
 msgid "Hebrew"
 msgstr "Tiếng Do Thái"
@@ -3659,254 +3654,221 @@ msgstr "Tiếng Do Thái"
 msgid "What tours are available?"
 msgstr "Những tour nào có sẵn?"
 
-#: app/Agent/Admin.php:202
+#: app/Agent/Admin.php:211
 msgid "I want to change my theme styling"
 msgstr "Tôi muốn thay đổi kiểu của giao diện"
 
-#: app/Agent/Admin.php:210
+#: app/Agent/Admin.php:219
 msgid "Edit text on this page"
 msgstr "Sửa văn bản trên trang này"
 
-#: app/Agent/Admin.php:218
+#: app/Agent/Admin.php:227
 msgid "How can I create a post?"
 msgstr "Làm thế nào để tạo bài viết?"
 
-#: app/Agent/Admin.php:222
+#: app/Agent/Admin.php:231
 msgid "How can I create a page?"
 msgstr "Làm thế nào để tạo một trang?"
 
-#: app/Agent/Admin.php:229
+#: app/Agent/Admin.php:238
 msgid "How can I install a plugin?"
 msgstr "Làm thế nào để cài đặt một plugin?"
 
-#: app/Agent/Admin.php:236
+#: app/Agent/Admin.php:245
 msgid "How can I change my theme?"
 msgstr "Làm thế nào để tôi đổi giao diện?"
 
-#: app/Agent/Admin.php:240
+#: app/Agent/Admin.php:249
 msgid "How can I change the site footer?"
 msgstr "Làm cách nào để thay đổi chân trang của trang web?"
 
-#: app/Agent/Admin.php:244
+#: app/Agent/Admin.php:253
 msgid "How can I change the site header?"
 msgstr "Làm thế nào để tôi thay đổi đầu trang của trang web?"
 
-#: app/Agent/Admin.php:251
+#: app/Agent/Admin.php:260
 msgid "How can I upload an image?"
 msgstr "Làm cách nào để tải lên hình ảnh?"
 
-#: app/Agent/Admin.php:255
+#: app/Agent/Admin.php:264
 msgid "How can I change the site icon?"
 msgstr "Làm thế nào để thay đổi biểu tượng trang web?"
 
-#: app/Agent/Admin.php:262
+#: app/Agent/Admin.php:271
 msgid "How can I change my site title?"
 msgstr "Làm cách nào để thay đổi tiêu đề trang web?"
 
-#: app/Agent/Admin.php:266
+#: app/Agent/Admin.php:275
 msgid "How can I change my site tagline?"
 msgstr "Làm cách nào để thay đổi dòng mô tả trang web của tôi?"
 
-#: app/Agent/Admin.php:270
+#: app/Agent/Admin.php:279
 msgid "How can I change my site language?"
 msgstr "Làm cách nào để thay đổi ngôn ngữ trang web của tôi?"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/tools/get-theme-variations.js:16
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Không thể lấy các biến thể giao diện."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Chào bạn! Có vẻ như bạn đang cố gắng thay đổi màu giao diện, nhưng bạn không ở trang có thể thực hiện điều đó."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 msgid "Suggestion:"
 msgstr "Gợi ý:"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:34
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:34
 msgid "Loading variations..."
 msgstr "Đang tải các biến thể..."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:42
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:42
 msgid "No variations found"
 msgstr "Không tìm thấy biến thể nào"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:45
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:45
 msgid "We were unable to find any variations for your theme."
 msgstr "Chúng tôi không thể tìm thấy bất kỳ biến thể nào cho giao diện của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/SelectThemeVariation.jsx:89
-#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:80
-#: src/Agent/components/workflows/UpdatePostConfirm.jsx:40
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
+#: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:80
+#: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:30
+#: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:89
 msgid "Cancel"
 msgstr "Hủy"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/workflows/UpdateBlockConfirm.jsx:69
-#: src/Agent/components/workflows/UpdatePostConfirm.jsx:28
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:28
+#: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:69
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Đại lý đã thực hiện thay đổi trong trình duyệt. Vui lòng xem lại và xác nhận."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Khám phá thư viện thiết kế"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Tìm hiểu về Trình tạo Trang AI"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Tham quan công cụ soạn thảo trang"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Xem cách cài đặt plugin"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Tìm hiểu cách quản lý plugin"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Tham quan Trợ lý trang web"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Tham quan trang thành viên"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/ChatInput.jsx:152
 msgid "Ask anything"
 msgstr "Hỏi bất kỳ điều gì"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/ChatInput.jsx:170
 msgid "Send message"
 msgstr "Gửi tin nhắn"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/ScrollDownButton.jsx:21
 msgid "Scroll down"
 msgstr "Cuộn xuống"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/messages/AgentMessage.jsx:67
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/components/messages/AgentMessage.jsx:73
 msgid "Agent"
 msgstr "Đại lý"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
-#: src/Agent/components/messages/StatusMessage.jsx:9
-msgid "Finding an agent..."
-msgstr "Đang tìm đại lý..."
-
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:10
 msgid "Working on it..."
 msgstr "Đang thực hiện..."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:11
 msgid "Gathering data..."
 msgstr "Đang thu thập dữ liệu..."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:12
 msgid "Analyzing..."
 msgstr "Đang phân tích..."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:13
 #: src/Agent/components/messages/StatusMessage.jsx:14
 msgid "Canceled"
 msgstr "Đã hủy"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:15
 msgid "Usage limit reached"
 msgstr "Đã đạt giới hạn sử dụng"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:16
 msgid "Usage limit restored"
 msgstr "Giới hạn sử dụng đã được khôi phục"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:29
 msgid "Something went wrong"
 msgstr "Có gì đó không ổn"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:32
 msgid "An unexpected error occurred while processing your request."
 msgstr "Đã xảy ra lỗi bất ngờ trong khi xử lý yêu cầu của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:82
 msgid "Workflow completed successfully"
 msgstr "Quy trình làm việc hoàn tất thành công"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Thành phần không có sẵn"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:20
 msgid "It may have been removed or is not available for your account."
 msgstr "Có thể đã bị xóa hoặc không có sẵn cho tài khoản của bạn."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:3
-#: src/Agent/components/messages/WorkflowMessage.jsx:8
-msgid "Agent X"
-msgstr "Đặc vụ X"
-
-#. translators: %s: The name of the agent
-#: public/build/extendify-agent-d886439429f5826be8ab.js:5
-#: src/Agent/components/messages/WorkflowMessage.jsx:13
-#, js-format
-msgid "%s has joined"
-msgstr "%s đã tham gia"
-
-#: public/build/extendify-agent-d886439429f5826be8ab.js:5
-#: src/Agent/components/messages/WorkflowMessage.jsx:14
-#, js-format
-msgid "%s has rejoined"
-msgstr "%s đã tham gia lại"
-
-#. translators: %s: The name of the agent
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
-#: src/Agent/components/messages/WorkflowMessage.jsx:16
-#, js-format
-msgid "%s has left"
-msgstr "%s đã rời đi"
-
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
-#: src/Agent/components/messages/WorkflowMessage.jsx:18
-msgid "Transferred to a new agent"
-msgstr "Chuyển sang đại lý mới"
-
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
-#: src/Agent/components/messages/WorkflowMessage.jsx:37
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: src/Agent/components/messages/WorkflowMessage.jsx:15
 msgid "What's next? Would you like to do something else?"
 msgstr "Tiếp theo là gì? Bạn có muốn làm gì khác không?"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:117
 #: src/Agent/components/layouts/DragResizeLayout.jsx:128
 #: src/Agent/components/layouts/MobileLayout.jsx:50
@@ -3914,48 +3876,48 @@ msgstr "Tiếp theo là gì? Bạn có muốn làm gì khác không?"
 msgid "Close window"
 msgstr "Đóng cửa sổ"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:168
 msgid "Drag to move"
 msgstr "Kéo để di chuyển"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: src/Agent/components/WelcomeScreen.jsx:22
 msgid "Site is live!"
 msgstr "Trang đã hoạt động!"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: src/Agent/components/WelcomeScreen.jsx:26
 msgid "Your expert AI team is here"
 msgstr "Đội ngũ AI chuyên gia của bạn đã sẵn sàng"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Bạn đã đạt giới hạn tin nhắn hàng ngày. Giới hạn của bạn sẽ được đặt lại trong %s."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: src/Agent/components/buttons/AdminBar.jsx:50
 #: src/Agent/components/buttons/Mobile.jsx:36
 #: src/Agent/components/buttons/PostEditor.jsx:47
 msgid "Open Agent"
 msgstr "Mở Đại lý"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: src/Agent/components/buttons/AdminBar.jsx:63
 #: src/Agent/components/buttons/Mobile.jsx:43
 #: src/Agent/components/buttons/PostEditor.jsx:52
 msgid "AI Agent"
 msgstr "Tác nhân AI"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:8
 msgid "Tooltip pointing to the agent button"
 msgstr "Chú giải hướng đến nút đại diện"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:14
 msgid "Need help again?"
 msgstr "Cần hỗ trợ lại?"
@@ -4061,52 +4023,52 @@ msgstr "Từ đây bạn có thể tùy chỉnh kích thước, khoảng đệm 
 msgid "Take the welcome tour"
 msgstr "Tham gia tour chào mừng"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
 #: src/Agent/components/buttons/Mobile.jsx:46
 msgid "How can we help you today?"
 msgstr "Hôm nay chúng tôi có thể giúp gì cho bạn?"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteQuestions.jsx:28
 msgid "Let's review your AI-powered recommendations"
 msgstr "Hãy xem lại các đề xuất từ AI của bạn"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/SiteQuestions.jsx:33
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "Dựa trên thông tin bạn cung cấp, AI của chúng tôi đã đề xuất cài đặt tốt nhất cho trang web của bạn. Xem nhanh và xác nhận mọi thứ đều đúng trước khi tiếp tục."
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:11
+#: public/build/extendify-launch-178234bad6040f2e6113.js:11
 #: src/Launch/pages/CreatingSite.jsx:194
 msgid "Footer Navigation"
 msgstr "Điều hướng chân trang"
 
-#: public/build/extendify-launch-e3f8edead463cbc12533.js:14
+#: public/build/extendify-launch-178234bad6040f2e6113.js:14
 #: src/Launch/pages/CreatingSite.jsx:356
 msgid "Adding imprint page"
 msgstr "Thêm trang dấu ấn"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:13
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:17
 msgid "You can always access your AI Agent if you need help with anything on your site."
 msgstr "Bạn luôn có thể truy cập AI Agent nếu cần trợ giúp với bất kỳ điều gì trên trang web của mình."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: src/Agent/components/WelcomeScreen.jsx:29
 msgid "Your team of site experts — designers, developers, and marketers — ready to help from content to layouts. Tell us what you need or pick a task to start."
 msgstr "Đội ngũ chuyên gia trang web của bạn — nhà thiết kế, nhà phát triển và nhà tiếp thị — sẵn sàng hỗ trợ từ nội dung đến bố cục. Hãy cho chúng tôi biết bạn cần gì hoặc chọn một nhiệm vụ để bắt đầu."
 
-#: public/build/extendify-shared-5ce167fe6ca53b5403c7.js:1
+#: public/build/extendify-shared-8d49300600182f94ffe4.js:1
 #: src/Shared/components/EditPageToolTip.jsx:8
 msgid "Tooltip pointing to the edit page button"
 msgstr "Chú giải chỉ vào nút sửa trang"
 
-#: public/build/extendify-shared-5ce167fe6ca53b5403c7.js:1
+#: public/build/extendify-shared-8d49300600182f94ffe4.js:1
 #: src/Shared/components/EditPageToolTip.jsx:10
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Chào mừng bạn đến với trang web mới! Khi bạn sẵn sàng, nhấn vào đây để chỉnh sửa trang này."
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:7
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
 #: src/Agent/components/PageDocument.jsx:14
 #: src/Agent/components/PageDocument.jsx:25
 msgid "Remove"
@@ -4117,10 +4079,36 @@ msgstr "Xoá"
 msgid "Remove highlight"
 msgstr "Gỡ làm nổi bật"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:10
-#: src/Agent/Agent.jsx:464
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: src/Agent/Agent.jsx:458
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "Tác nhân AI có thể mắc lỗi. Kiểm tra các thay đổi trước khi lưu."
+
+#: app/Agent/Admin.php:202
+msgid "I want to change my site title"
+msgstr "Tôi muốn thay đổi tiêu đề trang web của mình"
+
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:36
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. translators: 1: setting name, 2: new setting value
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:15
+#, js-format
+msgid "The AI Agent wants to change the setting \"%1$s\" to \"%2$s\". Please confirm."
+msgstr "AI Agent muốn thay đổi cài đặt \"%1$s\" thành \"%2$s\". Vui lòng xác nhận."
+
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: src/Agent/components/messages/StatusMessage.jsx:9
+msgid "Thinking..."
+msgstr "Đang suy nghĩ..."
+
+#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: src/Launch/components/PageControl.jsx:214
+msgid "WP Admin Dashboard"
+msgstr "Bảng điều khiển quản trị WP"
 
 #. translators: %s is a name
 #: public/build/extendify-recommendations-b646230433527220e538.js:4
@@ -4148,7 +4136,7 @@ msgctxt "Plugin activation status"
 msgid "Activated"
 msgstr "Đã kích hoạt"
 
-#: public/build/extendify-agent-d886439429f5826be8ab.js:1
+#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:110
 #: src/Agent/components/layouts/MobileLayout.jsx:46
 msgctxt "Feature in beta status"

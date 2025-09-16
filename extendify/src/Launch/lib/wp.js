@@ -219,9 +219,7 @@ export const importImage = async (imageUrl, metadata) => {
 		formData.append('caption', metadata.caption || '');
 		formData.append('status', 'publish');
 
-		const response = await uploadMedia(formData);
-
-		return response;
+		return await uploadMedia(formData);
 	} catch (error) {
 		// Fail silently, return null
 		return null;

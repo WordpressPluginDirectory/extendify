@@ -1,13 +1,18 @@
-import changeThemeVariation from '@agent/workflows/change-theme-variation';
-import editBlockContent from '@agent/workflows/edit-block-content';
-import editPostStrings from '@agent/workflows/edit-post-strings';
-import editPostStringsEditor from '@agent/workflows/edit-post-strings-editor';
-import listOfTours from '@agent/workflows/get-list-of-tours';
+const workflowContext = require.context(
+	'.',
+	true,
+	// Exclude this file and anything in tools/ or components/
+	/^(?!.*\/(tools|components)\/)(?!\.\/workflows\.js$).*\.js$/,
+);
+export const workflows = workflowContext
+	.keys()
+	.filter((key) => key !== './workflows.js')
+	.map((key) => workflowContext(key).default || workflowContext(key));
 
-export const workflows = [
-	editPostStrings,
-	editPostStringsEditor,
-	changeThemeVariation,
-	listOfTours,
-	editBlockContent,
-];
+// Dynamically pull in all tools
+const toolContext = require.context('.', true, /tools\/.*\.js$/);
+export const tools = toolContext.keys().reduce((acc, key) => {
+	const id = key.split('/').pop().replace('.js', '');
+	acc[id] = toolContext(key).default || toolContext(key);
+	return acc;
+}, {});

@@ -1,6 +1,7 @@
 import domReady from '@wordpress/dom-ready';
 import '@shared/app.css';
 import { EditPageToolTip } from '@shared/components/EditPageToolTip';
+import '@shared/lib/api-fetch';
 import { render } from '@shared/lib/dom';
 import { preFetchImages as preFetchUnsplashImages } from '@shared/lib/unsplash';
 
