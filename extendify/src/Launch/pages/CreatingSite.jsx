@@ -13,6 +13,7 @@ import {
 } from '@shared/lib/utils';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { colord } from 'colord';
+import { getPageTemplates } from '@launch/api/DataApi';
 import {
 	updateTemplatePart,
 	addSectionLinksToNav,
@@ -51,6 +52,7 @@ import { usePagesStore } from '@launch/state/Pages';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
+import { buildRecommendedPagesParams } from '@launch/utils/buildRecommendedPagesParams';
 
 const {
 	homeUrl,
@@ -67,6 +69,7 @@ export const CreatingSite = () => {
 	const [confettiReady, setConfettiReady] = useState(false);
 	const [confettiColors, setConfettiColors] = useState(['#ffffff']);
 	const [warnOnLeaveReady, setWarnOnLeaveReady] = useState(true);
+	const [loadAdmin, setLoadAdmin] = useState(false);
 	const {
 		siteType,
 		siteInformation,
@@ -79,8 +82,9 @@ export const CreatingSite = () => {
 		CTALink,
 		siteObjective,
 		siteQA,
+		urlParameters,
 	} = useUserSelectionStore();
-	const { pages, style } = usePagesSelectionStore();
+	const { pages, style, removeAll, add } = usePagesSelectionStore();
 	const [info, setInfo] = useState([]);
 	const [infoDesc, setInfoDesc] = useState([]);
 	const inform = (msg) => setInfo((info) => [msg, ...info]);
@@ -96,10 +100,26 @@ export const CreatingSite = () => {
 		(window.extOnbData?.redirectToWebsite &&
 			siteObjective === 'landing-page') ||
 		window.extSharedData?.showAIAgents
-			? `${homeUrl}?extendify-launch-success`
-			: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success`;
+			? `${homeUrl}?extendify-launch-success=1`
+			: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success=1`;
+	const shouldLoadPages =
+		urlParameters?.skip?.includes('pages') && siteStructure === 'multi-page';
+	const [pagesLoaded, setPagesLoaded] = useState(false);
 
 	useWarnOnLeave(warnOnLeaveReady);
+
+	const loadRecommendedPages = useCallback(async () => {
+		const recommended = await getPageTemplates(buildRecommendedPagesParams());
+		removeAll('pages');
+		recommended.recommended.forEach((page) => add('pages', page));
+		setPagesLoaded(true);
+	}, [removeAll, add]);
+
+	useEffect(() => {
+		if (!shouldLoadPages) return;
+		if (pagesLoaded) return;
+		loadRecommendedPages().catch(console.error);
+	}, [shouldLoadPages, pagesLoaded, loadRecommendedPages]);
 
 	const doEverything = useCallback(async () => {
 		try {
@@ -562,13 +582,24 @@ export const CreatingSite = () => {
 
 	useEffect(() => {
 		if (logoLoading) return;
+		if (shouldLoadPages && !pagesLoaded) return;
 		doEverything().then(async () => {
 			setPage(0);
 			// This will trigger the post launch php functions.
 			await postLaunchFunctions();
+			// This loads the admin in the background to run php functions in admin context
+			setLoadAdmin(true);
+			await waitFor200Response();
 			window.location.replace(redirectUrl);
 		});
-	}, [doEverything, setPage, logoLoading, redirectUrl]);
+	}, [
+		doEverything,
+		setPage,
+		logoLoading,
+		redirectUrl,
+		shouldLoadPages,
+		pagesLoaded,
+	]);
 
 	useEffect(() => {
 		const documentStyles = window.getComputedStyle(document.body);
@@ -596,51 +627,30 @@ export const CreatingSite = () => {
 	);
 
 	return (
-		<Transition
-			as="div"
-			show={isShowing}
-			appear={true}
-			enter="transition-all ease-in-out duration-500"
-			enterFrom="md:w-40vw md:max-w-md"
-			enterTo="md:w-full md:max-w-full"
-			className="flex shrink-0 flex-col justify-between bg-banner-main px-10 py-12 text-banner-text md:h-screen">
-			<div className="max-w-prose">
-				<div className="md:min-h-48">
-					{partnerLogo ? (
-						<div className="mb-8">
-							<img
-								style={{ maxWidth: '200px' }}
-								src={partnerLogo}
-								alt={partnerName ?? ''}
-							/>
-						</div>
-					) : (
-						<Logo className="logo mb-8 w-32 text-banner-text sm:w-40" />
-					)}
-					<div data-test="message-area">
-						{info.map((step, index) => {
-							if (!index) {
-								return (
-									<Transition
-										as="div"
-										appear={true}
-										show={isShowing}
-										enter="transition-opacity duration-1000"
-										enterFrom="opacity-0"
-										enterTo="opacity-100"
-										leave="transition-opacity duration-1000"
-										leaveFrom="opacity-100"
-										leaveTo="opacity-0"
-										className="flex items-center space-x-4 text-4xl"
-										key={step}>
-										{step}
-									</Transition>
-								);
-							}
-						})}
-						<div className="mt-6 flex items-center space-x-4">
-							<Spinner className="spin rtl:ml-3" />
-							{infoDesc.map((step, index) => {
+		<>
+			<Transition
+				as="div"
+				show={isShowing}
+				appear={true}
+				enter="transition-all ease-in-out duration-500"
+				enterFrom="md:w-40vw md:max-w-md"
+				enterTo="md:w-full md:max-w-full"
+				className="flex shrink-0 flex-col justify-between bg-banner-main px-10 py-12 text-banner-text md:h-screen">
+				<div className="max-w-prose">
+					<div className="md:min-h-48">
+						{partnerLogo ? (
+							<div className="mb-8">
+								<img
+									style={{ maxWidth: '200px' }}
+									src={partnerLogo}
+									alt={partnerName ?? ''}
+								/>
+							</div>
+						) : (
+							<Logo className="logo mb-8 w-32 text-banner-text sm:w-40" />
+						)}
+						<div data-test="message-area">
+							{info.map((step, index) => {
 								if (!index) {
 									return (
 										<Transition
@@ -653,20 +663,55 @@ export const CreatingSite = () => {
 											leave="transition-opacity duration-1000"
 											leaveFrom="opacity-100"
 											leaveTo="opacity-0"
-											className="text-lg"
+											className="flex items-center space-x-4 text-4xl"
 											key={step}>
 											{step}
 										</Transition>
 									);
 								}
 							})}
+							<div className="mt-6 flex items-center space-x-4">
+								<Spinner className="spin rtl:ml-3" />
+								{infoDesc.map((step, index) => {
+									if (!index) {
+										return (
+											<Transition
+												as="div"
+												appear={true}
+												show={isShowing}
+												enter="transition-opacity duration-1000"
+												enterFrom="opacity-0"
+												enterTo="opacity-100"
+												leave="transition-opacity duration-1000"
+												leaveFrom="opacity-100"
+												leaveTo="opacity-0"
+												className="text-lg"
+												key={step}>
+												{step}
+											</Transition>
+										);
+									}
+								})}
+							</div>
+							{pagesToAnimate.length > 0 ? (
+								<PagesSkeleton pages={pagesToAnimate} />
+							) : null}
 						</div>
-						{pagesToAnimate.length > 0 ? (
-							<PagesSkeleton pages={pagesToAnimate} />
-						) : null}
 					</div>
 				</div>
-			</div>
-		</Transition>
+			</Transition>
+			{loadAdmin ? <AdminLoader /> : null}
+		</>
 	);
 };
+
+// iframe that loads the admin in the background to make sure
+// all php functions that require admin context work properly.
+const AdminLoader = () => (
+	<iframe
+		title="Admin Loader"
+		src={adminUrl}
+		style={{ display: 'none' }}
+		sandbox="allow-same-origin allow-scripts allow-forms"
+	/>
+);

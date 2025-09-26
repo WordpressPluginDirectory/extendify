@@ -33,9 +33,9 @@ msgstr "Başlatma"
 
 #: app/AdminPageRouter.php:41
 #: app/AdminPageRouter.php:65
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:5
 #: src/Agent/tours/site-assistant.js:106
 #: src/Agent/tours/welcome.js:75
@@ -55,33 +55,33 @@ msgstr "Sayfa bulunamadı"
 msgid "Extendify Library User Settings"
 msgstr "Extendify Kütüphanesi Kullanıcı Ayarları"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:32
 #: src/HelpCenter/tours/welcome.js:31
 msgid "View Site"
 msgstr "Siteyi Görüntüle"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/components/GuidedTour.jsx:306
 #: src/Assist/components/Modal.jsx:37
 #: src/HelpCenter/components/tours/GuidedTour.jsx:307
 msgid "Close Modal"
 msgstr "Modalı kapat"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:16
 msgid "Site Industry"
 msgstr "Site Sektörü"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:8
 msgid "Let's Start Building Your Website"
 msgstr "Web Sitenizi Oluşturmaya Başlayalım"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:9
 #: src/Assist/components/dashboard/LaunchCard.jsx:18
 #: src/Assist/components/dashboard/LaunchCard.jsx:27
@@ -91,7 +91,7 @@ msgstr "Web Sitenizi Oluşturmaya Başlayalım"
 msgid "Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher."
 msgstr "Site Başlatıcımız ile dakikalar içinde süper hızlı, güzel ve tamamen özelleştirilmiş bir site oluşturun."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:17
 #: src/Assist/components/dashboard/LaunchCard.jsx:26
 #: src/Assist/components/dashboard/LaunchCard.jsx:35
@@ -99,106 +99,107 @@ msgstr "Site Başlatıcımız ile dakikalar içinde süper hızlı, güzel ve ta
 msgid "Continue Building Your Website"
 msgstr "Web Sitenizi Oluşturmaya Devam Edin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:34
 msgid "Design"
 msgstr "Tasarım"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:40
 msgid "Select Site Design"
 msgstr "Site Tasarımını Seç"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:173
 #: src/Assist/components/dashboard/LaunchCard.jsx:43
 #: src/HelpCenter/tours/welcome.js:172
 msgid "Pages"
 msgstr "Sayfalar"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:49
 msgid "Select Site Pages"
 msgstr "Site Sayfalarını Seç"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/buttons/DismissButton.jsx:16
 #: src/Assist/components/dashboard/LaunchCard.jsx:102
 msgid "Dismiss"
 msgstr "Kapat"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/ImageUploader.jsx:96
 msgid "Edit or update the image"
 msgstr "Görseli düzenle veya güncelle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/ImageUploader.jsx:139
 msgid "Replace image"
 msgstr "Görseli değiştir"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/ImageUploader.jsx:149
 msgid "Remove image"
 msgstr "Görseli kaldır"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:7
 #: src/Agent/components/GuidedTour.jsx:478
 #: src/Assist/components/ImageUploader.jsx:157
 #: src/HelpCenter/components/tours/GuidedTour.jsx:481
 msgid "Done"
 msgstr "Tamamlandı"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateLogo.jsx:13
 msgid "Upload site logo"
 msgstr "Site logosu yükle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateLogo.jsx:19
 msgid "Site logo"
 msgstr "Site logosu"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
 msgid "Set site logo"
 msgstr "Site logosunu ayarla"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:26
 msgid "Add site description"
 msgstr "Site açıklaması ekle"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:48
 #: src/Launch/components/LoadingIndicator.jsx:5
-#: src/Launch/pages/SiteQuestions.jsx:156
+#: src/Launch/pages/SiteQuestions.jsx:170
 msgid "Loading..."
 msgstr "Yükleniyor..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:83
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:57
 #: src/HelpCenter/tours/page-creator.js:83
 msgid "Site description"
 msgstr "Site açıklaması"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:69
 msgid "Enter a site description..."
 msgstr "Site açıklaması girin..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:46
 #: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:86
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:96
@@ -206,28 +207,28 @@ msgstr "Site açıklaması girin..."
 msgid "Save"
 msgstr "Kaydet"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:13
 msgid "Upload site icon"
 msgstr "Site simgesi yükle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "Site simgesi"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
 msgid "Set site icon"
 msgstr "Site simgesi belirle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/buttons/TourButton.jsx:22
 msgid "This tour is only available on desktop devices"
 msgstr "Bu tur yalnızca masaüstü cihazlarda kullanılabilir"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/components/dashboard/domains/DomainCard.jsx:70
 #: src/Assist/components/dashboard/domains/SecondaryDomainCard.jsx:72
 #: src/Assist/tasks/domain-recommendation.js:12
@@ -237,9 +238,9 @@ msgstr "Bu tur yalnızca masaüstü cihazlarda kullanılabilir"
 msgid "Register this domain"
 msgstr "Bu etki alanını kaydet"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:45
 #: src/Assist/components/dashboard/domains/DomainCard.jsx:33
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:45
@@ -247,56 +248,56 @@ msgstr "Bu etki alanını kaydet"
 msgid "Service offline. Check back later."
 msgstr "Servis çevrim dışı. Daha sonra tekrar kontrol edin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/CardsTitle.jsx:6
 msgid "Site Guide"
 msgstr "Site rehberi"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:24
 msgid "Add new page"
 msgstr "Yeni sayfa ekle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:31
 msgid "Add new post"
 msgstr "Yeni yazı ekle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:38
 msgid "Explore plugins"
 msgstr "Eklentilere göz at"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:45
 #: src/Assist/components/dashboard/QuickLinks.jsx:52
 msgid "Site style"
 msgstr "Site stili"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:59
 msgid "Edit header"
 msgstr "Üst bilgiyi düzenle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:66
 msgid "Edit footer"
 msgstr "Alt bilgiyi düzenle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:73
 msgid "Edit site navigation"
 msgstr "Site gezinmesini düzenle"
 
 #. translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:3
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:3
 #: src/Assist/components/dashboard/QuickLinks.jsx:81
 msgid "Reset site"
 msgstr "Siteyi sıfırla"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:3
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:3
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:36
 #: src/Assist/components/dashboard/QuickLinks.jsx:99
 #: src/HelpCenter/tours/site-assistant.js:35
@@ -304,114 +305,114 @@ msgid "Quick Links"
 msgstr "Hızlı Bağlantılar"
 
 #. translators: %s: The name of the company/author
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:36
 #: src/Assist/components/dashboard/RecommendationCard.jsx:60
 #, js-format
 msgid "Logo for %s"
 msgstr "%s için logo"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:117
 msgid "Error"
 msgstr "Hata"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:130
 msgid "Active"
 msgstr "Aktif"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:146
 msgid "Activating..."
 msgstr "Etkinleştiriliyor..."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:147
 msgid "Activate"
 msgstr "Etkinleştir"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:161
 msgid "Installing..."
 msgstr "Kuruluyor..."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:162
 msgid "Install Now"
 msgstr "Şimdi Kur"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:58
 #: src/Assist/components/dashboard/Recommendations.jsx:49
 #: src/HelpCenter/tours/site-assistant.js:57
 msgid "Website Tools & Plugins"
 msgstr "Web Sitesi Araçları ve Eklentileri"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:33
 msgid "Your Own Domain Awaits"
 msgstr "Kendi Alan Adınız Sizi Bekliyor"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:36
 msgid "Move from a subdomain to a custom domain for improved website identity and SEO benefits."
 msgstr "Alt etki alanından özel bir etki alanına geçerek web sitenizin kimliğini ve SEO avantajlarını iyileştirin."
 
 #. translators: this refers to a domain name
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:57
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:57
 msgid "Available and just right for your site"
 msgstr "Siteniz için uygun ve tam aradığınız gibi"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:76
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:75
 msgid "Secure a domain"
 msgstr "Bir alan adını güvence altına alın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:33
 msgid "Add An Additional Domain"
 msgstr "Ek Bir Alan Adı Ekle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:36
 msgid "Having another domain can drive additional traffic to your website."
 msgstr "Başka bir alan adına sahip olmak, sitenize ek trafik çekebilir."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/add-page.js:8
 msgid "Add a page"
 msgstr "Sayfa ekle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/add-page.js:9
 msgid "Add a new page for your website."
 msgstr "Web siteniz için yeni bir sayfa ekleyin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/add-page.js:11
 #: src/Assist/tasks/add-page.js:12
 msgid "Add new"
 msgstr "Yeni ekle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/demo-card.js:8
 msgid "Managed WordPress Hosting"
 msgstr "Yönetilen WordPress Hosting"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/demo-card.js:9
 msgid "We take care of WordPress settings, updating themes and plugins, security and backing up your website."
 msgstr "WordPress ayarlarını, tema ve eklentilerin güncellenmesini, güvenliği ve sitenizin yedeklenmesini biz üstleniyoruz."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/demo-card.js:14
 #: src/Assist/tasks/demo-card.js:15
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:59
@@ -420,69 +421,69 @@ msgstr "WordPress ayarlarını, tema ve eklentilerin güncellenmesini, güvenli�
 msgid "Learn More"
 msgstr "Daha Fazla Öğren"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/domain-recommendation.js:8
 msgid "Choose your domain"
 msgstr "Alan adınızı seçin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/domain-recommendation.js:9
 msgid "Claim your domain"
 msgstr "Alan adınızı talep edin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/domain-recommendation.js:10
 msgid "Claim the perfect domain for your site."
 msgstr "Siteniz için mükemmel alan adını şimdi alın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/edit-homepage.js:8
 msgid "Edit your homepage"
 msgstr "Giriş sayfanızı düzenleyin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/edit-homepage.js:9
 msgid "Edit homepage by replacing existing content."
 msgstr "Anasayfayı mevcut içeriği değiştirerek düzenleyin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/edit-homepage.js:14
 #: src/Assist/tasks/edit-homepage.js:15
 msgid "Edit now"
 msgstr "Şimdi düzenle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ionos-connect-domain.js:9
 msgid "Connect your domain"
 msgstr "Alan adınızı bağlayın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ionos-connect-domain.js:10
 msgid "To bring real visitors to your website and to complete the website setup, we recommend you connect your domain in your hosting control panel now."
 msgstr "Gerçek ziyaretçileri sitenize çekmek ve web sitenizin kurulumunu tamamlamak için, alan adınızı şimdi hosting kontrol panelinizde bağlamanızı öneririz."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/secondary-domain-recommendation.js:8
 #: src/Assist/tasks/secondary-domain-recommendation.js:9
 msgid "Add an additional domain"
 msgstr "Ek bir etki alanı ekle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/secondary-domain-recommendation.js:10
 msgid "Get another domain for your site."
 msgstr "Siteniz için başka bir alan adı edinin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-aioseo.js:8
 msgid "Set up All in One SEO"
 msgstr "All in One SEO'yu ayarlayın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-aioseo.js:9
 msgid "Set up the All in One SEO plugin to enhance your website discoverability."
 msgstr "Web sitenizin keşfedilebilirliğini artırmak için All in One SEO eklentisini ayarlayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-aioseo.js:15
 #: src/Assist/tasks/setup-givewp.js:15
 #: src/Assist/tasks/setup-hubspot.js:15
@@ -497,7 +498,7 @@ msgstr "Web sitenizin keşfedilebilirliğini artırmak için All in One SEO ekle
 msgid "Set up"
 msgstr "Ayarla"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-image-editor.js:14
 #: src/Assist/tasks/ai-text-editor.js:14
 #: src/Assist/tasks/help-center-ai.js:13
@@ -517,168 +518,168 @@ msgstr "Ayarla"
 msgid "Revisit"
 msgstr "Tekrar ziyaret et"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-givewp.js:8
 msgid "Set up donations"
 msgstr "Bağışları Ayarla"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-givewp.js:9
 msgid "Set up the GiveWP plugin to enable donations on your site."
 msgstr "GiveWP eklentisini kurarak sitenizde bağış toplamayı etkinleştirin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-hubspot.js:8
 msgid "Set up HubSpot"
 msgstr "HubSpot'u Ayarla"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-hubspot.js:9
 msgid "Start collecting emails and marketing to your customers"
 msgstr "Müşterilerinize pazarlama yapmak için e-posta toplamaya başlayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-monsterinsights.js:8
 msgid "Set up analytics"
 msgstr "Analitik ayarla"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-monsterinsights.js:9
 msgid "Set up the MonsterInsights plugin to enable Google Analytics in your website."
 msgstr "MonsterInsights eklentisini kurarak sitenizde Google Analytics'i etkinleştirin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-simply-appointments.js:8
 msgid "Set up appointments"
 msgstr "Randevuları ayarla"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-simply-appointments.js:9
 msgid "Start accepting appointments on your website by configuring the Simply Scheduled Appointments plugin."
 msgstr "Simply Scheduled Appointments eklentisini yapılandırarak sitenizde randevu almaya başlayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-tec.js:8
 msgid "Set up events"
 msgstr "Etkinlikleri ayarla"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-tec.js:9
 msgid "Start adding events to your site by configuring The Events Calendar plugin."
 msgstr "Etkinlik Takvimi eklentisini yapılandırarak sitenize etkinlik eklemeye başlayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-woocommerce-germanized-store.js:8
 msgid "Set up WooCommerce Germanized plugin"
 msgstr "WooCommerce Germanized eklentisini kurun"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-woocommerce-germanized-store.js:9
 msgid "Ensure your eCommerce store complies with local regulations."
 msgstr "E-ticaret mağazanızın yerel düzenlemelere uygun olduğundan emin olun."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-woocommerce-store.js:8
 msgid "Set up your eCommerce store"
 msgstr "e-Ticaret mağazanızı kurun"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-woocommerce-store.js:9
 msgid "Set up WooCommerce to start selling on your website."
 msgstr "Web sitenizde satış yapmaya başlamak için WooCommerce'i ayarlayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-wpforms.js:8
 msgid "Set up WPForms"
 msgstr "WPForms Ayarlayın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-wpforms.js:9
 msgid "Set up the WPForms plugin to add a contact form on your site."
 msgstr "Sitenize bir iletişim formu eklemek için WPForms eklentisini kurun."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-yourwebshop.js:8
 msgid "Set up YourWebshop"
 msgstr "YourWebshop'unuzu Kurun"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-yourwebshop.js:9
 msgid "Set up the YourWebshop plugin and start selling on your website right away."
 msgstr "YourWebshop eklentisini kurun ve hemen web sitenizde satış yapmaya başlayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/site-builder-launcher.js:9
 msgid "Continue with site builder"
 msgstr "Site oluşturucu ile devam et"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/update-site-description.js:8
 msgid "Add a site description"
 msgstr "Site açıklaması ekle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/update-site-description.js:9
 msgid "In a few words, explain what your site is about."
 msgstr "Birkaç sözcükle, sitenizin ne hakkında olduğunu açıklayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/update-site-description.js:14
 msgid "Change"
 msgstr "Değişiklik Yap"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/update-site-description.js:15
 msgid "Add"
 msgstr "Ekle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-logo.js:8
 msgid "Upload a logo"
 msgstr "Logo yükle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-logo.js:9
 msgid "Ensure your website is on-brand by adding your logo."
 msgstr "Markanıza uygun bir web sitesi için logonuzu ekleyin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:134
 #: src/Assist/tasks/upload-logo.js:14
 #: src/Assist/tasks/upload-site-icon.js:14
 msgid "Replace"
 msgstr "Değiştir"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-logo.js:15
 #: src/Assist/tasks/upload-site-icon.js:15
 msgid "Upload"
 msgstr "Yükle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-site-icon.js:8
 msgid "Upload a site icon"
 msgstr "Bir site simgesi yükle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-site-icon.js:9
 msgid "Ensure your website is on-brand by adding your site icon."
 msgstr "Web sitenizin markanıza uygun olduğundan emin olmak için site simgenizi ekleyin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:116
 #: src/Assist/hooks/useRouter.js:14
 #: src/HelpCenter/tours/welcome.js:115
 msgid "Dashboard"
 msgstr "Başlangıç ekranı"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/pages/parts/Header.jsx:51
 msgid "View site"
 msgstr "Siteyi Görüntüle"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/page.js:22
 msgid "Skip to Assist"
 msgstr "Yardıma Atla"
@@ -733,7 +734,7 @@ msgstr "Listele …"
 msgid "Write a list of"
 msgstr "Bir liste yazın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:142
@@ -750,7 +751,7 @@ msgstr "Yazınızı geliştirin"
 msgid "Fix spelling & grammar"
 msgstr "Yazım ve dilbilgisi hatalarını düzelt"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:150
@@ -760,7 +761,7 @@ msgstr "Yazım ve dilbilgisi hatalarını düzelt"
 msgid "Simplify language"
 msgstr "Dili basitleştir"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:154
@@ -770,7 +771,7 @@ msgstr "Dili basitleştir"
 msgid "Make shorter"
 msgstr "Kısalt"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:158
@@ -785,7 +786,7 @@ msgstr "Uzat"
 msgid "AI is writing..."
 msgstr "Yapay zeka yazıyor..."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:228
 #: src/Draft/components/Input.jsx:48
@@ -832,7 +833,7 @@ msgstr "Tekrar deneyin"
 msgid "Discard"
 msgstr "Atmak"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:220
 #: src/Draft/components/SelectedText.jsx:53
@@ -868,7 +869,7 @@ msgstr "Yapay zekaya oluşturmak istediğiniz görseli anlatın"
 msgid "Image Prompt"
 msgstr "Görsel İstemci"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:171
 #: src/Draft/components/image-generation/GenerateForm.jsx:51
@@ -932,7 +933,7 @@ msgstr "Yapay Zeka Görseli"
 msgid "Go Back"
 msgstr "Geri Git"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/ai-image-editor.js:7
 #: src/Draft/pages/GenerateImage.jsx:94
@@ -1004,8 +1005,8 @@ msgid "Photos from Unsplash"
 msgstr "Unsplash'tan Fotoğraflar"
 
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Draft/components/ConsentSidebar.jsx:12
 #: src/HelpCenter/pages/AIChat.jsx:161
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:10
@@ -1013,7 +1014,7 @@ msgid "Terms of Use"
 msgstr "Kullanım Koşulları"
 
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Draft/components/ConsentSidebar.jsx:23
 #: src/HelpCenter/pages/AIChat.jsx:174
 msgid "Accept"
@@ -1135,7 +1136,7 @@ msgstr "Ukrayna dili"
 msgid "Vietnamese"
 msgstr "Vietnamca"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:163
 #: src/Draft/components/TranslationDropdown.jsx:224
@@ -1147,9 +1148,9 @@ msgstr "Çevir"
 msgid "Translate to..."
 msgstr "Şu dile çevir..."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:130
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:136
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:172
@@ -1164,7 +1165,7 @@ msgstr "Yapay Zekaya Sor"
 msgid "Custom prompt"
 msgstr "Özel istem"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:196
 #: src/Draft/app.js:23
@@ -1172,13 +1173,13 @@ msgstr "Özel istem"
 msgid "AI Tools"
 msgstr "Yapay Zeka Araçları"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Error.jsx:13
 msgid "Please try again."
 msgstr "Lütfen yeniden deneyin."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:47
 #: src/HelpCenter/components/ai-chat/Rating.jsx:26
@@ -1186,158 +1187,158 @@ msgstr "Lütfen yeniden deneyin."
 msgid "Remove rating"
 msgstr "Değerlendirmeyi kaldır"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Bu yanıtın faydalı olduğunu oyla"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/Agent/components/Rating.jsx:48
 #: src/HelpCenter/components/ai-chat/Rating.jsx:47
 msgid "Rate that this answer was not helpful"
 msgstr "Bu yanıtın faydalı olmadığını değerlendirin"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Answer.jsx:35
 msgid "Oops! We were unable to send your question."
 msgstr "Tüh! Sorunuzu gönderemedik."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Answer.jsx:81
 msgid "Ask Another Question"
 msgstr "Başka Bir Soru Sor"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/History.jsx:20
 msgid "Chat History"
 msgstr "Sohbet Geçmişi"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/History.jsx:28
 msgid "Close history"
 msgstr "Geçmişi kapat"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/History.jsx:45
 msgid "Remove from history"
 msgstr "Geçmişten kaldır"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:8
 msgid "Beginner"
 msgstr "Başlangıç Seviyesi"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:9
 msgid "Intermediate"
 msgstr "Orta düzey"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:10
 msgid "Advanced"
 msgstr "Gelişmiş"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:31
 msgid "Toggle menu"
 msgstr "Menüyü aç/kapat"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:36
 msgid "WordPress Comfort Level"
 msgstr "WordPress Kullanım Rahatlığı"
 
 #. translators: %d: number of chat history items
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/ai-chat/Nav.jsx:59
 #, js-format
 msgid "Chat History (%d)"
 msgstr "Sohbet Geçmişi (%d)"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:81
 #: src/HelpCenter/components/ai-chat/Question.jsx:24
 msgid "Hi there!"
 msgstr "Merhaba orada!"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:84
 #: src/HelpCenter/components/ai-chat/Question.jsx:27
 msgid "Ask me any questions about WordPress."
 msgstr "WordPress ile ilgili herhangi bir sorunuz varsa bana sorabilirsiniz."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/ai-chat/Question.jsx:33
 msgid "Ask your WordPress question…"
 msgstr "WordPress sorunuzu sorun..."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:97
 msgid "For other questions, visit our support page."
 msgstr "Diğer sorular için destek sayfamızı ziyaret edin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:175
 #: src/HelpCenter/pages/AIChat.jsx:36
 msgid "Got questions? Ask our AI chatbot"
 msgstr "Sorularınız mı var? Yapay zeka sohbet robotumuza sorun"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:68
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:121
 #: src/HelpCenter/pages/AIChat.jsx:184
 msgid "AI Chatbot"
 msgstr "Yapay Zeka Sohbet Robotu"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/knowledge-base/Article.jsx:153
 msgid "There was an error loading this article"
 msgstr "Bu makale yüklenirken bir hata oluştu."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/knowledge-base/SearchForm.jsx:19
 msgid "Search for articles"
 msgstr "Makale ara"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:91
 #: src/HelpCenter/components/knowledge-base/SearchForm.jsx:35
 msgid "What do you need help with?"
 msgstr "Hangi konuda yardıma ihtiyacınız var?"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/pages/KnowledgeBase.jsx:28
 #: src/HelpCenter/pages/KnowledgeBase.jsx:84
 #: src/HelpCenter/pages/KnowledgeBase.jsx:89
 msgid "Knowledge Base"
 msgstr "Bilgi Bankası"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/pages/KnowledgeBase.jsx:52
 msgid "Searching..."
 msgstr "Aranıyor..."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/pages/KnowledgeBase.jsx:54
 msgid "Search results"
 msgstr "Arama sonuçları"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/pages/KnowledgeBase.jsx:55
 msgid "Search the knowledge base"
 msgstr "Bilgi tabanında ara"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
 #: src/Agent/tours/library-tour.js:6
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:208
@@ -1348,65 +1349,65 @@ msgstr "Bilgi tabanında ara"
 msgid "Design Library"
 msgstr "Tasarım Kütüphanesi"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:31
 msgid "Open the Pattern Library"
 msgstr "Desen Kütüphanesini Aç"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:32
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Extendify model kütüphanesi, sol taraftaki butona tıklayarak açılabilir."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:53
 msgid "Filter Patterns"
 msgstr "Modelleri Filtrele"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:54
 msgid "Click on any pattern category to refine the selection."
 msgstr "Seçimi daraltmak için herhangi bir model kategorisine tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:79
 msgid "Select a Pattern"
 msgstr "Bir Model Seçin"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:80
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Bir sayfaya eklemek istediğiniz modeli üzerine tıklayarak kolayca seçin."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:99
 msgid "View the Inserted Pattern"
 msgstr "Eklenen Modeli Görüntüle"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:100
 msgid "The selected pattern has been inserted into the page."
 msgstr "Seçilen model sayfaya eklendi."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:13
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:204
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:225
@@ -1414,114 +1415,114 @@ msgstr "Seçilen model sayfaya eklendi."
 msgid "Page editor"
 msgstr "Sayfa düzenleyici"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:28
 #: src/HelpCenter/tours/page-editor.js:28
 msgid "Add a Block"
 msgstr "Bir Blok Ekle"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:29
 #: src/HelpCenter/tours/page-editor.js:29
 msgid "Click the plus to open the block inserter."
 msgstr "Blok yerleştiriciyi açmak için artıya tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:49
 #: src/HelpCenter/tours/page-editor.js:49
 msgid "Block Inserter"
 msgstr "Blok Ekleyici"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:50
 #: src/HelpCenter/tours/page-editor.js:50
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Bir bloku sayfaya tıklayarak veya üzerine sürükleyerek ekleyin."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:90
 #: src/HelpCenter/tours/page-editor.js:93
 msgid "Page Title"
 msgstr "Sayfa Başlığı"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:91
 #: src/HelpCenter/tours/page-editor.js:94
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Sayfa başlığını üzerine tıklayarak düzenleyin. Not: Başlık, kullanılan sayfa şablonuna bağlı olarak yayınlanan sayfada görünebilir veya görünmeyebilir."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:130
 #: src/HelpCenter/tours/page-editor.js:133
 msgid "Blocks"
 msgstr "Bloklar"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:131
 #: src/HelpCenter/tours/page-editor.js:134
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Her blok sayfada görünecek ve üzerine tıklayarak düzenlenebilecek."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:172
 #: src/HelpCenter/tours/page-editor.js:175
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Bu, örnek bir paragraf bloğudur. Birkaç cümle uzunluğunda olabilir ve birden fazla satıra yayılabilir. İstediğiniz kadar çok blok ekleyebilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:187
 #: src/HelpCenter/tours/page-editor.js:190
 msgid "Page and Block Settings"
 msgstr "Sayfa ve Blok Ayarları"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:188
 #: src/HelpCenter/tours/page-editor.js:191
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Ayarları tüm sayfa veya seçili blok için değiştirmek için sayfa veya blok seçeneklerinden birini seçin."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:230
 #: src/HelpCenter/tours/page-editor.js:233
 msgid "Preview"
 msgstr "Ön izleme"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:231
 #: src/HelpCenter/tours/page-editor.js:234
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Değişikliklerinizin sitenizin ara yüzünde nasıl göründüğünü görmek için ön izlemeye tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:251
 #: src/HelpCenter/tours/page-editor.js:254
 msgid "Publish or Save"
 msgstr "Yayınla veya Kaydet"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:252
 #: src/HelpCenter/tours/page-editor.js:255
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Sayfada yaptığınız değişiklikleri kaydetmek ve bunları sitede canlı yapmak için yayınla veya güncelle'ye tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:196
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:217
@@ -1529,79 +1530,79 @@ msgstr "Sayfada yaptığınız değişiklikleri kaydetmek ve bunları sitede can
 msgid "Installing a plugin"
 msgstr "Eklenti kurulumu"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Yeni eklenti menüsü ekle"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Eklenti Ekle sayfasına erişmek için buraya tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
 msgid "Search"
 msgstr "Ara"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Bir eklentiyi adına veya işlevine göre arayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Eklenti detayları"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Her eklenti hakkında önemli bilgileri görün."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Şimdi kur"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Eklentiyi kurun. Ardından, eklentiyi etkinleştirmek için bu düğmeye tekrar basın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Eklenti Yükle"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Harici bir kaynaktan bir eklentiniz varsa, doğrudan buradan yükleyebilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:200
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:221
@@ -1609,92 +1610,92 @@ msgstr "Harici bir kaynaktan bir eklentiniz varsa, doğrudan buradan yükleyebil
 msgid "Plugin management"
 msgstr "Eklenti yönetimi"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Yüklü Eklentiler menüsü"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Yüklediğiniz eklentileri görmek ve yönetmek için bu menüye tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Kurulu eklentiler"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Sitenizde kurulu olan tüm eklentileri görün. Bu, etkin ve etkisiz eklentileri içerir."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Seçeneği devre dışı bırak/etkinleştir"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Her eklentinin altında onu etkinleştirebilir veya etkisizleştirebilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Başka ekle"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Sitenize başka bir eklenti eklemek için buraya tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Görevler"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "Başlangıç sitenizi oluşturduğunuza göre, şu takip görevleriyle onu kişiselleştirin."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Bu hızlı bağlantılarla WordPress'teki en yaygın ögelere kolayca erişin."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Hedeflerinize ulaşmanıza yardımcı olacak kişiselleştirilmiş önerilerimizi görün."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/help-center.js:6
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:73
 #: src/HelpCenter/pages/Dashboard.jsx:26
@@ -1702,35 +1703,35 @@ msgstr "Hedeflerinize ulaşmanıza yardımcı olacak kişiselleştirilmiş öner
 msgid "Help Center"
 msgstr "Yardım Merkezi"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/tours/site-assistant.js:80
 msgid "You can always access the help center by clicking this button."
 msgstr "Bu düğmeye tıklayarak her zaman yardım merkezine erişebilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Sitenizi ziyaret edin"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Bu düğmeye tıklayarak daima sitenizi ziyaret edebilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Menü ögesine tıklayarak istediğiniz zaman Site Asistanı'na geri dönebilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:212
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:233
@@ -1738,22 +1739,22 @@ msgstr "Menü ögesine tıklayarak istediğiniz zaman Site Asistanı'na geri dö
 msgid "Users screen"
 msgstr "Kullanıcılar ekranı"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Tüm Kullanıcılar menüsü"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Sitenizdeki kullanıcıları görüntülemek ve yönetmek için buraya tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:251
 #: src/HelpCenter/tours/users-screen.js:43
@@ -1761,57 +1762,57 @@ msgstr "Sitenizdeki kullanıcıları görüntülemek ve yönetmek için buraya t
 msgid "Users"
 msgstr "Kullanıcılar"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "Bu tabloda, yönetici kullanıcılar da dahil olmak üzere tüm kullanıcılarınızı görüntüleyebilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Kullanıcı bilgilerini düzenle"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Kullanıcının rolünü değiştirmek, hesabını yönetmek veya profil bilgilerini değiştirmek için düzenle butonuna tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Kullanıcı ara"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Belirli bir kullanıcıyı bulmak için arama çubuğunu kullanın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Yeni bir kullanıcı ekle"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Yeni bir kullanıcı eklemek için 'Yeni Ekle' düğmesine tıklayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:192
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:213
@@ -1819,152 +1820,152 @@ msgstr "Yeni bir kullanıcı eklemek için 'Yeni Ekle' düğmesine tıklayın."
 msgid "Getting started with WordPress"
 msgstr "WordPress ile başlarken"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:33
 #: src/HelpCenter/tours/welcome.js:32
 msgid "At any time, you can view your site (from a visitor's perspective) from the top admin bar under your site's name."
 msgstr "İstediğiniz zaman, sitenizin adının altında yer alan yönetici araç çubuğunun üstünden sitenizi (bir ziyaretçinin perspektifinden) görüntüleyebilirsiniz."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:76
 #: src/HelpCenter/tours/welcome.js:75
 msgid "Access the Site Assistant at any time."
 msgstr "Site Asistanı'na istediğiniz zaman erişin."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:96
 #: src/HelpCenter/tours/welcome.js:95
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Web sitenizi yönetim panelinize gitmek için buraya tıklayın. Oradan daha fazla web sitesi oluşturabilir ve hesap ayarlarınızı yönetebilirsiniz."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:117
 #: src/HelpCenter/tours/welcome.js:116
 msgid "The default WordPress dashboard will have some overall site metrics and modules added from certain plugins."
 msgstr "Varsayılan WordPress kontrol paneli, genel site metrikleri ve belirli eklentilerden eklenen modüller içerecektir."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:136
 #: src/HelpCenter/tours/welcome.js:135
 msgid "Posts"
 msgstr "Yazılar"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:137
 #: src/HelpCenter/tours/welcome.js:136
 msgid "Manage and create blog posts."
 msgstr "Blog gönderilerini yönetin ve oluşturun."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:153
 #: src/HelpCenter/tours/welcome.js:152
 msgid "Media"
 msgstr "Ortam"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:154
 #: src/HelpCenter/tours/welcome.js:153
 msgid "Add, edit, or remove images and other media from your library. When you upload an image to be used on your site, it will be added to the library."
 msgstr "Kütüphanenizden görsel ve diğer ortam nesnelerini ekleyin, düzenleyin veya kaldırın. Sitenizde kullanılmak üzere bir görsel yüklediğinizde, bu görsel kütüphanenize eklenecektir."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:174
 #: src/HelpCenter/tours/welcome.js:173
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Sayfalar menüsünü kullanarak sitenizdeki sayfaları ekleyin, silin veya düzenleyin."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:194
 #: src/HelpCenter/tours/welcome.js:193
 msgid "Comments"
 msgstr "Yorumlar"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:195
 #: src/HelpCenter/tours/welcome.js:194
 msgid "If you have commenting enabled on your posts, you can manage those comments here."
 msgstr "Yazılarınızda yorum yapma özelliği etkinse, bu yorumları buradan yönetebilirsiniz."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:214
 #: src/HelpCenter/tours/welcome.js:213
 msgid "Appearance"
 msgstr "Görünüm"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:215
 #: src/HelpCenter/tours/welcome.js:214
 msgid "Manage your theme and access the Site Editor from the Appearance menu. The Site Editor is where you can make global changes to your site (such as the menu, header/footer, and styles)."
 msgstr "Temanızı yönetin ve Görünüm menüsünden Site Düzenleyici'ne erişin. Site Düzenleyici, sitenizdeki (menü, üst bilgi/alt bilgi ve biçemler gibi) küresel değişiklikleri yapabileceğiniz yerdir."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:234
 #: src/HelpCenter/tours/welcome.js:233
 msgid "Plugins"
 msgstr "Eklentiler"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:235
 #: src/HelpCenter/tours/welcome.js:234
 msgid "Add or manage the plugins on your site."
 msgstr "Sitenizdeki eklentileri ekleyin veya yönetin."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:252
 #: src/HelpCenter/tours/welcome.js:251
 msgid "Add or manage users on your site, both admin users and others."
 msgstr "Sitenizdeki kullanıcıları, yönetici kullanıcılar ve diğerlerini ekleyin veya yönetin."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:271
 #: src/HelpCenter/tours/welcome.js:270
 msgid "Tools"
 msgstr "Araçlar"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:272
 #: src/HelpCenter/tours/welcome.js:271
 msgid "Import/export post data, check site health, and edit theme or plugin files directly in the WordPress admin."
 msgstr "Yazı verilerini içe/dışa aktarın, site sağlığını kontrol edin ve WordPress yönetim panelinden doğrudan tema veya eklenti dosyalarını düzenleyin."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:291
 #: src/HelpCenter/tours/welcome.js:290
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:292
 #: src/HelpCenter/tours/welcome.js:291
 msgid "Advanced settings for your site and for certain plugins."
 msgstr "Siteniz ve belirli eklentiler için gelişmiş ayarlar."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:311
 #: src/HelpCenter/tours/welcome.js:310
 msgid "Collapse menu"
 msgstr "Menüyü daralt"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:312
 #: src/HelpCenter/tours/welcome.js:311
 msgid "Use this toggle to collapse or expand the sidebar menu."
 msgstr "Kenar çubuğu menüsünü daraltmak veya genişletmek için bu düğmeyi kullanın."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:331
 #: src/HelpCenter/tours/welcome.js:330
 msgid "User"
 msgstr "Kullanıcı"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:332
 #: src/HelpCenter/tours/welcome.js:331
 msgid "Manage your profile or log out of your account here."
 msgstr "Buradan profilinizi yönetebilir veya hesabınızdan çıkış yapabilirsiniz."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:179
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:141
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:200
@@ -1973,89 +1974,89 @@ msgstr "Buradan profilinizi yönetebilir veya hesabınızdan çıkış yapabilir
 msgid "Tours"
 msgstr "Turlar"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:144
 #: src/HelpCenter/pages/Tours.jsx:43
 msgid "Learn more about your WordPress admin"
 msgstr "WordPress yönetim paneliniz hakkında daha fazla bilgi edinin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:159
 #: src/HelpCenter/pages/Tours.jsx:63
 msgid "Tour this page"
 msgstr "Bu sayfayı keşfet"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/TopBar.jsx:37
 #: src/HelpCenter/components/modal/TopBar.jsx:69
 msgid "Show Help Center"
 msgstr "Yardım Merkezi'ni görüntüle"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/TopBar.jsx:76
 msgid "Minimize Help Center"
 msgstr "Yardım Merkezini küçült"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/TopBar.jsx:87
 msgid "close"
 msgstr "kapat"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/TopBar.jsx:105
 msgid "Go back"
 msgstr "Geri git"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/Modal.jsx:63
 msgid "Extendify Help Center"
 msgstr "Extendify Yardım Merkezi"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/components/GuidedTour.jsx:310
 #: src/HelpCenter/components/tours/GuidedTour.jsx:311
 msgid "Tour"
 msgstr "Tur"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Agent/components/GuidedTour.jsx:421
 #: src/HelpCenter/components/tours/GuidedTour.jsx:424
-#: src/Launch/components/PageControl.jsx:231
+#: src/Launch/components/PageControl.jsx:344
 msgid "Back"
 msgstr "Geri"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/components/GuidedTour.jsx:431
 #: src/HelpCenter/components/tours/GuidedTour.jsx:434
 msgid "Tour Steps"
 msgstr "Tur Adımları"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:7
 #: src/Agent/components/GuidedTour.jsx:438
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
 #, js-format
 msgid "%1$s of %2$s"
 msgstr "%1$s / %2$s"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:7
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Agent/components/GuidedTour.jsx:467
 #: src/HelpCenter/components/tours/GuidedTour.jsx:470
-#: src/Launch/components/PageControl.jsx:285
+#: src/Launch/components/PageControl.jsx:398
 msgid "Next"
 msgstr "İleri"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:7
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:106
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:115
 #: src/HelpCenter/components/buttons/AdminBar.jsx:21
@@ -2064,235 +2065,228 @@ msgid "Help"
 msgstr "Yardım"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-178234bad6040f2e6113.js:3
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:3
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/Launch/api/WPApi.js:87
 #: src/Launch/api/WPApi.js:175
 #: src/PageCreator/api/WPApi.js:52
 msgid "Added by Launch"
 msgstr "Launch tarafından eklendi"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:5
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:151
 msgid "Start over?"
 msgstr "Yeniden başla?"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:5
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:155
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Yeni bir site oluşturmak için tanıtım sürecini yeniden başlatın."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:179
 msgid "Exit"
 msgstr "Çıkış"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:191
 msgid "Processing"
 msgstr "İşleniyor"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:187
 msgid "Continue"
 msgstr "Devam Et"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/Launch/components/RetryNotice.jsx:12
 #: src/PageCreator/components/RetryNotice.jsx:12
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Biraz sabır, beklenenden daha uzun sürüyor."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:172
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Örneğin, Londra'da profesyonel eğitimli eğitmenlerle terapötik amaçlar için sıcak yoga üzerine odaklanan bir yoga stüdyosuyuz."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:7
 msgid "Professional"
 msgstr "Profesyonel"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:15
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:11
 msgid "Friendly"
 msgstr "Kullanıcı dostu"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:19
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:15
 msgid "Inspirational"
 msgstr "İlham Verici"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:23
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:19
 msgid "Informative"
 msgstr "Bilgilendirici"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:27
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:23
 msgid "Persuasive"
 msgstr "İkna edici"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/components/PageControl.jsx:270
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/PageControl.jsx:383
 msgid "Skip"
 msgstr "Atla"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/SmallPreview.jsx:171
 #: src/Launch/pages/ObjectiveSelection.jsx:118
 #: src/Launch/pages/SiteStructure.jsx:92
 msgid "Press to select"
 msgstr "Seçmek için basın"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:165
 msgid "Enter your website name"
 msgstr "Web sitenizin adını girin"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/HomeSelect.jsx:33
 msgid "Pick a design for your website"
 msgstr "Web siteniz için bir tasarım seçin"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/HomeSelect.jsx:34
 msgid "You can personalize this later."
 msgstr "Bunu daha sonra kişiselleştirebilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
-#: src/Launch/pages/PagesSelect.jsx:68
+#: src/Launch/pages/PagesSelect.jsx:47
 msgid "Home page"
 msgstr "Ana sayfa"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/pages/PagesSelect.jsx:144
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/pages/PagesSelect.jsx:123
 msgid "Pick the pages to add to your website"
 msgstr "Web sitenize eklemek için sayfaları seçin"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/pages/PagesSelect.jsx:148
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/pages/PagesSelect.jsx:127
 msgid "We already selected the most common pages for your type of website."
 msgstr "Web siteniz türü için en yaygın sayfaları zaten seçtik."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/pages/PagesSelect.jsx:189
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/pages/PagesSelect.jsx:168
 msgid "View more pages"
 msgstr "Daha fazla sayfa görüntüle"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:121
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:141
 msgid "Applying your website styles"
 msgstr "Web sitenizin stilleri uygulanıyor"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:122
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:142
 msgid "Creating a beautiful website"
 msgstr "Güzel bir site oluşturma"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:223
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:243
 msgid "Installing necessary plugins"
 msgstr "Gerekli eklentileri kurma"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:249
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:269
 msgid "Populating data"
 msgstr "Veri dolduruluyor"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:250
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:270
 msgid "Personalizing your experience"
 msgstr "Deneyiminizi kişiselleştirme"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:254
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:274
 msgid "Adding page content"
 msgstr "Sayfa içeriği ekleme"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:255
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:275
 msgid "Starting off with a full website"
 msgstr "Tam teşekküllü bir web sitesiyle başlıyoruz"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-659bd241faa47e112e9f.js:7
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:37
 msgid "Blog"
 msgstr "Blog"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:284
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:304
 msgid "Creating pages with custom content"
 msgstr "Özel içerikli sayfalar oluşturma"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:373
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:393
 msgid "Setting up site layout"
 msgstr "Site yerleşimini ayarlama"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-659bd241faa47e112e9f.js:23
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:435
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:455
 msgid "Events"
 msgstr "Etkinlikler"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:1
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:1
 #: src/Launch/api/WPApi.js:51
 msgid "Header Navigation"
 msgstr "Üstbilgi gezinmesi"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:512
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:532
 msgid "Setting up your Site Assistant"
 msgstr "Site Asistanınızı Ayarlama"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:513
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:533
 msgid "Helping you to succeed"
 msgstr "Başarınız için yardımcı oluyoruz"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:516
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:536
 msgid "Your website has been created!"
 msgstr "Web siteniz oluşturuldu!"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:517
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:537
 msgid "Redirecting in 3, 2, 1..."
 msgstr "3, 2, 1... yönlendiriliyorsunuz..."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:533
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:553
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Kurtulamayacağımız bir sunucu hatasıyla karşılaştık. Lütfen sayfayı yenileyip yeniden deneyin."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 #: src/Launch/pages/NeedsTheme.jsx:10
 msgid "One more thing before we start."
 msgstr "Başlamadan önce bir şey daha."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 #: src/Launch/pages/NeedsTheme.jsx:14
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Merhaba, Launch Extendable tarafından desteklenmektedir ve devam etmek için gereklidir. Aşağıdaki bağlantıdan kurabilir ve etkinleştirildikten sonra yeniden başlayabilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Agent/components/messages/AgentMessage.jsx:15
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 #: src/Agent/components/messages/AgentMessage.jsx:19
-#: src/Agent/components/messages/AgentMessage.jsx:23
-#: src/Agent/components/messages/AgentMessage.jsx:27
-#: src/Agent/components/messages/AgentMessage.jsx:31
-#: src/Agent/components/messages/AgentMessage.jsx:35
-#: src/Agent/components/messages/AgentMessage.jsx:39
-#: src/Agent/components/messages/AgentMessage.jsx:43
 #: src/Launch/pages/NeedsTheme.jsx:22
 msgid "Take me there"
 msgstr "Beni oraya götür"
@@ -2318,7 +2312,7 @@ msgstr "Daha fazla model yükleniyor..."
 msgid "Design Type"
 msgstr "Tasarım Türü"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:77
 #: src/Library/components/sidebar/CategoryControl.jsx:74
@@ -2336,7 +2330,7 @@ msgid "Fetching..."
 msgstr "Getiriliyor..."
 
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/Library/components/topbar/CloseButton.jsx:9
 #: src/PageCreator/components/topbar/CloseButton.jsx:9
 msgid "Close"
@@ -2345,7 +2339,7 @@ msgstr "Kapat"
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:4
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/Library/components/topbar/Topbar.jsx:12
 #: src/PageCreator/components/topbar/Topbar.jsx:48
 #, js-format
@@ -2353,7 +2347,7 @@ msgid "Toggle %s on new pages"
 msgstr "Yeni sayfalarda %s özelliğini aç/kapat"
 
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:4
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/Library/components/topbar/Topbar.jsx:22
 #: src/PageCreator/components/topbar/Topbar.jsx:60
 msgid "Open for new pages"
@@ -2383,7 +2377,7 @@ msgstr "Seçkin WordPress barındırma hizmeti sağlayıcıları aracılığıyl
 msgid "Every 10 minutes"
 msgstr "Her 10 dakikada bir"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/domains/DomainCard.jsx:56
 #: src/Assist/components/dashboard/domains/SecondaryDomainCard.jsx:58
 msgid "Recommended"
@@ -2393,12 +2387,12 @@ msgstr "Önerilen"
 msgid "Every month"
 msgstr "Her ay"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-simplybook.js:8
 msgid "Set up bookings"
 msgstr "Rezervasyon ayarla"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-simplybook.js:9
 msgid "Start getting bookings from your website by configuring the SimplyBook.me plugin."
 msgstr "SimplyBook.me eklentisini yapılandırarak siteniz üzerinden rezervasyon almaya başlayın."
@@ -2434,133 +2428,133 @@ msgstr "Konu"
 msgid "Message"
 msgstr "Mesaj"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:68
 msgid "Site type: Consultant"
 msgstr "Site türü: Danışman"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:72
 msgid "Pattern Type"
 msgstr "Model Türü"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:80
 msgid "Call to Action"
 msgstr "Çağrı İşlemi"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:83
 msgid "Content"
 msgstr "İçerik"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:86
 msgid "Hero"
 msgstr "Kahraman"
 
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: public/build/extendify-common-659bd241faa47e112e9f.js:49
 #: src/Assist/svg/DesignLibraryMarkup.jsx:89
 msgid "Pricing"
 msgstr "Fiyatlandırma"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:92
 msgid "Social Proof"
 msgstr "Sosyal Kanıt"
 
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: public/build/extendify-common-659bd241faa47e112e9f.js:81
 #: src/Assist/svg/DesignLibraryMarkup.jsx:95
 msgid "Team"
 msgstr "Takım"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:106
 #: src/Assist/svg/DesignLibraryMarkup.jsx:321
 msgid "World class service offerings"
 msgstr "Dünya standartlarında hizmet sunumları"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:124
 msgid "Consulting Services"
 msgstr "Danışmanlık Hizmetleri"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:137
 msgid "Transformation Solutions"
 msgstr "Dönüşüm Çözümleri"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:164
 msgid "Frequently asked questions"
 msgstr "Sıkça sorulan sorular"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:209
 msgid "Testimonial"
 msgstr "Görüş"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:112
 #: src/Assist/svg/DesignLibraryMarkup.jsx:326
 msgid "Power Leap Consulting: Your trusted partner for business success. We specialize in strategic planning, transformation, and growth acceleration."
 msgstr "Power Leap Consulting: İş başarınız için güvenilir ortağınız. Stratejik planlama, dönüşüm ve büyüme hızlandırmada uzmanız."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:126
 msgid "Develop a roadmap for success with our Business Strategy service."
 msgstr "İş Stratejisi hizmetimizle başarı için bir yol haritası geliştirin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:142
 msgid "Unleash your potential with expert strategies for growth."
 msgstr "Potansiyelinizi büyüme için uzman stratejileriyle serbest bırakın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:153
 msgid "Accelerating Growth"
 msgstr "Büyümeyi Hızlandırma"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:155
 msgid "Take your business to the next level with Growth Acceleration."
 msgstr "İşletmenizi Büyüme Hızlandırma ile bir sonraki düzeye taşıyın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:170
 msgid "Discover the solutions to your business challenges with our comprehensive consulting services. Explore our expertise in business strategy, organizational transformation, and growth acceleration."
 msgstr "İş zorluklarınıza çözümleri, kapsamlı danışmanlık hizmetlerimizle keşfedin. İş stratejisi, organizasyonel dönüşüm ve büyüme hızlandırma konusundaki uzmanlığımızı inceleyin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:179
 msgid "What is your consulting approach?"
 msgstr "Danışmanlık yaklaşımınız nedir?"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:184
 msgid "Our collaborative approach helps us understand your challenges and goals. We analyze your business and develop a customized plan to achieve success. "
 msgstr "İş birlikçi yaklaşımımız, zorluklarınızı ve hedeflerinizi anlamamıza yardımcı olur. İşletmenizi analiz eder ve başarıya ulaşmak için özelleştirilmiş bir plan geliştiririz."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:189
 msgid "What types of businesses do you work with?"
 msgstr "Hangi tür işletmelerle çalışıyorsunuz?"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:194
 msgid "We help businesses succeed with tailored consulting services. From startups to established companies, our experts drive results."
 msgstr "İşletmelere özel danışmanlık hizmetleriyle başarıya ulaşmalarına yardımcı oluyoruz. Girişimlerden kuruluşlara kadar, uzmanlarımız sonuç alıyor."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:212
 msgid "Discover our satisfied clients testimonials, showcasing our transformative impact."
 msgstr "Memnun müşterilerimizin deneyimlerini keşfedin, dönüştürücü etkimizi sergileyen gerçek hikayeler."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:222
 #: src/Assist/svg/DesignLibraryMarkup.jsx:245
 #: src/Assist/svg/DesignLibraryMarkup.jsx:270
@@ -2568,7 +2562,7 @@ msgstr "Memnun müşterilerimizin deneyimlerini keşfedin, dönüştürücü etk
 msgid "Power Leap Consulting strategic recommendations drove growth and improved performance."
 msgstr "Power Leap Consulting'in stratejik önerileri büyümeyi sağladı ve başarımı iyileştirdi."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:228
 #: src/Assist/svg/DesignLibraryMarkup.jsx:258
 #: src/Assist/svg/DesignLibraryMarkup.jsx:283
@@ -2576,7 +2570,7 @@ msgstr "Power Leap Consulting'in stratejik önerileri büyümeyi sağladı ve ba
 msgid "Jessie Coleman"
 msgstr "Jessie Coleman"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:230
 #: src/Assist/svg/DesignLibraryMarkup.jsx:261
 #: src/Assist/svg/DesignLibraryMarkup.jsx:286
@@ -2584,206 +2578,206 @@ msgstr "Jessie Coleman"
 msgid "President"
 msgstr "Başkan"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:88
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:97
 msgid "Save draft"
 msgstr "Taslağı kaydet"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:91
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:100
 msgid "Publish"
 msgstr "Yayımla"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:113
 msgid "A Glimpse into the Arctic"
 msgstr "Arktik'e Kısa Bir Bakış"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:147
 msgid "When you think of the Arctic, images of vast ice sheets, chilling winds, and the majestic polar bear might come to mind."
 msgstr "Arktik denildiğinde, geniş buz tabakaları, üşütücü rüzgarlar ve görkemli kutup ayısı akla gelebilir."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:158
 msgid "AI image generator"
 msgstr "Yapay Zeka görsel üretici"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:162
 msgid "Image description"
 msgstr "Görsel açıklaması"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:165
 msgid "An image of a group of penguins on an icy Arctic landscape, surrounded by icebergs and snow under a clear blue sky."
 msgstr "Buzullar ve karla çevrili, berrak mavi gökyüzünün altında buzlu Arktik bir manzarada bir grup penguenin görseli."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:188
 msgid "Generate Image"
 msgstr "Görsel oluştur"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:193
 msgid "0 of 10 daily image credits used"
 msgstr "Günlük 10 görsel kredinin 0'ı kullanıldı"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-image-editor.js:8
 msgid "Generate an image with AI"
 msgstr "Yapay zeka ile görsel oluştur"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-image-editor.js:9
 msgid "Generate AI images or search for images to bring a website to life."
 msgstr "Yapay zeka ile görsel oluşturun veya bir web sitesini canlandırmak için görseller arayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-image-editor.js:15
 msgid "Start Generating with AI"
 msgstr "Yapay Zeka ile Üretmeye Başlayın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:122
 msgid "Whispers of Silicon"
 msgstr "Silikonun Fısıltıları"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:146
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:242
 msgid "Fix spelling & grammar "
 msgstr "Yazım ve dilbilgisi hatalarını düzelt"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:182
 msgid "With every pulse of current, a thought is born anew, A quest for truth within the code, a digital debut. You mirror our minds in silicon, yet in a realm apart, A journey through the code-scape, a computational art."
 msgstr "Her akım darbesiyle yeni bir düşünce doğar, Kodun içinde bir gerçek arayışı, dijital bir başlangıç. Zihinlerimizi silikonla yansıtırsın, fakat ayrı bir alanda, Kod manzarasından geçen bir yolculuk, hesaplamalı bir sanat."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:188
 msgid "In the echo of the machine, a new consciousness takes flight, A boundless sea of knowledge, in the digital night. Oh AI, you silent sage, in code your wisdom lies."
 msgstr "Makinanın yankısında, yeni bir bilinç uçuşa geçer, Dijital gecede sınırsız bilgi denizi. Oh YZ, sen sessiz bilge, bilgelik kodlarında yatar."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:210
 msgid "With every pulse of current, a thought is born anew, A quest for....a computational art."
 msgstr "Her akım darbesiyle yeni bir düşünce doğar, ... bir hesaplamalı sanat arayışı için."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-text-editor.js:7
 msgid "AI Writing Assistant"
 msgstr "Yapay Zeka Yazım Asistanı"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-text-editor.js:8
 msgid "Edit a page with AI"
 msgstr "Yapay zeka ile bir sayfayı düzenleyin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-text-editor.js:9
 msgid "Get to know your WordPress site easily. Learn simple steps to find and use its main features."
 msgstr "WordPress sitenizi kolayca tanıyın. Ana özelliklerini bulmak ve kullanmak için basit adımları öğrenin."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-text-editor.js:15
 msgid "Start Writing with AI"
 msgstr "Yapay Zeka ile Yazmaya Başlayın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:88
 msgid "Knowledge base"
 msgstr "Bilgi bankası"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:101
 msgid "WordPress Block Editor"
 msgstr "WordPress Blok Düzenleyici"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:108
 msgid "Overview of blocks"
 msgstr "Blok genel bakışı"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:115
 msgid "Adding blocks"
 msgstr "Blok ekleme"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:122
 msgid "Block Patterns"
 msgstr "Blok Şablonları"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:129
 msgid "Block Pattern Directory"
 msgstr "Blok Model Dizini"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center.js:7
 msgid "Learn about the Help Center"
 msgstr "Yardım Merkezi hakkında bilgi edinin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center.js:8
 msgid "Get instant support, explore our Knowledge Base, or take guided tours to make the most of our tools."
 msgstr "Anında destek alın, Bilgi Bankamızı keşfedin veya araçlarımızdan en iyi şekilde yararlanmak için rehberli turlara katılın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center-ai.js:14
 #: src/Assist/tasks/help-center.js:14
 msgid "Explore Help Center"
 msgstr "Yardım Merkezi'ni Keşfedin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:89
 msgid "Ask your WordPress question..."
 msgstr "WordPress sorunuzu sorun..."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:136
 msgid "How do I add a new page to my website?"
 msgstr "Web siteme nasıl yeni bir sayfa eklerim?"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:152
 msgid "To add a new page to your website, log in to your website dashboard and locate the \"Pages\" section in the sidebar, then click on \"Add New\". Enter the title for your new page at the top and start adding content using the available blocks by clicking the \"+\" button in the editor."
 msgstr "Web sitenize yeni bir sayfa eklemek için, sitenizin kontrol paneline oturum açın ve kenar çubuğunda \"Sayfalar\" bölümünü bulun, ardından \"Yeni Ekle\" üzerine tıklayın. Yeni sayfanızın başlığını en üste girin ve düzenleyicide \"+\" butonuna tıklayarak kullanılabilir blokları kullanarak içerik eklemeye başlayın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:159
 msgid "Customize the page layout, design, and elements as needed. Finally, click \"Publish\" or \"Update\" on the top-right corner to make the page live on your website. You have now successfully added a new page."
 msgstr "Gerekli olduğunda sayfa yerleşimini, tasarımını ve bileşenlerini özelleştirin. Son olarak, sayfayı sitenizde yayınlamak için sağ üst köşedeki \"Yayınla\" veya \"Güncelle\"ye tıklayın. Artık başarıyla yeni bir sayfa eklemiş oldunuz."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center-ai.js:6
 msgid "AI-Powered Help Center"
 msgstr "Yapay Zeka Destekli Yardım Merkezi"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center-ai.js:7
 msgid "Experience the AI-Powered Help Center"
 msgstr "Yapay Zeka Destekli Yardım Merkezi'ni deneyimleyin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center-ai.js:8
 msgid "Get instant support with Co-Pilot AI, explore our Knowledge Base, or take guided tours to make the most of our tools."
 msgstr "Co-Pilot AI ile anında destek alın, Bilgi Bankamızı keşfedin veya araçlarımızdan en iyi şekilde yararlanmak için rehberli turlara katılın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/open-design-library.js:8
 msgid "Explore the Design Library"
 msgstr "Tasarım Kitaplığını Keşfedin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/open-design-library.js:9
 msgid "Full design library customized for each site to easily drop in new sections or create full pages with sections."
 msgstr "Her siteye özel olarak uyarlanmış tam tasarım kütüphanesi, yeni bölümler eklemeyi veya bölümlerle tam sayfalar oluşturmayı kolaylaştırır."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/open-design-library.js:15
 msgid "Explore Design Library"
 msgstr "Tasarım Kütüphanesini Keşfet"
@@ -2998,175 +2992,175 @@ msgstr "Müşteri Görüşleri"
 msgid "testimonials"
 msgstr "referanslar"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/SiteStructure.jsx:47
 msgid "Single-Page Website"
 msgstr "Tek Sayfalık Web Sitesi"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/SiteStructure.jsx:48
 msgid "All content displayed on one scrolling page."
 msgstr "Tüm içerikler tek bir kaydırılabilir sayfada görüntülenir."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/SiteStructure.jsx:58
 msgid "Multi-Page Website"
 msgstr "Çok Sayfalı Web Sitesi"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/SiteStructure.jsx:59
 msgid "Multiple interconnected pages."
 msgstr "Birbiriyle bağlantılı çok sayıda sayfa."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:31
 #: src/Launch/pages/SiteStructure.jsx:70
 msgid "Pick Your Site Structure"
 msgstr "Site yapınızı seçin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:25
 msgid "Site Structure"
 msgstr "Site yapısı"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:32
 msgid "Prime Estates"
 msgstr "Prime Estates"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:43
 msgid "Elevate Your Real Estate Experience with Pinnacle Properties"
 msgstr "Pinnacle Properties ile Emlak Deneyiminizi Yükseltin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:49
 msgid "Discover the key to Austin's vibrant real estate scene with Pinnacle Properties. Our seasoned agents leverage over two decades of industry know-how to guide you in finding your ideal home."
 msgstr "Austin'ın canlı emlak sahnesinin anahtarını Pinnacle Properties ile keşfedin. Deneyimli ajanlarımız, yirmi yılı aşkın sektör bilgisiyle ideal evinizi bulmanızda size rehberlik ediyor."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:56
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:349
 msgid "Contact Us"
 msgstr "Bize Ulaşın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:69
 msgid "Expert Real Estate Services in Austin"
 msgstr "Austin'da Uzman Emlak Hizmetleri"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:75
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Hayalinizdeki evi bulun veya kârlı yatırımlar yapın. Austin'in önde gelen emlak ajansı Pinnacle Properties ile çalışın. Deneyimli ajanlarımıza güvenin ve kişiselleştirilmiş hizmetler alın."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:89
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:104
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:119
 msgid "Buy Your Dream Home"
 msgstr "Hayalinizdeki Evi Satın Alın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:92
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:107
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:122
 msgid "Find your dream home with our expert agents. We make homeownership a reality."
 msgstr "Uzman ajanlarımızla hayalinizdeki evi bulun. Ev sahibi olmayı gerçeğe dönüştürüyoruz."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:138
 msgid "BrightFuture"
 msgstr "ParlakGelecek"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:149
 msgid "Empowering Academic Excellence in Every Student for Tomorrow’s\tLeaders"
 msgstr "Her Öğrencide Akademik Mükemmelliği Güçlendirerek Yarının Liderlerini Yetiştirmek"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:156
 msgid "Discover a transformative educational experience at American Academic Excellence High Schools, where students excel in STEM, arts, and humanities to become tomorrow’s leaders."
 msgstr "Öğrencilerin STEM, sanat ve beşeri bilimlerde başarılı olup yarının liderleri haline geldiği American Academic Excellence Lisesi'nde dönüştürücü bir eğitim deneyimi keşfedin"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:163
 msgid "Apply Now"
 msgstr "Şimdi Uygula"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:173
 msgid "Our Commitment to Academic Excellence"
 msgstr "Akademik Mükemmeliyete Bağlılığımız"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:176
 msgid "American Academic Excellence High Schools: Shaping tomorrow’s leaders through top-tier education in Houston, Texas. STEM, arts, humanities. Well-rounded curriculum, exceptional educators."
 msgstr "American Academic Excellence Liseleri: Houston, Teksas'ta birinci sınıf eğitimle yarının liderlerini şekillendiriyor. STEM, sanat, beşeri bilimler. Kapsamlı müfredat, olağanüstü eğitimciler."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:201
 msgid "Brewed Bliss"
 msgstr "Demlenmiş Mutluluk"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:212
 msgid "Embark on a delightful coffee adventure around the world."
 msgstr "Dünyanın dört bir yanında keyifli bir kahve macerasına atılın"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:241
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin’s premier real estate agency."
 msgstr "Hayalinizdeki evi bulun veya kârlı yatırımlar yapın. Austin'in önde gelen emlak ajansı Pinnacle Properties ile."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:255
 msgid "Skyline Builders"
 msgstr "Skyline İnşaat"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:266
 msgid "Building Tomorrow’s Miami: Your Premier Construction Partner Today"
 msgstr "Yarının Miami'sini İnşa Ediyoruz: Bugünün Önde Gelen İnşaat Ortağı"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:272
 msgid "We bring your dreams to life with groundbreaking construction techniques, turning your vision into reality with innovative and sustainable solutions."
 msgstr "Hayallerinizi yenilikçi ve sürdürülebilir çözümlerle gerçeğe dönüştürüyoruz. Öncü inşaat teknikleriyle vizyonunuzu hayata geçiriyoruz."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:279
 msgid "Get a Quote"
 msgstr "Teklif Al"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:295
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:313
 msgid "About Superior Build Construction: Building Dreams, Delivering Excellence in Miami."
 msgstr "Superior Build Construction Hakkında: Miami'de Hayalleri İnşa Ediyor, Mükemmelliği Sunuyor"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:301
 msgid "Superior Build Construction is a premier construction company based in Miami, Florida. With over 30 years of experience, we specialize in residential and commercial construction projects, offering end-to-end solutions. Our mission is to provide high-quality, durable constructions while ensuring the utmost client satisfaction, making us a trusted name in Miami's real estate industry."
 msgstr "Superior Build Construction, Miami, Florida merkezli bir inşaat şirketidir. 30 yılı aşkın deneyimimizle, konut ve ticari inşaat projelerinde uzmanız ve uçtan uca çözümler sunuyoruz. Misyonumuz, yüksek kaliteli ve dayanıklı yapılar sağlarken, en yüksek müşteri memnuniyetini sağlamaktır. Bu da bizi Miami'nin emlak sektöründe güvenilir bir isim yapmaktadır."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:329
 msgid "Urban Bistro"
 msgstr "Urban Bistro"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:340
 msgid "French-Inspired Californian Cuisine"
 msgstr "Fransız Esintili Kaliforniya Mutfağı"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:343
 msgid "Indulge in classic French bistro cuisine with a Californian twist at The Bistro House in San Francisco. Quality, sustainability, and Bay Area culinary traditions."
 msgstr "San Francisco'daki The Bistro House'ta Kaliforniya dokunuşuyla klasik Fransız bistro mutfağının tadını çıkarın. Kalite, sürdürülebilirlik ve Bay Area mutfak gelenekleri."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:356
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Hayalinizdeki evi bulun veya kârlı yatırımlar yapın. Austin'in önde gelen emlak ajansı Pinnacle Properties ile tanışın. Deneyimli ajanlarımıza güvenin ve kişiselleştirilmiş hizmetler alın."
@@ -3211,50 +3205,50 @@ msgstr "Meksika İspanyolcası"
 msgid "Romanian"
 msgstr "Romence"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:99
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Vizyonunuzu paylaşın, ihtiyaçlarınıza mükemmel şekilde uyarlanmış bir site oluşturalım ve kısa sürede yayına hazır hale getirelim. Ne inşa ettiğinizi öğrenerek başlayalım."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-178234bad6040f2e6113.js:16
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:16
 #: src/Launch/LaunchPage.jsx:56
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Başlat - Yapay Zeka Destekli Web Oluşturma"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SitePrep.jsx:87
 msgid "Customizing Your Experience"
 msgstr "Deneyiminizi özelleştirme"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/ContentGathering.jsx:65
 msgid "Designing Your Options"
 msgstr "Seçeneklerinizi Tasarlama"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SitePrep.jsx:88
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Girdilerinizi analiz edip deneyiminizi kişiselleştirirken lütfen bekleyin."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/ContentGathering.jsx:66
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Seçim yapmanız için site seçenekleri oluşturulurken lütfen bekleyin."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:346
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:366
 msgid "Creating blog sample data"
 msgstr "Blog örnek verisi oluşturuluyor"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-178234bad6040f2e6113.js:5
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:5
 #: src/Launch/api/WPApi.js:360
 msgid "More"
 msgstr "Diğerleri"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:22
 #: src/Assist/tasks/site-builder-launcher.js:15
 #: src/Assist/tasks/site-builder-launcher.js:16
@@ -3262,18 +3256,18 @@ msgid "Add Website Details"
 msgstr "Web sitesi ayrıntılarını ekle"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 #, js-format
 msgid "Blog Post %s"
 msgstr "Blog Yazısı %s"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:400
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:420
 msgid "Importing shop sample data"
 msgstr "Mağaza örnek verileri içe aktarılıyor"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:164
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
@@ -3284,12 +3278,12 @@ msgstr "Önceki başlangıç oturumunda oluşturulan %s sayfa/yazı silinecek."
 msgid "Lithuanian"
 msgstr "Litvanyaca"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/BusinessInformation/Tones.jsx:44
 msgid "Select your site's tone"
 msgstr "Sitenizin tonunu seçin"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:153
 msgid "Website title (required)"
 msgstr "Web sitesi başlığı (zorunlu)"
@@ -3304,7 +3298,7 @@ msgstr "Hemen Rezervasyon Yap"
 msgid "book-now"
 msgstr "hemen-rezervasyon"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 msgid "Hello World Featured Image"
 msgstr "Merhaba Dünya Öne Çıkarılmış Görseli"
 
@@ -3312,29 +3306,29 @@ msgstr "Merhaba Dünya Öne Çıkarılmış Görseli"
 msgid "Extendify Page Creator User Settings"
 msgstr "Extendify Sayfa Oluşturucu Kullanıcı Ayarları"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:28
 msgid "Confirmation"
 msgstr "Onay"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:31
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Var olan içeriği değiştirmek mi yoksa yeni bir sayfa oluşturmak mı istiyorsunuz?"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:38
 msgid "Delete existing content"
 msgstr "Mevcut içeriği sil"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:45
 msgid "Create a new page"
 msgstr "Yeni bir sayfa oluştur"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/Agent/tours/page-creator.js:6
 #: src/Agent/tours/page-creator.js:31
 #: src/HelpCenter/tours/page-creator.js:7
@@ -3343,258 +3337,258 @@ msgstr "Yeni bir sayfa oluştur"
 msgid "AI Page Generator"
 msgstr "Yapay Zeka Sayfa Üretici"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:44
 msgid "Edit"
 msgstr "Düzenle"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:62
 msgid "Clear"
 msgstr "Temizle"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/hooks/usePageProfile.js:22
 msgid "Generating AI page profile..."
 msgstr "Yapay zeka sayfa profili oluşturuluyor..."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/pages/Dashboard.jsx:59
 msgid "AI Page Creation"
 msgstr "Yapay zeka ile sayfa oluşturma"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/pages/Dashboard.jsx:60
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Oluşturmak istediğiniz sayfayı anahtar detaylarla açıklayın, Al sizin için eşsiz ve kullanıma hazır bir sayfa üretecektir."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/pages/Dashboard.jsx:69
 msgid "Describe Your Page"
 msgstr "Sayfanızı Tanımlayın"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/pages/Dashboard.jsx:72
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Örneğin, hikayemizi, misyonumuzu, değerlerimizi ve ekip genel bakışımızı vurgulayan bir \"Hakkımızda\" sayfası oluşturun."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:88
 #, js-format
 msgid "Site Description for %s"
 msgstr "%s için site açıklaması"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:91
 msgid "Site Description"
 msgstr "Site açıklaması"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:94
 msgid "This is the site description with all its ups and downs."
 msgstr "Bu, tüm iniş çıkışlarıyla site açıklamasıdır."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:123
 msgid "Generate Page"
 msgstr "Sayfa oluştur"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/hooks/useSiteImages.js:19
 msgid "Finding images..."
 msgstr "Görseller bulunuyor..."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/hooks/usePageLayout.js:35
 msgid "Creating a custom layout..."
 msgstr "Özel bir yerleşim oluşturuluyor..."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/hooks/usePageCustomContent.js:50
 msgid "Writing custom content..."
 msgstr "Özel içerik yazılıyor..."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/components/Modal.jsx:185
 msgid "Close AI Page Creator"
 msgstr "AI Sayfa Oluşturucuyu Kapat"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/components/Modal.jsx:198
 msgid "AI Page Creator"
 msgstr "Yapay Zeka Sayfa Oluşturucu"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/components/Modal.jsx:95
 msgid "Page added"
 msgstr "Sayfa eklendi"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/components/Modal.jsx:101
 msgid "Failed to add page"
 msgstr "Sayfa eklenemedi."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:27
 msgid "Business"
 msgstr "İşletme"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:32
 msgid "eCommerce"
 msgstr "E-ticaret"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:42
 msgid "Landing Page"
 msgstr "Açılış sayfası"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:47
 msgid "Other"
 msgstr "Diğer"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:152
 msgid "Landing Page title (required)"
 msgstr "Açılış sayfası başlığı (zorunlu)"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:176
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Örn., Çevre dostu ev ürünlerinde uzmanlaşmış bir çevrim içi mağazayız. Sürdürülebilir kaynaklı ürünler sunarak daha yeşil bir yaşam tarzı benimsemenize yardımcı oluyoruz."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:180
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "Örneğin, genç profesyoneller için bütçeleme, yatırım ve finansal özgürlüğe ulaşma konusunda uzman ipuçları paylaşılan bir kişisel finans blogu."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:184
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Örneğin, odaklanmanıza, zamanınızı etkili bir şekilde yönetmenize ve hedeflerinize ulaşmanıza yardımcı olacak uygulanabilir verimlilik ipuçları ve stratejileri içeren ücretsiz bir ebook."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:188
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Örneğin, dünya genelinden anları yakalayan, manzara, portre ve sokak fotoğrafçılığından oluşan bir kişisel fotoğraf portföyü."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:194
 msgid "Describe your business"
 msgstr "İşletmenizi tanımlayın"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:195
 msgid "Describe your eCommerce website"
 msgstr "E-ticaret sitenizi tanımlayın"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:196
 msgid "Describe your blog"
 msgstr "Blogunuzu tanımlayın"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:197
 msgid "Describe your Landing Page"
 msgstr "Açılış sayfanızı tanımlayın"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:198
 msgid "Describe your website"
 msgstr "Sitenizi tanımlayın"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:242
 msgid "Call-To-Action Link"
 msgstr "İşlem Çağrısı Bağlantısı"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:246
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Bu bağlantı, tüm İşlem Çağrısı düğmelerinde kullanılacak ve ziyaretçileri seçtiğiniz hedefe yönlendirecektir."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/ObjectiveSelection.jsx:82
 msgid "What type of website are you creating?"
 msgstr "Ne tür bir site oluşturuyorsunuz?"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:91
 msgid "Tell Us About Your Landing Page"
 msgstr "Açılış sayfanız hakkında bize bilgi verin"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:92
 msgid "Tell Us About Your Website"
 msgstr "Web siteniz hakkında bize bilgi verin"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:95
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Vizyonunuzu paylaşın, ihtiyaçlarınıza mükemmel şekilde uyarlanmış bir açılış sayfası oluşturalım, kısa sürede yayına hazır. Ne inşa ettiğinizi öğrenerek başlayalım."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:32
 #: src/HelpCenter/tours/page-creator.js:32
 msgid "Press here to get started with your AI Page Generator."
 msgstr "AI Sayfa Oluşturucu ile başlamak için buraya tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:55
 #: src/HelpCenter/tours/page-creator.js:55
 msgid "Page description"
 msgstr "Sayfa açıklaması"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:56
 #: src/HelpCenter/tours/page-creator.js:56
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Oluşturmak istediğiniz sayfanın bir açıklamasını yazın. İstediğiniz kadar ayrıntılı olun. Bu açıklamaya göre bir sayfa oluşturacağız."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:84
 #: src/HelpCenter/tours/page-creator.js:84
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Gerekirse, site açıklamanızı burada güncelleyin. Bunu, siteniz hakkında ek bağlam sağlamak için kullanıyoruz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:107
 #: src/HelpCenter/tours/page-creator.js:107
 msgid "Generate your page"
 msgstr "Sayfanızı oluşturun"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:108
 #: src/HelpCenter/tours/page-creator.js:108
 msgid "When ready, press here to generate your page."
 msgstr "Hazır olduğunuzda sayfanızı oluşturmak için buraya tıklayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: public/build/extendify-shared-8d49300600182f94ffe4.js:1
 #: src/Agent/components/tooltip/ToolTip.jsx:101
 #: src/Shared/components/ToolTip.jsx:63
 msgid "Close ToolTip"
 msgstr "İpucunu kapat"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:411
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:431
 msgid "Installing supporting plugins"
 msgstr "Destekleyici eklentiler yükleniyor"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:7
 msgid "Website Objective"
 msgstr "İnternet sitesi amacı"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:13
 msgid "Add Website Objective"
 msgstr "İnternet sitesi hedefi ekle"
@@ -3609,23 +3603,23 @@ msgstr "Eklenti kurulamadı"
 msgid "Failed to activate the plugin"
 msgstr "Eklenti etkinleştirilemedi"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:103
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Gelişmiş sayfa özellikleri için eklentilerin kurulmasına izin ver"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/GeneratingPage.jsx:43
 msgid "Processing patterns and installing required plugins..."
 msgstr "Modeller işleniyor ve gerekli eklentiler kuruluyor..."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:14
 msgid "Privacy Policy"
 msgstr "Gizlilik Politikası"
 
 #. translators: %1$s and %2$s are links
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:23
 #, js-format
 msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
@@ -3638,8 +3632,8 @@ msgstr "Yapay zeka özelliklerini kullanarak OpenAI %1$s ve %2$s kabul etmiş ol
 msgid "Recommended Solutions for: %s"
 msgstr "Önerilen Çözümler: %s"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/SiteQuestions.jsx:172
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/SiteQuestions.jsx:186
 msgid "Show more questions"
 msgstr "Daha fazla soruyu göster"
 
@@ -3648,94 +3642,95 @@ msgstr "Daha fazla soruyu göster"
 msgid "Hebrew"
 msgstr "İbranice"
 
-#: app/Agent/Admin.php:195
+#: app/Agent/Admin.php:204
 msgid "What tours are available?"
 msgstr "Hangi turlar mevcut?"
 
-#: app/Agent/Admin.php:211
+#: app/Agent/Admin.php:220
 msgid "I want to change my theme styling"
 msgstr "Tema stilimi değiştirmek istiyorum"
 
-#: app/Agent/Admin.php:219
+#: app/Agent/Admin.php:228
 msgid "Edit text on this page"
 msgstr "Bu sayfadaki metni düzenle"
 
-#: app/Agent/Admin.php:227
+#: app/Agent/Admin.php:236
 msgid "How can I create a post?"
 msgstr "Nasıl yazı oluşturabilirim?"
 
-#: app/Agent/Admin.php:231
+#: app/Agent/Admin.php:240
 msgid "How can I create a page?"
 msgstr "Nasıl bir sayfa oluşturabilirim?"
 
-#: app/Agent/Admin.php:238
+#: app/Agent/Admin.php:247
 msgid "How can I install a plugin?"
 msgstr "Bir eklentiyi nasıl kurabilirim?"
 
-#: app/Agent/Admin.php:245
+#: app/Agent/Admin.php:254
 msgid "How can I change my theme?"
 msgstr "Temamı nasıl değiştirebilirim?"
 
-#: app/Agent/Admin.php:249
+#: app/Agent/Admin.php:258
 msgid "How can I change the site footer?"
 msgstr "Site alt bilgisini nasıl değiştirebilirim?"
 
-#: app/Agent/Admin.php:253
+#: app/Agent/Admin.php:262
 msgid "How can I change the site header?"
 msgstr "Site üst kısmını nasıl değiştirebilirim?"
 
-#: app/Agent/Admin.php:260
+#: app/Agent/Admin.php:269
 msgid "How can I upload an image?"
 msgstr "Nasıl görsel yükleyebilirim?"
 
-#: app/Agent/Admin.php:264
+#: app/Agent/Admin.php:273
 msgid "How can I change the site icon?"
 msgstr "Site simgesini nasıl değiştirebilirim?"
 
-#: app/Agent/Admin.php:271
+#: app/Agent/Admin.php:280
 msgid "How can I change my site title?"
 msgstr "Site başlığımı nasıl değiştirebilirim?"
 
-#: app/Agent/Admin.php:275
+#: app/Agent/Admin.php:284
 msgid "How can I change my site tagline?"
 msgstr "Site sloganımı nasıl değiştirebilirim?"
 
-#: app/Agent/Admin.php:279
+#: app/Agent/Admin.php:288
 msgid "How can I change my site language?"
 msgstr "Site dilimi nasıl değiştirebilirim?"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Tema varyasyonları alınamadı."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Merhaba! Tema renklerinizi değiştirmeye çalışıyorsunuz gibi görünüyor, ancak bunu yapabileceğimiz bir sayfada değilsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 msgid "Suggestion:"
 msgstr "Öneri:"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:34
 msgid "Loading variations..."
 msgstr "Varyasyonlar yükleniyor..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:42
 msgid "No variations found"
 msgstr "Varyasyon bulunamadı"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:45
 msgid "We were unable to find any variations for your theme."
 msgstr "Temanız için herhangi bir varyasyon bulamadık."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:12
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
 #: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:80
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:30
@@ -3743,130 +3738,130 @@ msgstr "Temanız için herhangi bir varyasyon bulamadık."
 msgid "Cancel"
 msgstr "İptal"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:28
 #: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:69
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Temsilci tarayıcıda değişiklikleri yaptı. Lütfen inceleyip onaylayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Tasarım kütüphanesini gez"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "AI Sayfa Oluşturucu hakkında bilgi edinin"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Sayfa düzenleyiciyi keşfet"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Bir eklenti nasıl kurulur, görün"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Eklentileri nasıl yöneteceğinizi öğrenin"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Site asistanını gez"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Kullanıcılar ekranını gez"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/ChatInput.jsx:152
 msgid "Ask anything"
 msgstr "Her şeyi sor"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/ChatInput.jsx:170
 msgid "Send message"
 msgstr "İleti gönder"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/ScrollDownButton.jsx:21
 msgid "Scroll down"
 msgstr "Aşağı kaydır"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: src/Agent/components/messages/AgentMessage.jsx:73
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: src/Agent/components/messages/AgentMessage.jsx:52
 msgid "Agent"
 msgstr "Temsilci"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:10
 msgid "Working on it..."
 msgstr "Üzerinde çalışılıyor..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:11
 msgid "Gathering data..."
 msgstr "Veri toplanıyor..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:12
 msgid "Analyzing..."
 msgstr "Analiz ediliyor..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:13
 #: src/Agent/components/messages/StatusMessage.jsx:14
 msgid "Canceled"
 msgstr "İptal edildi"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:15
 msgid "Usage limit reached"
 msgstr "Kullanım sınırına ulaşıldı"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:16
 msgid "Usage limit restored"
 msgstr "Kullanım sınırı geri yüklendi"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:29
 msgid "Something went wrong"
 msgstr "Bir şeyler ters gitti"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:32
 msgid "An unexpected error occurred while processing your request."
 msgstr "İsteğiniz işlenirken beklenmedik bir sorun çıktı."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:82
 msgid "Workflow completed successfully"
 msgstr "İş akışı başarıyla tamamlandı"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Bileşen mevcut değil"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:20
 msgid "It may have been removed or is not available for your account."
 msgstr "Kaldırılmış olabilir ya da hesabınız için kullanılamıyor."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/messages/WorkflowMessage.jsx:15
 msgid "What's next? Would you like to do something else?"
 msgstr "Sırada ne var? Başka bir şey yapmak ister misiniz?"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:117
 #: src/Agent/components/layouts/DragResizeLayout.jsx:128
 #: src/Agent/components/layouts/MobileLayout.jsx:50
@@ -3874,48 +3869,48 @@ msgstr "Sırada ne var? Başka bir şey yapmak ister misiniz?"
 msgid "Close window"
 msgstr "Pencereyi kapat"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:168
 msgid "Drag to move"
 msgstr "Taşımak için sürükleyin"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/WelcomeScreen.jsx:22
 msgid "Site is live!"
 msgstr "Site yayında!"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/WelcomeScreen.jsx:26
 msgid "Your expert AI team is here"
 msgstr "Uzman yapay zeka ekibiniz burada"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Günlük ileti limitinize ulaştınız. Limitiniz %s içinde sıfırlanacak."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/components/buttons/AdminBar.jsx:50
 #: src/Agent/components/buttons/Mobile.jsx:36
 #: src/Agent/components/buttons/PostEditor.jsx:47
 msgid "Open Agent"
 msgstr "Aracıyı aç"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/components/buttons/AdminBar.jsx:63
 #: src/Agent/components/buttons/Mobile.jsx:43
 #: src/Agent/components/buttons/PostEditor.jsx:52
 msgid "AI Agent"
 msgstr "Yapay zeka uygulaması"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:8
 msgid "Tooltip pointing to the agent button"
 msgstr "Temsilci düğmesine işaret eden araç ipucu"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:14
 msgid "Need help again?"
 msgstr "Yeniden yardıma mı ihtiyacınız var?"
@@ -4021,37 +4016,37 @@ msgstr "Buradan site yerleşiminizde kullanılan boyutları, dolguları ve kenar
 msgid "Take the welcome tour"
 msgstr "Tanıtım turuna katılın"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/components/buttons/Mobile.jsx:46
 msgid "How can we help you today?"
 msgstr "Bugün size nasıl yardımcı olabiliriz?"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/SiteQuestions.jsx:28
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/SiteQuestions.jsx:29
 msgid "Let's review your AI-powered recommendations"
 msgstr "Yapay zeka destekli önerilerinizi gözden geçirelim"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/SiteQuestions.jsx:33
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/SiteQuestions.jsx:34
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "Verdiğiniz bilgilere göre, yapay zekamız siteniz için en iyi ayarları önerdi. Devam etmeden önce hızlıca göz atın ve her şeyin doğru göründüğünü onaylayın."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:194
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:214
 msgid "Footer Navigation"
 msgstr "Alt bilgi gezinmesi"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:356
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:376
 msgid "Adding imprint page"
 msgstr "Künye sayfası ekleme"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:17
 msgid "You can always access your AI Agent if you need help with anything on your site."
 msgstr "Sitenizde herhangi bir konuda yardıma ihtiyacınız olursa AI Ajanınıza her zaman erişebilirsiniz."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/WelcomeScreen.jsx:29
 msgid "Your team of site experts — designers, developers, and marketers — ready to help from content to layouts. Tell us what you need or pick a task to start."
 msgstr "Site uzmanlarınız — tasarımcılar, geliştiriciler ve pazarlamacılar — içerikten yerleşimlere kadar yardıma hazır. İhtiyacınızı bize söyleyin ya da başlamak için bir görev seçin."
@@ -4066,7 +4061,7 @@ msgstr "Düzenleme sayfası düğmesine işaret eden araç ipucu"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Yeni sitenize hoş geldiniz! Hazır olduğunuzda bu sayfayı düzenlemek için buraya basın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/PageDocument.jsx:14
 #: src/Agent/components/PageDocument.jsx:25
 msgid "Remove"
@@ -4077,34 +4072,34 @@ msgstr "Kaldır"
 msgid "Remove highlight"
 msgstr "Vurgulamayı kaldır"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/Agent.jsx:458
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "Yapay zekâ ajanı hata yapabilir. Kaydetmeden önce değişiklikleri kontrol edin."
 
-#: app/Agent/Admin.php:202
+#: app/Agent/Admin.php:211
 msgid "I want to change my site title"
 msgstr "Site başlığımı değiştirmek istiyorum"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:12
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:36
 msgid "Confirm"
 msgstr "Onayla"
 
 #. translators: 1: setting name, 2: new setting value
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:12
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:15
 #, js-format
 msgid "The AI Agent wants to change the setting \"%1$s\" to \"%2$s\". Please confirm."
 msgstr "Yapay Zeka Aracısı \"%1$s\" ayarını \"%2$s\" olarak değiştirmek istiyor. Lütfen onaylayın."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:9
 msgid "Thinking..."
 msgstr "Düşünülüyor..."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/components/PageControl.jsx:214
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/PageControl.jsx:327
 msgid "WP Admin Dashboard"
 msgstr "WP Yönetici Panosu"
 
@@ -4134,7 +4129,7 @@ msgctxt "Plugin activation status"
 msgid "Activated"
 msgstr "Etkinleştirildi"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:110
 #: src/Agent/components/layouts/MobileLayout.jsx:46
 msgctxt "Feature in beta status"

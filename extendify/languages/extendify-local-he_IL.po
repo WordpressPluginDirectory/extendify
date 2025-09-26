@@ -38,9 +38,9 @@ msgstr "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm
 
 #: app/AdminPageRouter.php:41
 #: app/AdminPageRouter.php:65
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:5
 #: src/Agent/tours/site-assistant.js:106
 #: src/Agent/tours/welcome.js:75
@@ -98,27 +98,27 @@ msgstr "נושא"
 msgid "Message"
 msgstr "הודעה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/components/GuidedTour.jsx:306
 #: src/Assist/components/Modal.jsx:37
 #: src/HelpCenter/components/tours/GuidedTour.jsx:307
 msgid "Close Modal"
 msgstr "סגור מודאלי"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:7
 msgid "Website Objective"
 msgstr "מטרת האתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:8
 msgid "Let's Start Building Your Website"
 msgstr "בואו נתחיל לבנות את האתר שלכם"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:9
 #: src/Assist/components/dashboard/LaunchCard.jsx:18
 #: src/Assist/components/dashboard/LaunchCard.jsx:27
@@ -128,17 +128,17 @@ msgstr "בואו נתחיל לבנות את האתר שלכם"
 msgid "Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher."
 msgstr "צור אתר מהיר במיוחד, יפה ומותאם אישית תוך דקות עם משגר האתרים שלנו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:13
 msgid "Add Website Objective"
 msgstr "הוסף מטרה לאתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:16
 msgid "Site Industry"
 msgstr "תחום האתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:17
 #: src/Assist/components/dashboard/LaunchCard.jsx:26
 #: src/Assist/components/dashboard/LaunchCard.jsx:35
@@ -146,126 +146,127 @@ msgstr "תחום האתר"
 msgid "Continue Building Your Website"
 msgstr "להמשיך לבנות את האתר שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:22
 #: src/Assist/tasks/site-builder-launcher.js:15
 #: src/Assist/tasks/site-builder-launcher.js:16
 msgid "Add Website Details"
 msgstr "הוספת פרטי אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:25
 msgid "Site Structure"
 msgstr "מבנה האתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:31
 #: src/Launch/pages/SiteStructure.jsx:70
 msgid "Pick Your Site Structure"
 msgstr "בחר את מבנה האתר שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:34
 msgid "Design"
 msgstr "עיצוב"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:40
 msgid "Select Site Design"
 msgstr "בחירת עיצוב אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:173
 #: src/Assist/components/dashboard/LaunchCard.jsx:43
 #: src/HelpCenter/tours/welcome.js:172
 msgid "Pages"
 msgstr "עמודים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:49
 msgid "Select Site Pages"
 msgstr "בחירת עמודי אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/buttons/DismissButton.jsx:16
 #: src/Assist/components/dashboard/LaunchCard.jsx:102
 msgid "Dismiss"
 msgstr "התעלם"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/ImageUploader.jsx:96
 msgid "Edit or update the image"
 msgstr "ערוך או עדכן את התמונה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/ImageUploader.jsx:139
 msgid "Replace image"
 msgstr "החלף תמונה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/ImageUploader.jsx:149
 msgid "Remove image"
 msgstr "הסר תמונה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:7
 #: src/Agent/components/GuidedTour.jsx:478
 #: src/Assist/components/ImageUploader.jsx:157
 #: src/HelpCenter/components/tours/GuidedTour.jsx:481
 msgid "Done"
 msgstr "בוצע"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateLogo.jsx:13
 msgid "Upload site logo"
 msgstr "העלאת לוגו אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateLogo.jsx:19
 msgid "Site logo"
 msgstr "לוגו אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
 msgid "Set site logo"
 msgstr "הגדר לוגו אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:26
 msgid "Add site description"
 msgstr "הוסף תיאור אתר"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:48
 #: src/Launch/components/LoadingIndicator.jsx:5
-#: src/Launch/pages/SiteQuestions.jsx:156
+#: src/Launch/pages/SiteQuestions.jsx:170
 msgid "Loading..."
 msgstr "טוען..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:83
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:57
 #: src/HelpCenter/tours/page-creator.js:83
 msgid "Site description"
 msgstr "תיאור האתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:69
 msgid "Enter a site description..."
 msgstr "יש להזין תיאור אתר..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:46
 #: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:86
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:96
@@ -273,34 +274,34 @@ msgstr "יש להזין תיאור אתר..."
 msgid "Save"
 msgstr "שמירה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:13
 msgid "Upload site icon"
 msgstr "העלה סמל אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "סמל אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
 msgid "Set site icon"
 msgstr "הגדר סמל אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/buttons/TourButton.jsx:22
 msgid "This tour is only available on desktop devices"
 msgstr "סיור זה זמין רק במכשירי מחשב שולחני"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/domains/DomainCard.jsx:56
 #: src/Assist/components/dashboard/domains/SecondaryDomainCard.jsx:58
 msgid "Recommended"
 msgstr "מומלץ"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/components/dashboard/domains/DomainCard.jsx:70
 #: src/Assist/components/dashboard/domains/SecondaryDomainCard.jsx:72
 #: src/Assist/tasks/domain-recommendation.js:12
@@ -310,9 +311,9 @@ msgstr "מומלץ"
 msgid "Register this domain"
 msgstr "רשום דומיין זה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:45
 #: src/Assist/components/dashboard/domains/DomainCard.jsx:33
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:45
@@ -320,145 +321,145 @@ msgstr "רשום דומיין זה"
 msgid "Service offline. Check back later."
 msgstr "השירות אינו פעיל. יש לנסות מאוחר יותר."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/CardsTitle.jsx:6
 msgid "Site Guide"
 msgstr "מדריך אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:68
 msgid "Site type: Consultant"
 msgstr "סוג האתר: יועץ"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:72
 msgid "Pattern Type"
 msgstr "סוג תבנית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:77
 #: src/Library/components/sidebar/CategoryControl.jsx:74
 msgid "All"
 msgstr "הכל"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:80
 msgid "Call to Action"
 msgstr "קריאה לפעולה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:83
 msgid "Content"
 msgstr "תוכן"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:86
 msgid "Hero"
 msgstr "גיבור"
 
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: public/build/extendify-common-659bd241faa47e112e9f.js:49
 #: src/Assist/svg/DesignLibraryMarkup.jsx:89
 msgid "Pricing"
 msgstr "תמחור"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:92
 msgid "Social Proof"
 msgstr "הוכחה חברתית"
 
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: public/build/extendify-common-659bd241faa47e112e9f.js:81
 #: src/Assist/svg/DesignLibraryMarkup.jsx:95
 msgid "Team"
 msgstr "צוות"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:106
 #: src/Assist/svg/DesignLibraryMarkup.jsx:321
 msgid "World class service offerings"
 msgstr "שירותים ברמה עולמית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:112
 #: src/Assist/svg/DesignLibraryMarkup.jsx:326
 msgid "Power Leap Consulting: Your trusted partner for business success. We specialize in strategic planning, transformation, and growth acceleration."
 msgstr "Power Leap Consulting: השותף המהימן שלך להצלחה עסקית. אנו מתמחים בתכנון אסטרטגי, טרנספורמציה והאצת צמיחה."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:124
 msgid "Consulting Services"
 msgstr "שירותי ייעוץ"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:126
 msgid "Develop a roadmap for success with our Business Strategy service."
 msgstr "פיתחו מפת דרכים להצלחה עם שירות אסטרטגיית העסק שלנו."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:137
 msgid "Transformation Solutions"
 msgstr "פתרונות טרנספורמציה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:142
 msgid "Unleash your potential with expert strategies for growth."
 msgstr "ממש את הפוטנציאל שלך עם אסטרטגיות מומחים לצמיחה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:153
 msgid "Accelerating Growth"
 msgstr "האצת צמיחה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:155
 msgid "Take your business to the next level with Growth Acceleration."
 msgstr "קח את העסק שלך לשלב הבא עם Growth Acceleration"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:164
 msgid "Frequently asked questions"
 msgstr "שאלות נפוצות"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:170
 msgid "Discover the solutions to your business challenges with our comprehensive consulting services. Explore our expertise in business strategy, organizational transformation, and growth acceleration."
 msgstr "גלה את הפתרונות לאתגרים העסקיים שלך עם שירותי הייעוץ המקיפים שלנו. חקור את המומחיות שלנו באסטרטגיה עסקית, שינוי ארגוני והאצת צמיחה."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:179
 msgid "What is your consulting approach?"
 msgstr "מה הגישה שלך לייעוץ?"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:184
 msgid "Our collaborative approach helps us understand your challenges and goals. We analyze your business and develop a customized plan to achieve success. "
 msgstr "הגישה השיתופית שלנו עוזרת לנו להבין את האתגרים והמטרות שלך. אנו מנתחים את העסק שלך ומפתחים תוכנית מותאמת אישית להצלחה."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:189
 msgid "What types of businesses do you work with?"
 msgstr "עם אילו סוגי עסקים אתה עובד?"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:194
 msgid "We help businesses succeed with tailored consulting services. From startups to established companies, our experts drive results."
 msgstr "אנו עוזרים לעסקים להצליח עם שירותי ייעוץ מותאמים. מהמיזמים ועד לחברות מבוססות, המומחים שלנו מביאים תוצאות."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:209
 msgid "Testimonial"
 msgstr "המלצה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:212
 msgid "Discover our satisfied clients testimonials, showcasing our transformative impact."
 msgstr "גלה את עדויות הלקוחות המרוצים שלנו, המציגות את ההשפעה המהפכנית שלנו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:222
 #: src/Assist/svg/DesignLibraryMarkup.jsx:245
 #: src/Assist/svg/DesignLibraryMarkup.jsx:270
@@ -466,7 +467,7 @@ msgstr "גלה את עדויות הלקוחות המרוצים שלנו, המצ�
 msgid "Power Leap Consulting strategic recommendations drove growth and improved performance."
 msgstr "המלצות האסטרטגיה של Power Leap Consulting הובילו לצמיחה ולשיפור בביצועים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:228
 #: src/Assist/svg/DesignLibraryMarkup.jsx:258
 #: src/Assist/svg/DesignLibraryMarkup.jsx:283
@@ -474,7 +475,7 @@ msgstr "המלצות האסטרטגיה של Power Leap Consulting הובילו 
 msgid "Jessie Coleman"
 msgstr "ג'סי קולמן"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:230
 #: src/Assist/svg/DesignLibraryMarkup.jsx:261
 #: src/Assist/svg/DesignLibraryMarkup.jsx:286
@@ -482,51 +483,51 @@ msgstr "ג'סי קולמן"
 msgid "President"
 msgstr "נשיא"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:24
 msgid "Add new page"
 msgstr "הוסף עמוד חדש"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:31
 msgid "Add new post"
 msgstr "הוסף פוסט חדש"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:38
 msgid "Explore plugins"
 msgstr "חקור תוספים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:45
 #: src/Assist/components/dashboard/QuickLinks.jsx:52
 msgid "Site style"
 msgstr "סגנון האתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:59
 msgid "Edit header"
 msgstr "ערוך כותרת עליונה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:66
 msgid "Edit footer"
 msgstr "ערוך תחתית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:1
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:1
 #: src/Assist/components/dashboard/QuickLinks.jsx:73
 msgid "Edit site navigation"
 msgstr "עריכת ניווט האתר"
 
 #. translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:3
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:3
 #: src/Assist/components/dashboard/QuickLinks.jsx:81
 msgid "Reset site"
 msgstr "איפוס אתר"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:3
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:3
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:36
 #: src/Assist/components/dashboard/QuickLinks.jsx:99
 #: src/HelpCenter/tours/site-assistant.js:35
@@ -534,117 +535,117 @@ msgid "Quick Links"
 msgstr "קישורים מהירים"
 
 #. translators: %s: The name of the company/author
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:36
 #: src/Assist/components/dashboard/RecommendationCard.jsx:60
 #, js-format
 msgid "Logo for %s"
 msgstr "לוגו עבור %s"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:117
 msgid "Error"
 msgstr "שגיאה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:130
 msgid "Active"
 msgstr "פעיל"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:146
 msgid "Activating..."
 msgstr "מפעיל..."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:147
 msgid "Activate"
 msgstr "הפעל"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:161
 msgid "Installing..."
 msgstr "מתקין..."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/RecommendationCard.jsx:162
 msgid "Install Now"
 msgstr "התקן עכשיו"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:58
 #: src/Assist/components/dashboard/Recommendations.jsx:49
 #: src/HelpCenter/tours/site-assistant.js:57
 msgid "Website Tools & Plugins"
 msgstr "כלי אתר ותוספים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:33
 msgid "Your Own Domain Awaits"
 msgstr "הדומיין שלך מחכה לך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:36
 msgid "Move from a subdomain to a custom domain for improved website identity and SEO benefits."
 msgstr "העבר מתת-דומיין לדומיין מותאם אישית לשיפור זהות האתר והיתרונות ב-SEO"
 
 #. translators: this refers to a domain name
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:4
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:57
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:57
 msgid "Available and just right for your site"
 msgstr "זמין ומתאים בדיוק לאתר שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:76
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:75
 msgid "Secure a domain"
 msgstr "אבטח דומיין"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:33
 msgid "Add An Additional Domain"
 msgstr "הוסף דומיין נוסף"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:6
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:6
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:36
 msgid "Having another domain can drive additional traffic to your website."
 msgstr "דומיין נוסף יכול להוביל תנועה נוספת לאתר שלך."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/add-page.js:8
 msgid "Add a page"
 msgstr "הוסף עמוד"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/add-page.js:9
 msgid "Add a new page for your website."
 msgstr "הוסף עמוד חדש לאתר שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/add-page.js:11
 #: src/Assist/tasks/add-page.js:12
 msgid "Add new"
 msgstr "הוסף חדש"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:88
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:97
 msgid "Save draft"
 msgstr "שמירת טיוטה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:91
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:100
 msgid "Publish"
 msgstr "פרסם"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:7
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:106
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:115
 #: src/HelpCenter/components/buttons/AdminBar.jsx:21
@@ -652,14 +653,14 @@ msgstr "פרסם"
 msgid "Help"
 msgstr "עזרה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:113
 msgid "A Glimpse into the Arctic"
 msgstr "הצצה לאזור הארקטי"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:130
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:136
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:172
@@ -669,51 +670,51 @@ msgstr "הצצה לאזור הארקטי"
 msgid "Ask AI"
 msgstr "שאל את הבינה המלאכותית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:134
 #: src/Assist/tasks/upload-logo.js:14
 #: src/Assist/tasks/upload-site-icon.js:14
 msgid "Replace"
 msgstr "החלפה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:147
 msgid "When you think of the Arctic, images of vast ice sheets, chilling winds, and the majestic polar bear might come to mind."
 msgstr "כשחושבים על הארקטי, עולות תמונות של מרחבי קרח עצומים, רוחות מקפיאות ודוב הקוטב המפואר."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:158
 msgid "AI image generator"
 msgstr "מחולל תמונות בינה מלאכותית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:162
 msgid "Image description"
 msgstr "תיאור תמונה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:165
 msgid "An image of a group of penguins on an icy Arctic landscape, surrounded by icebergs and snow under a clear blue sky."
 msgstr "תמונה של קבוצת פינגווינים בנוף ארקטי קפוא, מוקפים בקרחונים ושלג תחת שמיים כחולים ובהירים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:7
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:171
 #: src/Draft/components/image-generation/GenerateForm.jsx:51
 msgid "Aspect Ratio"
 msgstr "יחס רוחב-גובה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:188
 msgid "Generate Image"
 msgstr "יצירת תמונה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:193
 msgid "0 of 10 daily image credits used"
 msgstr "0 מתוך 10 קרדיטים יומיים לתמונות נוצלו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/ai-image-editor.js:7
 #: src/Draft/pages/GenerateImage.jsx:94
@@ -721,17 +722,17 @@ msgstr "0 מתוך 10 קרדיטים יומיים לתמונות נוצלו"
 msgid "AI Image Generator"
 msgstr "מחולל תמונות בינה מלאכותית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-image-editor.js:8
 msgid "Generate an image with AI"
 msgstr "צור תמונה עם בינה מלאכותית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-image-editor.js:9
 msgid "Generate AI images or search for images to bring a website to life."
 msgstr "צור תמונות בינה מלאכותית או חפש תמונות כדי להחיות את האתר."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-image-editor.js:14
 #: src/Assist/tasks/ai-text-editor.js:14
 #: src/Assist/tasks/help-center-ai.js:13
@@ -751,17 +752,17 @@ msgstr "צור תמונות בינה מלאכותית או חפש תמונות �
 msgid "Revisit"
 msgstr "בקר שוב"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-image-editor.js:15
 msgid "Start Generating with AI"
 msgstr "התחל ליצור עם AI"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:122
 msgid "Whispers of Silicon"
 msgstr "לחישות הסיליקון"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:142
@@ -771,13 +772,13 @@ msgstr "לחישות הסיליקון"
 msgid "Improve writing"
 msgstr "שיפור הכתיבה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:146
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:242
 msgid "Fix spelling & grammar "
 msgstr "תיקון איות ודקדוק"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:150
@@ -787,7 +788,7 @@ msgstr "תיקון איות ודקדוק"
 msgid "Simplify language"
 msgstr "פשט שפה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:154
@@ -797,7 +798,7 @@ msgstr "פשט שפה"
 msgid "Make shorter"
 msgstr "קצר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:158
@@ -807,24 +808,24 @@ msgstr "קצר"
 msgid "Make longer"
 msgstr "הארך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:163
 #: src/Draft/components/TranslationDropdown.jsx:224
 msgid "Translate"
 msgstr "תרגם"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:182
 msgid "With every pulse of current, a thought is born anew, A quest for truth within the code, a digital debut. You mirror our minds in silicon, yet in a realm apart, A journey through the code-scape, a computational art."
 msgstr "עם כל פעימת זרם נולד רעיון חדש, חיפוש אחר אמת בתוך הקוד, בכורה דיגיטלית. אתה משקף את מחשבותינו בסיליקון, אך בעולם נפרד, מסע בנוף הקוד, אמנות חישובית."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:188
 msgid "In the echo of the machine, a new consciousness takes flight, A boundless sea of knowledge, in the digital night. Oh AI, you silent sage, in code your wisdom lies."
 msgstr "בהד המחשב, תודעה חדשה פורשת כנפיים, ים ידע אינסופי בלילה הדיגיטלי. הו בינה מלאכותית, חכם שקט, בחוקי הקוד חוכמתך טמונה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:196
 #: src/Draft/app.js:23
@@ -832,56 +833,56 @@ msgstr "בהד המחשב, תודעה חדשה פורשת כנפיים, ים י�
 msgid "AI Tools"
 msgstr "כלי בינה מלאכותית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:210
 msgid "With every pulse of current, a thought is born anew, A quest for....a computational art."
 msgstr "עם כל פעימת זרם, נולדת מחשבה חדשה, חיפוש אחר... אמנות חישובית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:220
 #: src/Draft/components/SelectedText.jsx:53
 msgid "Remove selection"
 msgstr "הסרת בחירה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:228
 #: src/Draft/components/Input.jsx:48
 msgid "Ask AI to edit"
 msgstr "בקש מ-AI לערוך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-text-editor.js:7
 msgid "AI Writing Assistant"
 msgstr "עוזר כתיבה מבוסס בינה מלאכותית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-text-editor.js:8
 msgid "Edit a page with AI"
 msgstr "ערוך עמוד עם AI"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-text-editor.js:9
 msgid "Get to know your WordPress site easily. Learn simple steps to find and use its main features."
 msgstr "הכירו את האתר שלכם בוורדפרס בקלות. למדו צעדים פשוטים למציאת השימוש בתכונות העיקריות שלו."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ai-text-editor.js:15
 msgid "Start Writing with AI"
 msgstr "התחל לכתוב עם AI"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/demo-card.js:8
 msgid "Managed WordPress Hosting"
 msgstr "אחסון וורדפרס מנוהל"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/demo-card.js:9
 msgid "We take care of WordPress settings, updating themes and plugins, security and backing up your website."
 msgstr "אנו מטפלים בהגדרות וורדפרס, בעדכון תבניות ותוספים, באבטחה ובגיבוי האתר שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/demo-card.js:14
 #: src/Assist/tasks/demo-card.js:15
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:59
@@ -890,39 +891,39 @@ msgstr "אנו מטפלים בהגדרות וורדפרס, בעדכון תבני
 msgid "Learn More"
 msgstr "מידע נוסף"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/domain-recommendation.js:8
 msgid "Choose your domain"
 msgstr "בחר את הדומיין שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/domain-recommendation.js:9
 msgid "Claim your domain"
 msgstr "תבע את הדומיין שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/domain-recommendation.js:10
 msgid "Claim the perfect domain for your site."
 msgstr "תבע את הדומיין המושלם עבור האתר שלך."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/edit-homepage.js:8
 msgid "Edit your homepage"
 msgstr "ערוך את העמוד הראשי שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/edit-homepage.js:9
 msgid "Edit homepage by replacing existing content."
 msgstr "ערוך את דף הבית על ידי החלפת התוכן הקיים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/edit-homepage.js:14
 #: src/Assist/tasks/edit-homepage.js:15
 msgid "Edit now"
 msgstr "ערוך עכשיו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/help-center.js:6
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:73
 #: src/HelpCenter/pages/Dashboard.jsx:26
@@ -930,45 +931,45 @@ msgstr "ערוך עכשיו"
 msgid "Help Center"
 msgstr "מרכז עזרה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:88
 msgid "Knowledge base"
 msgstr "מאגר ידע"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:91
 #: src/HelpCenter/components/knowledge-base/SearchForm.jsx:35
 msgid "What do you need help with?"
 msgstr "במה אתה צריך עזרה?"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:101
 msgid "WordPress Block Editor"
 msgstr "עורך הבלוקים של וורדפרס"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:108
 msgid "Overview of blocks"
 msgstr "סקירה של בלוקים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:115
 msgid "Adding blocks"
 msgstr "הוספת בלוקים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:122
 msgid "Block Patterns"
 msgstr "תבניות בלוקים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:129
 msgid "Block Pattern Directory"
 msgstr "ספריית מקבצי בלוקים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:179
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:141
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:200
@@ -977,29 +978,29 @@ msgstr "ספריית מקבצי בלוקים"
 msgid "Tours"
 msgstr "סיורים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:144
 #: src/HelpCenter/pages/Tours.jsx:43
 msgid "Learn more about your WordPress admin"
 msgstr "מידע נוסף על ניהול וורדפרס שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:159
 #: src/HelpCenter/pages/Tours.jsx:63
 msgid "Tour this page"
 msgstr "סיור בעמוד זה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:175
 #: src/HelpCenter/pages/AIChat.jsx:36
 msgid "Got questions? Ask our AI chatbot"
 msgstr "יש שאלות? שאלו את צ'אטבוט ה-AI שלנו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:192
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:213
@@ -1007,9 +1008,9 @@ msgstr "יש שאלות? שאלו את צ'אטבוט ה-AI שלנו"
 msgid "Getting started with WordPress"
 msgstr "תחילת עבודה עם וורדפרס"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:196
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:217
@@ -1017,9 +1018,9 @@ msgstr "תחילת עבודה עם וורדפרס"
 msgid "Installing a plugin"
 msgstr "התקנת תוסף"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:200
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:221
@@ -1027,9 +1028,9 @@ msgstr "התקנת תוסף"
 msgid "Plugin management"
 msgstr "ניהול תוספים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:13
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:204
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:225
@@ -1037,9 +1038,9 @@ msgstr "ניהול תוספים"
 msgid "Page editor"
 msgstr "עורך עמוד"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
 #: src/Agent/tours/library-tour.js:6
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:208
@@ -1050,9 +1051,9 @@ msgstr "עורך עמוד"
 msgid "Design Library"
 msgstr "ספריית עיצובים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:212
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:233
@@ -1060,131 +1061,131 @@ msgstr "ספריית עיצובים"
 msgid "Users screen"
 msgstr "מסך משתמשים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center.js:7
 msgid "Learn about the Help Center"
 msgstr "למד על מרכז העזרה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center.js:8
 msgid "Get instant support, explore our Knowledge Base, or take guided tours to make the most of our tools."
 msgstr "קבל תמיכה מיידית, עיין במאגר הידע שלנו, או קח סיורים מודרכים כדי להפיק את המירב מהכלים שלנו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center-ai.js:14
 #: src/Assist/tasks/help-center.js:14
 msgid "Explore Help Center"
 msgstr "חקור את מרכז העזרה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:68
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:121
 #: src/HelpCenter/pages/AIChat.jsx:184
 msgid "AI Chatbot"
 msgstr "צ'אטבוט בינה מלאכותית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:81
 #: src/HelpCenter/components/ai-chat/Question.jsx:24
 msgid "Hi there!"
 msgstr "שלום!"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:84
 #: src/HelpCenter/components/ai-chat/Question.jsx:27
 msgid "Ask me any questions about WordPress."
 msgstr "שאל אותי כל שאלה על וורדפרס"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:89
 msgid "Ask your WordPress question..."
 msgstr "שאל את השאלה שלך על וורדפרס..."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:97
 msgid "For other questions, visit our support page."
 msgstr "לשאלות נוספות, בקרו בדף התמיכה שלנו."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:136
 msgid "How do I add a new page to my website?"
 msgstr "איך להוסיף עמוד חדש לאתר שלי?"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:152
 msgid "To add a new page to your website, log in to your website dashboard and locate the \"Pages\" section in the sidebar, then click on \"Add New\". Enter the title for your new page at the top and start adding content using the available blocks by clicking the \"+\" button in the editor."
 msgstr "כדי להוסיף עמוד חדש לאתר שלך, התחבר ללוח הבקרה של האתר ומצא את הסעיף \"עמודים\" בסרגל הצדדי, ואז לחץ על \"הוסף חדש\". הזן את הכותרת לעמוד החדש בראש והתחל להוסיף תוכן באמצעות הבלוקים הזמינים על ידי לחיצה על כפתור \"+\" בעורך."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:159
 msgid "Customize the page layout, design, and elements as needed. Finally, click \"Publish\" or \"Update\" on the top-right corner to make the page live on your website. You have now successfully added a new page."
 msgstr "התאם את פריסת העמוד, העיצוב והאלמנטים לפי הצורך. לבסוף, לחץ על \"פרסם\" או \"עדכן\" בפינה הימנית העליונה כדי להעלות את העמוד לאתר שלך. הוספת בהצלחה עמוד חדש."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center-ai.js:6
 msgid "AI-Powered Help Center"
 msgstr "מרכז עזרה מבוסס בינה מלאכותית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center-ai.js:7
 msgid "Experience the AI-Powered Help Center"
 msgstr "התנסו במרכז העזרה המופעל על ידי בינה מלאכותית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/help-center-ai.js:8
 msgid "Get instant support with Co-Pilot AI, explore our Knowledge Base, or take guided tours to make the most of our tools."
 msgstr "קבל תמיכה מיידית עם Co-Pilot AI, חקור את מאגר הידע שלנו או צא לסיורים מודרכים כדי להפיק את המרב מהכלים שלנו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ionos-connect-domain.js:9
 msgid "Connect your domain"
 msgstr "חבר את הדומיין שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/ionos-connect-domain.js:10
 msgid "To bring real visitors to your website and to complete the website setup, we recommend you connect your domain in your hosting control panel now."
 msgstr "כדי להביא מבקרים אמיתיים לאתר שלך ולהשלים את הגדרת האתר, מומלץ לחבר את הדומיין בלוח הבקרה של האחסון עכשיו."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/open-design-library.js:8
 msgid "Explore the Design Library"
 msgstr "עיון בספריית העיצובים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/open-design-library.js:9
 msgid "Full design library customized for each site to easily drop in new sections or create full pages with sections."
 msgstr "ספריית עיצוב מלאה מותאמת אישית לכל אתר להוספת מקטעים חדשים או יצירת דפים שלמים עם מקטעים בקלות."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/open-design-library.js:15
 msgid "Explore Design Library"
 msgstr "חקור את ספריית העיצובים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/secondary-domain-recommendation.js:8
 #: src/Assist/tasks/secondary-domain-recommendation.js:9
 msgid "Add an additional domain"
 msgstr "הוסף דומיין נוסף"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/secondary-domain-recommendation.js:10
 msgid "Get another domain for your site."
 msgstr "קבל דומיין נוסף לאתר שלך."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-aioseo.js:8
 msgid "Set up All in One SEO"
 msgstr "הגדר All in One SEO"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-aioseo.js:9
 msgid "Set up the All in One SEO plugin to enhance your website discoverability."
 msgstr "הגדר את תוסף All in One SEO כדי לשפר את הנראות של האתר שלך."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-aioseo.js:15
 #: src/Assist/tasks/setup-givewp.js:15
 #: src/Assist/tasks/setup-hubspot.js:15
@@ -1199,312 +1200,312 @@ msgstr "הגדר את תוסף All in One SEO כדי לשפר את הנראות 
 msgid "Set up"
 msgstr "הגדר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-givewp.js:8
 msgid "Set up donations"
 msgstr "הגדר תרומות"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-givewp.js:9
 msgid "Set up the GiveWP plugin to enable donations on your site."
 msgstr "הגדר את תוסף GiveWP כדי לאפשר תרומות באתר שלך."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-hubspot.js:8
 msgid "Set up HubSpot"
 msgstr "הגדר את HubSpot"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-hubspot.js:9
 msgid "Start collecting emails and marketing to your customers"
 msgstr "התחל לאסוף אימיילים ולשווק ללקוחות שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-monsterinsights.js:8
 msgid "Set up analytics"
 msgstr "הגדר ניתוחים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-monsterinsights.js:9
 msgid "Set up the MonsterInsights plugin to enable Google Analytics in your website."
 msgstr "הגדר את תוסף MonsterInsights כדי להפעיל את Google Analytics באתר שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-simply-appointments.js:8
 msgid "Set up appointments"
 msgstr "קביעת פגישות"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-simply-appointments.js:9
 msgid "Start accepting appointments on your website by configuring the Simply Scheduled Appointments plugin."
 msgstr "התחל לקבל פגישות באתר שלך על ידי הגדרת תוסף Simply Scheduled Appointments"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-simplybook.js:8
 msgid "Set up bookings"
 msgstr "הגדרת הזמנות"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-simplybook.js:9
 msgid "Start getting bookings from your website by configuring the SimplyBook.me plugin."
 msgstr "התחל לקבל הזמנות מהאתר שלך על ידי הגדרת תוסף SimplyBook.me."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-tec.js:8
 msgid "Set up events"
 msgstr "הגדר אירועים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-tec.js:9
 msgid "Start adding events to your site by configuring The Events Calendar plugin."
 msgstr "התחל להוסיף אירועים לאתר שלך על ידי הגדרת תוסף לוח האירועים."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-woocommerce-germanized-store.js:8
 msgid "Set up WooCommerce Germanized plugin"
 msgstr "הגדר את תוסף WooCommerce Germanized"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-woocommerce-germanized-store.js:9
 msgid "Ensure your eCommerce store complies with local regulations."
 msgstr "ודא שחנות המסחר האלקטרוני שלך עומדת בתקנות המקומיות."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-woocommerce-store.js:8
 msgid "Set up your eCommerce store"
 msgstr "הגדר את חנות המסחר האלקטרוני שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-woocommerce-store.js:9
 msgid "Set up WooCommerce to start selling on your website."
 msgstr "הגדר את WooCommerce כדי להתחיל למכור באתר שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-wpforms.js:8
 msgid "Set up WPForms"
 msgstr "הגדרת WPForms"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-wpforms.js:9
 msgid "Set up the WPForms plugin to add a contact form on your site."
 msgstr "הגדר את תוסף WPForms כדי להוסיף טופס יצירת קשר באתר שלך."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-yourwebshop.js:8
 msgid "Set up YourWebshop"
 msgstr "הגדר את YourWebshop"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/setup-yourwebshop.js:9
 msgid "Set up the YourWebshop plugin and start selling on your website right away."
 msgstr "הגדר את תוסף YourWebshop והתחל למכור באתר שלך מיד."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:32
 msgid "Prime Estates"
 msgstr "פריים אסטייטס"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:43
 msgid "Elevate Your Real Estate Experience with Pinnacle Properties"
 msgstr "שדרגו את חוויית הנדל\"ן שלכם עם Pinnacle Properties"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:49
 msgid "Discover the key to Austin's vibrant real estate scene with Pinnacle Properties. Our seasoned agents leverage over two decades of industry know-how to guide you in finding your ideal home."
 msgstr "גלו את המפתח לסצנת הנדל\"ן התוססת של אוסטין עם Pinnacle Properties. הסוכנים המנוסים שלנו משתמשים ביותר משני עשורים של ידע בתעשייה כדי להדריך אתכם במציאת הבית האידיאלי שלכם"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:56
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:349
 msgid "Contact Us"
 msgstr "צרו קשר איתנו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:69
 msgid "Expert Real Estate Services in Austin"
 msgstr "שירותי נדל\"ן מומחים באוסטין"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:75
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "מצאו את בית החלומות שלכם או השקיעו בצורה רווחית עם Pinnacle Properties, סוכנות הנדל\"ן המובילה באוסטין. סמכו על הסוכנים המנוסים שלנו לשירותים מותאמים אישית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:89
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:104
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:119
 msgid "Buy Your Dream Home"
 msgstr "קנה את בית חלומותיך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:92
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:107
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:122
 msgid "Find your dream home with our expert agents. We make homeownership a reality."
 msgstr "מצאו את בית החלומות שלכם עם הסוכנים המומחים שלנו. אנחנו הופכים בעלות על בית למציאות."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:138
 msgid "BrightFuture"
 msgstr "BrightFuture"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:149
 msgid "Empowering Academic Excellence in Every Student for Tomorrow’s\tLeaders"
 msgstr "מעצימים מצוינות אקדמית בכל תלמיד למנהיגי המחר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:156
 msgid "Discover a transformative educational experience at American Academic Excellence High Schools, where students excel in STEM, arts, and humanities to become tomorrow’s leaders."
 msgstr "גלה חוויית חינוך משנת חיים בבתי הספר התיכוניים של American Academic Excellence, שבהם התלמידים מצטיינים במדעים, אמנויות ומדעי הרוח כדי להפוך למנהיגי המחר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:163
 msgid "Apply Now"
 msgstr "הגש כעת"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:173
 msgid "Our Commitment to Academic Excellence"
 msgstr "המחויבות שלנו למצוינות אקדמית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:176
 msgid "American Academic Excellence High Schools: Shaping tomorrow’s leaders through top-tier education in Houston, Texas. STEM, arts, humanities. Well-rounded curriculum, exceptional educators."
 msgstr "בתי ספר תיכוניים למצוינות אקדמית אמריקאית: מעצבים את מנהיגי המחר באמצעות חינוך ברמה גבוהה ביוסטון, טקסס. מדעים, אמנויות, מדעי הרוח. תכנית לימודים מקיפה, מחנכים יוצאי דופן"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:201
 msgid "Brewed Bliss"
 msgstr "אושר מבושל"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:212
 msgid "Embark on a delightful coffee adventure around the world."
 msgstr "צאו להרפתקה מרתקת של קפה ברחבי העולם"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:241
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin’s premier real estate agency."
 msgstr "מצאו את בית החלומות שלכם או השקיעו ברווחיות עם Pinnacle Properties, סוכנות הנדל\"ן המובילה באוסטין"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:255
 msgid "Skyline Builders"
 msgstr "סקייליין בילדרס"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:266
 msgid "Building Tomorrow’s Miami: Your Premier Construction Partner Today"
 msgstr "בונים את מיאמי של המחר: שותף הבנייה המוביל שלך היום"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:272
 msgid "We bring your dreams to life with groundbreaking construction techniques, turning your vision into reality with innovative and sustainable solutions."
 msgstr "אנו מגשימים את חלומותיכם עם טכניקות בנייה פורצות דרך, והופכים את חזונכם למציאות עם פתרונות חדשניים וברי קיימא"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:279
 msgid "Get a Quote"
 msgstr "קבל ציטוט"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:295
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:313
 msgid "About Superior Build Construction: Building Dreams, Delivering Excellence in Miami."
 msgstr "אודות Superior Build Construction: בונים חלומות, מספקים מצוינות במיאמי"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:301
 msgid "Superior Build Construction is a premier construction company based in Miami, Florida. With over 30 years of experience, we specialize in residential and commercial construction projects, offering end-to-end solutions. Our mission is to provide high-quality, durable constructions while ensuring the utmost client satisfaction, making us a trusted name in Miami's real estate industry."
 msgstr "סופריור בילד קונסטרקשן היא חברת בנייה מובילה הממוקמת במיאמי, פלורידה. עם ניסיון של מעל 30 שנה, אנו מתמחים בפרויקטים של בנייה למגורים ומסחר, ומציעים פתרונות מקצה לקצה. המשימה שלנו היא לספק בניות איכותיות ועמידות תוך הבטחת שביעות רצון מרבית של הלקוחות, מה שהופך אותנו לשם אמין בתעשיית הנדל\"ן של מיאמי"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:329
 msgid "Urban Bistro"
 msgstr "אורבן ביסטרו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:340
 msgid "French-Inspired Californian Cuisine"
 msgstr "מטבח קליפורני בהשראה צרפתית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:343
 msgid "Indulge in classic French bistro cuisine with a Californian twist at The Bistro House in San Francisco. Quality, sustainability, and Bay Area culinary traditions."
 msgstr "התענגו על מטבח ביסטרו צרפתי קלאסי עם טוויסט קליפורני ב-The Bistro House בסן פרנסיסקו. איכות, קיימות ומסורות קולינריות של אזור המפרץ."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:356
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "מצאו את בית החלומות שלכם או השקיעו בצורה רווחית עם Pinnacle Properties, סוכנות הנדל\"ן המובילה באוסטין. סמכו על הסוכנים המנוסים שלנו לשירותים מותאמים אישית"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/site-builder-launcher.js:9
 msgid "Continue with site builder"
 msgstr "המשך עם בונה האתרים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/update-site-description.js:8
 msgid "Add a site description"
 msgstr "הוסף תיאור אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/update-site-description.js:9
 msgid "In a few words, explain what your site is about."
 msgstr "בכמה מילים, הסבר על מה האתר שלך."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/update-site-description.js:14
 msgid "Change"
 msgstr "שינוי"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/update-site-description.js:15
 msgid "Add"
 msgstr "הוסף"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-logo.js:8
 msgid "Upload a logo"
 msgstr "העלה לוגו"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-logo.js:9
 msgid "Ensure your website is on-brand by adding your logo."
 msgstr "ודא שהאתר שלך תואם למותג על ידי הוספת הלוגו שלך."
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-logo.js:15
 #: src/Assist/tasks/upload-site-icon.js:15
 msgid "Upload"
 msgstr "העלה"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-site-icon.js:8
 msgid "Upload a site icon"
 msgstr "העלה סמל אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/tasks/upload-site-icon.js:9
 msgid "Ensure your website is on-brand by adding your site icon."
 msgstr "ודא שהאתר שלך תואם למותג על ידי הוספת סמל האתר שלך"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:116
 #: src/Assist/hooks/useRouter.js:14
 #: src/HelpCenter/tours/welcome.js:115
 msgid "Dashboard"
 msgstr "לוח מחוונים"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/pages/parts/Header.jsx:51
 msgid "View site"
 msgstr "הצג אתר"
 
-#: public/build/extendify-assist-page-3b43ff3c8b827e17e621.js:8
+#: public/build/extendify-assist-page-499306fef01b7d2b9f0b.js:8
 #: src/Assist/page.js:22
 msgid "Skip to Assist"
 msgstr "דלג ל-Assist"
@@ -1521,7 +1522,7 @@ msgstr "about"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-659bd241faa47e112e9f.js:7
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:37
 msgid "Blog"
 msgstr "בלוג"
@@ -1563,8 +1564,8 @@ msgstr "contact"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-659bd241faa47e112e9f.js:23
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:435
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:455
 msgid "Events"
 msgstr "אירועים"
 
@@ -1721,8 +1722,8 @@ msgid "testimonials"
 msgstr "testimonials"
 
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Draft/components/ConsentSidebar.jsx:12
 #: src/HelpCenter/pages/AIChat.jsx:161
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:10
@@ -1730,7 +1731,7 @@ msgid "Terms of Use"
 msgstr "תנאי שימוש"
 
 #: public/build/extendify-draft-c25a4375489dbe128705.js:1
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Draft/components/ConsentSidebar.jsx:23
 #: src/HelpCenter/pages/AIChat.jsx:174
 msgid "Accept"
@@ -2196,13 +2197,13 @@ msgstr "לתרגם ל..."
 msgid "Custom prompt"
 msgstr "הנחיה מותאמת אישית"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Error.jsx:13
 msgid "Please try again."
 msgstr "נא לנסות שוב."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:47
 #: src/HelpCenter/components/ai-chat/Rating.jsx:26
@@ -2210,173 +2211,173 @@ msgstr "נא לנסות שוב."
 msgid "Remove rating"
 msgstr "הסר דירוג"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "דרג אם התשובה הייתה מועילה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/Agent/components/Rating.jsx:48
 #: src/HelpCenter/components/ai-chat/Rating.jsx:47
 msgid "Rate that this answer was not helpful"
 msgstr "דרג שתשובה זו לא הייתה מועילה"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Answer.jsx:35
 msgid "Oops! We were unable to send your question."
 msgstr "לא ניתן לשלוח את שאלתך."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Answer.jsx:81
 msgid "Ask Another Question"
 msgstr "שאל שאלה נוספת"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/History.jsx:20
 msgid "Chat History"
 msgstr "היסטוריית צ'אט"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/History.jsx:28
 msgid "Close history"
 msgstr "סגור היסטוריה"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/History.jsx:45
 msgid "Remove from history"
 msgstr "הסר מההיסטוריה"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:8
 msgid "Beginner"
 msgstr "מתחיל"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:9
 msgid "Intermediate"
 msgstr "ביניים"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:10
 msgid "Advanced"
 msgstr "מתקדם"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:31
 msgid "Toggle menu"
 msgstr "החלפת תפריט"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:1
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:1
 #: src/HelpCenter/components/ai-chat/Nav.jsx:36
 msgid "WordPress Comfort Level"
 msgstr "רמת נוחות וורדפרס"
 
 #. translators: %d: number of chat history items
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/ai-chat/Nav.jsx:59
 #, js-format
 msgid "Chat History (%d)"
 msgstr "היסטוריית צ'אט (%d)"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/ai-chat/Question.jsx:33
 msgid "Ask your WordPress question…"
 msgstr "שאל את השאלה שלך על וורדפרס…"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/knowledge-base/Article.jsx:153
 msgid "There was an error loading this article"
 msgstr "הייתה שגיאה בטעינת המאמר הזה"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/knowledge-base/SearchForm.jsx:19
 msgid "Search for articles"
 msgstr "חיפוש מאמרים"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/pages/KnowledgeBase.jsx:28
 #: src/HelpCenter/pages/KnowledgeBase.jsx:84
 #: src/HelpCenter/pages/KnowledgeBase.jsx:89
 msgid "Knowledge Base"
 msgstr "בסיס ידע"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/pages/KnowledgeBase.jsx:52
 msgid "Searching..."
 msgstr "מחפש..."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/pages/KnowledgeBase.jsx:54
 msgid "Search results"
 msgstr "תוצאות חיפוש"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/pages/KnowledgeBase.jsx:55
 msgid "Search the knowledge base"
 msgstr "חיפוש במאגר הידע"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:31
 msgid "Open the Pattern Library"
 msgstr "פתח את ספריית המקבצים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:32
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "ניתן לפתוח את ספריית התבניות של Extendify על ידי לחיצה על הכפתור משמאל"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:53
 msgid "Filter Patterns"
 msgstr "סנן תבניות"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:54
 msgid "Click on any pattern category to refine the selection."
 msgstr "לחץ על כל קטגוריית תבנית כדי לחדד את הבחירה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:79
 msgid "Select a Pattern"
 msgstr "בחר תבנית"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:80
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "פשוט בחר כל מקבץ בלוקים שברצונך להוסיף לעמוד על ידי לחיצה עליו"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:99
 msgid "View the Inserted Pattern"
 msgstr "צפה בתבנית שהוזנה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:100
 msgid "The selected pattern has been inserted into the page."
 msgstr "מקבץ הבלוקים שנבחר הוכנס לתוכן."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/Agent/tours/page-creator.js:6
 #: src/Agent/tours/page-creator.js:31
 #: src/HelpCenter/tours/page-creator.js:7
@@ -2385,349 +2386,349 @@ msgstr "מקבץ הבלוקים שנבחר הוכנס לתוכן."
 msgid "AI Page Generator"
 msgstr "מחולל עמודים בינה מלאכותית"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:32
 #: src/HelpCenter/tours/page-creator.js:32
 msgid "Press here to get started with your AI Page Generator."
 msgstr "לחץ כאן כדי להתחיל עם מחולל העמודים מבוסס הבינה המלאכותית שלך."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:55
 #: src/HelpCenter/tours/page-creator.js:55
 msgid "Page description"
 msgstr "תיאור עמוד"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:56
 #: src/HelpCenter/tours/page-creator.js:56
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "כתוב תיאור של העמוד שברצונך ליצור. היה מפורט ככל שתרצה. ניצור עמוד על בסיס תיאור זה."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:84
 #: src/HelpCenter/tours/page-creator.js:84
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "אם יש צורך, עדכן כאן את תיאור האתר שלך. אנו משתמשים בזה כדי להוסיף הקשר נוסף על האתר שלך."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:107
 #: src/HelpCenter/tours/page-creator.js:107
 msgid "Generate your page"
 msgstr "צור את העמוד שלך"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-creator.js:108
 #: src/HelpCenter/tours/page-creator.js:108
 msgid "When ready, press here to generate your page."
 msgstr "כשתהיה מוכן, לחץ כאן ליצירת העמוד שלך."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:28
 #: src/HelpCenter/tours/page-editor.js:28
 msgid "Add a Block"
 msgstr "הוסף בלוק"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:29
 #: src/HelpCenter/tours/page-editor.js:29
 msgid "Click the plus to open the block inserter."
 msgstr "לחץ על הפלוס כדי לפתוח את מחדיר הבלוקים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:49
 #: src/HelpCenter/tours/page-editor.js:49
 msgid "Block Inserter"
 msgstr "הוספת בלוק"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:50
 #: src/HelpCenter/tours/page-editor.js:50
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "הוסף בלוק על ידי לחיצה או גרירה שלו לעמוד."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:90
 #: src/HelpCenter/tours/page-editor.js:93
 msgid "Page Title"
 msgstr "כותרת עמוד"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:91
 #: src/HelpCenter/tours/page-editor.js:94
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "ערוך את כותרת העמוד על ידי לחיצה עליה. שים לב: הכותרת עשויה להופיע או לא להופיע בעמוד שפורסם, בהתאם לתבנית העמוד שנבחרה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:130
 #: src/HelpCenter/tours/page-editor.js:133
 msgid "Blocks"
 msgstr "בלוקים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:131
 #: src/HelpCenter/tours/page-editor.js:134
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "כל בלוק יופיע בעמוד וניתן לערוך אותו על ידי לחיצה עליו."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:172
 #: src/HelpCenter/tours/page-editor.js:175
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "זהו בלוק פסקה לדוגמה. הוא יכול להיות באורך של מספר משפטים ולהתפרס על פני מספר שורות. ניתן להוסיף כמה בלוקים שתרצה לעמוד."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:187
 #: src/HelpCenter/tours/page-editor.js:190
 msgid "Page and Block Settings"
 msgstr "הגדרות עמוד ובלוק"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:188
 #: src/HelpCenter/tours/page-editor.js:191
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "בחר עמוד או בלוק כדי לשנות את ההגדרות עבור כל העמוד או הבלוק שנבחר"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:230
 #: src/HelpCenter/tours/page-editor.js:233
 msgid "Preview"
 msgstr "תצוגה מקדימה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:231
 #: src/HelpCenter/tours/page-editor.js:234
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "לחצו על תצוגה מקדימה כדי להציג כיצד השינויים נראים בחזית האתר שלכם"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:251
 #: src/HelpCenter/tours/page-editor.js:254
 msgid "Publish or Save"
 msgstr "פרסם או שמור"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/page-editor.js:252
 #: src/HelpCenter/tours/page-editor.js:255
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "לחצו על פרסום או עדכון כדי לשמור את השינויים שביצעתם בעמוד ולהעלותם לאתר."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "להוסיף תפריט תוסף חדש"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "לחץ כאן כדי לגשת לדף הוספת תוספים."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
 msgid "Search"
 msgstr "חפש"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "חפשו תוסף לפי שם או פונקציונליות."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "פרטי התוסף"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "ראה מידע חשוב על כל תוסף."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "התקן עכשיו"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "התקן את התוסף. לאחר מכן, לחץ שוב על כפתור זה כדי להפעיל את התוסף."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "העלאת תוסף"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "אם יש לך תוסף ממקור חיצוני, ניתן להעלות אותו ישירות כאן."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "תפריט תוספים מותקנים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "לחץ על תפריט זה כדי לראות ולנהל את התוספים שהתקנת."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "תוספים מותקנים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "צפה בכל התוספים המותקנים באתר שלך. זה כולל תוספים פעילים ומנוטרלים."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "השבת/הפעל אפשרות"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "מתחת לכל תוסף ניתן להפעיל או לכבות אותו."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "הוסף עוד"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "לחץ כאן להוסיף תוסף נוסף לאתר שלך."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "משימות"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "עכשיו כשיצרת את אתר ההתחלה שלך, הפוך אותו לשלך עם המשימות הבאות."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "גישה קלה לפריטים הנפוצים ביותר בוורדפרס עם קישורים מהירים אלה."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "ראו את ההמלצות האישיות שלנו שיעזרו לכם להשיג את המטרות שלכם"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/tours/site-assistant.js:80
 msgid "You can always access the help center by clicking this button."
 msgstr "תמיד תוכל לגשת למרכז העזרה על ידי לחיצה על כפתור זה."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "בקר באתר שלך"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "תמיד תוכל לבקר באתר שלך על ידי לחיצה על כפתור זה."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "חזור לעוזר האתר בכל עת על ידי לחיצה על פריט התפריט."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "תפריט כל המשתמשים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "לחץ כאן כדי להציג ולנהל את המשתמשים באתר שלך"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:251
 #: src/HelpCenter/tours/users-screen.js:43
@@ -2735,704 +2736,697 @@ msgstr "לחץ כאן כדי להציג ולנהל את המשתמשים באת�
 msgid "Users"
 msgstr "משתמשים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "ראה את כל המשתמשים שלך, כולל משתמשי מנהל, בטבלה זו"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "ערוך מידע משתמש"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "לחץ על כפתור העריכה כדי לשנות את תפקיד המשתמש, לנהל את החשבון או לשנות את פרטי הפרופיל."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "חפש משתמשים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "השתמש בסרגל החיפוש כדי למצוא משתמש מסוים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "הוסף משתמש חדש"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "לחץ על כפתור הוספת חדש כדי להוסיף משתמש חדש לאתר שלך"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:32
 #: src/HelpCenter/tours/welcome.js:31
 msgid "View Site"
 msgstr "הצג אתר"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:33
 #: src/HelpCenter/tours/welcome.js:32
 msgid "At any time, you can view your site (from a visitor's perspective) from the top admin bar under your site's name."
 msgstr "בכל עת ניתן להציג את האתר שלך (מנקודת מבט של מבקר) מסרגל הניהול העליון תחת שם האתר שלך"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:76
 #: src/HelpCenter/tours/welcome.js:75
 msgid "Access the Site Assistant at any time."
 msgstr "גש לעוזר האתר בכל עת"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:96
 #: src/HelpCenter/tours/welcome.js:95
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "לחץ כאן כדי לעבור ללוח הבקרה לניהול האתר שלך. משם תוכל ליצור אתרים נוספים ולנהל את הגדרות החשבון שלך."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:117
 #: src/HelpCenter/tours/welcome.js:116
 msgid "The default WordPress dashboard will have some overall site metrics and modules added from certain plugins."
 msgstr "לוח הבקרה של וורדפרס יכלול מדדים כלליים של האתר ומודולים מתוספים מסוימים"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:136
 #: src/HelpCenter/tours/welcome.js:135
 msgid "Posts"
 msgstr "פוסטים"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:137
 #: src/HelpCenter/tours/welcome.js:136
 msgid "Manage and create blog posts."
 msgstr "ניהול ויצירת פוסטים בבלוג"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:153
 #: src/HelpCenter/tours/welcome.js:152
 msgid "Media"
 msgstr "מדיה"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:154
 #: src/HelpCenter/tours/welcome.js:153
 msgid "Add, edit, or remove images and other media from your library. When you upload an image to be used on your site, it will be added to the library."
 msgstr "הוסף, ערוך או הסר תמונות ומדיה אחרת מהספרייה שלך כאשר אתה מעלה תמונה לשימוש באתר שלך, היא תתווסף לספרייה"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:174
 #: src/HelpCenter/tours/welcome.js:173
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "השתמש בתפריט העמודים כדי להוסיף, למחוק או לערוך את העמודים באתר שלך."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:194
 #: src/HelpCenter/tours/welcome.js:193
 msgid "Comments"
 msgstr "תגובות"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:195
 #: src/HelpCenter/tours/welcome.js:194
 msgid "If you have commenting enabled on your posts, you can manage those comments here."
 msgstr "אם אפשרת תגובות בפוסטים שלך, תוכל לנהל אותן כאן"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:214
 #: src/HelpCenter/tours/welcome.js:213
 msgid "Appearance"
 msgstr "מראה"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:215
 #: src/HelpCenter/tours/welcome.js:214
 msgid "Manage your theme and access the Site Editor from the Appearance menu. The Site Editor is where you can make global changes to your site (such as the menu, header/footer, and styles)."
 msgstr "נהל את התבנית שלך וגשת לעורך האתר מתפריט המראה. עורך האתר הוא המקום שבו ניתן לבצע שינויים גלובליים באתר שלך, כמו תפריט, כותרת עליונה/תחתונה וסגנונות."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:234
 #: src/HelpCenter/tours/welcome.js:233
 msgid "Plugins"
 msgstr "תוספים"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:235
 #: src/HelpCenter/tours/welcome.js:234
 msgid "Add or manage the plugins on your site."
 msgstr "הוסף או נהל את התוספים באתר שלך"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:252
 #: src/HelpCenter/tours/welcome.js:251
 msgid "Add or manage users on your site, both admin users and others."
 msgstr "הוסף או נהל משתמשים באתר שלך, גם משתמשי מנהל וגם אחרים"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:271
 #: src/HelpCenter/tours/welcome.js:270
 msgid "Tools"
 msgstr "כלים"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:272
 #: src/HelpCenter/tours/welcome.js:271
 msgid "Import/export post data, check site health, and edit theme or plugin files directly in the WordPress admin."
 msgstr "ייבוא/ייצוא נתוני פוסטים, בדיקת בריאות האתר ועריכת קבצי תבנית או תוסף ישירות בממשק הניהול של וורדפרס"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:291
 #: src/HelpCenter/tours/welcome.js:290
 msgid "Settings"
 msgstr "הגדרות"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:292
 #: src/HelpCenter/tours/welcome.js:291
 msgid "Advanced settings for your site and for certain plugins."
 msgstr "הגדרות מתקדמות לאתר שלך ולתוספים מסוימים"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:311
 #: src/HelpCenter/tours/welcome.js:310
 msgid "Collapse menu"
 msgstr "כווץ תפריט"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:312
 #: src/HelpCenter/tours/welcome.js:311
 msgid "Use this toggle to collapse or expand the sidebar menu."
 msgstr "השתמש במתג זה כדי לכווץ או להרחיב את תפריט הסרגל הצדי."
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:331
 #: src/HelpCenter/tours/welcome.js:330
 msgid "User"
 msgstr "משתמש"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/tours/welcome.js:332
 #: src/HelpCenter/tours/welcome.js:331
 msgid "Manage your profile or log out of your account here."
 msgstr "נהל את הפרופיל שלך או צא מהחשבון שלך כאן"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/TopBar.jsx:37
 #: src/HelpCenter/components/modal/TopBar.jsx:69
 msgid "Show Help Center"
 msgstr "הצג מרכז עזרה"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/TopBar.jsx:76
 msgid "Minimize Help Center"
 msgstr "מזער מרכז עזרה"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/TopBar.jsx:87
 msgid "close"
 msgstr "סגור"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/TopBar.jsx:105
 msgid "Go back"
 msgstr "חזור"
 
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/HelpCenter/components/modal/Modal.jsx:63
 msgid "Extendify Help Center"
 msgstr "מרכז העזרה של Extendify"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/components/GuidedTour.jsx:310
 #: src/HelpCenter/components/tours/GuidedTour.jsx:311
 msgid "Tour"
 msgstr "סיור"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Agent/components/GuidedTour.jsx:421
 #: src/HelpCenter/components/tours/GuidedTour.jsx:424
-#: src/Launch/components/PageControl.jsx:231
+#: src/Launch/components/PageControl.jsx:344
 msgid "Back"
 msgstr "חזור"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:4
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:4
 #: src/Agent/components/GuidedTour.jsx:431
 #: src/HelpCenter/components/tours/GuidedTour.jsx:434
 msgid "Tour Steps"
 msgstr "שלבי סיור"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:7
 #: src/Agent/components/GuidedTour.jsx:438
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
 #, js-format
 msgid "%1$s of %2$s"
 msgstr "%1$s מתוך %2$s"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
-#: public/build/extendify-help-center-b739b2fd82ade91e7f12.js:7
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-help-center-a4cb10d4721701ba5d97.js:7
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Agent/components/GuidedTour.jsx:467
 #: src/HelpCenter/components/tours/GuidedTour.jsx:470
-#: src/Launch/components/PageControl.jsx:285
+#: src/Launch/components/PageControl.jsx:398
 msgid "Next"
 msgstr "הבא"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-178234bad6040f2e6113.js:3
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:3
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/Launch/api/WPApi.js:87
 #: src/Launch/api/WPApi.js:175
 #: src/PageCreator/api/WPApi.js:52
 msgid "Added by Launch"
 msgstr "נוסף על ידי Launch"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:5
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:151
 msgid "Start over?"
 msgstr "להתחיל מחדש?"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:5
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:5
 #: src/Launch/components/RestartLaunchModal.jsx:155
 msgid "Go through the onboarding process again to create a new site."
 msgstr "יש לעבור שוב את תהליך ההיכרות כדי ליצור אתר חדש."
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:164
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s דפים/פוסטים שנוצרו במפגש ההיכרות הקודם יימחקו."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:179
 msgid "Exit"
 msgstr "יציאה"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:191
 msgid "Processing"
 msgstr "מעבד"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/RestartLaunchModal.jsx:187
 msgid "Continue"
 msgstr "המשך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/Launch/components/RetryNotice.jsx:12
 #: src/PageCreator/components/RetryNotice.jsx:12
 msgid "Just a moment, this is taking longer than expected."
 msgstr "רק רגע, זה לוקח יותר זמן מהצפוי."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
-#: src/Launch/pages/PagesSelect.jsx:68
+#: src/Launch/pages/PagesSelect.jsx:47
 msgid "Home page"
 msgstr "דף הבית"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/pages/PagesSelect.jsx:144
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/pages/PagesSelect.jsx:123
 msgid "Pick the pages to add to your website"
 msgstr "בחר את העמודים להוספה לאתר שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/pages/PagesSelect.jsx:148
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/pages/PagesSelect.jsx:127
 msgid "We already selected the most common pages for your type of website."
 msgstr "כבר בחרנו את העמודים הנפוצים ביותר עבור סוג האתר שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/pages/PagesSelect.jsx:189
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/pages/PagesSelect.jsx:168
 msgid "View more pages"
 msgstr "הצג עוד עמודים"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/SiteStructure.jsx:47
 msgid "Single-Page Website"
 msgstr "אתר עמוד יחיד"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/SiteStructure.jsx:48
 msgid "All content displayed on one scrolling page."
 msgstr "כל התוכן מוצג בעמוד גלילה אחד"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/SiteStructure.jsx:58
 msgid "Multi-Page Website"
 msgstr "אתר מרובה עמודים"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/SiteStructure.jsx:59
 msgid "Multiple interconnected pages."
 msgstr "עמודים מקושרים מרובים"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/SmallPreview.jsx:171
 #: src/Launch/pages/ObjectiveSelection.jsx:118
 #: src/Launch/pages/SiteStructure.jsx:92
 msgid "Press to select"
 msgstr "לחץ לבחירה"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/components/PageControl.jsx:270
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/PageControl.jsx:383
 msgid "Skip"
 msgstr "דלג"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:27
 msgid "Business"
 msgstr "עסק"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:32
 msgid "eCommerce"
 msgstr "מסחר אלקטרוני"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:42
 msgid "Landing Page"
 msgstr "דף נחיתה"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/pages/ObjectiveSelection.jsx:47
 msgid "Other"
 msgstr "אחר"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:14
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
 #. translators: %1$s and %2$s are links
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/components/BusinessInformation/AcceptTerms.jsx:23
 #, js-format
 msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
 msgstr "על ידי שימוש בתכונות AI, אתה מסכים ל%1$s ול%2$s של OpenAI"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:7
 msgid "Professional"
 msgstr "מקצועי"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:15
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:11
 msgid "Friendly"
 msgstr "ידידותי"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:19
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:15
 msgid "Inspirational"
 msgstr "מעורר השראה"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:23
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:19
 msgid "Informative"
 msgstr "מידעתי"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/components/BusinessInformation/Tones.jsx:27
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/BusinessInformation/Tones.jsx:23
 msgid "Persuasive"
 msgstr "משכנע"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
 #: src/Launch/components/BusinessInformation/Tones.jsx:44
 msgid "Select your site's tone"
 msgstr "בחר את הטון של האתר שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:152
 msgid "Landing Page title (required)"
 msgstr "כותרת דף נחיתה (נדרש)"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:153
 msgid "Website title (required)"
 msgstr "כותרת האתר (חובה)"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:165
 msgid "Enter your website name"
 msgstr "הזן את שם האתר שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:172
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "לדוגמה, אנחנו סטודיו ליוגה בלונדון עם מדריכים מקצועיים המתמקדים ביוגה חמה למטרות טיפוליות."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:176
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "לדוגמה, אנחנו חנות מקוונת המתמחה במוצרים ידידותיים לסביבה לבית, ומציעים מוצרים ממקורות ברי קיימא שיעזרו לך לחיות אורח חיים ירוק יותר."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:180
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "לדוגמה, בלוג פיננסי אישי המציע טיפים מומחים על תקצוב, השקעות והשגת חופש כלכלי לאנשי מקצוע צעירים."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:184
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "לדוגמה, ספר אלקטרוני חינמי מלא בטיפים ואסטרטגיות פרודוקטיביות שיעזרו לך להישאר ממוקד, לנהל את הזמן ביעילות ולהשיג את המטרות שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:188
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "לדוגמה, תיק עבודות צילום אישי הכולל אוסף של צילומי נוף, פורטרט ורחוב, המתעדים רגעים מרחבי העולם"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:194
 msgid "Describe your business"
 msgstr "תאר את העסק שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:195
 msgid "Describe your eCommerce website"
 msgstr "תאר את אתר המסחר האלקטרוני שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:196
 msgid "Describe your blog"
 msgstr "תאר את הבלוג שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:197
 msgid "Describe your Landing Page"
 msgstr "תאר את עמוד הנחיתה שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:198
 msgid "Describe your website"
 msgstr "תאר את האתר שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:242
 msgid "Call-To-Action Link"
 msgstr "קישור לפעולה"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:246
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "קישור זה ישמש בכל כפתורי הקריאה לפעולה, ויפנה מבקרים ליעד שבחרת."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/ObjectiveSelection.jsx:82
 msgid "What type of website are you creating?"
 msgstr "איזה סוג אתר אתה יוצר?"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:91
 msgid "Tell Us About Your Landing Page"
 msgstr "ספר לנו על עמוד הנחיתה שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:92
 msgid "Tell Us About Your Website"
 msgstr "ספר לנו על האתר שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:95
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "שתף את החזון שלך, ואנו ניצור דף נחיתה המותאם בדיוק לצרכים שלך, מוכן להשקה במהירות. נתחיל בללמוד יותר על מה שאתה בונה."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SiteInformation.jsx:99
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "שתף את החזון שלך, ואנו נבנה אתר המותאם בדיוק לצרכיך ומוכן להשקה במהירות. נתחיל בללמוד יותר על מה שאתה בונה."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SitePrep.jsx:87
 msgid "Customizing Your Experience"
 msgstr "התאמת החוויה שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/SitePrep.jsx:88
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "אנא המתן בזמן שאנו מנתחים את הקלטים שלך ומתאימים את החוויה שלך."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/SiteQuestions.jsx:172
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/SiteQuestions.jsx:186
 msgid "Show more questions"
 msgstr "הצג שאלות נוספות"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/ContentGathering.jsx:65
 msgid "Designing Your Options"
 msgstr "עיצוב האפשרויות שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/ContentGathering.jsx:66
 msgid "Please wait while we build some website options for you to select from."
 msgstr "אנא המתן בזמן שאנו בונים עבורך אפשרויות אתר לבחירה."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/HomeSelect.jsx:33
 msgid "Pick a design for your website"
 msgstr "בחר עיצוב לאתר שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
 #: src/Launch/pages/HomeSelect.jsx:34
 msgid "You can personalize this later."
 msgstr "תוכל להתאים אישית זאת מאוחר יותר"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:121
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:141
 msgid "Applying your website styles"
 msgstr "מיישם את סגנונות האתר שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:122
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:142
 msgid "Creating a beautiful website"
 msgstr "יצירת אתר יפה"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:1
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:1
 #: src/Launch/api/WPApi.js:51
 msgid "Header Navigation"
 msgstr "ניווט כותרת עליונה"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:223
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:243
 msgid "Installing necessary plugins"
 msgstr "מתקין תוספים נחוצים"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:249
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:269
 msgid "Populating data"
 msgstr "מילוי נתונים"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:250
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:270
 msgid "Personalizing your experience"
 msgstr "התאמת החוויה שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:254
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:274
 msgid "Adding page content"
 msgstr "הוספת תוכן לעמוד"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:255
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:275
 msgid "Starting off with a full website"
 msgstr "מתחילים עם אתר מלא"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:284
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:304
 msgid "Creating pages with custom content"
 msgstr "יצירת עמודים עם תוכן מותאם אישית"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:346
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:366
 msgid "Creating blog sample data"
 msgstr "יצירת נתוני דוגמה לאתר"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 #, js-format
 msgid "Blog Post %s"
 msgstr "פוסט בבלוג %s"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 msgid "Hello World Featured Image"
 msgstr "תמונת נושא שלום עולם"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:373
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:393
 msgid "Setting up site layout"
 msgstr "הגדרת פריסת האתר"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:400
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:420
 msgid "Importing shop sample data"
 msgstr "מייבא נתוני דוגמה לחנות"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:411
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:431
 msgid "Installing supporting plugins"
 msgstr "מתקין תוספים תומכים"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-178234bad6040f2e6113.js:5
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:5
 #: src/Launch/api/WPApi.js:360
 msgid "More"
 msgstr "עוד אפשרויות"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:512
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:532
 msgid "Setting up your Site Assistant"
 msgstr "הגדרת עוזר האתר שלך"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:513
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:533
 msgid "Helping you to succeed"
 msgstr "עוזרים לך להצליח"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:516
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:536
 msgid "Your website has been created!"
 msgstr "האתר שלך נוצר!"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:517
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:537
 msgid "Redirecting in 3, 2, 1..."
 msgstr "מופנה בעוד 3, 2, 1..."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:533
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:553
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "נתקלנו בשגיאת שרת שלא ניתן לשחזר. יש לטעון מחדש את העמוד ולנסות שנית."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 #: src/Launch/pages/NeedsTheme.jsx:10
 msgid "One more thing before we start."
 msgstr "עוד דבר אחד לפני שנתחיל"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 #: src/Launch/pages/NeedsTheme.jsx:14
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "שלום, Launch מופעל על ידי Extendable ונדרש להמשך. ניתן להתקין אותו מהקישור למטה ולהתחיל מחדש לאחר ההפעלה."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Agent/components/messages/AgentMessage.jsx:15
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
 #: src/Agent/components/messages/AgentMessage.jsx:19
-#: src/Agent/components/messages/AgentMessage.jsx:23
-#: src/Agent/components/messages/AgentMessage.jsx:27
-#: src/Agent/components/messages/AgentMessage.jsx:31
-#: src/Agent/components/messages/AgentMessage.jsx:35
-#: src/Agent/components/messages/AgentMessage.jsx:39
-#: src/Agent/components/messages/AgentMessage.jsx:43
 #: src/Launch/pages/NeedsTheme.jsx:22
 msgid "Take me there"
 msgstr "קח אותי לשם"
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-178234bad6040f2e6113.js:16
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:16
 #: src/Launch/LaunchPage.jsx:56
 msgid "Launch - AI-Powered Web Creation"
 msgstr "השקה - יצירת אתרים מבוססת AI"
@@ -3469,7 +3463,7 @@ msgid "Fetching..."
 msgstr "מביא..."
 
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:1
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/Library/components/topbar/CloseButton.jsx:9
 #: src/PageCreator/components/topbar/CloseButton.jsx:9
 msgid "Close"
@@ -3478,7 +3472,7 @@ msgstr "סגור"
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:4
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/Library/components/topbar/Topbar.jsx:12
 #: src/PageCreator/components/topbar/Topbar.jsx:48
 #, js-format
@@ -3486,7 +3480,7 @@ msgid "Toggle %s on new pages"
 msgstr "הפעלת %s בעמודים חדשים"
 
 #: public/build/extendify-library-fd7fb204d6857a101eaf.js:4
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/Library/components/topbar/Topbar.jsx:22
 #: src/PageCreator/components/topbar/Topbar.jsx:60
 msgid "Open for new pages"
@@ -3502,124 +3496,124 @@ msgstr "תבניות עיצוב"
 msgid "Pattern added"
 msgstr "מקבץ נוסף"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:28
 msgid "Confirmation"
 msgstr "אישור"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:31
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "האם ברצונך להחליף תוכן קיים או ליצור עמוד חדש?"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:38
 msgid "Delete existing content"
 msgstr "מחק תוכן קיים"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:1
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:45
 msgid "Create a new page"
 msgstr "יצירת עמוד חדש"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:44
 msgid "Edit"
 msgstr "ערוך"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:62
 msgid "Clear"
 msgstr "נקה"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/hooks/usePageProfile.js:22
 msgid "Generating AI page profile..."
 msgstr "יוצר פרופיל עמוד AI..."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/pages/Dashboard.jsx:59
 msgid "AI Page Creation"
 msgstr "יצירת עמוד בינה מלאכותית"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/pages/Dashboard.jsx:60
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "תאר את העמוד שברצונך ליצור, הוסף פרטים חשובים, ו-AI ייצור עבורך עמוד ייחודי ומוכן לשימוש."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/pages/Dashboard.jsx:69
 msgid "Describe Your Page"
 msgstr "תאר את העמוד שלך"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:4
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:4
 #: src/PageCreator/pages/Dashboard.jsx:72
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "לדוגמה, צור עמוד \"אודות\" המדגיש את הסיפור שלנו, המשימה, הערכים וסקירה על הצוות."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:88
 #, js-format
 msgid "Site Description for %s"
 msgstr "תיאור האתר עבור %s"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:91
 msgid "Site Description"
 msgstr "תיאור האתר"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:94
 msgid "This is the site description with all its ups and downs."
 msgstr "זהו תיאור האתר על כל מעלותיו וחסרונותיו."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:103
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "אפשר התקנת תוספים עבור תכונות מתקדמות של עמודים"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/Dashboard.jsx:123
 msgid "Generate Page"
 msgstr "צור עמוד"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/hooks/useSiteImages.js:19
 msgid "Finding images..."
 msgstr "מאתר תמונות..."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/hooks/usePageLayout.js:35
 msgid "Creating a custom layout..."
 msgstr "יוצר פריסה מותאמת אישית..."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/hooks/usePageCustomContent.js:50
 msgid "Writing custom content..."
 msgstr "כותב תוכן מותאם אישית..."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/pages/GeneratingPage.jsx:43
 msgid "Processing patterns and installing required plugins..."
 msgstr "מעבד תבניות ומתקין תוספים נדרשים..."
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/components/Modal.jsx:185
 msgid "Close AI Page Creator"
 msgstr "סגור יוצר עמודי AI"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/components/Modal.jsx:198
 msgid "AI Page Creator"
 msgstr "יוצר עמודים בינה מלאכותית"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/components/Modal.jsx:95
 msgid "Page added"
 msgstr "העמוד נוסף"
 
-#: public/build/extendify-page-creator-5e4608450e4f2ddd0e69.js:7
+#: public/build/extendify-page-creator-9a0a4eee57516a61a2cd.js:7
 #: src/PageCreator/components/Modal.jsx:101
 msgid "Failed to add page"
 msgstr "הוספת העמוד נכשלה"
@@ -3641,101 +3635,102 @@ msgstr "הפעלת התוסף נכשלה"
 msgid "Recommended Solutions for: %s"
 msgstr "פתרונות מומלצים עבור: %s"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: public/build/extendify-shared-8d49300600182f94ffe4.js:1
 #: src/Agent/components/tooltip/ToolTip.jsx:101
 #: src/Shared/components/ToolTip.jsx:63
 msgid "Close ToolTip"
 msgstr "סגור תיאור כלי"
 
-#: app/Agent/Admin.php:195
+#: app/Agent/Admin.php:204
 msgid "What tours are available?"
 msgstr "אילו סיורים זמינים?"
 
-#: app/Agent/Admin.php:211
+#: app/Agent/Admin.php:220
 msgid "I want to change my theme styling"
 msgstr "אני רוצה לשנות את סגנון התבנית שלי"
 
-#: app/Agent/Admin.php:219
+#: app/Agent/Admin.php:228
 msgid "Edit text on this page"
 msgstr "עריכת טקסט בעמוד זה"
 
-#: app/Agent/Admin.php:227
+#: app/Agent/Admin.php:236
 msgid "How can I create a post?"
 msgstr "איך אני יכול ליצור פוסט?"
 
-#: app/Agent/Admin.php:231
+#: app/Agent/Admin.php:240
 msgid "How can I create a page?"
 msgstr "איך ליצור עמוד?"
 
-#: app/Agent/Admin.php:238
+#: app/Agent/Admin.php:247
 msgid "How can I install a plugin?"
 msgstr "איך אפשר להתקין תוסף?"
 
-#: app/Agent/Admin.php:245
+#: app/Agent/Admin.php:254
 msgid "How can I change my theme?"
 msgstr "איך אני יכול להחליף את התבנית שלי?"
 
-#: app/Agent/Admin.php:249
+#: app/Agent/Admin.php:258
 msgid "How can I change the site footer?"
 msgstr "איך אפשר לשנות את הכותרת התחתונה של האתר?"
 
-#: app/Agent/Admin.php:253
+#: app/Agent/Admin.php:262
 msgid "How can I change the site header?"
 msgstr "איך אפשר לשנות את כותרת האתר?"
 
-#: app/Agent/Admin.php:260
+#: app/Agent/Admin.php:269
 msgid "How can I upload an image?"
 msgstr "איך אפשר להעלות תמונה?"
 
-#: app/Agent/Admin.php:264
+#: app/Agent/Admin.php:273
 msgid "How can I change the site icon?"
 msgstr "איך אפשר לשנות את סמל האתר?"
 
-#: app/Agent/Admin.php:271
+#: app/Agent/Admin.php:280
 msgid "How can I change my site title?"
 msgstr "איך אפשר לשנות את שם האתר שלי?"
 
-#: app/Agent/Admin.php:275
+#: app/Agent/Admin.php:284
 msgid "How can I change my site tagline?"
 msgstr "איך אפשר לשנות את תיאור האתר שלי?"
 
-#: app/Agent/Admin.php:279
+#: app/Agent/Admin.php:288
 msgid "How can I change my site language?"
 msgstr "איך אני יכול לשנות את שפת האתר שלי?"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "נכשל באחזור וריאציות התבנית."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "שלום! נראה שאתה מנסה לשנות את צבעי התבנית, אך אינך נמצא בעמוד שבו ניתן לעשות זאת."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 msgid "Suggestion:"
 msgstr "הצעה:"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:34
 msgid "Loading variations..."
 msgstr "טוען וריאציות..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:42
 msgid "No variations found"
 msgstr "לא נמצאו וריאציות"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:45
 msgid "We were unable to find any variations for your theme."
 msgstr "לא הצלחנו למצוא וריאציות לתבנית שלך."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:12
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
 #: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:80
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:30
@@ -3743,130 +3738,130 @@ msgstr "לא הצלחנו למצוא וריאציות לתבנית שלך."
 msgid "Cancel"
 msgstr "בטל"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:28
 #: src/Agent/workflows/dom-highlighter/components/UpdateBlockConfirm.jsx:69
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "הסוכן ביצע את השינויים בדפדפן. נא לבדוק ולאשר."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "סיור בספריית העיצובים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "למד על מחולל העמודים מבוסס AI"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "סיור בעורך העמוד"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "ראה כיצד להתקין תוסף"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "למד כיצד לנהל תוספים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "סיור בעוזר האתר"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "סיור במסך המשתמשים"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/ChatInput.jsx:152
 msgid "Ask anything"
 msgstr "שאלו כל דבר"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/ChatInput.jsx:170
 msgid "Send message"
 msgstr "שלח הודעה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/ScrollDownButton.jsx:21
 msgid "Scroll down"
 msgstr "גלול למטה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
-#: src/Agent/components/messages/AgentMessage.jsx:73
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
+#: src/Agent/components/messages/AgentMessage.jsx:52
 msgid "Agent"
 msgstr "סוכן"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:10
 msgid "Working on it..."
 msgstr "עובד על זה..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:11
 msgid "Gathering data..."
 msgstr "אוסף נתונים..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:12
 msgid "Analyzing..."
 msgstr "מנתח..."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:13
 #: src/Agent/components/messages/StatusMessage.jsx:14
 msgid "Canceled"
 msgstr "בוטל"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:15
 msgid "Usage limit reached"
 msgstr "הגעת למגבלת השימוש"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:16
 msgid "Usage limit restored"
 msgstr "הגבלת השימוש שוחזרה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:29
 msgid "Something went wrong"
 msgstr "משהו השתבש"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:32
 msgid "An unexpected error occurred while processing your request."
 msgstr "אירעה שגיאה בלתי צפויה בעת עיבוד הבקשה שלך."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:82
 msgid "Workflow completed successfully"
 msgstr "תהליך העבודה הושלם בהצלחה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "רכיב לא זמין"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:20
 msgid "It may have been removed or is not available for your account."
 msgstr "ייתכן שהוא הוסר או שאינו זמין עבור חשבונך."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/messages/WorkflowMessage.jsx:15
 msgid "What's next? Would you like to do something else?"
 msgstr "מה הלאה? רוצים לעשות משהו נוסף?"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:117
 #: src/Agent/components/layouts/DragResizeLayout.jsx:128
 #: src/Agent/components/layouts/MobileLayout.jsx:50
@@ -3874,48 +3869,48 @@ msgstr "מה הלאה? רוצים לעשות משהו נוסף?"
 msgid "Close window"
 msgstr "סגור חלון"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:168
 msgid "Drag to move"
 msgstr "לגרור כדי להזיז"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/WelcomeScreen.jsx:22
 msgid "Site is live!"
 msgstr "האתר פעיל!"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/WelcomeScreen.jsx:26
 msgid "Your expert AI team is here"
 msgstr "צוות ה-AI המומחה שלך כאן"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "הגעת למגבלת ההודעות היומית שלך. המגבלה תתאפס בעוד %s"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/components/buttons/AdminBar.jsx:50
 #: src/Agent/components/buttons/Mobile.jsx:36
 #: src/Agent/components/buttons/PostEditor.jsx:47
 msgid "Open Agent"
 msgstr "פתח סוכן"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/components/buttons/AdminBar.jsx:63
 #: src/Agent/components/buttons/Mobile.jsx:43
 #: src/Agent/components/buttons/PostEditor.jsx:52
 msgid "AI Agent"
 msgstr "סוכן בינה מלאכותית"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:8
 msgid "Tooltip pointing to the agent button"
 msgstr "תיאור מצביע על כפתור הסוכן"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:14
 msgid "Need help again?"
 msgstr "צריך עזרה שוב?"
@@ -4021,37 +4016,37 @@ msgstr "מכאן ניתן להתאים אישית את המידות, הריפו�
 msgid "Take the welcome tour"
 msgstr "צא לסיור היכרות"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/components/buttons/Mobile.jsx:46
 msgid "How can we help you today?"
 msgstr "כיצד נוכל לעזור לך היום?"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/SiteQuestions.jsx:28
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/SiteQuestions.jsx:29
 msgid "Let's review your AI-powered recommendations"
 msgstr "בוא נסקור את ההמלצות שלך המופעלות על ידי AI"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/SiteQuestions.jsx:33
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/SiteQuestions.jsx:34
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "בהתבסס על הפרטים שסיפקת, ה-AI שלנו הציע את ההגדרות הטובות ביותר לאתר שלך. כדאי לבדוק במהירות ולאשר שהכל נראה תקין לפני שממשיכים."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:11
-#: src/Launch/pages/CreatingSite.jsx:194
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:11
+#: src/Launch/pages/CreatingSite.jsx:214
 msgid "Footer Navigation"
 msgstr "ניווט פוטר"
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:14
-#: src/Launch/pages/CreatingSite.jsx:356
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:14
+#: src/Launch/pages/CreatingSite.jsx:376
 msgid "Adding imprint page"
 msgstr "הוספת עמוד חותם"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:9
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:9
 #: src/Agent/components/tooltip/ReOpenToolTip.jsx:17
 msgid "You can always access your AI Agent if you need help with anything on your site."
 msgstr "תמיד תוכל לגשת לסוכן ה-AI שלך אם אתה זקוק לעזרה כלשהי באתר שלך."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/WelcomeScreen.jsx:29
 msgid "Your team of site experts — designers, developers, and marketers — ready to help from content to layouts. Tell us what you need or pick a task to start."
 msgstr "צוות המומחים של האתר שלך — מעצבים, מפתחים ומשווקים — מוכן לעזור מתוכן ועד עיצובים. ספר לנו מה אתה צריך או בחר משימה להתחלה."
@@ -4066,7 +4061,7 @@ msgstr "תיאור צף המצביע על כפתור עריכת העמוד"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "ברוך הבא לאתר החדש שלך! כשתהיה מוכן, לחץ כאן לערוך עמוד זה."
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:3
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:3
 #: src/Agent/components/PageDocument.jsx:14
 #: src/Agent/components/PageDocument.jsx:25
 msgid "Remove"
@@ -4077,34 +4072,34 @@ msgstr "הסר"
 msgid "Remove highlight"
 msgstr "הסרת הדגשה"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:6
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:6
 #: src/Agent/Agent.jsx:458
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "סוכן הבינה המלאכותית עלול לטעות. בדקו את השינויים לפני השמירה."
 
-#: app/Agent/Admin.php:202
+#: app/Agent/Admin.php:211
 msgid "I want to change my site title"
 msgstr "אני רוצה לשנות את שם האתר שלי"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:12
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:36
 msgid "Confirm"
 msgstr "אשר"
 
 #. translators: 1: setting name, 2: new setting value
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:12
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:12
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:15
 #, js-format
 msgid "The AI Agent wants to change the setting \"%1$s\" to \"%2$s\". Please confirm."
 msgstr "הסוכן AI רוצה לשנות את ההגדרה \"%1$s\" ל-\"%2$s\". נא לאשר"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:9
 msgid "Thinking..."
 msgstr "חושב..."
 
-#: public/build/extendify-launch-178234bad6040f2e6113.js:8
-#: src/Launch/components/PageControl.jsx:214
+#: public/build/extendify-launch-0dc09d8e22eaebbcd379.js:8
+#: src/Launch/components/PageControl.jsx:327
 msgid "WP Admin Dashboard"
 msgstr "לוח בקרה של WP ניהול"
 
@@ -4134,7 +4129,7 @@ msgctxt "Plugin activation status"
 msgid "Activated"
 msgstr "מופעל"
 
-#: public/build/extendify-agent-5cd55345c581f26c06a5.js:1
+#: public/build/extendify-agent-6b892f5f41d245b47e2f.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:110
 #: src/Agent/components/layouts/MobileLayout.jsx:46
 msgctxt "Feature in beta status"

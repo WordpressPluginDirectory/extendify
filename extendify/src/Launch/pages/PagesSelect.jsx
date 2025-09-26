@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { formatSiteQuestionsForAPI } from '@shared/utils/format-site-questions-for-api';
 import { getPageTemplates } from '@launch/api/DataApi';
 import { PagePreview } from '@launch/components/PagePreview';
 import { PageSelectButton } from '@launch/components/PageSelectButton';
@@ -11,31 +10,7 @@ import { PageLayout } from '@launch/layouts/PageLayout';
 import { pageState } from '@launch/state/factory';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
-
-const fetcher = getPageTemplates;
-const fetchData = () => {
-	const {
-		siteType,
-		siteStructure,
-		siteStrings,
-		siteImages,
-		siteQA,
-		sitePlugins,
-	} = useUserSelectionStore?.getState() || {};
-	const {
-		style: { siteStyle },
-	} = usePagesSelectionStore.getState();
-	return {
-		key: 'pages-list',
-		siteType,
-		siteStructure,
-		siteStrings,
-		siteImages,
-		siteStyle,
-		siteQuestions: formatSiteQuestionsForAPI(siteQA),
-		sitePlugins,
-	};
-};
+import { buildRecommendedPagesParams } from '@launch/utils/buildRecommendedPagesParams';
 
 export const state = pageState('Pages', () => ({
 	ready: true,
@@ -49,7 +24,11 @@ export const state = pageState('Pages', () => ({
 }));
 
 export const PagesSelect = () => {
-	const { data: availablePages, loading, error } = useFetch(fetchData, fetcher);
+	const {
+		data: availablePages,
+		loading,
+		error,
+	} = useFetch(buildRecommendedPagesParams, getPageTemplates);
 	const [previewing, setPreviewing] = useState();
 	const [expandMore, setExpandMore] = useState();
 	const { siteInformation, siteObjective } = useUserSelectionStore();

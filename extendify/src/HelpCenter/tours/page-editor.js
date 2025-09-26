@@ -17,9 +17,9 @@ export default {
 		startFrom: [
 			hasPageCreatorEnabled
 				? window.extSharedData.adminUrl +
-					'post-new.php?post_type=page&ext-page-creator-close'
+					'post-new.php?post_type=page&ext-page-creator-close=1'
 				: window.extSharedData.adminUrl +
-					'post-new.php?post_type=page&ext-close',
+					'post-new.php?post_type=page&ext-close=1',
 			window.extSharedData.adminUrl + 'post-new.php?post_type=page',
 		],
 	},

@@ -259,7 +259,7 @@ export const Agent = () => {
 			agentWorking.current = true;
 			addMessage('status', { type: 'agent-working' });
 			const agentResponse = await handleWorkflow({
-				workflow: workflow,
+				workflow,
 				workflowData,
 			}).catch((error) => {
 				const { sessionId } = workflow || {};

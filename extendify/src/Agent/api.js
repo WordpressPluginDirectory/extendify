@@ -41,6 +41,7 @@ export const pickWorkflow = async ({ workflows, options }) => {
 				.map((h) => h.summary),
 			previousAgentName: pastWorkflows.at(0)?.agentName,
 			context,
+			agentContext: window.extAgentData.agentContext,
 			messages: messages.slice(-5),
 			...options,
 		}),
@@ -65,6 +66,7 @@ export const handleWorkflow = async ({ workflow, workflowData }) => {
 			workflowData,
 			messages: messages,
 			context: window.extAgentData.context,
+			agentContext: window.extAgentData.agentContext,
 		}),
 	}).catch((error) => {
 		throw error;

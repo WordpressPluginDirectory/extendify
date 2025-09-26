@@ -15,8 +15,8 @@ export default {
 		notCompleted: __('Start Generating with AI', 'extendify-local'),
 	},
 	link: hasPageCreatorEnabled
-		? 'post-new.php?post_type=page&ext-page-creator-close&ext-close&ext-add-image-block'
-		: 'post-new.php?post_type=page&ext-close&ext-add-image-block',
+		? 'post-new.php?post_type=page&ext-page-creator-close=1&ext-close=1&ext-add-image-block=1'
+		: 'post-new.php?post_type=page&ext-close=1&ext-add-image-block=1',
 	type: 'html-text-button',
 	dependencies: { plugins: [] },
 	show: () => !!window.extSharedData?.showDraft,

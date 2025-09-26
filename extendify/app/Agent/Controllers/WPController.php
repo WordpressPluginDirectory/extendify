@@ -113,6 +113,37 @@ class WPController
             return self::variationHasProperties($variation, ['color']);
         });
 
+        $buildSlugMap = function ($unfiltered) {
+            $slugMap = [];
+
+            if (!is_array($unfiltered)) {
+                return $slugMap;
+            }
+
+            foreach ($unfiltered as $rawSlug => $rawVariation) {
+                $title = is_array($rawVariation) ? ($rawVariation['title'] ?? null) : null;
+                $slug = is_array($rawVariation)
+                    ? ($rawVariation['slug'] ?? (is_string($rawSlug) ? $rawSlug : null))
+                    : null;
+
+                if ($title && $slug && !isset($slugMap[$title])) {
+                    $slugMap[$title] = $slug;
+                }
+            }
+            return $slugMap;
+        };
+        $slugMap = $buildSlugMap($unfiltered);
+        array_walk($variations, function (&$variation) use ($slugMap) {
+            if (!is_array($variation) || isset($variation['slug'])) {
+                return;
+            }
+
+            $title = $variation['title'] ?? null;
+            if ($title && isset($slugMap[$title])) {
+                $variation['slug'] = $slugMap[$title];
+            }
+        });
+
         $deduped = [];
         foreach ($variations as $variation) {
             $title = $variation['title'] ?? null;
@@ -134,7 +165,7 @@ class WPController
         // if the theme is extendable we need to filter the variations using the allowed variations list
         if (\get_option('stylesheet') === 'extendable') {
             $deduped = array_filter($deduped, function ($variation) {
-                return in_array(strtolower($variation['title']), self::$allowedVariationsList);
+                return in_array($variation['slug'], self::$allowedVariationsList);
             });
         }
 

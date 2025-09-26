@@ -33,6 +33,8 @@ const initialState = {
 		description: null,
 		objective: null,
 		structure: null,
+		tone: null,
+		skip: null,
 	},
 };
 
@@ -47,6 +49,9 @@ const state = (set, get) => ({
 		set({ siteInformation });
 	},
 	setBusinessInformation: (name, value) => {
+		const current = get().businessInformation?.[name];
+		if (current === value) return;
+
 		const businessInformation = { ...get().businessInformation, [name]: value };
 		set({ businessInformation });
 	},

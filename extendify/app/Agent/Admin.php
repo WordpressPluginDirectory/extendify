@@ -66,7 +66,9 @@ class Admin
         );
 
         $context = [
-            'adminPage' => function_exists('get_current_screen') ? \esc_attr(\get_current_screen()->id) : null,
+            'adminPage' => function_exists('get_current_screen') && ($screen = get_current_screen())
+                ? \esc_attr($screen->id)
+                : null,
             'postId' => (int) $this->getCurrentPostId(),
             'postTitle' => \esc_attr(\get_the_title($this->getCurrentPostId())),
             'postType' => \esc_attr(\get_post_type($this->getCurrentPostId())),
@@ -79,6 +81,10 @@ class Admin
             'usingBlockEditor' => function_exists('use_block_editor_for_post') ?
                 (bool) use_block_editor_for_post($this->getCurrentPostId()) :
                 false,
+            'activePlugins' => array_values(\get_option('active_plugins', [])),
+        ];
+        $agentContext = [
+            'availableAdminPages' => get_option('_transient_extendify_admin_pages_menu', []),
         ];
         $abilities = [
             'canEditPost' => (bool) \current_user_can('edit_post', \get_queried_object_id()),
@@ -98,6 +104,9 @@ class Admin
             'window.extAgentData = ' . \wp_json_encode([
                 // Add context about where they are
                 'context' => $context,
+                // Context that the Agent might need when returning a response,
+                // but not for handling the workflow.
+                'agentContext' => $agentContext,
                 // List of abilities the AI can perform for this user.
                 // For example, we could check whether their theme has variations.
                 'abilities' => $abilities,

@@ -79,7 +79,7 @@ export const SiteInformation = () => {
 	]);
 
 	useLayoutEffect(() => {
-		if (!titleUrlParameter || !descriptionUrlParameter) return;
+		if (!titleUrlParameter && !descriptionUrlParameter) return;
 
 		setUrlParameters({
 			title: titleUrlParameter,

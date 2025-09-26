@@ -23,6 +23,7 @@ export const SiteQuestions = () => {
 		setCTALink,
 		siteObjective,
 		siteStructure,
+		urlParameters,
 	} = useUserSelectionStore();
 
 	const pageTitle = __(
@@ -37,7 +38,7 @@ export const SiteQuestions = () => {
 
 	const showHiddenQuestions = siteQA?.showHidden;
 
-	const questionsToRender = showHiddenQuestions
+	let questionsToRender = showHiddenQuestions
 		? siteQA?.questions
 		: siteQA?.questions?.filter((q) => q.group === 'visible');
 
@@ -146,6 +147,19 @@ export const SiteQuestions = () => {
 		setSiteQuestionAnswer,
 		siteStructure,
 	]);
+
+	/**
+	 * Check if the URL parameters contain a valid structure.
+	 * If a valid structure is found, filter out the 'pages' question.
+	 */
+	const hasValidStructureUrlParameter =
+		urlParameters?.structure === 'multi-page' ||
+		urlParameters?.structure === 'single-page';
+	if (hasValidStructureUrlParameter) {
+		questionsToRender = questionsToRender.filter((question) => {
+			if (question.id !== 'pages') return true;
+		});
+	}
 
 	return (
 		<PageLayout>

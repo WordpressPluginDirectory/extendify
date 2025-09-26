@@ -40,7 +40,7 @@ export const ConfirmationModal = ({
 					<Button
 						variant="primary"
 						size="default"
-						href={`${adminUrl}post-new.php?post_type=page&ext-open-ai-creator`}
+						href={`${adminUrl}post-new.php?post_type=page&ext-open-ai-creator=1`}
 						target="_blank">
 						{__('Create a new page', 'extendify-local')}
 					</Button>

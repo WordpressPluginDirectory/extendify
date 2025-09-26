@@ -1,54 +1,33 @@
 import { Tooltip } from '@wordpress/components';
 import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
-import { Icon, pencil, styles, lifesaver } from '@wordpress/icons';
+import { Icon, pencil, styles, lifesaver, cog } from '@wordpress/icons';
 import ReactMarkdown from 'react-markdown';
 import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
 import { magic } from '@agent/icons';
+import pageTours from '@agent/lib/page-tours';
 import tours from '@agent/tours/tours';
 import { SingleTour } from '@agent/workflows/misc/components/ToursList';
 
 const availableTours = Object.values(tours);
-
-const agentSuggestions = {
-	'edit.php?post_type=post': {
-		label: __('Take me there', 'extendify-local'),
-		tour: null,
-	},
-	'edit.php?post_type=page': {
-		label: __('Take me there', 'extendify-local'),
-		tour: null,
-	},
-	'upload.php': {
-		label: __('Take me there', 'extendify-local'),
-		tour: null,
-	},
-	'options-general.php': {
-		label: __('Take me there', 'extendify-local'),
-		tour: null,
-	},
-	'plugins.php': {
-		label: __('Take me there', 'extendify-local'),
-		tour: availableTours.find((tour) => tour.id === 'plugin-management-tour'),
-	},
-	'themes.php': {
-		label: __('Take me there', 'extendify-local'),
-		tour: null,
-	},
-	'users.php': {
-		label: __('Take me there', 'extendify-local'),
-		tour: availableTours.find((tour) => tour.id === 'users-screen-tour'),
-	},
-	'site-editor.php': {
-		label: __('Take me there', 'extendify-local'),
-		tour: null,
-	},
-};
+const adminPages = window.extAgentData.agentContext?.availableAdminPages || [];
+const agentSuggestions =
+	Object.fromEntries(
+		adminPages.map((page) => [
+			page,
+			{
+				label: __('Take me there', 'extendify-local'),
+				tour:
+					availableTours.find((tour) => tour.id === pageTours[page]) ?? null,
+			},
+		]),
+	) || {};
 
 const agentIcons = {
 	agent1: lifesaver,
 	agent2: styles,
 	agent3: pencil,
+	agent4: cog,
 };
 
 export const AgentMessage = ({ message, animate }) => {

@@ -2,32 +2,32 @@ import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
 import { useUserSelectionStore } from '@launch/state/user-selections.js';
 
+export const TONES = [
+	{
+		label: __('Professional', 'extendify-local'),
+		value: 'professional',
+	},
+	{
+		label: __('Friendly', 'extendify-local'),
+		value: 'friendly',
+	},
+	{
+		label: __('Inspirational', 'extendify-local'),
+		value: 'inspirational',
+	},
+	{
+		label: __('Informative', 'extendify-local'),
+		value: 'informative',
+	},
+	{
+		label: __('Persuasive', 'extendify-local'),
+		value: 'persuasive',
+	},
+];
+
 export const SiteTones = () => {
 	const { businessInformation, setBusinessInformation } =
 		useUserSelectionStore();
-
-	const tones = [
-		{
-			label: __('Professional', 'extendify-local'),
-			value: 'professional',
-		},
-		{
-			label: __('Friendly', 'extendify-local'),
-			value: 'friendly',
-		},
-		{
-			label: __('Inspirational', 'extendify-local'),
-			value: 'inspirational',
-		},
-		{
-			label: __('Informative', 'extendify-local'),
-			value: 'informative',
-		},
-		{
-			label: __('Persuasive', 'extendify-local'),
-			value: 'persuasive',
-		},
-	];
 
 	const handleTonesToggle = (tone) => {
 		let { tones } = businessInformation;
@@ -44,8 +44,8 @@ export const SiteTones = () => {
 				{__("Select your site's tone", 'extendify-local')}
 			</label>
 			<div className="justify-left flex w-full flex-wrap gap-2">
-				{tones.map((tone) => {
-					const selected = businessInformation.tones?.find(
+				{TONES.map((tone) => {
+					const selected = businessInformation?.tones?.find(
 						({ value }) => value === tone.value,
 					);
 

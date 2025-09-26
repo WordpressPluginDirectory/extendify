@@ -12,6 +12,7 @@ use Extendify\Config;
 use Extendify\PartnerData;
 use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\DataProvider\ResourceData;
+use Extendify\Shared\Services\AdminMenuList;
 use Extendify\Shared\Services\ApexDomain\ApexDomain;
 use Extendify\Shared\Services\Escaper;
 use Extendify\Shared\Services\PluginDependencies\SimplyBook;
@@ -36,7 +37,7 @@ class Admin
         \add_action('wp_ajax_search-install-plugins', [$this, 'recordPluginsSearchTerms'], -1);
         \add_action('rest_api_init', [$this, 'recordBlocksSearchTerms']);
         \add_action('wp_ajax_query-themes', [$this, 'recordThemesSearchTerms'], -1);
-
+        AdminMenuList::init();
         \add_action('simplybook_activation', [SimplyBook::class, 'getIndustryCode'], 10, 0);
     }
 
@@ -201,6 +202,7 @@ class Admin
                 'showAIAgents' => (bool) (PartnerData::setting('showAIAgents') || Config::preview('ai-agent')),
                 'pluginGroupId' => Escaper::recursiveEscAttr(PartnerData::setting('pluginGroupId')),
                 'requiredPlugins' => Escaper::recursiveEscAttr(PartnerData::setting('requiredPlugins')),
+                'adminPagesMenuList' => get_option('_transient_extendify_admin_pages_menu', []),
             ]),
             'before'
         );

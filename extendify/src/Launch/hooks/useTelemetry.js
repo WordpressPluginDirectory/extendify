@@ -126,9 +126,22 @@ export const useTelemetry = () => {
 						? ['site-questions']
 						: [],
 					urlParameters: Object.fromEntries(
-						Object.entries(urlParameters).filter(
-							([_, value]) => value !== null && value !== '',
-						),
+						Object.entries(urlParameters)
+							.map(([key, value]) => {
+								if (key === 'tone' && Array.isArray(value)) {
+									return [key, value.map((t) => t.value)];
+								}
+								if (key === 'skip' && Array.isArray(value)) {
+									return [key, value];
+								}
+								return [key, value];
+							})
+							.filter(
+								([_, value]) =>
+									value !== null &&
+									value !== '' &&
+									(!Array.isArray(value) || value.length > 0),
+							),
 					),
 				}),
 			})

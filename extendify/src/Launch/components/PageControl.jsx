@@ -3,9 +3,15 @@ import {
 	useLayoutEffect,
 	useRef,
 	useState,
+	useMemo,
 } from '@wordpress/element';
 import { __, isRTL } from '@wordpress/i18n';
+import {
+	convertToValidParamsArray,
+	mapToneValuesToObjects,
+} from '@shared/utils/convert-to-valid-params';
 import { getUrlParameter } from '@shared/utils/get-url-parameter';
+import { TONES } from '@launch/components/BusinessInformation/Tones';
 import { NavigationButton } from '@launch/components/NavigationButton';
 import {
 	PagesSelect,
@@ -34,6 +40,8 @@ const StructurePageData = {
 
 const objectives = ['business', 'ecommerce', 'blog', 'landing-page', 'other'];
 const structures = ['single-page', 'multi-page'];
+const ALLOWED_SKIP = ['questions', 'info', 'layout', 'pages'];
+const ALLOWED_TONES = TONES.map((tone) => tone?.value);
 
 export const PageControl = () => {
 	const {
@@ -45,6 +53,7 @@ export const PageControl = () => {
 		previousPage,
 		replaceHistory,
 		addPreselectedPage,
+		getCurrentPageSlug,
 	} = usePagesStore();
 	const {
 		siteStructure,
@@ -52,17 +61,47 @@ export const PageControl = () => {
 		setSiteObjective,
 		setSiteStructure,
 		setUrlParameters,
+		setSiteInformation,
+		setBusinessInformation,
+		businessInformation,
+		siteQA,
 	} = useUserSelectionStore();
 
+	const titleUrlParameter = getUrlParameter('title', false);
+	const descriptionUrlParameter = getUrlParameter('description', false);
 	const siteObjectiveParam = getUrlParameter('objective', false);
 	const siteStructureParam = getUrlParameter('structure', false);
+	const siteToneRaw = getUrlParameter('tone', false);
+	const siteSkipRaw = getUrlParameter('skip', false);
+	const siteToneParam = useMemo(
+		() =>
+			mapToneValuesToObjects(
+				convertToValidParamsArray(siteToneRaw, ALLOWED_TONES),
+				TONES,
+			),
+		[siteToneRaw],
+	);
+	const siteSkipParam = useMemo(
+		() => convertToValidParamsArray(siteSkipRaw, ALLOWED_SKIP),
+		[siteSkipRaw],
+	);
 	const removeStructurePage = useRef(false);
+	const toneAppliedOnce = useRef(false);
 	const showSiteQuestions = window.extSharedData?.showSiteQuestions ?? false;
+	const isValidSiteToneParam =
+		Array.isArray(siteToneParam) && siteToneParam?.length > 0;
 
 	useLayoutEffect(() => {
 		setUrlParameters({
+			title: titleUrlParameter,
+			description: descriptionUrlParameter,
 			objective: siteObjectiveParam,
 			structure: siteStructureParam,
+			tone: isValidSiteToneParam ? siteToneParam : null,
+			skip:
+				Array.isArray(siteSkipParam) && siteSkipParam?.length
+					? siteSkipParam
+					: null,
 		});
 
 		// If we later add more structures, consider having predefined paths
@@ -100,6 +139,62 @@ export const PageControl = () => {
 		if (showSiteQuestions) {
 			removePage('site-structure');
 		}
+
+		if (isValidSiteToneParam && !toneAppliedOnce.current) {
+			const mergedTones = [
+				...(businessInformation?.tones || []),
+				...siteToneParam,
+			];
+
+			const uniqueTones = mergedTones.reduce((acc, tone) => {
+				if (!acc.some((t) => t.value === tone.value)) {
+					acc.push(tone);
+				}
+				return acc;
+			}, []);
+
+			setBusinessInformation('tones', uniqueTones);
+			toneAppliedOnce.current = true;
+		}
+
+		if (siteSkipParam.includes('questions')) {
+			if (!siteStructureParam) {
+				const siteStructureFromQuestions = siteQA?.questions.find(
+					(item) => item?.id === 'pages',
+				)?.answerAI;
+
+				const mappedStructure = {
+					'multiple-pages': 'multi-page',
+					'one-page': 'single-page',
+				};
+
+				if (
+					siteStructureFromQuestions &&
+					mappedStructure?.[siteStructureFromQuestions]
+				) {
+					setSiteStructure(mappedStructure[siteStructureFromQuestions]);
+				}
+			}
+
+			addPreselectedPage('site-questions');
+			removePage('site-questions');
+		}
+
+		if (siteSkipParam.includes('info') && titleUrlParameter) {
+			setSiteInformation('title', titleUrlParameter);
+
+			if (descriptionUrlParameter) {
+				setBusinessInformation('description', descriptionUrlParameter);
+			}
+
+			addPreselectedPage('site-information');
+			removePage('site-information');
+		}
+
+		if (siteSkipParam.includes('pages') && siteStructure === 'multi-page') {
+			addPreselectedPage('page-select');
+			removePage('page-select');
+		}
 	}, [
 		setSiteObjective,
 		setSiteStructure,
@@ -107,11 +202,20 @@ export const PageControl = () => {
 		siteObjective,
 		addPage,
 		removePage,
+		descriptionUrlParameter,
+		titleUrlParameter,
 		siteObjectiveParam,
 		siteStructureParam,
+		siteToneParam,
+		siteSkipParam,
 		addPreselectedPage,
 		showSiteQuestions,
 		setUrlParameters,
+		setSiteInformation,
+		setBusinessInformation,
+		businessInformation,
+		isValidSiteToneParam,
+		siteQA,
 	]);
 
 	useEffect(() => {
@@ -139,11 +243,20 @@ export const PageControl = () => {
 	// Some pages act as a notice or loading message and move on their own
 	if (!getPageState(pagesList[currentPageIndex][0])?.useNav) return null;
 
+	const skipInfoStepEnabled =
+		siteSkipParam.includes('info') && titleUrlParameter;
+	const skipInfoAndQuestionsEnabled =
+		skipInfoStepEnabled && siteSkipParam.includes('questions');
+	const currentPageSlug = getCurrentPageSlug();
+	const forceFirstpage =
+		(skipInfoStepEnabled && currentPageSlug === 'site-questions') ||
+		(skipInfoAndQuestionsEnabled && currentPageSlug === 'layout');
+
 	return (
 		<div className="z-10 w-full flex-none border-t border-gray-100 bg-white px-6 py-5 shadow-surface md:px-12 md:py-6">
 			<div className="flex justify-between">
 				<span className="flex-1 self-start">
-					<PrevButton />
+					<PrevButton forceFirstpage={forceFirstpage} />
 				</span>
 				<span className="hidden grow items-center justify-center md:flex">
 					<Steps />
@@ -192,9 +305,9 @@ const Steps = () => {
 	);
 };
 
-const PrevButton = () => {
+const PrevButton = ({ forceFirstpage = false }) => {
 	const { previousPage, currentPageIndex } = usePagesStore();
-	const onFirstPage = currentPageIndex === 0;
+	const onFirstPage = currentPageIndex === 0 || forceFirstpage;
 
 	if (onFirstPage) {
 		return (

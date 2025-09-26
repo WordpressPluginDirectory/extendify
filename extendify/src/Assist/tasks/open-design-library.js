@@ -15,8 +15,8 @@ export default {
 		notCompleted: __('Explore Design Library', 'extendify-local'),
 	},
 	link: hasPageCreatorEnabled
-		? 'post-new.php?post_type=page&ext-open&ext-page-creator-close'
-		: 'post-new.php?post_type=page&ext-open',
+		? 'post-new.php?post_type=page&ext-open=1&ext-page-creator-close=1'
+		: 'post-new.php?post_type=page&ext-open=1',
 	type: 'html-text-button',
 	dependencies: { plugins: [] },
 	show: () => true,
