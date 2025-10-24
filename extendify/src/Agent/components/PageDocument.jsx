@@ -1,15 +1,16 @@
 import { Tooltip } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { Icon, page, close } from '@wordpress/icons';
+import { Icon, close } from '@wordpress/icons';
+import { selectedContent } from '@agent/icons';
 import { useWorkflowStore } from '@agent/state/workflows';
 
 export const PageDocument = ({ busy }) => {
 	const { setBlock } = useWorkflowStore();
 	return (
-		<div className="flex items-center justify-between gap-1 text-sm text-gray-900">
+		<div className="flex w-fit items-center justify-start gap-1 rounded border border-gray-500 bg-gray-100 p-1 text-sm text-gray-900">
 			<div className="flex items-center gap-1">
-				<Icon icon={page} />
-				<div>{__('Content selected', 'extendify')}</div>
+				<Icon icon={selectedContent} />
+				<div>{__('Selected content', 'extendify-local')}</div>
 			</div>
 			<Tooltip text={__('Remove', 'extendify-local')}>
 				<button

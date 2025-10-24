@@ -32,7 +32,7 @@ export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel }) => {
 					</p>
 				</div>
 			</div>
-			<div className="flex items-center justify-start gap-2 p-3">
+			<div className="flex justify-start gap-2 p-3">
 				<button
 					type="button"
 					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"

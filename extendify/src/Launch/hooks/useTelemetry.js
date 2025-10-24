@@ -143,6 +143,22 @@ export const useTelemetry = () => {
 									(!Array.isArray(value) || value.length > 0),
 							),
 					),
+					extra: {
+						userAgent: window?.navigator?.userAgent,
+						vendor: window?.navigator?.vendor || 'unknown',
+						platform:
+							window?.navigator?.userAgentData?.platform ||
+							window?.navigator?.platform ||
+							'unknown',
+						mobile: window?.navigator?.userAgentData?.mobile,
+						width: window.innerWidth,
+						height: window.innerHeight,
+						screenHeight: window.screen.height,
+						screenWidth: window.screen.width,
+						orientation: window.screen.orientation?.type,
+						touchSupport:
+							'ontouchstart' in window || navigator.maxTouchPoints > 0,
+					},
 				}),
 			})
 				.catch(() => undefined)

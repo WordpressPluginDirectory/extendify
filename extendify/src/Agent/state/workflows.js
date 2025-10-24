@@ -6,14 +6,24 @@ import { workflows } from '@agent/workflows/workflows';
 
 const state = (set, get) => ({
 	workflow: null,
-	block: null, // data-extendify-agent-block-id value
+	block: null, // data-extendify-agent-block-id + details about the block
 	setBlock: (block) => set({ block }),
+	domToolEnabled: false,
+	setDomToolEnabled: (enabled) => {
+		if (get().block) return; // can't disable if a block is set
+		set({ domToolEnabled: enabled });
+	},
 	getWorkflow: () => {
 		const curr = get().workflow;
-		const currentWorkflow = workflows.find((w) => w.id === curr?.id);
-		return deepMerge(curr, currentWorkflow || {});
+		// Workflows may define a "parent" workflow via templateId
+		const currId = curr?.templateId || curr?.id;
+		const wf = workflows.find(({ id }) => id === currId);
+		if (!wf?.id) return curr || null;
+		return { ...deepMerge(curr, wf || {}), id: curr?.id };
 	},
 	// Gets the workflows available to the user
+	// TODO: maybe we need to have a way to include a
+	// workflow regardless of the block being active?
 	getAvailableWorkflows: () => {
 		let wfs = workflows.filter(({ available }) => available());
 		// If a block is set, only include those with 'block'
@@ -60,19 +70,24 @@ const state = (set, get) => ({
 			},
 		};
 	},
-	addWorkflowResult: async (data) => {
-		set((state) => {
-			const max = Math.max(0, state.workflowHistory.length - 10);
-			return {
-				workflowHistory: [data, ...state.workflowHistory.toSpliced(0, max)],
-			};
-		});
+	addWorkflowResult: (data) => {
+		if (data.status === 'completed') {
+			set((state) => {
+				const max = Math.max(0, state.workflowHistory.length - 10);
+				return {
+					workflowHistory: [data, ...state.workflowHistory.toSpliced(0, max)],
+				};
+			});
+		}
+		const workflowId = get().workflow?.id;
+		if (!workflowId) return;
 		// Persist it to the server
 		const path = '/extendify/v1/agent/workflows';
-		await apiFetch({
+		apiFetch({
 			method: 'POST',
+			keepalive: true,
 			path,
-			data: { workflowId: get().workflow.id, ...data },
+			data: { workflowId, ...data },
 		});
 	},
 	mergeWorkflowData: (data) => {
@@ -100,7 +115,7 @@ export const useWorkflowStore = create()(
 		name: `extendify-agent-workflows-${window.extSharedData.siteId}`,
 		partialize: (state) => {
 			// eslint-disable-next-line
-			const { block, ...rest } = state;
+			const { block, workflowHistory, ...rest } = state;
 			return { ...rest };
 		},
 	}),

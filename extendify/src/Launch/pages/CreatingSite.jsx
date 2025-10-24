@@ -225,47 +225,6 @@ export const CreatingSite = () => {
 			await waitFor200Response();
 			await updateTemplatePart('extendable/footer', footerCode);
 
-			// Add required plugins to the end of the list to give them lower priority
-			// when filtering out duplicates.
-			const sortedPlugins = [...sitePlugins]
-				// Remove duplicates
-				.reduce((acc, plugin) => {
-					const found = acc.find(
-						({ wordpressSlug: s }) => s === plugin.wordpressSlug,
-					);
-					return found ? acc : [...acc, plugin];
-				}, [])
-				// We add give to the front. See here why:
-				// https://github.com/extendify/company-product/issues/713
-				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
-
-			if (sortedPlugins?.length) {
-				inform(__('Installing necessary plugins', 'extendify-local'));
-
-				for (const [index, plugin] of sortedPlugins.entries()) {
-					const slug = plugin?.wordpressSlug;
-					informDesc(
-						__(
-							`${index + 1}/${sortedPlugins.length}: ${plugin.name}`,
-							'extendify-local',
-						),
-					);
-
-					// Don't install if already installed
-					if (!installedPlugins?.some((s) => s.includes(slug))) {
-						await retryOperation(() => installPlugin(slug), {
-							maxAttempts: 2,
-						}).catch(console.error);
-
-						recordPluginActivity({ slug, source: 'launch' });
-					}
-
-					await retryOperation(() => activatePlugin(slug), {
-						maxAttempts: 2,
-					}).catch(console.error);
-				}
-			}
-
 			inform(__('Populating data', 'extendify-local'));
 			informDesc(__('Personalizing your experience', 'extendify-local'));
 			await prefetchAssistData();
@@ -341,6 +300,47 @@ export const CreatingSite = () => {
 					patterns: await replacePlaceholderPatterns(page.patterns),
 				};
 				pagesWithReplacedPatterns.push(updatedPage);
+			}
+
+			// Add required plugins to the end of the list to give them lower priority
+			// when filtering out duplicates.
+			const sortedPlugins = [...sitePlugins]
+				// Remove duplicates
+				.reduce((acc, plugin) => {
+					const found = acc.find(
+						({ wordpressSlug: s }) => s === plugin.wordpressSlug,
+					);
+					return found ? acc : [...acc, plugin];
+				}, [])
+				// We add give to the front. See here why:
+				// https://github.com/extendify/company-product/issues/713
+				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
+
+			if (sortedPlugins?.length) {
+				inform(__('Installing necessary plugins', 'extendify-local'));
+
+				for (const [index, plugin] of sortedPlugins.entries()) {
+					const slug = plugin?.wordpressSlug;
+					informDesc(
+						__(
+							`${index + 1}/${sortedPlugins.length}: ${plugin.name}`,
+							'extendify-local',
+						),
+					);
+
+					// Don't install if already installed
+					if (!installedPlugins?.some((s) => s.includes(slug))) {
+						await retryOperation(() => installPlugin(slug), {
+							maxAttempts: 2,
+						}).catch(console.error);
+
+						recordPluginActivity({ slug, source: 'launch' });
+					}
+
+					await retryOperation(() => activatePlugin(slug), {
+						maxAttempts: 2,
+					}).catch(console.error);
+				}
 			}
 
 			const pagesWithCustomContent = await generateCustomPageContent(

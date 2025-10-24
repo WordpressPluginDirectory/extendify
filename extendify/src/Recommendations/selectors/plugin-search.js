@@ -1,4 +1,4 @@
-const { products = [] } = window.extRecommendationsData;
+const { products = [] } = window.extSharedData;
 
 export const selectIsLoading = (state) =>
 	state.isSearchPluginsLoading || state.isInstalledPluginsLoading;

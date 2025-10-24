@@ -4,8 +4,9 @@ import { useSelect, useDispatch } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
 import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { downloadImage } from '@shared/api/wp';
 import { AnimatePresence, motion } from 'framer-motion';
-import { addImageToBlock, downloadImage } from '@draft/api/WPApi';
+import { addImageToBlock } from '@draft/api/WPApi';
 
 export const ImagePreview = ({
 	prompt,

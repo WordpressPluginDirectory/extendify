@@ -9,7 +9,6 @@ namespace Extendify\Draft;
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
-use Extendify\Draft\Controllers\UserSettingsController;
 
 /**
  * This class handles any file loading for the admin area.
@@ -70,13 +69,6 @@ class Admin
             true
         );
 
-        \wp_add_inline_script(
-            Config::$slug . '-draft-scripts',
-            'window.extDraftData = ' . \wp_json_encode([
-                'globalState' => \wp_json_encode(UserSettingsController::get()->get_data()),
-            ]),
-            'before'
-        );
         \wp_set_script_translations(
             Config::$slug . '-draft-scripts',
             'extendify-local',

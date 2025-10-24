@@ -144,8 +144,11 @@ body.extendify-agent-mobile-btn-open
 .extendify-agent-highlighter-mode.extendify-agent-busy {
 	cursor: not-allowed !important;
 }
-
+.extendify-agent-highlighter-mode .wp-block-spacer {
+	pointer-events: none !important;
+}
 .extendify-agent-highlighter-mode a,
+.extendify-agent-highlighter-mode .wp-lightbox-container img,
 .extendify-agent-highlighter-mode button,
 .extendify-agent-highlighter-mode [role="button"],
 .extendify-agent-highlighter-mode [role="link"] {

@@ -39,8 +39,9 @@ class WorkflowHistoryController
 
         $results = $wpdb->get_results(
             $wpdb->prepare(
-                "SELECT * FROM $table WHERE user_id = %d ORDER BY created_at DESC LIMIT 5",
-                $user_id
+                "SELECT * FROM $table WHERE user_id = %d AND status = %s ORDER BY created_at DESC LIMIT 5",
+                $user_id,
+                'completed'
             ),
             ARRAY_A
         );

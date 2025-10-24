@@ -38,13 +38,23 @@ const initialState = {
 	},
 };
 
+const setIfChanged = (get, set, key, newValue) => {
+	const current = get()[key];
+	if (current === newValue) return;
+	set({ [key]: newValue });
+};
+
 const incoming = safeParseJson(window.extSharedData.userData.userSelectionData);
 const state = (set, get) => ({
 	...initialState,
 	// initialize the state with default values
 	...(incoming?.state ?? {}),
-	setSiteStructure: (siteStructure) => set({ siteStructure }),
+	setSiteStructure: (siteStructure) =>
+		setIfChanged(get, set, 'siteStructure', siteStructure),
 	setSiteInformation: (name, value) => {
+		const current = get().siteInformation?.[name];
+		if (current === value) return;
+
 		const siteInformation = { ...get().siteInformation, [name]: value };
 		set({ siteInformation });
 	},
@@ -87,10 +97,8 @@ const state = (set, get) => ({
 		set({ siteImages });
 	},
 	setSiteObjective: (siteObjective) =>
-		set((state) =>
-			state.siteObjective !== siteObjective ? { siteObjective } : state,
-		),
-	setCTALink: (CTALink) => set({ CTALink }),
+		setIfChanged(get, set, 'siteObjective', siteObjective),
+	setCTALink: (CTALink) => setIfChanged(get, set, 'CTALink', CTALink),
 	has: (type, item) => {
 		if (!item?.id) return false;
 		return (get()?.[type] ?? [])?.some((t) => t.id === item.id);
@@ -156,8 +164,12 @@ const state = (set, get) => ({
 			};
 		});
 	},
-	setShowHiddenQuestions: (showHidden) =>
-		set({ siteQA: { ...get().siteQA, showHidden } }),
+	setShowHiddenQuestions: (showHidden) => {
+		const current = get().siteQA?.showHidden;
+		if (current === showHidden) return;
+
+		set({ siteQA: { ...get().siteQA, showHidden } });
+	},
 	setUrlParameters: (params) =>
 		set((state) => {
 			if (!params || Object.keys(params).length === 0) return state;
@@ -169,11 +181,22 @@ const state = (set, get) => ({
 		}),
 });
 
+const debounce = (func, delay) => {
+	let timeoutId;
+	return (...params) => {
+		clearTimeout(timeoutId);
+		timeoutId = setTimeout(() => func(...params), delay);
+	};
+};
+
 const path = '/extendify/v1/shared/user-selections-data';
 const storage = {
 	getItem: async () => await apiFetch({ path }),
-	setItem: async (_name, state) =>
-		await apiFetch({ path, method: 'POST', data: { state } }),
+	setItem: debounce(
+		async (_name, state) =>
+			await apiFetch({ path, method: 'POST', data: { state } }),
+		300,
+	),
 };
 
 export const useUserSelectionStore = create(

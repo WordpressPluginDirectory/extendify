@@ -70,7 +70,7 @@ export const Dashboard = () => {
 					required={true}
 					className="input-focus h-[220px] w-full max-w-full resize-none border border-gray-600 py-3 pe-6 ps-3 text-base placeholder:italic placeholder:opacity-70"
 					placeholder={__(
-						'E.g., Create an "About Us" page highlighting our story, mission, values and leam overview.',
+						'E.g., Create an "About Us" page highlighting our story, mission, values and team overview.',
 						'extendify-local',
 					)}
 					value={pageDescription}

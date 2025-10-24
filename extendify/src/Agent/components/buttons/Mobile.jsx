@@ -5,17 +5,19 @@ import { magic } from '@agent/icons';
 import { useGlobalStore } from '@agent/state/global';
 
 export const Mobile = () => {
-	const { toggleOpen, open, isMobile } = useGlobalStore();
+	const { isMobile, minimized, setMinimized } = useGlobalStore();
 	const ref = useRef(null);
 
+	const minimize = () => setMinimized(false);
+
 	useEffect(() => {
-		if (!isMobile || open) return;
+		if (!isMobile || minimized) return;
 		// Set button height as root var
 		document.body.style.setProperty(
 			'--extendify-agent-mobile-btn-height',
 			`${ref.current?.offsetHeight}px`,
 		);
-	}, [isMobile, open]);
+	}, [isMobile, minimized]);
 
 	useEffect(() => {
 		if (!isMobile) return;
@@ -25,14 +27,14 @@ export const Mobile = () => {
 		};
 	}, [isMobile]);
 
-	if (!isMobile || open) return null;
+	if (!isMobile || !minimized) return null;
 
 	return (
 		<button
 			ref={ref}
 			type="button"
 			className="m-0 flex w-full items-center justify-between gap-2 bg-gray-900 px-4 py-3 font-sans text-white shadow-[0_-1px_0_0_rgba(255,255,255,0.05)]"
-			onClick={toggleOpen}
+			onClick={minimize}
 			aria-label={__('Open Agent', 'extendify-local')}>
 			<div className="flex gap-3">
 				<div className="flex h-10 w-10 items-center justify-center rounded-full bg-wp-theme-main">

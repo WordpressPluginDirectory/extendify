@@ -5,7 +5,7 @@ import { HelpCenter } from '@help-center/HelpCenter';
 import '@help-center/app.css';
 import '@help-center/buttons';
 
-const isInsideIframe = () => window !== window.top;
+const isInsideIframe = () => !!document.querySelector('#plugin-information');
 
 domReady(() => {
 	if (isOnLaunch() || isInsideIframe()) return;

@@ -193,10 +193,14 @@ export const getSiteProfile = async ({ title, description }) => {
 		response = await fetch(url, { method, headers, body });
 	} catch (error) {
 		// try one more time
-		response = await fetch(url, { method, headers, body });
+		try {
+			response = await fetch(url, { method, headers, body });
+		} catch {
+			return fallback;
+		}
 	}
 
-	if (!response.ok) return fallback;
+	if (!response?.ok) return fallback;
 
 	try {
 		return (await response.json()) || fallback;
@@ -216,9 +220,13 @@ export const getSiteStrings = async (siteProfile) => {
 		response = await fetch(url, { method, headers, body });
 	} catch (error) {
 		// try one more time
-		response = await fetch(url, { method, headers, body });
+		try {
+			response = await fetch(url, { method, headers, body });
+		} catch {
+			return fallback;
+		}
 	}
-	if (!response.ok) return fallback;
+	if (!response?.ok) return fallback;
 	let data;
 	try {
 		data = await response.json();
@@ -244,14 +252,29 @@ export const getSiteImages = async (siteProfile) => {
 	const method = 'GET';
 	const headers = { 'Content-Type': 'application/json' };
 	const fallback = { siteImages: [] };
+	const requestTimeOut = 10000;
+
 	let response;
 	try {
-		response = await fetch(url, { method, headers });
+		response = await fetch(url, {
+			method,
+			headers,
+			signal: AbortSignal.timeout(requestTimeOut),
+		});
 	} catch (error) {
 		// try one more time
-		response = await fetch(url, { method, headers });
+		try {
+			response = await fetch(url, {
+				method,
+				headers,
+				signal: AbortSignal.timeout(requestTimeOut),
+			});
+		} catch {
+			return fallback;
+		}
 	}
-	if (!response.ok) return fallback;
+
+	if (!response?.ok) return fallback;
 	let data;
 	try {
 		data = await response.json();
@@ -267,6 +290,7 @@ export const getSiteStyles = async ({ title, siteProfile }) => {
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({ ...extraBody, title, siteProfile }),
 	});
+	const fallback = [];
 
 	let response;
 
@@ -274,12 +298,14 @@ export const getSiteStyles = async ({ title, siteProfile }) => {
 		response = await fetch(request);
 	} catch (error) {
 		// try one more time
-		response = await fetch(request);
+		try {
+			response = await fetch(request);
+		} catch {
+			return fallback;
+		}
 	}
 
-	const fallback = [];
-
-	if (!response.ok) {
+	if (!response?.ok) {
 		return fallback;
 	}
 
@@ -315,12 +341,16 @@ export const getSiteLogo = async (objectName) => {
 	let response;
 	try {
 		response = await fetch(url, { method, headers, body });
-		if (!response.ok) throw new Error('Bad response from server');
+		if (!response?.ok) throw new Error('Bad response from server');
 	} catch (error) {
-		response = await fetch(url, { method, headers, body });
+		try {
+			response = await fetch(url, { method, headers, body });
+		} catch {
+			return fallback;
+		}
 	}
 
-	if (!response.ok) return fallback;
+	if (!response?.ok) return fallback;
 
 	try {
 		const data = await response.json();
@@ -353,12 +383,16 @@ export const getSiteQuestions = async ({ siteProfile }) => {
 	let response;
 	try {
 		response = await fetch(url, { method, headers, body });
-		if (!response.ok) throw new Error('Bad response from server');
+		if (!response?.ok) throw new Error('Bad response from server');
 	} catch (error) {
-		response = await fetch(url, { method, headers, body });
+		try {
+			response = await fetch(url, { method, headers, body });
+		} catch {
+			return fallback;
+		}
 	}
 
-	if (!response.ok) return fallback;
+	if (!response?.ok) return fallback;
 
 	try {
 		const data = await response.json();
@@ -394,12 +428,16 @@ export const getSitePlugins = async ({ siteProfile, siteQA }) => {
 
 	try {
 		response = await fetch(url, { method, headers, body });
-		if (!response.ok) throw new Error('Bad response from server');
+		if (!response?.ok) throw new Error('Bad response from server');
 	} catch (error) {
-		response = await fetch(url, { method, headers, body });
+		try {
+			response = await fetch(url, { method, headers, body });
+		} catch {
+			return fallback;
+		}
 	}
 
-	if (!response.ok) return fallback;
+	if (!response?.ok) return fallback;
 
 	try {
 		const data = await response.json();

@@ -13,6 +13,10 @@ use Extendify\Agent\Controllers\TourController;
 use Extendify\Agent\Controllers\WorkflowHistoryController;
 use Extendify\Config;
 use Extendify\Shared\Services\Escaper;
+use Extendify\Agent\TagBlocks;
+use Extendify\Agent\TagTemplateParts;
+use Extendify\Agent\Controllers\SiteNavigationController;
+use Extendify\Shared\DataProvider\ProductsData;
 
 /**
  * This class handles any file loading for the admin area.
@@ -31,11 +35,12 @@ class Admin
         ChatHistoryController::init();
         WorkflowHistoryController::init();
 
-        // Tag blocks on the frontend for dom highlighter
-        // \add_filter('the_content', [$this, 'tagBlocksUidEnable'], 0);
-        // \add_filter('the_content', [$this, 'tagBlocksUidDisable'], constant('PHP_INT_MAX'));
-        // \add_filter('pre_render_block', [$this, 'tagBlocksUidPre'], 10, 2);
-        // \add_filter('render_block', [$this, 'tagBlocksUidPost'], 10, 2);
+        // Tag blocks so we can identify them later
+        TagBlocks::init();
+        TagTemplateParts::init();
+
+        // Add the site navigation ids to the navigation blocks
+        SiteNavigationController::init();
     }
 
     /**
@@ -73,6 +78,7 @@ class Admin
             'postTitle' => \esc_attr(\get_the_title($this->getCurrentPostId())),
             'postType' => \esc_attr(\get_post_type($this->getCurrentPostId())),
             'isFrontPage' => (bool) \is_front_page(),
+            'postStatus' => \esc_attr(\get_post_status((int) $this->getCurrentPostId())),
             'isBlogPage' => (bool) \is_home(),
             'themeSlug' => \esc_attr(\wp_get_theme()->get_stylesheet()),
             'hasThemeVariations' => (bool) $this->hasThemeVariations(),
@@ -83,8 +89,20 @@ class Admin
                 false,
             'activePlugins' => array_values(\get_option('active_plugins', [])),
         ];
+        $recommendations = ProductsData::get() ?? [];
+        $pluginRecommendations = array_filter($recommendations, function ($item) {
+            return in_array('ai-agent', $item['slots'] ?? [], true) && $item['ctaType'] === 'plugin';
+        });
+        $mappedPluginRecommendations = array_values(array_map(function ($item) {
+            return [
+                'title' => $item['title'] ?? '',
+                'slug'  => $item['slug'] ?? '',
+                'description' => $item['aiDescription'] ?? $item['description'] ?? '',
+            ];
+        }, $pluginRecommendations));
         $agentContext = [
             'availableAdminPages' => get_option('_transient_extendify_admin_pages_menu', []),
+            'pluginRecommendations' => $mappedPluginRecommendations,
         ];
         $abilities = [
             'canEditPost' => (bool) \current_user_can('edit_post', \get_queried_object_id()),
@@ -93,7 +111,8 @@ class Admin
             // include a step that fetches the page they want to edit
             'canEditPosts' => (bool) \current_user_can('edit_posts'),
             'canEditThemes' => (bool) \current_user_can('edit_theme_options'),
-            'canEditPlugins' => (bool) \current_user_can('activate_plugins'),
+            'canActivatePlugins' => (bool) \current_user_can('activate_plugins'),
+            'canInstallPlugins' => (bool) \current_user_can('install_plugins'),
             'canEditUsers' => (bool) \current_user_can('edit_users'),
             'canEditSettings' => (bool) \current_user_can('manage_options'),
             'canUploadMedia' => (bool) \current_user_can('upload_files'),
@@ -205,10 +224,25 @@ class Admin
             ]
         ];
 
+        if ($context['postStatus']) {
+            $suggestions [] = [
+                'icon' => ($context['postStatus'] === 'draft') ? 'published' : 'drafts',
+                'message' => ($context['postStatus'] === 'draft')
+                    ? __('Publish this page', 'extendify-local')
+                    : __('Unpublish this page', 'extendify-local') ,
+            ];
+        }
+
         if ($abilities['canEditSettings']) {
             $suggestions[] = [
                 'icon' => 'edit',
                 'message' => __('I want to change my site title', 'extendify-local'),
+                "feature" => true,
+            ];
+
+            $suggestions[] = [
+                'icon' => 'typography',
+                'message' => __('I want to change my theme fonts', 'extendify-local'),
                 "feature" => true,
             ];
         }
@@ -241,7 +275,7 @@ class Admin
             ];
         }
 
-        if ($abilities['canEditPlugins']) {
+        if ($abilities['canActivatePlugins']) {
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I install a plugin?', 'extendify-local'),
@@ -291,101 +325,5 @@ class Admin
 
         shuffle($suggestions);
         return $suggestions;
-    }
-
-    /**
-     * Enable the block counter (UID tagging)
-     * @param string $content
-     * @return string
-     */
-    public function tagBlocksUidEnable($content)
-    {
-        if (is_admin()) {
-            return $content;
-        }
-
-        $GLOBALS['extendify_agent_block_counter_enabled'] = true;
-        $GLOBALS['extendify_agent_block_counter'] = [
-            'seq'   => 0,
-            'stack' => [],
-        ];
-        return $content;
-    }
-
-    /**
-     * Disable block UID tagging.
-     * @param string $content
-     * @return string
-     */
-    public function tagBlocksUidDisable($content)
-    {
-        if (is_admin()) {
-            return $content;
-        }
-
-        $GLOBALS['extendify_agent_block_counter_enabled'] = false;
-        return $content;
-    }
-
-    /**
-     * Counts (tags later) each block in the content area
-     *
-     * @param string $pre
-     * @param array $parsed_block
-     * @return string
-     */
-    public function tagBlocksUidPre($pre, $parsed_block)
-    {
-        if (is_admin() || empty($parsed_block['blockName'])) {
-            return $pre;
-        }
-
-        if (! ($GLOBALS['extendify_agent_block_counter_enabled'] ?? false)) {
-            return $pre;
-        }
-
-        // Init on first block
-        if (empty($GLOBALS['extendify_agent_block_counter'])) {
-            $GLOBALS['extendify_agent_block_counter'] = [
-                'seq' => 0,
-                'stack' => []
-            ];
-        }
-
-        $GLOBALS['extendify_agent_block_counter']['seq']++;
-        $id = $GLOBALS['extendify_agent_block_counter']['seq'];
-
-        // Inner blocks will push more IDs. pop on render_block.
-        $GLOBALS['extendify_agent_block_counter']['stack'][] = $id;
-        return $pre;
-    }
-
-    /**
-     * Tag blocks with a unique ID.
-     *
-     * @param string $content
-     * @param array $parsed_block
-     * @return string
-     */
-    public function tagBlocksUidPost($content, $parsed_block)
-    {
-        if (is_admin() || ! $content || empty($parsed_block['blockName'])) {
-            return $content;
-        }
-
-        if (! ($GLOBALS['extendify_agent_block_counter_enabled'] ?? false)) {
-            return $content;
-        }
-
-        if (empty($GLOBALS['extendify_agent_block_counter']['stack'])) {
-            return $content;
-        }
-
-        $id = array_pop($GLOBALS['extendify_agent_block_counter']['stack']);
-        $attr = sprintf(' data-extendify-agent-block-id="%s" ', esc_attr($id));
-
-        // Inject right after the first tag name.
-        $content = preg_replace('/^(\s*<(?!\!|\/|\?)[\w:-]+)/', '$1' . $attr, $content, 1);
-        return $content;
     }
 }

@@ -7,7 +7,6 @@
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\AdminPageRouter;
-use Extendify\Affiliate;
 use Extendify\Assist\Admin as AssistAdmin;
 use Extendify\Agent\Admin as AgentAdmin;
 use Extendify\Config;
@@ -91,8 +90,6 @@ if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
             new PageCreatorAdmin();
         }
 
-        // This class will update links based on the partner's specifications.
-        new Affiliate();
         // The remaining classes handle loading assets for each individual products.
         // They are essentially asset loading classes.
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended

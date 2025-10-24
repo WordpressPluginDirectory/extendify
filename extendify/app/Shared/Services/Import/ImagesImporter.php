@@ -84,16 +84,16 @@ class ImagesImporter
 
                 return $schedules;
             });
-        });
 
-        if (! \wp_next_scheduled('extendify_images_importer_light')) {
-            \wp_schedule_event(
+            if (! \wp_next_scheduled('extendify_images_importer_light')) {
+                \wp_schedule_event(
                 // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp
-                time(),
-                'extendify_every_ten_minutes',
-                'extendify_images_importer_light'
-            );
-        }
+                    time(),
+                    'extendify_every_ten_minutes',
+                    'extendify_images_importer_light'
+                );
+            }
+        });
 
         \add_action('extendify_images_importer_light', function () {
             (new ImagesImporterRunner())->run();

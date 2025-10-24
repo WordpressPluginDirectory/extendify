@@ -17,6 +17,8 @@ use Extendify\Shared\Services\ApexDomain\ApexDomain;
 use Extendify\Shared\Services\Escaper;
 use Extendify\Shared\Services\PluginDependencies\SimplyBook;
 use Extendify\SiteSettings;
+use Extendify\Shared\Controllers\ImageGenerationController;
+use Extendify\Shared\DataProvider\ProductsData;
 
 /**
  * This class handles any file loading for the admin area.
@@ -199,10 +201,12 @@ class Admin
                 'showSiteQuestions' => (bool) (
                     PartnerData::setting('showLaunchQuestions') || Config::preview('launch-questions')
                 ),
+                'products' => ProductsData::get(),
                 'showAIAgents' => (bool) (PartnerData::setting('showAIAgents') || Config::preview('ai-agent')),
                 'pluginGroupId' => Escaper::recursiveEscAttr(PartnerData::setting('pluginGroupId')),
                 'requiredPlugins' => Escaper::recursiveEscAttr(PartnerData::setting('requiredPlugins')),
                 'adminPagesMenuList' => get_option('_transient_extendify_admin_pages_menu', []),
+                'globalState' => ImageGenerationController::get()->get_data(),
             ]),
             'before'
         );

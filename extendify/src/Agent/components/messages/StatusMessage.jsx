@@ -1,3 +1,5 @@
+import { useEffect, useMemo, useState } from '@wordpress/element';
+import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
 import { ErrorMessage } from '@agent/components/ErrorMessage';
@@ -5,21 +7,45 @@ import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
 
 export const StatusMessage = ({ status, animate }) => {
 	const { type, label } = status.details;
-	const statusContent = {
-		'calling-agent': __('Thinking...', 'extendify-local'),
-		'agent-working': __('Working on it...', 'extendify-local'),
-		'tool-started': label || __('Gathering data...', 'extendify-local'),
-		'tool-completed': label || __('Analyzing...', 'extendify-local'),
-		'tool-canceled': label || __('Canceled', 'extendify-local'),
-		'workflow-tool-canceled': label || __('Canceled', 'extendify-local'),
-		'credits-exhausted': __('Usage limit reached', 'extendify-local'),
-		'credits-restored': __('Usage limit restored', 'extendify-local'),
-	};
+	const [content, setContent] = useState();
+	const [loopIndex, setLoopIndex] = useState(0);
+	const statusContent = useMemo(
+		() => ({
+			'calling-agent': __('Thinking...', 'extendify-local'),
+			'agent-working': [
+				__('Working on it...', 'extendify-local'),
+				__('Interpreting message...', 'extendify-local'),
+				__('Formulating a response...', 'extendify-local'),
+				__('Reviewing logic...', 'extendify-local'),
+			],
+			'tool-started': label || __('Gathering data...', 'extendify-local'),
+			'tool-completed': label || __('Analyzing...', 'extendify-local'),
+			'tool-canceled': label || __('Canceled', 'extendify-local'),
+			'workflow-tool-canceled': label || __('Canceled', 'extendify-local'),
+			'workflow-canceled': label || __('Canceled', 'extendify-local'),
+			'credits-exhausted': __('Usage limit reached', 'extendify-local'),
+			'credits-restored': __('Usage limit restored', 'extendify-local'),
+		}),
+		[label],
+	);
 	const canAnimate = [
 		'calling-agent',
 		'agent-working',
 		'tool-started',
 	].includes(type);
+
+	useEffect(() => {
+		if (!Array.isArray(statusContent[type])) {
+			setContent(statusContent[type]);
+			return;
+		}
+		setContent(statusContent[type][loopIndex]);
+		const timer = setTimeout(() => {
+			setContent(null);
+			setLoopIndex((prevIndex) => (prevIndex + 1) % statusContent[type].length);
+		}, 5000);
+		return () => clearTimeout(timer);
+	}, [type, statusContent, content, loopIndex]);
 
 	if (type === 'error')
 		return (
@@ -37,10 +63,10 @@ export const StatusMessage = ({ status, animate }) => {
 				</div>
 			</ErrorMessage>
 		);
+
 	if (type === 'workflow-tool-completed')
 		return <WorkflowToolCompleted label={label} />;
 
-	const content = statusContent[type];
 	if (!content) return null;
 
 	return (
@@ -79,7 +105,8 @@ const WorkflowToolCompleted = ({ label }) => {
 						</svg>
 					</div>
 					<div className="text-sm">
-						{label || __('Workflow completed successfully', 'extendify-local')}
+						{decodeEntities(label) ||
+							__('Workflow completed successfully', 'extendify-local')}
 					</div>
 				</div>
 			</div>

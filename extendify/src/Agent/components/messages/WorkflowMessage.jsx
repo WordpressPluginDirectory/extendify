@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { ChatSuggestions } from '@agent/components/ChatSuggestions';
 import { Rating } from '@agent/components/Rating';
 
-// NOte: this used to have more status like joined, cancelled, transferred etc.
+// Note: this used to have more status like joined, cancelled, transferred etc.
 export const WorkflowMessage = ({ message }) => {
 	const { status, answerId } = message.details;
 

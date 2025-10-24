@@ -16,7 +16,12 @@ export default {
 	type: 'html-text-button',
 	event: new CustomEvent('extendify-hc:open', { detail: { page: 'ai-chat' } }),
 	dependencies: { plugins: [] },
-	show: () => !!window.extSharedData?.showChat,
+	show: () =>
+		!!window.extSharedData?.showChat &&
+		!(
+			!!window.extSharedData?.launchCompletedAt &&
+			!!window.extSharedData?.showAIAgents
+		),
 	htmlBefore: () => (
 		<HelpCenterAIMarkup
 			className="border-gray300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-100 pt-5 lg:block"

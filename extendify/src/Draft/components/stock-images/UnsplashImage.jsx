@@ -1,8 +1,8 @@
 import { Spinner } from '@wordpress/components';
 import { useEffect, useState, useInsertionEffect } from '@wordpress/element';
+import { loadImage } from '@shared/api/wp';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
-import { loadImage } from '@draft/lib/image';
 
 export const UnsplashImage = ({
 	image,

@@ -22,7 +22,7 @@ export const useUserStore = create(
 				if (!Object.keys(get()).includes(key)) return;
 				set({ [key]: value });
 			},
-			...(safeParseJson(window.extPageCreator.userInfo)?.state ?? {}),
+			...(safeParseJson(window.extPageCreator?.userInfo)?.state ?? {}),
 		}),
 		{
 			name: 'extendify_page_creator_user',

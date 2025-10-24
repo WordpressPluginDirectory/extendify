@@ -1,4 +1,5 @@
 import apiFetch from '@wordpress/api-fetch';
+import { __ } from '@wordpress/i18n';
 import { allowedSettings } from '@agent/workflows/settings/edit-wp-setting';
 
 export default async ({ settingName }) => {
@@ -9,5 +10,10 @@ export default async ({ settingName }) => {
 		path: '/wp/v2/settings?context=edit',
 	});
 
-	return { oldSettingValue: response[settingName] };
+	return {
+		oldSettingValue:
+			response[settingName] ||
+			// translators: No value found message for when a WP setting has no value.
+			__('No value found', 'extendify-local'),
+	};
 };

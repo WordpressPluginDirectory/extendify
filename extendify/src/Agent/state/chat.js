@@ -13,26 +13,35 @@ const state = (set, get) => ({
 					(message) =>
 						!['agent-working', 'calling-agent', 'tool-started'].includes(
 							message.details?.type,
-						) && !['workflow'].includes(message.type),
+						) &&
+						!(
+							// Keep workflow messages with status completed (to show rating)
+							(
+								['workflow'].includes(message.type) &&
+								message.details.status === 'completed'
+							)
+						),
 				)
 				.toReversed()
 		: [],
 
 	seenAgents: [],
 	// Messages sent to the api, user and assistant only. Up until the last workflow
-	getMessagesForChat: () => {
+	getMessagesForAI: () => {
 		const messages = [];
 		let foundUserMessage = false;
-		for (const msg of get().messagesRaw.toReversed()) {
-			const finished = ['completed', 'canceled'].includes(msg.details.status);
-			if (msg.type === 'workflow' && finished) break;
-			if (msg.type === 'workflow-component' && finished) break;
+		for (const { type, details } of get().messagesRaw.toReversed()) {
+			const finished =
+				['completed', 'canceled'].includes(details.status) ||
+				(['status'].includes(type) && details.type === 'workflow-canceled');
+			if (type === 'workflow' && finished) break;
+			if (type === 'workflow-component' && finished) break;
 			// This prevents a loop of assistant messages from being at the end
-			if (msg.type === 'message' && msg.details.role === 'user') {
+			if (type === 'message' && details.role === 'user') {
 				foundUserMessage = true;
 			}
-			if (msg.type === 'message' && !foundUserMessage) continue;
-			if (msg.type === 'message') messages.push(msg.details);
+			if (type === 'message' && !foundUserMessage) continue;
+			if (type === 'message') messages.push(details);
 		}
 		return messages.toReversed();
 	},

@@ -3,6 +3,7 @@ import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
 import { Icon, pencil, styles, lifesaver, cog } from '@wordpress/icons';
 import ReactMarkdown from 'react-markdown';
+import { recordAgentActivity } from '@agent/api';
 import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
 import { magic } from '@agent/icons';
 import pageTours from '@agent/lib/page-tours';
@@ -31,7 +32,13 @@ const agentIcons = {
 };
 
 export const AgentMessage = ({ message, animate }) => {
-	const { content, role, pageSuggestion, agent } = message.details;
+	const {
+		content,
+		role,
+		pageSuggestion,
+		agent,
+		sessionId = 'not-set',
+	} = message.details;
 	const containsCodeBlock = /```[\s\S]*?```/.test(content);
 	const blocks = containsCodeBlock
 		? [decodeEntities(content)]
@@ -73,6 +80,13 @@ export const AgentMessage = ({ message, animate }) => {
 				{agentSuggestion?.label ? (
 					<div>
 						<a
+							onClick={() => {
+								recordAgentActivity({
+									sessionId,
+									action: 'take_me_there_click',
+									value: { pageSuggestion },
+								});
+							}}
 							href={`${window.extSharedData.adminUrl}${pageSuggestion}`}
 							className="rounded border border-design-main bg-design-main p-2 text-sm text-white no-underline hover:opacity-90">
 							{agentSuggestion.label}

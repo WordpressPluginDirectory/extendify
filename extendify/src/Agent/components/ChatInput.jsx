@@ -8,14 +8,20 @@ import {
 import { __ } from '@wordpress/i18n';
 import { Icon, arrowUp } from '@wordpress/icons';
 import classNames from 'classnames';
+import { ChatTools } from '@agent/components/ChatTools';
+import { useGlobalStore } from '@agent/state/global';
+import { useWorkflowStore } from '@agent/state/workflows';
 
 export const ChatInput = ({ disabled, handleSubmit }) => {
 	const textareaRef = useRef(null);
 	const [input, setInput] = useState('');
-	const [longText, setLongText] = useState(false);
 	const [history, setHistory] = useState([]);
 	const dirtyRef = useRef(false);
 	const [historyIndex, setHistoryIndex] = useState(null);
+	const { getWorkflowsByFeature, block } = useWorkflowStore();
+	const { isMobile } = useGlobalStore();
+	const domTool =
+		getWorkflowsByFeature({ requires: ['block'] })?.length > 0 && !isMobile;
 
 	// resize the height of the textarea based on the content
 	const adjustHeight = useCallback(() => {
@@ -23,10 +29,9 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 		textareaRef.current.style.height = 'auto';
 		const chat =
 			textareaRef.current.closest('#extendify-agent-chat').offsetHeight * 0.55;
-		const h = Math.min(chat, textareaRef.current.scrollHeight + 2);
-		setLongText(h > 80);
-		textareaRef.current.style.height = `${h}px`;
-	}, []);
+		const h = Math.min(chat, textareaRef.current.scrollHeight);
+		textareaRef.current.style.height = `${block && h < 60 ? 60 : h}px`;
+	}, [block]);
 
 	useLayoutEffect(() => {
 		window.addEventListener('extendify-agent:resize-end', adjustHeight);
@@ -136,20 +141,29 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 	return (
 		<form
 			onSubmit={submitForm}
-			className="relative flex w-full flex-col gap-4 p-4 pb-2 pt-0">
+			onClick={() => textareaRef.current?.focus()}
+			className={classNames(
+				'relative flex w-full flex-col rounded border border-gray-300 focus-within:outline-design-main focus:rounded focus:border-design-main focus:ring-design-main',
+				{
+					'bg-gray-300': disabled,
+					'bg-gray-50': !disabled,
+				},
+			)}>
 			<textarea
 				ref={textareaRef}
 				id="extendify-agent-chat-textarea"
 				disabled={disabled}
 				className={classNames(
-					'flex max-h-[calc(75dvh)] min-h-10 w-full resize-none overflow-hidden rounded border border-gray-300 px-3 py-[9px] text-base placeholder:text-gray-700 focus-within:outline-design-main focus:rounded focus:border-design-main focus:ring-design-main disabled:opacity-50 md:text-sm',
-					{
-						'bg-gray-300': disabled,
-						'bg-gray-50': !disabled,
-						'pr-6': !longText,
-					},
+					'flex max-h-[calc(75dvh)] min-h-10 w-full resize-none overflow-hidden bg-transparent px-2 pb-4 pt-2.5 text-base placeholder:text-gray-700 focus:shadow-none focus:outline-none disabled:opacity-50 md:text-sm',
 				)}
-				placeholder={__('Ask anything', 'extendify-local')}
+				placeholder={
+					block
+						? __(
+								'What do you want to change in the selected content?',
+								'extendify-local',
+							)
+						: __('Ask anything', 'extendify-local')
+				}
 				rows="1"
 				autoFocus
 				value={input}
@@ -160,16 +174,19 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 				}}
 				onKeyDown={handleKeyDown}
 			/>
-			<div className="absolute bottom-[1.125rem] right-6 flex flex-row justify-end md:bottom-4 rtl:left-6 rtl:right-auto">
-				<button
-					type="submit"
-					className="inline-flex h-fit items-center justify-center gap-2 whitespace-nowrap rounded-full border bg-design-main p-0.5 text-sm font-medium text-white transition-colors focus-visible:ring-design-main disabled:opacity-20"
-					disabled={disabled || input.trim().length === 0}>
-					<Icon fill="currentColor" icon={arrowUp} size={18} />
-					<span className="sr-only">
-						{__('Send message', 'extendify-local')}
-					</span>
-				</button>
+			<div className="flex justify-between gap-4 px-2 pb-2">
+				{domTool ? <ChatTools disabled={disabled} /> : null}
+				<div className="ms-auto flex items-center">
+					<button
+						type="submit"
+						className="inline-flex h-fit items-center justify-center gap-2 whitespace-nowrap rounded-full border-0 bg-design-main p-0.5 text-sm font-medium text-white transition-colors focus-visible:ring-design-main disabled:opacity-20"
+						disabled={disabled || input.trim().length === 0}>
+						<Icon fill="currentColor" icon={arrowUp} size={24} />
+						<span className="sr-only">
+							{__('Send message', 'extendify-local')}
+						</span>
+					</button>
+				</div>
 			</div>
 		</form>
 	);

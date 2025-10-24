@@ -19,6 +19,8 @@ import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
 
 const devmode = window.extSharedData.devbuild;
+// Used to abort when wf canceled - reset in cleanup()
+let controller = new AbortController();
 
 export const Agent = () => {
 	const { hasMessages, addMessage } = useChatStore();
@@ -55,6 +57,7 @@ export const Agent = () => {
 		setCanType(true);
 		agentWorking.current = false;
 		setWaitingOnToolOrUser(false);
+		controller = new AbortController();
 		block && setBlock(null);
 		window.dispatchEvent(new Event('extendify-agent:remove-block-highlight'));
 		const c = Array.from(
@@ -71,7 +74,7 @@ export const Agent = () => {
 			addMessage('status', { type: 'calling-agent' });
 			const response = await pickWorkflow({
 				workflows: workflowIds,
-				options,
+				options: { signal: controller.signal, ...options },
 			}).catch((error) => {
 				devmode && console.error(error);
 				if (error?.response?.status === 429) {
@@ -80,8 +83,12 @@ export const Agent = () => {
 					addMessage('status', { type: 'credits-exhausted' });
 					return;
 				}
-				addMessage('status', { type: 'error' });
 				setCanType(true);
+				if (error === 'Workflow aborted') {
+					addMessage('status', { type: 'workflow-canceled' });
+					return;
+				}
+				addMessage('status', { type: 'error' });
 				return;
 			});
 			if (!response) return;
@@ -128,16 +135,30 @@ export const Agent = () => {
 		],
 	);
 
-	// Allow external messages to trigger the agent
 	useEffect(() => {
+		// Allow external messages to trigger the agent
 		const handleMessage = ({ detail }) => {
 			if (!detail?.message) return;
 			handleSubmit(detail.message);
 		};
+		// Allow external code to clear the block and workflow
+		const handleCleanup = () => {
+			controller.abort('Workflow aborted');
+			setWorkflow(null);
+			cleanup();
+			addMessage('status', { type: 'workflow-canceled' });
+			return;
+		};
+		window.addEventListener('extendify-agent:cancel-workflow', handleCleanup);
 		window.addEventListener('extendify-agent:chat-submit', handleMessage);
-		return () =>
+		return () => {
+			window.removeEventListener(
+				'extendify-agent:cancel-workflow',
+				handleCleanup,
+			);
 			window.removeEventListener('extendify-agent:chat-submit', handleMessage);
-	}, [handleSubmit]);
+		};
+	}, [handleSubmit, cleanup, setWorkflow, addMessage]);
 
 	// Handle whenFinished component confirm/cancel
 	useEffect(() => {
@@ -261,12 +282,20 @@ export const Agent = () => {
 			const agentResponse = await handleWorkflow({
 				workflow,
 				workflowData,
+				options: { signal: controller.signal },
 			}).catch((error) => {
+				if (error === 'Workflow aborted') {
+					addMessage('status', { type: 'workflow-canceled' });
+					setWorkflow(null);
+					cleanup();
+					return;
+				}
 				const { sessionId } = workflow || {};
 				digest({ caller: 'handle-workflow', sessionId, error });
 				devmode && console.error(error);
 				return { error: error.message };
 			});
+			if (!agentResponse) return;
 			const { summary, status, answerId } = agentResponse;
 			// Add the workflow result to the history
 			addWorkflowResult({
@@ -293,6 +322,7 @@ export const Agent = () => {
 					followup: !!agentResponse.tool,
 					pageSuggestion: agentResponse.pageSuggestion,
 					agent: workflow.agent,
+					sessionId: workflow?.sessionId,
 				});
 			}
 			// This is at the end of the workflow
@@ -419,14 +449,15 @@ export const Agent = () => {
 
 	return (
 		<Chat busy={busy}>
-			<div className="relative z-50 flex h-full flex-col overflow-auto border-t border-solid border-gray-300">
+			<div className="relative z-50 flex h-full flex-col justify-between overflow-auto border-t border-solid border-gray-300">
 				{showWelcomeScreen ? (
 					<div
-						className="h-full"
+						className="relative flex flex-grow flex-col overflow-y-auto overflow-x-hidden"
 						style={{
 							backgroundImage:
 								'linear-gradient( to bottom, #f0f0f0 0%, #fff 60%,  #fff 100%)',
 						}}>
+						<div className="flex-grow" />
 						<WelcomeScreen />
 					</div>
 				) : (
@@ -438,9 +469,9 @@ export const Agent = () => {
 				)}
 
 				<div>
-					<div className="relative flex flex-col px-3 pb-2 pt-2.5 shadow-lg-flipped">
+					<div className="relative flex flex-col px-4 pb-2 pt-2.5 shadow-lg-flipped">
 						{showPromptSuggestions ? <ChatSuggestions /> : null}
-						{block ? <PageDocument busy={busy} blockId={block} /> : null}
+						{block ? <PageDocument busy={busy} blockId={block.id} /> : null}
 						<UsageMessage
 							onReady={() => {
 								cleanup();
@@ -449,11 +480,12 @@ export const Agent = () => {
 							}}
 						/>
 					</div>
-
-					<ChatInput
-						disabled={!canType || !chatAvailable}
-						handleSubmit={handleSubmit}
-					/>
+					<div className="p-4 pb-2 pt-0">
+						<ChatInput
+							disabled={!canType || !chatAvailable}
+							handleSubmit={handleSubmit}
+						/>
+					</div>
 					<div className="text-pretty px-4 pb-2 text-center text-xss leading-none text-gray-600">
 						{__(
 							'AI Agent can make mistakes. Check changes before saving.',

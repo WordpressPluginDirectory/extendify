@@ -6,12 +6,12 @@ import {
 } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
+import { useImageGenerationStore } from '@shared/state/generate-images';
 import { CreditCounter } from '@draft/components/image-generation/CreditCounter';
-import { useGlobalStore } from '@draft/state/global';
 
 export const GenerateForm = ({ isGenerating, errorMessage }) => {
 	const { imageCredits, resetImageCredits, aiImageOptions, setAiImageOption } =
-		useGlobalStore();
+		useImageGenerationStore();
 	const usedCredits = imageCredits.total - imageCredits.remaining;
 	const [refreshCheck, setRefreshCheck] = useState(0);
 	const { size, prompt } = aiImageOptions;

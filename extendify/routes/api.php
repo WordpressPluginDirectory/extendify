@@ -19,7 +19,6 @@ use Extendify\HelpCenter\Controllers\RouterController as HelpCenterRouterControl
 use Extendify\HelpCenter\Controllers\SupportArticlesController;
 
 use Extendify\Draft\Controllers\ImageController;
-use Extendify\Draft\Controllers\UserSettingsController;
 use Extendify\Draft\Controllers\RouterController as DraftRouterController;
 
 use Extendify\Launch\Controllers\WPController;
@@ -32,6 +31,7 @@ use Extendify\PageCreator\Controllers\SiteController as PageCreatorSiteControlle
 use Extendify\Agent\Controllers\WPController as AgentWPController;
 use Extendify\Agent\Controllers\ChatHistoryController as AgentChatController;
 use Extendify\Agent\Controllers\WorkflowHistoryController as AgentWorkflowController;
+use Extendify\Agent\Controllers\SiteNavigationController as AgentSiteNavigationController;
 
 use Extendify\Shared\Controllers\PatternPlaceholderController;
 use Extendify\Shared\Controllers\UserSelectionController;
@@ -39,6 +39,7 @@ use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsCon
 use Extendify\Shared\Controllers\ActivityController;
 use Extendify\Shared\Controllers\SiteProfileController;
 use Extendify\Shared\Controllers\DataController as SharedDataController;
+use Extendify\Shared\Controllers\ImageGenerationController;
 
 \add_action(
     'rest_api_init',
@@ -81,19 +82,22 @@ use Extendify\Shared\Controllers\DataController as SharedDataController;
         ApiRouter::get('/help-center/get-redirect', [SupportArticlesController::class, 'getRedirect']);
 
         // Draft.
-        ApiRouter::get('/draft/user-settings', [UserSettingsController::class, 'get']);
-        ApiRouter::post('/draft/user-settings', [UserSettingsController::class, 'store']);
+        ApiRouter::get('/shared/image-generation', [ImageGenerationController::class, 'get']);
+        ApiRouter::post('/shared/image-generation', [ImageGenerationController::class, 'store']);
         ApiRouter::post('/draft/upload-image', [ImageController::class, 'uploadMedia']);
         ApiRouter::post('/draft/router-data', [DraftRouterController::class, 'store']);
         ApiRouter::get('/draft/router-data', [DraftRouterController::class, 'get']);
 
         // Agent.
         ApiRouter::get('/agent/theme-variations', [AgentWPController::class, 'getVariations']);
+        ApiRouter::get('/agent/theme-fonts-variations', [AgentWPController::class, 'getFontsVariations']);
         ApiRouter::get('/agent/get-block-code', [AgentWPController::class, 'getBlockCode']);
         ApiRouter::post('/agent/get-block-html', [AgentWPController::class, 'getBlockHtml']);
         ApiRouter::get('/agent/chat-events', [AgentChatController::class, 'get']);
         ApiRouter::post('/agent/chat-events', [AgentChatController::class, 'store']);
         ApiRouter::post('/agent/workflows', [AgentWorkflowController::class, 'add']);
+        ApiRouter::post('/agent/site-navigation', [AgentSiteNavigationController::class, 'getSiteNavigation']);
+        ApiRouter::post('/agent/render-navigation', [AgentSiteNavigationController::class, 'renderNavigationMenu']);
 
         // Shared.
         ApiRouter::get('/shared/user-selections-data', [UserSelectionController::class, 'get']);

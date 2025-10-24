@@ -1,25 +1,25 @@
 import { Tooltip } from '@wordpress/components';
-import { createPortal, useEffect, useRef, useState } from '@wordpress/element';
-import { __, isRTL } from '@wordpress/i18n';
+import {
+	createPortal,
+	useCallback,
+	useEffect,
+	useRef,
+	useState,
+} from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import { Icon, close } from '@wordpress/icons';
-import classNames from 'classnames';
 import { motion } from 'framer-motion';
 import { usePortal } from '@agent/hooks/usePortal';
 import { useWorkflowStore } from '@agent/state/workflows';
 
-const scopedTo = 'main.wp-block-group';
-// TODO: maybe scope this a bit better?
-// TODO: text in a p tag has no block class - need to handle that
-const classSelectors = ['[class^="wp-block-"]', '[class*=" wp-block-"]'];
-const ignored = [
-	'wp-block-image',
-	'wp-block-cover',
-	'wp-block-video',
-	'wp-block-columns',
-	'wp-block-buttons',
-];
-// Build selector from class list: ".foo, .bar"
-const selector = classSelectors.map((c) => `${scopedTo} ${c}`).join(', ');
+const selector = [
+	'[data-extendify-agent-block-id]',
+	'[data-extendify-part-block-id]',
+	'.wp-block-navigation',
+].join(', ');
+const ignored = ['wp-block-video', 'wp-block-spacer', 'wp-block-post-*'];
+const SELECTED_ATTR = 'data-extendify-agent-block-selected';
+const HIGHLIGHTER_CLS = 'extendify-agent-highlighter-mode';
 
 export const DOMHighlighter = ({ busy = false }) => {
 	const [rect, setRect] = useState(null);
@@ -27,8 +27,17 @@ export const DOMHighlighter = ({ busy = false }) => {
 	const raf = useRef(null);
 	const el = useRef(null);
 	const { getWorkflowsByFeature, block, setBlock } = useWorkflowStore();
-
 	const enabled = getWorkflowsByFeature({ requires: ['block'] })?.length > 0;
+
+	const clearBlock = useCallback(() => {
+		setBlock(null);
+		setRect(null);
+		el.current = null;
+		document.querySelector(HIGHLIGHTER_CLS)?.classList.remove(HIGHLIGHTER_CLS);
+		document
+			.querySelector(`[${SELECTED_ATTR}]`)
+			?.removeAttribute(SELECTED_ATTR);
+	}, [setBlock, setRect]);
 
 	useEffect(() => {
 		const handle = () => {
@@ -57,28 +66,19 @@ export const DOMHighlighter = ({ busy = false }) => {
 				const match = target.closest(selector);
 				if (!match) return setRect(null);
 
-				// It should have a block ID
-				if (!match.getAttribute('data-extendify-agent-block-id')) {
+				// Ignore some blocks
+				const pattern = ignored.map((c) => c.replace('*', '.*')).join('|');
+				const regex = new RegExp(`^(${pattern})$`);
+				if (Array.from(match.classList).some((cls) => regex.test(cls))) {
 					return setRect(null);
 				}
 
-				// Ignore some blocks like columns
-				if (ignored.some((c) => match.classList.contains(c))) {
-					return setRect(null);
-				}
-
-				// TODO: later images?
-				const hasMeaningfulText = /\S/.test(
-					(match.textContent || '').replace(/\u200B/g, ''),
-				);
 				const innerBlockCount = Array.from(
-					match.querySelectorAll(classSelectors.join(', ')),
+					match.querySelectorAll(selector),
 				).filter((el) => !ignored.some((c) => el.classList.contains(c))).length;
 
 				// Keep complexity low for now
-				if (!hasMeaningfulText || innerBlockCount > 5) {
-					return setRect(null);
-				}
+				if (innerBlockCount > 20) return setRect(null);
 
 				el.current = match;
 				const r = match.getBoundingClientRect();
@@ -111,28 +111,63 @@ export const DOMHighlighter = ({ busy = false }) => {
 	}, [el]);
 
 	useEffect(() => {
-		if (!enabled) return;
+		if (!enabled || busy) return;
 
 		const onClickCapture = (e) => {
-			if (!rect) return;
+			if (!rect || busy) return;
+			// If they click inside the chat window, ignore
+			if (e.target.closest('#extendify-agent-chat')) return;
 			// find the real element under cursor
 			const stack = document.elementsFromPoint(e.clientX, e.clientY) || [];
 			if (!stack[0]) return;
-			if (!stack[0].closest('.wp-site-blocks')) return;
 			e.preventDefault();
 			e.stopPropagation();
 
 			const match = stack[0].closest(selector);
-			if (!match) return;
-			setBlock(match.getAttribute('data-extendify-agent-block-id'));
+			if (!match && !block) return;
+			const sameBlock = match?.hasAttribute(SELECTED_ATTR);
+			// If we already have a block, clicking outside removes it
+			if (block && !sameBlock) return clearBlock();
+			if (block && sameBlock) return; // no change
+
+			match.setAttribute(SELECTED_ATTR, true);
 			document.querySelector('#extendify-agent-chat-textarea')?.focus();
+
+			// determine what's in the block.
+			const templatePart = match.closest('[data-extendify-part]');
+			const details = {
+				id: match.getAttribute('data-extendify-agent-block-id'),
+				target: 'data-extendify-agent-block-id',
+				hasNav:
+					Boolean(match.querySelector('.wp-block-navigation')) ||
+					match.classList.contains('wp-block-navigation'),
+				hasSiteTitle:
+					match.classList.contains('wp-block-site-title') ||
+					Boolean(match.querySelector('.wp-block-site-title')),
+				hasSiteLogo:
+					match.classList.contains('wp-block-site-logo') ||
+					Boolean(match.querySelector('.wp-block-site-logo')),
+				hasLinks: Boolean(match.querySelector('a')) || match.tagName === 'A',
+				hasImages:
+					Boolean(match.querySelector('.wp-block-image')) ||
+					match.classList.contains('wp-block-image') ||
+					Boolean(match.querySelector('img')),
+				hasText: /\S/.test((match.textContent || '').replace(/\u200B/g, '')),
+			};
+			// Override how we identify if it's a template part
+			if (templatePart) {
+				details.id = templatePart.getAttribute('data-extendify-part-block-id');
+				details.target = 'data-extendify-part-block-id';
+				details.template = templatePart.getAttribute('data-extendify-part');
+			}
+			setBlock(details);
 		};
 
 		// capture=true so we stop clicks before app code or link navigation
 		window.addEventListener('click', onClickCapture, { capture: true });
 		return () =>
 			window.removeEventListener('click', onClickCapture, { capture: true });
-	}, [enabled, setBlock, rect]);
+	}, [enabled, setBlock, rect, clearBlock, block, busy]);
 
 	useEffect(() => {
 		if (!enabled) return;
@@ -166,20 +201,13 @@ export const DOMHighlighter = ({ busy = false }) => {
 				<Tooltip text={__('Remove highlight', 'extendify-local')}>
 					<div
 						role="button"
-						className={classNames(
-							'fixed z-higher h-6 w-6 -translate-y-3 cursor-pointer select-none items-center justify-center rounded-full text-center font-bold ring-1 ring-black',
-							{
-								'-translate-x-6 rtl:translate-x-6':
-									left + width >= window.innerWidth - 12,
-								'-translate-x-3 rtl:translate-x-3':
-									left + width < window.innerWidth,
-							},
-						)}
+						className={
+							'fixed z-higher h-6 w-6 -translate-y-3.5 cursor-pointer select-none items-center justify-center rounded-full text-center font-bold ring-1 ring-black'
+						}
 						onClick={() => setBlock(null)}
 						style={{
 							top,
-							left: isRTL() ? 'auto' : left + width,
-							right: isRTL() ? left : 'auto',
+							left: width / 2 + left - 12,
 							backgroundColor: 'var(--wp--preset--color--primary, red)',
 							color: 'var(--wp--preset--color--background, white)',
 						}}>
@@ -199,7 +227,7 @@ export const DOMHighlighter = ({ busy = false }) => {
 				aria-hidden
 				animate={animate}
 				transition={transition}
-				className="pointer-events-none fixed z-high mix-blend-hard-light outline-dashed outline-4"
+				className="pointer-events-none fixed z-high-1 mix-blend-hard-light outline-dashed outline-4"
 				style={{
 					top: 0,
 					left: 0,

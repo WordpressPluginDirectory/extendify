@@ -6,12 +6,12 @@ import {
 } from '@wordpress/components';
 import { useState, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { generateImage } from '@draft/api/Data';
+import { generateImage } from '@shared/api/DataApi';
+import { useImageGenerationStore } from '@shared/state/generate-images';
 import { GenerateForm } from '@draft/components/image-generation/GenerateForm';
 import { ImagePreview } from '@draft/components/image-generation/ImagePreview';
 import { useRouter } from '@draft/hooks/useRouter';
 import { pageState } from '@draft/state/factory';
-import { useGlobalStore } from '@draft/state/global';
 import { backArrow } from '@draft/svg/BackArrow';
 
 const usePageState = pageState('AI Image', (set) => ({
@@ -27,7 +27,7 @@ export const GenerateImage = () => {
 		updateImageCredits,
 		subtractOneCredit,
 		aiImageOptions,
-	} = useGlobalStore();
+	} = useImageGenerationStore();
 	const [isGenerating, setIsGenerating] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 	const abortController = useRef(null);

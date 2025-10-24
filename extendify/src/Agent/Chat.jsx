@@ -3,11 +3,17 @@ import { DOMHighlighter } from '@agent/components/DOMHighlighter';
 import { DragResizeLayout } from '@agent/components/layouts/DragResizeLayout';
 import { MobileLayout } from '@agent/components/layouts/MobileLayout';
 import { useGlobalStore } from '@agent/state/global';
-
-const domToolEnabled = false;
+import { useWorkflowStore } from '@agent/state/workflows';
 
 export const Chat = ({ busy, children }) => {
 	const { setIsMobile, isMobile } = useGlobalStore();
+	const { domToolEnabled, block, setBlock } = useWorkflowStore();
+
+	useEffect(() => {
+		if (!isMobile || !block) return;
+		// Remove the block if we switch to mobile
+		setBlock(null);
+	}, [isMobile, setIsMobile, block, setBlock]);
 
 	useEffect(() => {
 		let timeout;

@@ -121,7 +121,7 @@ export const getPageProfile = async ({ description, siteProfile }) => {
 		}),
 	});
 
-	if (!response.ok) {
+	if (!response?.ok) {
 		throw new Error('Something went wrong while fetching the profile');
 	}
 
@@ -154,7 +154,7 @@ export const getPageImages = async ({ pageProfile }) => {
 		headers: { 'Content-Type': 'application/json' },
 	});
 
-	if (!response.ok) {
+	if (!response?.ok) {
 		throw new Error('Something went wrong while fetching the images');
 	}
 
@@ -188,12 +188,16 @@ export const getSitePlugins = async ({ pageProfile }) => {
 
 	try {
 		response = await fetch(url, { method, headers, body });
-		if (!response.ok) throw new Error('Bad response from server');
+		if (!response?.ok) throw new Error('Bad response from server');
 	} catch (error) {
-		response = await fetch(url, { method, headers, body });
+		try {
+			response = await fetch(url, { method, headers, body });
+		} catch {
+			return fallback;
+		}
 	}
 
-	if (!response.ok) return fallback;
+	if (!response?.ok) return fallback;
 
 	try {
 		const data = await response.json();

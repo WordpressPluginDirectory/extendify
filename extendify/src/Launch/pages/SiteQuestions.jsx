@@ -37,6 +37,9 @@ export const SiteQuestions = () => {
 	);
 
 	const showHiddenQuestions = siteQA?.showHidden;
+	const hasHiddenQuestions =
+		Array.isArray(siteQA?.questions) &&
+		siteQA.questions.some((q) => q.group === 'hidden');
 
 	let questionsToRender = showHiddenQuestions
 		? siteQA?.questions
@@ -177,7 +180,7 @@ export const SiteQuestions = () => {
 							onAnswerChange={handleChanges}
 						/>
 
-						{!showHiddenQuestions && (
+						{hasHiddenQuestions && !showHiddenQuestions && (
 							<div className="flex justify-center">
 								<button
 									type="button"
