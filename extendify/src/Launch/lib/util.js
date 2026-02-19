@@ -8,7 +8,7 @@ function cleanAndBuildUnsplashUrl(url) {
 		.replaceAll('\\u0026', '&')
 		// Remove duplicate question marks in URL by replacing second '?' with '&'
 		.replace(/(\?.*?)\?/, '$1&');
-	let imageUrl = new URL(decodeEntities(cleanUrl));
+	const imageUrl = new URL(decodeEntities(cleanUrl));
 
 	const size = 1440;
 	const orientation = imageUrl.searchParams.get('orientation');
@@ -29,7 +29,12 @@ function cleanAndBuildUnsplashUrl(url) {
 	imageUrl.searchParams.append('q', '0');
 	imageUrl.searchParams.append('auto', 'format,compress');
 	imageUrl.searchParams.append('fm', 'avif');
-	return imageUrl.toString();
+	return (
+		imageUrl
+			.toString()
+			// Remove duplicate question marks in URL by replacing second '?' with '&'
+			.replace(/(\?.*?)\?/, '$1&')
+	);
 }
 
 export const lowerImageQuality = (html) => {

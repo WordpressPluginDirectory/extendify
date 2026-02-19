@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const initialState = {
 	experienceLevel: 'beginner',

@@ -1,11 +1,11 @@
-import { Spinner } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
-import { safeParseJson } from '@shared/lib/parsing';
 import { Article } from '@help-center/components/knowledge-base/Article';
 import { ArticlesList } from '@help-center/components/knowledge-base/ArticlesList';
 import { SearchForm } from '@help-center/components/knowledge-base/SearchForm';
 import { useSearchArticles } from '@help-center/hooks/useSearchArticles';
 import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base';
+import { safeParseJson } from '@shared/lib/parsing';
+import { Spinner } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 const mainArticles = [
 	'wordpress-block-editor',

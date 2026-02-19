@@ -1,5 +1,4 @@
-import { processPlaceholders } from '@page-creator/api/WPApi';
-import { getActivePlugins } from '@page-creator/api/WPApi';
+import { getActivePlugins, processPlaceholders } from '@page-creator/api/WPApi';
 import { recordPluginActivity } from '@shared/api/DataApi';
 
 export const processPatterns = async (patterns) => {

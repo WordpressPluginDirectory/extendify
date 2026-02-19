@@ -1,12 +1,12 @@
+import { useRouter } from '@draft/hooks/useRouter';
 import {
-	Button,
 	BaseControl,
+	Button,
+	__experimentalDivider as Divider,
 	PanelBody,
 	__experimentalSpacer as Spacer,
-	__experimentalDivider as Divider,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { useRouter } from '@draft/hooks/useRouter';
 
 export const Home = () => {
 	const { navigateTo } = useRouter();
@@ -18,13 +18,15 @@ export const Home = () => {
 				help={__(
 					'Use AI to generate custom images based on your description.',
 					'extendify-local',
-				)}>
+				)}
+			>
 				<Button
 					variant="primary"
 					__next40pxDefaultSize
 					id="extendify-draft-image-gen-button"
 					className="w-full justify-center"
-					onClick={() => navigateTo('ai-image')}>
+					onClick={() => navigateTo('ai-image')}
+				>
 					{__('Generate an image', 'extendify-local')}
 				</Button>
 			</BaseControl>
@@ -36,11 +38,13 @@ export const Home = () => {
 				help={__(
 					'Search and add free stock photos from Unsplash.com',
 					'extendify-local',
-				)}>
+				)}
+			>
 				<Button
 					variant="primary"
 					className="h-auto min-h-10 w-full justify-center whitespace-normal break-words py-2.5"
-					onClick={() => navigateTo('unsplash')}>
+					onClick={() => navigateTo('unsplash')}
+				>
 					{__('Search Unsplash', 'extendify-local')}
 				</Button>
 			</BaseControl>

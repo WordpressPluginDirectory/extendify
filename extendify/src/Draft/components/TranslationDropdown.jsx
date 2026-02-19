@@ -1,7 +1,7 @@
-import { Dropdown, MenuItem, MenuGroup } from '@wordpress/components';
-import { __, isRTL } from '@wordpress/i18n';
-import { Icon, language, chevronRight, chevronLeft } from '@wordpress/icons';
 import { magic } from '@draft/svg';
+import { Dropdown, MenuGroup, MenuItem } from '@wordpress/components';
+import { __, isRTL } from '@wordpress/i18n';
+import { chevronLeft, chevronRight, Icon, language } from '@wordpress/icons';
 
 export const DropdownTranslate = ({
 	text,
@@ -220,7 +220,8 @@ export const DropdownTranslate = ({
 						iconPosition={isRTL() ? 'left' : 'right'}
 						variant={undefined}
 						onClick={onToggle}
-						aria-expanded={isOpen}>
+						aria-expanded={isOpen}
+					>
 						{__('Translate', 'extendify-local')}
 					</MenuItem>
 					<Icon
@@ -238,7 +239,8 @@ export const DropdownTranslate = ({
 							<Icon className="fill-gray-900" size={16} icon={magic} />
 							{__('Translate to...', 'extendify-local')}
 						</div>
-					}>
+					}
+				>
 					{items.map(
 						({
 							language,
@@ -266,7 +268,8 @@ export const DropdownTranslate = ({
 											}),
 										),
 									);
-								}}>
+								}}
+							>
 								{language}
 							</MenuItem>
 						),

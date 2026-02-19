@@ -1,6 +1,9 @@
+import { __ } from '@wordpress/i18n';
+
 export default function LogoIcon(props) {
 	return (
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+			<title>{__('Logo Icon', 'extendify-local')}</title>
 			<path
 				clipRule="evenodd"
 				fillRule="evenodd"

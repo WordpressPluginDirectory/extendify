@@ -1,10 +1,10 @@
-import { useEffect, useCallback, useRef } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { Questionnaire } from '@launch/components/Questionnaire';
 import { Title } from '@launch/components/Title';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { pageState } from '@launch/state/factory';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import { useCallback, useEffect, useMemo, useRef } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const state = pageState('Site Questions', () => ({
 	ready: false,
@@ -67,10 +67,6 @@ export const SiteQuestions = () => {
 				if (answerId === 'one-page') setSiteStructure('single-page');
 			}
 
-			if (questionId === 'external-cta' && answerId === 'yes') {
-				setSiteStructure('single-page');
-			}
-
 			if (questionId === 'external-cta' && options?.isExtraField) {
 				setCTALink(answerId);
 			}
@@ -83,6 +79,13 @@ export const SiteQuestions = () => {
 		applyAnswerEffects(questionId, answerId, options);
 	};
 
+	const pagesAnswer = useMemo(() => {
+		return (
+			questionsToRender?.find((q) => q.id === 'pages')?.answerUser ||
+			questionsToRender?.find((q) => q.id === 'pages')?.answerAI
+		);
+	}, [questionsToRender]);
+
 	/**
 	 * Temporary logic to force siteObjective to 'landing-page' and trigger
 	 * the current LP flow. This will be replaced and removed in v2 of Landing Page flow.
@@ -90,9 +93,6 @@ export const SiteQuestions = () => {
 	const checkAndSetLP = useCallback(() => {
 		if (!questionsToRender || !questionsToRender.length) return;
 
-		const pagesAnswer =
-			questionsToRender.find((q) => q.id === 'pages')?.answerUser ||
-			questionsToRender.find((q) => q.id === 'pages')?.answerAI;
 		const ctaAnswer =
 			questionsToRender.find((q) => q.id === 'external-cta')?.answerUser ||
 			questionsToRender.find((q) => q.id === 'external-cta')?.answerAI;
@@ -105,13 +105,13 @@ export const SiteQuestions = () => {
 			return ans === 'no';
 		});
 
-		let newSiteObjective = undefined;
+		let newSiteObjective;
 		if (pagesAnswer === 'one-page' && ctaAnswer === 'yes' && allOthersNo) {
 			newSiteObjective = 'landing-page';
 		}
 
 		setSiteObjective(newSiteObjective);
-	}, [questionsToRender, setSiteObjective]);
+	}, [pagesAnswer, questionsToRender, setSiteObjective]);
 
 	useEffect(() => {
 		if (!hasQuestions) return;
@@ -130,12 +130,16 @@ export const SiteQuestions = () => {
 				setSiteQuestionAnswer(question.id, 'yes-shopping-cart');
 			}
 
-			if (question.id === 'pages' && siteStructure === 'single-page') {
-				setSiteQuestionAnswer(question.id, 'one-page');
-			}
+			if (question.id === 'pages') {
+				const mappedAnswer = {
+					'single-page': 'one-page',
+					'multi-page': 'multiple-pages',
+				};
 
-			if (question.id === 'pages' && siteStructure === 'multi-page') {
-				setSiteQuestionAnswer(question.id, 'multiple-pages');
+				if (mappedAnswer?.[siteStructure]) {
+					setSiteQuestionAnswer(question.id, mappedAnswer[siteStructure]);
+					return;
+				}
 			}
 
 			applyAnswerEffects(question.id, answer);
@@ -159,9 +163,15 @@ export const SiteQuestions = () => {
 		urlParameters?.structure === 'multi-page' ||
 		urlParameters?.structure === 'single-page';
 	if (hasValidStructureUrlParameter) {
-		questionsToRender = questionsToRender.filter((question) => {
-			if (question.id !== 'pages') return true;
-		});
+		questionsToRender = questionsToRender.filter(
+			(question) => question.id !== 'pages',
+		);
+	}
+
+	if (hasQuestions && pagesAnswer === 'multiple-pages') {
+		questionsToRender = questionsToRender.filter(
+			(question) => question.id !== 'external-cta',
+		);
 	}
 
 	return (
@@ -185,7 +195,8 @@ export const SiteQuestions = () => {
 								<button
 									type="button"
 									className="mt-12 flex flex-col items-center bg-transparent text-base font-medium text-design-main"
-									onClick={() => setShowHiddenQuestions(true)}>
+									onClick={() => setShowHiddenQuestions(true)}
+								>
 									{__('Show more questions', 'extendify-local')}
 									<svg
 										className="fill-current"
@@ -193,7 +204,9 @@ export const SiteQuestions = () => {
 										height="32"
 										viewBox="0 0 32 32"
 										fill="none"
-										xmlns="http://www.w3.org/2000/svg">
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<title>{__('Down Arrow Icon', 'extendify-local')}</title>
 										<path d="M23.3327 15.4672L15.9993 21.3339L8.66602 15.4672L9.86602 13.8672L15.9993 18.6672L21.9993 13.8672L23.3327 15.4672Z" />
 									</svg>
 								</button>

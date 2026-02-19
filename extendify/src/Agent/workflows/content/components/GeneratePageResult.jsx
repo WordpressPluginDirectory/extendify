@@ -26,14 +26,16 @@ export const GeneratePageResult = ({ inputs, onConfirm }) => {
 			<div className="flex justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={onConfirm}>
+					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={onConfirm}
+				>
 					{__('Dismiss', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
-					onClick={handleConfirm}>
+					className="w-full rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
+					onClick={handleConfirm}
+				>
 					{__('Take me there', 'extendify-local')}
 				</button>
 			</div>

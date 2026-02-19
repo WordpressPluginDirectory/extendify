@@ -1,5 +1,5 @@
-import { useEffect, useState } from '@wordpress/element';
 import { completion } from '@draft/api/Data';
+import { useEffect, useState } from '@wordpress/element';
 
 export const useCompletion = (
 	prompt,

@@ -1,17 +1,17 @@
 import { colord } from 'colord';
 
-const doc =
+const getDoc = () =>
 	document.querySelector('iframe[name="editor-canvas"]')?.contentDocument ||
 	document;
 
 const SVGFeFunc = ['feFuncR', 'feFuncG', 'feFuncB'];
 
 export const replaceDuotoneSVG = (() => {
-	let originalStates = new Map();
+	const originalStates = new Map();
 
 	const processSingleDuotone = (slug, duotoneTheme, dynamicDuotone) => {
 		let dynamicSlug = '';
-		if (!isNaN(slug)) {
+		if (!Number.isNaN(Number(slug))) {
 			dynamicSlug = slug;
 			slug = dynamicDuotone?.[`wp-duotone-${dynamicSlug}`];
 		}
@@ -22,10 +22,12 @@ export const replaceDuotoneSVG = (() => {
 		// Duotone requires exactly 2 colors (dark and light)
 		if (!colors || colors.length !== 2) return false;
 
-		// Find the SVG filter element in the DOM (WordPress generates these)
+		const doc = getDoc();
+		const filterId = `wp-duotone-${dynamicSlug || slug}`;
+
 		const element =
-			doc.querySelector(`#wp-duotone-${dynamicSlug}`) ||
-			doc.querySelector(`#wp-duotone-${slug}`);
+			doc.querySelector(`svg#${filterId}`) ||
+			doc.querySelector(`filter#${filterId}`);
 
 		if (!element) return false;
 
@@ -75,7 +77,7 @@ export const replaceDuotoneSVG = (() => {
 		// Update the CSS custom property so WordPress can reference the updated filter
 		doc.documentElement.style.setProperty(
 			`--wp--preset--duotone--${dynamicSlug || slug}`,
-			`url(#wp-duotone-${dynamicSlug || slug})`,
+			`url(#${filterId})`,
 		);
 
 		return true;
@@ -83,8 +85,8 @@ export const replaceDuotoneSVG = (() => {
 
 	return ({ duotoneTheme, dynamicDuotone }) => {
 		const processedSlugs = [];
+		const doc = getDoc();
 
-		// Auto-detect and process all duotone filters
 		const duotoneElements = doc.querySelectorAll('[id^="wp-duotone-"]');
 
 		duotoneElements.forEach((element) => {
@@ -94,16 +96,35 @@ export const replaceDuotoneSVG = (() => {
 			}
 		});
 
+		// Inject CSS filter rules for duotone classes
+		if (processedSlugs.length > 0) {
+			let style = doc.getElementById('extendify-duotone-overrides');
+			if (!style) {
+				style = doc.createElement('style');
+				style.id = 'extendify-duotone-overrides';
+				doc.head.appendChild(style);
+			}
+			style.textContent = processedSlugs
+				.map(
+					(slug) =>
+						`.wp-duotone-${slug} img { filter: url(#wp-duotone-${slug}) !important; }`,
+				)
+				.join('\n');
+		}
+
 		// Return the cleanup function directly
 		return processedSlugs.length > 0
 			? () => {
+					const cleanupDoc = getDoc();
+
 					processedSlugs.forEach((processedSlug) => {
 						const originalState = originalStates.get(processedSlug);
 						if (!originalState) return;
 
-						const currentElement = doc.querySelector(
-							`#wp-duotone-${processedSlug}`,
-						);
+						const filterId = `wp-duotone-${processedSlug}`;
+						const currentElement =
+							cleanupDoc.querySelector(`svg#${filterId}`) ||
+							cleanupDoc.querySelector(`filter#${filterId}`);
 						if (!currentElement) return;
 
 						// Restore original tableValues for each filter function element
@@ -123,16 +144,18 @@ export const replaceDuotoneSVG = (() => {
 
 						// Restore original CSS custom property
 						if (originalState.cssProperty) {
-							doc.documentElement.style.setProperty(
+							cleanupDoc.documentElement.style.setProperty(
 								`--wp--preset--duotone--${processedSlug}`,
 								originalState.cssProperty,
 							);
 						} else {
-							doc.documentElement.style.removeProperty(
+							cleanupDoc.documentElement.style.removeProperty(
 								`--wp--preset--duotone--${processedSlug}`,
 							);
 						}
 					});
+
+					cleanupDoc.getElementById('extendify-duotone-overrides')?.remove();
 				}
 			: null;
 	};

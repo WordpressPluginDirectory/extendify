@@ -1,4 +1,5 @@
 import { memo } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const BarChart = (props) => {
 	const { className, ...otherProps } = props;
@@ -9,7 +10,9 @@ const BarChart = (props) => {
 			viewBox="0 0 24 24"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...otherProps}>
+			{...otherProps}
+		>
+			<title>{__('Bar Chart', 'extendify-local')}</title>
 			<path
 				opacity="0.3"
 				d="M3 13H7V19H3V13ZM10 9H14V19H10V9ZM17 5H21V19H17V5Z"

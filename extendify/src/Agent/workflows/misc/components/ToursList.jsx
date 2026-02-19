@@ -1,6 +1,6 @@
-import { Icon, video } from '@wordpress/icons';
 import { useTourStore } from '@agent/state/tours';
 import tours from '@agent/tours/tours';
+import { Icon, video } from '@wordpress/icons';
 
 const availableTours = Object.values(tours);
 
@@ -29,14 +29,15 @@ export const SingleTour = ({ tour, onClick }) => {
 	const { startTour } = useTourStore();
 	return (
 		<div className="group relative flex items-center">
-			<div className="pointer-events-none absolute inset-0 rounded opacity-10 transition-opacity duration-100 group-hover:bg-design-main" />
+			<div className="pointer-events-none absolute inset-0 rounded-sm opacity-10 transition-opacity duration-100 group-hover:bg-design-main" />
 			<button
 				type="button"
-				className="flex w-full items-center gap-2 rounded border border-gray-300 bg-transparent p-3 text-left text-sm leading-none text-gray-900 focus:outline-none focus:ring-wp focus:ring-design-main group-hover:ring-wp group-hover:ring-design-main"
+				className="flex w-full items-center gap-2 rounded-sm border border-gray-300 bg-transparent p-3 text-left text-sm leading-none text-gray-900 focus:outline-hidden focus:ring-wp focus:ring-design-main group-hover:ring-wp group-hover:ring-design-main"
 				onClick={() => {
 					startTour(tour);
 					onClick?.();
-				}}>
+				}}
+			>
 				<Icon icon={video} className="h-6 w-6 fill-gray-700 leading-none" />
 				{tour.message}
 			</button>

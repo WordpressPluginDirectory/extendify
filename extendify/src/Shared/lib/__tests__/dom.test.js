@@ -1,5 +1,5 @@
-import * as element from '@wordpress/element';
 import { render } from '@shared/lib/dom';
+import * as element from '@wordpress/element';
 
 jest.mock('@wordpress/element', () => ({
 	render: jest.fn(),

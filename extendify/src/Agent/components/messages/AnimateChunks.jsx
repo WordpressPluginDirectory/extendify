@@ -12,7 +12,8 @@ export const AnimateChunks = ({ words, delay = 0.4, duration = 0.25 }) => {
 					initial={{ opacity: 0, y: 8 }}
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0 }}
-					transition={{ duration, delay: i * delay }}>
+					transition={{ duration, delay: i * delay }}
+				>
 					{isChars ? word : <ReactMarkdown>{word}</ReactMarkdown>}
 				</motion.span>
 			))}

@@ -1,5 +1,5 @@
-import { __ } from '@wordpress/i18n';
 import { LaunchDemoSitesMarkup } from '@assist/tasks/images/LaunchDemoSitesMarkup';
+import { __ } from '@wordpress/i18n';
 
 const { launchCompleted } = window.extAssistData;
 const { themeSlug, showLaunch } = window.extSharedData;
@@ -24,7 +24,7 @@ export default {
 	backgroundImage: null,
 	htmlBefore: () => (
 		<LaunchDemoSitesMarkup
-			className="border-gray300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-800 pt-5 lg:block"
+			className="border-gray-300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-800 pt-5 lg:block"
 			aria-hidden="true"
 		/>
 	),

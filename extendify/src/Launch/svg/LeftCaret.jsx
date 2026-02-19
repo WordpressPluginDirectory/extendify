@@ -1,4 +1,5 @@
 import { memo } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const LeftCaret = (props) => {
 	const { className, ...otherProps } = props;
@@ -11,7 +12,9 @@ const LeftCaret = (props) => {
 			viewBox="0 0 24 24"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...otherProps}>
+			{...otherProps}
+		>
+			<title>{__('Left Caret', 'extendify-local')}</title>
 			<path
 				d="M15 17.5L10 12L15 6.5"
 				stroke="currentColor"

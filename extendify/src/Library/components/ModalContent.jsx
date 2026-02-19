@@ -1,10 +1,10 @@
+import { BlockPreviewButton } from '@library/components/BlockPreviewButton';
+import { usePatterns } from '@library/hooks/usePatterns';
 import { Spinner } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { useInView } from 'react-intersection-observer';
 import Masonry from 'react-masonry-css';
-import { BlockPreviewButton } from '@library/components/BlockPreviewButton';
-import { usePatterns } from '@library/hooks/usePatterns';
 
 export const ModalContent = ({ insertPattern, siteType, category }) => {
 	const { data, isLoading, setSize } = usePatterns({
@@ -52,7 +52,8 @@ export const ModalContent = ({ insertPattern, siteType, category }) => {
 					600: 1,
 				}}
 				columnClassName=""
-				className="relative flex w-full gap-6 p-8 pt-2">
+				className="relative flex w-full gap-6 p-8 pt-2"
+			>
 				{data.map((p) =>
 					p.map(({ id, code, patternReplacementCode }) => (
 						<BlockPreviewButton
@@ -74,7 +75,8 @@ export const ModalContent = ({ insertPattern, siteType, category }) => {
 			{showLoading || noMore ? null : (
 				<div
 					ref={loadMoreRef}
-					className="mb-6 mt-6 flex w-full justify-center md:mt-2">
+					className="mb-6 mt-6 flex w-full justify-center md:mt-2"
+				>
 					<Spinner />
 					<span className="sr-only">
 						{__('Loading more patterns...', 'extendify-local')}

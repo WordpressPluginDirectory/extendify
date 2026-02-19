@@ -1,11 +1,11 @@
-import domReady from '@wordpress/dom-ready';
-import { useEffect } from '@wordpress/element';
-import { registerPlugin } from '@wordpress/plugins';
-import { render } from '@shared/lib/dom';
-import { isOnLaunch } from '@shared/lib/utils';
 import { AdminBar } from '@agent/components/buttons/AdminBar';
 import { Mobile } from '@agent/components/buttons/Mobile';
 import { PostEditor } from '@agent/components/buttons/PostEditor';
+import { render } from '@shared/lib/dom';
+import { isOnLaunch } from '@shared/lib/utils';
+import domReady from '@wordpress/dom-ready';
+import { useEffect } from '@wordpress/element';
+import { registerPlugin } from '@wordpress/plugins';
 
 // TODO: Sometimes the admin bar is crowded, so a smarter way would be to do some analysis first and position these accordingly.
 
@@ -54,16 +54,14 @@ const AgentButton = () => {
 			className: 'extendify-agent',
 			id,
 		});
-		requestAnimationFrame(() => {
-			requestAnimationFrame(() => {
-				if (document.getElementById(id)) return;
-				const page = '[aria-controls="edit-post:document"]';
-				const fse = '[aria-controls="edit-site:template"]';
-				document.querySelector(page)?.after(agent);
-				document.querySelector(fse)?.after(agent);
-				render(<PostEditor />, agent);
-			});
-		});
+		setTimeout(() => {
+			if (document.getElementById(id)) return;
+			const page = '[aria-controls="edit-post:document"]';
+			const fse = '[aria-controls="edit-site:template"]';
+			document.querySelector(page)?.after(agent);
+			document.querySelector(fse)?.after(agent);
+			render(<PostEditor />, agent);
+		}, 300);
 	}, []);
 	return null;
 };

@@ -1,8 +1,3 @@
-import { dispatch, useSelect, useDispatch, select } from '@wordpress/data';
-import { store as editPostStore } from '@wordpress/edit-post';
-import { store as editorStore } from '@wordpress/editor';
-import { useLayoutEffect, useEffect, useRef } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { Dialog, DialogTitle } from '@headlessui/react';
 import { Topbar } from '@page-creator/components/topbar/Topbar';
 import { MainPage } from '@page-creator/pages/MainPage';
@@ -11,6 +6,11 @@ import { usePagesStore } from '@page-creator/state/pages';
 import { useUserStore } from '@page-creator/state/user';
 import { insertBlocks } from '@page-creator/util/insert';
 import { useActivityStore } from '@shared/state/activity';
+import { dispatch, select, useDispatch, useSelect } from '@wordpress/data';
+import { store as editPostStore } from '@wordpress/edit-post';
+import { store as editorStore } from '@wordpress/editor';
+import { useEffect, useLayoutEffect, useRef } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import { motion } from 'framer-motion';
 
 export const Modal = () => {
@@ -134,7 +134,7 @@ export const Modal = () => {
 		if (search.has('ext-page-creator-close')) {
 			setOpen(false);
 			search.delete('ext-page-creator-close');
-			window.history.replaceState({}, '', pathname + '?' + search.toString());
+			window.history.replaceState({}, '', `${pathname}?${search.toString()}`);
 			incrementActivity('page-creator-search-param-auto-close');
 		}
 
@@ -142,7 +142,7 @@ export const Modal = () => {
 			// Close library
 			window.dispatchEvent(new CustomEvent('extendify::open-library'));
 			search.delete('ext-open');
-			window.history.replaceState({}, '', pathname + '?' + search.toString());
+			window.history.replaceState({}, '', `${pathname}?${search.toString()}`);
 		}
 	}, [setOpen, incrementActivity]);
 
@@ -176,13 +176,11 @@ export const Modal = () => {
 			static
 			aria-labelledby="page-creator-modal"
 			role="dialog"
-			onClose={() => undefined}>
-			<div className="mx-auto flex h-full w-full items-center justify-center pt-10 md:p-10">
+			onClose={() => undefined}
+		>
+			<div className="mx-auto flex h-full w-full items-center justify-center pt-10 md:p-10 absolute inset-0">
 				<div
 					onClick={onClose}
-					role="button"
-					tabIndex={0}
-					aria-label={__('Close AI Page Creator', 'extendify-local')}
 					className="fixed inset-0 bg-black/30"
 					style={{ backdropFilter: 'blur(2px)' }}
 					aria-hidden="true"
@@ -193,7 +191,8 @@ export const Modal = () => {
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: 0, opacity: 0 }}
 					transition={{ duration: 0.3 }}
-					className="relative mx-auto h-full max-h-full w-full max-w-4xl rounded-lg bg-white shadow-2xl sm:flex sm:overflow-hidden md:h-auto">
+					className="relative mx-auto h-full max-h-full w-full max-w-4xl rounded-lg bg-white shadow-2xl sm:flex sm:overflow-hidden md:h-auto"
+				>
 					<DialogTitle className="sr-only">
 						{__('AI Page Creator', 'extendify-local')}
 					</DialogTitle>
@@ -206,7 +205,8 @@ export const Modal = () => {
 						/>
 						<div
 							id="extendify-page-creator-pages"
-							className="mx-8 flex-grow overflow-y-auto">
+							className="mx-8 grow overflow-y-auto"
+						>
 							<MainPage insertPage={insertPage} />
 						</div>
 					</div>

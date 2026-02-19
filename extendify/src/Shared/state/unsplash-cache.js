@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist, devtools, createJSONStorage } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const ONE_WEEK_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 7;
 

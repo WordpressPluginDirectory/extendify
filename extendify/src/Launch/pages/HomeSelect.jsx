@@ -1,8 +1,3 @@
-import { useCallback, useEffect, useState, useRef } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { deepMerge } from '@shared/lib/utils';
-import classNames from 'classnames';
-import { AnimatePresence, motion } from 'framer-motion';
 import { getThemeVariations } from '@launch/api/WPApi';
 import { LoadingIndicator } from '@launch/components/LoadingIndicator';
 import { SmallPreview } from '@launch/components/SmallPreview';
@@ -15,6 +10,11 @@ import { pageState } from '@launch/state/factory';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Checkmark } from '@launch/svg';
+import { deepMerge } from '@shared/lib/utils';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import classNames from 'classnames';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export const state = pageState('Layout', () => ({
 	ready: false,
@@ -152,7 +152,8 @@ const DesignSelector = ({ homeLayouts }) => {
 		<div
 			className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
 			data-test="layout-preview-wrapper"
-			ref={wrapperRef}>
+			ref={wrapperRef}
+		>
 			{styles?.map((style) => (
 				<div className="relative" key={style.id}>
 					<AnimatePresence>
@@ -161,14 +162,15 @@ const DesignSelector = ({ homeLayouts }) => {
 							animate={{ opacity: 1 }}
 							duration={0.7}
 							className={classNames(
-								'relative cursor-pointer overflow-hidden rounded border border-gray-200 ring-offset-2 ring-offset-white focus-within:outline-none focus-within:ring-4 focus-within:ring-design-main focus-within:ring-offset-2 focus-within:ring-offset-white hover:outline-none hover:ring-4',
+								'relative cursor-pointer overflow-hidden rounded-sm border border-gray-200 ring-offset-2 ring-offset-white focus-within:outline-hidden focus-within:ring-4 focus-within:ring-design-main focus-within:ring-offset-2 focus-within:ring-offset-white hover:outline-hidden hover:ring-4',
 								{
 									'ring-4 ring-design-main ring-offset-2 ring-offset-white hover:ring-design-main':
 										currentStyle?.id === style.id,
 									'hover:ring-gray-300': currentStyle?.id !== style.id,
 								},
 							)}
-							style={{ aspectRatio: '1.55' }}>
+							style={{ aspectRatio: '1.55' }}
+						>
 							<SmallPreview
 								style={style}
 								showNav={siteObjective !== 'landing-page'}

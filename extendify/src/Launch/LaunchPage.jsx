@@ -1,9 +1,3 @@
-import { registerCoreBlocks } from '@wordpress/block-library';
-import { useSelect, useDispatch } from '@wordpress/data';
-import { useEffect, useState, useRef } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { safeParseJson } from '@shared/lib/parsing';
-import { SWRConfig, useSWRConfig } from 'swr';
 import { updateOption } from '@launch/api/WPApi';
 import { RestartLaunchModal } from '@launch/components/RestartLaunchModal';
 import { RetryNotice } from '@launch/components/RetryNotice';
@@ -12,6 +6,13 @@ import { CreatingSite } from '@launch/pages/CreatingSite';
 import { NeedsTheme } from '@launch/pages/NeedsTheme';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
+import { safeParseJson } from '@shared/lib/parsing';
+import { registerCoreBlocks } from '@wordpress/block-library';
+import { getBlockTypes } from '@wordpress/blocks';
+import { useDispatch, useSelect } from '@wordpress/data';
+import { useEffect, useRef, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { SWRConfig, useSWRConfig } from 'swr';
 
 export const LaunchPage = () => {
 	const { updateSettings } = useDispatch('core/block-editor');
@@ -62,9 +63,7 @@ export const LaunchPage = () => {
 	}, [updateSettings]);
 
 	useEffect(() => {
-		// Keep an eye on this. If WP starts registering blocks when
-		// importing the block-library module (as they likely should be doing)
-		// then we will need to have a conditional here
+		if (getBlockTypes().length !== 0) return;
 		registerCoreBlocks();
 	}, []);
 
@@ -91,7 +90,7 @@ export const LaunchPage = () => {
 							? fetchDataArrays[i]()
 							: fetchDataArrays?.[i];
 					mutate(data, (last) => last || fetcher(data), { revalidate: false });
-				} catch (e) {
+				} catch (_e) {
 					//
 				}
 			});
@@ -104,7 +103,7 @@ export const LaunchPage = () => {
 		<SWRConfig
 			value={{
 				errorRetryInterval: 1000,
-				onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
+				onErrorRetry: (error, key, _config, revalidate, { retryCount }) => {
 					if (error?.data?.status === 403) {
 						// if they are logged out, we can't recover
 						window.location.reload();
@@ -124,10 +123,12 @@ export const LaunchPage = () => {
 						revalidate({ retryCount });
 					}, 5000);
 				},
-			}}>
+			}}
+		>
 			<div
 				style={{ zIndex: 99999 + 1 }} // 1 more than the library
-				className="fixed inset-0 h-screen w-screen overflow-y-auto bg-white md:overflow-hidden">
+				className="fixed inset-0 h-screen w-screen overflow-y-auto bg-white md:overflow-hidden"
+			>
 				{page()}
 			</div>
 			<RetryNotice show={retrying} />

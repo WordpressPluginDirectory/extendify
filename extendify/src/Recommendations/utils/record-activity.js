@@ -1,8 +1,8 @@
 import { INSIGHTS_HOST } from '@constants';
 import {
-	selectInstalledPlugins,
 	selectActivePlugins,
 	selectAllRecommendations,
+	selectInstalledPlugins,
 } from '@recommendations/selectors/plugin-search';
 import { usePluginSearchStore } from '@recommendations/state/plugin-search';
 import { objectFromKeys } from '@recommendations/utils/object-from-keys';

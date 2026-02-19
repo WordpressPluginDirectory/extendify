@@ -1,4 +1,3 @@
-import { applyFilters, addFilter } from '@wordpress/hooks';
 import libraryTour from '@agent/tours/library-tour';
 import pageCreator from '@agent/tours/page-creator';
 import pageEditor from '@agent/tours/page-editor';
@@ -7,6 +6,7 @@ import pluginManagement from '@agent/tours/plugin-management';
 import siteAssistant from '@agent/tours/site-assistant';
 // import styleEditor from '@agent/tours/style-editor.js';
 import usersScreen from '@agent/tours/users-screen.js';
+import { addFilter, applyFilters } from '@wordpress/hooks';
 
 // import welcomeTour from '@agent/tours/welcome.js';
 

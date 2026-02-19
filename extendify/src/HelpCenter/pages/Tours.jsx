@@ -1,6 +1,3 @@
-import { __, isRTL } from '@wordpress/i18n';
-import { Icon, chevronRight, chevronLeft } from '@wordpress/icons';
-import classNames from 'classnames';
 import {
 	playIcon,
 	restartIcon,
@@ -9,6 +6,9 @@ import {
 import { useGlobalSyncStore } from '@help-center/state/globals-sync';
 import { useTourStore } from '@help-center/state/tours';
 import tours from '@help-center/tours/tours';
+import { __, isRTL } from '@wordpress/i18n';
+import { chevronLeft, chevronRight, Icon } from '@wordpress/icons';
+import classNames from 'classnames';
 
 export const ToursDashboard = ({ onOpen, classes }) => {
 	const { startTour } = useTourStore();
@@ -29,7 +29,8 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 					{
 						'rounded-b-none': availableTours.length > 0,
 					},
-				)}>
+				)}
+			>
 				<Icon
 					icon={toursIcon}
 					className="rounded-full border-0 bg-design-main fill-design-text p-2"
@@ -55,11 +56,12 @@ export const ToursDashboard = ({ onOpen, classes }) => {
 				<button
 					data-extendify-tour-id={availableTours[0].id}
 					type="button"
-					className="text-md m-0 flex w-full items-center justify-between gap-2 rounded-md rounded-t-none border border-t-0 border-gray-200 bg-transparent p-3 px-4 pl-[4.25rem] text-left font-medium text-gray-900 hover:bg-gray-100 rtl:pl-4 rtl:pr-[4.25rem] rtl:text-right"
+					className="text-base m-0 flex w-full items-center justify-between gap-2 rounded-md rounded-t-none border border-t-0 border-gray-200 bg-transparent p-3 px-4 pl-[4.25rem] text-left font-medium text-gray-900 hover:bg-gray-100 rtl:pl-4 rtl:pr-[4.25rem] rtl:text-right"
 					onClick={() => {
 						setVisibility('minimized');
 						startTour(availableTours[0]);
-					}}>
+					}}
+				>
 					{__('Tour this page', 'extendify-local')}
 					<Icon
 						icon={playIcon}
@@ -79,7 +81,8 @@ export const Tours = () => {
 		<section className="p-4">
 			<ul
 				className="m-0 flex flex-col gap-2 p-0"
-				data-test="help-center-tours-items-list">
+				data-test="help-center-tours-items-list"
+			>
 				{Object.values(tours).map((tourData) => {
 					const { id, title } = tourData;
 					return (
@@ -90,7 +93,8 @@ export const Tours = () => {
 								onClick={() => {
 									setVisibility('minimized');
 									startTour(tourData);
-								}}>
+								}}
+							>
 								{title}
 								{wasCompleted(id) ? (
 									<Icon

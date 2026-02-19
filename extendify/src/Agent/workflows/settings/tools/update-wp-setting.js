@@ -1,5 +1,5 @@
-import apiFetch from '@wordpress/api-fetch';
 import { allowedSettings } from '@agent/workflows/settings/edit-wp-setting';
+import apiFetch from '@wordpress/api-fetch';
 
 export default async ({ settingName, newSettingValue }) => {
 	if (!allowedSettings.includes(settingName)) {

@@ -1,6 +1,6 @@
-import useSWRImmutable from 'swr/immutable';
 import { getSiteProfile } from '@launch/api/DataApi';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import useSWRImmutable from 'swr/immutable';
 
 export const useSiteProfile = () => {
 	const { siteInformation, businessInformation } = useUserSelectionStore();

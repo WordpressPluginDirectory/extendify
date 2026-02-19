@@ -1,5 +1,5 @@
-import { __, isRTL } from '@wordpress/i18n';
 import { waitUntilExists, waitUntilGone } from '@agent/lib/tour-helpers';
+import { __, isRTL } from '@wordpress/i18n';
 
 export default {
 	id: 'library-tour',
@@ -14,7 +14,7 @@ export default {
 					'post-new.php?post_type=page&ext-page-creator-close=1'
 				: window.extSharedData.adminUrl +
 					'post-new.php?post_type=page&ext-close=1',
-			window.extSharedData.adminUrl + 'post-new.php?post_type=page',
+			`${window.extSharedData.adminUrl}post-new.php?post_type=page`,
 		],
 	},
 	onStart: async () => {

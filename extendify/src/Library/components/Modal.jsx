@@ -1,9 +1,4 @@
-import { dispatch, select } from '@wordpress/data';
-import { useLayoutEffect, useEffect, useRef } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { Dialog } from '@headlessui/react';
-import { useActivityStore } from '@shared/state/activity';
-import { motion } from 'framer-motion';
 import { updateOption } from '@library/api/WPApi';
 import { ModalContent } from '@library/components/ModalContent';
 import { Sidebar } from '@library/components/sidebar/Sidebar';
@@ -12,6 +7,11 @@ import { useGlobalsStore } from '@library/state/global';
 import { useSiteSettingsStore } from '@library/state/site';
 import { useUserStore } from '@library/state/user';
 import { insertBlocks } from '@library/util/insert';
+import { useActivityStore } from '@shared/state/activity';
+import { dispatch, select } from '@wordpress/data';
+import { useEffect, useLayoutEffect, useRef } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { motion } from 'framer-motion';
 
 const isNewPage = window?.location?.pathname?.includes('post-new.php');
 
@@ -62,7 +62,7 @@ export const Modal = () => {
 			window.history.replaceState(
 				{},
 				'',
-				window.location.pathname + '?' + search.toString(),
+				`${window.location.pathname}?${search.toString()}`,
 			);
 		}
 	}, [setOpen, incrementActivity]);
@@ -94,8 +94,9 @@ export const Modal = () => {
 			className="extendify-library extendify-library-modal"
 			open={open}
 			static
-			onClose={() => undefined}>
-			<div className="absolute mx-auto h-full w-full md:p-8">
+			onClose={() => undefined}
+		>
+			<div className="absolute mx-auto h-full w-full md:p-8 inset-0">
 				<div
 					className="fixed inset-0 bg-black/30"
 					style={{ backdropFilter: 'blur(2px)' }}
@@ -107,7 +108,8 @@ export const Modal = () => {
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: 0, opacity: 0 }}
 					transition={{ duration: 0.3 }}
-					className="relative mx-auto h-full w-full max-w-screen-3xl bg-white shadow-2xl sm:flex sm:overflow-hidden">
+					className="relative mx-auto h-full w-full max-w-[1600px] bg-white shadow-2xl sm:flex sm:overflow-hidden"
+				>
 					<Dialog.Title className="sr-only">
 						{__('Design Patterns', 'extendify-local')}
 					</Dialog.Title>
@@ -120,7 +122,8 @@ export const Modal = () => {
 						/>
 						<div
 							id="extendify-library-patterns-list"
-							className="flex-grow overflow-y-auto">
+							className="grow overflow-y-auto"
+						>
 							<ModalContent
 								insertPattern={insertPattern}
 								category={category}

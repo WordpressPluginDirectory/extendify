@@ -1,7 +1,7 @@
-import { resizeImage } from '@shared/utils/resize-image';
-import useSWRImmutable from 'swr/immutable';
 import { getSiteLogo } from '@launch/api/DataApi';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
+import { resizeImage } from '@shared/utils/resize-image';
+import useSWRImmutable from 'swr/immutable';
 
 export const useSiteLogo = () => {
 	const { siteProfile, loading: profileLoading } = useSiteProfile();

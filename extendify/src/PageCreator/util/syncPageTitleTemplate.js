@@ -1,6 +1,6 @@
+import { updatePageTitlePattern } from '@page-creator/api/WPApi';
 import apiFetch from '@wordpress/api-fetch';
 import { decodeEntities } from '@wordpress/html-entities';
-import { updatePageTitlePattern } from '@page-creator/api/WPApi';
 
 /**
  * Overwrite the theme’s default “page-with-title” template with the

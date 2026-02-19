@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from '@wordpress/element';
 import { INSIGHTS_HOST } from '@constants';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import { useEffect, useRef, useState } from '@wordpress/element';
 
 // Dev note: This entire section is opt-in only when partnerID is set as a constant
 export const useTelemetry = () => {
@@ -168,7 +168,9 @@ export const useTelemetry = () => {
 		}, timeout);
 		return () => {
 			running.current = false;
-			[id, innerId].forEach((i) => window.clearTimeout(i));
+			[id, innerId].forEach((i) => {
+				window.clearTimeout(i);
+			});
 		};
 	}, [
 		selectedPages,

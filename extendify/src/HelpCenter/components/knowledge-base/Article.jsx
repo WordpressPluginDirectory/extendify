@@ -1,10 +1,10 @@
-import apiFetch from '@wordpress/api-fetch';
-import { Spinner } from '@wordpress/components';
-import { useState, useEffect, useRef } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import parse from 'html-react-parser';
 import { useSupportArticle } from '@help-center/hooks/useSupportArticles';
 import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base';
+import apiFetch from '@wordpress/api-fetch';
+import { Spinner } from '@wordpress/components';
+import { useEffect, useRef, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import parse from 'html-react-parser';
 
 export const Article = () => {
 	const { articles, pushArticle, popArticle, updateTitle } =
@@ -159,7 +159,8 @@ export const Article = () => {
 		<article
 			ref={articleRef}
 			className="extendify-documentation w-full"
-			data-test="kb-article-content">
+			data-test="kb-article-content"
+		>
 			<h1 className="m-0 text-3xl">{title}</h1>
 			{article?.content && parse(article?.content)}
 		</article>

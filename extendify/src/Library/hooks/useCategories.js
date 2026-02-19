@@ -1,5 +1,5 @@
-import { useState } from '@wordpress/element';
 import { PATTERNS_HOST } from '@constants';
+import { useState } from '@wordpress/element';
 import useSWRImmutable from 'swr/immutable';
 
 const fetcher = async () => {

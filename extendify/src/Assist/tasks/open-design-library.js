@@ -1,6 +1,6 @@
-import { __ } from '@wordpress/i18n';
 import { DesignLibraryMarkup } from '@assist/svg';
 import { hasPageCreatorEnabled } from '@help-center/lib/utils';
+import { __ } from '@wordpress/i18n';
 
 export default {
 	slug: 'design-library',

@@ -1,9 +1,9 @@
+import { magic, magicAnimated } from '@agent/icons';
+import { useGlobalStore } from '@agent/state/global';
 import { Button } from '@wordpress/components';
-import { useEffect, useState, useRef } from '@wordpress/element';
+import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
-import { magicAnimated, magic } from '@agent/icons';
-import { useGlobalStore } from '@agent/state/global';
 
 export const PostEditor = () => {
 	const { toggleOpen, open, isMobile } = useGlobalStore();
@@ -44,11 +44,13 @@ export const PostEditor = () => {
 				if (open) setAnimate(true);
 				toggleOpen();
 			}}
-			aria-label={__('Open Agent', 'extendify-local')}>
+			aria-label={__('Open Agent', 'extendify-local')}
+		>
 			<span
 				className={classNames('px-1 leading-none', {
 					'extendify-gradient-animation': animate,
-				})}>
+				})}
+			>
 				{__('AI Agent', 'extendify-local')}
 			</span>
 		</Button>

@@ -1,10 +1,10 @@
+import { recordPluginActivity } from '@shared/api/DataApi';
+import { activatePlugin, installPlugin } from '@shared/api/wp';
+import { useActivityStore } from '@shared/state/activity';
 import { Button } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
-import { Icon, check, warning } from '@wordpress/icons';
-import { recordPluginActivity } from '@shared/api/DataApi';
-import { installPlugin, activatePlugin } from '@shared/api/wp';
-import { useActivityStore } from '@shared/state/activity';
+import { caution, check, Icon } from '@wordpress/icons';
 
 export const RecommendationCard = ({ recommendation }) => {
 	if (recommendation.pluginSlug) {
@@ -26,10 +26,11 @@ const LinkCard = ({ recommendation }) => {
 			)}
 			onClick={() => incrementActivity(`recommendations-${slug}`)}
 			target="_blank"
-			className="cursor-pointer rounded border border-gray-200 bg-transparent p-4 text-left text-base no-underline hover:border-design-main hover:bg-gray-50 rtl:text-right">
+			className="cursor-pointer rounded-sm border border-gray-200 bg-transparent p-4 text-left text-base no-underline hover:border-design-main hover:bg-gray-50 rtl:text-right"
+		>
 			<div className="h-full w-full">
 				<img
-					className="h-8 w-8 rounded fill-current"
+					className="h-8 w-8 rounded-sm fill-current"
 					alt={
 						by
 							? /* translators: %s: The name of the company/author */
@@ -50,12 +51,20 @@ const InstallCard = ({ recommendation }) => {
 	const { by, slug, description, image, title, pluginSlug } = recommendation;
 	const { incrementActivity } = useActivityStore();
 	return (
+		// biome-ignore lint: keep button
 		<div
+			role="button"
+			tabIndex={0}
 			onClick={() => incrementActivity(`recommendations-install-${slug}`)}
-			className="rounded border border-gray-200 bg-transparent p-4 text-left text-base rtl:text-right">
+			onKeyDown={(e) => {
+				if (!(e.key === 'Enter' || e.key === ' ')) return;
+				incrementActivity(`recommendations-install-${slug}`);
+			}}
+			className="rounded-sm border border-gray-200 bg-transparent p-4 text-left text-base rtl:text-right"
+		>
 			<div className="h-full w-full">
 				<img
-					className="h-8 w-8 rounded fill-current"
+					className="h-8 w-8 rounded-sm fill-current"
 					alt={
 						by ? sprintf(__('Logo for %s', 'extendify-local'), by) : undefined
 					}
@@ -109,27 +118,25 @@ const InstallButton = ({ slug }) => {
 
 	if (status === 'error') {
 		return (
-			<>
-				<p
-					className="flex items-center fill-wp-alert-red text-wp-alert-red"
-					style={{ fontSize: '13px' }}>
-					<Icon icon={warning} />
-					{__('Error', 'extendify-local')}
-				</p>
-			</>
+			<p
+				className="flex items-center fill-wp-alert-red text-wp-alert-red"
+				style={{ fontSize: '13px' }}
+			>
+				<Icon icon={caution} />
+				{__('Error', 'extendify-local')}
+			</p>
 		);
 	}
 
 	if (status === 'active') {
 		return (
-			<>
-				<p
-					className="flex items-center fill-wp-alert-green text-wp-alert-green"
-					style={{ fontSize: '13px' }}>
-					<Icon icon={check} />
-					{__('Active', 'extendify-local')}
-				</p>
-			</>
+			<p
+				className="flex items-center fill-wp-alert-green text-wp-alert-green"
+				style={{ fontSize: '13px' }}
+			>
+				<Icon icon={check} />
+				{__('Active', 'extendify-local')}
+			</p>
 		);
 	}
 
@@ -141,7 +148,8 @@ const InstallButton = ({ slug }) => {
 				variant="secondary"
 				size="compact"
 				disabled={installing}
-				isBusy={installing}>
+				isBusy={installing}
+			>
 				{installing
 					? __('Activating...', 'extendify-local')
 					: __('Activate', 'extendify-local')}
@@ -156,7 +164,8 @@ const InstallButton = ({ slug }) => {
 			variant="secondary"
 			size="compact"
 			disabled={installing}
-			isBusy={installing}>
+			isBusy={installing}
+		>
 			{installing
 				? __('Installing...', 'extendify-local')
 				: __('Install Now', 'extendify-local')}

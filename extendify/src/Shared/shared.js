@@ -1,5 +1,5 @@
 import domReady from '@wordpress/dom-ready';
-import '@shared/app.css';
+import '@shared/shared.css';
 import { EditPageToolTip } from '@shared/components/EditPageToolTip';
 import '@shared/lib/api-fetch';
 import { render } from '@shared/lib/dom';
@@ -29,6 +29,8 @@ domReady(() => {
 	requestAnimationFrame(() => {
 		requestAnimationFrame(() => {
 			window.dispatchEvent(new CustomEvent('extendify-launch-success'));
+			// Open the Agent if not open
+			window.dispatchEvent(new CustomEvent('extendify-agent:open'));
 		});
 	});
 	if (showAIAgents) return;

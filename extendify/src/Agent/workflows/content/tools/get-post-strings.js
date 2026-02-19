@@ -28,9 +28,9 @@ const stripHtml = (html) =>
 const extractAltAndTitleFromHtml = (html) => {
 	const matches = [];
 	const altMatch = html.match(/alt="([^"]*)"/);
-	if (altMatch && altMatch[1]) matches.push(altMatch[1].trim());
+	if (altMatch?.[1]) matches.push(altMatch[1].trim());
 	const titleMatch = html.match(/title="([^"]*)"/);
-	if (titleMatch && titleMatch[1]) matches.push(titleMatch[1].trim());
+	if (titleMatch?.[1]) matches.push(titleMatch[1].trim());
 	return matches;
 };
 

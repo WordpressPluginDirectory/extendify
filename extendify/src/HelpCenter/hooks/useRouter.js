@@ -1,13 +1,13 @@
-import apiFetch from '@wordpress/api-fetch';
-import { useCallback, useEffect } from '@wordpress/element';
-import { safeParseJson } from '@shared/lib/parsing';
-import { useActivityStore } from '@shared/state/activity';
-import { create } from 'zustand';
-import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 import { routes as aiRoutes } from '@help-center/pages/AIChat';
 import { routes as dashRoutes } from '@help-center/pages/Dashboard';
 import { routes as kbRoutes } from '@help-center/pages/KnowledgeBase';
 import { routes as tourRoutes } from '@help-center/pages/Tours';
+import { safeParseJson } from '@shared/lib/parsing';
+import { useActivityStore } from '@shared/state/activity';
+import apiFetch from '@wordpress/api-fetch';
+import { useCallback, useEffect } from '@wordpress/element';
+import { create } from 'zustand';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const pages = [...dashRoutes, ...kbRoutes, ...tourRoutes, ...aiRoutes];
 
@@ -93,11 +93,11 @@ export const useRouter = () => {
 		current,
 		CurrentPage: useCallback(
 			() => (
-				<div role="region" aria-live="polite" className="h-full">
+				<section aria-live="polite" className="h-full">
 					{/* Announce to SR on change */}
 					<h1 className="sr-only">{current?.title}</h1>
 					<Component />
-				</div>
+				</section>
 			),
 			[current],
 		),

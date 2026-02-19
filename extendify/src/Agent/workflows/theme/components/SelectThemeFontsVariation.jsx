@@ -1,9 +1,9 @@
-import { Tooltip } from '@wordpress/components';
-import { useMemo, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { ErrorMessage } from '@agent/components/ErrorMessage';
 import { useFontVariationOverride } from '@agent/hooks/useFontVariationOverride';
 import { useThemeFontsVariations } from '@agent/hooks/useThemeFontsVariations';
+import { useChatStore } from '@agent/state/chat';
+import { Tooltip } from '@wordpress/components';
+import { useEffect, useMemo, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 	const [css, setCss] = useState('');
@@ -15,11 +15,13 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 		() => (variations ? variations.sort(() => Math.random() - 0.5) : []),
 		[variations],
 	);
+	const { addMessage, messages } = useChatStore();
 
 	const handleConfirm = () => {
 		if (!selected) return;
 		onConfirm({
 			data: { variation: variations.find((v) => v.title === selected) },
+			shouldRefreshPage: true,
 		});
 	};
 
@@ -27,6 +29,20 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 		undoChange();
 		onCancel();
 	};
+
+	useEffect(() => {
+		if (isLoading || !noVariations) return;
+		const timer = setTimeout(() => onCancel(), 100);
+		// translators: A chat message shown to the user
+		const content = __(
+			'We were unable to find any variations for your theme',
+			'extendify-local',
+		);
+		const last = messages.at(-1)?.details?.content;
+		if (content === last) return () => clearTimeout(timer);
+		addMessage('message', { role: 'assistant', content, error: true });
+		return () => clearTimeout(timer);
+	}, [addMessage, onCancel, noVariations, messages, isLoading]);
 
 	if (isLoading) {
 		return (
@@ -36,21 +52,7 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 		);
 	}
 
-	if (noVariations) {
-		return (
-			<ErrorMessage>
-				<div className="font-semibold">
-					{__('No font variations found', 'extendify-local')}
-				</div>
-				<div className="">
-					{__(
-						'We were unable to find any variations for your theme.',
-						'extendify-local',
-					)}
-				</div>
-			</ErrorMessage>
-		);
-	}
+	if (noVariations) return null;
 
 	return (
 		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
@@ -59,7 +61,7 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 					{shuffled?.slice(0, 10)?.map(({ title, css, styles }) => (
 						<Tooltip key={title} text={title} placement="top">
 							<button
-								aria-selected={selected === title}
+								aria-label={title}
 								type="button"
 								style={{ fontFamily: getFont(styles)?.normal }}
 								className={`relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-2 text-center text-sm ${
@@ -68,7 +70,8 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 								onClick={() => {
 									setSelected(title);
 									setCss(css);
-								}}>
+								}}
+							>
 								<div className="max-w-fit content-stretch items-center justify-center rounded-lg text-2xl rtl:space-x-reverse">
 									<span style={{ fontFamily: getFont(styles)?.heading }}>
 										A
@@ -83,15 +86,17 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 			<div className="flex justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={handleCancel}>
+					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleCancel}
+				>
 					{__('Cancel', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
+					className="w-full rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
 					disabled={!selected}
-					onClick={handleConfirm}>
+					onClick={handleConfirm}
+				>
 					{__('Save', 'extendify-local')}
 				</button>
 			</div>

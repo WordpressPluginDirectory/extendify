@@ -1,5 +1,5 @@
-import { render } from '@shared/lib/dom';
 import { LaunchPage } from '@launch/LaunchPage';
+import { render } from '@shared/lib/dom';
 import '@launch/launch.css';
 
 requestAnimationFrame(() => {

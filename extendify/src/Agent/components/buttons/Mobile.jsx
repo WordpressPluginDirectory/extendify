@@ -1,8 +1,8 @@
+import { magic } from '@agent/icons';
+import { useGlobalStore } from '@agent/state/global';
 import { useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { chevronUp, Icon } from '@wordpress/icons';
-import { magic } from '@agent/icons';
-import { useGlobalStore } from '@agent/state/global';
 
 export const Mobile = () => {
 	const { isMobile, minimized, setMinimized } = useGlobalStore();
@@ -35,7 +35,8 @@ export const Mobile = () => {
 			type="button"
 			className="m-0 flex w-full items-center justify-between gap-2 bg-gray-900 px-4 py-3 font-sans text-white shadow-[0_-1px_0_0_rgba(255,255,255,0.05)]"
 			onClick={minimize}
-			aria-label={__('Open Agent', 'extendify-local')}>
+			aria-label={__('Open Agent', 'extendify-local')}
+		>
 			<div className="flex gap-3">
 				<div className="flex h-10 w-10 items-center justify-center rounded-full bg-wp-theme-main">
 					<Icon icon={magic} size={24} />

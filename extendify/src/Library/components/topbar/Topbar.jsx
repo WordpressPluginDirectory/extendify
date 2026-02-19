@@ -1,5 +1,5 @@
-import { __, sprintf } from '@wordpress/i18n';
 import { CloseButton } from '@library/components/topbar/CloseButton';
+import { __, sprintf } from '@wordpress/i18n';
 
 export const Topbar = ({ openOnNewPage, updateUserOption, onClose }) => {
 	return (
@@ -11,10 +11,11 @@ export const Topbar = ({ openOnNewPage, updateUserOption, onClose }) => {
 					// translators: %s: Extendify Library term
 					__('Toggle %s on new pages', 'extendify-local'),
 					'Extendify Library',
-				)}>
+				)}
+			>
 				<input
 					id="extendify-open-on-new-pages"
-					className="m-0 rounded-sm border border-solid border-gray-900"
+					className="m-0 rounded-xs border border-solid border-gray-900"
 					type="checkbox"
 					checked={openOnNewPage}
 					onChange={(e) => updateUserOption('openOnNewPage', e.target.checked)}

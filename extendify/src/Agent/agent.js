@@ -1,15 +1,24 @@
-import domReady from '@wordpress/dom-ready';
+import { Agent } from '@agent/Agent.jsx';
 import { render } from '@shared/lib/dom';
 import { isOnLaunch } from '@shared/lib/utils';
-import { Agent } from '@agent/Agent.jsx';
+import domReady from '@wordpress/dom-ready';
 import '@agent/agent.css';
 import '@agent/buttons';
 import { GuidedTour } from '@agent/components/GuidedTour';
 import { ReOpenToolTip } from '@agent/components/tooltip/ReOpenToolTip';
 
-const isInsideIframe = () => !!document.querySelector('#plugin-information');
+const isInsideIframe = () => !!document.querySelector('body.iframe');
 
 domReady(() => {
+	// tours
+	const tourId = 'extendify-agent-tour';
+	if (document.getElementById(tourId)) return;
+	const tour = Object.assign(document.createElement('div'), {
+		className: 'extendify-agent-tour',
+		id: tourId,
+	});
+	render(<GuidedTour />, tour);
+
 	const bg =
 		// admin area
 		document.getElementById('wpwrap') ||
@@ -24,14 +33,6 @@ domReady(() => {
 	});
 	document.body.appendChild(agent);
 	render(<Agent />, agent);
-	// tours
-	const tourId = 'extendify-agent-tour';
-	if (document.getElementById(tourId)) return;
-	const tour = Object.assign(document.createElement('div'), {
-		className: 'extendify-agent-tour',
-		id: tourId,
-	});
-	render(<GuidedTour />, tour);
 
 	// tooltip
 	const div = Object.assign(document.createElement('div'), {

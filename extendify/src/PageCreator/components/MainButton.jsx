@@ -1,12 +1,12 @@
+import { ConfirmationModal } from '@page-creator/components/ConfirmationModal';
+import { PageGen } from '@page-creator/icons/ai-gen';
+import { useGlobalsStore } from '@page-creator/state/global';
+import { useActivityStore } from '@shared/state/activity';
 import { useSelect } from '@wordpress/data';
 import { store as editorStore } from '@wordpress/editor';
 import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Icon } from '@wordpress/icons';
-import { ConfirmationModal } from '@page-creator/components/ConfirmationModal';
-import { PageGen } from '@page-creator/icons/ai-gen';
-import { useGlobalsStore } from '@page-creator/state/global';
-import { useActivityStore } from '@shared/state/activity';
 
 export const MainButton = () => {
 	const { setOpen } = useGlobalsStore();
@@ -36,11 +36,17 @@ export const MainButton = () => {
 					confirmationOpen={confirmationOpen}
 				/>
 			)}
-
+			{/* biome-ignore lint: allow button role here */}
 			<div
 				role="button"
 				onClick={handleClick}
-				className="components-button has-icon is-primary ml-3 h-8 min-w-0 cursor-pointer px-2 xs:h-9 sm:ml-2 xl:pr-3">
+				onKeyDown={(e) => {
+					if (!(e.key === 'Enter' || e.key === ' ')) return;
+					handleClick();
+				}}
+				tabIndex={0}
+				className="components-button has-icon is-primary ml-3 h-8 min-w-0 cursor-pointer px-2 xs:h-9 sm:ml-2 xl:pr-3"
+			>
 				<Icon icon={PageGen} size={24} className="fill-none" />
 				<span className="ml-1 hidden xl:inline">
 					{__('AI Page Generator', 'extendify-local')}

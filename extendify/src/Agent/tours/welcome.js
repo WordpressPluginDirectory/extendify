@@ -7,9 +7,8 @@ export default {
 	settings: {
 		allowOverflow: true,
 		startFrom: [
-			window.extSharedData.adminUrl + 'index.php',
-			window.extSharedData.adminUrl +
-				'admin.php?page=extendify-assist#dashboard',
+			`${window.extSharedData.adminUrl}index.php`,
+			`${window.extSharedData.adminUrl}admin.php?page=extendify-assist#dashboard`,
 		],
 		minBoxWidth: '360px',
 	},

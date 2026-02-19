@@ -1,8 +1,8 @@
-import { useState, useLayoutEffect } from '@wordpress/element';
+import { Logo } from '@assist/svg';
+import { useLayoutEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
 import { colord } from 'colord';
-import { Logo } from '@assist/svg';
 
 export const Header = () => {
 	const [contrastBg, setContrastBg] = useState();
@@ -38,16 +38,18 @@ export const Header = () => {
 						id="assist-menu-bar"
 						className={classNames(
 							'flex-wrap items-center gap-4 lg:flex lg:w-auto',
-						)}>
+						)}
+					>
 						<a
 							style={{
 								borderColor: contrastBg,
 								'--tw-ring-color': focusColor,
 								'--ext-override': focusColor,
 							}}
-							className="block cursor-pointer rounded-sm border border-gray-500 bg-white px-4 py-2 text-center text-sm text-gray-900 no-underline transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-900 focus:ring-offset-1 lg:inline-block lg:rounded-sm"
+							className="block cursor-pointer rounded-xs border border-gray-500 bg-white px-4 py-2 text-center text-sm text-gray-900 no-underline transition-colors duration-200 hover:bg-gray-100 focus:outline-hidden focus:ring focus:ring-gray-900 focus:ring-offset-1 lg:inline-block lg:rounded-xs"
 							href={window.extSharedData.homeUrl}
-							target="_blank">
+							target="_blank"
+						>
 							{__('View site', 'extendify-local')}
 						</a>
 					</div>

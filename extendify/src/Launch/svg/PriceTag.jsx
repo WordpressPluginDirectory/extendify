@@ -1,4 +1,5 @@
 import { memo } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const PriceTag = (props) => {
 	const { className, ...otherProps } = props;
@@ -9,7 +10,9 @@ const PriceTag = (props) => {
 			viewBox="0 0 24 24"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...otherProps}>
+			{...otherProps}
+		>
+			<title>{__('Price Tag', 'extendify-local')}</title>
 			<path
 				opacity="0.3"
 				d="M20 11.414L10.707 20.707C10.518 20.896 10.267 21 10 21C9.733 21 9.482 20.896 9.293 20.707L3.293 14.707C3.104 14.518 3 14.267 3 14C3 13.733 3.104 13.482 3.293 13.293L12.586 4H20V11.414Z"

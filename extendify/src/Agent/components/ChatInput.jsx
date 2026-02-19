@@ -1,16 +1,17 @@
-import {
-	useState,
-	useRef,
-	useLayoutEffect,
-	useEffect,
-	useCallback,
-} from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { Icon, arrowUp } from '@wordpress/icons';
-import classNames from 'classnames';
 import { ChatTools } from '@agent/components/ChatTools';
+import { cancelRequest } from '@agent/icons';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
+import {
+	useCallback,
+	useEffect,
+	useLayoutEffect,
+	useRef,
+	useState,
+} from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { arrowUp, Icon } from '@wordpress/icons';
+import classNames from 'classnames';
 
 export const ChatInput = ({ disabled, handleSubmit }) => {
 	const textareaRef = useRef(null);
@@ -22,6 +23,9 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 	const { isMobile } = useGlobalStore();
 	const domTool =
 		getWorkflowsByFeature({ requires: ['block'] })?.length > 0 && !isMobile;
+	const INPUT_LIMIT = 1500;
+	const inputTrimmed = input.trim();
+	const overLimit = inputTrimmed.length > INPUT_LIMIT;
 
 	// resize the height of the textarea based on the content
 	const adjustHeight = useCallback(() => {
@@ -73,8 +77,8 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 	const submitForm = useCallback(
 		(e) => {
 			e?.preventDefault();
-			if (!input.trim()) return;
-			handleSubmit(input);
+			if (!input.trim() || overLimit) return;
+			handleSubmit(input.trim());
 			setHistory((prev) => {
 				// avoid duplicates
 				if (prev?.at(-1) === input) return prev;
@@ -88,7 +92,7 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 				textareaRef.current?.focus();
 			});
 		},
-		[input, handleSubmit, adjustHeight],
+		[input, handleSubmit, adjustHeight, overLimit],
 	);
 
 	const handleKeyDown = useCallback(
@@ -99,7 +103,7 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 				!event.nativeEvent.isComposing
 			) {
 				event.preventDefault();
-				submitForm();
+				if (!overLimit) submitForm();
 				return;
 			}
 			if (dirtyRef.current) return;
@@ -135,26 +139,33 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 			}
 			dirtyRef.current = true;
 		},
-		[history, historyIndex, submitForm],
+		[history, historyIndex, submitForm, overLimit],
 	);
 
+	const handleCancel = useCallback((e) => {
+		e.stopPropagation();
+		window.dispatchEvent(new CustomEvent('extendify-agent:cancel-workflow'));
+	}, []);
+
 	return (
+		// biome-ignore lint: allow onClick without keyboard
 		<form
 			onSubmit={submitForm}
 			onClick={() => textareaRef.current?.focus()}
 			className={classNames(
-				'relative flex w-full flex-col rounded border border-gray-300 focus-within:outline-design-main focus:rounded focus:border-design-main focus:ring-design-main',
+				'relative flex w-full flex-col rounded-sm border border-gray-300 focus-within:outline-design-main focus:rounded-sm focus:border-design-main focus:ring-design-main',
 				{
 					'bg-gray-300': disabled,
 					'bg-gray-50': !disabled,
 				},
-			)}>
+			)}
+		>
 			<textarea
 				ref={textareaRef}
 				id="extendify-agent-chat-textarea"
 				disabled={disabled}
 				className={classNames(
-					'flex max-h-[calc(75dvh)] min-h-10 w-full resize-none overflow-hidden bg-transparent px-2 pb-4 pt-2.5 text-base placeholder:text-gray-700 focus:shadow-none focus:outline-none disabled:opacity-50 md:text-sm',
+					'flex max-h-[calc(75dvh)] min-h-10 w-full resize-none overflow-y-auto bg-transparent px-2 pb-4 pt-2.5 text-base placeholder:text-gray-700 focus:shadow-none focus:outline-hidden disabled:opacity-50 md:text-sm border-none text-gray-900',
 				)}
 				placeholder={
 					block
@@ -165,6 +176,7 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 						: __('Ask anything', 'extendify-local')
 				}
 				rows="1"
+				// biome-ignore lint: Allow autofocus here
 				autoFocus
 				value={input}
 				onChange={(e) => {
@@ -176,18 +188,49 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 			/>
 			<div className="flex justify-between gap-4 px-2 pb-2">
 				{domTool ? <ChatTools disabled={disabled} /> : null}
-				<div className="ms-auto flex items-center">
-					<button
-						type="submit"
-						className="inline-flex h-fit items-center justify-center gap-2 whitespace-nowrap rounded-full border-0 bg-design-main p-0.5 text-sm font-medium text-white transition-colors focus-visible:ring-design-main disabled:opacity-20"
-						disabled={disabled || input.trim().length === 0}>
-						<Icon fill="currentColor" icon={arrowUp} size={24} />
-						<span className="sr-only">
-							{__('Send message', 'extendify-local')}
-						</span>
-					</button>
+				<div className="ms-auto flex items-center gap-2">
+					<span
+						className={classNames(
+							'text-xs font-medium',
+							overLimit ? 'text-red-600' : 'invisible',
+						)}
+						role="alert"
+					>
+						{overLimit && __('Message too long', 'extendify-local')}
+					</span>
+					<SubmitButton
+						disabled={disabled}
+						noInput={input.trim().length === 0}
+						overLimit={overLimit}
+						handleCancel={handleCancel}
+					/>
 				</div>
 			</div>
 		</form>
+	);
+};
+
+const SubmitButton = ({ disabled, noInput, overLimit, handleCancel }) => {
+	if (disabled) {
+		return (
+			<button
+				type="button"
+				onClick={handleCancel}
+				className="inline-flex h-fit items-center justify-center gap-2 whitespace-nowrap rounded-full border-0 bg-design-main p-1 text-sm font-medium text-white transition-colors focus-visible:ring-design-main disabled:opacity-20"
+			>
+				<Icon fill="currentColor" icon={cancelRequest} size={18} />
+				<span className="sr-only">{__('Cancel', 'extendify-local')}</span>
+			</button>
+		);
+	}
+	return (
+		<button
+			type="submit"
+			className="inline-flex h-fit items-center justify-center gap-2 whitespace-nowrap rounded-full border-0 bg-design-main p-0.5 text-sm font-medium text-white transition-colors focus-visible:ring-design-main disabled:opacity-20"
+			disabled={disabled || noInput || overLimit}
+		>
+			<Icon fill="currentColor" icon={arrowUp} size={24} />
+			<span className="sr-only">{__('Send message', 'extendify-local')}</span>
+		</button>
 	);
 };

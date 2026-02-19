@@ -19,7 +19,7 @@ class SiteNavigationController
     public static function init()
     {
         \add_filter('render_block', function ($block_content, $block) {
-            if ($block['blockName'] === 'core/navigation') {
+            if ($block['blockName'] === 'core/navigation' && array_key_exists('ref', $block['attrs'])) {
                 // Add the id of the menu to the menu itself
                 $block_content = str_replace(
                     '<nav',

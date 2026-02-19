@@ -1,5 +1,5 @@
-import apiFetch from '@wordpress/api-fetch';
 import { useWorkflowStore } from '@agent/state/workflows';
+import apiFetch from '@wordpress/api-fetch';
 
 export default async () => {
 	const { block } = useWorkflowStore.getState();

@@ -1,14 +1,14 @@
 import { __ } from '@wordpress/i18n';
 import {
-	Icon,
-	plugins,
-	styles,
-	post,
-	page,
-	header,
 	footer,
-	reusableBlock,
+	header,
+	Icon,
 	navigation,
+	page,
+	plugins,
+	post,
+	reusableBlock,
+	styles,
 } from '@wordpress/icons';
 import classNames from 'classnames';
 
@@ -87,36 +87,36 @@ export const QuickLinks = ({ className }) => {
 	];
 
 	return (
-		<>
-			<div
-				data-test="assist-quick-links-module"
-				id="assist-quick-links-module"
-				className={classNames(
-					className,
-					'h-full w-full rounded border border-gray-300 bg-white p-5 text-base lg:p-8',
-				)}>
-				<h2 className="mb-4 mt-0 text-lg font-semibold">
-					{__('Quick Links', 'extendify-local')}
-				</h2>
-				<div className="grid place-items-start gap-x-6 md:grid-flow-col md:grid-rows-2">
-					{quickLinks
-						.filter((item) => item.show)
-						.map((item) => (
-							<a
-								key={item.slug}
-								href={item.link}
-								title={item.title}
-								data-test={`assist-quick-links-module-${item.slug}`}
-								className="flex items-center justify-center py-1.5 text-sm text-gray-800 no-underline hover:text-design-main hover:underline hover:underline-offset-2">
-								<Icon
-									icon={item.icon}
-									className="mr-2 fill-current rtl:ml-2 rtl:mr-auto"
-								/>
-								<span className="mr-1">{item.title}</span>
-							</a>
-						))}
-				</div>
+		<div
+			data-test="assist-quick-links-module"
+			id="assist-quick-links-module"
+			className={classNames(
+				className,
+				'h-full w-full rounded-sm border border-gray-300 bg-white p-5 text-base lg:p-8',
+			)}
+		>
+			<h2 className="mb-4 mt-0 text-lg font-semibold">
+				{__('Quick Links', 'extendify-local')}
+			</h2>
+			<div className="grid place-items-start gap-x-6 md:grid-flow-col md:grid-rows-2">
+				{quickLinks
+					.filter((item) => item.show)
+					.map((item) => (
+						<a
+							key={item.slug}
+							href={item.link}
+							title={item.title}
+							data-test={`assist-quick-links-module-${item.slug}`}
+							className="flex items-center justify-center py-1.5 text-sm text-gray-800 no-underline hover:text-design-main hover:underline hover:underline-offset-2"
+						>
+							<Icon
+								icon={item.icon}
+								className="mr-2 fill-current rtl:ml-2 rtl:mr-auto"
+							/>
+							<span className="mr-1">{item.title}</span>
+						</a>
+					))}
 			</div>
-		</>
+		</div>
 	);
 };

@@ -1,11 +1,11 @@
+import { Dialog } from '@headlessui/react';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 import apiFetch from '@wordpress/api-fetch';
 import { Spinner } from '@wordpress/components';
-import { useEffect, useState, forwardRef, useRef } from '@wordpress/element';
+import { forwardRef, useEffect, useRef, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
-import { Dialog } from '@headlessui/react';
 import classnames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const RestartLaunchModal = ({ setPage }) => {
 	const oldPages = window.extOnbData.resetSiteInformation.pagesIds ?? [];
@@ -21,8 +21,9 @@ export const RestartLaunchModal = ({ setPage }) => {
 	const [open, setOpen] = useState(false);
 	const [processing, setProcessing] = useState(false);
 	const initialFocus = useRef(null);
-	const handleExit = () =>
-		(window.location.href = `${window.extSharedData.adminUrl}admin.php?page=extendify-assist`);
+	const handleExit = () => {
+		window.location.href = `${window.extSharedData.adminUrl}admin.php?page=extendify-assist`;
+	};
 
 	const handleOk = async () => {
 		setProcessing(true);
@@ -136,7 +137,8 @@ export const RestartLaunchModal = ({ setPage }) => {
 					exit={{ opacity: 0 }}
 					data-test="confirmation-launch"
 					className="extendify-launch extendify-launch-modal"
-					onClose={() => null}>
+					onClose={() => null}
+				>
 					<div className="absolute top-0 mx-auto flex h-screen w-full items-center justify-center md:p-8">
 						<div
 							className="fixed inset-0 bg-black/30"
@@ -145,15 +147,16 @@ export const RestartLaunchModal = ({ setPage }) => {
 						/>
 						<div
 							style={{ zIndex: 99999 + 100 }}
-							className="relative mx-6 max-w-screen-3xl rounded bg-white shadow-2xl sm:flex sm:overflow-hidden">
+							className="relative mx-6 max-w-[1600px] rounded-sm bg-white shadow-2xl sm:flex sm:overflow-hidden"
+						>
 							<Dialog.Panel className="flex flex-col">
 								<Dialog.Title className="m-0 flex items-center py-6 pl-8 pr-7 text-2xl font-bold text-gray-900">
 									{__('Start over?', 'extendify-local')}
 								</Dialog.Title>
-								<div className="relative max-w-screen-sm px-8 py-0 text-left font-normal rtl:text-right">
+								<div className="relative max-w-[600px] px-8 py-0 text-left font-normal rtl:text-right">
 									<p className="m-0 mb-2 p-0 text-base">
 										{__(
-											'Go through the onboarding process again to create a new site.',
+											'Go through the AI website creation process again to create a new site.',
 											'extendify-local',
 										)}
 									</p>
@@ -175,16 +178,18 @@ export const RestartLaunchModal = ({ setPage }) => {
 										data-test="modal-exit-button"
 										onClick={handleExit}
 										disabled={processing}
-										className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
+										className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50"
+									>
 										{__('Exit', 'extendify-local')}
 									</NavigationButton>
 									<NavigationButton
 										onClick={handleOk}
 										disabled={processing}
 										className="border-design-main bg-design-main text-design-text"
-										data-test="modal-continue-button">
+										data-test="modal-continue-button"
+									>
 										{!processing ? (
-											__('Continue', 'extendify-local')
+											__('Delete and start over', 'extendify-local')
 										) : (
 											<div className="flex items-center justify-center">
 												<Spinner />
@@ -208,13 +213,14 @@ const NavigationButton = forwardRef((props, ref) => {
 			ref={ref}
 			{...props}
 			className={classnames(
-				'button-focus flex items-center rounded border px-6 py-3 leading-6',
+				'button-focus flex items-center rounded-sm border px-6 py-3 leading-6',
 				{
 					'opacity-50': props.disabled,
 				},
 				props.className,
 			)}
-			type="button">
+			type="button"
+		>
 			{props.children}
 		</button>
 	);

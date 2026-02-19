@@ -1,9 +1,9 @@
+import { KB_HOST } from '@constants';
+import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base.js';
 import { useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { search as sIcon, Icon, closeSmall } from '@wordpress/icons';
-import { KB_HOST } from '@constants';
+import { closeSmall, Icon, search as sIcon } from '@wordpress/icons';
 import classNames from 'classnames';
-import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base.js';
 
 export const SearchForm = ({ onChange }) => {
 	const { searchTerm, clearSearchTerm, reset } = useKnowledgeBaseStore();
@@ -14,13 +14,15 @@ export const SearchForm = ({ onChange }) => {
 		<form
 			method="get"
 			onSubmit={(e) => e.preventDefault()}
-			className="relative h-10 w-full">
+			className="relative h-10 w-full"
+		>
 			<label htmlFor="ext-help-center-search" className="sr-only">
 				{__('Search for articles', 'extendify-local')}
 			</label>
 			<input
 				ref={searchRef}
 				name="ext-kb-search"
+				// biome-ignore lint: allow autofocus
 				autoFocus
 				autoCapitalize="off"
 				id="ext-help-center-search"

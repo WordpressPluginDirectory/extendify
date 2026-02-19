@@ -213,7 +213,28 @@ class AdminPageRouter
             \update_option('permalink_structure', '/%postname%/');
             \update_option('extendify_needs_rewrite_flush', true);
 
-            \wp_safe_redirect(\admin_url() . 'admin.php?page=extendify-launch');
+            $allowed_launch_params = [
+                'objective',
+                'title',
+                'description',
+                'structure',
+                'tone',
+                'skip'
+            ];
+            $query_params = [
+                'page' => 'extendify-launch',
+            ];
+
+            foreach ($allowed_launch_params as $param) {
+                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                $value = sanitize_text_field(wp_unslash($_GET[$param] ?? ''));
+                if (!empty($value)) {
+                    $query_params[$param] = $value;
+                }
+            }
+
+            $redirect_url = \add_query_arg($query_params, \admin_url('admin.php'));
+            \wp_safe_redirect($redirect_url);
         }
     }
 

@@ -1,13 +1,8 @@
 import apiFetch from '@wordpress/api-fetch';
+import { __, sprintf } from '@wordpress/i18n';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
-/**
- * Implementation of a custom storage engine for Zustand's persist middleware.
- * It replicates the Storage interface defined in https://developer.mozilla.org/en-US/docs/Web/API/Storage
- *
- * This storage uses a WordPress custom endpoint to persist the consent in `wp_usermeta`.
- */
 const storage = {
 	setItem: (_name, store) =>
 		apiFetch({
@@ -17,15 +12,25 @@ const storage = {
 		}),
 };
 
+const defaultConsentTerms = sprintf(
+	// translators: %1$s and %2$s are opening and closing anchor tags.
+	__(
+		'By using AI features, you agree with the %1$sTerms of Use and Privacy Policy%2$s.',
+		'extendify-local',
+	),
+	'<a href="https://hosting-ai-terms.com/" target="_blank">',
+	'</a>',
+);
+
 const state = (set, get) => ({
 	showAIConsent: window.extSharedData?.showAIConsent ?? false,
-	consentTermsCustom: window.extSharedData?.consentTermsCustom ?? '',
+	consentTerms: window.extSharedData?.consentTermsCustom || defaultConsentTerms,
 	userGaveConsent: window.extSharedData?.userGaveConsent ?? false,
 	setUserGaveConsent: (userGaveConsent) => set({ userGaveConsent }),
 	// Context refers to the feature where the function is being used.
 	shouldShowAIConsent: (context) => {
-		const { showAIConsent, consentTermsCustom, userGaveConsent } = get();
-		const enabled = showAIConsent && consentTermsCustom;
+		const { showAIConsent, consentTerms, userGaveConsent } = get();
+		const enabled = showAIConsent && consentTerms;
 		const display = {
 			launch: enabled,
 			draft: enabled && !userGaveConsent,

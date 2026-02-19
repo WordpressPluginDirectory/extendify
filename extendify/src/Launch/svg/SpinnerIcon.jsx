@@ -1,4 +1,5 @@
 import { memo } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const SpinnerIcon = (props) => {
 	const { className, ...otherProps } = props;
@@ -11,7 +12,9 @@ const SpinnerIcon = (props) => {
 			viewBox="0 0 100 100"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...otherProps}>
+			{...otherProps}
+		>
+			<title>{__('Spinner Icon', 'extendify-local')}</title>
 			<path d="M87.5 48.8281H75V51.1719H87.5V48.8281Z" fill="black" />
 			<path d="M25 48.8281H12.5V51.1719H25V48.8281Z" fill="black" />
 			<path d="M51.1719 75H48.8281V87.5H51.1719V75Z" fill="black" />

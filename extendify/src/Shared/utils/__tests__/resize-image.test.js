@@ -18,7 +18,7 @@ describe('resizeImage', () => {
 			drawImage: jest.fn(),
 		});
 
-		HTMLCanvasElement.prototype.toBlob = function (callback, type) {
+		HTMLCanvasElement.prototype.toBlob = (callback, type) => {
 			callback(new Blob(['mock'], { type }));
 		};
 

@@ -1,7 +1,7 @@
-import { store as blockDirectoryStore } from '@wordpress/block-directory';
-import { dispatch } from '@wordpress/data';
 import { downloadableBlocksManifest } from '@page-creator/lib/blocks';
 import { useInstalledPluginsCache } from '@page-creator/state/plugins-cache';
+import { store as blockDirectoryStore } from '@wordpress/block-directory';
+import { dispatch } from '@wordpress/data';
 
 const supportedBlocks = ['contact-form-7', 'simplybook'];
 

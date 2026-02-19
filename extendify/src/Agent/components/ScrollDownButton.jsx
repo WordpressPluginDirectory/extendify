@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { Icon, arrowDown } from '@wordpress/icons';
+import { arrowDown, Icon } from '@wordpress/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export const ScrollDownButton = ({ canScrollDown, onClick }) => {
@@ -15,7 +15,8 @@ export const ScrollDownButton = ({ canScrollDown, onClick }) => {
 						transition={{ duration: 0.2, exit: { duration: 0 } }}
 						onClick={onClick}
 						type="button"
-						className="pointer-events-auto flex h-fit items-center justify-center gap-2 whitespace-nowrap rounded-full border border-gray-500 bg-white/90 p-1 text-sm font-medium text-design-main shadow-lg transition-colors hover:bg-gray-100 focus-visible:ring-design-main disabled:pointer-events-none">
+						className="pointer-events-auto flex h-fit items-center justify-center gap-2 whitespace-nowrap rounded-full border border-gray-500 bg-white/90 p-1 text-sm font-medium text-design-main shadow-lg transition-colors hover:bg-gray-100 focus-visible:ring-design-main disabled:pointer-events-none"
+					>
 						<Icon fill="currentColor" icon={arrowDown} size={20} />
 						<span className="sr-only">
 							{__('Scroll down', 'extendify-local')}

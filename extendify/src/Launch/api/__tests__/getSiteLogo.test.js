@@ -9,15 +9,10 @@ describe('getSiteLogo', () => {
 	beforeEach(() => {
 		global.fetch = jest.fn();
 
-		Object.defineProperty(global, 'window', {
-			value: {
-				extSharedData: {
-					siteId: 'test-site',
-					partnerId: 'test-partner',
-					showAILogo: true,
-				},
-			},
-			writable: true,
+		window.extSharedData = Object.assign({}, window.extSharedData, {
+			siteId: 'test-site',
+			partnerId: 'test-partner',
+			showAILogo: true,
 		});
 	});
 

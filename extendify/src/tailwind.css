@@ -1,0 +1,189 @@
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		box-sizing: border-box;
+		border: 0px solid transparent;
+	}
+	button:not(:disabled) {
+		@apply cursor-pointer!;
+	}
+}
+
+@theme {
+	--color-gray-50: #fafafa;
+	--color-gray-100: #f0f0f0;
+	--color-gray-150: #eaeaea; /* This wasn't a variable but I saw it on buttons */
+	--color-gray-200: #e0e0e0; /* Used sparingly for light borders. */
+	--color-gray-300: #dddddd; /* Used for most borders. */
+	--color-gray-400: #cccccc;
+	--color-gray-500: #bbbbbb;
+	--color-gray-600: #949494; /* Meets 3:1 UI or large text contrast against white. */
+	--color-gray-700: #757575; /* Meets 4.6:1 text contrast against white. */
+	--color-gray-800: #2f2f2f;
+	--color-gray-900: #1e1e1e;
+
+	--color-override: var(--ext-override, #2271b1);
+
+	--color-wp-theme-bg: var(--wp-admin-theme-bg, #373b3f);
+	--color-wp-theme-main: var(--wp-admin-theme-main, #2271b1);
+	--color-wp-theme-accent: var(--wp-admin-theme-accent, #76ed85);
+
+	--color-editor-main: var(--wp-admin-theme-color, #3858e9);
+	--color-editor-main-darker: var(--wp-admin-theme-color-darker-10, #2145e6);
+	--color-editor-accent-darker: var(--wp-components-color-accent-darker-10);
+
+	--color-design-main: var(--ext-design-main, #2271b1);
+	--color-design-text: var(--ext-design-text, #ffffff);
+	--color-design-tertiary: var(--wp--preset--color--tertiary);
+
+	--color-banner-main: var(--ext-banner-main, #2271b1);
+	--color-banner-text: var(--ext-banner-text, #ffffff);
+
+	--color-extendify-main: #0b4a43;
+	--color-extendify-main-dark: #05312c;
+	--color-extendify-alert: #841010;
+	--color-extendify-gray: #5f5f5f;
+	--color-extendify-secondary: #cbc3f5;
+	--color-extendify-black: #1e1e1e;
+	--color-extendify-transparent-white: rgba(253, 253, 253, 0.88);
+	--color-extendify-transparent-black-100: rgba(0, 0, 0, 0.07);
+
+	--color-wp-alert-yellow: #f0b849;
+	--color-wp-alert-red: #cc1818;
+	--color-wp-alert-green: #4ab866;
+}
+
+/* sizing */
+@utility max-w-52 {
+	max-width: 13rem;
+}
+@utility max-w-72 {
+	max-width: 18rem;
+}
+
+@utility min-w-20 {
+	min-width: 5rem;
+}
+@utility min-w-30 {
+	min-width: 7.5rem;
+}
+@utility min-w-40 {
+	min-width: 10rem;
+}
+@utility min-w-48 {
+	min-width: 12rem;
+}
+@utility min-w-60 {
+	min-width: 15rem;
+}
+@utility min-w-sm {
+	min-width: 7rem;
+}
+@utility min-w-md {
+	min-width: 30rem;
+}
+
+@utility w-40vw {
+	width: 40vw;
+}
+
+@utility min-h-16 {
+	min-height: 4rem;
+}
+@utility min-h-20 {
+	min-height: 5rem;
+}
+@utility min-h-40 {
+	min-height: 10rem;
+}
+@utility min-h-48 {
+	min-height: 12rem;
+}
+@utility min-h-60 {
+	min-height: 15rem;
+}
+@utility min-h-half {
+	min-height: 50vh;
+}
+
+@utility max-h-half {
+	max-height: 50vh;
+}
+
+/* typography */
+@utility text-xss {
+	font-size: 11px;
+}
+@utility text-3xl {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+@utility leading-extra-tight {
+	line-height: 0.5;
+}
+
+/* z-index */
+@utility z-high-1 {
+	z-index: 99998;
+}
+@utility z-high {
+	z-index: 99999;
+}
+@utility z-higher {
+	z-index: 999999;
+}
+@utility z-max-1 {
+	z-index: 2147483646;
+}
+@utility z-max {
+	z-index: 2147483647;
+}
+
+@utility ring-wp {
+	--tw-ring-width: var(--wp-admin-border-width-focus, 2px);
+}
+
+/* shadows */
+@utility shadow-inner-sm {
+	box-shadow:
+		inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+		0 3px 15px -3px rgba(0, 0, 0, 0.035),
+		0 0 1px rgba(0, 0, 0, 0.025);
+}
+@utility shadow-inner-md {
+	box-shadow:
+		inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+		0 3px 15px -3px rgba(0, 0, 0, 0.025),
+		0 0 1px rgba(0, 0, 0, 0.02);
+}
+@utility shadow-modal {
+	box-shadow:
+		0 0 0 1px rgba(0, 0, 0, 0.1),
+		0 3px 15px -3px rgba(0, 0, 0, 0.035),
+		0 0 1px rgba(0, 0, 0, 0.05);
+}
+@utility shadow-button {
+	box-shadow: 0 0 0 1px var(--ext-design-main, #3959e9);
+}
+@utility shadow-toggle {
+	box-shadow:
+		0 0 0 2px #fff,
+		0 0 0 4px var(--ext-design-main, #3959e9);
+}
+@utility shadow-surface {
+	box-shadow: 0 5px 20px 10px rgba(0, 0, 0, 0.03);
+}
+@utility shadow-lg-flipped {
+	box-shadow: 0px -10px 30px -15px #00000025;
+}
+@utility shadow-2xl-flipped {
+	box-shadow: 0px -25px 50px -12px #00000025;
+}
+@utility shadow-vibe {
+	box-shadow:
+		0 4px 6px -1px rgb(0 0 0 / 0.1),
+		0 2px 4px -2px rgb(0 0 0 / 0.1);
+}

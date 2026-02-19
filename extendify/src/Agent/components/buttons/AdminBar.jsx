@@ -1,9 +1,9 @@
+import { magic, magicAnimated } from '@agent/icons';
+import { useGlobalStore } from '@agent/state/global';
 import { Icon } from '@wordpress/components';
-import { useEffect, useState, useRef } from '@wordpress/element';
+import { useEffect, useRef, useState } from '@wordpress/element';
 import { __, isRTL } from '@wordpress/i18n';
 import classNames from 'classnames';
-import { magicAnimated, magic } from '@agent/icons';
-import { useGlobalStore } from '@agent/state/global';
 
 export const AdminBar = () => {
 	const { toggleOpen, open, isMobile } = useGlobalStore();
@@ -38,7 +38,7 @@ export const AdminBar = () => {
 		<button
 			type="button"
 			className={classNames(
-				'm-1 items-center justify-center rounded-sm border-0 bg-wp-theme-main p-0.5 px-1.5 leading-extra-tight text-white ring-offset-[#1D2327] focus:outline-none focus:ring-wp focus:ring-wp-theme-main focus:ring-offset-1 md:inline-flex',
+				'm-1 items-center justify-center rounded-xs border-0 bg-wp-theme-main p-0.5 px-1.5 leading-extra-tight text-white ring-offset-[#1D2327] focus:outline-hidden focus:ring-wp focus:ring-wp-theme-main focus:ring-offset-1 md:inline-flex',
 				{
 					'opacity-60': open,
 				},
@@ -47,7 +47,8 @@ export const AdminBar = () => {
 				if (open) setAnimate(true);
 				toggleOpen();
 			}}
-			aria-label={__('Open Agent', 'extendify-local')}>
+			aria-label={__('Open Agent', 'extendify-local')}
+		>
 			<Icon
 				icon={animateIcon ? magicAnimated : magic}
 				width={20}
@@ -59,7 +60,8 @@ export const AdminBar = () => {
 			<span
 				className={classNames('px-1 leading-none', {
 					'extendify-gradient-animation': animate,
-				})}>
+				})}
+			>
 				{__('AI Agent', 'extendify-local')}
 			</span>
 		</button>

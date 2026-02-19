@@ -1,3 +1,5 @@
+import { CreditCounter } from '@draft/components/image-generation/CreditCounter';
+import { useImageGenerationStore } from '@shared/state/generate-images';
 import {
 	Button,
 	TextareaControl,
@@ -6,8 +8,6 @@ import {
 } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { useImageGenerationStore } from '@shared/state/generate-images';
-import { CreditCounter } from '@draft/components/image-generation/CreditCounter';
 
 export const GenerateForm = ({ isGenerating, errorMessage }) => {
 	const { imageCredits, resetImageCredits, aiImageOptions, setAiImageOption } =
@@ -50,7 +50,8 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 						isBlock
 						label={__('Aspect Ratio', 'extendify-local')}
 						onChange={(size) => setAiImageOption('size', size)}
-						value={size}>
+						value={size}
+					>
 						<ToggleGroupControlOptionIcon
 							className="m-auto"
 							type="button"
@@ -83,7 +84,8 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 				className="w-full justify-center"
 				variant="primary"
 				__next40pxDefaultSize
-				disabled={isGenerating || !prompt || usedCredits >= imageCredits.total}>
+				disabled={isGenerating || !prompt || usedCredits >= imageCredits.total}
+			>
 				{isGenerating
 					? __('Generating image...', 'extendify-local')
 					: __('Generate image', 'extendify-local')}
@@ -97,6 +99,7 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 
 const AspectRatioLandscape = (
 	<svg xmlns="http://www.w3.org/2000/svg" style={{ padding: '7px 4px' }}>
+		<title>{__('Landscape: 4:3', 'extendify-local')}</title>
 		<path
 			fillRule="evenodd"
 			d="M0 1c0-.552285.447715-1 1-1h14c.5523 0 1 .447715 1 1v8c0 .55228-.4477 1-1 1H1c-.552285 0-1-.44772-1-1V1Z"
@@ -107,6 +110,7 @@ const AspectRatioLandscape = (
 
 const AspectRatioPortrait = (
 	<svg xmlns="http://www.w3.org/2000/svg" style={{ padding: '4px 6px' }}>
+		<title>{__('Portrait: 3:4', 'extendify-local')}</title>
 		<path
 			fillRule="evenodd"
 			d="M9.66669 3.5e-7C10.219 3.7e-7 10.6667.447716 10.6667 1v14c0 .5523-.4477 1-1.00001 1h-8c-.55229 0-1.000003-.4477-1.000003-1L.666688 1C.666688.447715 1.1144-2e-8 1.66669 0l8 3.5e-7Z"
@@ -116,6 +120,7 @@ const AspectRatioPortrait = (
 );
 const AspectRatioSquare = (
 	<svg xmlns="http://www.w3.org/2000/svg" style={{ padding: '6px' }}>
+		<title>{__('Square: 1:1', 'extendify-local')}</title>
 		<path
 			fillRule="evenodd"
 			d="M11.3333-4e-8c.5523 2e-8 1 .44771504 1 1.00000004v10c0 .5523-.4477 1-1 1H1.33333c-.552283 0-.999998-.4477-.999998-1V.999999C.333332.447715.781047-5e-7 1.33333-4.8e-7L11.3333-4e-8Z"

@@ -1,7 +1,6 @@
-import { PATTERNS_HOST, AI_HOST, IMAGES_HOST } from '@constants';
+import { AI_HOST, IMAGES_HOST, PATTERNS_HOST } from '@constants';
 import { getSiteStyle } from '@page-creator/api/WPApi';
 import { useUserStore } from '@page-creator/state/user';
-import { mergeRequiredPlugins } from '@shared/utils/merge-required-plugins';
 
 const { siteTitle, siteType } = window.extSharedData;
 const extraBody = {
@@ -32,12 +31,10 @@ const fetchPageTemplates = async (details = {}) => {
 			return path.split('/')[0];
 		}) ?? [];
 
-	const data = Object.entries(details).reduce((result, [key, value]) => {
-		if (value === null) result;
-		return {
-			...result,
-			[key]: typeof value === 'object' ? JSON.stringify(value) : value,
-		};
+	const data = Object.entries(details).reduce((acc, [key, value]) => {
+		if (value === null) return acc;
+		acc[key] = typeof value === 'object' ? JSON.stringify(value) : value;
+		return acc;
 	}, {});
 
 	const res = await fetch(`${PATTERNS_HOST}/api/page-creator`, {
@@ -166,7 +163,7 @@ export const getSitePlugins = async ({ pageProfile }) => {
 	const url = `${AI_HOST}/api/site-plugins`;
 	const method = 'POST';
 	const headers = { 'Content-Type': 'application/json' };
-	const fallback = mergeRequiredPlugins([]);
+	const fallback = [];
 
 	if (!pageProfile) {
 		return fallback;
@@ -189,7 +186,7 @@ export const getSitePlugins = async ({ pageProfile }) => {
 	try {
 		response = await fetch(url, { method, headers, body });
 		if (!response?.ok) throw new Error('Bad response from server');
-	} catch (error) {
+	} catch (_error) {
 		try {
 			response = await fetch(url, { method, headers, body });
 		} catch {
@@ -201,9 +198,8 @@ export const getSitePlugins = async ({ pageProfile }) => {
 
 	try {
 		const data = await response.json();
-		const suggestedPlugins = data?.selectedPlugins ?? fallback;
-		return mergeRequiredPlugins(suggestedPlugins);
-	} catch (error) {
+		return data?.selectedPlugins ?? fallback;
+	} catch (_error) {
 		return fallback;
 	}
 };

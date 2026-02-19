@@ -1,9 +1,9 @@
-import { useEffect } from '@wordpress/element';
-import { AnimatePresence } from 'framer-motion';
 import { Modal } from '@help-center/components/modal/Modal';
 import { GuidedTour } from '@help-center/components/tours/GuidedTour';
 import { useRouter } from '@help-center/hooks/useRouter';
 import { useGlobalSyncStore } from '@help-center/state/globals-sync';
+import { useEffect } from '@wordpress/element';
+import { AnimatePresence } from 'framer-motion';
 
 export const HelpCenter = () => {
 	// register a custom event to hide the Help Center.

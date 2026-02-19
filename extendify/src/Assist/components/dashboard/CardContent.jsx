@@ -1,5 +1,3 @@
-import { useRef } from '@wordpress/element';
-import { LaunchCard } from '@assist/components/dashboard/LaunchCard';
 import { ActionButton } from '@assist/components/dashboard/buttons/ActionButton';
 import { DismissButton } from '@assist/components/dashboard/buttons/DismissButton';
 import { DemoCard } from '@assist/components/dashboard/cards/DemoCard';
@@ -7,8 +5,10 @@ import { GenericCard } from '@assist/components/dashboard/cards/GenericCard';
 import { NoActionBtnCard } from '@assist/components/dashboard/cards/NoActionBtnCard';
 import { DomainCard } from '@assist/components/dashboard/domains/DomainCard';
 import { SecondaryDomainCard } from '@assist/components/dashboard/domains/SecondaryDomainCard';
+import { LaunchCard } from '@assist/components/dashboard/LaunchCard';
 import { useTours } from '@assist/hooks/useTours';
 import { useTasksStore } from '@assist/state/tasks';
+import { useRef } from '@wordpress/element';
 
 export const CardContent = ({ task }) => {
 	if (task.type === 'html-text-button') return <GenericCard task={task} />;
@@ -44,7 +44,8 @@ const TaskContent = ({ task }) => {
 			className="flex h-full w-full bg-cover bg-right-bottom bg-no-repeat"
 			style={{
 				backgroundImage: `url(${task?.backgroundImage})`,
-			}}>
+			}}
+		>
 			<div className="flex h-full w-full grow flex-col bg-white/95 px-8 py-8 lg:mr-48 lg:bg-transparent">
 				<div className="title text-2xl font-semibold leading-10 md:mt-32 lg:text-3xl">
 					{task.title}

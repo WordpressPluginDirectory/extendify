@@ -5,7 +5,7 @@ export default {
 	title: __('Plugin management', 'extendify-local'),
 	settings: {
 		allowOverflow: false,
-		startFrom: [window.extSharedData.adminUrl + 'plugins.php'],
+		startFrom: [`${window.extSharedData.adminUrl}plugins.php`],
 	},
 	onStart: () => {
 		if (document.body.classList.contains('folded')) {

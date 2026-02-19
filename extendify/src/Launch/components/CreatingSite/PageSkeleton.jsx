@@ -1,4 +1,4 @@
-import { useEffect, useState, useLayoutEffect } from '@wordpress/element';
+import { useEffect, useLayoutEffect, useState } from '@wordpress/element';
 import { colord } from 'colord';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -47,16 +47,15 @@ const PageSkeleton = ({ pageName }) => {
 					animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
 					exit={{ opacity: 0, x: -50 }}
 					transition={{ ease: 'easeInOut' }}
-					className="mt-12 w-96 rounded border-8 border-opacity-25 p-4"
-					style={{
-						borderColor: 'rgba(204, 204, 204, 0.45) !important',
-					}}>
+					className="mt-12 w-96 rounded-sm border-8 border-[rgba(204,204,204,0.45)] p-4"
+				>
 					<h1 className="mb-8 text-banner-text opacity-50">{title}</h1>
 					<div
 						className="space-y-6"
 						style={{
 							mixBlendMode: isLightBg ? 'difference' : 'plus-lighter',
-						}}>
+						}}
+					>
 						{[0, 1, 2].map((item) => {
 							const delay = 3 * item;
 							return (
@@ -67,7 +66,8 @@ const PageSkeleton = ({ pageName }) => {
 									animate={{ opacity: 1 }}
 									transition={item ? { duration: delay / 2, delay } : {}}
 									role="status"
-									className="max-w-sm space-y-2">
+									className="max-w-sm space-y-2"
+								>
 									<Piece i={item * delay} className="mb-3 h-3 w-48" />
 									<Piece i={item * delay} className="h-2 w-full" />
 									<Piece i={item * delay} className="h-2 w-full max-w-[90%]" />

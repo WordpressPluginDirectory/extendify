@@ -1,6 +1,6 @@
-import { __ } from '@wordpress/i18n';
 import { Title } from '@launch/components/Title';
 import { PageLayout } from '@launch/layouts/PageLayout';
+import { __ } from '@wordpress/i18n';
 
 export const NeedsTheme = () => {
 	return (
@@ -18,7 +18,8 @@ export const NeedsTheme = () => {
 					</p>
 					<a
 						className="mt-4 text-base font-medium text-design-main underline"
-						href={`${window.extSharedData.adminUrl}theme-install.php?theme=extendable`}>
+						href={`${window.extSharedData.adminUrl}theme-install.php?theme=extendable`}
+					>
 						{__('Take me there', 'extendify-local')}
 					</a>
 				</div>

@@ -1,11 +1,11 @@
+import { useIsMounted } from '@launch/hooks/useIsMounted';
 import {
-	useState,
+	useCallback,
 	useLayoutEffect,
 	useRef,
-	useCallback,
+	useState,
 } from '@wordpress/element';
 import { debounce } from 'lodash';
-import { useIsMounted } from '@launch/hooks/useIsMounted';
 
 const originalHeights = new WeakMap();
 
@@ -55,7 +55,7 @@ export const usePreviewIframe = ({ container, onLoad, ready, loadDelay }) => {
 			);
 			el.offsetHeight; // Force a reflow
 			el.style.minHeight =
-				computedHeight > 784 ? '784px' : computedHeight + 'px';
+				computedHeight > 784 ? '784px' : `${computedHeight}px`;
 		}
 
 		frame.style.setProperty('max-height', 'none', 'important');

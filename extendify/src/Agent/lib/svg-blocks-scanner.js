@@ -36,7 +36,9 @@ export const getDynamicDuotoneMap = (blocks) => {
 			)?.filter(Boolean);
 
 			if (duotone && parents.length && !map.has(duotone)) {
-				parents.forEach((parent) => map.set(parent, duotone));
+				parents.forEach((parent) => {
+					map.set(parent, duotone);
+				});
 			}
 			seen.add(block.clientId);
 
@@ -48,15 +50,16 @@ export const getDynamicDuotoneMap = (blocks) => {
 	return Object.fromEntries(map);
 };
 
-const doc =
+const getDoc = () =>
 	document.querySelector('iframe[name="editor-canvas"]')?.contentDocument ||
 	document;
 
 const getImageParentsByBlockIdAndUrl = (id, url) => {
+	const doc = getDoc();
 	if (!doc) return [];
 
 	const blockElement = doc.querySelector(`[data-block="${id}"]`);
-	if (blockElement && blockElement.classList) {
+	if (blockElement?.classList) {
 		const duotoneClass = [];
 		for (const cls of blockElement.classList) {
 			if (cls.startsWith('wp-duotone-')) duotoneClass.push(cls);
@@ -69,7 +72,7 @@ const getImageParentsByBlockIdAndUrl = (id, url) => {
 
 	for (const image of images) {
 		const parent = image.closest('figure[data-block]');
-		if (parent && parent.classList) {
+		if (parent?.classList) {
 			for (const cls of parent.classList) {
 				if (cls.startsWith('wp-duotone-')) elements.push(cls);
 			}

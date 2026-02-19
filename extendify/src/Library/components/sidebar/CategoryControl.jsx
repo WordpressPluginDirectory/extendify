@@ -1,10 +1,10 @@
+import { useCategories } from '@library/hooks/useCategories';
+import { useCacheStore } from '@library/state/cache';
+import { useSiteSettingsStore } from '@library/state/site';
 import { PanelBody, PanelRow, Spinner } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
-import { useCategories } from '@library/hooks/useCategories';
-import { useCacheStore } from '@library/state/cache';
-import { useSiteSettingsStore } from '@library/state/site';
 
 export const CategoryControl = () => {
 	const { category, siteType, setCategory } = useSiteSettingsStore();
@@ -38,8 +38,9 @@ export const CategoryControl = () => {
 	return (
 		<PanelBody
 			title={__('Design Type', 'extendify-local')}
-			className="ext-type-control p-0"
-			initialOpen={!!siteType?.name}>
+			className="ext-type-control p-0 border-0 [&_.components-panel\_\_body-title]:-mx-5 [&_.components-panel\_\_body-title]:mt-0 [&_.components-panel\_\_body-title]:mb-0.5"
+			initialOpen={!!siteType?.name}
+		>
 			<PanelRow>
 				<CategoryList
 					categories={categories}
@@ -70,7 +71,8 @@ const CategoryList = ({ categories, errorCount, current, setCurrent }) => {
 						type="button"
 						id="extendify-library-category-all"
 						onClick={() => setCurrent('all')}
-						className={classes('all')}>
+						className={classes('all')}
+					>
 						{__('All', 'extendify-local')}
 					</button>
 				</li>
@@ -81,7 +83,8 @@ const CategoryList = ({ categories, errorCount, current, setCurrent }) => {
 								type="button"
 								id={`extendify-library-category-${slug}`}
 								onClick={() => setCurrent(slug)}
-								className={classes(slug)}>
+								className={classes(slug)}
+							>
 								{name}
 							</button>
 						</li>

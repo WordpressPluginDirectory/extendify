@@ -1,8 +1,8 @@
-import { useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { Icon, close } from '@wordpress/icons';
 import { arrow } from '@help-center/components/ai-chat/icons';
 import { useAIChatStore } from '@help-center/state/ai-chat';
+import { useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { close, Icon } from '@wordpress/icons';
 
 export const History = ({ setShowHistory }) => {
 	const { history, setCurrentQuestion, deleteFromHistory } = useAIChatStore();
@@ -22,7 +22,8 @@ export const History = ({ setShowHistory }) => {
 				<button
 					type="button"
 					onClick={() => setShowHistory(false)}
-					className="m-0 border-0 bg-transparent fill-current p-0 text-design-text">
+					className="m-0 border-0 bg-transparent fill-current p-0 text-design-text"
+				>
 					<Icon icon={close} size={16} />
 					<span className="sr-only">
 						{__('Close history', 'extendify-local')}
@@ -35,11 +36,13 @@ export const History = ({ setShowHistory }) => {
 					.map((item) => (
 						<li
 							key={item.answerId}
-							className="group flex gap-1 px-2 pr-4 rtl:flex-row-reverse">
+							className="group flex gap-1 px-2 pr-4 rtl:flex-row-reverse"
+						>
 							<button
 								type="button"
 								onClick={() => deleteFromHistory(item)}
-								className="m-0 border-0 bg-transparent p-0 opacity-0 group-hover:opacity-100">
+								className="m-0 border-0 bg-transparent p-0 opacity-0 group-hover:opacity-100"
+							>
 								<Icon icon={close} size={12} />
 								<span className="sr-only">
 									{__('Remove from history', 'extendify-local')}
@@ -48,7 +51,8 @@ export const History = ({ setShowHistory }) => {
 							<button
 								type="button"
 								className="m-0 flex w-full items-center justify-between gap-2 rounded-md border border-gray-200 bg-transparent p-2.5 text-left hover:bg-gray-100"
-								onClick={() => setCurrentQuestion(item)}>
+								onClick={() => setCurrentQuestion(item)}
+							>
 								<div>
 									<span className="overflow-hidden truncate text-ellipsis">
 										{item.question.substring(0, 100)}

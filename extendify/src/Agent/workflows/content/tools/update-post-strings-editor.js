@@ -1,6 +1,6 @@
-import { createBlock } from '@wordpress/blocks';
-import { select, dispatch } from '@wordpress/data';
 import { getRenderingMode, setRenderingMode } from '@agent/lib/editor';
+import { createBlock } from '@wordpress/blocks';
+import { dispatch, select } from '@wordpress/data';
 
 export default async ({ replacements }) => {
 	const renderingMode = getRenderingMode();

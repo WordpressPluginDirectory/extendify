@@ -1,5 +1,8 @@
+import { __ } from '@wordpress/i18n';
+
 export const backArrow = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" fill="none">
+		<title>{__('Back Arrow', 'extendify-local')}</title>
 		<path
 			fill="#1E1E1E"
 			fillRule="evenodd"

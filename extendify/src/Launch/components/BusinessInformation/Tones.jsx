@@ -1,6 +1,6 @@
+import { useUserSelectionStore } from '@launch/state/user-selections.js';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
-import { useUserSelectionStore } from '@launch/state/user-selections.js';
 
 export const TONES = [
 	{
@@ -30,7 +30,7 @@ export const SiteTones = () => {
 		useUserSelectionStore();
 
 	const handleTonesToggle = (tone) => {
-		let { tones } = businessInformation;
+		const { tones } = businessInformation;
 		const isSelected = !!tones?.find(({ value }) => value === tone.value);
 		const newTones = isSelected
 			? tones?.filter(({ value }) => value !== tone.value)
@@ -40,9 +40,9 @@ export const SiteTones = () => {
 
 	return (
 		<div>
-			<label className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
+			<p className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
 				{__("Select your site's tone", 'extendify-local')}
-			</label>
+			</p>
 			<div className="justify-left flex w-full flex-wrap gap-2">
 				{TONES.map((tone) => {
 					const selected = businessInformation?.tones?.find(
@@ -52,18 +52,23 @@ export const SiteTones = () => {
 					return (
 						<div
 							key={tone.value}
-							className={classNames('relative rounded border border-gray-300', {
-								'bg-gray-100': selected,
-								'border-gray-300': !selected,
-							})}>
+							className={classNames(
+								'relative rounded-sm border border-gray-300',
+								{
+									'bg-gray-100': selected,
+									'border-gray-300': !selected,
+								},
+							)}
+						>
 							<label
 								htmlFor={tone.value}
-								className="flex h-full w-full cursor-pointer items-center justify-between rounded-sm p-2 text-gray-900 focus-within:ring-wp">
+								className="flex h-full w-full cursor-pointer items-center justify-between rounded-xs p-2 text-gray-900 focus-within:ring-wp"
+							>
 								<div className="flex flex-auto items-center">
 									<span className="relative mr-1 inline-block h-4 w-4 align-middle rtl:ml-1 rtl:mr-0">
 										<input
 											id={tone.value}
-											className="h-4 w-4 rounded-sm focus:ring-0 focus:ring-offset-0"
+											className="h-4 w-4 rounded-xs focus:ring-0 focus:ring-offset-0"
 											type="checkbox"
 											onChange={() => handleTonesToggle(tone)}
 											checked={
@@ -83,7 +88,8 @@ export const SiteTones = () => {
 											viewBox="1 0 20 20"
 											fill="none"
 											xmlns="http://www.w3.org/2000/svg"
-											role="presentation">
+											role="presentation"
+										>
 											<path
 												d="M8.72912 13.7449L5.77536 10.7911L4.76953 11.7899L8.72912 15.7495L17.2291 7.24948L16.2304 6.25073L8.72912 13.7449Z"
 												fill="currentColor"

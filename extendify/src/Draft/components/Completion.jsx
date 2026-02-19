@@ -1,4 +1,4 @@
-import { serialize, pasteHandler } from '@wordpress/blocks';
+import { pasteHandler, serialize } from '@wordpress/blocks';
 import { useRef } from '@wordpress/element';
 
 export const Completion = ({ completion }) => {
@@ -10,7 +10,8 @@ export const Completion = ({ completion }) => {
 			ref={ref}
 			style={{ fontSize: 'clamp(1em 1em 1em)' }}
 			className="completion relative max-h-60 overflow-y-auto break-words px-5 pt-4"
-			data-test="completion-input">
+			data-test="completion-input"
+		>
 			{Array.isArray(blocks) ? (
 				<div dangerouslySetInnerHTML={{ __html: serialize(blocks) }} />
 			) : (

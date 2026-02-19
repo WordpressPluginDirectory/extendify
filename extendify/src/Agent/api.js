@@ -1,8 +1,8 @@
-import { AI_HOST } from '@constants';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
 import { tools } from '@agent/workflows/workflows';
+import { AI_HOST } from '@constants';
 
 const extraBody = {
 	...Object.fromEntries(
@@ -55,11 +55,6 @@ export const pickWorkflow = async ({ workflows, options }) => {
 		body: JSON.stringify({
 			...extraBody,
 			workflows: filteredWorkflows,
-			workflowHistory: pastWorkflows
-				.filter(Boolean)
-				.slice(0, 5)
-				.filter((h) => h.summary)
-				.map((h) => h.summary),
 			previousAgentName: pastWorkflows.at(0)?.agentName,
 			context,
 			agentContext: window.extAgentData.agentContext,
@@ -99,10 +94,9 @@ export const handleWorkflow = async ({ workflow, workflowData, options }) => {
 			messages: messages,
 			context: window.extAgentData.context,
 			agentContext: window.extAgentData.agentContext,
+			retry: options?.retry || false,
 			extra: extra(),
 		}),
-	}).catch((error) => {
-		throw error;
 	});
 
 	if (!response.ok) throw new Error('Bad response from server');
@@ -131,7 +125,7 @@ export const digest = ({ error, sessionId, caller, additional = {} }) => {
 	if (Boolean(extraBody?.devbuild) === true) return;
 
 	const errorMessage = () => {
-		if (error.response && error.response.statusText) {
+		if (error.response?.statusText) {
 			return (
 				error.response?.statusText || error.response.message || 'Unknown error'
 			);

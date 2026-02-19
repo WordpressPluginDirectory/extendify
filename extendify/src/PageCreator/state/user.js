@@ -1,7 +1,7 @@
-import apiFetch from '@wordpress/api-fetch';
 import { safeParseJson } from '@shared/lib/parsing';
+import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 const storage = {
 	getItem: async () => await apiFetch({ path: '/wp/v2/users/me' }),

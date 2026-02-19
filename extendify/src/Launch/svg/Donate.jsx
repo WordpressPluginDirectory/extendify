@@ -1,4 +1,5 @@
 import { memo } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const Donate = (props) => {
 	const { className, ...otherProps } = props;
@@ -9,7 +10,9 @@ const Donate = (props) => {
 			viewBox="0 0 24 24"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...otherProps}>
+			{...otherProps}
+		>
+			<title>{__('Donate', 'extendify-local')}</title>
 			<path
 				opacity="0.3"
 				d="M20 6C20 9 19 13 19 13L13.3 17L12.6 16.4C11.8 15.6 11.8 14.2 12.6 13.4L14.8 11.2C14.8 8.7 12.1 7.2 9.89999 8.5C9.19999 9 8.59999 9.6 7.89999 10.3V13L5.89999 16C4.79999 16 3.89999 15.1 3.89999 14V10.4C3.89999 9.5 4.19999 8.6 4.79999 7.9L7.59999 4.4L14 2C14.9 4.4 16.8 5.8 20 6Z"

@@ -1,6 +1,6 @@
-import { dispatch, select } from '@wordpress/data';
 import { useGlobalsStore } from '@library/state/global';
 import { addGlobalCSS, requiredCSSVars } from '@library/util/css';
+import { dispatch, select } from '@wordpress/data';
 
 export const insertBlocks = async (blocks) => {
 	const { insertBlocks, replaceBlock } = dispatch('core/block-editor');

@@ -15,6 +15,7 @@ export const formatSiteQuestionsForAPI = (siteQA) => {
 	}
 
 	return siteQA.questions.map((q) => ({
+		id: q?.id ?? '',
 		question: q?.question ?? '',
 		answer: q?.answerUser ?? q?.answerAI ?? '',
 	}));

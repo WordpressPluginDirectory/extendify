@@ -63,7 +63,7 @@ class ProductsData
         foreach ($products as $product) {
             // We are escaping the original price tag separately because we are using HTML tags
             // inside it and they are removed when going through the `sanitizeArray` function.
-            $originalPriceTag = $product['priceTag'];
+            $originalPriceTag = $product['priceTag'] ?? '';
             $sanitizedPriceTag = Sanitizer::sanitizeTextWithFormattingTags($originalPriceTag);
             $sanitizedProduct = Sanitizer::sanitizeArray($product);
             $sanitizedProduct['priceTag'] = $sanitizedPriceTag;

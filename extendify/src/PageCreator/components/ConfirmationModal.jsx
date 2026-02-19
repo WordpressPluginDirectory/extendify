@@ -1,6 +1,6 @@
+import { useActivityStore } from '@shared/state/activity';
 import { Button, Modal as Dialog } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { useActivityStore } from '@shared/state/activity';
 
 const { adminUrl } = window.extSharedData;
 
@@ -25,7 +25,8 @@ export const ConfirmationModal = ({
 			aria-labelledby="page-creator-confirmation"
 			role="dialog"
 			isOpen={confirmationOpen}
-			title={__('Confirmation', 'extendify-local')}>
+			title={__('Confirmation', 'extendify-local')}
+		>
 			<div className="flex flex-col space-y-6 text-sm">
 				<div>
 					{__(
@@ -41,7 +42,8 @@ export const ConfirmationModal = ({
 						variant="primary"
 						size="default"
 						href={`${adminUrl}post-new.php?post_type=page&ext-open-ai-creator=1`}
-						target="_blank">
+						target="_blank"
+					>
 						{__('Create a new page', 'extendify-local')}
 					</Button>
 				</div>

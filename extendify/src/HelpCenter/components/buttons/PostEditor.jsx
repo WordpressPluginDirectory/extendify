@@ -1,9 +1,9 @@
+import { useGlobalSyncStore } from '@help-center/state/globals-sync';
+import { useActivityStore } from '@shared/state/activity';
 import { Button } from '@wordpress/components';
 import { __, isRTL } from '@wordpress/i18n';
 import { helpFilled, Icon } from '@wordpress/icons';
-import { useActivityStore } from '@shared/state/activity';
 import classNames from 'classnames';
-import { useGlobalSyncStore } from '@help-center/state/globals-sync';
 
 export const PostEditor = () => {
 	const { setVisibility } = useGlobalSyncStore();
@@ -16,7 +16,8 @@ export const PostEditor = () => {
 				setVisibility('open');
 				incrementActivity('hc-editor-page-button');
 			}}
-			variant="primary">
+			variant="primary"
+		>
 			<span className="hidden xl:inline">{__('Help', 'extendify-local')}</span>
 			<Icon
 				icon={helpFilled}

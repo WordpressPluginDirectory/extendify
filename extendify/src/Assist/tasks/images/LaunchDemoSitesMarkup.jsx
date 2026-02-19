@@ -1,6 +1,6 @@
+import { pageNames } from '@shared/lib/pages';
 import { __ } from '@wordpress/i18n';
 import { Icon, siteLogo } from '@wordpress/icons';
-import { pageNames } from '@shared/lib/pages';
 
 export const LaunchDemoSitesMarkup = (props) => (
 	<div {...props}>
@@ -82,6 +82,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 						<div className="grid grid-cols-3 gap-8">
 							<div className="flex flex-col">
 								<img
+									alt={__('Real Estate Property', 'extendify-local')}
 									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/real-estate-1.webp"
 									className="aspect-video object-cover object-center"
 								/>
@@ -97,6 +98,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 							</div>
 							<div className="flex flex-col">
 								<img
+									alt={__('Real Estate Property', 'extendify-local')}
 									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/real-estate-2.webp"
 									className="aspect-video object-cover object-center"
 								/>
@@ -112,6 +114,7 @@ export const LaunchDemoSitesMarkup = (props) => (
 							</div>
 							<div className="flex flex-col">
 								<img
+									alt={__('Real Estate Property', 'extendify-local')}
 									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/real-estate-3.webp"
 									className="aspect-video object-cover object-center"
 								/>
@@ -181,10 +184,12 @@ export const LaunchDemoSitesMarkup = (props) => (
 						</div>
 						<div className="col-span-4 grid grid-cols-2 gap-8">
 							<img
+								alt={__('Education Website Image', 'extendify-local')}
 								src="https://images.extendify-cdn.com/assist-tasks/demo-sites/education-1.webp"
 								className="aspect-[2/4] max-w-full object-cover object-center"
 							/>
 							<img
+								alt={__('Education Website Image', 'extendify-local')}
 								src="https://images.extendify-cdn.com/assist-tasks/demo-sites/education-2.webp"
 								className="aspect-[2/4] max-w-full object-cover object-center"
 							/>
@@ -218,20 +223,24 @@ export const LaunchDemoSitesMarkup = (props) => (
 						<div className="grid grid-cols-2 gap-8">
 							<div>
 								<img
+									alt={__('Cafe Website Image', 'extendify-local')}
 									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/cafe-1.webp"
 									className="mb-8 aspect-video max-w-full object-cover object-center"
 								/>
 								<img
+									alt={__('Cafe Website Image', 'extendify-local')}
 									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/cafe-2.webp"
 									className="aspect-square max-w-full object-cover object-center"
 								/>
 							</div>
 							<div>
 								<img
+									alt={__('Cafe Website Image', 'extendify-local')}
 									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/cafe-3.webp"
 									className="mb-8 aspect-square max-w-full object-cover object-center"
 								/>
 								<img
+									alt={__('Cafe Website Hero Image', 'extendify-local')}
 									src="https://images.extendify-cdn.com/assist-tasks/demo-sites/cafe-4.webp"
 									className="aspect-video max-w-full object-cover object-center"
 								/>

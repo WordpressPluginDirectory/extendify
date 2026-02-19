@@ -1,6 +1,6 @@
-import useSWRImmutable from 'swr/immutable';
 import { getSiteImages } from '@launch/api/DataApi';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
+import useSWRImmutable from 'swr/immutable';
 
 export const useSiteImages = () => {
 	const { loading, siteProfile } = useSiteProfile();

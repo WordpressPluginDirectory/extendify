@@ -1,35 +1,21 @@
-import { dispatch, select } from '@wordpress/data';
-import { useEffect, useState, useCallback } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
-import { getPartnerPlugins, recordPluginActivity } from '@shared/api/DataApi';
-import { installPlugin, activatePlugin } from '@shared/api/wp';
-import { pageNames } from '@shared/lib/pages';
-import { deepMerge } from '@shared/lib/utils';
-import {
-	retryOperation,
-	wasPluginInstalled,
-	waitFor200Response,
-} from '@shared/lib/utils';
-import { useAIConsentStore } from '@shared/state/ai-consent';
-import { colord } from 'colord';
 import { getPageTemplates } from '@launch/api/DataApi';
+import { importTemporaryProducts } from '@launch/api/WooCommerce';
 import {
-	updateTemplatePart,
-	addSectionLinksToNav,
 	addPageLinksToNav,
-	updateOption,
+	addSectionLinksToNav,
+	createNavigation,
+	getActivePlugins,
 	getOption,
 	getPageById,
-	getActivePlugins,
-	prefetchAssistData,
-	postLaunchFunctions,
-	createNavigation,
-	updateNavAttributes,
 	installFontFamilies,
+	postLaunchFunctions,
+	prefetchAssistData,
+	updateNavAttributes,
+	updateOption,
 	updatePageTitlePattern,
+	updateTemplatePart,
 } from '@launch/api/WPApi';
-import { importTemporaryProducts } from '@launch/api/WooCommerce';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
 import { useConfetti } from '@launch/hooks/useConfetti';
 import { useSiteLogo } from '@launch/hooks/useSiteLogo';
@@ -40,29 +26,37 @@ import {
 } from '@launch/lib/linkPages';
 import { uploadLogo } from '@launch/lib/logo';
 import {
-	createWpPages,
+	addImprintPage,
 	createBlogSampleData,
+	createWpPages,
 	generateCustomPageContent,
 	replacePlaceholderPatterns,
-	updateGlobalStyleVariant,
 	setHelloWorldFeaturedImage,
-	addImprintPage,
+	updateGlobalStyleVariant,
+	updateNaturalVibeStyles,
 } from '@launch/lib/wp';
 import { usePagesStore } from '@launch/state/Pages';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
 import { buildRecommendedPagesParams } from '@launch/utils/buildRecommendedPagesParams';
+import { getPartnerPlugins, recordPluginActivity } from '@shared/api/DataApi';
+import { activatePlugin, installPlugin } from '@shared/api/wp';
+import { pageNames } from '@shared/lib/pages';
+import {
+	deepMerge,
+	retryOperation,
+	waitFor200Response,
+	wasPluginInstalled,
+} from '@shared/lib/utils';
+import { useAIConsentStore } from '@shared/state/ai-consent';
+import { dispatch, select } from '@wordpress/data';
+import { useCallback, useEffect, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { colord } from 'colord';
 
-const {
-	homeUrl,
-	adminUrl,
-	partnerLogo,
-	partnerName,
-	installedPlugins = [],
-	showImprint,
-	wpLanguage,
-} = window.extSharedData;
+const { homeUrl, adminUrl, partnerLogo, partnerName, showImprint, wpLanguage } =
+	window.extSharedData;
 
 export const CreatingSite = () => {
 	const [isShowing] = useState(true);
@@ -85,8 +79,13 @@ export const CreatingSite = () => {
 		urlParameters,
 	} = useUserSelectionStore();
 	const { pages, style, removeAll, add } = usePagesSelectionStore();
-	const [info, setInfo] = useState([]);
-	const [infoDesc, setInfoDesc] = useState([]);
+	const [info, setInfo] = useState([
+		__('Preparing to build your site', 'extendify-local'),
+	]);
+	const [infoDesc, setInfoDesc] = useState([
+		// Because useSiteLogo causes a noticeable delay, we set this initial desc to match
+		__('Generating a site logo', 'extendify-local'),
+	]);
 	const inform = (msg) => setInfo((info) => [msg, ...info]);
 	const informDesc = (msg) => setInfoDesc((infoDesc) => [msg, ...infoDesc]);
 	const [pagesToAnimate, setPagesToAnimate] = useState([]);
@@ -111,7 +110,9 @@ export const CreatingSite = () => {
 	const loadRecommendedPages = useCallback(async () => {
 		const recommended = await getPageTemplates(buildRecommendedPagesParams());
 		removeAll('pages');
-		recommended.recommended.forEach((page) => add('pages', page));
+		recommended.recommended.forEach((page) => {
+			add('pages', page);
+		});
 		setPagesLoaded(true);
 	}, [removeAll, add]);
 
@@ -189,6 +190,22 @@ export const CreatingSite = () => {
 				await updateGlobalStyleVariant(variation);
 			}
 
+			await waitFor200Response();
+
+			const selectedVibe = style?.siteStyle?.vibe;
+			if (selectedVibe && selectedVibe !== 'natural-1') {
+				inform(
+					// translators: "site style" refers to the structural aesthetic style for the site.
+					__('Applying site style', 'extendify-local'),
+				);
+				informDesc(
+					// translators: "site style" refers to the structural aesthetic style for the site.
+					__('Customizing your site style', 'extendify-local'),
+				);
+				await updateNaturalVibeStyles(selectedVibe);
+				await new Promise((resolve) => setTimeout(resolve, 1000));
+			}
+
 			const navigationId = await createNavigation();
 
 			let headerCode = updateNavAttributes(style?.headerCode, {
@@ -229,11 +246,7 @@ export const CreatingSite = () => {
 			informDesc(__('Personalizing your experience', 'extendify-local'));
 			await prefetchAssistData();
 			await waitFor200Response();
-
-			inform(__('Adding page content', 'extendify-local'));
-			informDesc(__('Starting off with a full website', 'extendify-local'));
 			await new Promise((resolve) => setTimeout(resolve, 1000));
-			await waitFor200Response();
 
 			// Store the site vibes, colorPalette and fonts
 			await updateOption(
@@ -244,6 +257,55 @@ export const CreatingSite = () => {
 					colorPalette: null,
 				},
 			);
+
+			// Add required plugins to the end of the list to give them lower priority
+			// when filtering out duplicates.
+			const sortedPlugins = [...sitePlugins]
+				// Remove duplicates
+				.reduce((acc, plugin) => {
+					const found = acc.find(
+						({ wordpressSlug: s }) => s === plugin.wordpressSlug,
+					);
+					if (!found) acc.push(plugin);
+					return acc;
+				}, [])
+				// We add give to the front. See here why:
+				// https://github.com/extendify/company-product/issues/713
+				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
+
+			if (sortedPlugins?.length) {
+				inform(__('Preparing site functionality', 'extendify-local'));
+				await new Promise((resolve) => setTimeout(resolve, 1000));
+
+				// Fetch active plugins after installing plugins
+				const { data: activePlugins } = await getActivePlugins();
+				const pluginInstallMessages = [
+					__('Getting everything ready', 'extendify-local'),
+					__('Enhancing your site', 'extendify-local'),
+					__('Setting up essential tools', 'extendify-local'),
+				];
+				informDesc(pluginInstallMessages?.at(-1));
+				for (const [index, plugin] of sortedPlugins.entries()) {
+					const slug = plugin?.wordpressSlug;
+					// Don't install if already installed
+					if (!wasPluginInstalled(activePlugins, slug)) {
+						await retryOperation(() => installPlugin(slug), {
+							maxAttempts: 2,
+						}).catch(console.error);
+
+						recordPluginActivity({ slug, source: 'launch' });
+						if (index % 2 === 1) {
+							// skip first message
+							const i = Math.floor(index / 2) % pluginInstallMessages.length;
+							informDesc(pluginInstallMessages[i]);
+						}
+					}
+
+					await retryOperation(() => activatePlugin(slug), {
+						maxAttempts: 2,
+					}).catch(console.error);
+				}
+			}
 
 			const homePage = {
 				name: pageNames.home.title,
@@ -259,11 +321,17 @@ export const CreatingSite = () => {
 			};
 
 			await waitFor200Response();
+
+			inform(__('Adding page content', 'extendify-local'));
+			informDesc(__('Starting off with a full website', 'extendify-local'));
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+			await waitFor200Response();
+
 			if (siteProfile.aiDescription) {
 				informDesc(__('Creating pages with custom content', 'extendify-local'));
-				[homePage, ...pages].forEach((page) =>
-					setPagesToAnimate((previous) => [...previous, page.name]),
-				);
+				[homePage, ...pages].forEach((page) => {
+					setPagesToAnimate((previous) => [...previous, page.name]);
+				});
 			}
 
 			const pagesWithoutPageTitlePattern = pages.map((page) => ({
@@ -300,47 +368,6 @@ export const CreatingSite = () => {
 					patterns: await replacePlaceholderPatterns(page.patterns),
 				};
 				pagesWithReplacedPatterns.push(updatedPage);
-			}
-
-			// Add required plugins to the end of the list to give them lower priority
-			// when filtering out duplicates.
-			const sortedPlugins = [...sitePlugins]
-				// Remove duplicates
-				.reduce((acc, plugin) => {
-					const found = acc.find(
-						({ wordpressSlug: s }) => s === plugin.wordpressSlug,
-					);
-					return found ? acc : [...acc, plugin];
-				}, [])
-				// We add give to the front. See here why:
-				// https://github.com/extendify/company-product/issues/713
-				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
-
-			if (sortedPlugins?.length) {
-				inform(__('Installing necessary plugins', 'extendify-local'));
-
-				for (const [index, plugin] of sortedPlugins.entries()) {
-					const slug = plugin?.wordpressSlug;
-					informDesc(
-						__(
-							`${index + 1}/${sortedPlugins.length}: ${plugin.name}`,
-							'extendify-local',
-						),
-					);
-
-					// Don't install if already installed
-					if (!installedPlugins?.some((s) => s.includes(slug))) {
-						await retryOperation(() => installPlugin(slug), {
-							maxAttempts: 2,
-						}).catch(console.error);
-
-						recordPluginActivity({ slug, source: 'launch' });
-					}
-
-					await retryOperation(() => activatePlugin(slug), {
-						maxAttempts: 2,
-					}).catch(console.error);
-				}
 			}
 
 			const pagesWithCustomContent = await generateCustomPageContent(
@@ -396,15 +423,12 @@ export const CreatingSite = () => {
 				...pages,
 				hasBlogGoal ? blogPage : null,
 				homePage,
-			]
-				.filter(Boolean)
-				// Sorted AZ by title in all languages
-				.sort((a, b) => a?.name?.localeCompare(b?.name));
+			].filter(Boolean);
 
 			const pluginPages = [];
 
 			// Fetch active plugins after installing plugins
-			let { data: activePlugins } = await getActivePlugins();
+			const { data: activePlugins } = await getActivePlugins();
 
 			// Add plugin related pages only if plugin is active
 			if (wasPluginInstalled(activePlugins, 'woocommerce')) {
@@ -418,7 +442,11 @@ export const CreatingSite = () => {
 				}
 
 				informDesc(__('Importing shop sample data', 'extendify-local'));
-				await importTemporaryProducts();
+				try {
+					await importTemporaryProducts();
+				} catch (e) {
+					console.error('Error importing temporary products', e);
+				}
 
 				// If we installed any plugins above, and a partner has supported plugins
 				// linked to those plugins, we should install them here. For example:
@@ -436,10 +464,7 @@ export const CreatingSite = () => {
 								maxAttempts,
 							}).catch(console.error);
 
-							recordPluginActivity({
-								slug: plugin,
-								source: 'launch',
-							});
+							recordPluginActivity({ slug: plugin, source: 'launch' });
 
 							await retryOperation(() => activatePlugin(plugin), {
 								maxAttempts,
@@ -635,7 +660,8 @@ export const CreatingSite = () => {
 				enter="transition-all ease-in-out duration-500"
 				enterFrom="md:w-40vw md:max-w-md"
 				enterTo="md:w-full md:max-w-full"
-				className="flex shrink-0 flex-col justify-between bg-banner-main px-10 py-12 text-banner-text md:h-screen">
+				className="flex shrink-0 flex-col justify-between bg-banner-main px-10 py-12 text-banner-text md:h-screen"
+			>
 				<div className="max-w-prose">
 					<div className="md:min-h-48">
 						{partnerLogo ? (
@@ -651,7 +677,29 @@ export const CreatingSite = () => {
 						)}
 						<div data-test="message-area">
 							{info.map((step, index) => {
-								if (!index) {
+								if (index) return null;
+								return (
+									<Transition
+										as="div"
+										appear={true}
+										show={isShowing}
+										enter="transition-opacity duration-1000"
+										enterFrom="opacity-0"
+										enterTo="opacity-100"
+										leave="transition-opacity duration-1000"
+										leaveFrom="opacity-100"
+										leaveTo="opacity-0"
+										className="flex items-center space-x-4 text-4xl"
+										key={step}
+									>
+										{step}
+									</Transition>
+								);
+							})}
+							<div className="mt-6 flex items-center space-x-4">
+								<Spinner className="spin rtl:ml-3" />
+								{infoDesc.map((step, index) => {
+									if (index) return null;
 									return (
 										<Transition
 											as="div"
@@ -663,34 +711,12 @@ export const CreatingSite = () => {
 											leave="transition-opacity duration-1000"
 											leaveFrom="opacity-100"
 											leaveTo="opacity-0"
-											className="flex items-center space-x-4 text-4xl"
-											key={step}>
+											className="text-lg"
+											key={step}
+										>
 											{step}
 										</Transition>
 									);
-								}
-							})}
-							<div className="mt-6 flex items-center space-x-4">
-								<Spinner className="spin rtl:ml-3" />
-								{infoDesc.map((step, index) => {
-									if (!index) {
-										return (
-											<Transition
-												as="div"
-												appear={true}
-												show={isShowing}
-												enter="transition-opacity duration-1000"
-												enterFrom="opacity-0"
-												enterTo="opacity-100"
-												leave="transition-opacity duration-1000"
-												leaveFrom="opacity-100"
-												leaveTo="opacity-0"
-												className="text-lg"
-												key={step}>
-												{step}
-											</Transition>
-										);
-									}
 								})}
 							</div>
 							{pagesToAnimate.length > 0 ? (

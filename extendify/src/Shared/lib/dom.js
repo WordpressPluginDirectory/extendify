@@ -1,4 +1,4 @@
-import { render as renderDeprecated, createRoot } from '@wordpress/element';
+import { createRoot, render as renderDeprecated } from '@wordpress/element';
 
 export const render = (component, node) => {
 	if (typeof createRoot !== 'function') {

@@ -5,7 +5,7 @@ export const maybeHttps = (url) => {
 			transformed.protocol = 'https:';
 		}
 		return transformed.toString();
-	} catch (e) {
+	} catch (_e) {
 		return url;
 	}
 };

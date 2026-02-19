@@ -1,12 +1,8 @@
-import { useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { Icon } from '@wordpress/icons';
-import classNames from 'classnames';
 import { useUserSelectionStore } from '@launch//state/user-selections';
 import { Title } from '@launch/components/Title';
 import { PageLayout } from '@launch/layouts/PageLayout';
-import { usePagesStore } from '@launch/state/Pages';
 import { pageState } from '@launch/state/factory';
+import { usePagesStore } from '@launch/state/Pages';
 import {
 	Blog,
 	Business,
@@ -14,6 +10,10 @@ import {
 	LandingPage,
 	OtherSiteTypes,
 } from '@launch/svg';
+import { useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { Icon } from '@wordpress/icons';
+import classNames from 'classnames';
 
 export const state = pageState('Website Objective', () => ({
 	ready: false,
@@ -103,27 +103,29 @@ export const ObjectiveSelection = () => {
 };
 
 const ButtonSelect = ({ title, onClick, selected, icon, slug }) => (
+	// biome-ignore lint: keep the radio role until a refactor is done
 	<div
 		data-test={`site-template-type-${slug}`}
 		className={classNames(
-			'relative flex-1 cursor-pointer overflow-hidden rounded ring-offset-2 ring-offset-white focus-within:outline-none focus-within:ring-4 focus-within:ring-design-main focus-within:ring-offset-2 focus-within:ring-offset-white hover:outline-none hover:ring-4',
+			'relative flex-1 cursor-pointer overflow-hidden rounded-smring-offset-2 ring-offset-white focus-within:outline-hidden focus-within:ring-4 focus-within:ring-design-main focus-within:ring-offset-2 focus-within:ring-offset-white hover:outline-hidden hover:ring-4',
 			{
 				'ring-4 ring-design-main ring-offset-2 ring-offset-white hover:ring-design-main':
 					selected,
 				'hover:ring-gray-300': !selected,
 			},
 		)}
-		role="button"
+		role="radio"
 		tabIndex={0}
 		aria-label={__('Press to select', 'extendify-local')}
-		aria-selected={selected}
+		aria-checked={selected}
 		onKeyDown={(e) => {
 			if (!['Enter', 'Space', ' '].includes(e.key)) return;
 			e.preventDefault();
 			onClick();
 		}}
-		onClick={onClick}>
-		<div className="flex h-fit flex-col items-center rounded border border-gray-200">
+		onClick={onClick}
+	>
+		<div className="flex h-fit flex-col items-center rounded-sm border border-gray-200">
 			<div className="flex w-full items-center justify-center bg-gray-100 px-8 py-6 md:px-14 md:py-8">
 				<Icon icon={icon} size="48" />
 			</div>

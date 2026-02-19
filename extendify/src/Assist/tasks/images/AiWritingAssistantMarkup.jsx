@@ -1,35 +1,34 @@
+import { magic, twoLines } from '@assist/tasks/images/icons';
 import { Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import {
+	alignLeft,
+	arrowRight,
+	chevronDown,
+	chevronRightSmall,
+	chevronUpDown,
+	closeSmall,
+	customPostType,
+	dragHandle,
+	drawerRight,
+	formatBold,
+	formatItalic,
+	helpFilled,
 	Icon,
-	wordpress,
-	plus,
-	pencil,
-	undo,
-	redo,
+	language,
+	link,
 	listView,
 	moreVertical,
 	paragraph,
-	dragHandle,
-	alignLeft,
-	link,
-	starFilled,
-	closeSmall,
-	edit,
-	arrowRight,
-	customPostType,
-	termDescription,
+	pencil,
+	plus,
 	postContent,
-	language,
-	chevronRightSmall,
-	chevronUpDown,
-	formatBold,
-	formatItalic,
-	chevronDown,
-	helpFilled,
-	drawerRight,
+	redo,
+	starFilled,
+	termDescription,
+	undo,
+	wordpress,
 } from '@wordpress/icons';
-import { magic, twoLines } from '@assist/tasks/images/icons';
 
 export const AiWritingAssistantMarkup = (props) => (
 	<div {...props}>
@@ -111,7 +110,8 @@ export const AiWritingAssistantMarkup = (props) => (
 								className="flex flex-row-reverse pl-3 pr-2"
 								variant="primary"
 								icon={helpFilled}
-								iconSize={18}>
+								iconSize={18}
+							>
 								{__('Help', 'extendify-local')}
 							</Button>
 							<Icon icon={moreVertical} />
@@ -136,7 +136,7 @@ export const AiWritingAssistantMarkup = (props) => (
 											{__('Ask AI', 'extendify-local')}
 										</Button>
 
-										<div className="absolute top-11 rounded-sm border border-current bg-white p-2">
+										<div className="absolute top-11 rounded-xs border border-current bg-white p-2">
 											<div className="flex min-w-60 items-center gap-2 py-2 pr-2">
 												<Icon icon={customPostType} />
 												{__('Improve writing', 'extendify-local')}
@@ -201,10 +201,11 @@ export const AiWritingAssistantMarkup = (props) => (
 							</div>
 							<div className="p-4">
 								<div
-									className="mb-4 flex gap-1 overflow-hidden rounded-sm border-none bg-gray-100 px-2 py-3"
-									data-test="existing-text-container">
+									className="mb-4 flex gap-1 overflow-hidden rounded-xs border-none bg-gray-100 px-2 py-3"
+									data-test="existing-text-container"
+								>
 									<div>
-										<Icon icon={edit} className="fill-current" />
+										<Icon icon={pencil} className="fill-current" />
 									</div>
 									<div className="hyphens-auto text-xs text-gray-800">
 										{__(
@@ -215,14 +216,15 @@ export const AiWritingAssistantMarkup = (props) => (
 											<Button
 												size="compact"
 												iconPosition="right"
-												className="relative flex-row-reverse rounded bg-gray-300 text-gray-800 hover:bg-gray-400"
-												data-test="remove-selection">
+												className="relative flex-row-reverse rounded-sm bg-gray-300 text-gray-800 hover:bg-gray-400"
+												data-test="remove-selection"
+											>
 												{__('Remove selection', 'extendify-local')}
 											</Button>
 										</div>
 									</div>
 								</div>
-								<div className="mb-4 flex items-center justify-between overflow-hidden rounded-sm border-none bg-gray-100 py-3 pl-3 pr-2">
+								<div className="mb-4 flex items-center justify-between overflow-hidden rounded-xs border-none bg-gray-100 py-3 pl-3 pr-2">
 									<div className="flex items-center gap-2">
 										<Icon icon={magic} className="left-2 top-3.5 h-5 w-5" />
 										{__('Ask AI to edit', 'extendify-local')}

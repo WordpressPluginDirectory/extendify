@@ -1,11 +1,13 @@
-import { useRef, useEffect, useLayoutEffect } from '@wordpress/element';
+import { useEffect, useLayoutEffect, useRef } from '@wordpress/element';
 
 export const useIsMounted = () => {
 	const isMounted = useRef(false);
 
 	useEffect(() => {
 		isMounted.current = true;
-		return () => (isMounted.current = false);
+		return () => {
+			isMounted.current = false;
+		};
 	});
 	return isMounted;
 };
@@ -14,7 +16,9 @@ export const useIsMountedLayout = () => {
 
 	useLayoutEffect(() => {
 		isMounted.current = true;
-		return () => (isMounted.current = false);
+		return () => {
+			isMounted.current = false;
+		};
 	});
 	return isMounted;
 };

@@ -1,5 +1,5 @@
-import domReady from '@wordpress/dom-ready';
 import { PluginSearchBanner } from '@recommendations/components/PluginSearchBanner';
+import domReady from '@wordpress/dom-ready';
 import '@recommendations/recommendations.css';
 import { render } from '@shared/lib/dom';
 

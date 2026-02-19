@@ -1,11 +1,11 @@
-import { useEffect, useMemo } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { generateCustomContent } from '@page-creator/api/DataApi';
 import { usePageLayout } from '@page-creator/hooks/usePageLayout';
 import { usePageProfile } from '@page-creator/hooks/usePageProfile';
 import { useGlobalsStore } from '@page-creator/state/global';
 import { replaceThemeVariables } from '@page-creator/util/replaceThemeVariables';
 import { safeParseJson } from '@shared/lib/parsing';
+import { useEffect, useMemo } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import useSWRImmutable from 'swr/immutable';
 
 const { state } = safeParseJson(

@@ -1,6 +1,3 @@
-import { useState, useEffect, useLayoutEffect } from '@wordpress/element';
-import { decodeEntities } from '@wordpress/html-entities';
-import { __, sprintf } from '@wordpress/i18n';
 import { CheckboxInput } from '@page-creator/components/content/CheckboxInput';
 import { CustomTextarea } from '@page-creator/components/content/CustomTextarea';
 import { Title } from '@page-creator/components/content/Title';
@@ -9,6 +6,9 @@ import { useGlobalsStore } from '@page-creator/state/global';
 import { usePagesStore } from '@page-creator/state/pages';
 import { useUserStore } from '@page-creator/state/user';
 import { useSiteProfileStore } from '@shared/state/site-profile';
+import { useEffect, useLayoutEffect, useState } from '@wordpress/element';
+import { decodeEntities } from '@wordpress/html-entities';
+import { __, sprintf } from '@wordpress/i18n';
 
 const { siteTitle } = window.extSharedData;
 
@@ -119,7 +119,8 @@ export const Dashboard = () => {
 						incrementRegenerationCount();
 						nextPage();
 					}}
-					className="mt-2.5 rounded-sm bg-editor-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90 disabled:bg-gray-300">
+					className="mt-2.5 rounded-xs bg-editor-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90 disabled:bg-gray-300"
+				>
 					{__('Generate Page', 'extendify-local')}
 				</button>
 			</div>

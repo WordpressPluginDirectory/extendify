@@ -1,13 +1,13 @@
+import { AI_HOST } from '@constants';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
-import { AI_HOST } from '@constants';
 
 export const getPlugin = async (slug) => {
 	const response = await apiFetch({
 		path: addQueryArgs('/wp/v2/plugins', { search: slug }),
 	});
 
-	let plugin = response?.[0];
+	const plugin = response?.[0];
 
 	if (!plugin) throw new Error('Plugin not found');
 

@@ -4,6 +4,7 @@ import { Distance } from '@launch/components/QuestionIcon/Icons/distance';
 import { Donation } from '@launch/components/QuestionIcon/Icons/donation';
 import { Events } from '@launch/components/QuestionIcon/Icons/events';
 import { ExternalLink } from '@launch/components/QuestionIcon/Icons/external-link';
+import { Language } from '@launch/components/QuestionIcon/Icons/language';
 import { LongPage } from '@launch/components/QuestionIcon/Icons/long-page';
 import { Newsmode } from '@launch/components/QuestionIcon/Icons/newsmode';
 import { Pages } from '@launch/components/QuestionIcon/Icons/pages';
@@ -24,6 +25,7 @@ const ICONS_MAP = {
 	donation: Donation,
 	newsmode: Newsmode,
 	distance: Distance,
+	language: Language,
 };
 
 export const Icon = ({ id }) => {

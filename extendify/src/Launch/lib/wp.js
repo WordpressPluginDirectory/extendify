@@ -1,25 +1,27 @@
-import apiFetch from '@wordpress/api-fetch';
-import { rawHandler, serialize } from '@wordpress/blocks';
-import { __, sprintf } from '@wordpress/i18n';
-import { recordPluginActivity } from '@shared/api/DataApi';
-import { pageNames } from '@shared/lib/pages';
 import blogSampleData from '@launch/_data/blog-sample.json';
 import {
 	generateCustomPatterns,
 	getImprintPageTemplate,
 } from '@launch/api/DataApi';
-import { getActivePlugins } from '@launch/api/WPApi';
 import {
-	updateOption,
-	createPage,
-	updateThemeVariation,
-	processPlaceholders,
-	uploadMedia,
-	createPost,
 	createCategory,
+	createPage,
+	createPost,
 	createTag,
+	getActivePlugins,
+	getThemeGlobalStyles,
+	processPlaceholders,
+	updateGlobalStyles,
+	updateOption,
+	updateThemeVariation,
+	uploadMedia,
 } from '@launch/api/WPApi';
 import { addIdAttributeToBlock } from '@launch/lib/blocks';
+import { recordPluginActivity } from '@shared/api/DataApi';
+import { pageNames } from '@shared/lib/pages';
+import apiFetch from '@wordpress/api-fetch';
+import { rawHandler, serialize } from '@wordpress/blocks';
+import { __, sprintf } from '@wordpress/i18n';
 
 // Currently this only processes patterns with placeholders
 // by swapping out the placeholders with the actual code
@@ -59,7 +61,7 @@ export const replacePlaceholderPatterns = async (patterns) => {
 
 	try {
 		return await processPlaceholders(patterns);
-	} catch (e) {
+	} catch (_e) {
 		// Try one more time (plugins installed may not be fully loaded)
 		return await processPlaceholders(patterns)
 			// If this fails, just return the original patterns
@@ -79,7 +81,7 @@ export const createWpPages = async (pages, { stickyNav }) => {
 		const seenPatternTypes = new Set();
 		// Loop over every
 		for (const [i, pattern] of blocks.entries()) {
-			const patternType = page.patterns[i].patternTypes?.[0];
+			const patternType = page.patterns[i]?.patternTypes?.[0];
 			const serializedBlock = serialize(pattern);
 			// Get the translated slug
 			const { slug } =
@@ -98,22 +100,21 @@ export const createWpPages = async (pages, { stickyNav }) => {
 			content.push(addIdAttributeToBlock(serializedBlock, slug));
 		}
 
-		let pageData = {
+		const pageData = {
 			title: page.name,
 			status: 'publish',
 			content: content.join(''),
-			template:
-				page.slug === 'home'
+			template: stickyNav
+				? 'no-title-sticky-header'
+				: page.slug === 'home'
 					? 'no-title'
-					: stickyNav
-						? 'no-title-sticky-header'
-						: 'page-with-title',
+					: 'page-with-title',
 			meta: { made_with_extendify_launch: true },
 		};
 		let newPage;
 		try {
 			newPage = await createPage(pageData);
-		} catch (e) {
+		} catch (_e) {
 			// The above could fail is they are on extendable < 2.0.12
 			// TODO: can remove in a month or so
 			pageData.template = 'no-title';
@@ -141,7 +142,7 @@ export const createWpPages = async (pages, { stickyNav }) => {
 export const createWpCategories = async (categories) => {
 	const responses = [];
 	for (const category of categories) {
-		let categoryData = {
+		const categoryData = {
 			name: category.name,
 			slug: category.slug,
 			description: category.description,
@@ -149,7 +150,7 @@ export const createWpCategories = async (categories) => {
 		let newCategory;
 		try {
 			newCategory = await createCategory(categoryData);
-		} catch (e) {
+		} catch (_e) {
 			// Fail silently
 		}
 		if (newCategory?.id && newCategory?.slug) {
@@ -162,7 +163,7 @@ export const createWpCategories = async (categories) => {
 export const createWpTags = async (tags) => {
 	const responses = [];
 	for (const tag of tags) {
-		let tagData = {
+		const tagData = {
 			name: tag.name,
 			slug: tag.slug,
 			description: tag.description,
@@ -170,7 +171,7 @@ export const createWpTags = async (tags) => {
 		let newTag;
 		try {
 			newTag = await createTag(tagData);
-		} catch (e) {
+		} catch (_e) {
 			// Fail silently
 		}
 		if (newTag?.id && newTag?.slug) {
@@ -220,7 +221,7 @@ export const importImage = async (imageUrl, metadata) => {
 		formData.append('status', 'publish');
 
 		return await uploadMedia(formData);
-	} catch (error) {
+	} catch (_error) {
 		// Fail silently, return null
 		return null;
 	}
@@ -229,7 +230,7 @@ export const importImage = async (imageUrl, metadata) => {
 export const createBlogSampleData = async (siteStrings, siteImages) => {
 	const localizedBlogSampleData =
 		blogSampleData[window.extSharedData?.wpLanguage || 'en_US'] ||
-		blogSampleData['en_US'];
+		blogSampleData.en_US;
 
 	const categories =
 		(await createWpCategories(localizedBlogSampleData.categories)) || [];
@@ -297,7 +298,7 @@ export const createBlogSampleData = async (siteStrings, siteImages) => {
 			};
 
 			await createPost(postData);
-		} catch (error) {
+		} catch (_error) {
 			// Fail silently
 		}
 	}
@@ -388,5 +389,90 @@ export const addImprintPage = async (siteStyle) => {
 	} catch (error) {
 		console.error('Failed to add imprint page:', error);
 		return null;
+	}
+};
+
+/**
+ * Updates natural-1 block style variations with selected vibe styles
+ * @param {string} selectedVibe - The vibe to apply (e.g., 'organic-1', 'bold-1')
+ */
+export const updateNaturalVibeStyles = async (selectedVibe) => {
+	if (
+		!selectedVibe ||
+		typeof selectedVibe !== 'string' ||
+		selectedVibe.trim() === '' ||
+		selectedVibe === 'natural-1'
+	) {
+		return;
+	}
+
+	const generateSourceStyleName = (naturalStyleName, targetVibe) =>
+		naturalStyleName.replace('--natural-1--', `--${targetVibe}--`);
+
+	const processBlockVariations = (variations, targetVibe) =>
+		Object.fromEntries(
+			Object.entries(variations).map(([styleName, styleProperties]) => {
+				if (!styleName.includes('--natural-1--')) {
+					return [styleName, { ...styleProperties }];
+				}
+
+				const sourceStyleName = generateSourceStyleName(styleName, targetVibe);
+				const sourceStyle = variations[sourceStyleName];
+
+				return [
+					styleName,
+					sourceStyle ? { ...sourceStyle } : { ...styleProperties },
+				];
+			}),
+		);
+
+	try {
+		const globalStylesPostID = window.extSharedData?.globalStylesPostID;
+
+		if (!globalStylesPostID) {
+			throw new Error('Global styles post ID not found');
+		}
+
+		// Fetch theme styles
+		const { styles: themeStyles } = await getThemeGlobalStyles();
+
+		if (!themeStyles?.blocks) {
+			throw new Error('No block styles found in theme global styles');
+		}
+
+		// Process blocks with variations
+		const updatedBlocks = Object.fromEntries(
+			Object.entries(themeStyles.blocks).map(([blockName, blockObj]) => {
+				if (!blockObj?.variations) {
+					return [blockName, blockObj];
+				}
+
+				const { variations, ...rest } = blockObj;
+				const hasNaturalVariations = Object.keys(variations).some((styleName) =>
+					styleName.includes('--natural-1--'),
+				);
+
+				if (!hasNaturalVariations) {
+					return [blockName, blockObj];
+				}
+
+				return [
+					blockName,
+					{
+						...rest,
+						variations: processBlockVariations(variations, selectedVibe),
+					},
+				];
+			}),
+		);
+
+		// Apply the update
+		await updateGlobalStyles(globalStylesPostID, {
+			styles: { ...themeStyles, blocks: updatedBlocks },
+		});
+	} catch (error) {
+		const errorMessage =
+			error?.response?.data?.message || error?.message || 'Unknown error';
+		throw new Error(`Vibe update failed: ${errorMessage}`);
 	}
 };

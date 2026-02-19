@@ -1,4 +1,5 @@
 import { memo } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const Pencil = (props) => {
 	const { className, ...otherProps } = props;
@@ -9,7 +10,9 @@ const Pencil = (props) => {
 			viewBox="0 0 24 24"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...otherProps}>
+			{...otherProps}
+		>
+			<title>{__('Pencil Icon', 'extendify-local')}</title>
 			<path
 				opacity="0.3"
 				d="M7.03432 14.8828L16.2343 5.68249L18.2298 7.67791L9.02981 16.8782L7.03432 14.8828Z"

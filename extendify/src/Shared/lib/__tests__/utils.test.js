@@ -1,4 +1,4 @@
-import { isObject, deepMerge, sleep } from '@shared/lib/utils';
+import { deepMerge, isObject, sleep } from '@shared/lib/utils';
 
 describe('isObject', () => {
 	it('returns true for plain objects', () => {

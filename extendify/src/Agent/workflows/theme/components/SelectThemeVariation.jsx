@@ -1,9 +1,9 @@
-import { Tooltip } from '@wordpress/components';
-import { useMemo, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { ErrorMessage } from '@agent/components/ErrorMessage';
 import { useThemeVariations } from '@agent/hooks/useThemeVariations';
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
+import { useChatStore } from '@agent/state/chat';
+import { Tooltip } from '@wordpress/components';
+import { useEffect, useMemo, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 	const [css, setCss] = useState('');
@@ -12,6 +12,8 @@ export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 	const { undoChange } = useVariationOverride({ css, duotoneTheme });
 	const { variations, isLoading } = useThemeVariations();
 	const noVariations = !variations || variations.length === 0;
+	const { addMessage, messages } = useChatStore();
+
 	const shuffled = useMemo(
 		() => (variations ? variations.sort(() => Math.random() - 0.5) : []),
 		[variations],
@@ -21,6 +23,7 @@ export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 		if (!selected) return;
 		onConfirm({
 			data: { variation: variations.find((v) => v.title === selected) },
+			shouldRefreshPage: true,
 		});
 	};
 
@@ -28,28 +31,30 @@ export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 		undoChange();
 		onCancel();
 	};
+
+	useEffect(() => {
+		if (isLoading || !noVariations) return;
+		const timer = setTimeout(() => onCancel(), 100);
+		// translators: A chat message shown to the user
+		const content = __(
+			'We were unable to find any colors for your theme',
+			'extendify-local',
+		);
+		const last = messages.at(-1)?.details?.content;
+		if (content === last) return () => clearTimeout(timer);
+		addMessage('message', { role: 'assistant', content, error: true });
+		return () => clearTimeout(timer);
+	}, [addMessage, onCancel, noVariations, messages, isLoading]);
+
 	if (isLoading) {
 		return (
 			<div className="min-h-24 p-2 text-center text-sm">
-				{__('Loading variations...', 'extendify-local')}
+				{__('Loading available colors...', 'extendify-local')}
 			</div>
 		);
 	}
-	if (noVariations) {
-		return (
-			<ErrorMessage>
-				<div className="font-semibold">
-					{__('No variations found', 'extendify-local')}
-				</div>
-				<div className="">
-					{__(
-						'We were unable to find any variations for your theme.',
-						'extendify-local',
-					)}
-				</div>
-			</ErrorMessage>
-		);
-	}
+
+	if (noVariations) return null;
 
 	return (
 		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
@@ -67,13 +72,15 @@ export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 									setSelected(title);
 									setCss(css);
 									setDuotoneTheme(settings?.color?.duotone?.theme);
-								}}>
+								}}
+							>
 								<div className="flex max-w-fit items-center justify-center -space-x-4 rounded-lg rtl:space-x-reverse">
 									{getColors(settings)?.map((color, i) => (
 										<div
 											key={title + color + i}
 											style={{ backgroundColor: color }}
-											className="size-6 flex-shrink-0 overflow-visible rounded-full border border-white md:size-7"></div>
+											className="size-6 shrink-0 overflow-visible rounded-full border border-white md:size-7"
+										></div>
 									))}
 								</div>
 							</button>
@@ -84,15 +91,17 @@ export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 			<div className="flex justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={handleCancel}>
+					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleCancel}
+				>
 					{__('Cancel', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
+					className="w-full rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
 					disabled={!selected}
-					onClick={handleConfirm}>
+					onClick={handleConfirm}
+				>
 					{__('Save', 'extendify-local')}
 				</button>
 			</div>

@@ -1,6 +1,6 @@
-import { uploadMedia } from '@wordpress/media-utils';
 import { getOption, updateOption } from '@launch/api/WPApi';
 import { uploadLogo } from '@launch/lib/logo';
+import { uploadMedia } from '@wordpress/media-utils';
 
 // Mock the dependencies
 jest.mock('@wordpress/media-utils', () => ({
@@ -149,7 +149,7 @@ describe('uploadLogo', () => {
 			blob: () => Promise.resolve(mockBlob),
 		});
 
-		const FileSpy = jest.fn(function (bits, name, options) {
+		const FileSpy = jest.fn(function (_bits, name, options) {
 			this.name = name;
 			this.type = options?.type;
 			return this;
@@ -199,7 +199,7 @@ describe('uploadLogo', () => {
 			blob: () => Promise.resolve(mockBlob),
 		});
 
-		const FileSpy = jest.fn(function (bits, name, options) {
+		const FileSpy = jest.fn(function (_bits, name, options) {
 			this.name = name;
 			this.type = options?.type;
 			return this;

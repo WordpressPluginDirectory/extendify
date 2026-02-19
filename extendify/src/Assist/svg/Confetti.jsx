@@ -1,3 +1,5 @@
+import { __ } from '@wordpress/i18n';
+
 export default function Confetti(props) {
 	return (
 		<svg
@@ -6,7 +8,9 @@ export default function Confetti(props) {
 			viewBox="0 0 111 93"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...props}>
+			{...props}
+		>
+			<title>{__('Confetti Icon', 'extendify-local')}</title>
 			<path
 				d="M14.5101 87.2398C13.3358 90.2964 16.3444 93.2964 19.3977 92.1131L83.0531 65.0925L39.2382 22.4141L14.5101 87.2398Z"
 				fill="#495683"

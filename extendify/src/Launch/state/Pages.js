@@ -1,6 +1,6 @@
-import { create } from 'zustand';
-import { persist, devtools } from 'zustand/middleware';
 import { pages } from '@launch/lib/pages';
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
 
 const store = (set, get) => ({
 	pages: new Map(pages),

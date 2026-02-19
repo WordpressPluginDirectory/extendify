@@ -1,3 +1,4 @@
+import { __ } from '@wordpress/i18n';
 export default function AllCaughtUp(props) {
 	return (
 		<svg
@@ -6,7 +7,9 @@ export default function AllCaughtUp(props) {
 			viewBox="0 0 92 90"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...props}>
+			{...props}
+		>
+			<title>{__('All Caught Up Icon', 'extendify-local')}</title>
 			<path
 				d="M46.0008 0.503906C71.3189 0.503906 91.8428 21.0278 91.8428 46.3458C91.8428 65.8291 79.687 82.4701 62.5478 89.1078H29.4538C12.3141 82.4701 0.157707 65.8291 0.157707 46.3458C0.157707 21.0284 20.6828 0.503906 46.0008 0.503906Z"
 				fill="#FAFAFA"

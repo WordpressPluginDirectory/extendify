@@ -1,6 +1,6 @@
-import { Spinner } from '@wordpress/components';
-import { useEffect, useState, useInsertionEffect } from '@wordpress/element';
 import { loadImage } from '@shared/api/wp';
+import { Spinner } from '@wordpress/components';
+import { useEffect, useInsertionEffect, useState } from '@wordpress/element';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -38,14 +38,16 @@ export const UnsplashImage = ({
 		<motion.div
 			className="relative mb-1"
 			initial={{ aspectRatio }}
-			animate={{ aspectRatio }}>
+			animate={{ aspectRatio }}
+		>
 			<AnimatePresence>
 				{loaded ? null : (
 					<motion.div
 						className="absolute inset-0 z-10 bg-white"
 						initial={{ opacity: 1 }}
 						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}>
+						exit={{ opacity: 0 }}
+					>
 						<div className="animate-pulse absolute inset-0 z-10 bg-gray-150" />
 					</motion.div>
 				)}
@@ -58,7 +60,8 @@ export const UnsplashImage = ({
 						'bg-black': isInsertingImage,
 					})}
 					onClick={() => onClick(image)}
-					disabled={isInsertingImage}>
+					disabled={isInsertingImage}
+				>
 					{isInsertingImage && isInsertingImage?.id === image?.id && (
 						<div className="absolute inset-0 flex items-center justify-center">
 							<Spinner style={{ height: '24px', width: '24px' }} />
@@ -82,7 +85,8 @@ export const UnsplashImage = ({
 								'group-focus-within:opacity-100 group-hover:opacity-100':
 									!isInsertingImage,
 							},
-						)}>{`${image.user?.name}`}</a>
+						)}
+					>{`${image.user?.name}`}</a>
 				) : null}
 			</div>
 		</motion.div>

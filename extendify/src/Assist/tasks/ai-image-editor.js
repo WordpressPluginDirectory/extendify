@@ -1,6 +1,6 @@
-import { __ } from '@wordpress/i18n';
 import { AiImageGeneratorMarkup } from '@assist/tasks/images/AiImageGeneratorMarkup';
 import { hasPageCreatorEnabled } from '@help-center/lib/utils';
+import { __ } from '@wordpress/i18n';
 
 export default {
 	slug: 'ai-image-editor',
@@ -23,7 +23,7 @@ export default {
 	backgroundImage: null,
 	htmlBefore: () => (
 		<AiImageGeneratorMarkup
-			className="border-gray300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-100 pt-5 lg:block"
+			className="border-gray-300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-100 pt-5 lg:block"
 			aria-hidden="true"
 		/>
 	),

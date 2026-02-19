@@ -1,19 +1,19 @@
-import { store as blockEditorStore } from '@wordpress/block-editor';
-import {
-	__experimentalHeading as Heading,
-	__experimentalDivider as Divider,
-} from '@wordpress/components';
-import { SearchControl } from '@wordpress/components';
-import { useSelect, useDispatch } from '@wordpress/data';
-import { useEffect, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { downloadImage } from '@shared/api/wp';
-import classNames from 'classnames';
 import { addImageToBlock } from '@draft/api/WPApi';
 import { UnsplashImages } from '@draft/components/stock-images/UnsplashImages';
 import { useRouter } from '@draft/hooks/useRouter';
 import { useUnsplashImages } from '@draft/hooks/useUnsplashImages';
 import { backArrow } from '@draft/svg/BackArrow';
+import { downloadImage } from '@shared/api/wp';
+import { store as blockEditorStore } from '@wordpress/block-editor';
+import {
+	__experimentalDivider as Divider,
+	__experimentalHeading as Heading,
+	SearchControl,
+} from '@wordpress/components';
+import { useDispatch, useSelect } from '@wordpress/data';
+import { useEffect, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import classNames from 'classnames';
 
 export const Unsplash = () => {
 	const { goBack } = useRouter();
@@ -64,7 +64,8 @@ export const Unsplash = () => {
 					className="h-9 w-9 border-0 bg-transparent"
 					onClick={goBack}
 					type="button"
-					aria-label={__('Go Back', 'extendify-local')}>
+					aria-label={__('Go Back', 'extendify-local')}
+				>
 					{backArrow}
 				</button>
 				<Heading className="mb-0">

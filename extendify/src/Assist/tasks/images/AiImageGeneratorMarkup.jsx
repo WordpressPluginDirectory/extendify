@@ -1,26 +1,26 @@
+import { magic } from '@assist/tasks/images/icons';
 import { Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import {
+	alignNone,
+	chevronLeft,
+	chevronUpDown,
+	crop,
+	dragHandle,
+	drawerRight,
+	filter,
+	helpFilled,
 	Icon,
-	wordpress,
-	plus,
-	pencil,
-	undo,
-	redo,
+	image,
+	link,
 	listView,
 	moreVertical,
-	dragHandle,
-	link,
-	chevronUpDown,
-	helpFilled,
-	drawerRight,
-	image,
-	alignNone,
-	filter,
-	crop,
-	chevronLeft,
+	pencil,
+	plus,
+	redo,
+	undo,
+	wordpress,
 } from '@wordpress/icons';
-import { magic } from '@assist/tasks/images/icons';
 
 export const AiImageGeneratorMarkup = (props) => (
 	<div {...props}>
@@ -102,7 +102,8 @@ export const AiImageGeneratorMarkup = (props) => (
 								className="flex flex-row-reverse pl-3 pr-2"
 								variant="primary"
 								icon={helpFilled}
-								iconSize={18}>
+								iconSize={18}
+							>
 								{__('Help', 'extendify-local')}
 							</Button>
 							<Icon icon={moreVertical} />
@@ -141,6 +142,7 @@ export const AiImageGeneratorMarkup = (props) => (
 							</div>
 							<img
 								className="h-auto w-full"
+								alt={__('A group of penguins', 'extendify-local')}
 								src="https://images.extendify-cdn.com/assist-tasks/penguins.webp"
 							/>
 							<p>
@@ -171,7 +173,7 @@ export const AiImageGeneratorMarkup = (props) => (
 									{__('Aspect Ratio', 'extendify-local')}
 								</span>
 								<div className="w-fill mb-7 mt-2 flex gap-1 border border-current p-1">
-									<div className="flex flex-1 items-center justify-center rounded-sm bg-current p-1">
+									<div className="flex flex-1 items-center justify-center rounded-xs bg-current p-1">
 										<div className="h-3 w-3 bg-white"></div>
 									</div>
 									<div className="flex flex-1 items-center justify-center p-1">
@@ -184,7 +186,8 @@ export const AiImageGeneratorMarkup = (props) => (
 								<Button
 									variant="primary"
 									__next40pxDefaultSize
-									className="w-full justify-center">
+									className="w-full justify-center"
+								>
 									{__('Generate Image', 'extendify-local')}
 								</Button>
 								<div className="mt-5 flex items-center justify-items-center gap-2">

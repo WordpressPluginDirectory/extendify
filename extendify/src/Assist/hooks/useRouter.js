@@ -1,12 +1,12 @@
+import { Dashboard } from '@assist/pages/Dashboard';
+import { homeIcon } from '@assist/svg';
+import { safeParseJson } from '@shared/lib/parsing';
+import { useActivityStore } from '@shared/state/activity';
 import apiFetch from '@wordpress/api-fetch';
 import { useCallback, useEffect, useLayoutEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { safeParseJson } from '@shared/lib/parsing';
-import { useActivityStore } from '@shared/state/activity';
 import { create } from 'zustand';
-import { devtools, persist, createJSONStorage } from 'zustand/middleware';
-import { Dashboard } from '@assist/pages/Dashboard';
-import { homeIcon } from '@assist/svg';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const pages = [
 	{
@@ -130,11 +130,11 @@ export const useRouter = () => {
 		current,
 		CurrentPage: useCallback(
 			() => (
-				<div role="region" aria-live="polite">
+				<section aria-live="polite">
 					{/* Announce to SR on change */}
 					<h1 className="sr-only">{current?.name}</h1>
 					<Component />
-				</div>
+				</section>
 			),
 			[current],
 		),

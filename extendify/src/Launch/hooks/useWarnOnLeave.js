@@ -6,7 +6,7 @@ export const useWarnOnLeave = (enabled = true) => {
 		if (!enabled) return;
 		const handleUnload = (event) => {
 			event.preventDefault();
-			return (event.returnValue = '');
+			event.returnValue = '';
 		};
 		const opts = { capture: true };
 		window.addEventListener('beforeunload', handleUnload, opts);

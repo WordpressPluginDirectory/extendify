@@ -39,7 +39,8 @@ export const DraftMenu = ({ disabled, setInputText, setReady }) => {
 					onClick={() => handleClick(`${onClickText} `)}
 					disabled={disabled}
 					icon={pencil}
-					iconPosition="left">
+					iconPosition="left"
+				>
 					{label}
 				</MenuItem>
 			))}

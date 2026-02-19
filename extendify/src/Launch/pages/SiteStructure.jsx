@@ -1,3 +1,7 @@
+import { Title } from '@launch/components/Title';
+import { PageLayout } from '@launch/layouts/PageLayout';
+import { pageState } from '@launch/state/factory';
+import { useUserSelectionStore } from '@launch/state/user-selections';
 import {
 	useEffect,
 	useLayoutEffect,
@@ -5,12 +9,8 @@ import {
 	useState,
 } from '@wordpress/element';
 import { __, isRTL } from '@wordpress/i18n';
-import { Icon, arrowRight, arrowLeft } from '@wordpress/icons';
+import { arrowLeft, arrowRight, Icon } from '@wordpress/icons';
 import classNames from 'classnames';
-import { Title } from '@launch/components/Title';
-import { PageLayout } from '@launch/layouts/PageLayout';
-import { pageState } from '@launch/state/factory';
-import { useUserSelectionStore } from '@launch/state/user-selections';
 
 export const state = pageState('Site Template Type', () => ({
 	ready: false,
@@ -77,26 +77,28 @@ export const SiteStructure = () => {
 };
 
 const ButtonSelect = ({ title, description, onClick, selected, imageSrc }) => (
+	// biome-ignore lint: keep the button role until a refactor is done
 	<div
 		data-test="site-template-type"
 		className={classNames(
-			'relative flex-1 cursor-pointer overflow-hidden rounded border border-gray-200 ring-offset-2 ring-offset-white focus-within:outline-none focus-within:ring-4 focus-within:ring-design-main focus-within:ring-offset-2 focus-within:ring-offset-white hover:outline-none hover:ring-4',
+			'relative flex-1 cursor-pointer overflow-hidden rounded-sm border border-gray-200 ring-offset-2 ring-offset-white focus-within:outline-hidden focus-within:ring-4 focus-within:ring-design-main focus-within:ring-offset-2 focus-within:ring-offset-white hover:outline-hidden hover:ring-4',
 			{
 				'ring-4 ring-design-main ring-offset-2 ring-offset-white hover:ring-design-main':
 					selected,
 				'hover:ring-gray-300': !selected,
 			},
 		)}
-		role="button"
+		role="radio"
 		tabIndex={0}
 		aria-label={__('Press to select', 'extendify-local')}
-		aria-selected={selected}
+		aria-checked={selected}
 		onKeyDown={(e) => {
 			if (!['Enter', 'Space', ' '].includes(e.key)) return;
 			e.preventDefault();
 			onClick();
 		}}
-		onClick={onClick}>
+		onClick={onClick}
+	>
 		<div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100 group-hover:opacity-75 lg:flex">
 			<img
 				alt=""

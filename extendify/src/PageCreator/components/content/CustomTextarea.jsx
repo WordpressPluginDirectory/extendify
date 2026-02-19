@@ -1,7 +1,7 @@
+import { Description, Field, Label, Textarea } from '@headlessui/react';
 import { Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { Icon, close } from '@wordpress/icons';
-import { Description, Field, Label, Textarea } from '@headlessui/react';
+import { close, Icon } from '@wordpress/icons';
 
 export const CustomTextarea = ({
 	placeholder,
@@ -12,7 +12,7 @@ export const CustomTextarea = ({
 	description = null,
 	required = false,
 	hideEditor = false,
-	setHideEditor = function () {},
+	setHideEditor = () => {},
 	id,
 }) => {
 	const handleEditClick = (e) => {
@@ -24,7 +24,8 @@ export const CustomTextarea = ({
 		<Field id={id} className="p-3">
 			<Label
 				as="h4"
-				className="mb-2 mt-0 text-base font-medium data-[disabled]:opacity-50">
+				className="mb-2 mt-0 text-base font-medium data-[disabled]:opacity-50"
+			>
 				{__(title, 'extendify-local')}{' '}
 				{required && (
 					<span className="text-sm font-light text-wp-alert-red">*</span>
@@ -62,7 +63,8 @@ export const CustomTextarea = ({
 								aria-label={__('Clear', 'extendify-local')}
 								onClick={() => {
 									onChange({ currentTarget: { value: '' } });
-								}}>
+								}}
+							>
 								<Icon icon={close} size={16} />
 							</button>
 						</span>

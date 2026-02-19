@@ -1,6 +1,6 @@
 import { safeParseJson } from '@shared/lib/parsing';
 import { create } from 'zustand';
-import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const initialState = {
 	pages: [],

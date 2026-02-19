@@ -1,16 +1,16 @@
+import { Draft } from '@draft/Draft';
+import { useEditorReady } from '@shared/hooks/gutenberg';
 import { store as blockEditorStore } from '@wordpress/block-editor';
 import { createBlock } from '@wordpress/blocks';
 import { Flex, FlexBlock } from '@wordpress/components';
-import { useSelect, useDispatch } from '@wordpress/data';
+import { useDispatch, useSelect } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
-import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/edit-post';
+import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/editor';
 import { useEffect, useRef } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { __ } from '@wordpress/i18n';
 import { registerPlugin } from '@wordpress/plugins';
-import { useEditorReady } from '@shared/hooks/gutenberg';
-import { Draft } from '@draft/Draft';
-import '@draft/app.css';
+import '@draft/draft.css';
 import { GenerateImageButtons } from '@draft/components/GenerateImageButtons';
 import { ToolbarMenu } from '@draft/components/ToolbarMenu';
 import { useRouter } from '@draft/hooks/useRouter';
@@ -26,7 +26,8 @@ registerPlugin('extendify-draft', {
 				name="draft"
 				icon={magic}
 				title={__('AI Tools', 'extendify-local')}
-				className="extendify-draft h-full">
+				className="extendify-draft h-full"
+			>
 				<Flex direction="column" expanded justify="space-between">
 					<FlexBlock>
 						<Draft />
@@ -57,7 +58,7 @@ const ExtendifyDraft = ({ children }) => {
 		window.history.replaceState(
 			{},
 			'',
-			window.location.pathname + '?' + search.toString(),
+			`${window.location.pathname}?${search.toString()}`,
 		);
 
 		navigateTo('ai-image');

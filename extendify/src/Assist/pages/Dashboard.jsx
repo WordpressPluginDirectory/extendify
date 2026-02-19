@@ -1,9 +1,9 @@
 import { DesktopCards } from '@assist/components/dashboard/DesktopCards';
+import { DomainBanner } from '@assist/components/dashboard/domains/DomainBanner';
+import { SecondaryDomainBanner } from '@assist/components/dashboard/domains/SecondaryDomainBanner';
 import { MobileCards } from '@assist/components/dashboard/MobileCards';
 import { QuickLinks } from '@assist/components/dashboard/QuickLinks';
 import { Recommendations } from '@assist/components/dashboard/Recommendations';
-import { DomainBanner } from '@assist/components/dashboard/domains/DomainBanner';
-import { SecondaryDomainBanner } from '@assist/components/dashboard/domains/SecondaryDomainBanner';
 import { useTasks } from '@assist/hooks/useTasks';
 import {
 	showDomainBanner,

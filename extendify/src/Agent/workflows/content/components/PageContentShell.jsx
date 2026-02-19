@@ -1,9 +1,4 @@
-import apiFetch from '@wordpress/api-fetch';
-import { registerCoreBlocks } from '@wordpress/block-library';
-import { rawHandler, serialize } from '@wordpress/blocks';
-import { useDispatch, useSelect } from '@wordpress/data';
-import { store as editorStore } from '@wordpress/editor';
-import { useEffect, useRef, useState } from '@wordpress/element';
+import { addIdAttributeToBlock } from '@launch/lib/blocks';
 import { usePageCustomContent } from '@page-creator/hooks/usePageCustomContent';
 import { processPatterns } from '@page-creator/lib/processPatterns.js';
 import { usePageDescriptionStore } from '@page-creator/state/cache';
@@ -11,7 +6,12 @@ import { installBlocks } from '@page-creator/util/installBlocks.js';
 import { syncPageTitleTemplate } from '@page-creator/util/syncPageTitleTemplate.js';
 import { render } from '@shared/lib/dom';
 import { pageNames } from '@shared/lib/pages';
-import { addIdAttributeToBlock } from '@launch/lib/blocks';
+import apiFetch from '@wordpress/api-fetch';
+import { registerCoreBlocks } from '@wordpress/block-library';
+import { getBlockTypes, rawHandler, serialize } from '@wordpress/blocks';
+import { useDispatch, useSelect } from '@wordpress/data';
+import { store as editorStore } from '@wordpress/editor';
+import { useEffect, useRef, useState } from '@wordpress/element';
 
 const { pageTitlePattern } = window.extPageCreator ?? {};
 
@@ -35,9 +35,8 @@ const PageContentShell = ({ pageDescription, onComplete }) => {
 		};
 	}, []);
 
-	// `rawHandler` does not work on the frontend, so we need to register the
-	// core blocks again to get it working.
 	useEffect(() => {
+		if (getBlockTypes().length !== 0) return;
 		registerCoreBlocks();
 	}, []);
 
@@ -163,7 +162,7 @@ export const generatePage = (pageDescription) => {
 			if (!isCompleted) {
 				handleComplete(null);
 			}
-		}, 30000);
+		}, 180000);
 
 		try {
 			render(

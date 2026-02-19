@@ -1,11 +1,11 @@
-import { formatSiteQuestionsForAPI } from '@shared/utils/format-site-questions-for-api';
-import useSWRImmutable from 'swr/immutable';
 import { getHomeTemplates } from '@launch/api/DataApi';
 import { useSiteImages } from '@launch/hooks/useSiteImages';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
 import { useSiteStrings } from '@launch/hooks/useSiteStrings';
 import { useSiteStyles } from '@launch/hooks/useSiteStyles';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import { formatSiteQuestionsForAPI } from '@shared/utils/format-site-questions-for-api';
+import useSWRImmutable from 'swr/immutable';
 
 export const useHomeLayouts = ({ disableFetch = false } = {}) => {
 	const { siteType, siteStructure, siteObjective, siteQA, sitePlugins } =

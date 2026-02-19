@@ -1,6 +1,6 @@
-import { Icon } from '@wordpress/icons';
 import { CategoryControl } from '@library/components/sidebar/CategoryControl';
 import { extendifyLogo } from '@library/icons/extendify-logo';
+import { Icon } from '@wordpress/icons';
 
 const { partnerLogo, partnerName } = window.extSharedData;
 export const Sidebar = () => {
@@ -25,7 +25,8 @@ export const Sidebar = () => {
 				<div
 					id="extendify-library-category-control"
 					data-test="category-control"
-					className="hidden flex-col overflow-x-hidden px-4 md:flex">
+					className="hidden flex-col overflow-x-hidden px-4 md:flex"
+				>
 					<CategoryControl />
 				</div>
 			</div>

@@ -35,7 +35,7 @@ const state = (set, get) => ({
 
 		const parser = new DOMParser();
 
-		jQuery?.ajaxSetup({
+		window.jQuery?.ajaxSetup({
 			beforeSend: (_, settings) => {
 				const params = new URLSearchParams(settings.data);
 				const action = params.get('action');
@@ -53,7 +53,7 @@ const state = (set, get) => ({
 						const i = window.jQuery('#search-plugins');
 						const value = i.val();
 						// either remove trailing space or add one
-						i.val(value.endsWith(' ') ? value.trim() : value + ' ');
+						i.val(value.endsWith(' ') ? value.trim() : `${value} `);
 						i.trigger('keyup');
 						return;
 					}
@@ -70,7 +70,7 @@ const state = (set, get) => ({
 							isSearchPluginsLoading: false,
 							isSearchPluginsError: false,
 						});
-					} catch (error) {
+					} catch (_error) {
 						set({
 							searchPlugins: [],
 							isSearchPluginsLoading: false,

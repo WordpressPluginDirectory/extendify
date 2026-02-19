@@ -1,9 +1,8 @@
-import { useState, useRef, useEffect, useMemo } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { getPageTemplates } from '@launch/api/DataApi';
 import { PagePreview } from '@launch/components/PagePreview';
 import { PageSelectButton } from '@launch/components/PageSelectButton';
 import { PageSelectButtonPlaceholder } from '@launch/components/PageSelectButtonPlaceholder';
+import { ShoppingCart } from '@launch/components/QuestionIcon/Icons/shopping-cart';
 import { Title } from '@launch/components/Title';
 import { useFetch } from '@launch/hooks/useFetch';
 import { PageLayout } from '@launch/layouts/PageLayout';
@@ -11,6 +10,8 @@ import { pageState } from '@launch/state/factory';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { buildRecommendedPagesParams } from '@launch/utils/buildRecommendedPagesParams';
+import { useEffect, useMemo, useRef, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const state = pageState('Pages', () => ({
 	ready: true,
@@ -19,7 +20,9 @@ export const state = pageState('Pages', () => ({
 	onRemove: () => {
 		// If the page is removed then clean up the selected pages
 		const { pages, remove } = usePagesSelectionStore.getState();
-		pages.forEach((page) => remove('pages', page));
+		pages.forEach((page) => {
+			remove('pages', page);
+		});
 	},
 }));
 
@@ -31,7 +34,7 @@ export const PagesSelect = () => {
 	} = useFetch(buildRecommendedPagesParams, getPageTemplates);
 	const [previewing, setPreviewing] = useState();
 	const [expandMore, setExpandMore] = useState();
-	const { siteInformation, siteObjective } = useUserSelectionStore();
+	const { siteInformation, siteObjective, siteQA } = useUserSelectionStore();
 	const { pages, remove, removeAll, add, has, style } =
 		usePagesSelectionStore();
 	const pagePreviewRef = useRef();
@@ -46,8 +49,7 @@ export const PagesSelect = () => {
 			slug: 'home-page',
 			name: __('Home page', 'extendify-local'),
 			patterns: style?.patterns
-				.map(({ code }) => code)
-				.flat()
+				.flatMap(({ code }) => code)
 				.map((code, i) => ({
 					name: `pattern-${i}`,
 					code,
@@ -92,20 +94,27 @@ export const PagesSelect = () => {
 		if (!availablePages?.recommended) return;
 		// On re-load, remove any lingering pages and add the recommended ones
 		removeAll('pages');
-		availablePages.recommended.forEach((page) => add('pages', page));
+		availablePages.recommended.forEach((page) => {
+			add('pages', page);
+		});
 	}, [availablePages?.recommended, removeAll, add]);
+
+	const productsQuestion = siteQA?.questions?.find((q) => q.id === 'products');
+	const productsAnswer =
+		productsQuestion?.answerUser ?? productsQuestion?.answerAI;
 
 	return (
 		<PageLayout>
 			<div className="grow space-y-4 overflow-y-auto lg:flex lg:space-y-0">
-				<div className="l6:px-16 hidden h-full min-h-screen grow overflow-y-hidden bg-gray-100 px-4 pt-0 lg:block lg:min-h-0 lg:pb-0 xl:px-32">
+				<div className="lg:px-16 hidden h-full min-h-screen grow overflow-y-hidden bg-gray-100 px-4 pt-0 lg:block lg:min-h-0 lg:pb-0 xl:px-32">
 					<div className="flex h-full flex-col">
 						<h3 className="my-2 text-center text-base font-medium text-gray-700 lg:my-4 lg:text-lg">
 							{previewing?.name}
 						</h3>
 						<div
 							ref={pagePreviewRef}
-							className="relative h-full grow overflow-x-hidden rounded-t-lg lg:h-auto lg:overflow-y-auto">
+							className="relative h-full grow overflow-x-hidden rounded-t-lg lg:h-auto lg:overflow-y-auto"
+						>
 							{previewing && (
 								<PagePreview
 									ref={pagePreviewRef}
@@ -131,7 +140,8 @@ export const PagesSelect = () => {
 					/>
 					<div
 						className="flex w-full flex-col gap-4 pb-4"
-						data-test="recommended-pages">
+						data-test="recommended-pages"
+					>
 						<PageSelectButton
 							page={homePage}
 							previewing={homePage.id === previewing?.id}
@@ -164,7 +174,8 @@ export const PagesSelect = () => {
 								type="button"
 								data-test="expand-more"
 								onClick={setExpandMore}
-								className="button-focus my-4 bg-transparent text-center text-sm font-medium text-gray-900 hover:text-design-main">
+								className="button-focus my-4 bg-transparent text-center text-sm font-medium text-gray-900 hover:text-design-main"
+							>
 								{__('View more pages', 'extendify-local')}
 							</button>
 						</div>
@@ -173,7 +184,8 @@ export const PagesSelect = () => {
 					{expandMore && (
 						<div
 							className="flex w-full flex-col gap-4 pb-4"
-							data-test="optional-pages">
+							data-test="optional-pages"
+						>
 							{availablePages?.optional?.map((page) => (
 								<PageSelectButton
 									key={page.id}
@@ -184,6 +196,18 @@ export const PagesSelect = () => {
 									onChange={() => handlePageToggle(page)}
 								/>
 							))}
+						</div>
+					)}
+
+					{!loading && productsAnswer === 'yes-shopping-cart' && (
+						<div className="flex gap-1.5 mt-7 mx-auto w-full rounded-sm inset-ring inset-ring-gray-900/8 bg-gray-900/2 px-3.5 py-3 text-sm">
+							<ShoppingCart />
+							<span>
+								{__(
+									'A "Shop" page will also be automatically created.',
+									'extendify-local',
+								)}
+							</span>
 						</div>
 					)}
 				</div>

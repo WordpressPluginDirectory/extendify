@@ -1,9 +1,9 @@
-import { useState, useEffect } from '@wordpress/element';
+import { thumbDown, thumbUp } from '@help-center/components/ai-chat/icons';
+import { rateAnswer } from '@help-center/lib/api';
+import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Icon } from '@wordpress/icons';
 import classnames from 'classnames';
-import { thumbUp, thumbDown } from '@help-center/components/ai-chat/icons';
-import { rateAnswer } from '@help-center/lib/api';
 
 export const Rating = ({ answerId }) => {
 	const [rating, setRating] = useState(undefined);
@@ -32,7 +32,8 @@ export const Rating = ({ answerId }) => {
 						'text-design-main': rating === 1,
 						'text-gray-500': rating !== 1,
 					},
-				)}>
+				)}
+			>
 				<Icon className="fill-current" icon={thumbUp} />
 			</button>
 
@@ -52,7 +53,8 @@ export const Rating = ({ answerId }) => {
 						'text-design-main': rating === -1,
 						'text-gray-500': rating !== -1,
 					},
-				)}>
+				)}
+			>
 				<Icon className="fill-current" icon={thumbDown} />
 			</button>
 		</div>

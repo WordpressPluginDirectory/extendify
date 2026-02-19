@@ -1,14 +1,14 @@
-import { Tooltip } from '@wordpress/components';
-import { decodeEntities } from '@wordpress/html-entities';
-import { __ } from '@wordpress/i18n';
-import { Icon, pencil, styles, lifesaver, cog } from '@wordpress/icons';
-import ReactMarkdown from 'react-markdown';
 import { recordAgentActivity } from '@agent/api';
 import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
 import { magic } from '@agent/icons';
 import pageTours from '@agent/lib/page-tours';
 import tours from '@agent/tours/tours';
 import { SingleTour } from '@agent/workflows/misc/components/ToursList';
+import { Tooltip } from '@wordpress/components';
+import { decodeEntities } from '@wordpress/html-entities';
+import { __ } from '@wordpress/i18n';
+import { cog, Icon, lifesaver, pencil, styles } from '@wordpress/icons';
+import ReactMarkdown from 'react-markdown';
 
 const availableTours = Object.values(tours);
 const adminPages = window.extAgentData.agentContext?.availableAdminPages || [];
@@ -53,11 +53,13 @@ export const AgentMessage = ({ message, animate }) => {
 	return (
 		<div
 			data-agent-message-role={role}
-			className="flex w-full items-start gap-2.5 p-2">
-			<div className="w-7 flex-shrink-0">
+			className="flex w-full items-start gap-2.5 p-2"
+		>
+			<div className="w-7 shrink-0">
 				<Tooltip
 					text={agent?.name ?? __('Agent', 'extendify-local')}
-					placement="top">
+					placement="top"
+				>
 					{agent?.avatar ? (
 						<img className="mt-px" src={agent.avatar} alt={agent.name} />
 					) : (
@@ -88,7 +90,8 @@ export const AgentMessage = ({ message, animate }) => {
 								});
 							}}
 							href={`${window.extSharedData.adminUrl}${pageSuggestion}`}
-							className="rounded border border-design-main bg-design-main p-2 text-sm text-white no-underline hover:opacity-90">
+							className="rounded-sm border border-design-main bg-design-main p-2 text-sm text-white no-underline hover:opacity-90"
+						>
 							{agentSuggestion.label}
 						</a>
 					</div>

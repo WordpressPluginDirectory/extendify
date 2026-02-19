@@ -1,27 +1,27 @@
+import { DropdownTranslate } from '@draft/components/TranslationDropdown';
+import { magic, twoLines } from '@draft/svg';
 import {
 	BlockControls,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import {
-	ToolbarButton,
 	Dropdown,
-	ToolbarGroup,
-	NavigableMenu,
-	MenuItem,
 	MenuGroup,
+	MenuItem,
+	NavigableMenu,
+	ToolbarButton,
+	ToolbarGroup,
 } from '@wordpress/components';
-import { useSelect, useDispatch } from '@wordpress/data';
+import { useDispatch, useSelect } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
 import { __, isRTL } from '@wordpress/i18n';
 import {
-	Icon,
 	customPostType,
-	termDescription,
+	Icon,
 	paragraph,
 	postContent,
+	termDescription,
 } from '@wordpress/icons';
-import { DropdownTranslate } from '@draft/components/TranslationDropdown';
-import { magic, twoLines } from '@draft/svg';
 
 const supportedBlocks = [
 	'core/paragraph',
@@ -29,6 +29,7 @@ const supportedBlocks = [
 	'core/verse',
 	'core/preformatted',
 	'core/heading',
+	'core/site-logo',
 ];
 
 export const ToolbarMenu = (CurrentMenuItems, props) => {
@@ -85,7 +86,8 @@ export const ToolbarMenu = (CurrentMenuItems, props) => {
 									aria-expanded={isOpen}
 									aria-haspopup="true"
 									iconPosition={isRTL() ? 'right' : 'left'}
-									icon={magic}>
+									icon={magic}
+								>
 									{__('Ask AI', 'extendify-local')}
 								</ToolbarButton>
 							);
@@ -140,7 +142,8 @@ const DropdownActions = ({ text, closePopup, openDraft, updatePrompt }) => {
 		<NavigableMenu
 			orientation="vertical"
 			role="menu"
-			style={{ minWidth: '200px' }}>
+			style={{ minWidth: '200px' }}
+		>
 			<MenuGroup className="extendify-draft">
 				<MenuItem
 					key={'custom-prompt'}
@@ -158,7 +161,8 @@ const DropdownActions = ({ text, closePopup, openDraft, updatePrompt }) => {
 								document.getElementById('draft-ai-textarea').focus(),
 							),
 						);
-					}}>
+					}}
+				>
 					{__('Custom prompt', 'extendify-local')}
 				</MenuItem>
 				{actions.map(
@@ -179,7 +183,8 @@ const DropdownActions = ({ text, closePopup, openDraft, updatePrompt }) => {
 										updatePrompt({ text, promptType, systemMessageKey }),
 									),
 								);
-							}}>
+							}}
+						>
 							{label}
 						</MenuItem>
 					),

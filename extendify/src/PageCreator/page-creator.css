@@ -1,0 +1,11 @@
+@import "tailwindcss" source(none) important;
+@import "../tailwind.css" source(none);
+@source ".";
+
+/* no-prefix */
+.extendify-page-creator.extendify-page-creator-modal {
+	@apply fixed! inset-0! z-high! overflow-y-auto!;
+}
+.components-toggle-group-control [role="presentation"] {
+	@apply bg-design-main!;
+}

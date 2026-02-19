@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef, useCallback } from '@wordpress/element';
-import { debounce } from 'lodash';
 import { useIsMounted } from '@library/hooks/useIsMounted';
 import { useGlobalsStore } from '@library/state/global';
 import { requiredCSSVars } from '@library/util/css';
 import { hasCSSVar } from '@library/util/dom';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
+import { debounce } from 'lodash';
 
 const originalHeights = new WeakMap();
 
@@ -25,14 +25,14 @@ export const usePreviewIframe = ({
 			if (!frame?.contentDocument) return;
 			const styles = getComputedStyle(frame.contentDocument.documentElement);
 			const styleSheets = frame.contentDocument.styleSheets;
-			for (let key in requiredCSSVars) {
+			for (const key in requiredCSSVars) {
 				// CSS variable was found applied somewhere
 				if (styles.getPropertyValue(key)) continue;
 				const varUsed = Array.from(styleSheets)
 					.filter((sheet) => {
 						try {
 							return sheet.cssRules;
-						} catch (error) {
+						} catch (_error) {
 							return false;
 						}
 					})
@@ -93,7 +93,7 @@ export const usePreviewIframe = ({
 			);
 			el.offsetHeight; // Force a reflow
 			el.style.minHeight =
-				computedHeight > 500 ? '500px' : computedHeight + 'px';
+				computedHeight > 500 ? '500px' : `${computedHeight}px`;
 		}
 
 		frame.style.setProperty('max-height', 'none', 'important');

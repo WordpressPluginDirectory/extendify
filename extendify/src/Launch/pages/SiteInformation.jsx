@@ -1,19 +1,19 @@
-import { Tooltip } from '@wordpress/components';
-import { useEffect, useState, useLayoutEffect } from '@wordpress/element';
-import { decodeEntities } from '@wordpress/html-entities';
-import { __ } from '@wordpress/i18n';
-import { Icon, info } from '@wordpress/icons';
-import { getUrlParameter } from '@shared/utils/get-url-parameter';
-import { updateOption, getOption } from '@launch/api/WPApi';
+import { getOption, updateOption } from '@launch/api/WPApi';
 import { AcceptTerms } from '@launch/components/BusinessInformation/AcceptTerms';
 import { SiteTones } from '@launch/components/BusinessInformation/Tones';
 import { LoadingIndicator } from '@launch/components/LoadingIndicator';
 import { Title } from '@launch/components/Title';
 import { useFetch } from '@launch/hooks/useFetch';
 import { PageLayout } from '@launch/layouts/PageLayout';
-import { usePagesStore } from '@launch/state/Pages';
 import { pageState } from '@launch/state/factory';
+import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import { getUrlParameter } from '@shared/utils/get-url-parameter';
+import { Tooltip } from '@wordpress/components';
+import { useEffect, useLayoutEffect, useState } from '@wordpress/element';
+import { decodeEntities } from '@wordpress/html-entities';
+import { __ } from '@wordpress/i18n';
+import { Icon, info } from '@wordpress/icons';
 
 const fetcher = async () => ({ title: await getOption('blogname') });
 const fetchData = () => ({ key: 'site-info' });
@@ -39,6 +39,9 @@ export const SiteInformation = () => {
 		setCTALink,
 		CTALink,
 		setUrlParameters,
+		setSiteQuestions,
+		siteQA,
+		setSiteStructure,
 	} = useUserSelectionStore();
 	const isLandingPage = siteObjective === 'landing-page';
 
@@ -65,6 +68,13 @@ export const SiteInformation = () => {
 			state.setState({ ready: !!title.length });
 			setSiteProfile(undefined); // this also resets SOME state
 			updateOption('extendify_site_profile', null);
+			if (siteQA?.questions.length !== 0) {
+				setSiteQuestions({
+					showHidden: false,
+					questions: [],
+				});
+				setSiteStructure(undefined);
+			}
 		}, 1000);
 		return () => clearTimeout(timer);
 	}, [
@@ -76,6 +86,9 @@ export const SiteInformation = () => {
 		setCTALink,
 		callToActionLink,
 		setSiteProfile,
+		siteQA,
+		setSiteQuestions,
+		setSiteStructure,
 	]);
 
 	useLayoutEffect(() => {
@@ -115,7 +128,8 @@ export const SiteInformation = () => {
 								e.preventDefault();
 								if (!state.getState().ready) return;
 								nextPage();
-							}}>
+							}}
+						>
 							<SiteTitle
 								title={title}
 								setTitle={setTitle}
@@ -147,7 +161,8 @@ const SiteTitle = ({ title, setTitle, isLandingPage }) => {
 		<div>
 			<label
 				htmlFor="extendify-site-title-input"
-				className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
+				className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10"
+			>
 				{isLandingPage
 					? __('Landing Page title (required)', 'extendify-local')
 					: __('Website title (required)', 'extendify-local')}
@@ -155,11 +170,12 @@ const SiteTitle = ({ title, setTitle, isLandingPage }) => {
 			<input
 				data-test="site-title-input"
 				autoComplete="off"
-				autoFocus={true}
+				// biome-ignore lint: allow autofocus here
+				autoFocus
 				type="text"
 				name="site-title-input"
 				id="extendify-site-title-input"
-				className="input-focus h-12 w-full rounded border border-gray-200 px-4 py-6 ring-offset-0"
+				className="input-focus h-12 w-full rounded-sm border border-gray-200 px-4 py-6 ring-offset-0"
 				value={title}
 				onChange={(e) => setTitle(e.target.value)}
 				placeholder={__('Enter your website name', 'extendify-local')}
@@ -205,7 +221,8 @@ const BusinessInfo = ({ description, setDescription, siteObjective }) => {
 		<div>
 			<label
 				htmlFor="extendify-site-info-input"
-				className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
+				className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10"
+			>
 				{showSiteQuestions
 					? objectiveLabels.other
 					: (objectiveLabels[siteObjective] ?? objectiveLabels.business)}
@@ -217,7 +234,7 @@ const BusinessInfo = ({ description, setDescription, siteObjective }) => {
 				name="site-info-input"
 				id="extendify-site-info-input"
 				className={
-					'input-focus placeholder:text-md h-40 w-full rounded-lg border border-gray-300 p-2 ring-offset-0 placeholder:italic placeholder:opacity-50'
+					'input-focus placeholder:text-base h-40 w-full rounded-lg border border-gray-300 p-2 ring-offset-0 placeholder:italic placeholder:opacity-50'
 				}
 				value={description}
 				onChange={(e) => setDescription(e.target.value)}
@@ -238,7 +255,8 @@ const SiteCTA = ({ title, setCTA }) => {
 			<div className="flex items-center space-x-1">
 				<label
 					htmlFor="extendify-site-cta-input"
-					className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10">
+					className="m-0 text-lg font-medium leading-8 text-gray-900 md:text-base md:leading-10"
+				>
 					{__('Call-To-Action Link', 'extendify-local')}
 				</label>
 				<Tooltip
@@ -246,7 +264,8 @@ const SiteCTA = ({ title, setCTA }) => {
 					text={__(
 						'This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination.',
 						'extendify-local',
-					)}>
+					)}
+				>
 					<Icon icon={info} size="16" className="fill-current text-gray-600" />
 				</Tooltip>
 			</div>
@@ -256,7 +275,7 @@ const SiteCTA = ({ title, setCTA }) => {
 				type="text"
 				name="site-cta-input"
 				id="extendify-site-cta-input"
-				className="input-focus h-12 w-full rounded border border-gray-200 px-4 py-6 ring-offset-0 placeholder:italic placeholder:opacity-50"
+				className="input-focus h-12 w-full rounded-sm border border-gray-200 px-4 py-6 ring-offset-0 placeholder:italic placeholder:opacity-50"
 				value={title}
 				onChange={(e) => setCTA(e.target.value)}
 				placeholder=""

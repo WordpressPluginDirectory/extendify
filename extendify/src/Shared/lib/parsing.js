@@ -4,7 +4,7 @@ export const safeParseJson = (json, fallback = {}) => {
 	}
 	try {
 		return JSON.parse(json) ?? fallback;
-	} catch (e) {
+	} catch (_e) {
 		return fallback;
 	}
 };

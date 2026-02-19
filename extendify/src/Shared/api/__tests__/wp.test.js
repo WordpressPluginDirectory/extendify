@@ -1,5 +1,5 @@
-import apiFetch from '@wordpress/api-fetch';
 import * as wpAPI from '@shared/api/wp';
+import apiFetch from '@wordpress/api-fetch';
 
 jest.mock('@wordpress/api-fetch');
 

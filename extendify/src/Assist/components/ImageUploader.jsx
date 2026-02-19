@@ -1,19 +1,18 @@
+import { getMediaDetails } from '@assist/lib/media';
+import { useGlobalStore } from '@assist/state/globals';
 import apiFetch from '@wordpress/api-fetch';
 import { isBlobURL } from '@wordpress/blob';
 import {
-	DropZone,
 	Button,
-	Spinner,
+	DropZone,
 	ResponsiveWrapper,
+	Spinner,
 } from '@wordpress/components';
 import { store as coreStore } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
-import { useEffect } from '@wordpress/element';
-import { useState } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { MediaUpload, uploadMedia } from '@wordpress/media-utils';
-import { getMediaDetails } from '@assist/lib/media';
-import { useGlobalStore } from '@assist/state/globals';
 
 export const ImageUploader = ({ type, onUpdate, title, actionLabel }) => {
 	const { popModal } = useGlobalStore();
@@ -97,20 +96,20 @@ export const ImageUploader = ({ type, onUpdate, title, actionLabel }) => {
 								}
 								aria-describedby={
 									!imageId ? null : `image-${imageId}-describedby`
-								}>
+								}
+							>
 								{Boolean(imageId) && media && (
-									<>
-										<ResponsiveWrapper
-											naturalWidth={mediaWidth}
-											naturalHeight={mediaHeight}
-											isInline>
-											<img
-												className="inset-0 m-auto block h-auto max-h-48 w-auto max-w-96"
-												src={mediaSourceUrl}
-												alt=""
-											/>
-										</ResponsiveWrapper>
-									</>
+									<ResponsiveWrapper
+										naturalWidth={mediaWidth}
+										naturalHeight={mediaHeight}
+										isInline
+									>
+										<img
+											className="inset-0 m-auto block h-auto max-h-48 w-auto max-w-96"
+											src={mediaSourceUrl}
+											alt=""
+										/>
+									</ResponsiveWrapper>
 								)}
 								{isLoading && <Spinner />}
 								{!imageId && !isLoading && actionLabel}
@@ -145,7 +144,8 @@ export const ImageUploader = ({ type, onUpdate, title, actionLabel }) => {
 								onClick={onRemoveImage}
 								variant="link"
 								className="ml-4"
-								isDestructive>
+								isDestructive
+							>
 								{__('Remove image', 'extendify-local')}
 							</Button>
 						</div>
@@ -153,7 +153,8 @@ export const ImageUploader = ({ type, onUpdate, title, actionLabel }) => {
 							<Button
 								variant="primary"
 								onClick={popModal}
-								className="bg-design-main text-design-text">
+								className="bg-design-main text-design-text"
+							>
 								{__('Done', 'extendify-local')}
 							</Button>
 						</div>

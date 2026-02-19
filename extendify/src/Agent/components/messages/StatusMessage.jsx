@@ -1,9 +1,8 @@
+import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
 import { useEffect, useMemo, useState } from '@wordpress/element';
 import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
-import { ErrorMessage } from '@agent/components/ErrorMessage';
-import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
 
 export const StatusMessage = ({ status, animate }) => {
 	const { type, label } = status.details;
@@ -21,7 +20,6 @@ export const StatusMessage = ({ status, animate }) => {
 			'tool-started': label || __('Gathering data...', 'extendify-local'),
 			'tool-completed': label || __('Analyzing...', 'extendify-local'),
 			'tool-canceled': label || __('Canceled', 'extendify-local'),
-			'workflow-tool-canceled': label || __('Canceled', 'extendify-local'),
 			'workflow-canceled': label || __('Canceled', 'extendify-local'),
 			'credits-exhausted': __('Usage limit reached', 'extendify-local'),
 			'credits-restored': __('Usage limit restored', 'extendify-local'),
@@ -44,25 +42,12 @@ export const StatusMessage = ({ status, animate }) => {
 			setContent(null);
 			setLoopIndex((prevIndex) => (prevIndex + 1) % statusContent[type].length);
 		}, 5000);
-		return () => clearTimeout(timer);
+		return () => {
+			// we need to clear the content and make sure it hide the status correctly.
+			setContent(null);
+			clearTimeout(timer);
+		};
 	}, [type, statusContent, content, loopIndex]);
-
-	if (type === 'error')
-		return (
-			<ErrorMessage>
-				<div className="text-sm">
-					<div className="font-semibold">
-						{__('Something went wrong', 'extendify-local')}
-					</div>
-					<div className="">
-						{__(
-							'An unexpected error occurred while processing your request.',
-							'extendify-local',
-						)}
-					</div>
-				</div>
-			</ErrorMessage>
-		);
 
 	if (type === 'workflow-tool-completed')
 		return <WorkflowToolCompleted label={label} />;
@@ -73,11 +58,12 @@ export const StatusMessage = ({ status, animate }) => {
 		<div
 			className={classNames('p-2 text-center text-xs italic text-gray-700', {
 				'status-animation': canAnimate,
-			})}>
+			})}
+		>
 			{animate ? (
-				<AnimateChunks words={content.split('')} delay={0.02} />
+				<AnimateChunks words={decodeEntities(content).split('')} delay={0.02} />
 			) : (
-				content
+				decodeEntities(content)
 			)}
 		</div>
 	);
@@ -86,7 +72,7 @@ export const StatusMessage = ({ status, animate }) => {
 const WorkflowToolCompleted = ({ label }) => {
 	return (
 		<div className="flex w-full items-start gap-2.5 p-2">
-			<div className="w-7 flex-shrink-0" />
+			<div className="w-7 shrink-0" />
 			<div className="flex min-w-0 flex-1 flex-col gap-1">
 				<div className="flex items-center gap-2 rounded-lg border border-wp-alert-green bg-wp-alert-green/20 p-3 text-green-900">
 					<div className="h-6 w-6 leading-none">
@@ -96,7 +82,9 @@ const WorkflowToolCompleted = ({ label }) => {
 							viewBox="0 0 24 24"
 							strokeWidth={1.5}
 							stroke="currentColor"
-							className="size-6">
+							className="size-6"
+						>
+							<title>{__('Success icon', 'extendify-local')}</title>
 							<path
 								strokeLinecap="round"
 								strokeLinejoin="round"

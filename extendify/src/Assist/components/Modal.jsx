@@ -1,9 +1,9 @@
-import { Button } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { Icon, close } from '@wordpress/icons';
-import { Dialog, DialogTitle } from '@headlessui/react';
 import { useGlobalStore } from '@assist/state/globals';
+import { Dialog, DialogTitle } from '@headlessui/react';
+import { Button } from '@wordpress/components';
+import { useEffect, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { close, Icon } from '@wordpress/icons';
 
 export const Modal = () => {
 	const { modals, popModal } = useGlobalStore();
@@ -19,13 +19,14 @@ export const Modal = () => {
 			as="div"
 			className="extendify-assist"
 			open={modals.length > 0}
-			onClose={popModal}>
+			onClose={popModal}
+		>
 			<div className="fixed top-0 z-high mx-auto h-full w-full items-center justify-center overflow-hidden p-2 md:flex md:p-6">
 				<div
 					className="fixed inset-0 bg-black/40 transition-opacity"
 					aria-hidden="true"
 				/>
-				<div className="relative mx-auto flex flex-col rounded-sm bg-white shadow-2xl sm:flex sm:min-w-md sm:overflow-hidden">
+				<div className="relative mx-auto flex flex-col rounded-xs bg-white shadow-2xl sm:flex sm:min-w-md sm:overflow-hidden">
 					<div className="flex items-center justify-between">
 						<DialogTitle className="m-0 px-6 text-base text-gray-900">
 							{title}

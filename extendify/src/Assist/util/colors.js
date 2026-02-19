@@ -8,7 +8,7 @@ export const adminBgColor = () => {
 export const adminTextColor = () => {
 	const menu = document?.querySelector('a.wp-has-current-submenu');
 	if (!menu) return '#fff';
-	return window.getComputedStyle(menu)?.['color'] || '#fff';
+	return window.getComputedStyle(menu)?.color || '#fff';
 };
 export const assistAdminBarBgColor = () => {
 	const adminBar = document?.querySelector('#wpadminbar');

@@ -1,7 +1,7 @@
-import { useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { ImageUploader } from '@assist/components/ImageUploader';
 import { useTasksStore } from '@assist/state/tasks';
+import { useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const UpdateSiteIcon = ({ setModalTitle }) => {
 	const { completeTask } = useTasksStore();

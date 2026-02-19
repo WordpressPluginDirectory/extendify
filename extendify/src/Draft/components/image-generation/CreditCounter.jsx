@@ -1,6 +1,6 @@
-import { Icon, Button } from '@wordpress/components';
-import { __, sprintf } from '@wordpress/i18n';
 import image from '@draft/svg/Image';
+import { Button, Icon } from '@wordpress/components';
+import { __, sprintf } from '@wordpress/i18n';
 
 export const CreditCounter = ({ usedCredits, total }) => {
 	if (usedCredits < total) {
@@ -43,7 +43,8 @@ export const CreditCounter = ({ usedCredits, total }) => {
 					href="https://unsplash.com/"
 					variant="primary"
 					target="_blank"
-					className="justify-center text-center">
+					className="justify-center text-center"
+				>
 					{__('Search on Unsplash', 'extendify-local')}
 				</Button>
 			</div>

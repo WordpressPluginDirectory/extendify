@@ -1,4 +1,5 @@
 import { memo } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const Spinner = (props) => {
 	const { className, ...otherProps } = props;
@@ -11,7 +12,9 @@ const Spinner = (props) => {
 			viewBox="0 0 20 20"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...otherProps}>
+			{...otherProps}
+		>
+			<title>{__('Loading Spinner', 'extendify-local')}</title>
 			<circle cx="10" cy="10" r="10" fill="black" fillOpacity="0.4" />
 			<ellipse
 				cx="15.5552"

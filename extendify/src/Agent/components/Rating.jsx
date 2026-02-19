@@ -1,9 +1,9 @@
-import { useState, useEffect } from '@wordpress/element';
+import { rateAnswer } from '@agent/api';
+import { thumbDown, thumbUp } from '@agent/icons';
+import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Icon } from '@wordpress/icons';
 import classnames from 'classnames';
-import { rateAnswer } from '@agent/api';
-import { thumbUp, thumbDown } from '@agent/icons';
 
 export const Rating = ({ answerId }) => {
 	const [rating, setRating] = useState(undefined);
@@ -33,7 +33,8 @@ export const Rating = ({ answerId }) => {
 							'text-design-main': rating === 1,
 							'text-gray-600': rating !== 1,
 						},
-					)}>
+					)}
+				>
 					<Icon className="fill-current" icon={thumbUp} />
 				</button>
 
@@ -53,7 +54,8 @@ export const Rating = ({ answerId }) => {
 							'text-design-main': rating === -1,
 							'text-gray-600': rating !== -1,
 						},
-					)}>
+					)}
+				>
 					<Icon className="fill-current" icon={thumbDown} />
 				</button>
 			</div>

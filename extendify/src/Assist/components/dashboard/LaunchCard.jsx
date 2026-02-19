@@ -1,6 +1,6 @@
-import { useState, useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { useTasksStore } from '@assist/state/tasks';
+import { useEffect, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const launchSteps = {
 	'website-objective': {
@@ -89,7 +89,8 @@ export const LaunchCard = ({ task }) => {
 					<div className="cta mt-6 flex flex-wrap items-center text-sm md:gap-3 lg:mt-3">
 						<a
 							href={`${window.extSharedData.adminUrl}admin.php?page=extendify-launch`}
-							className="min-w-24 cursor-pointer rounded-sm bg-design-main px-4 py-2.5 text-sm font-medium text-design-text no-underline hover:opacity-90">
+							className="min-w-24 cursor-pointer rounded-xs bg-design-main px-4 py-2.5 text-sm font-medium text-design-text no-underline hover:opacity-90"
+						>
 							{launchSteps[currentStep]?.buttonText}
 						</a>
 						<button
@@ -98,7 +99,8 @@ export const LaunchCard = ({ task }) => {
 							onClick={() => {
 								dismissTask('site-builder-launcher');
 							}}
-							className="bg-transparent text-sm text-design-main underline-offset-4 hover:underline">
+							className="bg-transparent text-sm text-design-main underline-offset-4 hover:underline"
+						>
 							{__('Dismiss', 'extendify-local')}
 						</button>
 					</div>

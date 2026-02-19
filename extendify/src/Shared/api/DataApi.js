@@ -1,8 +1,8 @@
-import apiFetch from '@wordpress/api-fetch';
-import { __ } from '@wordpress/i18n';
 import { AI_HOST, INSIGHTS_HOST } from '@constants';
 import { extraBody } from '@shared/lib/extra-body';
 import { useImageGenerationStore } from '@shared/state/generate-images';
+import apiFetch from '@wordpress/api-fetch';
+import { __ } from '@wordpress/i18n';
 
 export const generateImage = async (imageData, signal) => {
 	const response = await fetch(`${AI_HOST}/api/draft/image`, {
@@ -47,11 +47,7 @@ export const generateImage = async (imageData, signal) => {
 	};
 };
 
-export const recordPluginActivity = async ({
-	slug,
-	source,
-	action = 'install', //eslint-disable-line no-unused-vars
-}) => {
+export const recordPluginActivity = async ({ slug, source }) => {
 	try {
 		const res = await fetch(`${INSIGHTS_HOST}/api/v1/plugin-install`, {
 			method: 'POST',

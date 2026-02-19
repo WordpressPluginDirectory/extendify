@@ -1,17 +1,17 @@
-import { useEffect, useState } from '@wordpress/element';
-import {
-	styles,
-	edit,
-	help,
-	chevronRight,
-	video,
-	drafts,
-	published,
-	typography,
-} from '@wordpress/icons';
 import { sparkle } from '@agent/icons';
 import { useTourStore } from '@agent/state/tours';
 import tours from '@agent/tours/tours';
+import { useEffect, useState } from '@wordpress/element';
+import {
+	chevronRight,
+	drafts,
+	help,
+	pencil,
+	published,
+	styles,
+	typography,
+	video,
+} from '@wordpress/icons';
 
 const { suggestions } = window.extAgentData;
 const availableTours = Object.values(tours).filter(
@@ -27,7 +27,7 @@ const showTour =
 
 const icons = {
 	styles,
-	edit,
+	edit: pencil,
 	help,
 	video,
 	sparkle,
@@ -39,7 +39,7 @@ const icons = {
 const featured = suggestions.filter((s) => !!s?.feature);
 const standard = suggestions.filter((s) => !s?.feature);
 
-export const ChatSuggestions = () => {
+export const ChatSuggestions = ({ suggestions = [] }) => {
 	const { startTour } = useTourStore();
 	const [shuffled, setShuffled] = useState(standard);
 
@@ -54,6 +54,16 @@ export const ChatSuggestions = () => {
 			}),
 		);
 	};
+
+	if (suggestions?.length > 0) {
+		return suggestions.map((suggestion) => (
+			<SuggestionButton
+				key={suggestion.message}
+				suggestion={suggestion}
+				handleSubmit={handleSubmit}
+			/>
+		));
+	}
 
 	return (
 		<>
@@ -83,8 +93,9 @@ const SuggestionButton = ({ suggestion, handleSubmit }) => {
 	return (
 		<button
 			type="button"
-			className="group flex items-center justify-between rounded bg-transparent px-1 py-1 text-left text-sm text-gray-900 transition-colors duration-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-design-main"
-			onClick={() => handleSubmit(suggestion.message)}>
+			className="group flex items-center justify-between rounded-sm bg-transparent px-1 py-1 text-left text-sm text-gray-900 transition-colors duration-100 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-design-main"
+			onClick={() => handleSubmit(suggestion.message)}
+		>
 			<div className="flex items-center gap-1.5 leading-none">
 				<span className="h-5 w-5 flex-shrink-0 self-start fill-gray-700">
 					{icon}

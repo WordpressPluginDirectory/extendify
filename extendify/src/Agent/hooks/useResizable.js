@@ -1,5 +1,5 @@
-import { useLayoutEffect, useRef } from '@wordpress/element';
 import { clamp } from '@agent/lib/util';
+import { useLayoutEffect, useRef } from '@wordpress/element';
 
 export const useResizable = ({
 	el,

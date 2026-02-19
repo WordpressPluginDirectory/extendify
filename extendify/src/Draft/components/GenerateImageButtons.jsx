@@ -1,16 +1,16 @@
+import { magic } from '@draft/svg';
+import { render } from '@shared/lib/dom';
 import { BlockControls } from '@wordpress/block-editor';
 import {
 	Button,
 	MenuItem,
-	ToolbarGroup,
 	ToolbarButton,
+	ToolbarGroup,
 } from '@wordpress/components';
 import { useDispatch } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
 import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { render } from '@shared/lib/dom';
-import { magic } from '@draft/svg';
 
 const supportedBlocks = [
 	'core/image',
@@ -21,7 +21,7 @@ const supportedBlocks = [
 
 export const GenerateImageButtons = (CurrentComponents, props) => {
 	const { openGeneralSidebar } = useDispatch(editPostStore);
-	const { clientId: blockId, name: name } = props;
+	const { clientId: blockId, name } = props;
 
 	useEffect(() => {
 		if (!supportedBlocks.includes(name)) return;
@@ -55,7 +55,8 @@ export const GenerateImageButtons = (CurrentComponents, props) => {
 						);
 						btn?.focus();
 						btn?.classList.add('animate-pulse-flash');
-					}}>
+					}}
+				>
 					{__('Get Personalized Image', 'extendify-local')}
 				</Button>
 				{/* layout placeholder */}
@@ -93,7 +94,8 @@ const GetPersonalizedImage = () => {
 				const btn = document.getElementById('extendify-draft-image-gen-button');
 				btn?.focus();
 				btn?.classList.add('animate-pulse-flash');
-			}}>
+			}}
+		>
 			{__('Get Personalized Image', 'extendify-local')}
 		</MenuItem>
 	);
@@ -113,7 +115,8 @@ const GetPersonalizedImageToolbar = () => {
 					);
 					btn?.focus();
 					btn?.classList.add('animate-pulse-flash');
-				}}>
+				}}
+			>
 				{__('Ask AI', 'extendify-local')}
 			</ToolbarButton>
 		</ToolbarGroup>
@@ -127,7 +130,9 @@ const ToolbarButtons = ({ name, attributes }) => {
 		let placeholder, root, rafInsert, rafOuter, observer;
 		// use async iife to allow frame delays
 		(async () => {
-			await new Promise((r) => (rafOuter = requestAnimationFrame(r)));
+			await new Promise((r) => {
+				rafOuter = requestAnimationFrame(r);
+			});
 			// Find a button on the toolbar that says replace or add
 			const replaceBtn = Array.from(
 				document.querySelectorAll('[data-toolbar-item="true"]'),

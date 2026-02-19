@@ -1,15 +1,15 @@
+import { Axios as api } from '@launch/api/axios';
+import {
+	fetchFontFaceFile,
+	makeFontFaceFormData,
+	makeFontFamilyFormData,
+} from '@launch/lib/fonts-helpers';
+import { pageNames } from '@shared/lib/pages';
+import { sleep } from '@shared/lib/utils';
 import apiFetch from '@wordpress/api-fetch';
 import { createBlock, parse, serialize } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import { addQueryArgs } from '@wordpress/url';
-import { pageNames } from '@shared/lib/pages';
-import { sleep } from '@shared/lib/utils';
-import { Axios as api } from '@launch/api/axios';
-import {
-	fetchFontFaceFile,
-	makeFontFamilyFormData,
-	makeFontFaceFormData,
-} from '@launch/lib/fonts-helpers';
 
 const { wpRoot } = window.extOnbData;
 
@@ -203,11 +203,11 @@ export const getHeadersAndFooters = async (hasFooterNav = false) => {
 	return { headers, footers };
 };
 
-const getTemplateParts = () => api.get(wpRoot + 'wp/v2/template-parts');
+const getTemplateParts = () => api.get(`${wpRoot}wp/v2/template-parts`);
 
 export const getThemeVariations = async () => {
 	const variations = await api.get(
-		wpRoot + 'wp/v2/global-styles/themes/extendable/variations',
+		`${wpRoot}wp/v2/global-styles/themes/extendable/variations`,
 	);
 
 	if (!Array.isArray(variations)) {
@@ -239,6 +239,12 @@ export const updateThemeVariation = (id, variation) =>
 		settings: variation.settings,
 		styles: variation.styles,
 	});
+
+export const getThemeGlobalStyles = () =>
+	api.get(`${wpRoot}wp/v2/global-styles/themes/extendable?context=edit`);
+
+export const updateGlobalStyles = (globalStylesPostID, stylesData) =>
+	api.post(`${wpRoot}wp/v2/global-styles/${globalStylesPostID}`, stylesData);
 
 export const addSectionLinksToNav = async (
 	navigationId,
@@ -334,20 +340,54 @@ export const addPageLinksToNav = async (
 		.filter(({ slug }) => slug !== 'home') // exclude home page
 		.map((page) => findCreatedPage(page));
 
-	const pageLinks = filteredCreatedPages
-		.concat(pluginPages)
-		.map(({ id, title, link, type }) => {
-			const attributes = JSON.stringify({
-				label: title.rendered,
-				id,
-				type,
-				url: link,
-				kind: id ? 'post-type' : 'custom',
-				isTopLevelLink: true,
-			});
+	// Plugin pages use `slug`, created pages use `originalSlug`
+	const getSlug = (page) => page.originalSlug ?? page.slug;
+	const getOrder = (page) => {
+		const slug = getSlug(page);
+		return (
+			pageNames[slug]?.navOrder ??
+			Object.values(pageNames).find((p) => p.alias?.includes(slug))?.navOrder ??
+			Object.keys(pageNames).length + 1
+		);
+	};
 
-			return `<!-- wp:navigation-link ${attributes} /-->`;
+	const mergedPages = [...filteredCreatedPages, ...pluginPages];
+	const contactPage = mergedPages.find((page) => {
+		const slug = getSlug(page);
+		return slug === 'contact' || pageNames.contact?.alias?.includes(slug);
+	});
+
+	const sortedPages = mergedPages
+		.filter((page) => page !== contactPage)
+		.sort((a, b) => getOrder(a) - getOrder(b));
+
+	// Re-insert contact page at the correct position
+	const finalPages = contactPage
+		? (() => {
+				// Top-level links: 5 if 7+ pages, or 6 if exactly 6 pages (no submenu for a single extra link)
+				// Note: sortedPages.length is checked AFTER removing contact, so length 5 means 6 total pages
+				const index =
+					sortedPages.length === 5 ? 5 : Math.min(4, sortedPages.length);
+				return [
+					...sortedPages.slice(0, index),
+					contactPage,
+					...sortedPages.slice(index),
+				];
+			})()
+		: sortedPages;
+
+	const pageLinks = finalPages.map(({ id, title, link, type }) => {
+		const attributes = JSON.stringify({
+			label: title.rendered,
+			id,
+			type,
+			url: link,
+			kind: id ? 'post-type' : 'custom',
+			isTopLevelLink: true,
 		});
+
+		return `<!-- wp:navigation-link ${attributes} /-->`;
+	});
 
 	const topLevelLinks = pageLinks.slice(0, 5).join('');
 	const submenuLinks = pageLinks.slice(5);
@@ -369,7 +409,7 @@ export const addPageLinksToNav = async (
 const getNavAttributes = (headerCode) => {
 	try {
 		return JSON.parse(headerCode.match(/<!-- wp:navigation([\s\S]*?)-->/)[1]);
-	} catch (e) {
+	} catch (_e) {
 		return {};
 	}
 };
@@ -380,6 +420,7 @@ export const updateNavAttributes = (headerCode, attributes) => {
 		...attributes,
 	});
 	return headerCode.replace(
+		// biome-ignore lint: don't want to refactor and test this regex now
 		/(<!--\s*wp:navigation\b[^>]*>)([^]*?)(<!--\s*\/wp:navigation\s*-->)/gi,
 		`<!-- wp:navigation ${newAttributes} /-->`,
 	);

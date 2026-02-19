@@ -1,29 +1,34 @@
-import {
-	useMemo,
-	useEffect,
-	useState,
-	useRef,
-	useCallback,
-} from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { callTool, digest, handleWorkflow, pickWorkflow } from '@agent/api';
 import { Chat } from '@agent/Chat';
-import { pickWorkflow, handleWorkflow, callTool, digest } from '@agent/api';
 import { ChatInput } from '@agent/components/ChatInput';
 import { ChatMessages } from '@agent/components/ChatMessages';
 import { ChatSuggestions } from '@agent/components/ChatSuggestions';
+import { UsageMessage } from '@agent/components/messages/UsageMessage';
 import { PageDocument } from '@agent/components/PageDocument';
 import { WelcomeScreen } from '@agent/components/WelcomeScreen';
-import { UsageMessage } from '@agent/components/messages/UsageMessage';
+import { useLockPost } from '@agent/hooks/useLockPost';
+import { getRedirectUrl } from '@agent/lib/redirects';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
+import {
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const devmode = window.extSharedData.devbuild;
 // Used to abort when wf canceled - reset in cleanup()
 let controller = new AbortController();
+const { postId } = window?.extAgentData?.context || {};
+
+const language = window.extSharedData?.wpLanguage || 'en_US';
 
 export const Agent = () => {
-	const { hasMessages, addMessage } = useChatStore();
+	const { hasMessages, addMessage, popMessage } = useChatStore();
 	const {
 		mergeWorkflowData,
 		getWorkflow,
@@ -45,13 +50,16 @@ export const Agent = () => {
 		updateRetryAfter,
 		isChatAvailable,
 	} = useGlobalStore();
+	useLockPost({ postId, enabled: !!open });
 	const [canType, setCanType] = useState(true);
 	const agentWorking = useRef(false);
 	const toolWorking = useRef(false);
+	const retrying = useRef(false);
 	const [waitingOnToolOrUser, setWaitingOnToolOrUser] = useState(false);
 	const [loop, setLoop] = useState(0);
 	const workflow = getWorkflow();
 	const chatAvailable = useMemo(() => isChatAvailable(), [isChatAvailable]);
+	const suggestionItems = window.extAgentData?.suggestions;
 
 	const cleanup = useCallback(() => {
 		setCanType(true);
@@ -75,7 +83,7 @@ export const Agent = () => {
 			const response = await pickWorkflow({
 				workflows: workflowIds,
 				options: { signal: controller.signal, ...options },
-			}).catch((error) => {
+			}).catch(async (error) => {
 				devmode && console.error(error);
 				if (error?.response?.status === 429) {
 					updateRetryAfter(error?.response?.headers?.get('Retry-After'));
@@ -88,7 +96,17 @@ export const Agent = () => {
 					addMessage('status', { type: 'workflow-canceled' });
 					return;
 				}
-				addMessage('status', { type: 'error' });
+
+				await new Promise((resolve) => setTimeout(resolve, 1000));
+				addMessage('message', {
+					role: 'assistant',
+					// translators: This message is shown when the AI agent fails to find a suitable workflow.
+					content: __(
+						'Something went wrong while trying to start this request. Please try again.',
+						'extendify-local',
+					),
+					error: true,
+				});
 				return;
 			});
 			if (!response) return;
@@ -110,28 +128,50 @@ export const Agent = () => {
 			setWaitingOnToolOrUser(false);
 			agentWorking.current = false;
 			addMessage('message', { role: 'user', content: message });
+
 			setCanType(false);
 			// If they typed while waiting on a redirect, reset the workflow
-			if (workflow?.needsRedirect?.()) {
-				setWorkflow(null);
-			}
-			if (workflow && !workflow?.needsRedirect?.()) {
-				// reset the workflow to let the effect handle it
+			const redirect = workflow?.needsRedirect?.();
+			// If they typed while an active whenFinished, reset the workflow
+			const inWhenFinished = whenFinishedToolProps?.id;
+			const removingWorkflow = redirect || inWhenFinished;
+			if (removingWorkflow) setWorkflow(null);
+
+			// They are in the middle of a workflow back and forth
+			if (workflow && !removingWorkflow) {
+				// Clone the workflow to let the effect handle it
 				const wfData = workflowData || {};
 				setWorkflow({ ...workflow });
 				mergeWorkflowData(wfData);
 				return;
 			}
+
+			// Bypass picking workflow if suggestion matched
+			const matchSuggestion = suggestionItems?.find(
+				(suggestion) => suggestion?.message === message,
+			);
+			const preSelectedWorkflowId = matchSuggestion?.workflowId;
+			const preSelectedWorkflow = getAvailableWorkflows().find(
+				(wf) => wf.id === preSelectedWorkflowId,
+			);
+			if (preSelectedWorkflow) {
+				setWorkflow({ ...preSelectedWorkflow, language });
+				return;
+			}
+
 			await findAgent().catch((e) => devmode && console.error(e));
 		},
 		[
 			addMessage,
 			findAgent,
 			mergeWorkflowData,
+			whenFinishedToolProps,
 			setWorkflow,
 			workflow,
 			workflowData,
 			setShowSuggestions,
+			getAvailableWorkflows,
+			suggestionItems,
 		],
 	);
 
@@ -144,8 +184,10 @@ export const Agent = () => {
 		// Allow external code to clear the block and workflow
 		const handleCleanup = () => {
 			controller.abort('Workflow aborted');
-			setWorkflow(null);
 			cleanup();
+
+			if (!workflow?.id) return;
+			setWorkflow(null);
 			addMessage('status', { type: 'workflow-canceled' });
 			return;
 		};
@@ -158,15 +200,15 @@ export const Agent = () => {
 			);
 			window.removeEventListener('extendify-agent:chat-submit', handleMessage);
 		};
-	}, [handleSubmit, cleanup, setWorkflow, addMessage]);
+	}, [handleSubmit, cleanup, setWorkflow, addMessage, workflow]);
 
 	// Handle whenFinished component confirm/cancel
 	useEffect(() => {
 		const handleConfirm = async ({ detail }) => {
 			if (toolWorking.current) return;
 			toolWorking.current = true;
-			const { data, whenFinishedToolProps } = detail ?? {};
-			const { summary, status, whenFinishedTool, answerId } =
+			const { data, whenFinishedToolProps, shouldRefreshPage } = detail ?? {};
+			const { status, whenFinishedTool, answerId, redirectTo } =
 				whenFinishedToolProps.agentResponse;
 			const { id, labels } = whenFinishedTool || {};
 			// Not all workflows have a tool at the end (e.g. tours)
@@ -183,12 +225,20 @@ export const Agent = () => {
 			addWorkflowResult({
 				answerId,
 				agentName: workflow?.agent?.name,
-				summary,
 				status,
 				errorMsg: toolResponse?.error,
 			});
 			if (toolResponse?.error) {
-				addMessage('status', { type: 'error' });
+				await new Promise((resolve) => setTimeout(resolve, 1000));
+				addMessage('message', {
+					role: 'assistant',
+					// translators: This message is shown when the AI agent fails to confirm an action.
+					content: __(
+						'Sorry, something went wrong attempting to call the tool. Please try again.',
+						'extendify-local',
+					),
+					error: true,
+				});
 				setWorkflow(null);
 				cleanup();
 				return;
@@ -203,12 +253,16 @@ export const Agent = () => {
 				answerId,
 			});
 			setWorkflow(null);
+
+			const url = getRedirectUrl(redirectTo, whenFinishedToolProps?.inputs);
+			if (url) return window.location.assign(url);
+			if (shouldRefreshPage) return window.location.reload();
+			// Clean up if not redirecting
 			cleanup();
 		};
 		const handleCancel = ({ detail }) => {
 			if (toolWorking.current) return;
-			const { summary, whenFinishedTool, answerId } =
-				detail.whenFinishedToolProps.agentResponse;
+			const { answerId } = detail.whenFinishedToolProps.agentResponse;
 			addMessage('workflow', {
 				status: 'canceled',
 				agent: workflow.agent,
@@ -216,19 +270,22 @@ export const Agent = () => {
 			});
 			addWorkflowResult({
 				answerId,
-				summary,
 				status: 'canceled',
 				agentName: workflow?.agent?.name,
 			});
 			setWorkflow(null);
 			cleanup();
-			addMessage('status', {
-				label: whenFinishedTool?.labels?.cancel,
-				type: 'workflow-tool-canceled',
-			});
+		};
+		const handleRetry = () => {
+			popMessage();
+			setWaitingOnToolOrUser(false);
+			agentWorking.current = false;
+			retrying.current = true;
+			setLoop((prev) => prev + 1); // Trigger next loop
 		};
 		window.addEventListener('extendify-agent:workflow-confirm', handleConfirm);
 		window.addEventListener('extendify-agent:workflow-cancel', handleCancel);
+		window.addEventListener('extendify-agent:workflow-retry', handleRetry);
 		return () => {
 			window.removeEventListener(
 				'extendify-agent:workflow-confirm',
@@ -238,8 +295,16 @@ export const Agent = () => {
 				'extendify-agent:workflow-cancel',
 				handleCancel,
 			);
+			window.removeEventListener('extendify-agent:workflow-retry', handleRetry);
 		};
-	}, [addMessage, cleanup, addWorkflowResult, setWorkflow, workflow]);
+	}, [
+		addMessage,
+		popMessage,
+		cleanup,
+		addWorkflowResult,
+		setWorkflow,
+		workflow,
+	]);
 
 	useEffect(() => {
 		const handleClose = () => setOpen(false);
@@ -282,7 +347,7 @@ export const Agent = () => {
 			const agentResponse = await handleWorkflow({
 				workflow,
 				workflowData,
-				options: { signal: controller.signal },
+				options: { signal: controller.signal, retry: retrying.current },
 			}).catch((error) => {
 				if (error === 'Workflow aborted') {
 					addMessage('status', { type: 'workflow-canceled' });
@@ -295,12 +360,12 @@ export const Agent = () => {
 				devmode && console.error(error);
 				return { error: error.message };
 			});
+			if (retrying.current) retrying.current = false;
 			if (!agentResponse) return;
-			const { summary, status, answerId } = agentResponse;
+			const { status, answerId, sessionId } = agentResponse;
 			// Add the workflow result to the history
 			addWorkflowResult({
 				answerId,
-				summary,
 				status,
 				errorMsg: agentResponse?.error,
 				agentName: workflow?.agent?.name,
@@ -313,7 +378,6 @@ export const Agent = () => {
 				window.extAgentData.failedWorkflows.add(workflow.id);
 				throw new Error(`Error handling workflow: ${agentResponse.error}`);
 			}
-
 			// The ai sent back some text to show to the user
 			if (agentResponse.reply) {
 				addMessage('message', {
@@ -346,34 +410,21 @@ export const Agent = () => {
 				}
 				return;
 			}
-			// Agent thinks it needs to handoff to another agent
-			if (agentResponse.status === 'handoff') {
-				const currentWorkflowId = workflow.id;
-				setWorkflow(null);
-				cleanup();
-				await findAgent({ handoff: currentWorkflowId });
-				return;
-			}
 			// If we're done, it means the AI has the answer
-			if (agentResponse.status === 'completed') {
+			if (agentResponse.status !== 'in-progress') {
 				setWorkflow(null);
 				cleanup();
 				addMessage('workflow', {
-					status: 'completed',
+					status:
+						agentResponse.status === 'completed' ? 'completed' : 'canceled',
 					agent: workflow.agent,
 					answerId,
 				});
 				return;
 			}
-			if (agentResponse.status === 'canceled') {
-				setWorkflow(null);
-				cleanup();
-				addMessage('workflow', {
-					status: 'canceled',
-					agent: workflow.agent,
-					answerId,
-				});
-				return;
+			if (sessionId && sessionId !== workflow.sessionId) {
+				// Session ID changed, update the workflow
+				setWorkflow({ ...workflow, sessionId });
 			}
 			// These inputs are filled out by the AI
 			mergeWorkflowData(agentResponse.inputs);
@@ -405,13 +456,22 @@ export const Agent = () => {
 			}
 			setCanType(true);
 			setWaitingOnToolOrUser(true);
-		})().catch((error) => {
+		})().catch(async (error) => {
 			const { sessionId } = workflow || {};
 			digest({ caller: 'main-loop', sessionId, error });
 			devmode && console.error(error);
 			setWorkflow(null);
 			cleanup();
-			addMessage('status', { type: 'error' });
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+			addMessage('message', {
+				role: 'assistant',
+				// translators: This message is shown when the AI agent encounters a general error.
+				content: __(
+					"Sorry, something went wrong. I tried but wasn't able to do this request. Please try again.",
+					'extendify-local',
+				),
+				error: true,
+			});
 		});
 	}, [
 		loop,
@@ -452,12 +512,13 @@ export const Agent = () => {
 			<div className="relative z-50 flex h-full flex-col justify-between overflow-auto border-t border-solid border-gray-300">
 				{showWelcomeScreen ? (
 					<div
-						className="relative flex flex-grow flex-col overflow-y-auto overflow-x-hidden"
+						className="relative flex grow flex-col overflow-y-auto overflow-x-hidden"
 						style={{
 							backgroundImage:
 								'linear-gradient( to bottom, #f0f0f0 0%, #fff 60%,  #fff 100%)',
-						}}>
-						<div className="flex-grow" />
+						}}
+					>
+						<div className="grow" />
 						<WelcomeScreen />
 					</div>
 				) : (

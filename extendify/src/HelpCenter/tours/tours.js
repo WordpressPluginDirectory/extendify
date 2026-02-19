@@ -1,4 +1,3 @@
-import { applyFilters, addFilter } from '@wordpress/hooks';
 import { hasPageCreatorEnabled } from '@help-center/lib/utils';
 import libraryTour from '@help-center/tours/library-tour';
 import pageCreator from '@help-center/tours/page-creator';
@@ -9,6 +8,7 @@ import siteAssistant from '@help-center/tours/site-assistant';
 // import styleEditor from '@help-center/tours/style-editor.js';
 import usersScreen from '@help-center/tours/users-screen.js';
 import welcomeTour from '@help-center/tours/welcome.js';
+import { addFilter, applyFilters } from '@wordpress/hooks';
 
 const tours = {
 	'welcome-tour': welcomeTour,

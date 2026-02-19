@@ -52,7 +52,7 @@ describe('getSiteImages', () => {
 	test('returns fallback when json() throws an error (invalid body)', async () => {
 		global.fetch.mockResolvedValueOnce({
 			ok: true,
-			json: async () => {
+			json: () => {
 				throw new Error('invalid json');
 			},
 		});

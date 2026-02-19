@@ -1,4 +1,4 @@
-import { select, dispatch } from '@wordpress/data';
+import { dispatch, select } from '@wordpress/data';
 
 export const getRenderingMode = () => {
 	const renderingModes =

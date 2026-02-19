@@ -11,7 +11,8 @@ export const deepMerge = (target, ...sources) => {
 			return null;
 		}
 
-		const newTarget = { ...acc };
+		const newTarget = {};
+		for (const k in acc) newTarget[k] = acc[k];
 
 		for (const key in source) {
 			if (isObject(source[key]) && key in newTarget) {
@@ -44,7 +45,7 @@ export const waitFor200Response = async () => {
 		// This will error if not 200
 		await pingServer();
 		return true;
-	} catch (error) {
+	} catch (_error) {
 		// Do nothing
 	}
 	await new Promise((resolve) => setTimeout(resolve, 1000));

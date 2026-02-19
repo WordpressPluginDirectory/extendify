@@ -1,20 +1,20 @@
-import { Button, Spinner } from '@wordpress/components';
-import {
-	useRef,
-	useCallback,
-	useEffect,
-	useLayoutEffect,
-	useState,
-	useMemo,
-} from '@wordpress/element';
-import { sprintf, __, isRTL } from '@wordpress/i18n';
-import { Icon, close } from '@wordpress/icons';
-import { Dialog } from '@headlessui/react';
-import classNames from 'classnames';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useGlobalStore } from '@agent/state/global';
 import { useTourStore } from '@agent/state/tours';
 import tours from '@agent/tours/tours';
+import { Dialog } from '@headlessui/react';
+import { Button, Spinner } from '@wordpress/components';
+import {
+	useCallback,
+	useEffect,
+	useLayoutEffect,
+	useMemo,
+	useRef,
+	useState,
+} from '@wordpress/element';
+import { __, isRTL, sprintf } from '@wordpress/i18n';
+import { close, Icon } from '@wordpress/icons';
+import classNames from 'classnames';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const getBoundingClientRect = (element) => {
 	const { top, right, bottom, left, width, height, x, y } =
@@ -162,9 +162,9 @@ export const GuidedTour = () => {
 	// Check for the inert attribute and remove it if it exists
 	useEffect(() => {
 		if (!currentStep) return;
-		document
-			.querySelectorAll('[inert]')
-			.forEach((el) => el?.removeAttribute('inert'));
+		document.querySelectorAll('[inert]').forEach((el) => {
+			el?.removeAttribute('inert');
+		});
 	}, [currentStep]);
 
 	// register a custom event to start the specified tour.
@@ -272,95 +272,96 @@ export const GuidedTour = () => {
 
 	const rectWithPadding = addPaddingToRect(overlayRect, boxPadding);
 	return (
-		<>
-			<AnimatePresence>
-				{Boolean(currentTour) && (
-					<Dialog
-						as={motion.div}
-						static
-						initialFocus={initialFocus}
-						className="extendify-agent"
-						open={Boolean(currentTour)}
-						onClose={() => undefined}>
-						<div className="relative z-max">
+		<AnimatePresence>
+			{Boolean(currentTour) && (
+				<Dialog
+					as={motion.div}
+					static
+					initialFocus={initialFocus}
+					className="extendify-agent"
+					open={Boolean(currentTour)}
+					onClose={() => undefined}
+				>
+					<div className="relative z-max">
+						<motion.div
+							ref={tourBoxRef}
+							animate={{ opacity: 1, ...placement }}
+							initial={{ opacity: 0, ...placement }}
+							// TODO: fire another event after animation completes?
+							onAnimationComplete={() => {
+								startOrRecalc();
+							}}
+							transition={{
+								duration: finishedStepOne.current ? 0.5 : 0,
+								ease: 'easeInOut',
+							}}
+							className="fixed left-0 top-0 z-20 flex max-w-xs flex-col bg-transparent shadow-2xl sm:overflow-hidden"
+							style={{
+								minWidth: settings?.minBoxWidth ?? '325px',
+							}}
+						>
+							<button
+								type="button"
+								data-test="close-tour"
+								className="absolute right-0 top-0 z-20 m-2 flex h-6 w-6 items-center justify-center rounded-full border-0 bg-white p-0 leading-none outline-hidden ring-1 ring-gray-200 focus:shadow-none focus:ring-wp focus:ring-design-main rtl:left-0 rtl:right-auto"
+								onClick={() => closeCurrentTour('closed-manually')}
+								aria-label={__('Close Modal', 'extendify-local')}
+							>
+								<Icon icon={close} className="h-4 w-4 fill-current" />
+							</button>
+							<Dialog.Title className="sr-only">
+								{currentTour?.title ?? __('Tour', 'extendify-local')}
+							</Dialog.Title>
+							{image && (
+								<div
+									className="w-full p-6"
+									style={{
+										minHeight: 150,
+										background:
+											'linear-gradient(58.72deg, #485563 7.71%, #29323C 92.87%)',
+									}}
+								>
+									<img src={image} className="block w-full" alt={title} />
+								</div>
+							)}
+							<div className="relative m-0 bg-white p-6 pt-0 text-left rtl:text-right">
+								{title && <h2 className="mb-2 text-xl font-medium">{title}</h2>}
+								{text && <p className="mb-6">{text}</p>}
+								<BottomNav initialFocus={initialFocus} />
+							</div>
+						</motion.div>
+					</div>
+					{options?.allowPointerEvents || (
+						<div aria-hidden={true} className="fixed inset-0 z-max-1" />
+					)}
+					{Boolean(currentTour) && overlayRect?.left !== undefined && (
+						<>
 							<motion.div
-								ref={tourBoxRef}
-								animate={{ opacity: 1, ...placement }}
-								initial={{ opacity: 0, ...placement }}
-								// TODO: fire another event after animation completes?
-								onAnimationComplete={() => {
-									startOrRecalc();
+								initial={{
+									opacity: 0,
+									clipPath:
+										'polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%, 0 0)',
+								}}
+								animate={{
+									opacity: 1,
+									clipPath: `polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%, 0 0, ${rectWithPadding.left}px 0, ${rectWithPadding.left}px ${rectWithPadding?.bottom}px, ${rectWithPadding?.right}px ${rectWithPadding.bottom}px, ${rectWithPadding.right}px ${rectWithPadding.top}px, ${rectWithPadding.left}px ${rectWithPadding.top}px)`,
 								}}
 								transition={{
 									duration: finishedStepOne.current ? 0.5 : 0,
 									ease: 'easeInOut',
 								}}
-								className="fixed left-0 top-0 z-20 flex max-w-xs flex-col bg-transparent shadow-2xl sm:overflow-hidden"
-								style={{
-									minWidth: settings?.minBoxWidth ?? '325px',
-								}}>
-								<button
-									data-test="close-tour"
-									className="absolute right-0 top-0 z-20 m-2 flex h-6 w-6 items-center justify-center rounded-full border-0 bg-white p-0 leading-none outline-none ring-1 ring-gray-200 focus:shadow-none focus:ring-wp focus:ring-design-main rtl:left-0 rtl:right-auto"
-									onClick={() => closeCurrentTour('closed-manually')}
-									aria-label={__('Close Modal', 'extendify-local')}>
-									<Icon icon={close} className="h-4 w-4 fill-current" />
-								</button>
-								<Dialog.Title className="sr-only">
-									{currentTour?.title ?? __('Tour', 'extendify-local')}
-								</Dialog.Title>
-								{image && (
-									<div
-										className="w-full p-6"
-										style={{
-											minHeight: 150,
-											background:
-												'linear-gradient(58.72deg, #485563 7.71%, #29323C 92.87%)',
-										}}>
-										<img src={image} className="block w-full" alt={title} />
-									</div>
-								)}
-								<div className="relative m-0 bg-white p-6 pt-0 text-left rtl:text-right">
-									{title && (
-										<h2 className="mb-2 text-xl font-medium">{title}</h2>
-									)}
-									{text && <p className="mb-6">{text}</p>}
-									<BottomNav initialFocus={initialFocus} />
-								</div>
-							</motion.div>
-						</div>
-						{options?.allowPointerEvents || (
-							<div aria-hidden={true} className="fixed inset-0 z-max-1" />
-						)}
-						{Boolean(currentTour) && overlayRect?.left !== undefined && (
-							<>
-								<motion.div
-									initial={{
-										opacity: 0,
-										clipPath:
-											'polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%, 0 0)',
-									}}
-									animate={{
-										opacity: 1,
-										clipPath: `polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%, 0 0, ${rectWithPadding.left}px 0, ${rectWithPadding.left}px ${rectWithPadding?.bottom}px, ${rectWithPadding?.right}px ${rectWithPadding.bottom}px, ${rectWithPadding.right}px ${rectWithPadding.top}px, ${rectWithPadding.left}px ${rectWithPadding.top}px)`,
-									}}
-									transition={{
-										duration: finishedStepOne.current ? 0.5 : 0,
-										ease: 'easeInOut',
-									}}
-									className="fixed inset-0 z-max-1 hidden bg-black/70 lg:block"
-									aria-hidden="true"
-								/>
-								<BorderOutline
-									rectWithPadding={rectWithPadding}
-									finishedStepOne={finishedStepOne}
-								/>
-							</>
-						)}
-					</Dialog>
-				)}
-			</AnimatePresence>
-		</>
+								className="fixed inset-0 z-max-1 hidden bg-black/70 lg:block"
+								aria-hidden="true"
+							/>
+							<BorderOutline
+								rectWithPadding={rectWithPadding}
+								finishedStepOne={finishedStepOne}
+							/>
+						</>
+					)}
+				</Dialog>
+			)}
+		</AnimatePresence>
 	);
 };
 
@@ -406,15 +407,18 @@ const BottomNav = ({ initialFocus }) => {
 	return (
 		<div
 			id="extendify-tour-navigation"
-			className="flex w-full items-center justify-between">
+			className="flex w-full items-center justify-between"
+		>
 			<div className="flex flex-1 justify-start rtl:flex-none">
 				<AnimatePresence>
 					{hasPreviousStep() && !hideBackButton && (
 						<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 							<button
-								className="flex h-8 items-center justify-center gap-2 rounded-sm bg-transparent p-0 text-gray-900 ring-design-main hover:bg-transparent focus:outline-none focus:ring-wp focus:ring-offset-1 focus:ring-offset-white disabled:opacity-60"
+								type="button"
+								className="flex h-8 items-center justify-center gap-2 rounded-xs bg-transparent p-0 text-gray-900 ring-design-main hover:bg-transparent focus:outline-hidden focus:ring-wp focus:ring-offset-1 focus:ring-offset-white disabled:opacity-60"
 								onClick={prevStep}
-								disabled={preparingStep > -1}>
+								disabled={preparingStep > -1}
+							>
 								{preparingStep < currentStep && (
 									<Spinner className="m-0 h-4 text-design-main" />
 								)}
@@ -427,12 +431,13 @@ const BottomNav = ({ initialFocus }) => {
 
 			{steps?.length > 2 && !settings?.hideDotsNav ? (
 				<nav
-					role="navigation"
 					aria-label={__('Tour Steps', 'extendify-local')}
-					className="flex flex-1 -translate-x-3 items-center justify-center gap-1">
+					className="flex flex-1 -translate-x-3 items-center justify-center gap-1"
+				>
 					{steps.map((_step, index) => (
 						<div key={index}>
 							<button
+								type="button"
 								aria-label={sprintf(
 									// translators: %1$s is the current step, %2$s is the total number of steps
 									__('%1$s of %2$s', 'extendify-local'),
@@ -440,7 +445,7 @@ const BottomNav = ({ initialFocus }) => {
 									steps.length,
 								)}
 								aria-current={index === currentStep}
-								className={`m-0 block h-2.5 w-2.5 rounded-full p-0 ring-offset-1 ring-offset-white focus:outline-none focus:ring-wp focus:ring-design-main ${
+								className={`m-0 block h-2.5 w-2.5 rounded-full p-0 ring-offset-1 ring-offset-white focus:outline-hidden focus:ring-wp focus:ring-design-main ${
 									index === currentStep ? 'bg-design-main' : 'bg-gray-300'
 								}`}
 								onClick={() => goToStep(index)}
@@ -460,7 +465,8 @@ const BottomNav = ({ initialFocus }) => {
 						onClick={nextStep}
 						disabled={preparingStep > -1}
 						className="flex gap-2 bg-design-main text-design-text focus:text-design-text disabled:opacity-60"
-						variant="primary">
+						variant="primary"
+					>
 						{preparingStep > currentStep && (
 							<Spinner className="m-0 h-4 text-design-main" />
 						)}
@@ -474,7 +480,8 @@ const BottomNav = ({ initialFocus }) => {
 							completeCurrentTour();
 						}}
 						className="bg-design-main"
-						variant="primary">
+						variant="primary"
+					>
 						{__('Done', 'extendify-local')}
 					</Button>
 				)}

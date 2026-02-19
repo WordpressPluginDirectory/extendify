@@ -83,6 +83,9 @@ class ChatHistoryController
         $messages = $parsed['state']['messages'] ?? [];
 
         // Find the latest event and only add new messages since then.
+        /* TODO: Maybe we may need a check like:
+            "if this message is assistant and so is the last, delete the last one" to avoid duplicates on retries."
+        */
         $latest = $wpdb->get_var(
             $wpdb->prepare(
                 "SELECT event_id FROM $table WHERE user_id = %d ORDER BY created_at DESC LIMIT 1",

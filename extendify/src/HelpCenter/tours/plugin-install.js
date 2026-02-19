@@ -5,7 +5,7 @@ export default {
 	title: __('Installing a plugin', 'extendify-local'),
 	settings: {
 		allowOverflow: false,
-		startFrom: [window.extSharedData.adminUrl + 'plugin-install.php'],
+		startFrom: [`${window.extSharedData.adminUrl}plugin-install.php`],
 	},
 	onStart: () => {
 		if (document.body.classList.contains('folded')) {

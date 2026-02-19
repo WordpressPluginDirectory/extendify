@@ -1,10 +1,10 @@
 import {
-	useLayoutEffect,
 	useEffect,
+	useLayoutEffect,
 	useRef,
 	useState,
 } from '@wordpress/element';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export const DynamicTextarea = ({
 	value,
@@ -47,7 +47,9 @@ export const DynamicTextarea = ({
 		const styles = window.getComputedStyle(ref.current);
 
 		// apply styles to the temporary textarea
-		styleProps.forEach((prop) => (tempTextarea.style[prop] = styles[prop]));
+		styleProps.forEach((prop) => {
+			tempTextarea.style[prop] = styles[prop];
+		});
 
 		Object.assign(tempTextarea.style, {
 			position: 'absolute',
@@ -79,7 +81,8 @@ export const DynamicTextarea = ({
 				style={{
 					overflow: 'hidden',
 					maxHeight: rowHeight ? `${rowHeight * maxRows + 16}px` : 'none',
-				}}>
+				}}
+			>
 				<label htmlFor="draft-ai-textarea" className="sr-only">
 					{placeholder}
 				</label>

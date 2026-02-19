@@ -1,17 +1,17 @@
+import { useContentHighlight } from '@draft/hooks/useContentHighlight';
+import { useSelectedText } from '@draft/hooks/useSelectedText';
+import { twoLines } from '@draft/svg';
 import { MenuGroup, MenuItem } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import {
 	customPostType,
-	termDescription,
+	Icon,
 	paragraph,
 	postContent,
-	Icon,
+	termDescription,
 } from '@wordpress/icons';
-import { useContentHighlight } from '@draft/hooks/useContentHighlight';
-import { useSelectedText } from '@draft/hooks/useSelectedText';
-import { twoLines } from '@draft/svg';
 
 export const EditMenu = ({ disabled, setPrompt }) => {
 	const { toggleHighlight } = useContentHighlight();
@@ -84,7 +84,8 @@ export const EditMenu = ({ disabled, setPrompt }) => {
 					icon={icon}
 					iconPosition="left"
 					disabled={disabled}
-					className="group">
+					className="group"
+				>
 					<span className="whitespace-normal text-left rtl:text-right">
 						{label}
 					</span>

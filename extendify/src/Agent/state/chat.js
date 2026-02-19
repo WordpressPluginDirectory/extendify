@@ -1,7 +1,7 @@
+import { makeId } from '@agent/lib/util';
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
-import { persist, devtools, createJSONStorage } from 'zustand/middleware';
-import { makeId } from '@agent/lib/util';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const { chatHistory } = window.extAgentData;
 const state = (set, get) => ({
@@ -22,6 +22,15 @@ const state = (set, get) => ({
 							)
 						),
 				)
+				// Remove duplicate assistant messages (often during retry)
+				.reduce((acc, message) => {
+					const last = acc.at(-1);
+					const isAssistant = message.details?.role === 'assistant';
+					const lastIsAssistant = last?.details?.role === 'assistant';
+					if (isAssistant && lastIsAssistant) return acc;
+					acc.push(message);
+					return acc;
+				}, [])
 				.toReversed()
 		: [],
 
@@ -74,6 +83,13 @@ const state = (set, get) => ({
 			};
 		});
 		return id;
+	},
+	// pop messages all the way back to the last agent message
+	popMessage: () => {
+		set((state) => ({
+			messages: state.messages?.slice(0, -1) || [],
+			messagesRaw: state.messagesRaw?.slice(0, -1) || [],
+		}));
 	},
 	clearMessages: () => set({ messages: [] }),
 });

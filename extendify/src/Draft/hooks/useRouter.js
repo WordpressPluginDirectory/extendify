@@ -1,11 +1,11 @@
-import apiFetch from '@wordpress/api-fetch';
-import { useCallback, useEffect } from '@wordpress/element';
-import { useActivityStore } from '@shared/state/activity';
-import { create } from 'zustand';
-import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 import { routes as aiRoutes } from '@draft/pages/GenerateImage';
 import { routes as generalRoutes } from '@draft/pages/Home';
 import { routes as unsplashRoutes } from '@draft/pages/Unsplash';
+import { useActivityStore } from '@shared/state/activity';
+import apiFetch from '@wordpress/api-fetch';
+import { useCallback, useEffect } from '@wordpress/element';
+import { create } from 'zustand';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const pages = [...generalRoutes, ...aiRoutes, ...unsplashRoutes];
 
@@ -80,11 +80,11 @@ export const useRouter = () => {
 		current,
 		CurrentPage: useCallback(
 			() => (
-				<div role="region" aria-live="polite" className="h-full">
+				<section aria-live="polite" className="h-full">
 					{/* Announce to SR on change */}
 					<h1 className="sr-only">{current?.title}</h1>
 					<Component />
-				</div>
+				</section>
 			),
 			[current],
 		),

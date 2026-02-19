@@ -1,5 +1,5 @@
-import { __ } from '@wordpress/i18n';
 import { ToolTip } from '@agent/components/tooltip/ToolTip';
+import { __ } from '@wordpress/i18n';
 
 export const ReOpenToolTip = () => {
 	return (
@@ -9,7 +9,8 @@ export const ReOpenToolTip = () => {
 			anchors={[
 				'#extendify-agent-editor-btn > button',
 				'#wp-admin-bar-extendify-agent-btn',
-			]}>
+			]}
+		>
 			<div className="mb-1 text-base font-semibold">
 				{__('Need help again?', 'extendify-local')}
 			</div>

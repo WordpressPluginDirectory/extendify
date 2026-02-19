@@ -1,14 +1,14 @@
-import { useEffect } from '@wordpress/element';
-import { __, sprintf } from '@wordpress/i18n';
-import { safeDecodeURIComponent } from '@wordpress/url';
 import { RecommendationsGrid } from '@recommendations/components/RecommendationsGrid';
 import {
-	selectIsLoading,
 	selectIsError,
+	selectIsLoading,
 	selectRecommendations,
 } from '@recommendations/selectors/plugin-search';
 import { usePluginSearchStore } from '@recommendations/state/plugin-search';
 import { recordActivity } from '@recommendations/utils/record-activity';
+import { useEffect } from '@wordpress/element';
+import { __, sprintf } from '@wordpress/i18n';
+import { safeDecodeURIComponent } from '@wordpress/url';
 
 const showPartnerBranding =
 	window.extRecommendationsData?.showPartnerBranding &&
@@ -42,13 +42,16 @@ export const PluginSearchBanner = () => {
 
 	return (
 		<div
-			className="my-8 flex w-full flex-col overflow-hidden rounded border border-gray-400 bg-white"
-			data-test="extendify-recommendations-banner">
+			className="my-8 flex w-full flex-col overflow-hidden rounded-sm border border-gray-400 bg-white"
+			data-test="extendify-recommendations-banner"
+		>
 			<div
-				className={`flex h-14 border-b border-b-gray-200 ${showPartnerBranding ? 'bg-banner-main' : ''} px-6 py-4`}>
+				className={`flex h-14 border-b border-b-gray-200 ${showPartnerBranding ? 'bg-banner-main' : ''} px-6 py-4`}
+			>
 				{showPartnerBranding ? (
 					<>
 						<img
+							alt={window.extSharedData?.partnerName || 'Partner Logo'}
 							className="mr-3 h-full"
 							src={window.extSharedData?.partnerLogo}
 						/>
@@ -56,7 +59,8 @@ export const PluginSearchBanner = () => {
 					</>
 				) : null}
 				<h2
-					className={`m-0 flex h-full items-center ${showPartnerBranding ? 'text-banner-text' : ''} `}>
+					className={`m-0 flex h-full items-center ${showPartnerBranding ? 'text-banner-text' : ''} `}
+				>
 					{sprintf(
 						// translators: %s: The search query term
 						__('Recommended Solutions for: %s', 'extendify-local'),

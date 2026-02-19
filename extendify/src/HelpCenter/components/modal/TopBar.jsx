@@ -1,15 +1,15 @@
-import { __, isRTL } from '@wordpress/i18n';
-import {
-	Icon,
-	closeSmall,
-	chevronLeft,
-	chevronRight,
-	reset,
-} from '@wordpress/icons';
-import { useActivityStore } from '@shared/state/activity';
-import classNames from 'classnames';
 import { useRouter } from '@help-center/hooks/useRouter';
 import { useGlobalSyncStore } from '@help-center/state/globals-sync';
+import { useActivityStore } from '@shared/state/activity';
+import { __, isRTL } from '@wordpress/i18n';
+import {
+	chevronLeft,
+	chevronRight,
+	closeSmall,
+	Icon,
+	reset,
+} from '@wordpress/icons';
+import classNames from 'classnames';
 
 const { partnerLogo, partnerName } = window.extSharedData;
 
@@ -30,6 +30,7 @@ export const Topbar = () => {
 
 	return (
 		<div className="relative flex items-center justify-end gap-x-2 bg-banner-main p-4">
+			{/* biome-ignore lint: soon to be removed anyway */}
 			<div
 				role={isMinimized ? 'button' : 'heading'}
 				onClick={isMinimized ? toggleMinimized : undefined}
@@ -39,11 +40,13 @@ export const Topbar = () => {
 				aria-expanded={isMinimized ? 'false' : 'true'}
 				className={classNames('flex w-full justify-between bg-banner-main', {
 					'cursor-pointer': isMinimized,
-				})}>
+				})}
+			>
 				<div
 					className={classNames('flex w-full gap-3', {
 						'gap-3': history.length === 1,
-					})}>
+					})}
+				>
 					<LogoOrBackButton />
 					{current?.title && (
 						<span className="border-banner-text text-base font-medium text-banner-text">
@@ -57,7 +60,8 @@ export const Topbar = () => {
 					className="m-0 border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 					type="button"
 					data-test="help-center-toggle-minimize-button"
-					onClick={toggleMinimized}>
+					onClick={toggleMinimized}
+				>
 					{isMinimized ? (
 						<>
 							<Icon
@@ -82,7 +86,8 @@ export const Topbar = () => {
 					className="m-0 border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 					type="button"
 					data-test="help-center-close-button"
-					onClick={handleClose}>
+					onClick={handleClose}
+				>
 					<Icon icon={closeSmall} size={24} />
 					<span className="sr-only">{__('close', 'extendify-local')}</span>
 				</button>
@@ -100,7 +105,8 @@ const LogoOrBackButton = () => {
 			<button
 				className="m-0 border-0 bg-transparent fill-banner-text p-0 text-banner-text"
 				type="button"
-				onClick={goBack}>
+				onClick={goBack}
+			>
 				<Icon icon={isRTL() ? chevronRight : chevronLeft} />
 				<span className="sr-only">{__('Go back', 'extendify-local')}</span>
 			</button>

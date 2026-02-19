@@ -1,18 +1,18 @@
-import {
-	useEffect,
-	useState,
-	useCallback,
-	useRef,
-	forwardRef,
-} from '@wordpress/element';
-import { Icon } from '@wordpress/icons';
-import { TabGroup, TabList, TabPanels, TabPanel, Tab } from '@headlessui/react';
-import classNames from 'classnames';
 import { CardContent } from '@assist/components/dashboard/CardContent';
 import { CardsTitle } from '@assist/components/dashboard/CardsTitle';
 import { useTours } from '@assist/hooks/useTours';
 import { useTasksStore } from '@assist/state/tasks';
 import { Bullet, Check } from '@assist/svg';
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
+import {
+	forwardRef,
+	useCallback,
+	useEffect,
+	useRef,
+	useState,
+} from '@wordpress/element';
+import { Icon } from '@wordpress/icons';
+import classNames from 'classnames';
 
 export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 	const { isCompleted } = useTasksStore();
@@ -52,8 +52,9 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 			id="assist-tasks-module"
 			className={classNames(
 				className,
-				'mb-6 h-full w-full rounded border border-gray-300 bg-white text-base',
-			)}>
+				'mb-6 h-full w-full rounded-sm border border-gray-300 bg-white text-base',
+			)}
+		>
 			{tasks && (
 				<TabGroup
 					defaultIndex={nextTask}
@@ -61,16 +62,20 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 					onChange={setNextTask}
 					vertical
 					as="div"
-					className="flex h-[472px] min-h-96 grow flex-row-reverse justify-between rtl:flex-row">
+					className="flex h-[472px] min-h-96 grow flex-row-reverse justify-between rtl:flex-row"
+				>
 					<TabList
 						as="div"
-						className="w-96 overflow-auto border-l border-gray-100">
+						className="w-96 overflow-auto border-l border-gray-100"
+					>
 						<CardsTitle totalCompleted={totalCompleted} total={tasks.length} />
 
 						{tasks.map((task, index) => (
 							<TabItem
 								key={task.slug}
-								ref={(el) => (tabRefs.current[index] = el)}
+								ref={(el) => {
+									tabRefs.current[index] = el;
+								}}
 								task={task}
 								isCompleted={
 									task.type === 'tour'
@@ -87,7 +92,8 @@ export const DesktopCards = ({ className, tasks, totalCompleted }) => {
 								key={task.slug}
 								as="div"
 								data-test="assist-task-card-wrapper"
-								className="h-full">
+								className="h-full"
+							>
 								<CardContent task={task} />
 							</TabPanel>
 						))}
@@ -108,7 +114,8 @@ const TabItem = forwardRef(({ task, isCompleted }, ref) => (
 					{
 						'bg-gray-100 font-semibold': selected,
 					},
-				)}>
+				)}
+			>
 				<div className="flex w-full items-center">
 					<Icon
 						icon={isCompleted ? Check : Bullet}

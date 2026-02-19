@@ -1,15 +1,15 @@
-import { Button } from '@wordpress/components';
-import { useEffect, useState, useCallback } from '@wordpress/element';
-import { decodeEntities } from '@wordpress/html-entities';
-import { __, _x, sprintf } from '@wordpress/i18n';
-import { Icon, check, warning, external } from '@wordpress/icons';
 import {
-	recordActivity,
 	getRecommendation,
+	recordActivity,
 } from '@recommendations/utils/record-activity';
 import { recordPluginActivity } from '@shared/api/DataApi';
-import { installPlugin, activatePlugin } from '@shared/api/wp';
-import { sleep, retryOperation } from '@shared/lib/utils';
+import { activatePlugin, installPlugin } from '@shared/api/wp';
+import { retryOperation, sleep } from '@shared/lib/utils';
+import { Button } from '@wordpress/components';
+import { useCallback, useEffect, useState } from '@wordpress/element';
+import { decodeEntities } from '@wordpress/html-entities';
+import { __, _x, sprintf } from '@wordpress/i18n';
+import { caution, check, external, Icon } from '@wordpress/icons';
 
 export const RecommendationCard = ({
 	slug: product,
@@ -30,9 +30,10 @@ export const RecommendationCard = ({
 
 	return (
 		<div
-			className="flex flex-col rounded border border-gray-300"
-			data-test="extendify-recommendations-card">
-			<div className="row-auto grid flex-grow grid-cols-[2fr_3fr] grid-rows-[min-content_1fr] gap-x-5 gap-y-3 border-b border-b-gray-100 p-5 xs:grid-cols-[8rem_1fr]">
+			className="flex flex-col rounded-sm border border-gray-300"
+			data-test="extendify-recommendations-card"
+		>
+			<div className="row-auto grid grow grid-cols-[2fr_3fr] grid-rows-[min-content_1fr] gap-x-5 gap-y-3 border-b border-b-gray-100 p-5 xs:grid-cols-[8rem_1fr]">
 				<div className="row-span-1 xs:row-span-2">
 					{image &&
 						(ctaType === 'plugin' ? (
@@ -47,7 +48,8 @@ export const RecommendationCard = ({
 								// These WP classes (thickbox open-plugin-details-modal) are needed for the link to open in an iframe like WP does.
 								className="thickbox open-plugin-details-modal block no-underline"
 								// The hardcoded iframe dimensions are the default ones, but some WP magic makes them responsive.
-								href={`${window.extSharedData?.adminUrl}/plugin-install.php?tab=plugin-information&plugin=${ctaPluginSlug}&TB_iframe=true&width=600&height=550`}>
+								href={`${window.extSharedData?.adminUrl}/plugin-install.php?tab=plugin-information&plugin=${ctaPluginSlug}&TB_iframe=true&width=600&height=550`}
+							>
 								<img
 									className="w-full xs:min-h-[8rem]"
 									src={image}
@@ -72,7 +74,8 @@ export const RecommendationCard = ({
 								// These WP classes (thickbox open-plugin-details-modal) are needed for the link to open in an iframe like WP does.
 								className="thickbox open-plugin-details-modal no-underline focus:shadow-none"
 								// The hardcoded iframe dimensions are the default ones, but some WP magic makes them responsive.
-								href={`${window.extSharedData?.adminUrl}/plugin-install.php?tab=plugin-information&plugin=${ctaPluginSlug}&TB_iframe=true&width=600&height=550`}>
+								href={`${window.extSharedData?.adminUrl}/plugin-install.php?tab=plugin-information&plugin=${ctaPluginSlug}&TB_iframe=true&width=600&height=550`}
+							>
 								{decodeEntities(title)}
 							</a>
 						) : (
@@ -95,7 +98,7 @@ export const RecommendationCard = ({
 					{decodeEntities(description)}
 				</p>
 			</div>
-			<div className="flex min-h-14 flex-shrink-0 flex-col items-center justify-center p-3 px-5 xxs:flex-row xxs:justify-end">
+			<div className="flex min-h-14 shrink-0 flex-col items-center justify-center p-3 px-5 xxs:flex-row xxs:justify-end">
 				{priceTag && (
 					<p
 						className="m-0 mb-3 xxs:mb-0 xxs:mr-4"
@@ -193,7 +196,7 @@ const InstallPluginAction = ({ product, ctaContent, ctaPluginSlug }) => {
 	if (status === 'error') {
 		return (
 			<p className="m-0 flex items-center fill-wp-alert-red text-sm text-wp-alert-red">
-				<Icon icon={warning} />
+				<Icon icon={caution} />
 				{actionText[status]}
 			</p>
 		);
@@ -210,13 +213,14 @@ const InstallPluginAction = ({ product, ctaContent, ctaPluginSlug }) => {
 
 	return (
 		<Button
-			className="h-auto min-w-24 whitespace-normal break-words rounded-sm bg-wp-theme-main px-3 align-middle text-sm text-design-text shadow-none hover:opacity-90 disabled:opacity-80"
+			className="h-auto min-w-24 whitespace-normal wrap-break-word rounded-xs bg-wp-theme-main px-3 align-middle text-sm text-design-text shadow-none hover:opacity-90 disabled:opacity-80"
 			type="button"
 			variant="secondary"
 			size="compact"
 			disabled={status !== 'idle'}
 			isBusy={status !== 'idle'}
-			onClick={handleInstall}>
+			onClick={handleInstall}
+		>
 			{actionText[status]}
 		</Button>
 	);
@@ -239,7 +243,8 @@ const ExternalLinkAction = ({ product, ctaContent, ctaExternalLink }) => {
 			}
 			href={ctaExternalLinkWithPartner}
 			target="_blank"
-			className="relative flex min-h-8 min-w-24 cursor-pointer items-center justify-center whitespace-normal break-words rounded-sm bg-wp-theme-main fill-design-text py-[6px] pl-3 pr-9 text-center text-sm leading-tight text-design-text no-underline hover:opacity-90 focus:shadow-none">
+			className="relative flex min-h-8 min-w-24 cursor-pointer items-center justify-center whitespace-normal wrap-break-word rounded-xs bg-wp-theme-main fill-design-text py-1.5 pl-3 pr-9 text-center text-sm leading-tight text-design-text no-underline hover:opacity-90 focus:shadow-none"
+		>
 			{ctaContent}
 			<Icon className="absolute right-3 h-5 w-5" icon={external} />
 		</a>
@@ -257,7 +262,8 @@ const InternalLinkAction = ({ product, ctaContent, ctaInternalLink }) => {
 				})
 			}
 			href={ctaInternalLink}
-			className="relative flex min-h-8 min-w-24 cursor-pointer items-center justify-center whitespace-normal break-words rounded-sm bg-wp-theme-main fill-design-text px-3 py-[6px] text-center text-sm leading-tight text-design-text no-underline hover:opacity-90 focus:shadow-none">
+			className="relative flex min-h-8 min-w-24 cursor-pointer items-center justify-center whitespace-normal break-words rounded-xs bg-wp-theme-main fill-design-text px-3 py-[6px] text-center text-sm leading-tight text-design-text no-underline hover:opacity-90 focus:shadow-none"
+		>
 			{ctaContent}
 		</a>
 	);

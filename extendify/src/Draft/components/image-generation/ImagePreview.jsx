@@ -1,12 +1,12 @@
+import { addImageToBlock } from '@draft/api/WPApi';
+import { downloadImage } from '@shared/api/wp';
 import { store as blockEditorStore } from '@wordpress/block-editor';
 import { Button, Spinner } from '@wordpress/components';
-import { useSelect, useDispatch } from '@wordpress/data';
+import { useDispatch, useSelect } from '@wordpress/data';
 import { store as editPostStore } from '@wordpress/edit-post';
 import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { downloadImage } from '@shared/api/wp';
 import { AnimatePresence, motion } from 'framer-motion';
-import { addImageToBlock } from '@draft/api/WPApi';
 
 export const ImagePreview = ({
 	prompt,
@@ -50,7 +50,8 @@ export const ImagePreview = ({
 						style={{
 							background:
 								'linear-gradient(135deg, #E8E8E8 47.92%, #F3F3F3 60.42%, #E8E8E8 72.92%)',
-						}}>
+						}}
+					>
 						<Spinner style={{ height: '48px', width: '48px' }} />
 					</motion.div>
 				) : (
@@ -58,7 +59,8 @@ export const ImagePreview = ({
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						className="bg-gray-100"
-						style={{ aspectRatio: Number(imgWidth) / Number(imgHeight) }}>
+						style={{ aspectRatio: Number(imgWidth) / Number(imgHeight) }}
+					>
 						<img
 							alt={prompt}
 							src={src}
@@ -80,7 +82,8 @@ export const ImagePreview = ({
 						autoFocus
 						className="w-full justify-center"
 						variant="primary"
-						disabled={isInserting}>
+						disabled={isInserting}
+					>
 						{isInserting
 							? // translators: "Importing image" means the image is being added to the WordPress post editor
 								__('Importing image...', 'extendify-local')
@@ -89,7 +92,8 @@ export const ImagePreview = ({
 					<Button
 						className="w-full justify-center bg-gray-200 text-gray-800 disabled:bg-gray-300 disabled:text-gray-700"
 						onClick={clearImageResponse}
-						disabled={isInserting}>
+						disabled={isInserting}
+					>
 						{__('Delete image', 'extendify-local')}
 					</Button>
 				</form>

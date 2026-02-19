@@ -1,9 +1,9 @@
-import { useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { getPageProfile } from '@page-creator/api/DataApi';
 import { usePageDescriptionStore } from '@page-creator/state/cache';
 import { useGlobalsStore } from '@page-creator/state/global';
 import { useSiteProfileStore } from '@shared/state/site-profile';
+import { useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import useSWRImmutable from 'swr/immutable';
 
 // Returns the site profile and page profile

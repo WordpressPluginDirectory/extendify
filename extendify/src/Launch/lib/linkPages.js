@@ -1,7 +1,3 @@
-import { rawHandler, getBlockContent } from '@wordpress/blocks';
-import { prependHTTPS } from '@wordpress/url';
-import { pageNames } from '@shared/lib/pages';
-import { wasPluginInstalled } from '@shared/lib/utils';
 import { getLinkSuggestions } from '@launch/api/DataApi';
 import {
 	getActivePlugins,
@@ -9,6 +5,10 @@ import {
 	getPageById,
 	updatePage,
 } from '@launch/api/WPApi';
+import { pageNames } from '@shared/lib/pages';
+import { wasPluginInstalled } from '@shared/lib/utils';
+import { getBlockContent, rawHandler } from '@wordpress/blocks';
+import { prependHTTPS } from '@wordpress/url';
 
 const { homeUrl } = window.extSharedData;
 const buttonRegex = /href="(#extendify-[\w-]+)"/gi;
@@ -16,7 +16,7 @@ const pagesWithButtons = (p) => p?.content?.raw?.match(buttonRegex);
 
 export const updateButtonLinks = async (wpPages, pluginPages) => {
 	// Fetch active plugins after installing plugins
-	let { data: activePlugins } = await getActivePlugins();
+	const { data: activePlugins } = await getActivePlugins();
 	const contactPageSlug = wpPages.find(({ originalSlug }) =>
 		originalSlug.startsWith('contact'),
 	)?.slug;
@@ -65,7 +65,12 @@ export const updateButtonLinks = async (wpPages, pluginPages) => {
 		.filter((r) => r.status === 'fulfilled')
 		.map((r) => r.value?.suggestedLinks || [])
 		// Combine all suggested links
-		.reduce((acc, link) => ({ ...acc, ...link }), {});
+		.reduce((acc, link) => {
+			for (const key in link) {
+				acc[key] = link[key];
+			}
+			return acc;
+		}, {});
 
 	const linkKeys = Object.keys(suggestedLinks)
 		.filter((k) =>

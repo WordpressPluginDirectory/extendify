@@ -1,5 +1,5 @@
-import { __, isRTL } from '@wordpress/i18n';
 import { waitUntilExists } from '@help-center/lib/tour-helpers';
+import { __, isRTL } from '@wordpress/i18n';
 
 const { isBlockTheme, themeSlug, adminUrl } = window.extSharedData;
 

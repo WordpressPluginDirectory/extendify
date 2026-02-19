@@ -1,5 +1,3 @@
-import { useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { updateOption } from '@launch/api/WPApi';
 import { Title } from '@launch/components/Title';
 import { VideoPlayer } from '@launch/components/VideoPlayer';
@@ -8,9 +6,11 @@ import { useSitePlugins } from '@launch/hooks/useSitePlugins';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
 import { useSiteQuestions } from '@launch/hooks/useSiteQuestions';
 import { PageLayout } from '@launch/layouts/PageLayout';
-import { usePagesStore } from '@launch/state/Pages';
 import { pageState } from '@launch/state/factory';
+import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import { useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const state = pageState('Content Gathering', () => ({
 	ready: true,

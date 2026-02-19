@@ -1,5 +1,3 @@
-import { useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { Title } from '@launch/components/Title';
 import { VideoPlayer } from '@launch/components/VideoPlayer';
 import { useHomeLayouts } from '@launch/hooks/useHomeLayouts';
@@ -7,9 +5,11 @@ import { useSiteImages } from '@launch/hooks/useSiteImages';
 import { useSitePlugins } from '@launch/hooks/useSitePlugins';
 import { useSiteStrings } from '@launch/hooks/useSiteStrings';
 import { PageLayout } from '@launch/layouts/PageLayout';
-import { usePagesStore } from '@launch/state/Pages';
 import { pageState } from '@launch/state/factory';
+import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import { useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const state = pageState('Content Gathering', () => ({
 	ready: true,
@@ -47,7 +47,7 @@ export const ContentGathering = () => {
 
 	useEffect(() => {
 		if (!homeLayouts) return;
-		let id = setTimeout(nextPage, 1000);
+		const id = setTimeout(nextPage, 1000);
 		return () => clearTimeout(id);
 	}, [homeLayouts, nextPage]);
 

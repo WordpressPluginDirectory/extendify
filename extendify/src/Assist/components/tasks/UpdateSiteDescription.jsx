@@ -1,8 +1,8 @@
+import { useTasksStore } from '@assist/state/tasks';
 import apiFetch from '@wordpress/api-fetch';
-import { useEffect, useState, useRef } from '@wordpress/element';
+import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
-import { useTasksStore } from '@assist/state/tasks';
 
 export const UpdateSiteDescription = ({ popModal, setModalTitle }) => {
 	const [siteDescription, setSiteDescription] = useState(undefined);
@@ -53,7 +53,8 @@ export const UpdateSiteDescription = ({ popModal, setModalTitle }) => {
 			<div>
 				<label
 					className="mb-1 block text-sm text-gray-900"
-					htmlFor="extendify-site-description-input">
+					htmlFor="extendify-site-description-input"
+				>
 					{__('Site description', 'extendify-local')}
 				</label>
 				<input
@@ -71,14 +72,16 @@ export const UpdateSiteDescription = ({ popModal, setModalTitle }) => {
 			</div>
 			<div>
 				<button
+					type="button"
 					disabled={siteDescription === initialValue}
 					className={classNames(
-						'button-focus relative w-1/5 rounded border-0 bg-design-main px-4 py-3 text-white',
+						'button-focus relative w-1/5 rounded-sm border-0 bg-design-main px-4 py-3 text-white',
 						{
 							'cursor-default opacity-50': siteDescription === initialValue,
 						},
 					)}
-					onClick={submitChange}>
+					onClick={submitChange}
+				>
 					{__('Save', 'extendify-local')}
 				</button>
 			</div>

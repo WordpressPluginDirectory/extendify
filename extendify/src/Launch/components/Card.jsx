@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import { Checkmark } from '@launch/svg';
+import classNames from 'classnames';
 
 export const Card = ({
 	image,
@@ -11,6 +11,7 @@ export const Card = ({
 	lock,
 }) => {
 	return (
+		// biome-ignore lint: refactor this later
 		<div
 			role={lock ? undefined : 'button'}
 			tabIndex={lock ? undefined : 0}
@@ -28,12 +29,14 @@ export const Card = ({
 			}}
 			onClick={() => {
 				if (!lock) onClick();
-			}}>
+			}}
+		>
 			<div className="flex min-w-sm justify-between border-b border-gray-100 p-2">
 				<div
 					className={classNames('flex items-center', {
 						'text-gray-700': !selected,
-					})}>
+					})}
+				>
 					<span className="text-left">{name}</span>
 					{lock && (
 						<span className="dashicons dashicons-lock mr-6 h-4 w-4 pl-2 text-base leading-none"></span>

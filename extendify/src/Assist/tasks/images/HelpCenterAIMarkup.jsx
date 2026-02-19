@@ -1,12 +1,12 @@
+import { playIcon, robot, send } from '@assist/tasks/images/icons';
 import { __ } from '@wordpress/i18n';
 import {
-	Icon,
+	chevronLeft,
 	chevronRight,
 	closeSmall,
+	Icon,
 	lineSolid,
-	chevronLeft,
 } from '@wordpress/icons';
-import { send, robot, playIcon } from '@assist/tasks/images/icons';
 
 export const HelpCenterAIMarkup = (props) => (
 	<div {...props}>
@@ -77,7 +77,7 @@ export const HelpCenterAIMarkup = (props) => (
 						/>
 					</div>
 					<div className="flex min-h-96 w-fit flex-col justify-center bg-design-main px-6 py-6 text-design-text">
-						<h4 className="text-md m-0 font-medium opacity-80">
+						<h4 className="text-base m-0 font-medium opacity-80">
 							{__('Hi there!', 'extendify-local')}
 						</h4>
 						<p className="m-0 mt-1 text-2xl font-medium">
@@ -188,31 +188,31 @@ export const HelpCenterAIMarkup = (props) => (
 						/>
 					</div>
 					<div className="mt-2 flex flex-col gap-3 px-5 py-4">
-						<div className="flex content-center justify-between rounded bg-gray-100 px-5 py-4">
+						<div className="flex content-center justify-between rounded-sm bg-gray-100 px-5 py-4">
 							{__('Getting started with WordPress', 'extendify-local')}
 							<Icon icon={playIcon} />
 						</div>
-						<div className="flex content-center justify-between rounded bg-gray-100 px-5 py-4">
+						<div className="flex content-center justify-between rounded-sm bg-gray-100 px-5 py-4">
 							{__('Installing a plugin', 'extendify-local')}
 							<Icon icon={playIcon} />
 						</div>
-						<div className="flex content-center justify-between rounded bg-gray-100 px-5 py-4">
+						<div className="flex content-center justify-between rounded-sm bg-gray-100 px-5 py-4">
 							{__('Plugin management', 'extendify-local')}
 							<Icon icon={playIcon} />
 						</div>
-						<div className="flex content-center justify-between rounded bg-gray-100 px-5 py-4">
+						<div className="flex content-center justify-between rounded-sm bg-gray-100 px-5 py-4">
 							{__('Page editor', 'extendify-local')}
 							<Icon icon={playIcon} />
 						</div>
-						<div className="flex content-center justify-between rounded bg-gray-100 px-5 py-4">
+						<div className="flex content-center justify-between rounded-sm bg-gray-100 px-5 py-4">
 							{__('Design Library', 'extendify-local')}
 							<Icon icon={playIcon} />
 						</div>
-						<div className="flex content-center justify-between rounded bg-gray-100 px-5 py-4">
+						<div className="flex content-center justify-between rounded-sm bg-gray-100 px-5 py-4">
 							{__('Users screen', 'extendify-local')}
 							<Icon icon={playIcon} />
 						</div>
-						<div className="flex content-center justify-between rounded bg-gray-100 px-5 py-4">
+						<div className="flex content-center justify-between rounded-sm bg-gray-100 px-5 py-4">
 							{__('Site Assistant', 'extendify-local')}
 							<Icon icon={playIcon} />
 						</div>

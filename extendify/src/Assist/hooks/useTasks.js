@@ -1,8 +1,7 @@
-import { safeParseJson } from '@shared/lib/parsing';
 import {
+	domainSearchUrl,
 	showDomainTask,
 	showSecondaryDomainTask,
-	domainSearchUrl,
 } from '@assist/lib/domains';
 import addPage from '@assist/tasks/add-page';
 import openAIImageEditor from '@assist/tasks/ai-image-editor';
@@ -30,6 +29,7 @@ import siteBuilderLauncher from '@assist/tasks/site-builder-launcher';
 import updateSiteDescription from '@assist/tasks/update-site-description';
 import uploadLogo from '@assist/tasks/upload-logo';
 import uploadSiteIcon from '@assist/tasks/upload-site-icon';
+import { safeParseJson } from '@shared/lib/parsing';
 
 const activePlugins = window.extSharedData?.activePlugins || [];
 const sitePlugins =
@@ -71,7 +71,7 @@ export const useTasks = () => {
 	const activePluginSlugs = activePlugins?.map((plugin) => {
 		try {
 			return plugin.split('/')[0];
-		} catch (e) {
+		} catch (_e) {
 			return plugin;
 		}
 	});

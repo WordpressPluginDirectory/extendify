@@ -1,6 +1,6 @@
-import { useState } from '@wordpress/element';
 import { RetryNotice } from '@page-creator/components/RetryNotice';
 import { usePagesStore } from '@page-creator/state/pages';
+import { useState } from '@wordpress/element';
 import { SWRConfig } from 'swr';
 
 export const MainPage = ({ insertPage }) => {
@@ -18,7 +18,7 @@ export const MainPage = ({ insertPage }) => {
 		<SWRConfig
 			value={{
 				errorRetryInterval: 1000,
-				onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
+				onErrorRetry: (error, _key, _config, revalidate, { retryCount }) => {
 					console.error(error);
 					if (error?.data?.status === 403) {
 						// if they are logged out, we can't recover
@@ -32,7 +32,8 @@ export const MainPage = ({ insertPage }) => {
 						revalidate({ retryCount });
 					}, 5000);
 				},
-			}}>
+			}}
+		>
 			{page()}
 			<RetryNotice show={retrying} />
 		</SWRConfig>

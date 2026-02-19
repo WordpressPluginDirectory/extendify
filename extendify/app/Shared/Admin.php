@@ -204,7 +204,6 @@ class Admin
                 'products' => ProductsData::get(),
                 'showAIAgents' => (bool) (PartnerData::setting('showAIAgents') || Config::preview('ai-agent')),
                 'pluginGroupId' => Escaper::recursiveEscAttr(PartnerData::setting('pluginGroupId')),
-                'requiredPlugins' => Escaper::recursiveEscAttr(PartnerData::setting('requiredPlugins')),
                 'adminPagesMenuList' => get_option('_transient_extendify_admin_pages_menu', []),
                 'globalState' => ImageGenerationController::get()->get_data(),
             ]),

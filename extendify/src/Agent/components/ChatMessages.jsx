@@ -1,21 +1,28 @@
-import { createElement, useEffect, useRef, useState } from '@wordpress/element';
-import { ScrollDownButton } from '@agent/components/ScrollDownButton';
-import { ScrollIntoViewOnce } from '@agent/components/ScrollIntoViewOnce';
 import { AgentMessage } from '@agent/components/messages/AgentMessage';
 import { StatusMessage } from '@agent/components/messages/StatusMessage';
 import { UserMessage } from '@agent/components/messages/UserMessage';
 import { WorkflowComponent } from '@agent/components/messages/WorkflowComponent';
 import { WorkflowMessage } from '@agent/components/messages/WorkflowMessage';
+import { ScrollDownButton } from '@agent/components/ScrollDownButton';
+import { ScrollIntoViewOnce } from '@agent/components/ScrollIntoViewOnce';
+import { useWhenFinishedToolProps } from '@agent/hooks/useWhenFinishedToolProps';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
+import {
+	createElement,
+	useEffect,
+	useLayoutEffect,
+	useRef,
+	useState,
+} from '@wordpress/element';
 
 export const ChatMessages = () => {
 	const { open } = useGlobalStore();
 	const { messages } = useChatStore();
-	const { getWhenFinishedToolProps, getWorkflow } = useWorkflowStore();
+	const { getWorkflow } = useWorkflowStore();
 	const workflow = getWorkflow();
-	const whenFinishedToolProps = getWhenFinishedToolProps();
+	const whenFinishedToolProps = useWhenFinishedToolProps();
 	const whenFinishedComponent = workflow?.whenFinished?.component;
 	const [canScrollDown, setCanScrollDown] = useState(false);
 	const containerRef = useRef(null);
@@ -31,8 +38,19 @@ export const ChatMessages = () => {
 		if (!isFreshPageLoad.current) return;
 		isFreshPageLoad.current = false;
 		// Scroll to the bottom of the chat container on load
-		containerRef.current.scrollTo({ top: containerRef.current.scrollHeight });
+		const c = containerRef.current;
+		const last = c.querySelector(
+			'#extendify-agent-chat-scroll-area > :last-child',
+		);
+		let id2;
+		const id = requestAnimationFrame(() => {
+			id2 = requestAnimationFrame(() => {
+				last?.scrollIntoView({ behavior: 'auto', block: 'start' });
+			});
+		});
 		return () => {
+			cancelAnimationFrame(id);
+			cancelAnimationFrame(id2);
 			isFreshPageLoad.current = true;
 		};
 	}, [open]);
@@ -59,23 +77,31 @@ export const ChatMessages = () => {
 	}, [isUserMessage, messages]);
 
 	// Handles the scroll down button visibility
-	useEffect(() => {
-		if (!containerRef.current) return;
+	useLayoutEffect(() => {
 		const c = containerRef.current;
+		if (!c) return;
 		const last = c.querySelector(
 			'#extendify-agent-chat-scroll-area > :last-child',
 		);
 		if (!last) return;
 
+		const areWeAtBottom = c.scrollTop + c.clientHeight >= c.scrollHeight - 4;
+		setCanScrollDown(!areWeAtBottom);
+
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				const containerRect = c.getBoundingClientRect();
-				const lastRect = entry.boundingClientRect;
-				const isBelowViewport = lastRect.bottom > containerRect.bottom;
-				setCanScrollDown(!entry.isIntersecting && isBelowViewport);
+				const last = c.querySelector(
+					'#extendify-agent-chat-scroll-area > :last-child',
+				);
+				if (!last) return setCanScrollDown(false);
+				const areWeAtBottom =
+					c.scrollTop + c.clientHeight >= c.scrollHeight - 4;
+				if (areWeAtBottom) return setCanScrollDown(false);
+				setCanScrollDown(!entry.isIntersecting);
 			},
-			{ root: c },
+			{ root: c, threshold: 0.1 },
 		);
+
 		observer.observe(last);
 		return () => observer.disconnect();
 	}, [messages]);
@@ -84,7 +110,8 @@ export const ChatMessages = () => {
 		<div
 			ref={containerRef}
 			style={{ overscrollBehavior: 'contain' }}
-			className="relative flex-grow overflow-y-auto overflow-x-hidden p-1 pb-0 text-sm text-gray-900 md:p-2">
+			className="relative grow overflow-y-auto overflow-x-hidden p-1 pb-0 text-sm text-gray-900 md:p-2"
+		>
 			<div id="extendify-agent-chat-scroll-area">
 				{messages.map((message) => {
 					const isLastMessage = messages.at(-1)?.id === message.id;
@@ -111,9 +138,7 @@ export const ChatMessages = () => {
 						message.type === 'status' &&
 						// Only show the status if it's last, or a workflow-tool-completed message
 						(isLastMessage ||
-							['workflow-tool-completed', 'workflow-tool-canceled'].includes(
-								message.details?.type,
-							))
+							['workflow-tool-completed'].includes(message.details?.type))
 					) {
 						const isError = message.details?.type === 'error';
 						return (

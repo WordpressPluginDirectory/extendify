@@ -1,5 +1,5 @@
-import { __ } from '@wordpress/i18n';
 import { HelpCenterAIMarkup } from '@assist/tasks/images/HelpCenterAIMarkup';
+import { __ } from '@wordpress/i18n';
 
 export default {
 	slug: 'help-center-ai',
@@ -24,7 +24,7 @@ export default {
 		),
 	htmlBefore: () => (
 		<HelpCenterAIMarkup
-			className="border-gray300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-100 pt-5 lg:block"
+			className="border-gray-300 pointer-events-none relative hidden h-full min-h-56 w-full overflow-hidden rounded-t-lg border bg-gray-100 pt-5 lg:block"
 			aria-hidden="true"
 		/>
 	),

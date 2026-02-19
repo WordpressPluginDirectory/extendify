@@ -1,16 +1,3 @@
-import {
-	useEffect,
-	useLayoutEffect,
-	useRef,
-	useState,
-	useMemo,
-} from '@wordpress/element';
-import { __, isRTL } from '@wordpress/i18n';
-import {
-	convertToValidParamsArray,
-	mapToneValuesToObjects,
-} from '@shared/utils/convert-to-valid-params';
-import { getUrlParameter } from '@shared/utils/get-url-parameter';
 import { TONES } from '@launch/components/BusinessInformation/Tones';
 import { NavigationButton } from '@launch/components/NavigationButton';
 import {
@@ -24,7 +11,20 @@ import {
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
 import { useUserSelectionStore } from '@launch/state/user-selections';
-import { RightCaret, LeftCaret } from '@launch/svg';
+import { LeftCaret, RightCaret } from '@launch/svg';
+import {
+	convertToValidParamsArray,
+	mapToneValuesToObjects,
+} from '@shared/utils/convert-to-valid-params';
+import { getUrlParameter } from '@shared/utils/get-url-parameter';
+import {
+	useEffect,
+	useLayoutEffect,
+	useMemo,
+	useRef,
+	useState,
+} from '@wordpress/element';
+import { __, isRTL } from '@wordpress/i18n';
 
 // This is a bit hacky for faster development.
 // We should refactor to include custom flows for each objective
@@ -253,7 +253,7 @@ export const PageControl = () => {
 		(skipInfoAndQuestionsEnabled && currentPageSlug === 'layout');
 
 	return (
-		<div className="z-10 w-full flex-none border-t border-gray-100 bg-white px-6 py-5 shadow-surface md:px-12 md:py-6">
+		<div className="z-10 w-full flex-none border-t border-gray-100 bg-white px-6 py-5 shadow-surface md:px-12 md:py-6 text-base">
 			<div className="flex justify-between">
 				<span className="flex-1 self-start">
 					<PrevButton forceFirstpage={forceFirstpage} />
@@ -281,7 +281,8 @@ const Steps = () => {
 			aria-valuenow={currentPageIndex}
 			aria-valuemin="0"
 			aria-valuetext={pagesList[currentPageIndex][1].state.getState().title}
-			aria-valuemax={totalPages - 1}>
+			aria-valuemax={totalPages - 1}
+		>
 			{pagesList.map(([page], index) => {
 				const bgColor =
 					index < currentPageIndex ? 'bg-design-main' : 'bg-gray-200';
@@ -312,20 +313,19 @@ const PrevButton = ({ forceFirstpage = false }) => {
 	if (onFirstPage) {
 		return (
 			<NavigationButton
-				onClick={() =>
-					(window.location.href = `${window.extSharedData.adminUrl}admin.php?page=extendify-assist`)
-				}
+				onClick={() => {
+					window.location.href = `${window.extSharedData.adminUrl}admin.php?page=extendify-assist`;
+				}}
 				id="extendify-exit-launch-button"
-				className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
-				<>
-					{isRTL() ? (
-						<RightCaret className="mt-px h-5 w-5" />
-					) : (
-						<LeftCaret className="mt-px h-5 w-5" />
-					)}
+				className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50"
+			>
+				{isRTL() ? (
+					<RightCaret className="mt-px h-5 w-5" />
+				) : (
+					<LeftCaret className="mt-px h-5 w-5" />
+				)}
 
-					<span>{__('WP Admin Dashboard', 'extendify-local')}</span>
-				</>
+				<span>{__('WP Admin Dashboard', 'extendify-local')}</span>
 			</NavigationButton>
 		);
 	}
@@ -334,15 +334,14 @@ const PrevButton = ({ forceFirstpage = false }) => {
 		<NavigationButton
 			onClick={previousPage}
 			data-test="back-button"
-			className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
-			<>
-				{isRTL() ? (
-					<RightCaret className="mt-px h-5 w-5" />
-				) : (
-					<LeftCaret className="mt-px h-5 w-5" />
-				)}
-				<span>{__('Back', 'extendify-local')}</span>
-			</>
+			className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50"
+		>
+			{isRTL() ? (
+				<RightCaret className="mt-px h-5 w-5" />
+			) : (
+				<LeftCaret className="mt-px h-5 w-5" />
+			)}
+			<span>{__('Back', 'extendify-local')}</span>
 		</NavigationButton>
 	);
 };
@@ -378,30 +377,28 @@ const NextButton = () => {
 		<NavigationButton
 			onClick={() => nextPageOrComplete()}
 			data-test="back-button"
-			className="mr-2 border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
-			<>
-				{__('Skip', 'extendify-local')}
-				{isRTL() ? (
-					<LeftCaret className="mt-px h-5 w-5" />
-				) : (
-					<RightCaret className="mt-px h-5 w-5" />
-				)}
-			</>
+			className="mr-2 border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50"
+		>
+			{__('Skip', 'extendify-local')}
+			{isRTL() ? (
+				<LeftCaret className="mt-px h-5 w-5" />
+			) : (
+				<RightCaret className="mt-px h-5 w-5" />
+			)}
 		</NavigationButton>
 	) : (
 		<NavigationButton
 			onClick={nextPageOrComplete}
 			disabled={!canProgress}
 			className="border-design-main bg-design-main text-design-text"
-			data-test="next-button">
-			<>
-				{__('Next', 'extendify-local')}
-				{isRTL() ? (
-					<LeftCaret className="mt-px h-5 w-5" />
-				) : (
-					<RightCaret className="mt-px h-5 w-5" />
-				)}
-			</>
+			data-test="next-button"
+		>
+			{__('Next', 'extendify-local')}
+			{isRTL() ? (
+				<LeftCaret className="mt-px h-5 w-5" />
+			) : (
+				<RightCaret className="mt-px h-5 w-5" />
+			)}
 		</NavigationButton>
 	);
 };

@@ -1,16 +1,16 @@
-import { registerCoreBlocks } from '@wordpress/block-library';
-import { Spinner } from '@wordpress/components';
-import { humanTimeDiff } from '@wordpress/date';
-import { useEffect, useState } from '@wordpress/element';
-import { __, sprintf } from '@wordpress/i18n';
+import { walkAndUpdateImageDetails } from '@agent/lib/blocks';
+import { useChatStore } from '@agent/state/chat';
+import { useWorkflowStore } from '@agent/state/workflows';
 import { generateImage } from '@shared/api/DataApi';
 import { downloadImage } from '@shared/api/wp';
 import { useImageGenerationStore } from '@shared/state/generate-images';
-import { motion } from 'framer-motion';
-import { ErrorMessage } from '@agent/components/ErrorMessage';
-import { walkAndUpdateImageDetails } from '@agent/lib/blocks';
+import { registerCoreBlocks } from '@wordpress/block-library';
+import { getBlockTypes } from '@wordpress/blocks';
+import { Spinner } from '@wordpress/components';
+import { humanTimeDiff } from '@wordpress/date';
+import { useCallback, useEffect, useState } from '@wordpress/element';
+import { __, sprintf } from '@wordpress/i18n';
 
-const openButton = __('Generate Image', 'extendify-local');
 const preload = (src) =>
 	new Promise((resolve, reject) => {
 		const img = new Image();
@@ -19,7 +19,12 @@ const preload = (src) =>
 		img.src = src;
 	});
 
-export const GenerateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
+export const GenerateImageConfirm = ({
+	inputs,
+	onConfirm,
+	onCancel,
+	onRetry,
+}) => {
 	const [generatedImage, setGeneratedImage] = useState(null);
 	const [generating, setGenerating] = useState(false);
 	const [error, setError] = useState(null);
@@ -31,13 +36,71 @@ export const GenerateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 		subtractOneCredit,
 		resetImageCredits,
 	} = useImageGenerationStore();
+	const { addMessage, messages } = useChatStore();
+	const { block } = useWorkflowStore();
 	const noCredits = Number(imageCredits.remaining) === 0;
 
 	const handleConfirm = async () => {
 		if (importing) return;
+		setImporting(true);
+		try {
+			const importedImage = await downloadImage(
+				null,
+				generatedImage,
+				'ai-generated',
+			);
+			await onConfirm({
+				data: {
+					previousContent: inputs.previousContent,
+					newContent: walkAndUpdateImageDetails(inputs, importedImage),
+				},
+				shouldRefreshPage: true,
+			});
+		} catch (err) {
+			setImporting(false);
+			setError(err?.message || __('Failed to save image', 'extendify-local'));
+		}
+	};
+
+	const resetImagePreview = useCallback(() => {
+		if (!generatedImage) return false;
+		// The CSS.escape() method can also be used for escaping strings
+		// https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape_static
+		const imageElement = document.querySelector(
+			`[data-extendify-agent-block-id="${block?.id}"] > img[src="${CSS.escape(generatedImage)}"]`,
+		);
+		if (imageElement) {
+			imageElement.src = inputs.url;
+			return true;
+		}
+		return false;
+	}, [block?.id, generatedImage, inputs.url]);
+
+	const handleCancel = useCallback(() => {
 		if (!generatedImage) {
-			setGenerating(true);
-			subtractOneCredit();
+			onCancel();
+			return;
+		}
+		resetImagePreview();
+		onCancel();
+	}, [onCancel, generatedImage, resetImagePreview]);
+
+	const handleRetry = useCallback(() => {
+		resetImagePreview();
+		onRetry();
+	}, [onRetry, resetImagePreview]);
+
+	useEffect(() => {
+		if (getBlockTypes().length !== 0) return;
+		registerCoreBlocks();
+	}, []);
+
+	useEffect(() => {
+		if (generatedImage || noCredits) return;
+
+		setGenerating(true);
+		subtractOneCredit();
+		const generate = async () => {
 			try {
 				const { imageCredits, images } = await generateImage({
 					prompt: inputs.prompt,
@@ -55,28 +118,16 @@ export const GenerateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 				if (e?.imageCredits) updateImageCredits(e.imageCredits);
 				setGenerating(false);
 			}
-			return;
-		}
-		setImporting(true);
-		const importedImage = await downloadImage(
-			null,
-			generatedImage,
-			'ai-generated',
-		);
-		await onConfirm({
-			data: {
-				previousContent: inputs.previousContent,
-				newContent: walkAndUpdateImageDetails(inputs, importedImage),
-			},
-		});
-		setTimeout(() => window.location.reload(), 1000);
-	};
+		};
 
-	useEffect(() => {
-		// rawHandler does not work on the frontend, so we need to register the
-		// core blocks again to get it working.
-		registerCoreBlocks();
-	}, []);
+		generate();
+	}, [
+		inputs.prompt,
+		generatedImage,
+		noCredits,
+		subtractOneCredit,
+		updateImageCredits,
+	]);
 
 	// Copied from Draft. Maybe not the best way to do this.
 	useEffect(() => {
@@ -92,76 +143,71 @@ export const GenerateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 	}, [imageCredits, resetImageCredits, refreshCheck]);
 
 	useEffect(() => {
-		if (!error) return;
-		const timer = setTimeout(() => onCancel(), 5000);
-		return () => clearTimeout(timer);
-	}, [error, onCancel]);
-
-	if (error) {
-		return (
-			<ErrorMessage>
-				<div className="text-sm">
-					<div className="font-semibold">
-						{__('Error generating image', 'extendify-local')}
-					</div>
-					<div>{error}</div>
-				</div>
-			</ErrorMessage>
+		if (!generatedImage) return;
+		const originalImage = document.querySelector(
+			`[data-extendify-agent-block-id="${block?.id}"] > img[src="${CSS.escape(inputs.url)}"]`,
 		);
-	}
+		if (!originalImage) return;
+		originalImage.srcset = '';
+		// replace the original image source with the new image url
+		originalImage.src = generatedImage;
+	}, [generatedImage, inputs.url, block?.id]);
+
+	useEffect(() => {
+		if (!error) return;
+		const timer = setTimeout(() => handleCancel(), 100);
+		const content = sprintf(
+			// translators: A chat message shown to the user
+			__('Error generating image: %s', 'extendify-local'),
+			error,
+		);
+		const last = messages.at(-1)?.details?.content;
+		if (content === last) return () => clearTimeout(timer);
+		addMessage('message', { role: 'assistant', content, error: true });
+		return () => clearTimeout(timer);
+	}, [error, handleCancel, addMessage, messages]);
+
+	useEffect(() => {
+		if (!noCredits || generating || generatedImage) return;
+		const cancelTimer = setTimeout(() => handleCancel(), 1500);
+		const content = sprintf(
+			// translator: %s is the time until credits reset.
+			__(
+				"It looks like you've run out of credits. They'll refresh in %s, so check back then.",
+				'extendify-local',
+			),
+			humanTimeDiff(new Date(Number(imageCredits.refresh))),
+		);
+		const last = messages.at(-1)?.details?.content;
+		if (content === last) return () => clearTimeout(cancelTimer);
+		const messageTimer = setTimeout(() => {
+			addMessage('message', { role: 'assistant', content, error: true });
+		}, 1000);
+		return () => {
+			clearTimeout(cancelTimer);
+			clearTimeout(messageTimer);
+		};
+	}, [
+		noCredits,
+		generating,
+		generatedImage,
+		handleCancel,
+		addMessage,
+		messages,
+		imageCredits.refresh,
+	]);
+
+	if (error || (!generatedImage && noCredits && !generating)) return null;
 
 	if (generating) {
 		return (
 			<Wrapper>
 				<Content>
-					<motion.div
-						initial={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-						className="flex aspect-square w-full items-center justify-center"
-						style={{
-							background:
-								'linear-gradient(135deg, #E8E8E8 47.92%, #F3F3F3 60.42%, #E8E8E8 72.92%)',
-						}}>
-						<Spinner style={{ height: '48px', width: '48px' }} />
-					</motion.div>
-				</Content>
-			</Wrapper>
-		);
-	}
-
-	if (generatedImage) {
-		return (
-			<Wrapper>
-				<Content>
-					<p className="m-0 p-0 text-sm text-gray-900">
-						{__('Image generated successfully!', 'extendify-local')}
+					<p className="m-0 p-0 flex gap-0.5 items-center text-sm text-gray-900">
+						<Spinner className="my-0 h-4 w-4" />
+						<span>{__('Generating image...', 'extendify-local')}</span>
 					</p>
-					<div className="my-2 flex justify-center">
-						<img
-							src={generatedImage}
-							alt={inputs.prompt}
-							style={{ maxWidth: '100%', height: 'auto' }}
-						/>
-					</div>
 				</Content>
-				<div className="flex justify-start gap-2 p-3">
-					<button
-						type="button"
-						className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-						disabled={importing}
-						onClick={onCancel}>
-						{__('Cancel', 'extendify-local')}
-					</button>
-					<button
-						type="button"
-						className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
-						disabled={importing}
-						onClick={handleConfirm}>
-						{importing
-							? __('Inserting Image...', 'extendify-local')
-							: __('Insert Image', 'extendify-local')}
-					</button>
-				</div>
 			</Wrapper>
 		);
 	}
@@ -170,39 +216,35 @@ export const GenerateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 		<Wrapper>
 			<Content>
 				<p className="m-0 p-0 text-sm text-gray-900">
-					{noCredits
-						? sprintf(
-								__(
-									"You've used all your image credits for today. Your credits will reset in %s.",
-									'extendify-local',
-								),
-								humanTimeDiff(new Date(Number(imageCredits.refresh))),
-							)
-						: sprintf(
-								__(
-									'The agent has asked to generate an image. Press "%s" to continue.',
-									'extendify-local',
-								),
-								openButton,
-							)}
+					{__('Image generated successfully!', 'extendify-local')}
 				</p>
 			</Content>
 			<div className="flex justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={onCancel}>
+					className="flex-1 rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleCancel}
+				>
 					{__('Cancel', 'extendify-local')}
 				</button>
-				{noCredits ? null : (
-					<button
-						type="button"
-						className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
-						disabled={noCredits}
-						onClick={handleConfirm}>
-						{openButton}
-					</button>
-				)}
+				<button
+					type="button"
+					className="flex-1 rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900 disabled:opacity-50"
+					onClick={handleRetry}
+					disabled={importing || noCredits}
+				>
+					{__('Try Again', 'extendify-local')}
+				</button>
+				<button
+					type="button"
+					className="flex-1 rounded border border-design-main bg-design-main p-2 text-sm text-white disabled:opacity-50"
+					disabled={importing}
+					onClick={handleConfirm}
+				>
+					{importing
+						? __('Saving...', 'extendify-local')
+						: __('Save', 'extendify-local')}
+				</button>
 			</div>
 			<div className="text-pretty px-4 pb-2 text-center text-xss leading-none text-gray-700">
 				{sprintf(

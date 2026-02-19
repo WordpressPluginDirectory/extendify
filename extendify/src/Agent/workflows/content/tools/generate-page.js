@@ -12,5 +12,5 @@ export default async ({ pageDescription }) => {
 		throw new Error('Page creation failed');
 	}
 
-	return { post_id: Number(data.id) };
+	return { postId: Number(data.id) };
 };

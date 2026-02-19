@@ -1,8 +1,7 @@
-import { PATTERNS_HOST, AI_HOST, IMAGES_HOST } from '@constants';
-import { formatSiteQuestionsForAPI } from '@shared/utils/format-site-questions-for-api';
-import { mergeRequiredPlugins } from '@shared/utils/merge-required-plugins';
+import { AI_HOST, IMAGES_HOST, PATTERNS_HOST } from '@constants';
 import { getHeadersAndFooters } from '@launch/api/WPApi';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import { formatSiteQuestionsForAPI } from '@shared/utils/format-site-questions-for-api';
 
 // Optionally add items to request body
 const allowList = [
@@ -26,12 +25,10 @@ const extraBody = {
 const fetchTemplates = async (type, siteType, otherData = {}) => {
 	const { showLocalizedCopy } = window.extSharedData;
 	const otherDataProcessed = Object.entries(otherData).reduce(
-		(result, [key, value]) => {
-			if (value == null) result;
-			return {
-				...result,
-				[key]: typeof value === 'object' ? JSON.stringify(value) : value,
-			};
+		(acc, [key, value]) => {
+			if (value == null) return acc;
+			acc[key] = typeof value === 'object' ? JSON.stringify(value) : value;
+			return acc;
 		},
 		{},
 	);
@@ -166,7 +163,7 @@ export const getLinkSuggestions = async (pageContent, availablePages) => {
 		});
 		if (!res.ok) throw new Error('Bad response from server');
 		return await res.json();
-	} catch (error) {
+	} catch (_error) {
 		// fail gracefully
 		return {};
 	}
@@ -191,7 +188,7 @@ export const getSiteProfile = async ({ title, description }) => {
 	let response;
 	try {
 		response = await fetch(url, { method, headers, body });
-	} catch (error) {
+	} catch (_error) {
 		// try one more time
 		try {
 			response = await fetch(url, { method, headers, body });
@@ -204,7 +201,7 @@ export const getSiteProfile = async ({ title, description }) => {
 
 	try {
 		return (await response.json()) || fallback;
-	} catch (error) {
+	} catch (_error) {
 		return fallback;
 	}
 };
@@ -218,7 +215,7 @@ export const getSiteStrings = async (siteProfile) => {
 	let response;
 	try {
 		response = await fetch(url, { method, headers, body });
-	} catch (error) {
+	} catch (_error) {
 		// try one more time
 		try {
 			response = await fetch(url, { method, headers, body });
@@ -230,7 +227,7 @@ export const getSiteStrings = async (siteProfile) => {
 	let data;
 	try {
 		data = await response.json();
-	} catch (error) {
+	} catch (_error) {
 		return fallback;
 	}
 	return data?.aiHeaders ? data : fallback;
@@ -261,7 +258,7 @@ export const getSiteImages = async (siteProfile) => {
 			headers,
 			signal: AbortSignal.timeout(requestTimeOut),
 		});
-	} catch (error) {
+	} catch (_error) {
 		// try one more time
 		try {
 			response = await fetch(url, {
@@ -278,7 +275,7 @@ export const getSiteImages = async (siteProfile) => {
 	let data;
 	try {
 		data = await response.json();
-	} catch (error) {
+	} catch (_error) {
 		return fallback;
 	}
 	return data?.siteImages ? data : fallback;
@@ -296,7 +293,7 @@ export const getSiteStyles = async ({ title, siteProfile }) => {
 
 	try {
 		response = await fetch(request);
-	} catch (error) {
+	} catch (_error) {
 		// try one more time
 		try {
 			response = await fetch(request);
@@ -342,7 +339,7 @@ export const getSiteLogo = async (objectName) => {
 	try {
 		response = await fetch(url, { method, headers, body });
 		if (!response?.ok) throw new Error('Bad response from server');
-	} catch (error) {
+	} catch (_error) {
 		try {
 			response = await fetch(url, { method, headers, body });
 		} catch {
@@ -355,7 +352,7 @@ export const getSiteLogo = async (objectName) => {
 	try {
 		const data = await response.json();
 		return data?.logoUrl ?? fallback;
-	} catch (error) {
+	} catch (_error) {
 		return fallback;
 	}
 };
@@ -378,13 +375,14 @@ export const getSiteQuestions = async ({ siteProfile }) => {
 		description: businessInformation?.description || '',
 		siteObjective: siteObjective || '',
 		wpLanguage,
+		partnerId: extraBody?.partnerId || null,
 	});
 
 	let response;
 	try {
 		response = await fetch(url, { method, headers, body });
 		if (!response?.ok) throw new Error('Bad response from server');
-	} catch (error) {
+	} catch (_error) {
 		try {
 			response = await fetch(url, { method, headers, body });
 		} catch {
@@ -397,7 +395,7 @@ export const getSiteQuestions = async ({ siteProfile }) => {
 	try {
 		const data = await response.json();
 		return data?.questions ?? fallback;
-	} catch (error) {
+	} catch (_error) {
 		return fallback;
 	}
 };
@@ -406,7 +404,7 @@ export const getSitePlugins = async ({ siteProfile, siteQA }) => {
 	const url = `${AI_HOST}/api/site-plugins`;
 	const method = 'POST';
 	const headers = { 'Content-Type': 'application/json' };
-	const fallback = mergeRequiredPlugins([]);
+	const fallback = [];
 
 	if (!siteProfile) {
 		return fallback;
@@ -429,7 +427,7 @@ export const getSitePlugins = async ({ siteProfile, siteQA }) => {
 	try {
 		response = await fetch(url, { method, headers, body });
 		if (!response?.ok) throw new Error('Bad response from server');
-	} catch (error) {
+	} catch (_error) {
 		try {
 			response = await fetch(url, { method, headers, body });
 		} catch {
@@ -441,9 +439,8 @@ export const getSitePlugins = async ({ siteProfile, siteQA }) => {
 
 	try {
 		const data = await response.json();
-		const suggestedPlugins = data?.selectedPlugins ?? fallback;
-		return mergeRequiredPlugins(suggestedPlugins);
-	} catch (error) {
+		return data?.selectedPlugins ?? fallback;
+	} catch (_error) {
 		return fallback;
 	}
 };

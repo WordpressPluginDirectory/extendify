@@ -3,4 +3,7 @@
 export const objectFromKeys = (sourceObject, selectedKeys) =>
 	Object.entries(sourceObject)
 		.filter(([key]) => selectedKeys.includes(key))
-		.reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
+		.reduce((acc, [key, value]) => {
+			acc[key] = value;
+			return acc;
+		}, {});

@@ -1,21 +1,22 @@
-import { BlockPreview } from '@wordpress/block-editor';
-import { rawHandler } from '@wordpress/blocks';
-import {
-	useState,
-	useRef,
-	useCallback,
-	useEffect,
-	useMemo,
-} from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { pageNames } from '@shared/lib/pages';
-import classNames from 'classnames';
-import { colord } from 'colord';
-import { AnimatePresence, motion } from 'framer-motion';
+import blockStyleVariations from '@launch/_data/block-style-variations.json';
 import themeJSON from '@launch/_data/theme-processed.json';
 import { usePreviewIframe } from '@launch/hooks/usePreviewIframe';
 import { getFontOverrides } from '@launch/lib/preview-helpers';
 import { hexTomatrixValues, lowerImageQuality } from '@launch/lib/util';
+import { pageNames } from '@shared/lib/pages';
+import { BlockPreview } from '@wordpress/block-editor';
+import { rawHandler } from '@wordpress/blocks';
+import {
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import classNames from 'classnames';
+import { colord } from 'colord';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export const SmallPreview = ({
 	style,
@@ -30,6 +31,13 @@ export const SmallPreview = ({
 	const [ready, setReady] = useState(false);
 	const variation = style?.variation;
 	const theme = variation?.settings?.color?.palette?.theme;
+	const vibe = useMemo(() => style?.siteStyle?.vibe, [style?.siteStyle?.vibe]);
+	const blockVariationCSS = useMemo(() => {
+		if (vibe && blockStyleVariations[vibe]) {
+			return blockStyleVariations[vibe];
+		}
+		return blockStyleVariations['natural-1'] || '';
+	}, [vibe]);
 
 	const onLoad = useCallback(
 		(frame) => {
@@ -83,6 +91,7 @@ export const SmallPreview = ({
 						`<style id="ext-tj">
 							${variationStyles}
 							${fontOverrides}
+							${blockVariationCSS}
 							.wp-block-missing { display: none !important }
 							img.custom-logo, [class*=wp-duotone-] img[src^="data"] {
 								filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="solid-color"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values="0 0 0 0 ${r} 0 0 0 0 ${g} 0 0 0 0 ${b} 0 0 0 1 0"/></filter></svg>#solid-color') !important;
@@ -96,7 +105,7 @@ export const SmallPreview = ({
 			};
 			checkOnStyles();
 		},
-		[variation, theme, siteTitle],
+		[variation, theme, siteTitle, blockVariationCSS],
 	);
 
 	const { loading, ready: show } = usePreviewIframe({
@@ -116,8 +125,7 @@ export const SmallPreview = ({
 		const code = [
 			style?.headerCode,
 			style?.patterns
-				.map(({ code }) => code)
-				.flat()
+				.flatMap(({ code }) => code)
 				.slice(0, 3)
 				.join('\n'),
 			style?.footerCode,
@@ -125,17 +133,22 @@ export const SmallPreview = ({
 			.filter(Boolean)
 			.join('')
 			.replace(
+				// Replace natural-1 with dynamic vibe value
+				/natural-1/g,
+				vibe || 'natural-1',
+			)
+			.replace(
 				// <!-- wp:navigation --> <!-- /wp:navigation -->
 				/<!-- wp:navigation[.\S\s]*?\/wp:navigation -->/g,
 				showNav
-					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="display: flex; gap: 2rem;">${links.map((link) => `<span>${link}</span>`).join('')}</p ><!-- /wp:paragraph -->`
+					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="display: flex; gap: 2rem; margin:0;">${links.map((link) => `<span>${link}</span>`).join('')}</p ><!-- /wp:paragraph -->`
 					: '',
 			)
 			.replace(
 				// <!-- wp:navigation /-->
 				/<!-- wp:navigation.*\/-->/g,
 				showNav
-					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="display: flex; gap: 2rem;">${links.map((link) => `<span>${link}</span>`).join('')}</p ><!-- /wp:paragraph -->`
+					? `<!-- wp:paragraph {"className":"tmp-nav"} --><p class="tmp-nav" style="display: flex; gap: 2rem; margin:0;">${links.map((link) => `<span>${link}</span>`).join('')}</p ><!-- /wp:paragraph -->`
 					: '',
 			)
 			.replace(
@@ -145,10 +158,10 @@ export const SmallPreview = ({
 			)
 			.replace(
 				/<!-- wp:site-logo.*\/-->/g,
-				'<!-- wp:paragraph {"className":"custom-logo"} --><p class="custom-logo" style="display:flex; align-items: center;"><img alt="" class="custom-logo" style="height: 32px;" src="https://images.extendify-cdn.com/demo-content/logos/ext-custom-logo-default.webp"></p ><!-- /wp:paragraph -->',
+				'<!-- wp:paragraph {"className":"custom-logo"} --><p class="custom-logo" style="display:flex; align-items: center; margin:0;"><img alt="" class="custom-logo" style="height: 32px;" src="https://images.extendify-cdn.com/demo-content/logos/ext-custom-logo-default.webp"></p ><!-- /wp:paragraph -->',
 			);
 		return rawHandler({ HTML: lowerImageQuality(code) });
-	}, [style, showNav]);
+	}, [style?.headerCode, style?.patterns, style?.footerCode, vibe, showNav]);
 
 	useEffect(() => {
 		if (observer.current) return;
@@ -160,68 +173,66 @@ export const SmallPreview = ({
 	}, []);
 
 	return (
-		<>
-			<div
-				data-test="layout-preview"
-				className="relative h-full w-full overflow-hidden"
-				ref={blockRef}
-				role={onSelect ? 'button' : undefined}
-				tabIndex={onSelect ? 0 : undefined}
-				aria-label={
-					onSelect ? __('Press to select', 'extendify-local') : undefined
-				}
-				aria-selected={onSelect ? selected : undefined}
-				onKeyDown={(e) => {
-					if (['Enter', 'Space', ' '].includes(e.key)) {
-						onSelect && onSelect({ ...style, variation });
-					}
-				}}
-				onClick={onSelect ? () => onSelect({ ...style, variation }) : () => {}}>
-				{ready ? (
+		// biome-ignore lint: keep the button role until a refactor is done
+		<div
+			data-test="layout-preview"
+			className="relative h-full w-full overflow-hidden"
+			ref={blockRef}
+			role={onSelect ? 'button' : undefined}
+			tabIndex={onSelect ? 0 : undefined}
+			aria-label={
+				onSelect ? __('Press to select', 'extendify-local') : undefined
+			}
+			aria-selected={onSelect ? selected : undefined}
+			onKeyDown={(e) => {
+				if (!['Enter', 'Space', ' '].includes(e.key)) return;
+				onSelect?.({ ...style, variation });
+			}}
+			onClick={() => onSelect?.({ ...style, variation })}
+		>
+			{ready ? (
+				<motion.div
+					ref={previewContainer}
+					className={classNames('absolute inset-0 z-20', {
+						'opacity-0': !show,
+					})}
+					initial={{ opacity: 0 }}
+					animate={{ opacity: loading ? 0 : 1 }}
+				>
+					<BlockPreview
+						blocks={blocks}
+						viewportWidth={1400}
+						additionalStyles={[
+							// TODO: { css: themeJSON[style.variation.title] },
+							{
+								css: '.rich-text [data-rich-text-placeholder]:after { content: "" }',
+							},
+						]}
+					/>
+				</motion.div>
+			) : null}
+			<AnimatePresence>
+				{show || (
 					<motion.div
-						ref={previewContainer}
-						className={classNames('absolute inset-0 z-20', {
-							'opacity-0': !show,
-						})}
-						initial={{ opacity: 0 }}
-						animate={{ opacity: loading ? 0 : 1 }}>
-						<BlockPreview
-							blocks={blocks}
-							viewportWidth={1400}
-							additionalStyles={[
-								// TODO: { css: themeJSON[style.variation.title] },
-								{
-									css: '.rich-text [data-rich-text-placeholder]:after { content: "" }',
-								},
-							]}
-						/>
-					</motion.div>
-				) : null}
-				<AnimatePresence>
-					{show || (
-						<motion.div
-							initial={{ opacity: 0.7 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-							transition={{ duration: 0.5 }}
-							className="absolute inset-0 z-30"
-							style={{
-								backgroundColor: colord(
-									theme?.find(({ slug }) => slug === 'primary')?.color ??
-										'#ccc',
-								)
-									.alpha(0.25)
-									.toRgbString(),
-								backgroundImage:
-									'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
-								backgroundSize: '600% 600%',
-								animation:
-									'extendify-loading-skeleton 10s ease-in-out infinite',
-							}}
-						/>
-					)}
-				</AnimatePresence>
-			</div>
-		</>
+						initial={{ opacity: 0.7 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 0.5 }}
+						className="absolute inset-0 z-30"
+						style={{
+							backgroundColor: colord(
+								theme?.find(({ slug }) => slug === 'primary')?.color ?? '#ccc',
+							)
+								.alpha(0.25)
+								.toRgbString(),
+							backgroundImage:
+								'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
+							backgroundSize: '600% 600%',
+							animation: 'extendify-loading-skeleton 10s ease-in-out infinite',
+						}}
+					/>
+				)}
+			</AnimatePresence>
+		</div>
 	);
 };

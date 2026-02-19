@@ -1,3 +1,7 @@
+@import "tailwindcss" source(none) important;
+@import "../tailwind.css" source(none);
+@source ".";
+
 .extendify-documentation {
 	max-width: 75ch;
 	margin: 0 auto;
@@ -8,7 +12,7 @@
 }
 
 .extendify-documentation .link-disabled {
-	@apply cursor-text text-gray-900 no-underline shadow-none focus:outline-none;
+	@apply cursor-text! text-gray-900! no-underline! shadow-none! focus:outline-hidden!;
 }
 
 .extendify-documentation p.has-background,

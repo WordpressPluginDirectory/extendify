@@ -1,8 +1,8 @@
+import { useGlobalStore } from '@agent/state/global';
 import { humanTimeDiff } from '@wordpress/date';
 import { useEffect, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 import { error, Icon } from '@wordpress/icons';
-import { useGlobalStore } from '@agent/state/global';
 
 export const UsageMessage = ({ onReady }) => {
 	const { retryAfter, isChatAvailable } = useGlobalStore();

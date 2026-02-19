@@ -1,10 +1,20 @@
 import { useCallback, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel }) => {
+export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel, onRetry }) => {
 	const handleConfirm = () => {
 		onConfirm({ data: inputs });
 	};
+
+	const handleRetry = useCallback(() => {
+		const replacements = inputs.replacements || [];
+		const reversed = replacements.map(({ original, updated }) => ({
+			original: updated,
+			updated: original,
+		}));
+		updateAllTextNodesAndAttributes(reversed);
+		onRetry();
+	}, [onRetry, inputs]);
 
 	const handleCancel = useCallback(() => {
 		const replacements = inputs.replacements || [];
@@ -32,17 +42,26 @@ export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel }) => {
 					</p>
 				</div>
 			</div>
-			<div className="flex justify-start gap-2 p-3">
+			<div className="flex flex-wrap justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={handleCancel}>
+					className="flex-1 rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleCancel}
+				>
 					{__('Cancel', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
-					onClick={handleConfirm}>
+					className="flex-1 rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleRetry}
+				>
+					{__('Try Again', 'extendify-local')}
+				</button>
+				<button
+					type="button"
+					className="flex-1 rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
+					onClick={handleConfirm}
+				>
 					{__('Save', 'extendify-local')}
 				</button>
 			</div>
@@ -52,7 +71,7 @@ export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel }) => {
 
 const updateAllTextNodesAndAttributes = (replacements) => {
 	const chat = document.getElementById('extendify-agent-chat');
-	const isInChat = (node) => chat && chat.contains(node);
+	const isInChat = (node) => chat?.contains(node);
 	// Update all text nodes
 	const walker = document.createTreeWalker(
 		document.body,
@@ -60,15 +79,18 @@ const updateAllTextNodesAndAttributes = (replacements) => {
 		null,
 		false,
 	);
-	let node;
-	while ((node = walker.nextNode())) {
+	let node = walker.nextNode();
+	while (node) {
+		const current = node;
+		node = walker.nextNode();
 		// Skip nodes that are inside the chat
-		if (isInChat(node.parentNode)) continue;
-		replacements?.forEach(({ original, updated }) => {
-			if (node.nodeValue.includes(original)) {
-				node.nodeValue = node.nodeValue.split(original).join(updated);
-			}
-		});
+		if (isInChat(current.parentNode)) continue;
+
+		for (const { original, updated } of replacements ?? []) {
+			const value = current.nodeValue ?? '';
+			if (!value.includes(original)) continue;
+			current.nodeValue = value.split(original).join(updated);
+		}
 	}
 
 	// Update attributes
@@ -76,12 +98,11 @@ const updateAllTextNodesAndAttributes = (replacements) => {
 		document.querySelectorAll(`[${attr}]`).forEach((el) => {
 			// Skip elements that are inside the chat
 			if (isInChat(el)) return;
-			replacements?.forEach(({ original, updated }) => {
+			for (const { original, updated } of replacements ?? []) {
 				const val = el.getAttribute(attr);
-				if (val && val.includes(original)) {
-					el.setAttribute(attr, val.split(original).join(updated));
-				}
-			});
+				if (!val?.includes(original)) continue;
+				el.setAttribute(attr, val.split(original).join(updated));
+			}
 		});
 	});
 };

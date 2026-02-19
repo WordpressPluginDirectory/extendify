@@ -1,8 +1,8 @@
-import { __ } from '@wordpress/i18n';
 import { useRouter } from '@help-center/hooks/useRouter';
 import { AIChatDashboard } from '@help-center/pages/AIChat';
 import { KnowledgeBaseDashboard } from '@help-center/pages/KnowledgeBase';
 import { ToursDashboard } from '@help-center/pages/Tours';
+import { __ } from '@wordpress/i18n';
 
 export const Dashboard = () => {
 	const { navigateTo } = useRouter();

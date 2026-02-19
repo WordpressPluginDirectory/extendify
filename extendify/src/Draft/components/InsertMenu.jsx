@@ -1,22 +1,22 @@
+import { useContentHighlight } from '@draft/hooks/useContentHighlight';
 import { store as blockEditorStore } from '@wordpress/block-editor';
 import { createBlock, pasteHandler } from '@wordpress/blocks';
 import {
+	__experimentalDivider as Divider,
 	MenuGroup,
 	MenuItem,
-	__experimentalDivider as Divider,
 } from '@wordpress/components';
-import { useDispatch, useSelect, select, dispatch } from '@wordpress/data';
+import { dispatch, select, useDispatch, useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import { __, isRTL } from '@wordpress/i18n';
 import {
 	addSubmenu,
+	Icon,
+	insertAfter,
+	replace,
 	rotateLeft,
 	trash,
-	replace,
-	insertAfter,
-	Icon,
 } from '@wordpress/icons';
-import { useContentHighlight } from '@draft/hooks/useContentHighlight';
 
 export const InsertMenu = ({
 	prompt,
@@ -60,7 +60,7 @@ export const InsertMenu = ({
 		if (!firstBlock) return true;
 		// TODO: more? or should we go up to the parent?
 		const unsupported = ['core/list-item', 'core/button'];
-		return unsupported.includes(firstBlock?.name) ? false : true;
+		return !unsupported.includes(firstBlock?.name);
 	};
 
 	const plainTextToBlocks = (plainText) => {
@@ -127,8 +127,8 @@ export const InsertMenu = ({
 		}
 
 		const bothHaveContent = (one, two) =>
-			Object.prototype.hasOwnProperty.call(one?.attributes, 'content') &&
-			Object.prototype.hasOwnProperty.call(two?.attributes, 'content');
+			Object.hasOwn(one?.attributes, 'content') &&
+			Object.hasOwn(two?.attributes, 'content');
 		// If both have content, and it's only one block, they can be merged
 		const mergeable =
 			blocks.length === 1 && bothHaveContent(targetBlock, blocks[0]);
@@ -189,7 +189,8 @@ export const InsertMenu = ({
 				icon={replace}
 				iconPosition="left"
 				data-test="replace-selected"
-				className="h-auto min-h-10 items-start">
+				className="h-auto min-h-10 items-start"
+			>
 				<span className="whitespace-normal break-words text-start">
 					{__('Replace selected block text', 'extendify-local')}
 				</span>
@@ -201,7 +202,8 @@ export const InsertMenu = ({
 				disabled={loading}
 				iconPosition="left"
 				data-test="insert-top"
-				className="h-auto min-h-10 items-start">
+				className="h-auto min-h-10 items-start"
+			>
 				<div className={isRTL() ? '-mr-1' : '-ml-1'}>
 					<Icon icon={addSubmenu} className="rotate-180" />
 				</div>
@@ -217,7 +219,8 @@ export const InsertMenu = ({
 				icon={insertAfter}
 				iconPosition="left"
 				data-test="insert-after"
-				className="h-auto min-h-10 items-start">
+				className="h-auto min-h-10 items-start"
+			>
 				<span className="whitespace-normal break-words text-start">
 					{__('Insert after the selected text', 'extendify-local')}
 				</span>
@@ -229,7 +232,8 @@ export const InsertMenu = ({
 				disabled={loading}
 				icon={addSubmenu}
 				iconPosition="left"
-				data-test="insert-bottom">
+				data-test="insert-bottom"
+			>
 				{__('Insert at bottom', 'extendify-local')}
 			</MenuItem>
 			<Divider />
@@ -238,7 +242,8 @@ export const InsertMenu = ({
 				disabled={loading}
 				icon={rotateLeft}
 				iconPosition="left"
-				data-test="try-again-button">
+				data-test="try-again-button"
+			>
 				{__('Try again', 'extendify-local')}
 			</MenuItem>
 			<MenuItem
@@ -246,7 +251,8 @@ export const InsertMenu = ({
 				disabled={loading}
 				icon={trash}
 				iconPosition="left"
-				data-test="discard-button">
+				data-test="discard-button"
+			>
 				{__('Discard', 'extendify-local')}
 			</MenuItem>
 		</MenuGroup>

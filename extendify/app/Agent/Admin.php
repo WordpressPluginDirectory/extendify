@@ -77,6 +77,7 @@ class Admin
             'postId' => (int) $this->getCurrentPostId(),
             'postTitle' => \esc_attr(\get_the_title($this->getCurrentPostId())),
             'postType' => \esc_attr(\get_post_type($this->getCurrentPostId())),
+            'postUrl' => \esc_url(\get_permalink($this->getCurrentPostId())),
             'isFrontPage' => (bool) \is_front_page(),
             'postStatus' => \esc_attr(\get_post_status((int) $this->getCurrentPostId())),
             'isBlogPage' => (bool) \is_home(),
@@ -88,6 +89,11 @@ class Admin
                 (bool) use_block_editor_for_post($this->getCurrentPostId()) :
                 false,
             'activePlugins' => array_values(\get_option('active_plugins', [])),
+            // Whether the user is using the vibes experience or not.
+            'isUsingVibes' => (bool) file_exists(EXTENDIFY_PATH . 'src/Launch/_data/block-style-variations.json') &&
+                version_compare(wp_get_theme("extendable")->get('Version'), '2.0.32', '>='),
+            'siteTitle' => \esc_attr(\get_bloginfo('name')),
+            'siteDescription' => \esc_attr(\get_bloginfo('description')),
         ];
         $recommendations = ProductsData::get() ?? [];
         $pluginRecommendations = array_filter($recommendations, function ($item) {
@@ -96,8 +102,9 @@ class Admin
         $mappedPluginRecommendations = array_values(array_map(function ($item) {
             return [
                 'title' => $item['title'] ?? '',
-                'slug'  => $item['slug'] ?? '',
+                'slug'  => $item['ctaPluginSlug'] ?? $item['slug'] ?? '',
                 'description' => $item['aiDescription'] ?? $item['description'] ?? '',
+                'redirectTo' => $item['pluginSetupUrl'] ?? '', // this is a partial setup URL not full one.
             ];
         }, $pluginRecommendations));
         $agentContext = [
@@ -221,6 +228,7 @@ class Admin
             [
                 'icon' => 'video',
                 'message' => __('What tours are available?', 'extendify-local'),
+                'workflowId' => 'list-tours',
             ]
         ];
 
@@ -229,7 +237,8 @@ class Admin
                 'icon' => ($context['postStatus'] === 'draft') ? 'published' : 'drafts',
                 'message' => ($context['postStatus'] === 'draft')
                     ? __('Publish this page', 'extendify-local')
-                    : __('Unpublish this page', 'extendify-local') ,
+                    : __('Unpublish this page', 'extendify-local'),
+                'workflowId' => 'update-post-status',
             ];
         }
 
@@ -238,21 +247,38 @@ class Admin
                 'icon' => 'edit',
                 'message' => __('I want to change my site title', 'extendify-local'),
                 "feature" => true,
+                'workflowId' => 'edit-wp-setting',
+            ];
+        }
+
+        // If they have theme variations, suggest they can change the theme color.
+        if ($context['hasThemeVariations']) {
+            $suggestions[] = [
+                'icon' => 'styles',
+                'message' => __('I want to change my theme color', 'extendify-local'),
+                "feature" => true,
+                'workflowId' => 'change-theme-variation',
             ];
 
             $suggestions[] = [
                 'icon' => 'typography',
                 'message' => __('I want to change my theme fonts', 'extendify-local'),
                 "feature" => true,
+                'workflowId' => 'change-theme-fonts-variation',
             ];
         }
 
-        // If they have theme variations, suggest they can change the theme styling.
-        if ($context['hasThemeVariations']) {
+        if ($abilities['canEditThemes'] && $context['isUsingVibes']) {
             $suggestions[] = [
                 'icon' => 'styles',
-                'message' => __('I want to change my theme styling', 'extendify-local'),
+                'message' =>
+                    // translators: "site style" refers to the structural aesthetic style for the site.
+                    __(
+                        'I want to change my site style',
+                        'extendify-local'
+                    ),
                 "feature" => true,
+                'workflowId' => 'change-site-vibes',
             ];
         }
 
@@ -261,6 +287,7 @@ class Admin
                 'icon' => 'edit',
                 'message' => __('Edit text on this page', 'extendify-local'),
                 "feature" => true,
+                'workflowId' => 'edit-post-strings',
             ];
         }
 
@@ -268,10 +295,12 @@ class Admin
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I create a post?', 'extendify-local'),
+                'workflowId' => 'answer-general-questions',
             ];
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I create a page?', 'extendify-local'),
+                'workflowId' => 'create-page',
             ];
         }
 
@@ -279,6 +308,7 @@ class Admin
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I install a plugin?', 'extendify-local'),
+                'workflowId' => 'recommend-plugins',
             ];
         }
 
@@ -286,14 +316,20 @@ class Admin
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I change my theme?', 'extendify-local'),
+                'workflowId' => 'answer-general-questions',
             ];
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I change the site footer?', 'extendify-local'),
+                'workflowId' => 'answer-general-questions',
             ];
+        }
+
+        if ($abilities['canEditThemes']) {
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I change the site header?', 'extendify-local'),
+                'workflowId' => 'answer-general-questions',
             ];
         }
 
@@ -301,10 +337,12 @@ class Admin
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I upload an image?', 'extendify-local'),
+                'workflowId' => 'answer-general-questions',
             ];
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I change the site icon?', 'extendify-local'),
+                'workflowId' => 'answer-general-questions',
             ];
         }
 
@@ -312,14 +350,17 @@ class Admin
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I change my site title?', 'extendify-local'),
+                'workflowId' => 'edit-wp-setting',
             ];
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I change my site tagline?', 'extendify-local'),
+                'workflowId' => 'edit-wp-setting',
             ];
             $suggestions[] = [
                 'icon' => 'help',
                 'message' => __('How can I change my site language?', 'extendify-local'),
+                'workflowId' => 'answer-general-questions',
             ];
         }
 

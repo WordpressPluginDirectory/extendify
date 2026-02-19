@@ -1,10 +1,10 @@
-import { Spinner } from '@wordpress/components';
-import { __, isRTL } from '@wordpress/i18n';
-import { arrowRight, Icon, arrowLeft } from '@wordpress/icons';
-import classnames from 'classnames';
 import { DynamicTextarea } from '@draft/components/DynamicTextarea';
 import { useSelectedText } from '@draft/hooks/useSelectedText';
 import { magic } from '@draft/svg';
+import { Spinner } from '@wordpress/components';
+import { __, isRTL } from '@wordpress/i18n';
+import { arrowLeft, arrowRight, Icon } from '@wordpress/icons';
+import classnames from 'classnames';
 
 export const Input = ({
 	inputText,
@@ -49,7 +49,7 @@ export const Input = ({
 							: __('Ask AI to generate text', 'extendify-local')
 				}
 				value={inputText}
-				className="h-full w-full resize-none overflow-hidden rounded-none border-transparent bg-transparent px-10 py-3 outline-none focus:ring-1 focus:ring-wp-theme-main"
+				className="h-full w-full resize-none overflow-hidden rounded-none border-transparent bg-transparent px-10 py-3 outline-hidden focus:ring-1 focus:ring-wp-theme-main"
 				onChange={(event) => {
 					setInputText(event.target.value);
 					setReady(event.target.value.length > 0);
@@ -77,7 +77,8 @@ export const Input = ({
 							'text-gray-700 hover:text-design-main': ready,
 							'text-gray-500': !ready,
 						},
-					)}>
+					)}
+				>
 					<Icon
 						icon={isRTL() ? arrowLeft : arrowRight}
 						onClick={submit}

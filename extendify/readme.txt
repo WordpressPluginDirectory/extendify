@@ -3,7 +3,7 @@ Contributors: extendify, kbat82, clubkert, arturgrabo
 Tags: templates, patterns, layouts, blocks, gutenberg, layout, template, editor, library, page builder, gutenberg blocks, wordpress blocks
 Requires at least: 6.5
 Tested up to: 6.8
-Stable tag: 2.2.0
+Stable tag: 2.3.2
 Requires PHP: 7.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,21 +12,18 @@ The best WordPress templates, pattern, and layout library with 1,000+ designs bu
 
 == Description ==
 
-Extendify is the platform of site design and creation tools for people that want to build a beautiful WordPress website with a library of patterns and full page layouts for the Gutenberg block editor.
+Extendify is the platform of site design and creation tools for people that want to build a beautiful WordPress website with a library of patterns for the Gutenberg block editor.
 
-Make a beautiful WordPress website easier and faster than ever before with Extendify's library of Gutenberg block patterns, templates, and page layouts for Gutenberg.
+Make a beautiful WordPress website easier and faster than ever before with Extendify's library of Gutenberg block patterns for Gutenberg.
 
-= A library of Gutenberg block patterns, templates, and layouts =
-Our library of reusable website block patterns, templates, and full page layouts can be assembled to rapidly build beautiful websites or add to existing ones. These well-designed templates enable you to drag, drop and publish in WordPress, without a single line of code.
+= A library of Gutenberg block patterns =
+Our library of reusable website block patterns can be assembled to rapidly build beautiful websites or add to existing ones. These well-designed block patterns enable you to drag, drop and publish in WordPress, without a single line of code.
 
 = Core Gutenberg blocks =
-Get beautiful patterns and layouts without the added maintenance of third-party blocks or block collections, as our Gutenberg block patterns are made with core WordPress blocks whenever possible.
+Get beautiful patterns without the added maintenance of third-party blocks or block collections, as our Gutenberg block patterns are made with core WordPress blocks whenever possible.
 
 = Built for your theme =
-Extendify is a theme-agnostic design experience platform that works with your Gutenberg-friendly WordPress theme or Block Theme — instantly leveling-up your editing and publishing flow today. If you change your theme, colors, typography, or any other element, your Extendify Gutenberg block patterns and full page layouts will adapt to the new design.
-
-= Site Types =
-Extendify has tons of Gutenberg block patterns for all sorts of site types. Whether you’re publishing a site for a yoga studio, restaurant, dentist, or lawyer, select your site type in the library and see a curated selection of Gutenberg block patterns and full page layouts — with industry-specific images and copy.
+Extendify is a theme-agnostic design experience platform that works with your Gutenberg-friendly WordPress theme or Block Theme — instantly leveling-up your editing and publishing flow today. If you change your theme, colors, typography, or any other element, your Extendify Gutenberg block patterns will adapt to the new design.
 
 = Block Pattern Types =
 Choose from Gutenberg block pattern types for every part of your website, including:
@@ -39,12 +36,6 @@ Choose from Gutenberg block pattern types for every part of your website, includ
 * Hero patterns
 * Team patterns
 * Text patterns
-
-= Layouts =
- Layouts are a full collection of Gutenberg block patterns that are put together in effective and compelling page templates. By selecting the “Layouts” tab at the top of the library, you’ll see the beautiful full page templates that you can then add to your site.
-
-= Free Imports =
-Users gets 10 free imports per site each calendar month. Free imports can be used with base Gutenberg block patterns, templates, and layouts. You can publish and use these elements on your site without a subscription to Extendify.
 
 = Like Extendify? =
 - Follow us on [Twitter](https://www.twitter.com/extendifyinc).
@@ -96,6 +87,21 @@ Nope! Extendify imports lightweight block-based content that is served directly 
 3. The Extendify library, as seen with the Twenty Twenty Two block theme
 
 == Changelog ==
+
+= 2.3.2 - 2025-02-18 =
+- Various bug fixes and improvements
+
+= 2.3.1 - 2025-12-17 =
+- Various bug fixes and improvements
+
+= 2.3.0 - 2025-12-16 =
+- Various bug fixes and improvements
+
+= 2.2.2 - 2025-11-03 =
+- Various bug fixes and improvements
+
+= 2.2.1 - 2025-10-28 =
+- Various bug fixes and improvements
 
 = 2.2.0 - 2025-10-23 =
 - Various bug fixes and improvements

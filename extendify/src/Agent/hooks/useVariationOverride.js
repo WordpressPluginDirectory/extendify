@@ -1,8 +1,8 @@
+import { getDynamicDuotoneMap } from '@agent/lib/svg-blocks-scanner';
+import { replaceDuotoneSVG } from '@agent/lib/svg-helpers';
 import { parse } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
 import { useEffect, useRef, useState } from '@wordpress/element';
-import { getDynamicDuotoneMap } from '@agent/lib/svg-blocks-scanner';
-import { replaceDuotoneSVG } from '@agent/lib/svg-helpers';
 
 const id = 'global-styles-inline-css';
 const path = window.location.pathname;
@@ -83,7 +83,7 @@ export const useVariationOverride = ({ css, duotoneTheme }) => {
 			duotoneTheme,
 			dynamicDuotone,
 		});
-	}, [duotoneTheme, dynamicDuotone]);
+	}, [css, duotoneTheme, dynamicDuotone]);
 
 	return {
 		undoChange: () => {

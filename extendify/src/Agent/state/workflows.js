@@ -1,13 +1,16 @@
-import apiFetch from '@wordpress/api-fetch';
-import { deepMerge } from '@shared/lib/utils';
-import { create } from 'zustand';
-import { persist, devtools } from 'zustand/middleware';
 import { workflows } from '@agent/workflows/workflows';
+import { deepMerge } from '@shared/lib/utils';
+import apiFetch from '@wordpress/api-fetch';
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
 
 const state = (set, get) => ({
 	workflow: null,
 	block: null, // data-extendify-agent-block-id + details about the block
-	setBlock: (block) => set({ block }),
+	setBlock: (block) => set({ block, blockCode: null }),
+	// Used as "previousContent" in workflows that need it
+	blockCode: null,
+	setBlockCode: (blockCode) => set({ blockCode }),
 	domToolEnabled: false,
 	setDomToolEnabled: (enabled) => {
 		if (get().block) return; // can't disable if a block is set
@@ -25,7 +28,7 @@ const state = (set, get) => ({
 	// TODO: maybe we need to have a way to include a
 	// workflow regardless of the block being active?
 	getAvailableWorkflows: () => {
-		let wfs = workflows.filter(({ available }) => available());
+		const wfs = workflows.filter(({ available }) => available());
 		// If a block is set, only include those with 'block'
 		const blockWorkflows = wfs.filter(({ requires }) =>
 			requires?.includes('block'),
@@ -45,31 +48,10 @@ const state = (set, get) => ({
 	},
 	workflowData: null,
 	// This is the history of the results
-	// { answerId: '', summary: '', canceled: false,  reason: '', error: false, completed: false, whenFinishedTool: null }[]
+	// { answerId: '', canceled: false,  reason: '', error: false, completed: false, whenFinishedTool: null }[]
 	workflowHistory: window.extAgentData?.workflowHistory || [],
 	// Data for the tool component that shows up at the end of a workflow
 	whenFinishedToolProps: null,
-	getWhenFinishedToolProps: () => {
-		const { whenFinishedToolProps } = get();
-		if (!whenFinishedToolProps) return null;
-		return {
-			...whenFinishedToolProps,
-			onConfirm: (props = {}) => {
-				window.dispatchEvent(
-					new CustomEvent('extendify-agent:workflow-confirm', {
-						detail: { ...props, whenFinishedToolProps },
-					}),
-				);
-			},
-			onCancel: () => {
-				window.dispatchEvent(
-					new CustomEvent('extendify-agent:workflow-cancel', {
-						detail: { whenFinishedToolProps },
-					}),
-				);
-			},
-		};
-	},
 	addWorkflowResult: (data) => {
 		if (data.status === 'completed') {
 			set((state) => {
@@ -103,7 +85,11 @@ const state = (set, get) => ({
 			workflow: workflow
 				? { ...workflow, startingPage: window.location.href }
 				: null,
-			workflowData: null,
+			// If a block is selected, add it to the workflow data
+			// previousContent is named this way for legacy reasons
+			workflowData: get().blockCode
+				? { previousContent: get().blockCode }
+				: null,
 			whenFinishedToolProps: null,
 		}),
 	setWhenFinishedToolProps: (whenFinishedToolProps) =>
@@ -114,7 +100,6 @@ export const useWorkflowStore = create()(
 	persist(devtools(state, { name: 'Extendify Agent Workflows' }), {
 		name: `extendify-agent-workflows-${window.extSharedData.siteId}`,
 		partialize: (state) => {
-			// eslint-disable-next-line
 			const { block, workflowHistory, ...rest } = state;
 			return { ...rest };
 		},

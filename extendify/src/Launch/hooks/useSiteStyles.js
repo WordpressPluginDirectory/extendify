@@ -1,7 +1,7 @@
-import useSWRImmutable from 'swr/immutable';
 import { getSiteStyles } from '@launch/api/DataApi';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import useSWRImmutable from 'swr/immutable';
 
 export const useSiteStyles = () => {
 	const { siteInformation } = useUserSelectionStore();

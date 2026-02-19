@@ -11,7 +11,8 @@ export const CardsTitle = ({ total = 8, totalCompleted = 3 }) => (
 					className="h-2.5 rounded-xl bg-design-main"
 					style={{
 						width: `${100 / (total / totalCompleted)}%`,
-					}}></div>
+					}}
+				></div>
 			</div>
 			<div className="text-xs text-gray-700">
 				{totalCompleted}/{total}

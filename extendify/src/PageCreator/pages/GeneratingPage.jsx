@@ -1,8 +1,3 @@
-import { rawHandler } from '@wordpress/blocks';
-import { useDispatch, useSelect } from '@wordpress/data';
-import { store as editorStore } from '@wordpress/editor';
-import { useEffect, useRef, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { updateOption } from '@page-creator/api/WPApi';
 import { VideoPlayer } from '@page-creator/components/content/VideoPlayer';
 import { usePageCustomContent } from '@page-creator/hooks/usePageCustomContent';
@@ -10,6 +5,11 @@ import { processPatterns } from '@page-creator/lib/processPatterns';
 import { useGlobalsStore } from '@page-creator/state/global';
 import { installBlocks } from '@page-creator/util/installBlocks';
 import { syncPageTitleTemplate } from '@page-creator/util/syncPageTitleTemplate';
+import { rawHandler } from '@wordpress/blocks';
+import { useDispatch, useSelect } from '@wordpress/data';
+import { store as editorStore } from '@wordpress/editor';
+import { useEffect, useRef, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const { pageTitlePattern } = window.extPageCreator;
 
@@ -86,18 +86,18 @@ export const GeneratingPage = ({ insertPage }) => {
 		// Signal to the importer to check for images
 		updateOption('extendify_check_for_image_imports', true);
 
-		let id = setTimeout(() => insertPage(code, page.title), 1000);
+		const id = setTimeout(() => insertPage(code, page.title), 1000);
 
 		return () => clearTimeout(id);
 	}, [insertPage, patterns, editPost, page, theme, templates]);
 
 	return (
-		<div className="mx-auto flex flex-grow items-center justify-center">
+		<div className="mx-auto flex grow items-center justify-center">
 			<div className="mx-auto flex h-full flex-col justify-center">
 				<VideoPlayer
 					poster={`${window.extSharedData.assetPath}/site-building.webp`}
 					path="https://images.extendify-cdn.com/launch/site-building.webm"
-					className="mx-auto h-auto w-[200px] md:w-[400px]"
+					className="mx-auto h-auto w-50 md:w-100"
 				/>
 				{progress && (
 					<p className="text-center text-lg" aria-live="polite">

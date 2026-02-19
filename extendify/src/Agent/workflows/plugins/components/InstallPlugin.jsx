@@ -1,8 +1,8 @@
-import { ExternalLink } from '@wordpress/components';
-import { useEffect, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { recordPluginActivity } from '@shared/api/DataApi';
-import { installPlugin, activatePlugin } from '@shared/api/wp';
+import { activatePlugin, installPlugin } from '@shared/api/wp';
+import { useEffect, useState } from '@wordpress/element';
+import { __, sprintf } from '@wordpress/i18n';
+import { external, Icon } from '@wordpress/icons';
 
 export const InstallPlugin = ({ inputs, onConfirm, onCancel }) => {
 	const [status, setStatus] = useState('idle');
@@ -19,34 +19,56 @@ export const InstallPlugin = ({ inputs, onConfirm, onCancel }) => {
 	}, [inputs, onCancel]);
 
 	useEffect(() => {
-		if (status === 'installing') {
-			installPlugin(inputs.pluginSlug)
-				.then(() => {
+		let cancelled = false;
+
+		const run = async () => {
+			if (status === 'installing') {
+				try {
+					await installPlugin(inputs.pluginSlug);
+					if (cancelled) return;
 					setStatus('activating');
-				})
-				.catch((error) => {
-					if (error.code === 'folder_exists') {
+				} catch (error) {
+					if (cancelled) return;
+					if (error?.code === 'folder_exists') {
 						setStatus('activating');
 						return;
 					}
 					setStatus('error');
-				});
-			return;
-		}
-		if (status === 'activating') {
-			activatePlugin(inputs.pluginSlug)
-				.then(async () => {
+				}
+				return;
+			}
+
+			if (status === 'activating') {
+				try {
+					await activatePlugin(inputs.pluginSlug);
+				} catch {
+					try {
+						await new Promise((r) => setTimeout(r, 500));
+						await activatePlugin(inputs.pluginSlug);
+					} catch {
+						if (!cancelled) setStatus('error');
+						return;
+					}
+				}
+				if (cancelled) return;
+
+				try {
 					await recordPluginActivity({
 						slug: inputs.pluginSlug,
 						source: 'ai-agent-recommendation',
 					});
-					onConfirm();
-				})
-				.catch(() => {
-					setStatus('error');
-				});
-			return;
-		}
+					await adminLoader();
+
+					if (!cancelled) onConfirm({ shouldRefreshPage: true });
+				} catch {
+					if (!cancelled) setStatus('error');
+				}
+			}
+		};
+		run();
+		return () => {
+			cancelled = true;
+		};
 	}, [status, onConfirm, inputs]);
 
 	if (status === 'error') {
@@ -97,17 +119,31 @@ export const InstallPlugin = ({ inputs, onConfirm, onCancel }) => {
 					</p>
 					<div className="flex justify-between gap-1">
 						{inputs.pluginName && (
-							<div className="text-md flex-1 font-bold">
+							<div className="text-base flex-1 font-bold">
 								{inputs.pluginName}
 							</div>
 						)}
-						<ExternalLink
-							className="flex-1"
+						<a
+							className="flex flex-1 items-end text-gray-900 hover:text-gray-900 hover:decoration-solid"
 							href={`https://wordpress.org/plugins/${inputs.pluginSlug}`}
 							target="_blank"
-							rel="noopener noreferrer">
-							{__('Plugin Details', 'extendify-local')}
-						</ExternalLink>
+							rel="noopener noreferrer"
+						>
+							<span
+								dangerouslySetInnerHTML={{
+									__html: sprintf(
+										// translators: %1$s and %2$s are HTML tags. %1$s opens a span with screen-reader-only text, and %2$s closes that span.
+										__(
+											'Plugin Details %1$s(opens in a new tab)%2$s',
+											'extendify-local',
+										),
+										'<span class="sr-only">',
+										'</span>',
+									),
+								}}
+							/>
+							<Icon className="ml-1 inline-block" icon={external} size={18} />
+						</a>
 					</div>
 				</div>
 			</Content>
@@ -125,8 +161,9 @@ export const InstallPlugin = ({ inputs, onConfirm, onCancel }) => {
 const CancelButton = ({ onClick }) => (
 	<button
 		type="button"
-		className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-		onClick={onClick}>
+		className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+		onClick={onClick}
+	>
 		{__('Cancel', 'extendify-local')}
 	</button>
 );
@@ -134,8 +171,9 @@ const CancelButton = ({ onClick }) => (
 const ConfirmButton = ({ onClick, text }) => (
 	<button
 		type="button"
-		className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
-		onClick={onClick}>
+		className="w-full rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
+		onClick={onClick}
+	>
 		{text}
 	</button>
 );
@@ -151,3 +189,20 @@ const Content = ({ children }) => (
 		<div className="p-3">{children}</div>
 	</div>
 );
+
+const adminLoader = () => {
+	return new Promise((resolve) => {
+		const { adminUrl } = window.extSharedData;
+		const iframe = Object.assign(document.createElement('iframe'), {
+			title: 'Admin Loader',
+			src: adminUrl,
+			style: 'display: none;',
+			sandbox: 'allow-same-origin allow-scripts allow-forms',
+			onload: () => {
+				document.body.removeChild(iframe);
+				resolve();
+			},
+		});
+		document.body.appendChild(iframe);
+	});
+};

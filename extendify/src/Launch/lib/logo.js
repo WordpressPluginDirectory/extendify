@@ -1,5 +1,5 @@
-import { uploadMedia } from '@wordpress/media-utils';
 import { getOption, updateOption } from '@launch/api/WPApi';
+import { uploadMedia } from '@wordpress/media-utils';
 
 /**
  * Uploads a logo to WordPress media library.

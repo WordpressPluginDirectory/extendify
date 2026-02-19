@@ -1,0 +1,9 @@
+@import "tailwindcss" source(none) important;
+@import "../tailwind.css" source(none);
+@source ".";
+
+/* no-prefix */
+.editor-header__toolbar > [role="toolbar"]
+	> *:not(.editor-document-tools__left) {
+	display: none;
+}

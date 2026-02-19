@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { Icon, chevronDown, chevronUp, quote } from '@wordpress/icons';
+import { chevronDown, chevronUp, Icon, quote } from '@wordpress/icons';
 
 export default function DesignLibraryMarkup(props) {
 	return (
@@ -58,21 +58,22 @@ export default function DesignLibraryMarkup(props) {
 									<div className="flex justify-center border-b bg-banner-main p-6 py-0">
 										<div className="flex h-20 w-40 items-center justify-center py-3">
 											<img
+												alt={__('Partner Logo', 'extendify-local')}
 												className="max-h-full max-w-full"
 												src={window.extSharedData.partnerLogo}
 											/>
 										</div>
 									</div>
 									<div className="px-5">
-										<div className="mt-6 flex w-full items-center justify-between gap-1 rounded-sm border border-gray-400 p-3">
+										<div className="mt-6 flex w-full items-center justify-between gap-1 rounded-xs border border-gray-400 p-3">
 											{__('Site type: Consultant', 'extendify-local')}
 											<Icon icon={chevronDown} />
 										</div>
-										<div className="mt-8 flex w-full items-center justify-between gap-1 rounded-sm border border-gray-400 p-3">
+										<div className="mt-8 flex w-full items-center justify-between gap-1 rounded-xs border border-gray-400 p-3">
 											{__('Pattern Type', 'extendify-local')}
 											<Icon icon={chevronUp} />
 										</div>
-										<div className="flex w-full flex-col justify-items-start gap-1 rounded-sm border border-t-0 border-gray-400 p-3 text-xs rtl:text-right">
+										<div className="flex w-full flex-col justify-items-start gap-1 rounded-xs border border-t-0 border-gray-400 p-3 text-xs rtl:text-right">
 											<div className="bg-design-main px-3 py-2 text-design-text">
 												{__('All', 'extendify-local')}
 											</div>
@@ -117,6 +118,10 @@ export default function DesignLibraryMarkup(props) {
 													<div className="mt-16 grid grid-cols-3 gap-8">
 														<div>
 															<img
+																alt={__(
+																	'Person using a laptop',
+																	'extendify-local',
+																)}
 																className="h-auto w-full max-w-full"
 																src="https://images.extendify-cdn.com/assist-tasks/design-library/using-laptop.webp"
 															/>
@@ -130,6 +135,10 @@ export default function DesignLibraryMarkup(props) {
 														</div>
 														<div>
 															<img
+																alt={__(
+																	'Two people talking',
+																	'extendify-local',
+																)}
 																className="h-auto w-full max-w-full"
 																src="https://images.extendify-cdn.com/assist-tasks/design-library/two-person-talking.webp"
 															/>
@@ -146,6 +155,10 @@ export default function DesignLibraryMarkup(props) {
 														</div>
 														<div>
 															<img
+																alt={__(
+																	'Two people and a laptop',
+																	'extendify-local',
+																)}
 																className="h-auto w-full max-w-full"
 																src="https://images.extendify-cdn.com/assist-tasks/design-library/two-person-and-laptop.webp"
 															/>
@@ -197,6 +210,7 @@ export default function DesignLibraryMarkup(props) {
 															)}
 														</div>
 														<img
+															alt={__('Man on a video call', 'extendify-local')}
 															className="col-span-7 h-auto w-full max-w-full"
 															src="https://images.extendify-cdn.com/assist-tasks/design-library/man-on-a-video-call.webp"
 														/>
@@ -231,6 +245,10 @@ export default function DesignLibraryMarkup(props) {
 														</div>
 														<div className="w-5/12">
 															<img
+																alt={__(
+																	'Portrait of Jessie Coleman',
+																	'extendify-local',
+																)}
 																className="h-auto w-full max-w-full"
 																src="https://images.extendify-cdn.com/assist-tasks/design-library/portrait-of-man.webp"
 															/>
@@ -250,6 +268,10 @@ export default function DesignLibraryMarkup(props) {
 
 															<div className="flex items-start gap-3">
 																<img
+																	alt={__(
+																		'Portrait of Jessie Coleman',
+																		'extendify-local',
+																	)}
 																	className="h-auto max-h-10 w-full max-w-10 self-start rounded-full"
 																	src="https://images.extendify-cdn.com/assist-tasks/design-library/portrait-of-girl.webp"
 																/>
@@ -275,6 +297,10 @@ export default function DesignLibraryMarkup(props) {
 
 															<div className="flex items-start gap-3">
 																<img
+																	alt={__(
+																		'Portrait of Jessie Coleman',
+																		'extendify-local',
+																	)}
 																	className="h-auto max-h-10 w-full max-w-10 self-start rounded-full"
 																	src="https://images.extendify-cdn.com/assist-tasks/design-library/portrait-of-girl.webp"
 																/>
@@ -300,6 +326,10 @@ export default function DesignLibraryMarkup(props) {
 
 															<div className="flex items-start gap-3">
 																<img
+																	alt={__(
+																		'Portrait of Jessie Coleman',
+																		'extendify-local',
+																	)}
 																	className="h-auto max-h-10 w-full max-w-10 self-start rounded-full"
 																	src="https://images.extendify-cdn.com/assist-tasks/design-library/portrait-of-girl.webp"
 																/>

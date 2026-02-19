@@ -1,4 +1,5 @@
 import { memo } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const Radio = (props) => {
 	const { className, ...otherProps } = props;
@@ -9,7 +10,9 @@ const Radio = (props) => {
 			viewBox="-4 -4 22 22"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			{...otherProps}>
+			{...otherProps}
+		>
+			<title>{__('Radio', 'extendify-local')}</title>
 			<path
 				stroke="currentColor"
 				d="M6.5 0.5h0s6 0 6 6v0s0 6 -6 6h0s-6 0 -6 -6v0s0 -6 6 -6"

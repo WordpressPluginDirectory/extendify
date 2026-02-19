@@ -1,7 +1,7 @@
 import {
 	fetchFontFaceFile,
-	makeFontFamilyFormData,
 	makeFontFaceFormData,
+	makeFontFamilyFormData,
 } from '@launch/lib/fonts-helpers';
 
 jest.mock('@shared/lib/utils', () => ({

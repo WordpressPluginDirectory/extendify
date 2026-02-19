@@ -1,18 +1,18 @@
-import {
-	BaseControl,
-	Panel,
-	PanelBody,
-	__experimentalHeading as Heading,
-} from '@wordpress/components';
-import { useState, useEffect, useRef } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { generateImage } from '@shared/api/DataApi';
-import { useImageGenerationStore } from '@shared/state/generate-images';
 import { GenerateForm } from '@draft/components/image-generation/GenerateForm';
 import { ImagePreview } from '@draft/components/image-generation/ImagePreview';
 import { useRouter } from '@draft/hooks/useRouter';
 import { pageState } from '@draft/state/factory';
 import { backArrow } from '@draft/svg/BackArrow';
+import { generateImage } from '@shared/api/DataApi';
+import { useImageGenerationStore } from '@shared/state/generate-images';
+import {
+	BaseControl,
+	__experimentalHeading as Heading,
+	Panel,
+	PanelBody,
+} from '@wordpress/components';
+import { useEffect, useRef, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const usePageState = pageState('AI Image', (set) => ({
 	imageDetails: { src: '', id: undefined },
@@ -87,7 +87,8 @@ export const GenerateImage = () => {
 					className="h-9 w-9 border-0 bg-transparent"
 					onClick={goBack}
 					type="button"
-					aria-label={__('Go Back', 'extendify-local')}>
+					aria-label={__('Go Back', 'extendify-local')}
+				>
 					{backArrow}
 				</button>
 				<Heading className="mb-0">

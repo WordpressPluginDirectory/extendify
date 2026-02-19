@@ -1,4 +1,4 @@
-import { serialize, rawHandler } from '@wordpress/blocks';
+import { rawHandler, serialize } from '@wordpress/blocks';
 
 export const walkAndUpdateImageDetails = (inputs, newImage) => {
 	const blocks = rawHandler({ HTML: inputs.previousContent });

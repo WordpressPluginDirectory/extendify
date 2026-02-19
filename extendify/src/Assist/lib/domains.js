@@ -1,9 +1,9 @@
+import { safeParseJson } from '@shared/lib/parsing';
 import apiFetch from '@wordpress/api-fetch';
 import { decodeEntities } from '@wordpress/html-entities';
-import { safeParseJson } from '@shared/lib/parsing';
 
 const { hostname } = window.location;
-let { devbuild, siteTitle, wpLanguage } = window.extSharedData;
+const { devbuild, siteTitle, wpLanguage } = window.extSharedData;
 const {
 	showBanner,
 	showTask,
@@ -19,8 +19,8 @@ const hasDomains =
 const domainByLanguage = (lang, urlList) => {
 	try {
 		const urls = JSON.parse(decodeEntities(urlList));
-		return urls[lang] ?? urls['default'];
-	} catch (e) {
+		return urls?.[lang] ?? urls?.default ?? false;
+	} catch (_e) {
 		return decodeEntities(urlList) || false;
 	}
 };

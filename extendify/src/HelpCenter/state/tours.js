@@ -1,7 +1,7 @@
-import apiFetch from '@wordpress/api-fetch';
 import { safeParseJson } from '@shared/lib/parsing';
+import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
-import { devtools, persist, createJSONStorage } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const key = 'extendify-help-center-tour-progress';
 const startingState = {
@@ -218,7 +218,6 @@ export const useTourStore = create(
 		skipHydration: true,
 		partialize: (state) => {
 			// return without currentTour or currentStep
-			// eslint-disable-next-line no-unused-vars
 			const { currentTour, currentStep, preparingStep, ...newState } = state;
 			return newState;
 		},

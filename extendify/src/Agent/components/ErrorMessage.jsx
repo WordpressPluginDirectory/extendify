@@ -1,3 +1,5 @@
+import { __ } from '@wordpress/i18n';
+
 export const ErrorMessage = ({ children }) => (
 	<div className="mb-4 ml-10 mr-2 min-w-0 flex-1 flex-col gap-1 rtl:ml-2 rtl:mr-10 rtl:flex">
 		<div className="flex gap-2 rounded-lg border border-wp-alert-red bg-wp-alert-red/10 p-3 text-red-800">
@@ -8,7 +10,9 @@ export const ErrorMessage = ({ children }) => (
 					viewBox="0 0 24 24"
 					strokeWidth={1.5}
 					stroke="currentColor"
-					className="size-6">
+					className="size-6"
+				>
+					<title>{__('Error icon', 'extendify-local')}</title>
 					<path
 						strokeLinecap="round"
 						strokeLinejoin="round"

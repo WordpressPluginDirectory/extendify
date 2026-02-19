@@ -1,5 +1,3 @@
-import { useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import {
 	getGeneratedPageTemplate,
 	getImprintPageTemplate,
@@ -8,6 +6,8 @@ import { usePageProfile } from '@page-creator/hooks/usePageProfile';
 import { useSiteImages } from '@page-creator/hooks/useSiteImages';
 import { useSitePlugins } from '@page-creator/hooks/useSitePlugins';
 import { useGlobalsStore } from '@page-creator/state/global';
+import { useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import useSWRImmutable from 'swr/immutable';
 
 export const usePageLayout = () => {

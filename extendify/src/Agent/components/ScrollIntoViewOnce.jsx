@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export const ScrollIntoViewOnce = ({ children, ...props }) => {
 	const ref = useRef(null);
@@ -20,7 +20,7 @@ export const ScrollIntoViewOnce = ({ children, ...props }) => {
 		if (visibleRatio >= 0.5) return;
 		c.scrollIntoView({ behavior: 'smooth', block: 'end' });
 		once.current = true;
-	}, [props]);
+	}, []);
 
 	return (
 		<div ref={ref} {...props}>

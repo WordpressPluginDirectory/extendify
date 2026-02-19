@@ -17,8 +17,9 @@ export const ModalButton = ({ task, completed }) => {
 	return (
 		<button
 			type="button"
-			className="min-w-24 rounded-sm bg-design-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90"
-			onClick={() => pushModal(Components[task.slug])}>
+			className="min-w-24 rounded-xs bg-design-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90"
+			onClick={() => pushModal(Components[task.slug])}
+		>
 			{completed ? task.buttonLabels.completed : task.buttonLabels.notCompleted}
 		</button>
 	);

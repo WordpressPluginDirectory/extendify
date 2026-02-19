@@ -14,8 +14,9 @@ export const Questionnaire = ({ questions = [], onAnswerChange }) => {
 
 				return (
 					<div
-						className="flex flex-col gap-3 rounded bg-[#f8f8f8] p-6"
-						key={q.id}>
+						className="flex flex-col gap-3 rounded-sm bg-[#f8f8f8] p-6"
+						key={q.id}
+					>
 						<p className="m-0 text-base font-medium text-extendify-black">
 							{q?.translatedQuestion || q?.question}
 						</p>
@@ -36,8 +37,9 @@ export const Questionnaire = ({ questions = [], onAnswerChange }) => {
 										selected === answer?.id
 											? 'border-2 border-design-main font-medium text-design-main before:absolute before:inset-0 before:bg-design-main before:opacity-[0.06] before:content-[""]'
 											: 'border border-gray-200 bg-white font-normal',
-										'relative flex w-full max-w-full items-center gap-2 rounded-md px-3 py-3 text-left text-sm transition-colors duration-150 focus:outline-none md:max-w-[291px]',
-									].join(' ')}>
+										'relative flex w-full max-w-full items-center gap-2 rounded-md px-3 py-3 text-left text-sm transition-colors duration-150 focus:outline-hidden md:max-w-[291px]',
+									].join(' ')}
+								>
 									<QuestionIcon id={answer?.iconId} />
 									{answer?.translatedLabel || answer?.label}
 								</button>
@@ -48,7 +50,8 @@ export const Questionnaire = ({ questions = [], onAnswerChange }) => {
 							<div className="mt-2">
 								<label
 									className="mb-3 block text-base font-medium text-extendify-black"
-									htmlFor={`extra-field-${q.id}`}>
+									htmlFor={`extra-field-${q.id}`}
+								>
 									{selectedExtraField?.translatedQuestion ||
 										selectedExtraField?.question}
 								</label>
@@ -63,7 +66,7 @@ export const Questionnaire = ({ questions = [], onAnswerChange }) => {
 											extraFieldKey: selectedExtraField?.key,
 										})
 									}
-									className="w-full max-w-[602px] rounded border border-gray-300 px-2 py-2 outline-none"
+									className="w-full max-w-[602px] rounded-sm border border-gray-300 px-2 py-2 outline-hidden"
 								/>
 							</div>
 						)}

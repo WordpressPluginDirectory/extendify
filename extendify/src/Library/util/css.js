@@ -23,11 +23,11 @@ export const addGlobalCSS = async (missingCSSVars) => {
 		(key) => !styles?.css?.includes(`${key}:`),
 	);
 	if (!missingCSSVars.length) return;
-	const missingCSSVarsString =
-		missingCSSVars.reduce((acc, key) => {
-			acc += `${key}: ${requiredCSSVars[key]};\n`;
-			return acc;
-		}, ':root {\n') + '\n}';
+	const reduced = missingCSSVars.reduce((acc, key) => {
+		acc += `${key}: ${requiredCSSVars[key]};\n`;
+		return acc;
+	}, ':root {\n');
+	const missingCSSVarsString = `${reduced}\n}`;
 	apiFetch({
 		path: `/wp/v2/global-styles/${id}`,
 		method: 'PATCH',

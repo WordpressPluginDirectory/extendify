@@ -1,6 +1,6 @@
-import { useEffect } from '@wordpress/element';
 import { useSiteAssistTourStorage } from '@assist/state/site-assist-tour';
 import { useTasksStore } from '@assist/state/tasks';
+import { useEffect } from '@wordpress/element';
 
 export const useTours = () => {
 	const { finishedTour, updateSiteAssistTourStatus } =

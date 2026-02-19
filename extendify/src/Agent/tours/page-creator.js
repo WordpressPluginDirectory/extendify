@@ -1,5 +1,5 @@
-import { __, isRTL } from '@wordpress/i18n';
 import { waitUntilExists } from '@agent/lib/tour-helpers';
+import { __, isRTL } from '@wordpress/i18n';
 
 export default {
 	id: 'page-creator-tour',
@@ -10,11 +10,9 @@ export default {
 		hideDotsNav: true,
 		startFrom: [
 			window.extSharedData?.showAIPageCreation
-				? window.extSharedData.adminUrl +
-					'post-new.php?post_type=page&ext-page-creator-close=1'
-				: window.extSharedData.adminUrl +
-					'post-new.php?post_type=page&ext-close=1',
-			window.extSharedData.adminUrl + 'post-new.php?post_type=page',
+				? `${window.extSharedData.adminUrl}post-new.php?post_type=page&ext-page-creator-close=1`
+				: `${window.extSharedData.adminUrl}post-new.php?post_type=page&ext-close=1`,
+			`${window.extSharedData.adminUrl}post-new.php?post_type=page`,
 		],
 	},
 	onStart: async () => {

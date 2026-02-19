@@ -1,7 +1,7 @@
-import { Icon, Dropdown, MenuGroup, MenuItem } from '@wordpress/components';
-import { __, sprintf } from '@wordpress/i18n';
-import { moreVertical, check } from '@wordpress/icons';
 import { useAIChatStore } from '@help-center/state/ai-chat';
+import { Dropdown, Icon, MenuGroup, MenuItem } from '@wordpress/components';
+import { __, sprintf } from '@wordpress/i18n';
+import { check, moreVertical } from '@wordpress/icons';
 
 export const Nav = ({ setShowHistory }) => {
 	const experienceLevels = {
@@ -17,7 +17,7 @@ export const Nav = ({ setShowHistory }) => {
 			<div className="flex items-center gap-2">
 				<Dropdown
 					className="flex"
-					contentClassName="origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+					contentClassName="origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black/5 focus:outline-hidden"
 					popoverProps={{ placement: 'bottom-start' }}
 					renderToggle={({ onToggle }) => (
 						<span>
@@ -25,7 +25,7 @@ export const Nav = ({ setShowHistory }) => {
 								icon={moreVertical}
 								onClick={onToggle}
 								size={28}
-								className="cursor-pointer rounded fill-current p-1 text-design-text hover:bg-white/10"
+								className="cursor-pointer rounded-sm fill-current p-1 text-design-text hover:bg-white/10"
 							/>
 							<span className="sr-only">
 								{__('Toggle menu', 'extendify-local')}
@@ -42,7 +42,8 @@ export const Nav = ({ setShowHistory }) => {
 										setExperienceLevel(key);
 										onClose();
 									}}
-									icon={experienceLevel === key ? check : null}>
+									icon={experienceLevel === key ? check : null}
+								>
 									{label}
 								</MenuItem>
 							))}
@@ -52,7 +53,8 @@ export const Nav = ({ setShowHistory }) => {
 								onClick={() => {
 									setShowHistory(true);
 									onClose();
-								}}>
+								}}
+							>
 								{
 									// translators: %d: number of chat history items
 									sprintf(

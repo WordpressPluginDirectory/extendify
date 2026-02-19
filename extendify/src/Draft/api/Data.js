@@ -1,7 +1,7 @@
-import { __ } from '@wordpress/i18n';
 import { AI_HOST } from '@constants';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { useImageGenerationStore } from '@shared/state/generate-images.js';
+import { __ } from '@wordpress/i18n';
 
 // Additional data to send with requests
 const allowList = [

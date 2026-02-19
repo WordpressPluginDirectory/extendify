@@ -6,7 +6,7 @@ export default {
 	message: __('Tour the Users screen', 'extendify-local'),
 	settings: {
 		allowOverflow: true,
-		startFrom: [window.extSharedData.adminUrl + 'users.php'],
+		startFrom: [`${window.extSharedData.adminUrl}users.php`],
 	},
 	onStart: () => {
 		if (document.body.classList.contains('folded')) {

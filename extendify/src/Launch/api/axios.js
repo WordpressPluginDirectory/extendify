@@ -15,9 +15,7 @@ Axios.interceptors.response.use(
 );
 
 const findResponse = (response) => {
-	return Object.prototype.hasOwnProperty.call(response, 'data')
-		? response.data
-		: response;
+	return Object.hasOwn(response, 'data') ? response.data : response;
 };
 
 const handleErrors = (error) => {

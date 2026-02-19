@@ -11,7 +11,8 @@ export const VideoPlayer = ({ path, poster, className = null }) => {
 				backgroundSize: 'contain',
 				backgroundPosition: 'center',
 				backgroundRepeat: 'no-repeat',
-			}}>
+			}}
+		>
 			<video
 				ref={videoRef}
 				id="video-player"
@@ -21,7 +22,8 @@ export const VideoPlayer = ({ path, poster, className = null }) => {
 				autoPlay
 				poster={poster}
 				loop
-				onPlay={() => setPlaying(true)}>
+				onPlay={() => setPlaying(true)}
+			>
 				<source src={path} type="video/webm" />
 				Your browser does not support the video tag.
 			</video>
