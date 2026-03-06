@@ -2,7 +2,7 @@ import { AI_HOST, IMAGES_HOST, PATTERNS_HOST } from '@constants';
 import { getSiteStyle } from '@page-creator/api/WPApi';
 import { useUserStore } from '@page-creator/state/user';
 
-const { siteTitle, siteType } = window.extSharedData;
+const { siteTitle } = window.extSharedData;
 const extraBody = {
 	...Object.fromEntries(
 		Object.entries(window.extSharedData).filter(([key]) =>
@@ -42,7 +42,6 @@ const fetchPageTemplates = async (details = {}) => {
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
 			...extraBody,
-			siteType: siteType?.slug,
 			showLocalizedCopy: !!showLocalizedCopy,
 			allowsInstallingPlugins,
 			plugins: JSON.stringify(plugins),
@@ -113,7 +112,7 @@ export const getPageProfile = async ({ description, siteProfile }) => {
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
 			...extraBody,
-			siteDescription: siteProfile?.aiDescription || '',
+			siteDescription: siteProfile?.description || '',
 			description,
 		}),
 	});
@@ -172,9 +171,9 @@ export const getSitePlugins = async ({ pageProfile }) => {
 	const { wpLanguage, partnerId, pluginGroupId } = window.extSharedData;
 
 	const body = JSON.stringify({
-		aiSiteType: pageProfile?.aiPageType || '',
-		aiDescription: pageProfile?.aiDescription || '',
-		aiKeywords: pageProfile?.aiKeywords || [],
+		type: pageProfile?.aiPageType || '',
+		description: pageProfile?.aiDescription || '',
+		keywords: pageProfile?.aiKeywords || [],
 		siteQuestions: [],
 		wpLanguage,
 		partnerId,

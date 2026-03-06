@@ -1,6 +1,5 @@
 import { toolSelect } from '@agent/icons';
 import { useWorkflowStore } from '@agent/state/workflows';
-import { Tooltip } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { closeSmall, Icon } from '@wordpress/icons';
 import classNames from 'classnames';
@@ -18,35 +17,27 @@ export const ChatTools = ({ disabled = false }) => {
 	if (!domTool) return null;
 	return (
 		<div className="flex items-center">
-			<Tooltip
-				text={
-					domToolEnabled
-						? __('Exit select mode', 'extendify-local')
-						: __('Select Area to Edit', 'extendify-local')
-				}
+			<button
+				type="button"
+				disabled={disabled}
+				className={classNames(
+					'm-0 flex items-center rounded-sm border-0 px-1 py-0.5 leading-none disabled:opacity-50 text-gray-900',
+					{
+						'bg-gray-300': domToolEnabled,
+						'bg-gray-100 text-gray-900': !domToolEnabled,
+						'hover:bg-gray-200': !disabled,
+					},
+				)}
+				onClick={handleClose}
 			>
-				<button
-					type="button"
-					disabled={disabled}
-					className={classNames(
-						'm-0 flex items-center rounded-sm border-0 px-1 py-0.5 leading-none disabled:opacity-50 text-gray-900',
-						{
-							'bg-gray-300': domToolEnabled,
-							'bg-gray-100 text-gray-900': !domToolEnabled,
-							'hover:bg-gray-200': !disabled,
-						},
-					)}
-					onClick={handleClose}
-				>
-					<Icon size={24} icon={toolSelect} />
-					<span className="px-1 text-sm font-medium">
-						{__('Select', 'extendify-local')}
-					</span>
-					{domToolEnabled && (
-						<Icon size={20} icon={closeSmall} className="fill-current" />
-					)}
-				</button>
-			</Tooltip>
+				<Icon size={24} icon={toolSelect} />
+				<span className="px-1 text-sm font-medium">
+					{__('Select', 'extendify-local')}
+				</span>
+				{domToolEnabled && (
+					<Icon size={20} icon={closeSmall} className="fill-current" />
+				)}
+			</button>
 		</div>
 	);
 };

@@ -3,10 +3,11 @@ import { useWorkflowStore } from '@agent/state/workflows';
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-const updateLogoSrcAttr = (url) => {
+const updateLogoSrcAttr = (url, cssFilter) => {
 	document.querySelectorAll('.wp-block-site-logo img')?.forEach((img) => {
 		img.srcset = '';
 		img.src = url;
+		img.style.filter = cssFilter ?? '';
 	});
 };
 
@@ -44,7 +45,7 @@ export const UpdateLogoConfirm = ({ onConfirm, onCancel }) => {
 	};
 
 	const handleSelect = (image) => {
-		updateLogoSrcAttr(image.url);
+		updateLogoSrcAttr(image.url, 'none');
 	};
 
 	return (

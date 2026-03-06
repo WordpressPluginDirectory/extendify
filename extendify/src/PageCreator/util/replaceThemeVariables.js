@@ -54,7 +54,6 @@ export function replaceThemeVariables(code = '', themeSlug = DEFAULT_THEME) {
 		...buildSpacingReplacements(theme.spacingScale),
 		...buildFontSizeReplacements(theme.fontSizeScale),
 	};
-	console.log('map', map);
 
 	// Kadence has a different color palette string and slug format and we need to remove the dash from the color variables
 	if (themeSlug === 'kadence') {

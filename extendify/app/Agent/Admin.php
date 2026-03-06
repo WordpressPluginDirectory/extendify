@@ -16,6 +16,7 @@ use Extendify\Shared\Services\Escaper;
 use Extendify\Agent\TagBlocks;
 use Extendify\Agent\TagTemplateParts;
 use Extendify\Agent\Controllers\SiteNavigationController;
+use Extendify\PartnerData;
 use Extendify\Shared\DataProvider\ProductsData;
 
 /**
@@ -94,6 +95,7 @@ class Admin
                 version_compare(wp_get_theme("extendable")->get('Version'), '2.0.32', '>='),
             'siteTitle' => \esc_attr(\get_bloginfo('name')),
             'siteDescription' => \esc_attr(\get_bloginfo('description')),
+            'themePresets' => $this->getThemePresets(),
         ];
         $recommendations = ProductsData::get() ?? [];
         $pluginRecommendations = array_filter($recommendations, function ($item) {
@@ -125,9 +127,15 @@ class Admin
             'canUploadMedia' => (bool) \current_user_can('upload_files'),
         ];
 
+        $agentOnboarding = PartnerData::setting('useAgentOnboarding') ||
+            constant('EXTENDIFY_DEVMODE');
+
         \wp_add_inline_script(
             Config::$slug . '-agent-scripts',
             'window.extAgentData = ' . \wp_json_encode([
+                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                'startOnboarding' => isset($_GET['extendify-launch-success']) && $agentOnboarding,
+                'agentPosition' => $agentOnboarding && !is_admin() ? 'docked-left' : 'floating',
                 // Add context about where they are
                 'context' => $context,
                 // Context that the Agent might need when returning a response,
@@ -139,8 +147,8 @@ class Admin
                 // List of suggestions the AI can make for this user.
                 // For example, we could check whether they need to set up a specific plugin.
                 'suggestions' => $this->getSuggestions($context, $abilities),
-                'chatHistory' => Escaper::recursiveEscAttr(ChatHistoryController::getChatHistory()),
-                'workflowHistory' => Escaper::recursiveEscAttr(WorkflowHistoryController::getWorkflowHistory()),
+                'chatHistory' => ChatHistoryController::getChatHistory(),
+                'workflowHistory' => WorkflowHistoryController::getWorkflowHistory(),
                 'userData' => [
                     'tourData' => \wp_json_encode(TourController::get()->get_data()),
                 ],
@@ -185,6 +193,141 @@ class Admin
             return (int) \get_option('page_for_posts');
         }
         return (int) \get_queried_object_id();
+    }
+
+    /**
+     * Get theme presets (colors, fonts, etc.) as slug => value maps.
+     *
+     * @return array
+     */
+    private function getThemePresets()
+    {
+        if (!function_exists('wp_get_global_settings')) {
+            return ['colors' => [], 'fontSizes' => [], 'fontFamilies' => [], 'duotone' => []];
+        }
+
+        $settings = \wp_get_global_settings();
+
+        $colors = [];
+        $colorPalette = $settings['color']['palette']['theme'] ?? [];
+        foreach ($colorPalette as $item) {
+            if (isset($item['slug'], $item['color'])) {
+                $colors[$item['slug']] = $item['color'];
+            }
+        }
+
+        $duotone = [];
+        $duotonePresets = $settings['color']['duotone']['theme'] ?? [];
+        foreach ($duotonePresets as $item) {
+            if (isset($item['slug'], $item['colors']) && is_array($item['colors'])) {
+                $duotone[] = [
+                    'slug' => $item['slug'],
+                    'colors' => $item['colors'],
+                ];
+            }
+        }
+
+        $fontSizes = [];
+        $fontSizePresets = $settings['typography']['fontSizes']['theme'] ?? [];
+        foreach ($fontSizePresets as $item) {
+            if (isset($item['slug'], $item['size'])) {
+                $fontSizes[$item['slug']] = $item['size'];
+            }
+        }
+
+        $fontFamilies = [];
+        $fontFamilyPresets = $settings['typography']['fontFamilies']['theme'] ?? [];
+        foreach ($fontFamilyPresets as $item) {
+            if (isset($item['slug'], $item['fontFamily'])) {
+                $fontFamilies[$item['slug']] = $item['fontFamily'];
+            }
+        }
+
+        $colorPairs = [];
+        if (function_exists('wp_get_global_styles')) {
+            $colorPairs = self::extractColorPairs();
+        }
+
+        return [
+            'colors' => $colors,
+            'duotone' => $duotone,
+            'fontSizes' => $fontSizes,
+            'fontFamilies' => $fontFamilies,
+            'colorPairs' => $colorPairs,
+        ];
+    }
+
+    private static function extractColorSlug(string $value)
+    {
+        if (preg_match('/var\(--wp--preset--color--([^)]+)\)/', $value, $m)) {
+            return $m[1];
+        }
+        return null;
+    }
+
+    private static function extractColorPairs()
+    {
+        $styles = \wp_get_global_styles();
+        $settings = \wp_get_global_settings();
+        $custom = $settings['custom'] ?? [];
+
+        $pairs = [];
+        $seen = [];
+
+        $bodyTextSlug = self::extractColorSlug($styles['color']['text'] ?? '');
+        $bodyBgSlug = self::extractColorSlug($styles['color']['background'] ?? '');
+
+        $candidates = [];
+
+        if ($bodyTextSlug && $bodyBgSlug) {
+            $candidates[] = ['text' => $bodyTextSlug, 'bg' => $bodyBgSlug];
+        }
+
+        $btnTextSlug = self::extractColorSlug($styles['elements']['button']['color']['text'] ?? '')
+            ?? self::extractColorSlug($custom['elements']['button']['color']['text'] ?? '');
+        $btnBgSlug = self::extractColorSlug($styles['elements']['button']['color']['background'] ?? '')
+            ?? self::extractColorSlug($custom['elements']['button']['color']['background'] ?? '');
+        if ($btnTextSlug && $btnBgSlug) {
+            $candidates[] = ['text' => $btnTextSlug, 'bg' => $btnBgSlug];
+        }
+
+        $btnHoverTextSlug = self::extractColorSlug($styles['elements']['button'][':hover']['color']['text'] ?? '')
+            ?? self::extractColorSlug($custom['elements']['button'][':hover']['color']['text'] ?? '');
+        $btnHoverBgSlug = self::extractColorSlug($styles['elements']['button'][':hover']['color']['background'] ?? '')
+            ?? self::extractColorSlug($custom['elements']['button'][':hover']['color']['background'] ?? '');
+        if ($btnHoverTextSlug && $btnHoverBgSlug) {
+            $candidates[] = ['text' => $btnHoverTextSlug, 'bg' => $btnHoverBgSlug];
+        }
+
+        $linkTextSlug = self::extractColorSlug($styles['elements']['link']['color']['text'] ?? '')
+            ?? self::extractColorSlug($custom['elements']['link']['color']['text'] ?? '');
+        if ($linkTextSlug && $bodyBgSlug) {
+            $candidates[] = ['text' => $linkTextSlug, 'bg' => $bodyBgSlug];
+        }
+
+        $headingTextSlug = self::extractColorSlug($styles['elements']['heading']['color']['text'] ?? '')
+            ?? self::extractColorSlug($custom['elements']['heading']['color']['text'] ?? '');
+        if ($headingTextSlug && $bodyBgSlug) {
+            $candidates[] = ['text' => $headingTextSlug, 'bg' => $bodyBgSlug];
+        }
+
+        if ($bodyTextSlug) {
+            $candidates[] = ['text' => $bodyTextSlug, 'bg' => 'tertiary'];
+        }
+        if ($headingTextSlug && $headingTextSlug !== $bodyTextSlug) {
+            $candidates[] = ['text' => $headingTextSlug, 'bg' => 'tertiary'];
+        }
+
+        foreach ($candidates as $pair) {
+            $key = $pair['text'] . '|' . $pair['bg'];
+            if (isset($seen[$key])) {
+                continue;
+            }
+            $seen[$key] = true;
+            $pairs[] = $pair;
+        }
+
+        return $pairs;
     }
 
     /**

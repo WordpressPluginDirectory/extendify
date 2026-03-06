@@ -4,9 +4,10 @@ import { MobileLayout } from '@agent/components/layouts/MobileLayout';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
 import { useEffect } from '@wordpress/element';
+import { SidebarLayout } from './components/layouts/SidebarLayout';
 
 export const Chat = ({ busy, children }) => {
-	const { setIsMobile, isMobile } = useGlobalStore();
+	const { setIsMobile, isMobile, mode } = useGlobalStore();
 	const { domToolEnabled, block, setBlock, setDomToolEnabled } =
 		useWorkflowStore();
 
@@ -63,6 +64,21 @@ export const Chat = ({ busy, children }) => {
 			</MobileLayout>
 		);
 	}
+
+	if (mode === 'docked-left') {
+		return (
+			<SidebarLayout>
+				<div
+					id="extendify-agent-chat"
+					className="flex min-h-0 flex-1 grow flex-col font-sans"
+				>
+					{children}
+				</div>
+				{domToolEnabled && <DOMHighlighter busy={busy} />}
+			</SidebarLayout>
+		);
+	}
+
 	return (
 		<DragResizeLayout>
 			<div

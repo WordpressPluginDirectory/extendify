@@ -10,6 +10,7 @@ defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Assist\AdminPage as AssistAdminPage;
 use Extendify\Launch\AdminPage as LaunchAdminPage;
+use Extendify\AutoLaunch\AdminPage as AutoLaunchAdminPage;
 
 /**
  * This class handles routing when the main admin button is pressed.
@@ -77,6 +78,13 @@ class AdminPageRouter
                 __('Launch', 'extendify-local'),
                 $launch->slug,
                 [$launch, 'pageContent']
+            );
+            $autoLaunch = new AutoLaunchAdminPage();
+            $this->addSubMenu(
+                // translators: Launch is a noun.
+                __('Auto Launch', 'extendify-local'),
+                $autoLaunch->slug,
+                [$autoLaunch, 'pageContent']
             );
         });
 
@@ -187,9 +195,23 @@ class AdminPageRouter
             return;
         }
 
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if (isset($_GET['page']) && $_GET['page'] === 'extendify-auto-launch') {
+            return;
+        }
+
         // Only redirect if we aren't already on the page.
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         if (isset($_GET['page']) && $_GET['page'] === 'extendify-launch') {
+            if (PartnerData::setting('useAgentOnboarding')) {
+                // If they landed on launch but have the Agent onboarding enabled, redirect to auto-launch.
+                $redirect_url = \add_query_arg(
+                    ['page' => 'extendify-auto-launch'],
+                    \admin_url('admin.php')
+                );
+                \wp_safe_redirect($redirect_url);
+                exit;
+            }
             return;
         }
 
@@ -219,11 +241,29 @@ class AdminPageRouter
                 'description',
                 'structure',
                 'tone',
-                'skip'
+                'skip',
+                // new for autolaunch (some duplicated)
+                'type',
+                'title',
+                'description',
+                'objective',
+                'category',
+                'structure',
+                'tone',
+                'products',
+                'appointments',
+                'events',
+                'donations',
+                'multilingual',
+                'contact',
+                'address',
+                'blog',
+                'landing-page',
+                'cta-link'
             ];
-            $query_params = [
-                'page' => 'extendify-launch',
-            ];
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended,WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+            $autoLaunch = isset($_GET['auto-launch']) && filter_var($_GET['auto-launch'], FILTER_VALIDATE_BOOLEAN);
+            $query_params = ['page' => $autoLaunch ? 'extendify-auto-launch' : 'extendify-launch'];
 
             foreach ($allowed_launch_params as $param) {
                 // phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -235,6 +275,7 @@ class AdminPageRouter
 
             $redirect_url = \add_query_arg($query_params, \admin_url('admin.php'));
             \wp_safe_redirect($redirect_url);
+            exit;
         }
     }
 

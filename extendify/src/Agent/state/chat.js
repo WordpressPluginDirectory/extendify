@@ -1,45 +1,31 @@
 import { makeId } from '@agent/lib/util';
 import apiFetch from '@wordpress/api-fetch';
+import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const { chatHistory } = window.extAgentData;
+const welcomeMessage = [
+	{
+		id: 1,
+		type: 'message',
+		details: {
+			role: 'assistant',
+			// translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
+			content: __(
+				'#### Your site is ready 🎉\nWant to explore other site colors?',
+				'extendify-local',
+			),
+		},
+	},
+];
 const state = (set, get) => ({
-	messagesRaw: (chatHistory || []).toReversed(),
-	messages: chatHistory?.length
-		? chatHistory
-				// Remove some noise on reload
-				.filter(
-					(message) =>
-						!['agent-working', 'calling-agent', 'tool-started'].includes(
-							message.details?.type,
-						) &&
-						!(
-							// Keep workflow messages with status completed (to show rating)
-							(
-								['workflow'].includes(message.type) &&
-								message.details.status === 'completed'
-							)
-						),
-				)
-				// Remove duplicate assistant messages (often during retry)
-				.reduce((acc, message) => {
-					const last = acc.at(-1);
-					const isAssistant = message.details?.role === 'assistant';
-					const lastIsAssistant = last?.details?.role === 'assistant';
-					if (isAssistant && lastIsAssistant) return acc;
-					acc.push(message);
-					return acc;
-				}, [])
-				.toReversed()
-		: [],
-
-	seenAgents: [],
+	messages: chatHistory?.length ? chatHistory.toReversed() : welcomeMessage,
 	// Messages sent to the api, user and assistant only. Up until the last workflow
 	getMessagesForAI: () => {
 		const messages = [];
 		let foundUserMessage = false;
-		for (const { type, details } of get().messagesRaw.toReversed()) {
+		for (const { type, details } of get().messages.toReversed()) {
 			const finished =
 				['completed', 'canceled'].includes(details.status) ||
 				(['status'].includes(type) && details.type === 'workflow-canceled');
@@ -54,21 +40,14 @@ const state = (set, get) => ({
 		}
 		return messages.toReversed();
 	},
+	getLastAssistantMessage: () =>
+		get()?.messages?.findLast(
+			(message) =>
+				message.type === 'message' && message.details?.role === 'assistant',
+		),
 	hasMessages: () => get().messages.length > 0,
 	addMessage: (type, details) => {
 		const id = makeId();
-		// If there's an agent, check if seen before
-		if (details?.agent?.name) {
-			const seenAgents = get().seenAgents;
-			if (!seenAgents.includes(details.agent.name)) {
-				details.firstSeen = true;
-				const seen = (state) =>
-					new Set([...state.seenAgents, details.agent.name]);
-				set((state) => ({
-					seenAgents: [...seen(state)],
-				}));
-			}
-		}
 		set((state) => {
 			// max 150 messages
 			const max = Math.max(0, state.messages.length - 149);
@@ -79,7 +58,6 @@ const state = (set, get) => ({
 				// { id: 3, type: workflow, details: { name: 'Workflow 1' } }
 				// { id: 5, type: status, details: { type: 'calling-agent' }
 				messages: [...state.messages.toSpliced(0, max), next],
-				messagesRaw: [...state.messagesRaw.toSpliced(0, max), next],
 			};
 		});
 		return id;
@@ -88,7 +66,6 @@ const state = (set, get) => ({
 	popMessage: () => {
 		set((state) => ({
 			messages: state.messages?.slice(0, -1) || [],
-			messagesRaw: state.messagesRaw?.slice(0, -1) || [],
 		}));
 	},
 	clearMessages: () => set({ messages: [] }),

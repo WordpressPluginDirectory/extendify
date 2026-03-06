@@ -11,10 +11,6 @@ const storage = {
 };
 
 const startingState = {
-	siteType: {
-		slug: '0default',
-		name: 'Default',
-	},
 	category: '',
 	totalImports: 0,
 };
@@ -25,9 +21,6 @@ export const useSiteSettingsStore = create(
 		(set) => ({
 			...startingState,
 			...(incomingState?.state ?? {}),
-			// Override siteType with the value from the server
-			siteType: window.extSharedData?.siteType ?? incomingState.siteType ?? {},
-
 			setCategory: (category) => set({ category }),
 			incrementImports: () =>
 				set((state) => ({ totalImports: Number(state.totalImports) + 1 })),

@@ -2,7 +2,7 @@ import { LaunchDemoSitesMarkup } from '@assist/tasks/images/LaunchDemoSitesMarku
 import { __ } from '@wordpress/i18n';
 
 const { launchCompleted } = window.extAssistData;
-const { themeSlug, showLaunch } = window.extSharedData;
+const { themeSlug, showLaunch, useAgentOnboarding } = window.extSharedData;
 
 export default {
 	slug: 'site-builder-launcher',
@@ -15,7 +15,9 @@ export default {
 		completed: __('Add Website Details', 'extendify-local'),
 		notCompleted: __('Add Website Details', 'extendify-local'),
 	},
-	link: 'admin.php?page=extendify-launch',
+	link: useAgentOnboarding
+		? 'admin.php?page=extendify-auto-launch'
+		: 'admin.php?page=extendify-launch',
 	type: 'site-launcher-task',
 	dependencies: { plugins: [] },
 	show: () => {

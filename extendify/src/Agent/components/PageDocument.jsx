@@ -1,6 +1,5 @@
 import { selectedContent } from '@agent/icons';
 import { useWorkflowStore } from '@agent/state/workflows';
-import { Tooltip } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { close, Icon } from '@wordpress/icons';
 
@@ -12,21 +11,19 @@ export const PageDocument = ({ busy }) => {
 				<Icon icon={selectedContent} />
 				<div>{__('Selected content', 'extendify-local')}</div>
 			</div>
-			<Tooltip text={__('Remove', 'extendify-local')}>
-				<button
-					type="button"
-					disabled={busy}
-					className="flex h-full items-center rounded-none border-0 bg-transparent outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main"
-					onClick={() => setBlock(null)}
-				>
-					<Icon
-						className="pointer-events-none fill-current leading-none"
-						icon={close}
-						size={18}
-					/>
-					<span className="sr-only">{__('Remove', 'extendify-local')}</span>
-				</button>
-			</Tooltip>
+			<button
+				type="button"
+				disabled={busy}
+				className="flex h-full items-center rounded-none border-0 bg-transparent outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main"
+				onClick={() => setBlock(null)}
+			>
+				<Icon
+					className="pointer-events-none fill-current leading-none"
+					icon={close}
+					size={18}
+				/>
+				<span className="sr-only">{__('Remove', 'extendify-local')}</span>
+			</button>
 		</div>
 	);
 };

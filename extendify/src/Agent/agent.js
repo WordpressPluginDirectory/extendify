@@ -5,11 +5,11 @@ import domReady from '@wordpress/dom-ready';
 import '@agent/agent.css';
 import '@agent/buttons';
 import { GuidedTour } from '@agent/components/GuidedTour';
-import { ReOpenToolTip } from '@agent/components/tooltip/ReOpenToolTip';
 
 const isInsideIframe = () => !!document.querySelector('body.iframe');
 
 domReady(() => {
+	// disableForReducedMotion
 	// tours
 	const tourId = 'extendify-agent-tour';
 	if (document.getElementById(tourId)) return;
@@ -33,11 +33,4 @@ domReady(() => {
 	});
 	document.body.appendChild(agent);
 	render(<Agent />, agent);
-
-	// tooltip
-	const div = Object.assign(document.createElement('div'), {
-		id: 'extendify-agent-modal-tooltip',
-	});
-	document.body.appendChild(div);
-	render(<ReOpenToolTip />, div);
 });

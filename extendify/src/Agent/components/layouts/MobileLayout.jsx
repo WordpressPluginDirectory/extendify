@@ -1,6 +1,5 @@
 import { usePortal } from '@agent/hooks/usePortal';
 import { useGlobalStore } from '@agent/state/global';
-import { Tooltip } from '@wordpress/components';
 import { createPortal, useEffect } from '@wordpress/element';
 import { __, _x } from '@wordpress/i18n';
 import { chevronDown, Icon } from '@wordpress/icons';
@@ -55,22 +54,20 @@ export const MobileLayout = ({ children }) => {
 								</div>
 							</div>
 						</div>
-						<Tooltip text={__('Minimize window', 'extendify-local')}>
-							<button
-								type="button"
-								className="relative z-10 flex h-full items-center rounded-none border-0 bg-banner-main py-3 pe-4 ps-2 text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main"
-								onClick={minimize}
-							>
-								<Icon
-									className="pointer-events-none fill-current leading-none"
-									icon={chevronDown}
-									size={24}
-								/>
-								<span className="sr-only">
-									{__('Minimize window', 'extendify-local')}
-								</span>
-							</button>
-						</Tooltip>
+						<button
+							type="button"
+							className="relative z-10 flex h-full items-center rounded-none border-0 bg-banner-main py-3 pe-4 ps-2 text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main"
+							onClick={minimize}
+						>
+							<Icon
+								className="pointer-events-none fill-current leading-none"
+								icon={chevronDown}
+								size={24}
+							/>
+							<span className="sr-only">
+								{__('Minimize window', 'extendify-local')}
+							</span>
+						</button>
 					</div>
 					{children}
 				</motion.div>

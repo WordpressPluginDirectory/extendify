@@ -18,4 +18,22 @@ export default {
 	whenFinished: {
 		component: SelectThemeFontsVariation,
 	},
+	example: {
+		// translators: "theme fonts" refers to the font variation for the current theme.
+		text: __('Change Theme Fonts', 'extendify-local'),
+		agentResponse: {
+			// translators: This message show above a UI where the user can select a different font variation for their theme.
+			reply: __(
+				'Below you can select a different font variation for your theme.',
+				'extendify-local',
+			),
+			whenFinishedTool: {
+				id: 'update-theme-fonts-variation',
+				labels: {
+					confirm: __('Updated the theme fonts', 'extendify-local'),
+					cancel: __('Canceled the theme fonts update', 'extendify-local'),
+				},
+			},
+		},
+	},
 };

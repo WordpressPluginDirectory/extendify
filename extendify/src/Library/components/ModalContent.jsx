@@ -6,9 +6,8 @@ import { __ } from '@wordpress/i18n';
 import { useInView } from 'react-intersection-observer';
 import Masonry from 'react-masonry-css';
 
-export const ModalContent = ({ insertPattern, siteType, category }) => {
+export const ModalContent = ({ insertPattern, category }) => {
 	const { data, isLoading, setSize } = usePatterns({
-		siteType: siteType?.slug,
 		category,
 	});
 	const [showLoading, setShowLoading] = useState(true);

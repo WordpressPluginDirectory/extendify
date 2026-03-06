@@ -345,7 +345,7 @@ export const generateCustomPageContent = async (
 	siteProfile,
 ) => {
 	// No ai-generated content
-	if (!siteProfile.aiDescription) {
+	if (!siteProfile.description || !siteProfile.aiDescription) {
 		return pages;
 	}
 

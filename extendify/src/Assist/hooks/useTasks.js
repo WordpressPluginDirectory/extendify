@@ -33,8 +33,8 @@ import { safeParseJson } from '@shared/lib/parsing';
 
 const activePlugins = window.extSharedData?.activePlugins || [];
 const sitePlugins =
-	safeParseJson(window.extSharedData.userData.userSelectionData)?.state
-		?.sitePlugins || [];
+	safeParseJson(window.extSharedData.launchDataLegacy)?.state?.sitePlugins ||
+	[];
 
 export const useTasks = () => {
 	const tasks = Object.values({

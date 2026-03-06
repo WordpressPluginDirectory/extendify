@@ -4,13 +4,16 @@
 
 @layer components {
 	.extendify-agent-markdown h1 {
-		@apply mb-2! mt-4! text-2xl! font-bold!;
+		@apply mb-2! mt-0! text-2xl! font-bold! text-gray-900!;
 	}
 	.extendify-agent-markdown h2 {
-		@apply mb-2! mt-4! text-xl! font-semibold!;
+		@apply mb-2! mt-0! text-xl! font-semibold! text-gray-900!;
 	}
 	.extendify-agent-markdown h3 {
-		@apply mb-1! mt-3! text-lg! font-semibold!;
+		@apply mb-1! mt-0! text-lg! font-semibold! text-gray-900!;
+	}
+	.extendify-agent-markdown h4 {
+		@apply mb-0.5! mt-0! text-base! font-semibold! text-gray-900!;
 	}
 	.extendify-agent-markdown p {
 		@apply m-0! mb-2! text-sm! leading-relaxed! text-gray-900!;
@@ -25,11 +28,11 @@
 		@apply mb-1! text-sm! text-gray-900!;
 	}
 	.extendify-agent-markdown pre {
-		@apply my-2! overflow-x-auto! rounded-sm! bg-gray-100! p-2! text-sm!;
+		@apply my-2! overflow-x-auto! rounded-sm! bg-gray-100! p-2! text-sm! text-gray-900!;
 		white-space: pre;
 	}
 	.extendify-agent-markdown pre code {
-		@apply bg-transparent! p-0! font-mono! text-xs!;
+		@apply bg-transparent! p-0! font-mono! text-xs! text-gray-900!;
 		white-space: pre;
 	}
 	.extendify-agent-markdown blockquote {

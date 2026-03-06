@@ -27,6 +27,7 @@ export const ChatMessages = () => {
 	const [canScrollDown, setCanScrollDown] = useState(false);
 	const containerRef = useRef(null);
 	const isFreshPageLoad = useRef(true);
+	const [ready, setReady] = useState(false);
 
 	// If last message is a user message, move it to the top
 	const isUserMessage =
@@ -46,12 +47,14 @@ export const ChatMessages = () => {
 		const id = requestAnimationFrame(() => {
 			id2 = requestAnimationFrame(() => {
 				last?.scrollIntoView({ behavior: 'auto', block: 'start' });
+				setReady(true);
 			});
 		});
 		return () => {
 			cancelAnimationFrame(id);
 			cancelAnimationFrame(id2);
 			isFreshPageLoad.current = true;
+			setReady(false);
 		};
 	}, [open]);
 
@@ -86,7 +89,7 @@ export const ChatMessages = () => {
 		if (!last) return;
 
 		const areWeAtBottom = c.scrollTop + c.clientHeight >= c.scrollHeight - 4;
-		setCanScrollDown(!areWeAtBottom);
+		if (areWeAtBottom) return setCanScrollDown(false);
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
@@ -112,7 +115,10 @@ export const ChatMessages = () => {
 			style={{ overscrollBehavior: 'contain' }}
 			className="relative grow overflow-y-auto overflow-x-hidden p-1 pb-0 text-sm text-gray-900 md:p-2"
 		>
-			<div id="extendify-agent-chat-scroll-area">
+			<div
+				id="extendify-agent-chat-scroll-area"
+				className={ready ? '' : 'invisible pointer-events-none'}
+			>
 				{messages.map((message) => {
 					const isLastMessage = messages.at(-1)?.id === message.id;
 					const freshLoad = isFreshPageLoad.current;
@@ -138,7 +144,9 @@ export const ChatMessages = () => {
 						message.type === 'status' &&
 						// Only show the status if it's last, or a workflow-tool-completed message
 						(isLastMessage ||
-							['workflow-tool-completed'].includes(message.details?.type))
+							['workflow-tool-completed', 'workflow-canceled'].includes(
+								message.details?.type,
+							))
 					) {
 						const isError = message.details?.type === 'error';
 						return (

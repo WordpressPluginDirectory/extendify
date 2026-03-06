@@ -44,7 +44,21 @@ const getCustomMediaViewsCss = () => {
 			div:has(> .media-modal) {z-index: 999999 !important}
 			.media-frame {
 				h1, h2, h3, h4, h5, h6 {
-					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important
+					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+					color: #1d2327 !important;
+				}
+
+				.uploader-inline-content {
+					color: #1d2327 !important;
+				}
+
+				.media-sidebar {
+					color: #646970 !important;
+				}
+
+				.media-search-input-label,
+				.load-more-count {
+					color: #3c434a !important;
 				}
 			}
 		`;

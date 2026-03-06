@@ -41,7 +41,7 @@ export const Unsplash = () => {
 			);
 			addImageToBlock(selectedBlock, downloadedImage, updateBlockAttributes);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		} finally {
 			setIsInsertingImage(null);
 		}

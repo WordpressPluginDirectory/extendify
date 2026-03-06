@@ -1,11 +1,10 @@
 import { useFontVariationOverride } from '@agent/hooks/useFontVariationOverride';
 import { useThemeFontsVariations } from '@agent/hooks/useThemeFontsVariations';
 import { useChatStore } from '@agent/state/chat';
-import { Tooltip } from '@wordpress/components';
 import { useEffect, useMemo, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
+export const SelectThemeFontsVariation = ({ onConfirm, onCancel, onLoad }) => {
 	const [css, setCss] = useState('');
 	const [selected, setSelected] = useState(null);
 	const { undoChange } = useFontVariationOverride({ css });
@@ -29,6 +28,11 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 		undoChange();
 		onCancel();
 	};
+
+	useEffect(() => {
+		if (isLoading) return;
+		onLoad();
+	}, [isLoading, onLoad]);
 
 	useEffect(() => {
 		if (isLoading || !noVariations) return;
@@ -59,27 +63,24 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="grid grid-cols-2 gap-2 p-3">
 					{shuffled?.slice(0, 10)?.map(({ title, css, styles }) => (
-						<Tooltip key={title} text={title} placement="top">
-							<button
-								aria-label={title}
-								type="button"
-								style={{ fontFamily: getFont(styles)?.normal }}
-								className={`relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-2 text-center text-sm ${
-									selected === title ? 'ring-wp ring-design-main' : ''
-								}`}
-								onClick={() => {
-									setSelected(title);
-									setCss(css);
-								}}
-							>
-								<div className="max-w-fit content-stretch items-center justify-center rounded-lg text-2xl rtl:space-x-reverse">
-									<span style={{ fontFamily: getFont(styles)?.heading }}>
-										A
-									</span>
-									<span style={{ fontFamily: getFont(styles)?.normal }}>a</span>
-								</div>
-							</button>
-						</Tooltip>
+						<button
+							key={title}
+							aria-label={title}
+							type="button"
+							style={{ fontFamily: getFont(styles)?.normal }}
+							className={`relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-2 text-center text-sm ${
+								selected === title ? 'ring ring-design-main ring-wp' : ''
+							}`}
+							onClick={() => {
+								setSelected(title);
+								setCss(css);
+							}}
+						>
+							<div className="max-w-fit content-stretch items-center justify-center rounded-lg text-2xl rtl:space-x-reverse">
+								<span style={{ fontFamily: getFont(styles)?.heading }}>A</span>
+								<span style={{ fontFamily: getFont(styles)?.normal }}>a</span>
+							</div>
+						</button>
 					))}
 				</div>
 			</div>

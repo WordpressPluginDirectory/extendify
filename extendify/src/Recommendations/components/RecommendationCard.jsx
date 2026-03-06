@@ -33,7 +33,7 @@ export const RecommendationCard = ({
 			className="flex flex-col rounded-sm border border-gray-300"
 			data-test="extendify-recommendations-card"
 		>
-			<div className="row-auto grid grow grid-cols-[2fr_3fr] grid-rows-[min-content_1fr] gap-x-5 gap-y-3 border-b border-b-gray-100 p-5 xs:grid-cols-[8rem_1fr]">
+			<div className="row-auto grid grow grid-cols-[2fr_3fr] grid-rows-[min-content_1fr] gap-x-5 gap-y-3 p-5 xs:grid-cols-[8rem_1fr]">
 				<div className="row-span-1 xs:row-span-2">
 					{image &&
 						(ctaType === 'plugin' ? (

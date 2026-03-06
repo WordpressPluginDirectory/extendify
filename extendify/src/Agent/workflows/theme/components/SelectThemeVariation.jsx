@@ -1,11 +1,10 @@
 import { useThemeVariations } from '@agent/hooks/useThemeVariations';
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
 import { useChatStore } from '@agent/state/chat';
-import { Tooltip } from '@wordpress/components';
 import { useEffect, useMemo, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
+export const SelectThemeVariation = ({ onConfirm, onCancel, onLoad }) => {
 	const [css, setCss] = useState('');
 	const [selected, setSelected] = useState(null);
 	const [duotoneTheme, setDuotoneTheme] = useState(null);
@@ -31,6 +30,11 @@ export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 		undoChange();
 		onCancel();
 	};
+
+	useEffect(() => {
+		if (isLoading) return;
+		onLoad();
+	}, [isLoading, onLoad]);
 
 	useEffect(() => {
 		if (isLoading || !noVariations) return;
@@ -61,30 +65,29 @@ export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="grid grid-cols-2 gap-2 p-3">
 					{shuffled?.slice(0, 10)?.map(({ title, css, settings }) => (
-						<Tooltip key={title} text={title} placement="top">
-							<button
-								style={{ backgroundColor: getColor(settings, 'background') }}
-								type="button"
-								className={`relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-2 text-center text-sm ${
-									selected === title ? 'ring-wp ring-design-main' : ''
-								}`}
-								onClick={() => {
-									setSelected(title);
-									setCss(css);
-									setDuotoneTheme(settings?.color?.duotone?.theme);
-								}}
-							>
-								<div className="flex max-w-fit items-center justify-center -space-x-4 rounded-lg rtl:space-x-reverse">
-									{getColors(settings)?.map((color, i) => (
-										<div
-											key={title + color + i}
-											style={{ backgroundColor: color }}
-											className="size-6 shrink-0 overflow-visible rounded-full border border-white md:size-7"
-										></div>
-									))}
-								</div>
-							</button>
-						</Tooltip>
+						<button
+							key={title}
+							style={{ backgroundColor: getColor(settings, 'background') }}
+							type="button"
+							className={`relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-2 text-center text-sm ${
+								selected === title ? 'ring ring-design-main ring-wp' : ''
+							}`}
+							onClick={() => {
+								setSelected(title);
+								setCss(css);
+								setDuotoneTheme(settings?.color?.duotone?.theme);
+							}}
+						>
+							<div className="flex max-w-fit items-center justify-center -space-x-4 rounded-lg rtl:space-x-reverse">
+								{getColors(settings)?.map((color, i) => (
+									<div
+										key={title + color + i}
+										style={{ backgroundColor: color }}
+										className="size-6 shrink-0 overflow-visible rounded-full border border-white md:size-7"
+									></div>
+								))}
+							</div>
+						</button>
 					))}
 				</div>
 			</div>

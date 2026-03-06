@@ -44,7 +44,7 @@ const setIfChanged = (get, set, key, newValue) => {
 	set({ [key]: newValue });
 };
 
-const incoming = safeParseJson(window.extSharedData.userData.userSelectionData);
+const incoming = safeParseJson(window.extSharedData.launchDataLegacy);
 const state = (set, get) => ({
 	...initialState,
 	// initialize the state with default values

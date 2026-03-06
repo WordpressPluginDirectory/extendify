@@ -5,7 +5,6 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export const usePatterns = (incomingParams) => {
 	const params = {
-		siteType: undefined,
 		category: undefined,
 		wpVersion: window.extSharedData.wpVersion,
 		lang: window.extSharedData.wpLanguage || null,

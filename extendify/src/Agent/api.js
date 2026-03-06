@@ -3,23 +3,7 @@ import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
 import { tools } from '@agent/workflows/workflows';
 import { AI_HOST } from '@constants';
-
-const extraBody = {
-	...Object.fromEntries(
-		Object.entries(window.extSharedData).filter(([key]) =>
-			// Optionally add items to request body
-			[
-				'partnerId',
-				'devbuild',
-				'version',
-				'siteId',
-				'wpLanguage',
-				'wpVersion',
-				'siteProfile',
-			].includes(key),
-		),
-	),
-};
+import { reqDataBasics } from '@shared/lib/data';
 
 const extra = () => {
 	const { x, y, width, height } = useGlobalStore.getState();
@@ -47,15 +31,25 @@ export const pickWorkflow = async ({ workflows, options }) => {
 	const filteredWorkflows = workflows.filter((wf) => !failed.has(wf.id));
 
 	const { workflowHistory: pastWorkflows, block } = useWorkflowStore.getState();
+
 	const messages = useChatStore.getState().getMessagesForAI();
+	const lastAssistantMessage = useChatStore
+		.getState()
+		.getLastAssistantMessage();
+
 	const response = await fetch(`${AI_HOST}/api/agent/find-agent`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		signal: options?.signal,
 		body: JSON.stringify({
-			...extraBody,
+			...reqDataBasics,
 			workflows: filteredWorkflows,
 			previousAgentName: pastWorkflows.at(0)?.agentName,
+			previousWorkflow: {
+				lastMessage: lastAssistantMessage?.details?.content,
+				sessionId: lastAssistantMessage?.details?.sessionId,
+				...pastWorkflows?.at(0),
+			},
 			context,
 			agentContext: window.extAgentData.agentContext,
 			messages: messages.slice(-5),
@@ -88,7 +82,7 @@ export const handleWorkflow = async ({ workflow, workflowData, options }) => {
 		headers: { 'Content-Type': 'application/json' },
 		signal: options?.signal,
 		body: JSON.stringify({
-			...extraBody,
+			...reqDataBasics,
 			workflow,
 			workflowData,
 			messages: messages,
@@ -122,7 +116,7 @@ export const callTool = async ({ tool, inputs }) => {
 };
 
 export const digest = ({ error, sessionId, caller, additional = {} }) => {
-	if (Boolean(extraBody?.devbuild) === true) return;
+	if (Boolean(reqDataBasics?.devbuild) === true) return;
 
 	const errorMessage = () => {
 		if (error.response?.statusText) {
@@ -145,7 +139,7 @@ export const digest = ({ error, sessionId, caller, additional = {} }) => {
 		keepalive: true,
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
-			...extraBody,
+			...reqDataBasics,
 			phpVersion: window.extSharedData?.phpVersion,
 			sessionId,
 			error: errorData,
@@ -165,16 +159,12 @@ export const digest = ({ error, sessionId, caller, additional = {} }) => {
 };
 
 export const recordAgentActivity = ({ action, sessionId, value = {} }) => {
-	if (!sessionId) {
-		return Promise.resolve(null);
-	}
-
 	return fetch(`${AI_HOST}/api/agent/activities`, {
 		keepalive: true,
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
-			...extraBody,
+			...reqDataBasics,
 			action,
 			sessionId,
 			value,

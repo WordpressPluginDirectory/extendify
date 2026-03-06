@@ -126,7 +126,9 @@ class Admin
 
         $woo = \get_option('woocommerce_onboarding_profile', false);
         $completedWoocommerceStore = (
-            isset($woo['completed']) && $woo['completed']) || (isset($woo['skipped']) && $woo['skipped']
+            isset($woo['completed']) && $woo['completed']
+        ) || (
+            isset($woo['skipped']) && $woo['skipped']
         );
 
         $aioseo = \get_option('aioseo_blc_options_internal', false);

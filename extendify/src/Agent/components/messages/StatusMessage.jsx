@@ -17,6 +17,7 @@ export const StatusMessage = ({ status, animate }) => {
 				__('Formulating a response...', 'extendify-local'),
 				__('Reviewing logic...', 'extendify-local'),
 			],
+			'workflow-tool-processing': __('Processing...', 'extendify-local'),
 			'tool-started': label || __('Gathering data...', 'extendify-local'),
 			'tool-completed': label || __('Analyzing...', 'extendify-local'),
 			'tool-canceled': label || __('Canceled', 'extendify-local'),
@@ -49,8 +50,12 @@ export const StatusMessage = ({ status, animate }) => {
 		};
 	}, [type, statusContent, content, loopIndex]);
 
-	if (type === 'workflow-tool-completed')
+	if (type === 'workflow-tool-completed') {
 		return <WorkflowToolCompleted label={label} />;
+	}
+	if (type === 'workflow-canceled') {
+		return <WorkflowToolCanceled label={label} />;
+	}
 
 	if (!content) return null;
 
@@ -69,7 +74,7 @@ export const StatusMessage = ({ status, animate }) => {
 	);
 };
 
-const WorkflowToolCompleted = ({ label }) => {
+export const WorkflowToolCompleted = ({ label }) => {
 	return (
 		<div className="flex w-full items-start gap-2.5 p-2">
 			<div className="w-7 shrink-0" />
@@ -95,6 +100,22 @@ const WorkflowToolCompleted = ({ label }) => {
 					<div className="text-sm">
 						{decodeEntities(label) ||
 							__('Workflow completed successfully', 'extendify-local')}
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export const WorkflowToolCanceled = ({ label }) => {
+	return (
+		<div className="flex w-full items-start gap-2.5 p-2">
+			<div className="w-7 shrink-0" />
+			<div className="flex min-w-0 flex-1 flex-col gap-1">
+				<div className="flex items-center gap-2 rounded-lg border border-gray-300 bg-gray-50 p-3 text-gray-700">
+					<div className="text-sm">
+						{decodeEntities(label) ||
+							__('Workflow was canceled', 'extendify-local')}
 					</div>
 				</div>
 			</div>

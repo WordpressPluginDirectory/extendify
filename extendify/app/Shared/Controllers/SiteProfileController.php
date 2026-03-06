@@ -24,9 +24,10 @@ class SiteProfileController
      */
     public static function store($request)
     {
-        $value = $request->get_param('value');
+        $value = $request->get_param('siteProfile');
         \update_option('extendify_site_profile', Sanitizer::sanitizeUnknown($value));
-        return new \WP_REST_Response($value);
+        $siteProfile = is_string($value) ? json_decode($value, true) : $value;
+        return new \WP_REST_Response($siteProfile);
     }
 
     /**
@@ -37,6 +38,7 @@ class SiteProfileController
     public static function get()
     {
         $data = \get_option('extendify_site_profile', []);
-        return new \WP_REST_Response($data);
+        $siteProfile = is_string($data) ? json_decode($data, true) : $data;
+        return new \WP_REST_Response($siteProfile);
     }
 }

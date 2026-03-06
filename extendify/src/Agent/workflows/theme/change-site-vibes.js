@@ -20,4 +20,22 @@ export default {
 		),
 	id: 'change-site-vibes',
 	whenFinished: { component: SelectSiteVibes },
+	example: {
+		// translators: "site style" refers to the structural aesthetic style for the site.
+		text: __('Change Site Style', 'extendify-local'),
+		agentResponse: {
+			// translators: This message show above a UI where the user can select a different site style variation for their theme.
+			reply: __(
+				'Below you can select a different site style variation for your theme.',
+				'extendify-local',
+			),
+			whenFinishedTool: {
+				id: 'update-site-vibes',
+				labels: {
+					confirm: __('Updated the site style', 'extendify-local'),
+					cancel: __('Canceled the site style update', 'extendify-local'),
+				},
+			},
+		},
+	},
 };

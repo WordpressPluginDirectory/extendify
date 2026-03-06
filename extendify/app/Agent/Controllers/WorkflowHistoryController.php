@@ -52,6 +52,7 @@ class WorkflowHistoryController
                 'status'     => $item['status'],
                 'errorMsg'   => $item['error_msg'],
                 'agentName'  => $item['agent_name'],
+                'language'   => $item['language'],
                 'createdAt'  => $item['created_at'],
             ];
         }, $results);
@@ -75,6 +76,7 @@ class WorkflowHistoryController
             'status'      => Sanitizer::sanitizeText($request->get_param('status')),
             'error_msg'   => Sanitizer::sanitizeText($request->get_param('errorMsg')),
             'agent_name'  => Sanitizer::sanitizeText($request->get_param('agentName')),
+            'language'    => Sanitizer::sanitizeText($request->get_param('language')),
             'user_id'     => $user_id,
             'created_at'  => current_time('mysql'),
         ]);
@@ -100,6 +102,7 @@ class WorkflowHistoryController
             'error_msg'   => "TEXT",
             'agent_name'  => "VARCHAR(64) NOT NULL",
             'status'      => "VARCHAR(20) NOT NULL",
+            'language'    => "VARCHAR(20)",
             'user_id'     => "BIGINT UNSIGNED NOT NULL",
             'created_at'  => "DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP"
         ];

@@ -80,7 +80,7 @@ class Admin
             'version' => 0,
         ];
         $siteInfo = \get_option('extendify_library_site_data', [
-            'state' => ['siteType' => \get_option('extendify_siteType', new \stdClass())],
+            'state' => [],
             'version' => 0,
         ]);
         $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;

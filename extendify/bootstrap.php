@@ -14,8 +14,10 @@ use Extendify\Draft\Admin as DraftAdmin;
 use Extendify\HelpCenter\Admin as HelpCenterAdmin;
 use Extendify\Insights;
 use Extendify\Launch\Admin as LaunchAdmin;
+use Extendify\AutoLaunch\Admin as AutoLaunchAdmin;
 use Extendify\Library\Admin as LibraryAdmin;
 use Extendify\Library\Frontend as LibraryFrontend;
+use Extendify\Agent\Frontend as AgentFrontend;
 use Extendify\PageCreator\Admin as PageCreatorAdmin;
 use Extendify\PartnerData;
 use Extendify\Recommendations\Admin as RecommendationsAdmin;
@@ -48,26 +50,30 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     define('EXTENDIFY_IS_THEME_EXTENDABLE', get_option('stylesheet') === 'extendable');
 }
 
-// This file should have no dependencies and always load.
-new LibraryFrontend();
-// This file hooks into an external task and should always load.
-new Insights();
-// This class set up the image import check scheduler.
-new ImagesImporter();
+(static function () {
+    // This file should have no dependencies and always load.
+    new LibraryFrontend();
+    // This file hooks into an external task and should always load.
+    new Insights();
+    // This class set up the image import check scheduler.
+    new ImagesImporter();
 
-// Run various database updates depending on the plugin version.
-new VersionMigrator();
+    // Run various database updates depending on the plugin version.
+    new VersionMigrator();
 
-// This class will fetch and cache partner data to be used
-// throughout every class below. If opt in.
-new PartnerData();
+    // This class will fetch and cache partner data to be used
+    // throughout every class below. If opt in.
+    new PartnerData();
 
-// Set up scheduled cache (if opt-in and active).
-if (!PartnerData::setting('deactivated')) {
-    ResourceData::scheduleCache();
-}
+    // Set up scheduled cache (if opt-in and active).
+    if (!PartnerData::setting('deactivated')) {
+        ResourceData::scheduleCache();
+    }
 
-if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
+    if (!current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
+        return;
+    }
+
     // The config class will collect information about the
     // partner and plugin, so it's easier to access.
     new Config();
@@ -81,52 +87,71 @@ if (current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
     new LibraryAdmin();
 
     // Only load these if the partner ID is set. These are all opt-in features.
-    if ((Config::$partnerId || constant('EXTENDIFY_DEVMODE')) && !PartnerData::setting('deactivated')) {
-        // This class handles the admin pages required for the plugin.
-        new AdminPageRouter();
+    if (!Config::$partnerId && !constant('EXTENDIFY_DEVMODE')) {
+        return;
+    }
 
-        // This class will handle loading  page creator assets.
-        if (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')) {
-            new PageCreatorAdmin();
-        }
+    if (PartnerData::setting('deactivated')) {
+        return;
+    }
 
-        // The remaining classes handle loading assets for each individual products.
-        // They are essentially asset loading classes.
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if (isset($_GET['page']) && $_GET['page'] === 'extendify-assist') {
-            // Load only on Assist.
-            new AssistAdmin();
-        }
+    // This class handles the admin pages required for the plugin.
+    new AdminPageRouter();
 
-        // Don't load on Launch.
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if (!isset($_GET['page']) || $_GET['page'] !== 'extendify-launch') {
-            $extendifyShowAgent = constant('EXTENDIFY_IS_THEME_EXTENDABLE')
-                && Config::$launchCompleted
-                && (PartnerData::setting('showAIAgents') || Config::preview('ai-agent'));
-            if (!$extendifyShowAgent) {
-                new HelpCenterAdmin();
-            }
+    // This class will handle loading  page creator assets.
+    if (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')) {
+        new PageCreatorAdmin();
+    }
 
-            if (PartnerData::setting('showProductRecommendations') || constant('EXTENDIFY_DEVMODE')) {
-                new RecommendationsAdmin();
-            }
+    // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    $page = sanitize_text_field(wp_unslash($_GET['page'] ?? ''));
 
-            if (PartnerData::setting('showDraft') || constant('EXTENDIFY_DEVMODE')) {
-                new DraftAdmin();
-            }
+    if ($page === 'extendify-launch') {
+        new LaunchAdmin();
+        return;
+    }
 
-            if ($extendifyShowAgent || constant('EXTENDIFY_DEVMODE')) {
-                new AgentAdmin();
-            }
-        } else {
-            new LaunchAdmin();
-        }
-    }//end if
+    if ($page === 'extendify-auto-launch') {
+        new AutoLaunchAdmin();
+        return;
+    }
+
+    // The remaining classes handle loading assets for each individual products.
+    // They are essentially asset loading classes.
+    if ($page === 'extendify-assist') {
+        new AssistAdmin();
+    }
+
+    $extendifyShowAgent = constant('EXTENDIFY_IS_THEME_EXTENDABLE')
+        && Config::$launchCompleted
+        && (PartnerData::setting('showAIAgents') || Config::preview('ai-agent'));
+
+    if (!$extendifyShowAgent) {
+        new HelpCenterAdmin();
+    }
+
+    if (PartnerData::setting('showProductRecommendations') || constant('EXTENDIFY_DEVMODE')) {
+        new RecommendationsAdmin();
+    }
+
+    if (PartnerData::setting('showDraft') || constant('EXTENDIFY_DEVMODE')) {
+        new DraftAdmin();
+    }
+
+    if ($extendifyShowAgent || constant('EXTENDIFY_DEVMODE')) {
+        new AgentAdmin();
+        new AgentFrontend();
+    }
+})();
+
+(static function () {
+    if (!current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
+        return;
+    }
 
     // This loads in all the REST API routes used by the plugin.
     require EXTENDIFY_PATH . 'routes/api.php';
-}//end if
+})();
 
 // This file is used to update the plugin and removed before w.org release.
 if (is_readable(EXTENDIFY_PATH . '/updater.php')) {

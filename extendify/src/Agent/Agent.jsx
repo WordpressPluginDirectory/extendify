@@ -2,10 +2,8 @@ import { callTool, digest, handleWorkflow, pickWorkflow } from '@agent/api';
 import { Chat } from '@agent/Chat';
 import { ChatInput } from '@agent/components/ChatInput';
 import { ChatMessages } from '@agent/components/ChatMessages';
-import { ChatSuggestions } from '@agent/components/ChatSuggestions';
 import { UsageMessage } from '@agent/components/messages/UsageMessage';
 import { PageDocument } from '@agent/components/PageDocument';
-import { WelcomeScreen } from '@agent/components/WelcomeScreen';
 import { useLockPost } from '@agent/hooks/useLockPost';
 import { getRedirectUrl } from '@agent/lib/redirects';
 import { useChatStore } from '@agent/state/chat';
@@ -25,13 +23,12 @@ const devmode = window.extSharedData.devbuild;
 let controller = new AbortController();
 const { postId } = window?.extAgentData?.context || {};
 
-const language = window.extSharedData?.wpLanguage || 'en_US';
-
 export const Agent = () => {
-	const { hasMessages, addMessage, popMessage } = useChatStore();
+	const { addMessage, popMessage } = useChatStore();
 	const {
 		mergeWorkflowData,
 		getWorkflow,
+		getWorkflowByExample,
 		workflowData,
 		setWorkflow,
 		addWorkflowResult,
@@ -42,14 +39,7 @@ export const Agent = () => {
 		setBlock,
 	} = useWorkflowStore();
 	const workflowIds = getAvailableWorkflows().map((w) => w.id);
-	const {
-		open,
-		setOpen,
-		showSuggestions,
-		setShowSuggestions,
-		updateRetryAfter,
-		isChatAvailable,
-	} = useGlobalStore();
+	const { open, setOpen, updateRetryAfter, isChatAvailable } = useGlobalStore();
 	useLockPost({ postId, enabled: !!open });
 	const [canType, setCanType] = useState(true);
 	const agentWorking = useRef(false);
@@ -59,7 +49,6 @@ export const Agent = () => {
 	const [loop, setLoop] = useState(0);
 	const workflow = getWorkflow();
 	const chatAvailable = useMemo(() => isChatAvailable(), [isChatAvailable]);
-	const suggestionItems = window.extAgentData?.suggestions;
 
 	const cleanup = useCallback(() => {
 		setCanType(true);
@@ -124,10 +113,13 @@ export const Agent = () => {
 
 	const handleSubmit = useCallback(
 		async (message) => {
-			setShowSuggestions(false);
 			setWaitingOnToolOrUser(false);
 			agentWorking.current = false;
 			addMessage('message', { role: 'user', content: message });
+
+			// Let some phrases auto load workflows
+			const bypass = getWorkflowByExample(message);
+			if (bypass?.example?.agentResponse) return handleBypass(bypass);
 
 			setCanType(false);
 			// If they typed while waiting on a redirect, reset the workflow
@@ -146,19 +138,6 @@ export const Agent = () => {
 				return;
 			}
 
-			// Bypass picking workflow if suggestion matched
-			const matchSuggestion = suggestionItems?.find(
-				(suggestion) => suggestion?.message === message,
-			);
-			const preSelectedWorkflowId = matchSuggestion?.workflowId;
-			const preSelectedWorkflow = getAvailableWorkflows().find(
-				(wf) => wf.id === preSelectedWorkflowId,
-			);
-			if (preSelectedWorkflow) {
-				setWorkflow({ ...preSelectedWorkflow, language });
-				return;
-			}
-
 			await findAgent().catch((e) => devmode && console.error(e));
 		},
 		[
@@ -169,11 +148,28 @@ export const Agent = () => {
 			setWorkflow,
 			workflow,
 			workflowData,
-			setShowSuggestions,
 			getAvailableWorkflows,
-			suggestionItems,
 		],
 	);
+
+	// Used to inject a workflow final state
+	const handleBypass = useCallback(async (workflow) => {
+		const agentResponse = workflow.example?.agentResponse;
+		cleanup();
+		if (!agentResponse) return;
+		setWorkflow(workflow);
+		setCanType(false);
+		agentWorking.current = true;
+		await new Promise((resolve) => setTimeout(resolve, 750));
+		addMessage('message', {
+			role: 'assistant',
+			content: agentResponse.reply,
+		});
+		setWhenFinishedToolProps({
+			...agentResponse?.whenFinishedTool,
+			agentResponse,
+		});
+	}, []);
 
 	useEffect(() => {
 		// Allow external messages to trigger the agent
@@ -206,10 +202,12 @@ export const Agent = () => {
 	useEffect(() => {
 		const handleConfirm = async ({ detail }) => {
 			if (toolWorking.current) return;
+			setWhenFinishedToolProps(null);
+			addMessage('status', { type: 'workflow-tool-processing' });
 			toolWorking.current = true;
 			const { data, whenFinishedToolProps, shouldRefreshPage } = detail ?? {};
 			const { status, whenFinishedTool, answerId, redirectTo } =
-				whenFinishedToolProps.agentResponse;
+				whenFinishedToolProps?.agentResponse || {};
 			const { id, labels } = whenFinishedTool || {};
 			// Not all workflows have a tool at the end (e.g. tours)
 			const toolResponse = await callTool?.({ tool: id, inputs: data }).catch(
@@ -227,6 +225,7 @@ export const Agent = () => {
 				agentName: workflow?.agent?.name,
 				status,
 				errorMsg: toolResponse?.error,
+				language: workflow?.language,
 			});
 			if (toolResponse?.error) {
 				await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -255,6 +254,9 @@ export const Agent = () => {
 			setWorkflow(null);
 
 			const url = getRedirectUrl(redirectTo, whenFinishedToolProps?.inputs);
+			if (url || shouldRefreshPage) {
+				await new Promise((resolve) => setTimeout(resolve, 1000));
+			}
 			if (url) return window.location.assign(url);
 			if (shouldRefreshPage) return window.location.reload();
 			// Clean up if not redirecting
@@ -262,7 +264,12 @@ export const Agent = () => {
 		};
 		const handleCancel = ({ detail }) => {
 			if (toolWorking.current) return;
-			const { answerId } = detail.whenFinishedToolProps.agentResponse;
+			const { answerId, whenFinishedTool } =
+				detail.whenFinishedToolProps?.agentResponse || {};
+			addMessage('status', {
+				type: 'workflow-canceled',
+				label: whenFinishedTool?.labels?.cancel,
+			});
 			addMessage('workflow', {
 				status: 'canceled',
 				agent: workflow.agent,
@@ -272,6 +279,7 @@ export const Agent = () => {
 				answerId,
 				status: 'canceled',
 				agentName: workflow?.agent?.name,
+				language: workflow?.language,
 			});
 			setWorkflow(null);
 			cleanup();
@@ -340,8 +348,8 @@ export const Agent = () => {
 		}
 		(async () => {
 			if (agentWorking.current) return; // Prevent multiple calls
+			if (toolWorking.current) return;
 			setCanType(false);
-			setShowSuggestions(false);
 			agentWorking.current = true;
 			addMessage('status', { type: 'agent-working' });
 			const agentResponse = await handleWorkflow({
@@ -369,6 +377,7 @@ export const Agent = () => {
 				status,
 				errorMsg: agentResponse?.error,
 				agentName: workflow?.agent?.name,
+				language: workflow?.language,
 			});
 			if (!open) return;
 			if (agentResponse.error) {
@@ -486,8 +495,6 @@ export const Agent = () => {
 		waitingOnToolOrUser,
 		mergeWorkflowData,
 		canType,
-		findAgent,
-		setShowSuggestions,
 		whenFinishedToolProps,
 		setWhenFinishedToolProps,
 		block,
@@ -498,45 +505,22 @@ export const Agent = () => {
 		document.querySelector('#extendify-agent-chat-textarea')?.focus();
 	}, [canType]);
 
-	const showWelcomeScreen = !hasMessages();
-	const showPromptSuggestions =
-		!workflow?.id &&
-		!showWelcomeScreen &&
-		chatAvailable &&
-		showSuggestions &&
-		!block;
 	const busy = !canType || !chatAvailable || workflow?.id;
 
 	return (
 		<Chat busy={busy}>
-			<div className="relative z-50 flex h-full flex-col justify-between overflow-auto border-t border-solid border-gray-300">
-				{showWelcomeScreen ? (
-					<div
-						className="relative flex grow flex-col overflow-y-auto overflow-x-hidden"
-						style={{
-							backgroundImage:
-								'linear-gradient( to bottom, #f0f0f0 0%, #fff 60%,  #fff 100%)',
-						}}
-					>
-						<div className="grow" />
-						<WelcomeScreen />
-					</div>
-				) : (
-					<ChatMessages
-						redirectComponent={
-							workflow?.needsRedirect?.() ? workflow.redirectComponent : null
-						}
-					/>
-				)}
-
+			<div className="relative z-50 flex h-full flex-col justify-between overflow-auto">
+				<ChatMessages
+					redirectComponent={
+						workflow?.needsRedirect?.() ? workflow.redirectComponent : null
+					}
+				/>
 				<div>
 					<div className="relative flex flex-col px-4 pb-2 pt-2.5 shadow-lg-flipped">
-						{showPromptSuggestions ? <ChatSuggestions /> : null}
 						{block ? <PageDocument busy={busy} blockId={block.id} /> : null}
 						<UsageMessage
 							onReady={() => {
 								cleanup();
-								setShowSuggestions(true);
 								addMessage('status', { type: 'credits-restored' });
 							}}
 						/>

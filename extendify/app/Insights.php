@@ -204,6 +204,7 @@ class Insights
             return $value === get_locale();
         });
 
-        return !empty($imprintLanguages) && strtolower($siteProfile['aiSiteCategory']) === 'business';
+        return !empty($imprintLanguages) && (strtolower($siteProfile['aiSiteCategory']) === 'business' ||
+            strtolower($siteProfile['category']) === 'business');
     }
 }

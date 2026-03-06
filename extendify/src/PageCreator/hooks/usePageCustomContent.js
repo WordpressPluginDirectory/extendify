@@ -8,9 +8,7 @@ import { useEffect, useMemo } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import useSWRImmutable from 'swr/immutable';
 
-const { state } = safeParseJson(
-	window.extSharedData?.userData?.userSelectionData,
-);
+const { state } = safeParseJson(window.extSharedData?.launchDataLegacy);
 
 const siteId = window.extSharedData.siteId;
 const currentTheme = window.extSharedData?.themeSlug || 'extendable';

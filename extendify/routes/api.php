@@ -23,6 +23,8 @@ use Extendify\Draft\Controllers\RouterController as DraftRouterController;
 
 use Extendify\Launch\Controllers\WPController;
 use Extendify\Launch\Controllers\WooCommerceController;
+use Extendify\AutoLaunch\Controllers\WPController as AutoLaunchWPController;
+use Extendify\AutoLaunch\Controllers\WooCommerceController as AutoLaunchWooCommerceController;
 
 use Extendify\Library\Controllers\SiteController;
 
@@ -63,6 +65,20 @@ use Extendify\Shared\Controllers\ImageGenerationController;
         ApiRouter::post('/launch/post-launch-functions', [WPController::class, 'postLaunch']);
         ApiRouter::get('/launch/import-woocommerce', [WooCommerceController::class, 'importTemporaryProducts']);
 
+        // AutoLaunch.
+        ApiRouter::post('/auto-launch/options', [AutoLaunchWPController::class, 'updateOption']);
+        ApiRouter::get('/auto-launch/options', [AutoLaunchWPController::class, 'getOption']);
+        ApiRouter::post('/auto-launch/save-pattern', [AutoLaunchWPController::class, 'savePattern']);
+        ApiRouter::get('/auto-launch/active-plugins', [AutoLaunchWPController::class, 'getActivePlugins']);
+        ApiRouter::get('/auto-launch/prefetch-assist-data', [AutoLaunchWPController::class, 'prefetchAssistData']);
+        ApiRouter::post('/auto-launch/create-navigation', [AutoLaunchWPController::class, 'createNavigationWithMeta']);
+        ApiRouter::get('/auto-launch/get-navigation', [AutoLaunchWPController::class, 'getNavigation']);
+        ApiRouter::post('/auto-launch/post-launch-functions', [AutoLaunchWPController::class, 'postLaunch']);
+        ApiRouter::get(
+            '/auto-launch/import-woocommerce',
+            [AutoLaunchWooCommerceController::class, 'importTemporaryProducts']
+        );
+
         // Assist.
         ApiRouter::get('/assist/task-data', [TasksController::class, 'get']);
         ApiRouter::post('/assist/task-data', [TasksController::class, 'store']);
@@ -100,6 +116,8 @@ use Extendify\Shared\Controllers\ImageGenerationController;
         ApiRouter::post('/agent/site-navigation', [AgentSiteNavigationController::class, 'getSiteNavigation']);
         ApiRouter::post('/agent/render-navigation', [AgentSiteNavigationController::class, 'renderNavigationMenu']);
         ApiRouter::get('/agent/block-style-variations', [AgentWPController::class, 'getBlockStyleVariations']);
+        ApiRouter::post('/agent/options', [AgentWPController::class, 'updateOption']);
+        ApiRouter::get('/agent/options', [AgentWPController::class, 'getOption']);
 
         // Shared.
         ApiRouter::get('/shared/user-selections-data', [UserSelectionController::class, 'get']);

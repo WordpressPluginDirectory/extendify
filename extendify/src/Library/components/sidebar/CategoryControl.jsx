@@ -7,7 +7,7 @@ import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
 
 export const CategoryControl = () => {
-	const { category, siteType, setCategory } = useSiteSettingsStore();
+	const { category, setCategory } = useSiteSettingsStore();
 	const { data, isLoading, errorCount } = useCategories();
 	const { categories, setCategories } = useCacheStore();
 
@@ -17,29 +17,15 @@ export const CategoryControl = () => {
 	}, [data, isLoading, setCategories, errorCount]);
 
 	useEffect(() => {
-		// Don't steal focus if no site type is selected
-		const focus = (slug) =>
-			siteType?.name &&
-			document.querySelector(`#extendify-library-category-${slug}`)?.focus();
-		// Wait for categories to be available
-		if (!categories?.length) return;
-		if (category) {
-			// If category is all, focus all
-			if (category === 'all') return focus('all');
-			// If category is already set, make sure it's a valid category
-			if (categories?.find(({ slug }) => slug === category)) {
-				return focus(category);
-			}
-		}
+		if (!categories?.length || category) return;
 		setCategory('all');
-		focus('all');
-	}, [category, setCategory, categories, siteType?.name]);
+	}, [category, setCategory, categories]);
 
 	return (
 		<PanelBody
 			title={__('Design Type', 'extendify-local')}
 			className="ext-type-control p-0 border-0 [&_.components-panel\_\_body-title]:-mx-5 [&_.components-panel\_\_body-title]:mt-0 [&_.components-panel\_\_body-title]:mb-0.5"
-			initialOpen={!!siteType?.name}
+			initialOpen={true}
 		>
 			<PanelRow>
 				<CategoryList

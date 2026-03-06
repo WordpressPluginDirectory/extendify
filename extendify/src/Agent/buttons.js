@@ -19,7 +19,12 @@ domReady(() => {
 		id,
 	});
 	agent.style.height = '1.75rem';
-	document.querySelector('#wp-admin-bar-my-account')?.before(agent);
+	// TODO: If we want to allow swapping live we need to rethink this
+	const loc =
+		window.extAgentData.agentPosition === 'floating'
+			? '#wp-admin-bar-my-account'
+			: '#wp-admin-bar-wp-logo';
+	document.querySelector(loc)?.before(agent);
 	render(<AdminBar />, agent);
 });
 
@@ -35,7 +40,7 @@ domReady(() => {
 	agent.style.position = 'sticky';
 	agent.style.top = 'calc(100% - var(--extendify-agent-mobile-btn-height))';
 	agent.style.bottom = '0';
-	agent.style.zIndex = '9999';
+	agent.style.zIndex = '99999';
 	document.body.appendChild(agent);
 	render(<Mobile />, agent);
 });

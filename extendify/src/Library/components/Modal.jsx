@@ -19,7 +19,7 @@ export const Modal = () => {
 	const { incrementActivity } = useActivityStore();
 	const { open, setOpen } = useGlobalsStore();
 	const { updateUserOption, openOnNewPage } = useUserStore();
-	const { category, siteType, incrementImports } = useSiteSettingsStore();
+	const { category, incrementImports } = useSiteSettingsStore();
 	const { createNotice } = dispatch('core/notices');
 	const once = useRef(false);
 
@@ -124,11 +124,7 @@ export const Modal = () => {
 							id="extendify-library-patterns-list"
 							className="grow overflow-y-auto"
 						>
-							<ModalContent
-								insertPattern={insertPattern}
-								category={category}
-								siteType={siteType}
-							/>
+							<ModalContent insertPattern={insertPattern} category={category} />
 						</div>
 					</div>
 				</motion.div>

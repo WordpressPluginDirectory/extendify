@@ -127,12 +127,25 @@ class Admin
             true
         );
 
-        $siteProfile = \get_option('extendify_site_profile', [
-            'aiSiteType' => '',
-            'aiSiteCategory' => '',
-            'aiDescription' => '',
-            'aiKeywords' => [],
-        ]);
+        $siteProfile = \get_option('extendify_site_profile', []);
+        $siteProfile = is_string($siteProfile) ? json_decode($siteProfile, true) : $siteProfile;
+        $siteProfile = is_array($siteProfile) ? $siteProfile : [];
+        $map = [
+            'aiSiteType'          => 'type',
+            'aiTitle'             => 'title',
+            'aiDescription'       => 'description',
+            'aiObjective'         => 'objective',
+            'aiSiteCategory'      => 'category',
+            'aiStructure'         => 'structure',
+            'aiKeywords'          => 'imageSearchTerms',
+            'logoObjectName'      => 'logoObjectName',
+        ];
+        // Converts legacy site profile to new one
+        foreach ($map as $old => $new) {
+            if (!array_key_exists($new, $siteProfile)) {
+                $siteProfile[$new] = $siteProfile[$old] ?? null;
+            }
+        }
 
         $partnerData = PartnerData::getPartnerData();
         $userConsent = get_user_meta(get_current_user_id(), 'extendify_ai_consent', true);
@@ -162,8 +175,7 @@ class Admin
                 'themeSlug' => \esc_attr(\get_option('stylesheet')),
                 'version' => \esc_attr(Config::$version),
                 'siteTitle' => \esc_attr(\get_bloginfo('name')),
-                'siteType' => Escaper::recursiveEscAttr(\get_option('extendify_siteType', [])),
-                'siteProfile' => Escaper::recursiveEscAttr((array) $siteProfile),
+                'siteProfile' => $siteProfile,
                 'wpLanguage' => \esc_attr(\get_locale()),
                 'wpVersion' => \esc_attr(\get_bloginfo('version')),
                 'isBlockTheme' => function_exists('wp_is_block_theme') ? (bool) wp_is_block_theme() : false,
@@ -171,12 +183,14 @@ class Admin
                 'partnerLogo' => \esc_attr(PartnerData::$logo),
                 'partnerId' => \esc_attr(PartnerData::$id),
                 'partnerName' => \esc_attr(PartnerData::$name),
-                'userData' => [
-                    'userSelectionData' => \wp_json_encode((UserSelectionController::get()->get_data() ?? [])),
-                ],
+                'launchDataLegacy' => \wp_json_encode((UserSelectionController::get()->get_data() ?? [])),
                 'resourceData' => \wp_json_encode((new ResourceData())->getData()),
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
                 'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
+                'useAgentOnboarding' => (bool) (
+                    PartnerData::setting('useAgentOnboarding') ||
+                    constant('EXTENDIFY_DEVMODE')
+                ),
                 'showAIPageCreation' => (bool) (
                     PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')
                 ),
@@ -230,7 +244,7 @@ class Admin
         }, array_keys($cssColorVars), $cssColorVars));
         \wp_add_inline_style(
             Config::$slug . '-shared-common-styles',
-            wp_strip_all_tags("body { $cssString; }")
+            wp_strip_all_tags(":root { $cssString; }")
         );
     }
 

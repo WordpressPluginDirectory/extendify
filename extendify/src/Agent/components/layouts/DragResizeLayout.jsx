@@ -3,7 +3,6 @@ import { usePortal } from '@agent/hooks/usePortal';
 import { useResizable } from '@agent/hooks/useResizable';
 import { useGlobalStore } from '@agent/state/global';
 import { usePositionStore } from '@agent/state/position';
-import { Tooltip } from '@wordpress/components';
 import {
 	createPortal,
 	useCallback,
@@ -105,22 +104,20 @@ export const DragResizeLayout = ({ children }) => {
 							<DragButton />
 						</div>
 					</div>
-					<Tooltip text={__('Close window', 'extendify-local')}>
-						<button
-							type="button"
-							className="relative z-10 flex h-full items-center rounded-none border-0 bg-banner-main py-3 pe-4 ps-2 text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main"
-							onClick={closeAgent}
-						>
-							<Icon
-								className="pointer-events-none fill-current leading-none"
-								icon={close}
-								size={18}
-							/>
-							<span className="sr-only">
-								{__('Close window', 'extendify-local')}
-							</span>
-						</button>
-					</Tooltip>
+					<button
+						type="button"
+						className="relative z-10 flex h-full items-center rounded-none border-0 bg-banner-main py-3 pe-4 ps-2 text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main"
+						onClick={closeAgent}
+					>
+						<Icon
+							className="pointer-events-none fill-current leading-none"
+							icon={close}
+							size={18}
+						/>
+						<span className="sr-only">
+							{__('Close window', 'extendify-local')}
+						</span>
+					</button>
 				</div>
 				{children}
 				<div

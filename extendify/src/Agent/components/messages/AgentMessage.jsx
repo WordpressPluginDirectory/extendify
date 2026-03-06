@@ -4,7 +4,6 @@ import { magic } from '@agent/icons';
 import pageTours from '@agent/lib/page-tours';
 import tours from '@agent/tours/tours';
 import { SingleTour } from '@agent/workflows/misc/components/ToursList';
-import { Tooltip } from '@wordpress/components';
 import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
 import { cog, Icon, lifesaver, pencil, styles } from '@wordpress/icons';
@@ -41,8 +40,8 @@ export const AgentMessage = ({ message, animate }) => {
 	} = message.details;
 	const containsCodeBlock = /```[\s\S]*?```/.test(content);
 	const blocks = containsCodeBlock
-		? [decodeEntities(content)]
-		: decodeEntities(content).split(/\n{2,}/);
+		? [decodeEntities(content ?? '')]
+		: decodeEntities(content ?? '').split(/\n{2,}/);
 
 	// Check if the pageSuggestion matches any key in agentSuggestions
 	const agentSuggestionKey = Object.keys(agentSuggestions).find((k) =>
@@ -56,20 +55,15 @@ export const AgentMessage = ({ message, animate }) => {
 			className="flex w-full items-start gap-2.5 p-2"
 		>
 			<div className="w-7 shrink-0">
-				<Tooltip
-					text={agent?.name ?? __('Agent', 'extendify-local')}
-					placement="top"
-				>
-					{agent?.avatar ? (
-						<img className="mt-px" src={agent.avatar} alt={agent.name} />
-					) : (
-						<Icon
-							className="-mt-0.5 fill-gray-900"
-							icon={agentIcons[agent?.id] ?? magic}
-							size={28}
-						/>
-					)}
-				</Tooltip>
+				{agent?.avatar ? (
+					<img className="mt-px" src={agent.avatar} alt={agent.name} />
+				) : (
+					<Icon
+						className="-mt-0.5 fill-gray-900"
+						icon={agentIcons[agent?.id] ?? magic}
+						size={28}
+					/>
+				)}
 			</div>
 			<div className="flex min-w-0 flex-1 flex-col gap-4">
 				<div className="extendify-agent-markdown w-full">

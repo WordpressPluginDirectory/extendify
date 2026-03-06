@@ -16,8 +16,7 @@ const startingState = {
 	pages: [],
 	sitePlugins: [],
 	// initialize the state with default values
-	...(safeParseJson(window.extSharedData.userData.userSelectionData)?.state ??
-		{}),
+	...(safeParseJson(window.extSharedData.launchDataLegacy)?.state ?? {}),
 };
 
 const state = () => ({

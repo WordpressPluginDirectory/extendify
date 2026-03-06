@@ -69,8 +69,8 @@ export const preFetchImages = async () => {
 		return cache.images;
 	}
 
-	const { aiKeywords } = window.extSharedData?.siteProfile ?? {};
-	const queries = aiKeywords?.length ? aiKeywords : [];
+	const { imageSearchTerms } = window.extSharedData?.siteProfile ?? {};
+	const queries = imageSearchTerms?.length ? imageSearchTerms : [];
 	const images = (
 		await Promise.all(queries.map((query) => fetchImages(query, 'prefetch')))
 	).flat();

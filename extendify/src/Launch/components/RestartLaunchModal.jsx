@@ -1,4 +1,5 @@
 import { Dialog } from '@headlessui/react';
+import { updateOption } from '@launch/api/WPApi';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import apiFetch from '@wordpress/api-fetch';
 import { Spinner } from '@wordpress/components';
@@ -110,6 +111,19 @@ export const RestartLaunchModal = ({ setPage }) => {
 			console.warn(
 				'Failed to reset global styles with the following error:',
 				styleResetError,
+			);
+		}
+
+		// Reset animation settings to none
+		try {
+			await updateOption('extendify_animation_settings', {
+				type: 'none',
+				speed: 'medium',
+			});
+		} catch (animationResetError) {
+			console.warn(
+				'Failed to reset animation settings with the following error:',
+				animationResetError,
 			);
 		}
 

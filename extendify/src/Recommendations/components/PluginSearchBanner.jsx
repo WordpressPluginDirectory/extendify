@@ -46,7 +46,7 @@ export const PluginSearchBanner = () => {
 			data-test="extendify-recommendations-banner"
 		>
 			<div
-				className={`flex h-14 border-b border-b-gray-200 ${showPartnerBranding ? 'bg-banner-main' : ''} px-6 py-4`}
+				className={`flex h-14 ${showPartnerBranding ? 'bg-banner-main' : ''} px-6 py-4`}
 			>
 				{showPartnerBranding ? (
 					<>

@@ -41,17 +41,16 @@ class WPForms
         require_once ABSPATH . 'wp-admin/includes/plugin.php';
         // If the plugin is already installed and active, we don't need to install it again.
         if (!is_plugin_active(self::$slug)) {
-            // If the plugin isn't already active, let's set some default style options.
-            $wpFormSettings = get_option('wpforms_settings', []);
-            if (!array_key_exists('disable-css', $wpFormSettings)) {
-                $wpFormSettings['disable-css'] = 2;
-                update_option('wpforms_settings', $wpFormSettings);
-            }
-
             $response = PluginInstaller::installPlugin('wpforms-lite', self::$slug);
             if (is_wp_error($response)) {
                 return $response;
             }
+        }
+
+        $wpFormSettings = get_option('wpforms_settings', []);
+        if (!array_key_exists('disable-css', $wpFormSettings)) {
+            $wpFormSettings['disable-css'] = 2;
+            update_option('wpforms_settings', $wpFormSettings);
         }
 
         $formId = self::getOrCreateForm(

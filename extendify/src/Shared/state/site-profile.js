@@ -1,40 +1,22 @@
-import { safeParseJson } from '@shared/lib/parsing';
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
-const generalSiteProfile =
-	safeParseJson(window.extSharedData.userData.userSelectionData)?.state
-		?.siteProfile || {};
-
-const initialState = {
-	siteProfile: {
-		aiDescription:
-			window.extSharedData?.siteProfile?.aiDescription ||
-			generalSiteProfile?.aiDescription,
-		aiSiteType: generalSiteProfile?.aiSiteType,
-		aiSiteCategory: generalSiteProfile?.aiSiteCategory,
-		aiKeywords: generalSiteProfile?.aiKeywords,
-	},
-};
+const { siteProfile } = window.extSharedData;
 
 const state = (set) => ({
-	...initialState,
+	siteProfile,
 	setSiteProfile(data) {
-		const siteProfile = Object.assign(
-			{
-				aiSiteType: initialState?.siteProfile?.aiSiteType,
-				aiSiteCategory: initialState?.siteProfile?.aiSiteCategory,
-				aiDescription: initialState?.siteProfile?.aiDescription,
-				aiKeywords: initialState?.siteProfile?.aiKeywords,
-			},
-			data || {},
-		);
-
-		set({ siteProfile });
+		set((state) => {
+			const updatedProfile = {
+				...state.siteProfile,
+				...data,
+			};
+			return { siteProfile: updatedProfile };
+		});
 	},
 	resetState() {
-		set(initialState);
+		set({ siteProfile });
 	},
 });
 
@@ -45,7 +27,7 @@ const storage = {
 		await apiFetch({
 			path,
 			method: 'POST',
-			data: { value: safeParseJson(state)?.state?.siteProfile || {} },
+			data: { siteProfile: JSON.stringify(state) },
 		});
 	},
 };

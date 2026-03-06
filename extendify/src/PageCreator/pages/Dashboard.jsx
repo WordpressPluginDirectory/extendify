@@ -23,7 +23,7 @@ export const Dashboard = () => {
 	const { incrementRegenerationCount } = useGlobalsStore();
 
 	const [siteDescription, setSiteDescription] = useState(
-		decodeEntities(siteProfile?.aiDescription) || '',
+		decodeEntities(siteProfile?.description) || '',
 	);
 
 	useLayoutEffect(() => {
@@ -35,9 +35,9 @@ export const Dashboard = () => {
 		setDisabled(true);
 		const timer = setTimeout(() => {
 			if (pageDescription) setDescription(pageDescription);
-			if (siteDescription && siteDescription !== siteProfile?.aiDescription) {
+			if (siteDescription && siteDescription !== siteProfile?.description) {
 				// Persist the site profile if they edit it
-				setSiteProfile({ aiDescription: siteDescription });
+				setSiteProfile({ description: siteDescription });
 			}
 			setDisabled(!pageDescription.length);
 		}, 1000);

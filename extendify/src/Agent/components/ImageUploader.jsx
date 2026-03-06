@@ -91,7 +91,7 @@ export const ImageUploader = ({
 		try {
 			await onSave?.({ imageId: selectedImageId });
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		} finally {
 			setIsSaving(false);
 		}

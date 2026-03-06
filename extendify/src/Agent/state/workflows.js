@@ -1,11 +1,21 @@
+import variationsWorkflow from '@agent/workflows/theme/change-theme-variation';
 import { workflows } from '@agent/workflows/workflows';
 import { deepMerge } from '@shared/lib/utils';
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
+const onboarding = window.extAgentData.chatHistory?.length === 0;
+const agentResponse = variationsWorkflow.example?.agentResponse;
+const onboardingToolProps = {
+	...agentResponse.whenFinishedTool,
+	agentResponse,
+};
+
 const state = (set, get) => ({
 	workflow: null,
+	// Data for the tool component that shows up at the end of a workflow
+	whenFinishedToolProps: null,
 	block: null, // data-extendify-agent-block-id + details about the block
 	setBlock: (block) => set({ block, blockCode: null }),
 	// Used as "previousContent" in workflows that need it
@@ -23,6 +33,11 @@ const state = (set, get) => ({
 		const wf = workflows.find(({ id }) => id === currId);
 		if (!wf?.id) return curr || null;
 		return { ...deepMerge(curr, wf || {}), id: curr?.id };
+	},
+	getWorkflowByExample: (example) => {
+		const wf = workflows.find(({ example: ex }) => ex?.text === example);
+		if (!wf?.id) return null;
+		return wf;
 	},
 	// Gets the workflows available to the user
 	// TODO: maybe we need to have a way to include a
@@ -50,18 +65,22 @@ const state = (set, get) => ({
 	// This is the history of the results
 	// { answerId: '', canceled: false,  reason: '', error: false, completed: false, whenFinishedTool: null }[]
 	workflowHistory: window.extAgentData?.workflowHistory || [],
-	// Data for the tool component that shows up at the end of a workflow
-	whenFinishedToolProps: null,
 	addWorkflowResult: (data) => {
+		const workflowId = get().workflow?.id;
+
 		if (data.status === 'completed') {
 			set((state) => {
 				const max = Math.max(0, state.workflowHistory.length - 10);
+
 				return {
-					workflowHistory: [data, ...state.workflowHistory.toSpliced(0, max)],
+					workflowHistory: [
+						{ workflowId, ...data },
+						...state.workflowHistory.toSpliced(0, max),
+					],
 				};
 			});
 		}
-		const workflowId = get().workflow?.id;
+
 		if (!workflowId) return;
 		// Persist it to the server
 		const path = '/extendify/v1/agent/workflows';
@@ -99,6 +118,18 @@ const state = (set, get) => ({
 export const useWorkflowStore = create()(
 	persist(devtools(state, { name: 'Extendify Agent Workflows' }), {
 		name: `extendify-agent-workflows-${window.extSharedData.siteId}`,
+		merge: (persistedState, currentState) => {
+			// if we are in onboarding mode, add the starting workflow
+			if (onboarding) {
+				return {
+					...currentState,
+					...persistedState,
+					workflow: variationsWorkflow,
+					whenFinishedToolProps: onboardingToolProps,
+				};
+			}
+			return { ...currentState, ...persistedState };
+		},
 		partialize: (state) => {
 			const { block, workflowHistory, ...rest } = state;
 			return { ...rest };

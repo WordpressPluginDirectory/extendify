@@ -1,7 +1,6 @@
 import { usePortal } from '@agent/hooks/usePortal';
 import { useWorkflowStore } from '@agent/state/workflows';
 import apiFetch from '@wordpress/api-fetch';
-import { Tooltip } from '@wordpress/components';
 import {
 	createPortal,
 	useCallback,
@@ -242,33 +241,31 @@ export const DOMHighlighter = ({ busy = false }) => {
 	return createPortal(
 		<>
 			{block && !busy ? (
-				<Tooltip text={__('Remove highlight', 'extendify-local')}>
-					{/* biome-ignore lint: Using <button> is complicated with unknown themes */}
-					<div
-						role="button"
-						className={
-							'fixed z-higher h-6 w-6 -translate-y-3.5 cursor-pointer select-none flex items-center justify-center rounded-full text-center font-bold ring-1 ring-black'
-						}
-						tabIndex={0}
-						onClick={() => setBlock(null)}
-						onKeyDown={() => setBlock(null)}
-						style={{
-							top,
-							left: width / 2 + left - 12,
-							backgroundColor: 'var(--wp--preset--color--primary, red)',
-							color: 'var(--wp--preset--color--background, white)',
-						}}
-					>
-						<Icon
-							className="pointer-events-none fill-current leading-none"
-							icon={close}
-							size={18}
-						/>
-						<span className="sr-only">
-							{__('Remove highlight', 'extendify-local')}
-						</span>
-					</div>
-				</Tooltip>
+				// biome-ignore lint: Using <button> is complicated with unknown themes
+				<div
+					role="button"
+					className={
+						'fixed z-higher h-6 w-6 -translate-y-3.5 cursor-pointer select-none flex items-center justify-center rounded-full text-center font-bold ring-1 ring-black'
+					}
+					tabIndex={0}
+					onClick={() => setBlock(null)}
+					onKeyDown={() => setBlock(null)}
+					style={{
+						top,
+						left: width / 2 + left - 12,
+						backgroundColor: 'var(--wp--preset--color--primary, red)',
+						color: 'var(--wp--preset--color--background, white)',
+					}}
+				>
+					<Icon
+						className="pointer-events-none fill-current leading-none"
+						icon={close}
+						size={18}
+					/>
+					<span className="sr-only">
+						{__('Remove highlight', 'extendify-local')}
+					</span>
+				</div>
 			) : null}
 			<motion.div
 				initial={false}

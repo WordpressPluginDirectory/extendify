@@ -10,10 +10,9 @@ export const useGlobalStore = create()(
 				retryAfter: undefined,
 				open: true,
 				minimized: false,
-				seenToolTips: [],
 				showSuggestions: true,
 				// e.g. floating, docked-left, docked-right ?
-				mode: 'floating',
+				mode: window.extAgentData.agentPosition,
 				queuedTour: null,
 				scratch: {},
 				isMobile: window.innerWidth < 768,
@@ -44,11 +43,6 @@ export const useGlobalStore = create()(
 						}
 						return { open: !state.open };
 					}),
-				setSeenToolTip: (name) =>
-					set((state) => {
-						if (state.seenToolTips.includes(name)) return state;
-						return { seenToolTips: [...state.seenToolTips, name] };
-					}),
 				updateRetryAfter: (retryAfter) => set({ retryAfter }),
 				isChatAvailable: () => {
 					const { retryAfter } = get();
@@ -70,8 +64,16 @@ export const useGlobalStore = create()(
 		),
 		{
 			name: `extendify-agent-global-${window.extSharedData.siteId}`,
+			merge: (persistedState, currentState) => {
+				// force open if we hit the success page
+				const open = window.extAgentData?.startOnboarding
+					? true
+					: (persistedState?.open ?? currentState.open);
+				return { ...currentState, ...persistedState, open };
+			},
 			partialize: (state) => {
-				const { showSuggestions, isMobile, ...rest } = state;
+				// mode is determined on the server
+				const { showSuggestions, isMobile, mode, ...rest } = state;
 				return { ...rest };
 			},
 		},

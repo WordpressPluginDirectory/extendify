@@ -14,7 +14,6 @@ const getEditorDocument = () => {
 const transformVibeCSS = (css, slug) => css.replaceAll(slug, 'natural-1');
 
 export const useSiteVibesOverride = ({ css, slug }) => {
-	console.log({ css, slug });
 	const blockStyles = useRef(null);
 	const [theDocument, setDocument] = useState(null);
 	const onEditor = isInEditor();

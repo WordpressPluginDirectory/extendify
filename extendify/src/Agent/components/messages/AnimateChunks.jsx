@@ -1,3 +1,4 @@
+import { customComponents } from '@agent/lib/markdown';
 import { AnimatePresence, motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 
@@ -14,7 +15,11 @@ export const AnimateChunks = ({ words, delay = 0.4, duration = 0.25 }) => {
 					exit={{ opacity: 0 }}
 					transition={{ duration, delay: i * delay }}
 				>
-					{isChars ? word : <ReactMarkdown>{word}</ReactMarkdown>}
+					{isChars ? (
+						word
+					) : (
+						<ReactMarkdown components={customComponents}>{word}</ReactMarkdown>
+					)}
 				</motion.span>
 			))}
 		</AnimatePresence>

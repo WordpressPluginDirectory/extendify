@@ -28,7 +28,7 @@ class WooCommerceImporter
         $response = wp_remote_get(add_query_arg(
             [
                 'wpLanguage' => get_locale(),
-                'siteProfile' => wp_json_encode(get_option('extendify_site_profile')),
+                'siteProfile' => get_option('extendify_site_profile', []),
                 'siteId' => get_option('extendify_site_id'),
                 'version' => Config::$version,
                 'title' => get_bloginfo('name'),

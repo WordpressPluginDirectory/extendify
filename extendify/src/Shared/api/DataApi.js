@@ -1,5 +1,5 @@
 import { AI_HOST, INSIGHTS_HOST } from '@constants';
-import { extraBody } from '@shared/lib/extra-body';
+import { reqDataBasics } from '@shared/lib/data';
 import { useImageGenerationStore } from '@shared/state/generate-images';
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
@@ -13,7 +13,7 @@ export const generateImage = async (imageData, signal) => {
 		body: JSON.stringify({
 			...imageData,
 			globalState: useImageGenerationStore.getState(),
-			...extraBody,
+			...reqDataBasics,
 		}),
 	});
 
@@ -53,7 +53,7 @@ export const recordPluginActivity = async ({ slug, source }) => {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', 'X-Extendify': 'true' },
 			body: JSON.stringify({
-				...extraBody,
+				...reqDataBasics,
 				slug,
 				source,
 				siteCreatedAt: window.extSharedData?.siteCreatedAt,

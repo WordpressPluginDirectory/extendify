@@ -2,8 +2,8 @@
 Contributors: extendify, kbat82, clubkert, arturgrabo
 Tags: templates, patterns, layouts, blocks, gutenberg, layout, template, editor, library, page builder, gutenberg blocks, wordpress blocks
 Requires at least: 6.5
-Tested up to: 6.8
-Stable tag: 2.3.2
+Tested up to: 6.9
+Stable tag: 2.4.1
 Requires PHP: 7.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -88,7 +88,16 @@ Nope! Extendify imports lightweight block-based content that is served directly 
 
 == Changelog ==
 
-= 2.3.2 - 2025-02-18 =
+= 2.4.1 - 2026-03-05 =
+- Fixed a bug where the category couldn't be changed in the library
+
+= 2.4.0 - 2026-02-26 =
+- Added support for new theme variations
+- Updated translations
+- Fixed plugin z-index conflicts with other plugins
+- Various bug fixes and improvements
+
+= 2.3.2 - 2026-02-18 =
 - Various bug fixes and improvements
 
 = 2.3.1 - 2025-12-17 =

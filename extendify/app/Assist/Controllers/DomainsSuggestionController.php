@@ -66,8 +66,8 @@ class DomainsSuggestionController
             return new \WP_REST_Response([]);
         }
 
-        $siteProfile = \get_option('extendify_site_profile', ['aiDescription' => '']);
-        $businessDescription = ($siteProfile['aiDescription'] ?? '');
+        $siteProfile = \get_option('extendify_site_profile', []);
+        $businessDescription = ($siteProfile['description'] ?? '');
         $data = [
             'query' => self::cleanSiteTitle($siteName),
             'devbuild' => defined('EXTENDIFY_DEVMODE')
@@ -78,7 +78,6 @@ class DomainsSuggestionController
             'partnerId' => \esc_attr(constant('EXTENDIFY_PARTNER_ID')),
             'wpLanguage' => \get_locale(),
             'wpVersion' => \get_bloginfo('version'),
-            'siteTypeName' => \esc_attr(\get_option('extendify_siteType', ['name' => ''])['name']),
             'businessDescription' => \esc_attr($businessDescription),
         ];
 

@@ -193,6 +193,7 @@ export const CreatingSite = () => {
 			await waitFor200Response();
 
 			const selectedVibe = style?.siteStyle?.vibe;
+			const selectedAnimation = style?.siteStyle?.animation;
 			if (selectedVibe && selectedVibe !== 'natural-1') {
 				inform(
 					// translators: "site style" refers to the structural aesthetic style for the site.
@@ -257,6 +258,17 @@ export const CreatingSite = () => {
 					colorPalette: null,
 				},
 			);
+
+			// Store animation settings if present
+			if (selectedAnimation) {
+				await waitFor200Response();
+				// Handle both string and object formats
+				const animationSettings =
+					typeof selectedAnimation === 'string'
+						? { type: selectedAnimation, speed: 'medium' }
+						: selectedAnimation;
+				await updateOption('extendify_animation_settings', animationSettings);
+			}
 
 			// Add required plugins to the end of the list to give them lower priority
 			// when filtering out duplicates.

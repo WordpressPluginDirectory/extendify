@@ -63,12 +63,7 @@ class SimplyBook
                 'title' => \get_bloginfo('name'),
                 'wpLanguage' => \get_locale(),
                 'version' => \Extendify\Config::$version,
-                'siteProfile' => \get_option('extendify_site_profile', [
-                    'aiSiteType' => '',
-                    'aiSiteCategory' => '',
-                    'aiDescription' => '',
-                    'aiKeywords' => [],
-                ]),
+                'siteProfile' => \get_option('extendify_site_profile', []),
                 'siteId' => \get_option('extendify_site_id', ''),
                 'partnerId' => PartnerData::$id,
                 'devbuild' => (bool) is_readable(EXTENDIFY_PATH . '.devbuild'),

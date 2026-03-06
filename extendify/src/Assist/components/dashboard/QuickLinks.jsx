@@ -12,7 +12,8 @@ import {
 } from '@wordpress/icons';
 import classNames from 'classnames';
 
-const { themeSlug, adminUrl, devbuild, isBlockTheme } = window.extSharedData;
+const { themeSlug, adminUrl, devbuild, isBlockTheme, useAgentOnboarding } =
+	window.extSharedData;
 const { hasCustomizer, editSiteNavigationMenuLink } = window.extAssistData;
 
 const showRestartLaunch =
@@ -79,7 +80,9 @@ export const QuickLinks = ({ className }) => {
 		{
 			// translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
 			title: __('Reset site', 'extendify-local'),
-			link: `${adminUrl}admin.php?page=extendify-launch`,
+			link: useAgentOnboarding
+				? `${adminUrl}admin.php?page=extendify-auto-launch`
+				: `${adminUrl}admin.php?page=extendify-launch`,
 			slug: 'reset-site',
 			icon: reusableBlock,
 			show: showRestartLaunch && themeSlug === 'extendable',

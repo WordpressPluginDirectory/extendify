@@ -8,6 +8,8 @@ namespace Extendify\Agent\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Shared\Services\Sanitizer;
+
 /**
  * The controller for interacting with WordPress.
  */
@@ -384,5 +386,43 @@ class WPController
         update_post_meta($postId, '_edit_lock', time() . ':' . get_current_user_id());
 
         return new \WP_REST_Response(['success' => true]);
+    }
+
+    /**
+     * Persist the data
+     *
+     * @param \WP_REST_Request $request - The request.
+     * @return \WP_REST_Response
+     */
+    public static function updateOption($request)
+    {
+        $params = $request->get_json_params();
+        $key = $params['option'];
+        $sanitized = Sanitizer::sanitizeUnknown($params['value']);
+
+        if (strpos($key, 'extendify_') === 0) {
+            $key = substr($key, 10);
+        }
+        \update_option('extendify_' . $key, $sanitized);
+
+        return new \WP_REST_Response('OK');
+    }
+
+    /**
+     * Get the data
+     *
+     * @param \WP_REST_Request $request - The request.
+     * @return \WP_REST_Response
+     */
+    public static function getOption($request)
+    {
+        $key = $request->get_param('option');
+
+        if (strpos($key, 'extendify_') === 0) {
+            $key = substr($key, 10);
+        }
+        $value = \get_option('extendify_' . $key, null);
+
+        return new \WP_REST_Response($value);
     }
 }
