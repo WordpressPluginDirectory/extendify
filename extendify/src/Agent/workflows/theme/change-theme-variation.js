@@ -1,6 +1,7 @@
 import { RedirectThemeVariations } from '@agent/components/redirects/RedirectThemeVariations';
 import { SelectThemeVariation } from '@agent/workflows/theme/components/SelectThemeVariation';
 import { __ } from '@wordpress/i18n';
+import { color } from '@wordpress/icons';
 
 const { context, abilities } = window.extAgentData;
 
@@ -14,7 +15,7 @@ export default {
 	},
 	example: {
 		// translators: "theme colors" refers to the color palette variation for the current theme.
-		text: __('Change Theme Colors', 'extendify-local'),
+		text: __('Change website colors', 'extendify-local'),
 		agentResponse: {
 			// translators: This message show above a UI where the user can select a different color variation for their theme.
 			reply: __(
@@ -30,4 +31,5 @@ export default {
 			},
 		},
 	},
+	icon: color,
 };

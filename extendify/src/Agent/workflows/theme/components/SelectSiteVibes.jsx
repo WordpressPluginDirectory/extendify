@@ -1,7 +1,13 @@
 import { useSiteVibesOverride } from '@agent/hooks/useSiteVibesOverride';
 import { useSiteVibesVariations } from '@agent/hooks/useSiteVibesVariations';
 import { useChatStore } from '@agent/state/chat';
-import { Fragment, useEffect, useMemo, useState } from '@wordpress/element';
+import {
+	Fragment,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
@@ -11,6 +17,13 @@ export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 	const css = selected ? styles[selected] : '';
 	const { undoChange } = useSiteVibesOverride({ css, slug: selected });
 	const noVibes = !vibes || vibes.length === 0;
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		return () => {
+			if (!confirmed.current) undoChange();
+		};
+	}, []);
 	const shuffled = useMemo(
 		() => (vibes ? [...vibes].sort(() => Math.random() - 0.5) : []),
 		[vibes],
@@ -19,12 +32,8 @@ export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 
 	const handleConfirm = () => {
 		if (!selected) return;
+		confirmed.current = true;
 		onConfirm({ data: { selectedVibe: selected }, shouldRefreshPage: true });
-	};
-
-	const handleCancel = () => {
-		undoChange();
-		onCancel();
 	};
 
 	useEffect(() => {
@@ -37,7 +46,7 @@ export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 		const timer = setTimeout(() => onCancel(), 100);
 		// translators: "site style" refers to the structural aesthetic style for the site.
 		const content = __(
-			'We were unable to find any site style for your theme.',
+			'We were unable to find any website style for your theme.',
 			'extendify-local',
 		);
 		const last = messages.at(-1)?.details?.content;
@@ -52,7 +61,7 @@ export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 			<div className="min-h-24 p-2 text-center text-sm">
 				{
 					// translators: "site style" refers to the structural aesthetic style for the site.
-					__('Loading site style options...', 'extendify-local')
+					__('Loading website style options...', 'extendify-local')
 				}
 			</div>
 		);
@@ -116,7 +125,7 @@ export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 				<button
 					type="button"
 					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
-					onClick={handleCancel}
+					onClick={onCancel}
 				>
 					{__('Cancel', 'extendify-local')}
 				</button>

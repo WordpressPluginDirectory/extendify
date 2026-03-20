@@ -1,6 +1,7 @@
 import { Redirect } from '@agent/workflows/theme/components/Redirect';
 import { SelectThemeFontsVariation } from '@agent/workflows/theme/components/SelectThemeFontsVariation';
 import { __ } from '@wordpress/i18n';
+import { typography } from '@wordpress/icons';
 
 const { context, abilities } = window.extAgentData;
 
@@ -20,7 +21,7 @@ export default {
 	},
 	example: {
 		// translators: "theme fonts" refers to the font variation for the current theme.
-		text: __('Change Theme Fonts', 'extendify-local'),
+		text: __('Change website fonts', 'extendify-local'),
 		agentResponse: {
 			// translators: This message show above a UI where the user can select a different font variation for their theme.
 			reply: __(
@@ -36,4 +37,5 @@ export default {
 			},
 		},
 	},
+	icon: typography,
 };

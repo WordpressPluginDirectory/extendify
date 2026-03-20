@@ -14,7 +14,12 @@ const url = `${PATTERNS_HOST}/api/home`;
 const method = 'POST';
 const headers = { 'Content-Type': 'application/json' };
 
-export const handleHome = async ({ siteProfile, sitePlugins, siteImages }) => {
+export const handleHome = async ({
+	siteProfile,
+	sitePlugins,
+	siteImages,
+	aiHeaders,
+}) => {
 	// translators: this is for a action log UI. Keep it short
 	setStatus(__('Preparing your home page', 'extendify-local'));
 
@@ -23,6 +28,7 @@ export const handleHome = async ({ siteProfile, sitePlugins, siteImages }) => {
 		siteProfile,
 		siteImages,
 		sitePlugins,
+		aiHeaders,
 	});
 
 	const response = await retryTwice(() =>

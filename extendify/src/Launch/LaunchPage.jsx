@@ -59,7 +59,28 @@ export const LaunchPage = () => {
 
 	useEffect(() => {
 		// Add editor styles to use for live previews
-		updateSettings(safeParseJson(window.extOnbData.editorStyles));
+		let editorStyles = window.extOnbData.editorStyles;
+		const settings = safeParseJson(editorStyles);
+
+		// Fix asset URLs when the site is accessed via a different domain than
+		// configured (e.g., temporary/staging URLs in hosted environments).
+		// This prevents CORS errors with fonts in BlockPreview iframes.
+		const baseURL = settings?.styles?.find((s) => s.baseURL)?.baseURL;
+		if (baseURL) {
+			try {
+				const configuredHost = new URL(baseURL).host;
+				const currentHost = window.location.host;
+				if (configuredHost !== currentHost) {
+					editorStyles = editorStyles.replaceAll(configuredHost, currentHost);
+					updateSettings(safeParseJson(editorStyles));
+					return;
+				}
+			} catch (_e) {
+				// Invalid URL, skip rewriting
+			}
+		}
+
+		updateSettings(settings);
 	}, [updateSettings]);
 
 	useEffect(() => {

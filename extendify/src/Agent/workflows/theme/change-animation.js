@@ -1,5 +1,6 @@
 import { SelectAnimation } from '@agent/workflows/theme/components/SelectAnimation';
 import { __ } from '@wordpress/i18n';
+import { swatch } from '@wordpress/icons';
 
 const { abilities } = window.extAgentData;
 
@@ -9,7 +10,7 @@ export default {
 	whenFinished: { component: SelectAnimation },
 	example: {
 		// translators: "site animation" refers to the animation style for the current site.
-		text: __('Change Site Animation', 'extendify-local'),
+		text: __('Change website animation', 'extendify-local'),
 		agentResponse: {
 			// translators: This message show above a UI where the user can select a different animation for their site.
 			reply: __(
@@ -25,4 +26,5 @@ export default {
 			},
 		},
 	},
+	icon: swatch,
 };

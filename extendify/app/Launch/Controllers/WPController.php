@@ -128,6 +128,10 @@ class WPController
         \update_option('extendify_check_for_image_imports', true, false);
         \delete_transient('extendify_import_images_check_delay');
 
+        \update_option('extendify_onboarding_completed', gmdate('Y-m-d\TH:i:s\Z'));
+
+        \do_action('extendify_after_launch');
+
         return new \WP_REST_Response(['success' => true]);
     }
 }

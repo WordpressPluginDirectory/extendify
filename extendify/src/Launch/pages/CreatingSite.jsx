@@ -578,10 +578,6 @@ export const CreatingSite = () => {
 			await new Promise((resolve) => setTimeout(resolve, 2500));
 
 			await waitFor200Response();
-			await updateOption(
-				'extendify_onboarding_completed',
-				new Date().toISOString(),
-			);
 		} catch (e) {
 			console.error(e);
 			// if the error is 4xx, we should stop trying and prompt them to reload

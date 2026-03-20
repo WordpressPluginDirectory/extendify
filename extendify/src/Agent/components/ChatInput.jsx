@@ -165,7 +165,7 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 				id="extendify-agent-chat-textarea"
 				disabled={disabled}
 				className={classNames(
-					'flex max-h-[calc(75dvh)] min-h-10 w-full resize-none overflow-y-auto bg-transparent px-2 pb-4 pt-2.5 text-base placeholder:text-gray-700 focus:shadow-none focus:outline-hidden disabled:opacity-50 md:text-sm border-none text-gray-900',
+					'flex max-h-[calc(75dvh)] min-h-16 w-full resize-none overflow-y-auto bg-transparent px-2 pb-4 pt-2.5 text-base placeholder:text-gray-700 focus:shadow-none focus:outline-hidden disabled:opacity-50 md:text-sm border-none text-gray-900',
 				)}
 				placeholder={
 					block

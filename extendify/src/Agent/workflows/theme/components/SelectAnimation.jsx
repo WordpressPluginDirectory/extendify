@@ -3,7 +3,7 @@ import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
-import { useEffect, useRef, useState } from '@wordpress/element';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __, _x } from '@wordpress/i18n';
 import {
 	flipVertical,
@@ -65,17 +65,26 @@ export const SelectAnimation = ({ onConfirm, onCancel, onLoad }) => {
 	const [touched, setTouched] = useState(0);
 	const [speed, setSpeed] = useState(null);
 	const [loading, setLoading] = useState(true);
+	const undoAnimation = useCallback(() => {
+		if (!touched) return;
+		window.ExtendableAnimations?.setType(initialSettings.current.type);
+		window.ExtendableAnimations?.setSpeed(initialSettings.current.speed);
+	}, [touched]);
+
+	const confirmed = useRef(false);
+	// Ref keeps the latest undo function, so clean-up always sees the current `touched` state.
+	const undoRef = useRef(undoAnimation);
+	undoRef.current = undoAnimation;
+	useEffect(() => {
+		return () => {
+			if (!confirmed.current) undoRef.current();
+		};
+	}, []);
 
 	const handleConfirm = () => {
 		if (!animation || !speed || loading) return;
+		confirmed.current = true;
 		onConfirm({ data: { type: animation, speed } });
-	};
-
-	const handleCancel = () => {
-		if (!touched) return onCancel();
-		window.ExtendableAnimations.setType(initialSettings.current.type);
-		window.ExtendableAnimations.setSpeed(initialSettings.current.speed);
-		onCancel();
 	};
 
 	useEffect(() => {
@@ -157,7 +166,7 @@ export const SelectAnimation = ({ onConfirm, onCancel, onLoad }) => {
 				<button
 					type="button"
 					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
-					onClick={handleCancel}
+					onClick={onCancel}
 				>
 					{__('Cancel', 'extendify-local')}
 				</button>

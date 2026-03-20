@@ -30,9 +30,9 @@ export const urlParamsShape = z.object({
 		.optional()
 		.catch(() => ''),
 	tone: z
-		.string()
+		.array(z.string())
 		.optional()
-		.catch(() => ''),
+		.catch(() => []),
 	products: z
 		.union([z.string(), z.literal(false)])
 		.optional()
@@ -66,9 +66,9 @@ export const urlParamsShape = z.object({
 		.optional()
 		.catch(() => false),
 	'landing-page': z
-		.boolean()
+		.string()
 		.optional()
-		.catch(() => false),
+		.catch(() => ''),
 	'cta-link': z
 		.union([z.boolean(), z.string()])
 		.optional()
@@ -91,7 +91,11 @@ export const overrideWithUrlParams = (urlParams) => {
 		'cta-link': landingPageCTALink,
 		...rest
 	} = urlParams;
-	const mapped = { ...rest, landingPage, landingPageCTALink };
+	const mapped = {
+		...rest,
+		landingPage: landingPage === 'clickthrough' || undefined,
+		landingPageCTALink,
+	};
 
 	return Object.fromEntries(
 		Object.entries(mapped).filter(([, v]) => v !== undefined && v !== ''),

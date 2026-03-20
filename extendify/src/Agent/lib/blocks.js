@@ -43,6 +43,31 @@ export const walkAndUpdateImageDetails = (inputs, newImage) => {
 
 				return { ...block, attributes: attrs };
 			}
+			if (['core/media-text'].includes(block.name)) {
+				const attrs = { ...block.attributes };
+				const url = inputs.url.includes('unsplash.com')
+					? inputs.url.split('?')[0] // For unsplash just match the base URL
+					: inputs.url;
+				// media-text block may not have all the attributes if the image was external.
+				const isMatchingId = attrs?.mediaId === inputs.imageId;
+				const isMatchingMediaLink = attrs?.mediaLink?.startsWith(url);
+				const isMatchingMediaUrl = attrs?.mediaUrl?.startsWith(url);
+				if (!isMatchingId && !isMatchingMediaLink && !isMatchingMediaUrl) {
+					// Not our image, return as is
+					return { ...block, attributes: attrs };
+				}
+				attrs.mediaLink = newImage.source_url || newImage.url;
+				attrs.mediaUrl = newImage.source_url || newImage.url;
+				attrs.mediaId = newImage.id;
+				// Remove import class if present
+				if (attrs.className) {
+					attrs.className = attrs.className
+						.split(' ')
+						.filter((cn) => cn !== 'extendify-image-import')
+						.join(' ');
+				}
+				return { ...block, attributes: attrs };
+			}
 			if (block.innerBlocks && block.innerBlocks.length > 0) {
 				return {
 					...block,

@@ -1,6 +1,7 @@
 import { Redirect } from '@agent/workflows/theme/components/Redirect';
 import { SelectSiteVibes } from '@agent/workflows/theme/components/SelectSiteVibes';
 import { __ } from '@wordpress/i18n';
+import { brush } from '@wordpress/icons';
 
 const { context, abilities } = window.extAgentData;
 
@@ -22,7 +23,7 @@ export default {
 	whenFinished: { component: SelectSiteVibes },
 	example: {
 		// translators: "site style" refers to the structural aesthetic style for the site.
-		text: __('Change Site Style', 'extendify-local'),
+		text: __('Change website style', 'extendify-local'),
 		agentResponse: {
 			// translators: This message show above a UI where the user can select a different site style variation for their theme.
 			reply: __(
@@ -38,4 +39,5 @@ export default {
 			},
 		},
 	},
+	icon: brush,
 };

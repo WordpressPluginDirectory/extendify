@@ -1,8 +1,9 @@
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import apiFetch from '@wordpress/api-fetch';
-import { Button, Spinner } from '@wordpress/components';
+import { Spinner } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
+import { chevronRight, Icon } from '@wordpress/icons';
 
 export const RestartLaunchModal = ({ pages }) => {
 	const { resetSiteInformation } = window.extLaunchData;
@@ -109,28 +110,28 @@ export const RestartLaunchModal = ({ pages }) => {
 	};
 
 	return (
-		<div className="flex w-full flex-col max-w-5xl p-6 lg:p-10">
-			<h2 className="text-lg text-center text-gray-900 font-semibold px-4 py-0 m-0 mb-4">
+		<div className="flex w-full flex-col gap-6 p-6">
+			<h2 className="text-2xl leading-8 text-left text-gray-900 font-medium py-0 m-0">
 				{__('Start Over?', 'extendify-local')}
 			</h2>
-			<div className="relative mx-auto w-full max-w-xl text-gray-900">
-				<p className="m-0 mb-4 text-base">
+
+			<div className="flex flex-col gap-3">
+				<p className="text-base leading-6 text-left text-gray-900 m-0">
 					{__(
 						'It looks like you have been here before. We need to clean up some things before we can continue.',
 						'extendify-local',
 					)}
 				</p>
-				<p>
-					<strong>
-						{sprintf(
-							// translators: %3$s is the number of old pages
-							__('%s pages/posts will be deleted.', 'extendify-local'),
-							pages.length,
-						)}
-					</strong>
+				<p className="text-base leading-6 text-left text-gray-900 font-medium m-0">
+					{sprintf(
+						// translators: %3$s is the number of old pages
+						__('%s pages/posts will be deleted.', 'extendify-local'),
+						pages.length,
+					)}
 				</p>
 			</div>
-			<div className="flex justify-end gap-2">
+
+			<div className="flex justify-between items-center mt-2">
 				<Nav
 					handleOk={handleOk}
 					handleExit={handleExit}
@@ -142,32 +143,37 @@ export const RestartLaunchModal = ({ pages }) => {
 };
 
 const Nav = ({ handleOk, handleExit, processing }) => {
-	if (processing) {
-		return (
-			<Button
-				variant="primary"
-				onClick={handleOk}
-				disabled={processing}
-				className="flex gap-2 items-center"
-			>
-				<Spinner className="m-0" />
-				<div>{__('Processing...', 'extendify-local')}</div>
-			</Button>
-		);
-	}
 	return (
 		<>
-			<Button
-				variant="secondary"
-				size=""
+			<button
+				type="button"
 				onClick={handleExit}
 				disabled={processing}
+				className="inline-flex items-center gap-2 rounded-full ring-1 ring-gray-800 px-3 py-2.5 text-sm leading-5 font-normal text-gray-800 transition-colors hover:bg-gray-600/5 disabled:opacity-40"
 			>
-				{__('Exit', 'extendify-local')}
-			</Button>
-			<Button variant="primary" onClick={handleOk} disabled={processing}>
-				{__('Delete and start over', 'extendify-local')}
-			</Button>
+				<span className="px-1">{__('Exit', 'extendify-local')}</span>
+			</button>
+			{processing ? (
+				<button
+					type="button"
+					disabled
+					className="inline-flex items-center justify-center gap-2 rounded-full border-0 bg-design-main px-3 py-2 text-sm leading-5 font-normal text-design-text disabled:opacity-40"
+				>
+					<Spinner className="m-0" />
+					<span className="px-1">{__('Processing...', 'extendify-local')}</span>
+				</button>
+			) : (
+				<button
+					type="button"
+					onClick={handleOk}
+					className="inline-flex items-center justify-center rounded-full border-0 bg-design-main px-3 py-2 text-sm leading-5 font-normal text-design-text group hover:opacity-90 transition-opacity"
+				>
+					<span className="px-1">
+						{__('Delete and start over', 'extendify-local')}
+					</span>
+					<Icon fill="currentColor" icon={chevronRight} size={24} />
+				</button>
+			)}
 		</>
 	);
 };

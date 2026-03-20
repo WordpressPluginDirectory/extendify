@@ -110,21 +110,19 @@ export const InstallPlugin = ({ inputs, onConfirm, onCancel }) => {
 	return (
 		<Wrapper>
 			<Content>
-				<div className="flex flex-col gap-2">
+				<div className="flex flex-col gap-3">
 					<p className="m-0 p-0 text-sm text-gray-900">
 						{__(
 							'The agent is requesting to install and activate a plugin.',
 							'extendify-local',
 						)}
 					</p>
-					<div className="flex justify-between gap-1">
+					<div className="flex-col gap-1">
 						{inputs.pluginName && (
-							<div className="text-base flex-1 font-bold">
-								{inputs.pluginName}
-							</div>
+							<div className="flex-1 font-bold">{inputs.pluginName}</div>
 						)}
 						<a
-							className="flex flex-1 items-end text-gray-900 hover:text-gray-900 hover:decoration-solid"
+							className="text-xs flex flex-1 items-end text-gray-900 hover:text-gray-900 hover:decoration-solid"
 							href={`https://wordpress.org/plugins/${inputs.pluginSlug}`}
 							target="_blank"
 							rel="noopener noreferrer"

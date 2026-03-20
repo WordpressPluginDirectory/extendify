@@ -1,23 +1,29 @@
 import apiFetch from '@wordpress/api-fetch';
-import { useCallback, useEffect, useState } from '@wordpress/element';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 export const UpdateMenuConfirm = ({ inputs, onConfirm, onCancel }) => {
 	const [originalMenu, setOriginalMenu] = useState('');
 	const { replacements, id } = inputs ?? {};
-
-	const handleConfirm = () => {
-		onConfirm({ data: inputs });
-	};
-
-	const handleCancel = useCallback(() => {
-		onCancel();
+	const undoMenu = useCallback(() => {
 		const nav = document.querySelector(`[data-extendify-menu-id="${id}"]`);
-
-		if (nav) {
+		if (nav && originalMenu) {
 			nav.innerHTML = originalMenu;
 		}
-	}, [onCancel, id, originalMenu]);
+	}, [id, originalMenu]);
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		if (!originalMenu) return;
+		return () => {
+			if (!confirmed.current) undoMenu();
+		};
+	}, [originalMenu]);
+
+	const handleConfirm = () => {
+		confirmed.current = true;
+		onConfirm({ data: inputs });
+	};
 
 	useEffect(() => {
 		const nav = document.querySelector(`[data-extendify-menu-id="${id}"]`);
@@ -63,7 +69,7 @@ export const UpdateMenuConfirm = ({ inputs, onConfirm, onCancel }) => {
 				<button
 					type="button"
 					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
-					onClick={handleCancel}
+					onClick={onCancel}
 				>
 					{__('Cancel', 'extendify-local')}
 				</button>

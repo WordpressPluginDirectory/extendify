@@ -11,8 +11,8 @@ export const useLockPost = ({ postId, enabled }) => {
 				method: 'POST',
 				data: { postId },
 			}).catch(() => undefined);
-			// lock auto removes every 15 minutes
-			timeoutId = setTimeout(lockPost, 14 * 60 * 1000);
+			// Send lock post signal every 5 minutes
+			timeoutId = setTimeout(lockPost, 5 * 60 * 1000);
 		};
 		lockPost();
 		return () => clearTimeout(timeoutId);

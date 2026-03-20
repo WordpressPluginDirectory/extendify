@@ -16,33 +16,31 @@ export const UpdateBlockConfirm = ({
 	const [loading, setLoading] = useState(true);
 	const detachedEl = useRef(null);
 
+	const undoBlockChange = useCallback(() => {
+		const el = document.querySelector('[data-extendify-temp-replacement]');
+		if (detachedEl.current) {
+			el?.parentNode?.insertBefore(detachedEl.current, el);
+			detachedEl.current = null;
+		}
+		if (el) el.remove();
+	}, []);
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		return () => {
+			if (!confirmed.current) undoBlockChange();
+		};
+	}, []);
+
 	const handleConfirm = async () => {
+		confirmed.current = true;
 		await onConfirm({ data: inputs, shouldRefreshPage: true });
 	};
 
-	const handleCancel = useCallback(() => {
-		// remove the new block we added
-		const el = document.querySelector('[data-extendify-temp-replacement]');
-		// unhide the block
-		if (detachedEl.current) {
-			el?.parentNode?.insertBefore(detachedEl.current, el);
-			detachedEl.current = null;
-		}
-		if (el) el.remove();
-		onCancel();
-	}, [onCancel]);
-
 	const handleRetry = useCallback(() => {
-		// remove the new block we added
-		const el = document.querySelector('[data-extendify-temp-replacement]');
-		// unhide the block
-		if (detachedEl.current) {
-			el?.parentNode?.insertBefore(detachedEl.current, el);
-			detachedEl.current = null;
-		}
-		if (el) el.remove();
+		undoBlockChange();
 		onRetry();
-	}, [onRetry]);
+	}, [undoBlockChange, onRetry]);
 
 	useEffect(() => {
 		apiFetch({
@@ -80,6 +78,15 @@ export const UpdateBlockConfirm = ({
 				newEl.classList.add(className);
 			});
 			newEl.setAttribute('data-extendify-temp-replacement', true);
+			// Strip animation classes so the preview is visible immediately.
+			// The ext-animate--on class sets opacity:0 as initial state, but
+			// the animation JS won't re-run on replaced DOM elements.
+			for (const node of [
+				newEl,
+				...newEl.querySelectorAll('.ext-animate--on'),
+			]) {
+				node.classList.remove('ext-animate--on');
+			}
 			el.parentNode.insertBefore(newEl, el.nextSibling);
 			el.parentNode?.removeChild(el);
 			setLoading(false);
@@ -107,7 +114,7 @@ export const UpdateBlockConfirm = ({
 				<button
 					type="button"
 					className="flex-1 rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
-					onClick={handleCancel}
+					onClick={onCancel}
 				>
 					{__('Cancel', 'extendify-local')}
 				</button>

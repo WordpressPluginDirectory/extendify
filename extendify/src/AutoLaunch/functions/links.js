@@ -114,7 +114,7 @@ export const updateSinglePageLinksToSections = async (
 ) => {
 	let homePageContent = wpPages?.[0]?.content?.raw;
 	if (!homePageContent) return wpPages;
-	const { objective, activePlugins } = options;
+	const { objective, activePlugins, landingPageCTALink } = options;
 
 	/**
 	 * Special case handling for landing page sites.
@@ -124,11 +124,15 @@ export const updateSinglePageLinksToSections = async (
 	 * This function updates the home page content and returns the updated pages array.
 	 */
 	if (objective === 'landing-page') {
+		const ctaHref =
+			landingPageCTALink && typeof landingPageCTALink === 'string'
+				? landingPageCTALink
+				: '#';
 		wpPages[0] = updatePage({
 			id: wpPages[0].id,
 			content: homePageContent.replaceAll(
 				/href="(#extendify-[\w|-]+)"/gi,
-				'href="#"',
+				`href="${ctaHref}"`,
 			),
 		});
 
@@ -172,15 +176,27 @@ export const updateSinglePageLinksToSections = async (
 		pluginPages.push('events');
 	}
 
+	const allAvailablePages = (patternTypes ?? []).concat(pluginPages);
+	if (!allAvailablePages.length) {
+		wpPages[0] = updatePage({
+			id: wpPages[0].id,
+			content: homePageContent.replaceAll(
+				/href="(#extendify-[\w|-]+)"/gi,
+				'href="#"',
+			),
+		});
+		return wpPages;
+	}
+
 	// get the suggested links from the AI and send both the patterns and the plugin pages.
 	const { suggestedLinks } =
 		(await getLinkSuggestions({
 			pageContent: homePageContent,
-			availablePages: patternTypes.concat(pluginPages),
+			availablePages: allAvailablePages,
 		})) || {};
 
 	// replace the links
-	homePageContent = Object.keys(suggestedLinks).reduce((content, key) => {
+	homePageContent = Object.keys(suggestedLinks ?? {}).reduce((content, key) => {
 		const slug = suggestedLinks[key];
 
 		if (!slug) return content;

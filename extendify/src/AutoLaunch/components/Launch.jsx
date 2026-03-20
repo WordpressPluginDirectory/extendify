@@ -2,7 +2,7 @@ import { CreatingSite } from '@auto-launch/components/CreatingSite';
 import { DescriptionGathering } from '@auto-launch/components/DescriptionGathering';
 import { motion } from 'framer-motion';
 
-const MAX_HEIGHT_SMALL = 248;
+const MAX_HEIGHT_SMALL = 400;
 
 export const Launch = ({ needsDescription, lastHeight }) => {
 	if (needsDescription) {

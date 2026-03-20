@@ -1,10 +1,12 @@
 import { usePortal } from '@agent/hooks/usePortal';
+import { isChangeSiteDesignWorkflowAvailable } from '@agent/lib/util';
 import animationWorkflow from '@agent/workflows/theme/change-animation';
+import changeSiteDesignWorkflow from '@agent/workflows/theme/change-site-design';
 import vibesWorkflow from '@agent/workflows/theme/change-site-vibes';
 import fontsWorkflow from '@agent/workflows/theme/change-theme-fonts-variation';
 import variationWorkflow from '@agent/workflows/theme/change-theme-variation';
 import { createPortal, useEffect, useRef, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import { Icon, moreVertical } from '@wordpress/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -20,6 +22,7 @@ export const OptionsPopover = () => {
 		setTopRight({
 			top: rect.bottom + 4,
 			right: window.innerWidth - rect.right,
+			left: rect.left,
 		});
 	};
 	const onClose = () => {
@@ -61,7 +64,7 @@ export const OptionsPopover = () => {
 			<button
 				ref={buttonRef}
 				type="button"
-				className="relative z-10 flex justify-center h-6 w-6 items-center border-0 bg-banner-main text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main focus:ring-2 hover:bg-gray-100 rounded-md"
+				className="relative z-10 flex justify-center h-6 w-6 items-center border-0 bg-banner-main text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main focus:ring-2 hover:opacity-80 rounded-sm"
 				onClick={onOpen}
 				aria-expanded={topRight ? 'true' : 'false'}
 				aria-haspopup="true"
@@ -80,16 +83,36 @@ export const OptionsPopover = () => {
 };
 
 const buttons = [
-	{ name: fontsWorkflow.example.text, available: fontsWorkflow.available },
+	{
+		name: fontsWorkflow.example.text,
+		available: fontsWorkflow.available,
+		icon: fontsWorkflow.icon,
+	},
 	{
 		name: variationWorkflow.example.text,
 		available: variationWorkflow.available,
+		icon: variationWorkflow.icon,
 	},
-	{ name: vibesWorkflow.example.text, available: vibesWorkflow.available },
+	{
+		name: vibesWorkflow.example.text,
+		available: vibesWorkflow.available,
+		icon: vibesWorkflow.icon,
+	},
 	{
 		name: animationWorkflow.example.text,
 		available: animationWorkflow.available,
+		icon: animationWorkflow.icon,
 	},
+	...(isChangeSiteDesignWorkflowAvailable()
+		? [
+				{
+					name: changeSiteDesignWorkflow.example.text,
+					available: changeSiteDesignWorkflow.available,
+					onSelect: changeSiteDesignWorkflow.onSelect,
+					icon: changeSiteDesignWorkflow.icon,
+				},
+			]
+		: []),
 ];
 
 const Popover = ({ position, onClose, firstItemRef }) => {
@@ -106,8 +129,11 @@ const Popover = ({ position, onClose, firstItemRef }) => {
 
 	return (
 		<motion.div
-			className="fixed max-w-50 rounded-md bg-white shadow-xl py-2 z-max flex flex-col items-start justify-center gap-1 focus:outline-none border border-gray-300"
-			style={{ top: position.top, right: position.right }}
+			className="fixed w-fit whitespace-nowrap rounded-md bg-white shadow-xl py-2 z-max flex flex-col items-start justify-center gap-1 focus:outline-none border border-gray-300"
+			style={{
+				top: position.top,
+				...(isRTL() ? { left: position.left } : { right: position.right }),
+			}}
 			initial={{ opacity: 0, scale: 0.95 }}
 			animate={{ opacity: 1, scale: 1 }}
 			exit={{ opacity: 0, scale: 0.95 }}
@@ -136,11 +162,11 @@ const Popover = ({ position, onClose, firstItemRef }) => {
 		>
 			{buttons
 				.filter(({ available }) => available())
-				.map(({ name }, i) => (
+				.map(({ name, icon }, i) => (
 					<button
 						key={name}
 						type="button"
-						className="w-full px-4 py-2 text-sm text-gray-900 text-left hover:bg-gray-100 focus:ring-2 focus:ring-design-main focus:outline-none"
+						className="w-full inline-flex gap-0.5 items-center  px-4 py-2 text-sm text-gray-900 text-left hover:bg-gray-100 focus:ring-2 focus:ring-design-main focus:outline-none capitalize"
 						ref={i === 0 ? firstItemRef : null}
 						role="menuitem"
 						onClick={() => {
@@ -152,6 +178,7 @@ const Popover = ({ position, onClose, firstItemRef }) => {
 							onClose();
 						}}
 					>
+						{icon ? <Icon icon={icon} /> : null}
 						{name}
 					</button>
 				))}

@@ -7,7 +7,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           2.4.1
+ * Version:           3.0.0
  * Requires at least: 6.5
  * Requires PHP:      7.0
  * License:           GPL-2.0-or-later
@@ -153,4 +153,36 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
 
         return $args;
     }, 100, 2);
+
+    // Clean up the site profile if being accessed
+    add_filter('option_extendify_site_profile', function ($value) {
+        $profile = is_string($value) ? json_decode($value, true) : $value;
+        $profile = is_array($profile) ? $profile : [];
+
+        $map = [
+            'aiSiteType'     => 'type',
+            'aiTitle'        => 'title',
+            'aiDescription'  => 'description',
+            'aiObjective'    => 'objective',
+            'aiSiteCategory' => 'category',
+            'aiStructure'    => 'structure',
+            'aiKeywords'     => 'imageSearchTerms',
+            'logoObjectName' => 'logoObjectName',
+        ];
+
+        foreach ($map as $old => $new) {
+            if (!array_key_exists($new, $profile)) {
+                $profile[$new] = $profile[$old] ?? null;
+            }
+        }
+
+        // if tone is set and is not array (and ensure lowercase)
+        if (isset($profile['tone']) && !is_array($profile['tone'])) {
+            $profile['tone'] = array_map(function ($v) {
+                return strtolower((string) $v);
+            }, (array) ($profile['tone'] ?? []));
+        }
+
+        return $profile;
+    });
 endif;

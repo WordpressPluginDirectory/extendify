@@ -21,9 +21,11 @@ use Extendify\Agent\Frontend as AgentFrontend;
 use Extendify\PageCreator\Admin as PageCreatorAdmin;
 use Extendify\PartnerData;
 use Extendify\Recommendations\Admin as RecommendationsAdmin;
+use Extendify\PluginNotifications\Admin as PluginNotificationsAdmin;
 use Extendify\Shared\Admin as SharedAdmin;
 use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\Import\ImagesImporter;
+use Extendify\Shared\Services\PluginRedirectDisabler;
 use Extendify\Shared\Services\VersionMigrator;
 
 if (!defined('EXTENDIFY_REQUIRED_CAPABILITY')) {
@@ -85,6 +87,9 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     new SharedAdmin();
     // This class will handle loading library assets.
     new LibraryAdmin();
+    if (PartnerData::setting('hidePluginNotifications')) {
+        new PluginNotificationsAdmin();
+    }
 
     // Only load these if the partner ID is set. These are all opt-in features.
     if (!Config::$partnerId && !constant('EXTENDIFY_DEVMODE')) {
@@ -97,6 +102,7 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
 
     // This class handles the admin pages required for the plugin.
     new AdminPageRouter();
+    new PluginRedirectDisabler();
 
     // This class will handle loading  page creator assets.
     if (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')) {

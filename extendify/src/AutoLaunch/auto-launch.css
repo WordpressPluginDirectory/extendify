@@ -57,6 +57,30 @@
 	}
 }
 
+.status-animation {
+	background-image: linear-gradient(
+		to right,
+		#1e1e1e 0%,
+		#1e1e1e 25%,
+		#999999 50%,
+		#1e1e1e 75%,
+		#1e1e1e 100%
+	);
+	background-size: 300% 100%;
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	animation: extendify-status-animation 1.8s linear infinite;
+}
+@keyframes extendify-status-animation {
+	0% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 /* Checkbox styles for page selection step. */
 input[type="checkbox"]:not(:checked) {
 	@apply border border-gray-900;

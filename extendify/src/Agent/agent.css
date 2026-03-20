@@ -3,17 +3,20 @@
 @source ".";
 
 @layer components {
+	.extendify-agent-markdown :is(h1, h2, h3, h4) {
+		@apply font-sans! text-gray-900!;
+	}
 	.extendify-agent-markdown h1 {
-		@apply mb-2! mt-0! text-2xl! font-bold! text-gray-900!;
+		@apply mb-2! mt-0! text-2xl! font-bold!;
 	}
 	.extendify-agent-markdown h2 {
-		@apply mb-2! mt-0! text-xl! font-semibold! text-gray-900!;
+		@apply mb-2! mt-0! text-xl! font-semibold!;
 	}
 	.extendify-agent-markdown h3 {
-		@apply mb-1! mt-0! text-lg! font-semibold! text-gray-900!;
+		@apply mb-1! mt-0! text-lg! font-semibold!;
 	}
 	.extendify-agent-markdown h4 {
-		@apply mb-0.5! mt-0! text-base! font-semibold! text-gray-900!;
+		@apply mb-0.5! mt-0! text-base! font-semibold!;
 	}
 	.extendify-agent-markdown p {
 		@apply m-0! mb-2! text-sm! leading-relaxed! text-gray-900!;

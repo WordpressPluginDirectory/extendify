@@ -1,5 +1,5 @@
 import { isInEditor } from '@agent/lib/util';
-import { useEffect, useRef, useState } from '@wordpress/element';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 
 const styleId = 'block-style-variation-styles-inline-css';
 const editorIframeSelector = 'iframe[name="editor-canvas"]';
@@ -67,16 +67,16 @@ export const useSiteVibesOverride = ({ css, slug }) => {
 		return () => clearTimeout(timer);
 	}, [theDocument]);
 
-	return {
-		undoChange: () => {
-			const style = document.getElementById(styleId);
-			if (style && blockStyles.current) {
-				style.innerHTML = blockStyles.current;
-			}
+	const undoChange = useCallback(() => {
+		const style = document.getElementById(styleId);
+		if (style && blockStyles.current) {
+			style.innerHTML = blockStyles.current;
+		}
 
-			if (!onEditor) return;
-			const doc = getEditorDocument();
-			doc?.getElementById(styleId)?.remove();
-		},
-	};
+		if (!onEditor) return;
+		const doc = getEditorDocument();
+		doc?.getElementById(styleId)?.remove();
+	}, [onEditor]);
+
+	return { undoChange };
 };

@@ -89,6 +89,7 @@ class Admin
             'usingBlockEditor' => function_exists('use_block_editor_for_post') ?
                 (bool) use_block_editor_for_post($this->getCurrentPostId()) :
                 false,
+            'isOnEditorOrFSE' => $this->isGutenbergOrFse(),
             'activePlugins' => array_values(\get_option('active_plugins', [])),
             // Whether the user is using the vibes experience or not.
             'isUsingVibes' => (bool) file_exists(EXTENDIFY_PATH . 'src/Launch/_data/block-style-variations.json') &&
@@ -128,6 +129,7 @@ class Admin
         ];
 
         $agentOnboarding = PartnerData::setting('useAgentOnboarding') ||
+            Config::preview('agent-onboarding') ||
             constant('EXTENDIFY_DEVMODE');
 
         \wp_add_inline_script(
@@ -146,7 +148,7 @@ class Admin
                 'abilities' => $abilities,
                 // List of suggestions the AI can make for this user.
                 // For example, we could check whether they need to set up a specific plugin.
-                'suggestions' => $this->getSuggestions($context, $abilities),
+                'suggestions' => $this->getSuggestions(),
                 'chatHistory' => ChatHistoryController::getChatHistory(),
                 'workflowHistory' => WorkflowHistoryController::getWorkflowHistory(),
                 'userData' => [
@@ -361,153 +363,215 @@ class Admin
     /**
      * Get suggestions for the user.
      *
-     * @param array $context - The context of the current page and site.
-     * @param array $abilities - The abilities of the user.
      * @return array
      */
-    private function getSuggestions($context, $abilities)
+    private function getSuggestions()
     {
-        $suggestions = [
+        return [
             [
+                'id' => 'what-tours-are-available',
                 'icon' => 'video',
                 'message' => __('What tours are available?', 'extendify-local'),
                 'workflowId' => 'list-tours',
-            ]
-        ];
-
-        if ($context['postStatus']) {
-            $suggestions [] = [
-                'icon' => ($context['postStatus'] === 'draft') ? 'published' : 'drafts',
-                'message' => ($context['postStatus'] === 'draft')
-                    ? __('Publish this page', 'extendify-local')
-                    : __('Unpublish this page', 'extendify-local'),
+                'source' => 'plugin',
+                'available' => [],
+            ],
+            [
+                'id' => 'publish-this-page',
+                'icon' => 'published',
+                'message' => __('Publish this page', 'extendify-local'),
                 'workflowId' => 'update-post-status',
-            ];
-        }
-
-        if ($abilities['canEditSettings']) {
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['context' => ['postStatus' => 'draft']],
+            ],
+            [
+                'id' => 'unpublish-this-page',
+                'icon' => 'drafts',
+                'message' => __('Unpublish this page', 'extendify-local'),
+                'workflowId' => 'update-post-status',
+                'source' => 'plugin',
+                'available' => ['context' => ['postStatus' => 'publish']],
+            ],
+            [
+                'id' => 'change-site-title',
                 'icon' => 'edit',
-                'message' => __('I want to change my site title', 'extendify-local'),
-                "feature" => true,
+                'message' => __('Change website title', 'extendify-local'),
                 'workflowId' => 'edit-wp-setting',
-            ];
-        }
-
-        // If they have theme variations, suggest they can change the theme color.
-        if ($context['hasThemeVariations']) {
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditSettings']],
+            ],
+            [
+                'id' => 'change-theme-colors',
                 'icon' => 'styles',
-                'message' => __('I want to change my theme color', 'extendify-local'),
-                "feature" => true,
+                'message' => __('Change website colors', 'extendify-local'),
                 'workflowId' => 'change-theme-variation',
-            ];
-
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['context' => ['hasThemeVariations']],
+            ],
+            [
+                'id' => 'change-theme-fonts',
                 'icon' => 'typography',
-                'message' => __('I want to change my theme fonts', 'extendify-local'),
-                "feature" => true,
+                'message' => __('Change website fonts', 'extendify-local'),
                 'workflowId' => 'change-theme-fonts-variation',
-            ];
-        }
-
-        if ($abilities['canEditThemes'] && $context['isUsingVibes']) {
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['context' => ['hasThemeVariations']],
+            ],
+            [
+                'id' => 'change-site-style',
                 'icon' => 'styles',
-                'message' =>
-                    // translators: "site style" refers to the structural aesthetic style for the site.
-                    __(
-                        'I want to change my site style',
-                        'extendify-local'
-                    ),
-                "feature" => true,
+                'message' => __('Change website style', 'extendify-local'),
                 'workflowId' => 'change-site-vibes',
-            ];
-        }
-
-        if ($context['postId'] && $abilities['canEditPost'] && $context['usingBlockEditor']) {
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditThemes'], 'context' => ['isUsingVibes']],
+            ],
+            [
+                'id' => 'edit-text-on-this-page',
                 'icon' => 'edit',
                 'message' => __('Edit text on this page', 'extendify-local'),
-                "feature" => true,
                 'workflowId' => 'edit-post-strings',
-            ];
-        }
-
-        if ($abilities['canEditPost']) {
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditPost'], 'context' => ['postId', 'usingBlockEditor']],
+            ],
+            [
+                'id' => 'how-can-i-create-a-post',
                 'icon' => 'help',
                 'message' => __('How can I create a post?', 'extendify-local'),
                 'workflowId' => 'answer-general-questions',
-            ];
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditPost']],
+            ],
+            [
+                'id' => 'how-can-i-create-a-page',
                 'icon' => 'help',
                 'message' => __('How can I create a page?', 'extendify-local'),
                 'workflowId' => 'create-page',
-            ];
-        }
-
-        if ($abilities['canActivatePlugins']) {
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditPost']],
+            ],
+            [
+                'id' => 'how-can-i-install-a-plugin',
                 'icon' => 'help',
                 'message' => __('How can I install a plugin?', 'extendify-local'),
                 'workflowId' => 'recommend-plugins',
-            ];
-        }
-
-        if ($abilities['canEditThemes']) {
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canActivatePlugins']],
+            ],
+            [
+                'id' => 'how-can-i-change-my-theme',
                 'icon' => 'help',
                 'message' => __('How can I change my theme?', 'extendify-local'),
                 'workflowId' => 'answer-general-questions',
-            ];
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditThemes']],
+            ],
+            [
+                'id' => 'how-can-i-change-the-site-footer',
                 'icon' => 'help',
-                'message' => __('How can I change the site footer?', 'extendify-local'),
+                'message' => __('How can I change the website footer?', 'extendify-local'),
                 'workflowId' => 'answer-general-questions',
-            ];
-        }
-
-        if ($abilities['canEditThemes']) {
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditThemes']],
+            ],
+            [
+                'id' => 'how-can-i-change-the-site-header',
                 'icon' => 'help',
-                'message' => __('How can I change the site header?', 'extendify-local'),
+                'message' => __('How can I change the website header?', 'extendify-local'),
                 'workflowId' => 'answer-general-questions',
-            ];
-        }
-
-        if ($abilities['canUploadMedia']) {
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditThemes']],
+            ],
+            [
+                'id' => 'how-can-i-upload-an-image',
                 'icon' => 'help',
                 'message' => __('How can I upload an image?', 'extendify-local'),
                 'workflowId' => 'answer-general-questions',
-            ];
-            $suggestions[] = [
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canUploadMedia']],
+            ],
+            [
+                'id' => 'how-can-i-change-the-site-icon',
                 'icon' => 'help',
-                'message' => __('How can I change the site icon?', 'extendify-local'),
+                'message' => __('How can I change the website icon?', 'extendify-local'),
                 'workflowId' => 'answer-general-questions',
-            ];
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canUploadMedia']],
+            ],
+            [
+                'id' => 'how-can-i-change-my-site-title',
+                'icon' => 'help',
+                'message' => __('How can I change my website title?', 'extendify-local'),
+                'workflowId' => 'edit-wp-setting',
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditSettings']],
+            ],
+            [
+                'id' => 'how-can-i-change-my-site-tagline',
+                'icon' => 'help',
+                'message' => __('How can I change my website tagline?', 'extendify-local'),
+                'workflowId' => 'edit-wp-setting',
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditSettings']],
+            ],
+            [
+                'id' => 'how-can-i-change-my-site-language',
+                'icon' => 'help',
+                'message' => __('How can I change my website language?', 'extendify-local'),
+                'workflowId' => 'answer-general-questions',
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditSettings']],
+            ],
+            [
+                'id' => 'change-website-animation',
+                'icon' => 'swatch',
+                'message' => __('Change website animation', 'extendify-local'),
+                'workflowId' => 'change-animation',
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditSettings']],
+            ],
+            [
+                'id' => 'change-website-logo',
+                'icon' => 'siteLogo',
+                'message' => __('Change website logo', 'extendify-local'),
+                'workflowId' => 'update-logo',
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditSettings', 'canUploadMedia']],
+            ],
+            [
+                'id' => 'change-website-browser-icon',
+                'icon' => 'siteLogo',
+                'message' => __('Change website browser icon', 'extendify-local'),
+                'workflowId' => 'update-site-icon',
+                'source' => 'plugin',
+                'available' => ['abilities' => ['canEditSettings', 'canUploadMedia']],
+            ],
+        ];
+    }
+
+    /**
+     * Check if the user is in the Gutenberg or FSE editor.
+     *
+     * @return false|bool
+     */
+    public function isGutenbergOrFse()
+    {
+        if (!is_admin() || !function_exists('get_current_screen')) {
+            return false;
         }
 
-        if ($abilities['canEditSettings']) {
-            $suggestions[] = [
-                'icon' => 'help',
-                'message' => __('How can I change my site title?', 'extendify-local'),
-                'workflowId' => 'edit-wp-setting',
-            ];
-            $suggestions[] = [
-                'icon' => 'help',
-                'message' => __('How can I change my site tagline?', 'extendify-local'),
-                'workflowId' => 'edit-wp-setting',
-            ];
-            $suggestions[] = [
-                'icon' => 'help',
-                'message' => __('How can I change my site language?', 'extendify-local'),
-                'workflowId' => 'answer-general-questions',
-            ];
+        $screen = get_current_screen();
+        if (!$screen) {
+            return false;
         }
 
-        shuffle($suggestions);
-        return $suggestions;
+        $is_fse =
+            in_array($screen->id, ['site-editor', 'appearance_page_gutenberg-edit-site'], true) ||
+            (isset($GLOBALS['pagenow']) && $GLOBALS['pagenow'] === 'site-editor.php');
+
+        $is_gutenberg =
+            $screen->base === 'post' &&
+            method_exists($screen, 'is_block_editor') &&
+            $screen->is_block_editor();
+
+        return $is_fse || $is_gutenberg;
     }
 }

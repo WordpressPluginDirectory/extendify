@@ -203,7 +203,10 @@ class AdminPageRouter
         // Only redirect if we aren't already on the page.
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         if (isset($_GET['page']) && $_GET['page'] === 'extendify-launch') {
-            if (PartnerData::setting('useAgentOnboarding')) {
+            $agentOnboarding = PartnerData::setting('useAgentOnboarding') ||
+                Config::preview('agent-onboarding') ||
+                constant('EXTENDIFY_DEVMODE');
+            if ($agentOnboarding) {
                 // If they landed on launch but have the Agent onboarding enabled, redirect to auto-launch.
                 $redirect_url = \add_query_arg(
                     ['page' => 'extendify-auto-launch'],

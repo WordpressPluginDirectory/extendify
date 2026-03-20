@@ -6,7 +6,7 @@ export const Logo = () => {
 		return (
 			<div className="flex h-10 max-w-52 items-center overflow-hidden md:max-w-72">
 				<img
-					className="max-h-full max-w-full object-contain"
+					className="h-full w-auto max-w-full object-contain"
 					src={window.extSharedData.partnerLogo}
 					alt={window.extSharedData?.partnerName ?? ''}
 				/>

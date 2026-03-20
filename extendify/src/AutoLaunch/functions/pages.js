@@ -4,7 +4,8 @@ import { reqDataBasics } from '@shared/lib/data';
 import { pageNames } from '@shared/lib/pages';
 import apiFetch from '@wordpress/api-fetch';
 import { createBlock, parse, serialize } from '@wordpress/blocks';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
+import { setStatus } from './helpers';
 
 export const getPagesToCreate = (data) => {
 	const { home, pages, siteProfile } = data;
@@ -122,6 +123,8 @@ export const createWpPages = async (pagesRaw, { stickyNav }) => {
 	for (const page of pagesRaw) {
 		const content = [];
 		const seenPatternTypes = new Set();
+
+		setStatus(sprintf(__('Adding page: %s', 'extendify-local'), page.name));
 
 		for (const [_, pattern] of page.patterns.entries()) {
 			const code = pattern.code;

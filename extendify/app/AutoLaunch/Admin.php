@@ -167,10 +167,10 @@ class Admin
     }
 
     /**
- * Parses and sanitizes URL parameters against an allowlist.
- *
- * @return array
- */
+     * Parses and sanitizes URL parameters against an allowlist.
+     *
+     * @return array
+     */
     private function getURLParams()
     {
         $allowed = [
@@ -180,7 +180,7 @@ class Admin
             'objective' => 'string',
             'category' => 'string',
             'structure' => 'string',
-            'tone' => 'string',
+            'tone' => 'string[]',
             'products' => 'string|boolean',
             'appointments' => 'boolean',
             'events' => 'boolean',
@@ -189,7 +189,7 @@ class Admin
             'contact' => 'boolean',
             'address' => 'string|boolean',
             'blog' => 'boolean',
-            'landing-page' => 'boolean',
+            'landing-page' => 'string',
             'cta-link' => 'string|boolean',
         ];
 
@@ -199,9 +199,33 @@ class Admin
             if (!isset($_GET[$param])) {
                 continue;
             }
+
             // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             $raw = sanitize_text_field(wp_unslash($_GET[$param]));
             if ($raw === '') {
+                continue;
+            }
+
+            if ($type === 'string[]') {
+                $parts = is_array($raw) ? $raw : explode(',', (string) $raw);
+
+                $items = array_values(array_filter(
+                    array_map(
+                        static function ($v) {
+                            return sanitize_text_field((string) $v);
+                        },
+                        $parts
+                    ),
+                    static function ($v) {
+                        return $v !== '';
+                    }
+                ));
+
+                if (empty($items)) {
+                    continue;
+                }
+
+                $params[$param] = $items;
                 continue;
             }
 

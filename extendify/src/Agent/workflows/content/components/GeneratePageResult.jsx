@@ -5,10 +5,10 @@ const { homeUrl } = window.extSharedData || {};
 
 export const GeneratePageResult = ({ inputs, onConfirm }) => {
 	const handleConfirm = useCallback(() => {
-		if (inputs.postId) {
-			window.open(`${homeUrl}/?page_id=${inputs.postId}`, '_self');
-		}
-		onConfirm();
+		const redirectUrl = inputs.postId
+			? `${homeUrl}/?page_id=${inputs.postId}`
+			: '';
+		onConfirm({ redirectUrl });
 	}, [inputs.postId, onConfirm]);
 
 	return (

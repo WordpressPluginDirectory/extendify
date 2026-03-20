@@ -35,6 +35,7 @@ use Extendify\Agent\Controllers\ChatHistoryController as AgentChatController;
 use Extendify\Agent\Controllers\WorkflowHistoryController as AgentWorkflowController;
 use Extendify\Agent\Controllers\SiteNavigationController as AgentSiteNavigationController;
 
+use Extendify\PluginNotifications\Controllers\NotificationsController;
 use Extendify\Shared\Controllers\PatternPlaceholderController;
 use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsController;
@@ -115,9 +116,14 @@ use Extendify\Shared\Controllers\ImageGenerationController;
         ApiRouter::post('/agent/workflows', [AgentWorkflowController::class, 'add']);
         ApiRouter::post('/agent/site-navigation', [AgentSiteNavigationController::class, 'getSiteNavigation']);
         ApiRouter::post('/agent/render-navigation', [AgentSiteNavigationController::class, 'renderNavigationMenu']);
+        ApiRouter::post('/agent/site-design-variations', [AgentWPController::class, 'getSiteDesignVariations']);
         ApiRouter::get('/agent/block-style-variations', [AgentWPController::class, 'getBlockStyleVariations']);
         ApiRouter::post('/agent/options', [AgentWPController::class, 'updateOption']);
         ApiRouter::get('/agent/options', [AgentWPController::class, 'getOption']);
+
+        // Notifications.
+        ApiRouter::post('/notifications/dismiss', [NotificationsController::class, 'dismiss']);
+        ApiRouter::post('/notifications/dismiss-all', [NotificationsController::class, 'dismissAll']);
 
         // Shared.
         ApiRouter::get('/shared/user-selections-data', [UserSelectionController::class, 'get']);

@@ -1,10 +1,11 @@
-import { makeId } from '@agent/lib/util';
+import { isChangeSiteDesignWorkflowAvailable, makeId } from '@agent/lib/util';
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const { chatHistory } = window.extAgentData;
+
 const welcomeMessage = [
 	{
 		id: 1,
@@ -12,10 +13,15 @@ const welcomeMessage = [
 		details: {
 			role: 'assistant',
 			// translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-			content: __(
-				'#### Your site is ready 🎉\nWant to explore other site colors?',
-				'extendify-local',
-			),
+			content: isChangeSiteDesignWorkflowAvailable()
+				? __(
+						'#### Your site is ready 🎉\nWant to explore other website designs?',
+						'extendify-local',
+					)
+				: __(
+						'#### Your site is ready 🎉\nWant to explore other site colors?',
+						'extendify-local',
+					),
 		},
 	},
 ];
@@ -80,7 +86,7 @@ const storage = {
 
 export const useChatStore = create()(
 	persist(devtools(state, { name: 'Extendify Agent Chat' }), {
-		name: 'extendify-agent-chat',
+		name: `extendify-agent-chat-${window.extSharedData.siteId}`,
 		storage: createJSONStorage(() => storage),
 		skipHydration: true,
 	}),

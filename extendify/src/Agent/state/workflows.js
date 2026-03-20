@@ -1,3 +1,5 @@
+import { isChangeSiteDesignWorkflowAvailable } from '@agent/lib/util';
+import changeSiteDesignWorkflow from '@agent/workflows/theme/change-site-design';
 import variationsWorkflow from '@agent/workflows/theme/change-theme-variation';
 import { workflows } from '@agent/workflows/workflows';
 import { deepMerge } from '@shared/lib/utils';
@@ -6,11 +8,19 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
 const onboarding = window.extAgentData.chatHistory?.length === 0;
-const agentResponse = variationsWorkflow.example?.agentResponse;
+const agentResponse = isChangeSiteDesignWorkflowAvailable()
+	? changeSiteDesignWorkflow.example?.agentResponse
+	: variationsWorkflow.example?.agentResponse;
 const onboardingToolProps = {
 	...agentResponse.whenFinishedTool,
 	agentResponse,
 };
+
+// Used to check case-insensitive matches for workflow examples
+const collator = new Intl.Collator(undefined, {
+	sensitivity: 'base',
+	usage: 'search',
+});
 
 const state = (set, get) => ({
 	workflow: null,
@@ -35,7 +45,9 @@ const state = (set, get) => ({
 		return { ...deepMerge(curr, wf || {}), id: curr?.id };
 	},
 	getWorkflowByExample: (example) => {
-		const wf = workflows.find(({ example: ex }) => ex?.text === example);
+		const wf = workflows.find(
+			({ example: ex }) => collator.compare(ex?.text, example) === 0,
+		);
 		if (!wf?.id) return null;
 		return wf;
 	},
@@ -124,7 +136,9 @@ export const useWorkflowStore = create()(
 				return {
 					...currentState,
 					...persistedState,
-					workflow: variationsWorkflow,
+					workflow: isChangeSiteDesignWorkflowAvailable()
+						? changeSiteDesignWorkflow
+						: variationsWorkflow,
 					whenFinishedToolProps: onboardingToolProps,
 				};
 			}

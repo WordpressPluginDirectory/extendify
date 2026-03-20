@@ -2,6 +2,17 @@ import { useTasksStore } from '@assist/state/tasks';
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
+const { useAgentOnboarding } = window.extSharedData;
+
+const autoLaunch = {
+	title: __("Let's Start Building Your Website", 'extendify-local'),
+	description: __(
+		'Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher.',
+		'extendify-local',
+	),
+	buttonText: __('Create your site now', 'extendify-local'),
+};
+
 const launchSteps = {
 	'website-objective': {
 		step: __('Website Objective', 'extendify-local'),
@@ -73,6 +84,12 @@ export const LaunchCard = ({ task }) => {
 		setCurrentStep(getCurrentLaunchStep());
 	}, [currentStep]);
 
+	const stepData = useAgentOnboarding ? autoLaunch : launchSteps[currentStep];
+
+	const launchUrl = `${window.extSharedData.adminUrl}admin.php?page=${
+		useAgentOnboarding ? 'extendify-auto-launch' : 'extendify-launch'
+	}`;
+
 	return (
 		<div className="h-full justify-center overflow-hidden bg-white/95 text-base">
 			<div className="flex h-full flex-col items-center justify-center gap-5 p-7 text-center md:p-8">
@@ -80,18 +97,16 @@ export const LaunchCard = ({ task }) => {
 				<div className="flex h-full flex-col items-center justify-center text-center lg:justify-between">
 					<div>
 						<h2 className="mb-2 text-2xl font-semibold leading-10 md:mt-0 lg:text-2xl">
-							{launchSteps[currentStep]?.title}
+							{stepData?.title}
 						</h2>
-						<p className="m-0 text-sm md:text-base">
-							{launchSteps[currentStep]?.description}
-						</p>
+						<p className="m-0 text-sm md:text-base">{stepData?.description}</p>
 					</div>
 					<div className="cta mt-6 flex flex-wrap items-center text-sm md:gap-3 lg:mt-3">
 						<a
-							href={`${window.extSharedData.adminUrl}admin.php?page=extendify-launch`}
+							href={launchUrl}
 							className="min-w-24 cursor-pointer rounded-xs bg-design-main px-4 py-2.5 text-sm font-medium text-design-text no-underline hover:opacity-90"
 						>
-							{launchSteps[currentStep]?.buttonText}
+							{stepData?.buttonText}
 						</a>
 						<button
 							type="button"

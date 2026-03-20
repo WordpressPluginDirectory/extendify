@@ -1,6 +1,6 @@
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
 import { useChatStore } from '@agent/state/chat';
-import { useEffect, useMemo, useState } from '@wordpress/element';
+import { useEffect, useMemo, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 const colorsArrayToMap = (colors) => {
@@ -37,7 +37,6 @@ const themeDuotonePresets =
 	window.extAgentData?.context?.themePresets?.duotone || [];
 const themeColorPresets =
 	window.extAgentData?.context?.themePresets?.colors || {};
-window.extAgentData?.context?.themePresets?.colorPairs || [];
 
 const buildDuotoneTheme = (newColorsMap) => {
 	if (!themeDuotonePresets.length) return null;
@@ -95,6 +94,13 @@ export const SelectGeneratedPalette = ({
 		duotoneTheme,
 	});
 
+	const confirmed = useRef(false);
+	useEffect(() => {
+		return () => {
+			if (!confirmed.current) undoChange();
+		};
+	}, []);
+
 	useEffect(() => {
 		if (!noPalettes) return;
 		const timer = setTimeout(() => onCancel(), 100);
@@ -115,6 +121,7 @@ export const SelectGeneratedPalette = ({
 
 	const handleConfirm = () => {
 		if (!selected) return;
+		confirmed.current = true;
 		const palette = palettes.find((p) => p.name === selected);
 		onConfirm({
 			data: {
@@ -130,11 +137,6 @@ export const SelectGeneratedPalette = ({
 			},
 			shouldRefreshPage: true,
 		});
-	};
-
-	const handleCancel = () => {
-		undoChange();
-		onCancel();
 	};
 
 	if (noPalettes) return null;
@@ -176,7 +178,7 @@ export const SelectGeneratedPalette = ({
 				<button
 					type="button"
 					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
-					onClick={handleCancel}
+					onClick={onCancel}
 				>
 					{__('Cancel', 'extendify-local')}
 				</button>

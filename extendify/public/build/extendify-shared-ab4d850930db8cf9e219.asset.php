@@ -1,0 +1,1 @@
+<?php return array('dependencies' => array('react', 'react-dom', 'react-jsx-runtime', 'wp-api-fetch', 'wp-components', 'wp-dom-ready', 'wp-element', 'wp-i18n', 'wp-primitives'), 'version' => 'f9e9c4be5efcc475ce1f', 'handle' => 'undefined-extendify-shared-ab4d850930db8cf9e219');

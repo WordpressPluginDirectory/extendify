@@ -1,5 +1,6 @@
 import { fetchWithTimeout } from '@auto-launch/functions/helpers';
 import { useInstallRequiredPlugins } from '@auto-launch/hooks/useInstallRequiredPlugins';
+import { loaderThreeDots } from '@auto-launch/icons';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import { AI_HOST } from '@constants';
 import { useAIConsentStore } from '@shared/state/ai-consent';
@@ -11,14 +12,14 @@ import {
 	useState,
 } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { chevronRight, Icon } from '@wordpress/icons';
-import classNames from 'classnames';
+import { chevronRight, Icon, pencil } from '@wordpress/icons';
 
 export const DescriptionGathering = () => {
 	const { setData, descriptionBackup } = useLaunchDataStore();
 	useInstallRequiredPlugins();
 	const [input, setInput] = useState(descriptionBackup || '');
 	const [improving, setImproving] = useState(false);
+	const [lastImproved, setLastImproved] = useState(null);
 	const textareaRef = useRef(null);
 	const { consentTerms } = useAIConsentStore();
 
@@ -67,6 +68,7 @@ export const DescriptionGathering = () => {
 		const nextValue = response?.improvedPrompt;
 		setImproving(false);
 		if (nextValue) {
+			setLastImproved(nextValue);
 			const el = textareaRef.current;
 			if (!el) return setInput(nextValue);
 			requestAnimationFrame(() => {
@@ -107,47 +109,55 @@ export const DescriptionGathering = () => {
 			<form
 				onSubmit={submitForm}
 				onClick={() => textareaRef.current?.focus()}
-				className="relative flex w-full flex-col p-6"
+				className="relative flex w-full flex-col"
 			>
-				<div className="focus-within:border-design-main focus-within:ring-design-main w-full bg-white rounded-md text-gray-900 shadow-xl">
-					<textarea
-						ref={textareaRef}
-						id="extendify-launch-chat-textarea"
-						className={classNames(
-							'flex min-h-36 w-full resize-none bg-transparent p-4 text-base placeholder:text-gray-700 focus:shadow-none focus:outline-hidden disabled:opacity-50 border-none text-gray-900',
-							{
-								'opacity-50': improving,
-							},
-						)}
-						rows="1"
-						// biome-ignore lint: Allow autofocus here
-						autoFocus
-						value={input}
-						readOnly={improving}
-						onChange={(e) => {
-							setInput(e.target.value);
-						}}
-					/>
-					<div className="flex justify-between items-end gap-4 p-2.5 px-4">
-						<div>
-							{input.trim().length > 20 && (
-								<ImprovePrompt disabled={improving} onClick={handleImprove} />
-							)}
+				<div className="w-full rounded-3xl border border-gray-300 bg-gray-100/80 text-gray-900 backdrop-blur-2xl focus-within:border-gray-500 focus-within:ring-gray-500 shadow-md overflow-hidden">
+					{improving ? (
+						<div className="flex h-49 flex-col items-center justify-center gap-4">
+							<div className="h-12 w-12 text-design-main">
+								{loaderThreeDots}
+							</div>
+							<p className="m-0 text-base leading-6 text-center text-gray-800">
+								{__('Enhancing the website description...', 'extendify-local')}
+							</p>
 						</div>
-						<SubmitButton disabled={improving || input.trim().length === 0} />
-					</div>
+					) : (
+						<>
+							<textarea
+								ref={textareaRef}
+								id="extendify-launch-chat-textarea"
+								className="flex min-h-20 md:min-h-24 w-full resize-none bg-transparent text-base leading-6 placeholder:text-gray-700 focus:shadow-none focus:outline-hidden border-none text-gray-900 p-6 pb-0"
+								rows="1"
+								// biome-ignore lint: Allow autofocus here
+								autoFocus
+								value={input}
+								onChange={(e) => {
+									setInput(e.target.value);
+								}}
+								placeholder={__(
+									'Ask AI to create a website for a cafe...',
+									'extendify-local',
+								)}
+							/>
+							<div className="flex justify-between items-end gap-4 p-6">
+								<div>
+									<ImprovePrompt
+										disabled={
+											input.trim().length === 0 || input.trim() === lastImproved
+										}
+										onClick={handleImprove}
+									/>
+								</div>
+								<SubmitButton disabled={input.trim().length === 0} />
+							</div>
+						</>
+					)}
 				</div>
 			</form>
 			<div
-				className="text-pretty px-4 mt-4 text-center text-xss leading-none opacity-70 text-banner-text [&>a]:text-xss [&>a]:text-banner-text [&>a]:underline w-full absolute"
+				className="text-pretty mt-4 text-center text-xs leading-4 opacity-70 text-banner-text [&>a]:text-xs [&>a]:text-banner-text [&>a]:underline w-full"
 				dangerouslySetInnerHTML={{ __html: consentTerms }}
 			/>
-			<a
-				className="text-sm font-medium underline text-banner-text fixed left-4 bottom-4 opacity-70 hover:opacity-100 transition-opacity"
-				href={window.extSharedData.adminUrl}
-			>
-				{__('Exit to WP-Admin', 'extendify-local')}
-			</a>
 		</>
 	);
 };
@@ -156,13 +166,11 @@ const SubmitButton = forwardRef((props, ref) => (
 	<button
 		ref={ref}
 		type="submit"
-		className="inline-flex h-fit items-center justify-center gap-0.5 whitespace-nowrap border-0 bg-design-main p-2 py-1 text-sm font-medium text-white transition-colors focus-visible:ring-design-main disabled:opacity-20 rounded-md focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-2 group"
+		className="inline-flex items-center justify-center rounded-full border-0 bg-design-main px-3 py-2 text-sm leading-5 font-normal text-design-text focus-visible:ring-design-main disabled:opacity-40 focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-2 group hover:opacity-90 transition-opacity"
 		{...props}
 	>
-		{__('Next', 'extendify-local')}
-		<span className="transition-transform group-hover:translate-x-0.5">
-			<Icon fill="currentColor" icon={chevronRight} size={24} />
-		</span>
+		<span className="px-1">{__('Next', 'extendify-local')}</span>
+		<Icon fill="currentColor" icon={chevronRight} size={24} />
 	</button>
 ));
 
@@ -170,11 +178,12 @@ const ImprovePrompt = (props) => {
 	return (
 		<button
 			type="button"
-			className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors underline disabled:text-gray-400 disabled:hover:text-gray-400"
+			className="inline-flex items-center rounded-full ring-1 ring-gray-800 px-3 py-2 text-sm leading-5 font-normal text-gray-800 transition-colors hover:bg-gray-600/5 disabled:opacity-40"
 			{...props}
 		>
+			<Icon icon={pencil} size={24} />
 			{/* translators: "Enhance with AI" refers to improving the current input using AI. */}
-			{__('Enhance with AI', 'extendify-local')}
+			<span className="px-1">{__('Enhance with AI', 'extendify-local')}</span>
 		</button>
 	);
 };

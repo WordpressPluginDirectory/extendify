@@ -136,6 +136,11 @@ export const DropdownTranslate = ({
 			languageName: 'Lithuanian',
 		},
 		{
+			language: __('Latvian', 'extendify-local'),
+			code: 'lv',
+			languageName: 'Latvian',
+		},
+		{
 			language: __('Norwegian', 'extendify-local'),
 			code: 'nb_NO',
 			languageName: 'Norwegian',

@@ -1,7 +1,7 @@
 import { useThemeVariations } from '@agent/hooks/useThemeVariations';
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
 import { useChatStore } from '@agent/state/chat';
-import { useEffect, useMemo, useState } from '@wordpress/element';
+import { useEffect, useMemo, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 export const SelectThemeVariation = ({ onConfirm, onCancel, onLoad }) => {
@@ -9,6 +9,13 @@ export const SelectThemeVariation = ({ onConfirm, onCancel, onLoad }) => {
 	const [selected, setSelected] = useState(null);
 	const [duotoneTheme, setDuotoneTheme] = useState(null);
 	const { undoChange } = useVariationOverride({ css, duotoneTheme });
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		return () => {
+			if (!confirmed.current) undoChange();
+		};
+	}, []);
 	const { variations, isLoading } = useThemeVariations();
 	const noVariations = !variations || variations.length === 0;
 	const { addMessage, messages } = useChatStore();
@@ -20,15 +27,11 @@ export const SelectThemeVariation = ({ onConfirm, onCancel, onLoad }) => {
 
 	const handleConfirm = () => {
 		if (!selected) return;
+		confirmed.current = true;
 		onConfirm({
 			data: { variation: variations.find((v) => v.title === selected) },
 			shouldRefreshPage: true,
 		});
-	};
-
-	const handleCancel = () => {
-		undoChange();
-		onCancel();
 	};
 
 	useEffect(() => {
@@ -95,7 +98,7 @@ export const SelectThemeVariation = ({ onConfirm, onCancel, onLoad }) => {
 				<button
 					type="button"
 					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
-					onClick={handleCancel}
+					onClick={onCancel}
 				>
 					{__('Cancel', 'extendify-local')}
 				</button>

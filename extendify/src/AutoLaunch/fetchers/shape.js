@@ -58,7 +58,7 @@ export const getProfileShape = z.looseObject({
 	category: z.string().optional(),
 	structure: z.string(),
 	imageSearchTerms: z.array(z.string()),
-	tone: z.string(),
+	tone: z.array(z.string()),
 	logoObjectName: z.string(),
 	products: z.union([z.string(), z.literal(false)]),
 	appointments: z.boolean(),

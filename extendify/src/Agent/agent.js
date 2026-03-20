@@ -5,6 +5,7 @@ import domReady from '@wordpress/dom-ready';
 import '@agent/agent.css';
 import '@agent/buttons';
 import { GuidedTour } from '@agent/components/GuidedTour';
+import { throwSideConfetti } from './lib/confetti';
 
 const isInsideIframe = () => !!document.querySelector('body.iframe');
 
@@ -33,4 +34,11 @@ domReady(() => {
 	});
 	document.body.appendChild(agent);
 	render(<Agent />, agent);
+
+	// Runs when extendify-launch-success is in the url
+	if (window.extAgentData?.startOnboarding) {
+		requestAnimationFrame(() => {
+			throwSideConfetti();
+		});
+	}
 });

@@ -245,7 +245,7 @@ export const DOMHighlighter = ({ busy = false }) => {
 				<div
 					role="button"
 					className={
-						'fixed z-higher h-6 w-6 -translate-y-3.5 cursor-pointer select-none flex items-center justify-center rounded-full text-center font-bold ring-1 ring-black'
+						'fixed z-9 h-6 w-6 -translate-y-3.5 cursor-pointer select-none flex items-center justify-center rounded-full text-center font-bold ring-1 ring-black'
 					}
 					tabIndex={0}
 					onClick={() => setBlock(null)}
@@ -272,7 +272,7 @@ export const DOMHighlighter = ({ busy = false }) => {
 				aria-hidden
 				animate={animate}
 				transition={transition}
-				className="fixed z-high-1 mix-blend-hard-light outline-dashed outline-4"
+				className="fixed z-8 mix-blend-hard-light outline-dashed outline-4"
 				style={{
 					top: 0,
 					left: 0,

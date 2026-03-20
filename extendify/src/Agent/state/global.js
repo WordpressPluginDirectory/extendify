@@ -10,7 +10,6 @@ export const useGlobalStore = create()(
 				retryAfter: undefined,
 				open: true,
 				minimized: false,
-				showSuggestions: true,
 				// e.g. floating, docked-left, docked-right ?
 				mode: window.extAgentData.agentPosition,
 				queuedTour: null,
@@ -35,7 +34,6 @@ export const useGlobalStore = create()(
 					if (get().minimized === minimized) return;
 					set({ minimized });
 				},
-				setShowSuggestions: (show) => set({ showSuggestions: show }),
 				toggleOpen: () =>
 					set((state) => {
 						if (!state.open) {
@@ -73,7 +71,7 @@ export const useGlobalStore = create()(
 			},
 			partialize: (state) => {
 				// mode is determined on the server
-				const { showSuggestions, isMobile, mode, ...rest } = state;
+				const { mode, isMobile, ...rest } = state;
 				return { ...rest };
 			},
 		},

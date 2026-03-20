@@ -315,7 +315,9 @@ class WPController
 
         $ast = array_values(array_filter(
             parse_blocks($post->post_content),
-            static fn ($b) => is_array($b) && !empty($b['blockName'])
+            static function ($b) {
+                return is_array($b) && !empty($b['blockName']);
+            }
         ));
 
         $seq = 0;
@@ -374,6 +376,228 @@ class WPController
         return new \WP_REST_Response(['content' => trim($content)]);
     }
 
+    protected static function getHeroPatternsData($title, $description, $images, $cta)
+    {
+        $response = \wp_remote_post(
+            'https://patterns.extendify.com/api/heros',
+            [
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                    'Accept'       => 'application/json',
+                ],
+                'body' => wp_json_encode([
+                    "wpVersion" => \get_bloginfo('version'),
+                    "wpLanguage" => \get_locale(),
+                ])
+            ]
+        );
+
+        if (\is_wp_error($response)) {
+            return $response;
+        }
+
+        $body = json_decode(\wp_remote_retrieve_body($response), true);
+
+        $heroPatterns = array_map(
+            function ($heroPattern) use ($description, $title, $images, $cta) {
+                $code = $heroPattern['code'] ?? '';
+
+                if ($title) {
+                    $code = preg_replace(
+                        '/(<!-- wp:heading[^>]*-->[\s\S]*?<h1[^>]*>)[\s\S]*?(<\/h1>[\s\S]*?<!-- \/wp:heading -->)/m',
+                        '${1}' . esc_html($title) . '${2}',
+                        $code,
+                        1
+                    );
+                }
+
+                if ($description) {
+                    $code = preg_replace(
+                        '/(<!-- wp:paragraph[^>]*-->[\s\S]*?<p[^>]*>)[\s\S]*?(<\/p>[\s\S]*?<!-- \/wp:paragraph -->)/m',
+                        '${1}' . esc_html($description) . '${2}',
+                        $code,
+                        1
+                    );
+                }
+
+                if ($cta['label'] ?? null) {
+                    $code = preg_replace(
+                        '/(<!-- wp:button[^>]*-->[\s\S]*?<a[^>]*>)[\s\S]*?(<\/a>[\s\S]*?<!-- \/wp:button -->)/m',
+                        '${1}' . esc_html($cta['label']) . '${2}',
+                        $code,
+                        1
+                    );
+                }
+
+                if ($cta['link'] ?? null) {
+                    $code = preg_replace(
+                        '/(<!-- wp:button[\s\S]*?<a[^>]*\shref=")[^"]*(")/m',
+                        '${1}' . esc_url($cta['link']) . '${2}',
+                        $code,
+                        1
+                    );
+                }
+
+                foreach ($heroPattern['urls'] ?? [] as $key => $url) {
+                    if (!($images[$key] ?? null)) {
+                        break;
+                    }
+
+                    $code = str_replace($url, $images[$key], $code);
+                }
+
+                $renderedHtml = do_blocks(str_replace('ext-animate--on', '', $code));
+
+                $blockSupportsCss = function_exists('wp_style_engine_get_stylesheet_from_context')
+                    ? wp_style_engine_get_stylesheet_from_context('block-supports')
+                    : '';
+
+                // Clear block-supports store so CSS doesn't accumulate across patterns.
+                \WP_Style_Engine_CSS_Rules_Store::remove_all_stores();
+
+                $linkStyles = array_values(
+                    array_filter(
+                        array_map(
+                            function ($style) {
+                                return wp_styles()->registered[$style]->src ?? null;
+                            },
+                            wp_styles()->queue ?? []
+                        )
+                    )
+                );
+
+                /**
+                 * Clear queue for the next pattern.
+                 *
+                 * `do_blocks` appends to the global queue the styles needed for the blocks.
+                 */
+                wp_styles()->queue = [];
+
+                return [
+                    'id'               => $heroPattern['id'],
+                    'code'             => $code,
+                    'renderedHtml'     => $renderedHtml,
+                    'blockSupportsCss' => $blockSupportsCss,
+                    'linkStyles'       => $linkStyles,
+                ];
+            },
+            $body
+        );
+
+        return $heroPatterns;
+    }
+
+    /**
+     * Get the Hero Patterns
+     *
+     * @param \WP_REST_Request $request The REST API request object.
+     * @return \WP_REST_Response
+     */
+    public static function getHeroPatterns(\WP_REST_Request $request)
+    {
+        $title = $request->get_param('title');
+        $description = $request->get_param('description');
+        $images = $request->get_param('images');
+        $cta = $request->get_param('cta');
+
+        $heroPatterns = self::getHeroPatternsData($title, $description, $images, $cta);
+
+        if (\is_wp_error($heroPatterns)) {
+            return new \WP_REST_Response([], 500);
+        }
+
+        $blockEditorContext = new \WP_Block_Editor_Context(array( 'name' => 'core/edit-post' ));
+        $editorSettings = get_block_editor_settings([], $blockEditorContext);
+
+        return new \WP_REST_Response(['patterns' => $heroPatterns, 'blockEditorSettings' => $editorSettings ?? null]);
+    }
+
+    public static function getSiteDesignVariations(\WP_REST_Request $request)
+    {
+        $title = $request->get_param('title');
+        $description = $request->get_param('description');
+        $images = $request->get_param('images');
+        $cta = $request->get_param('cta');
+
+        $heroPatterns = self::getHeroPatternsData($title, $description, $images, $cta);
+
+        if (\is_wp_error($heroPatterns)) {
+            return new \WP_REST_Response([], 500);
+        }
+
+        $current = \WP_Theme_JSON_Resolver::get_merged_data('theme');
+
+        $unfiltered = \WP_Theme_JSON_Resolver::get_style_variations();
+
+        $colorAndFontsVariations = array_filter($unfiltered, function ($variation) {
+            return self::variationHasProperties($variation, ['color', 'elements', 'typography']);
+        });
+
+        $buildSlugMap = function ($unfiltered) {
+            $slugMap = [];
+
+            if (!is_array($unfiltered)) {
+                return $slugMap;
+            }
+
+            foreach ($unfiltered as $rawSlug => $rawVariation) {
+                $title = is_array($rawVariation) ? ($rawVariation['title'] ?? null) : null;
+                $slug = is_array($rawVariation)
+                    ? ($rawVariation['slug'] ?? (is_string($rawSlug) ? $rawSlug : null))
+                    : null;
+
+                if ($title && $slug && !isset($slugMap[$title])) {
+                    $slugMap[$title] = $slug;
+                }
+            }
+            return $slugMap;
+        };
+        $slugMap = $buildSlugMap($unfiltered);
+        array_walk($colorAndFontsVariations, function (&$variation) use ($slugMap) {
+            if (!is_array($variation) || isset($variation['slug'])) {
+                return;
+            }
+
+            $title = $variation['title'] ?? null;
+            if ($title && isset($slugMap[$title])) {
+                $variation['slug'] = $slugMap[$title];
+            }
+        });
+
+        $processedFonts = array_map(function ($variation) {
+            if (!isset($variation['styles']['elements']) || !is_array($variation['styles']['elements'])) {
+                return $variation;
+            }
+
+            $variation['styles']['elements'] = array_map(
+                [self::class, 'normalizeElementTypography'],
+                $variation['styles']['elements']
+            );
+
+            if (!isset($variation['styles']['typography'])) {
+                $variation['styles']['typography'] = [
+                    'fontFamily' => 'var(--wp--preset--font-family--inter)'
+                ];
+            }
+
+            return $variation;
+        }, $colorAndFontsVariations);
+
+        $deduped = static::getCss($processedFonts, $current, true);
+
+        $blockEditorContext = new \WP_Block_Editor_Context(array( 'name' => 'core/edit-post' ));
+        $editorSettings = get_block_editor_settings([], $blockEditorContext);
+        $editorSettings['styles'] = [];
+
+        return new \WP_REST_Response(
+            [
+                'patterns' => $heroPatterns,
+                'colorAndFontsVariations' => $deduped,
+                'blockEditorSettings' => $editorSettings ?? null,
+            ]
+        );
+    }
+
     /**
      * Sets a lock on a post to prevent concurrent editing.
      *
@@ -383,9 +607,9 @@ class WPController
     public static function lockPost($request)
     {
         $postId = (int) $request->get_param('postId');
-        update_post_meta($postId, '_edit_lock', time() . ':' . get_current_user_id());
-
-        return new \WP_REST_Response(['success' => true]);
+        require_once ABSPATH . '/wp-admin/includes/post.php';
+        $data = \wp_set_post_lock($postId);
+        return new \WP_REST_Response(['success' => $data !== false]);
     }
 
     /**

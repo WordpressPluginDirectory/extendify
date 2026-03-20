@@ -146,7 +146,7 @@ export const useCreateSite = () => {
 		handleSiteImages,
 	);
 
-	// needs: siteProfile, sitePlugins, siteStyle, siteImages
+	// needs: siteProfile, sitePlugins, siteStyle, siteImages, aiHeaders
 	// provides: home: { id, slug, patterns, siteStyle }
 	useRunStep(
 		'home',
@@ -157,6 +157,7 @@ export const useCreateSite = () => {
 				data.siteStyle,
 				data.siteImages,
 				data.sitePlugins,
+				data.aiHeaders,
 			].every((v) => v !== undefined);
 			return ok ? data : null;
 		},
@@ -235,7 +236,7 @@ export const useCreateSite = () => {
 			siteProfile,
 			sitePlugins,
 			siteStyle,
-			addSiteStrings,
+			aiBlogTitles,
 			siteImages,
 		} = data;
 		// pages could be [] and pass here, that's ok
@@ -333,12 +334,15 @@ export const useCreateSite = () => {
 			if (objective === 'blog' || hasBlogPattern) {
 				// translators: this is for a action log UI. Keep it short
 				addStatusMessage(__('Creating blog sample data', 'extendify-local'));
-				await createBlogSampleData(addSiteStrings, siteImages);
+				await createBlogSampleData({ aiBlogTitles }, siteImages);
 			}
 			// If we have site images then set up the hello world image
 			if (siteImages?.length) await setHelloWorldFeaturedImage(siteImages);
-			// Do we need an imprint page?
-			const imprint = await addImprintPage({ siteStyle }).catch(() => null);
+
+			let imprint = {};
+			if (needsImprint) {
+				imprint = await addImprintPage({ siteStyle }).catch(() => null);
+			}
 
 			// install partner plugins
 			const activePlugins = await getActivePlugins();
@@ -370,6 +374,7 @@ export const useCreateSite = () => {
 					? await updateSinglePageLinksToSections(createdPagesWP, customPages, {
 							objective,
 							activePlugins,
+							landingPageCTALink: siteProfile.landingPageCTALink,
 						})
 					: await updateButtonLinks(createdPagesWP, pluginPages);
 			const footerNavPages = [];
@@ -404,19 +409,17 @@ export const useCreateSite = () => {
 					await addPageLinksToNav(
 						footerNavId,
 						footerNavPages,
-						pagesWithLinksUpdated,
+						imprint?.id
+							? [...pagesWithLinksUpdated, imprint]
+							: pagesWithLinksUpdated,
 						[],
 					);
 				}
 			}
 
 			await prefetchAssistData();
-			await postLaunchFunctions();
 			await setThemeRenderingMode('template-locked');
-			await updateOption(
-				'extendify_onboarding_completed',
-				new Date().toISOString(),
-			);
+			await postLaunchFunctions();
 			// translators: this is for a action log UI. Keep it short
 			addStatusMessage(__('All done!', 'extendify-local'));
 			await checkIn({ stage: 'finished', siteProfile, sitePlugins, siteStyle });

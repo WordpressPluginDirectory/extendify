@@ -57,8 +57,8 @@ export const getHeadersAndFooters = async (useNavFooter = false) => {
 	return { headers, footers };
 };
 
-export const uploadMedia = (data) =>
-	apiFetch({ path: 'wp/v2/media', data, method: 'POST' });
+export const uploadMedia = (formData) =>
+	apiFetch({ path: 'wp/v2/media', body: formData, method: 'POST' });
 
 export const importImage = async (imageUrl, metadata) => {
 	try {
@@ -125,9 +125,7 @@ export const createBlogSampleData = async (siteStrings, siteImages) => {
 	const tags = (await createWpTags(localizedBlogSampleData.tags)) || [];
 	const formatImageUrl = (image) =>
 		image?.includes('?q=80&w=1470') ? image : `${image}?q=80&w=1470`;
-	const imagesArray = (siteImages?.siteImages || []).sort(
-		() => Math.random() - 0.5,
-	);
+	const imagesArray = (siteImages || []).sort(() => Math.random() - 0.5);
 
 	const replacePostContentImages = (content, images) =>
 		(content.match(/https:\/\/images\.unsplash\.com\/[^\s"]+/g) || []).reduce(

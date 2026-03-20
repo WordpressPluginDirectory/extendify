@@ -19,6 +19,7 @@ domReady(() => {
 		id,
 	});
 	agent.style.height = '1.75rem';
+	agent.style.marginInlineEnd = '4px';
 	// TODO: If we want to allow swapping live we need to rethink this
 	const loc =
 		window.extAgentData.agentPosition === 'floating'

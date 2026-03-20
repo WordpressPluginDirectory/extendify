@@ -1,29 +1,19 @@
 import { sparkle } from '@agent/icons';
-import { useTourStore } from '@agent/state/tours';
-import tours from '@agent/tours/tours';
-import { useEffect, useState } from '@wordpress/element';
+import { useSuggestionsStore } from '@agent/state/suggestions';
+import { useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import {
 	chevronRight,
 	drafts,
 	help,
 	pencil,
 	published,
+	siteLogo,
 	styles,
+	swatch,
 	typography,
 	video,
 } from '@wordpress/icons';
-
-const { suggestions } = window.extAgentData;
-const availableTours = Object.values(tours).filter(
-	({ settings: { startFrom } }) =>
-		!startFrom || startFrom.includes(window.location.href),
-);
-const randomTour = availableTours?.length
-	? availableTours[Math.floor(Math.random() * availableTours.length)]
-	: undefined;
-// 30% chance to show the tour suggestion unless there are less than 3 tours
-const showTour =
-	randomTour?.message && (suggestions.length < 3 || Math.random() < 0.3);
 
 const icons = {
 	styles,
@@ -34,56 +24,45 @@ const icons = {
 	drafts,
 	published,
 	typography,
+	pencil,
+	siteLogo,
+	swatch,
 };
 
-const featured = suggestions.filter((s) => !!s?.feature);
-const standard = suggestions.filter((s) => !s?.feature);
+export const ChatSuggestions = ({ suggestions }) => {
+	const { markAsClicked, isAvailable, getSuggestions } = useSuggestionsStore();
+	const [allSuggestions, setAllSuggestions] = useState(suggestions);
 
-export const ChatSuggestions = ({ suggestions = [] }) => {
-	const { startTour } = useTourStore();
-	const [shuffled, setShuffled] = useState(standard);
-
-	useEffect(() => {
-		setShuffled((prev) => prev.toSorted(() => Math.random() - 0.5));
-	}, []);
-
-	const handleSubmit = (message) => {
+	const handleSubmit = (suggestion) => {
 		window.dispatchEvent(
 			new CustomEvent('extendify-agent:chat-submit', {
-				detail: { message },
+				detail: { message: suggestion.message },
 			}),
 		);
+		markAsClicked(suggestion);
 	};
 
-	if (suggestions?.length > 0) {
-		return suggestions.map((suggestion) => (
-			<SuggestionButton
-				key={suggestion.message}
-				suggestion={suggestion}
-				handleSubmit={handleSubmit}
-			/>
-		));
-	}
+	const handleShowMore = () => {
+		const next = getSuggestions({ slice: 6, exclude: allSuggestions });
+		setAllSuggestions((prev) => [...prev, ...next]);
+	};
+
+	if (!suggestions) return null;
 
 	return (
 		<>
-			{showTour ? (
-				<SuggestionButton
-					key={randomTour.message}
-					suggestion={{ ...randomTour, icon: 'video' }}
-					handleSubmit={() => startTour(randomTour)}
-				/>
-			) : null}
-
-			{[...featured, ...shuffled]
-				.slice(0, showTour ? 2 : 3)
-				.map((suggestion) => (
+			{allSuggestions.map((suggestion) => {
+				// Hide them if it's not available to the user
+				if (!isAvailable(suggestion)) return null;
+				return (
 					<SuggestionButton
 						key={suggestion.message}
 						suggestion={suggestion}
 						handleSubmit={handleSubmit}
 					/>
-				))}
+				);
+			})}
+			<ShowMoreButton handleShowMore={handleShowMore} />
 		</>
 	);
 };
@@ -93,11 +72,11 @@ const SuggestionButton = ({ suggestion, handleSubmit }) => {
 	return (
 		<button
 			type="button"
-			className="group flex items-center justify-between rounded-sm bg-transparent px-1 py-1 text-left text-sm text-gray-900 transition-colors duration-100 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-design-main"
-			onClick={() => handleSubmit(suggestion.message)}
+			className="group flex items-center justify-between rounded-sm bg-transparent px-1 py-1 text-left text-sm not-italic text-gray-900 transition-colors duration-100 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-design-main"
+			onClick={() => handleSubmit(suggestion)}
 		>
 			<div className="flex items-center gap-1.5 leading-none">
-				<span className="h-5 w-5 flex-shrink-0 self-start fill-gray-700">
+				<span className="h-5 w-5 shrink-0 self-start fill-gray-700">
 					{icon}
 				</span>
 				<span className="leading-5">{suggestion.message}</span>
@@ -105,6 +84,29 @@ const SuggestionButton = ({ suggestion, handleSubmit }) => {
 			<span className="inline-block h-5 w-5 fill-gray-700 leading-none opacity-0 transition-opacity duration-100 group-hover:opacity-100 rtl:scale-x-[-1]">
 				{chevronRight}
 			</span>
+		</button>
+	);
+};
+
+const ShowMoreButton = ({ handleShowMore }) => {
+	const [hide, setHide] = useState(false);
+	const handleClick = () => {
+		handleShowMore();
+		setHide(true);
+	};
+
+	if (hide) return null;
+	return (
+		<button
+			type="button"
+			className="group flex w-full items-center gap-3 rounded-sm bg-transparent px-1 py-1 text-xs not-italic text-gray-800 transition-colors duration-100 hover:text-gray-900 focus:outline-hidden group"
+			onClick={handleClick}
+		>
+			<span className="h-px flex-1 bg-gray-200" />
+			<span className="group-hover:underline group-focus:ring-2 group-focus:ring-design-main">
+				{__('Show more', 'extendify-local')}
+			</span>
+			<span className="h-px flex-1 bg-gray-200" />
 		</button>
 	);
 };

@@ -8,7 +8,7 @@ import { registerCoreBlocks } from '@wordpress/block-library';
 import { getBlockTypes } from '@wordpress/blocks';
 import { Spinner } from '@wordpress/components';
 import { humanTimeDiff } from '@wordpress/date';
-import { useCallback, useEffect, useState } from '@wordpress/element';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 
 const preload = (src) =>
@@ -39,9 +39,12 @@ export const GenerateImageConfirm = ({
 	const { addMessage, messages } = useChatStore();
 	const { block } = useWorkflowStore();
 	const noCredits = Number(imageCredits.remaining) === 0;
+	const generatingImageRef = useRef(false);
+	const confirmed = useRef(false);
 
 	const handleConfirm = async () => {
 		if (importing) return;
+		confirmed.current = true;
 		setImporting(true);
 		try {
 			const importedImage = await downloadImage(
@@ -57,6 +60,7 @@ export const GenerateImageConfirm = ({
 				shouldRefreshPage: true,
 			});
 		} catch (err) {
+			confirmed.current = false;
 			setImporting(false);
 			setError(err?.message || __('Failed to save image', 'extendify-local'));
 		}
@@ -67,23 +71,23 @@ export const GenerateImageConfirm = ({
 		// The CSS.escape() method can also be used for escaping strings
 		// https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape_static
 		const imageElement = document.querySelector(
-			`[data-extendify-agent-block-id="${block?.id}"] > img[src="${CSS.escape(generatedImage)}"]`,
+			`[data-extendify-agent-block-id="${block?.id}"] img[src="${CSS.escape(
+				generatedImage,
+			)}"]`,
 		);
 		if (imageElement) {
-			imageElement.src = inputs.url;
+			imageElement.src = inputs.url.replaceAll(',', '%2C');
 			return true;
 		}
 		return false;
 	}, [block?.id, generatedImage, inputs.url]);
 
-	const handleCancel = useCallback(() => {
-		if (!generatedImage) {
-			onCancel();
-			return;
-		}
-		resetImagePreview();
-		onCancel();
-	}, [onCancel, generatedImage, resetImagePreview]);
+	useEffect(() => {
+		if (!generatedImage) return;
+		return () => {
+			if (!confirmed.current) resetImagePreview();
+		};
+	}, [generatedImage]);
 
 	const handleRetry = useCallback(() => {
 		resetImagePreview();
@@ -96,8 +100,9 @@ export const GenerateImageConfirm = ({
 	}, []);
 
 	useEffect(() => {
-		if (generatedImage || noCredits) return;
+		if (generatedImage || noCredits || generatingImageRef.current) return;
 
+		generatingImageRef.current = true;
 		setGenerating(true);
 		subtractOneCredit();
 		const generate = async () => {
@@ -110,12 +115,13 @@ export const GenerateImageConfirm = ({
 				if (!url) throw new Error(__('No image returned', 'extendify-local'));
 				await preload(url);
 				setGeneratedImage(url);
-				setGenerating(false);
 			} catch (e) {
 				setError(
 					e?.message || __('An unknown error occurred.', 'extendify-local'),
 				);
 				if (e?.imageCredits) updateImageCredits(e.imageCredits);
+				generatingImageRef.current = false;
+			} finally {
 				setGenerating(false);
 			}
 		};
@@ -145,7 +151,9 @@ export const GenerateImageConfirm = ({
 	useEffect(() => {
 		if (!generatedImage) return;
 		const originalImage = document.querySelector(
-			`[data-extendify-agent-block-id="${block?.id}"] > img[src="${CSS.escape(inputs.url)}"]`,
+			`[data-extendify-agent-block-id="${block?.id}"] img[src="${CSS.escape(
+				inputs.url.replaceAll(',', '%2C'),
+			)}"]`,
 		);
 		if (!originalImage) return;
 		originalImage.srcset = '';
@@ -155,7 +163,7 @@ export const GenerateImageConfirm = ({
 
 	useEffect(() => {
 		if (!error) return;
-		const timer = setTimeout(() => handleCancel(), 100);
+		const timer = setTimeout(() => onCancel(), 100);
 		const content = sprintf(
 			// translators: A chat message shown to the user
 			__('Error generating image: %s', 'extendify-local'),
@@ -165,11 +173,11 @@ export const GenerateImageConfirm = ({
 		if (content === last) return () => clearTimeout(timer);
 		addMessage('message', { role: 'assistant', content, error: true });
 		return () => clearTimeout(timer);
-	}, [error, handleCancel, addMessage, messages]);
+	}, [error, onCancel, addMessage, messages]);
 
 	useEffect(() => {
 		if (!noCredits || generating || generatedImage) return;
-		const cancelTimer = setTimeout(() => handleCancel(), 1500);
+		const cancelTimer = setTimeout(() => onCancel(), 1500);
 		const content = sprintf(
 			// translator: %s is the time until credits reset.
 			__(
@@ -191,7 +199,7 @@ export const GenerateImageConfirm = ({
 		noCredits,
 		generating,
 		generatedImage,
-		handleCancel,
+		onCancel,
 		addMessage,
 		messages,
 		imageCredits.refresh,
@@ -223,7 +231,7 @@ export const GenerateImageConfirm = ({
 				<button
 					type="button"
 					className="flex-1 rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
-					onClick={handleCancel}
+					onClick={onCancel}
 				>
 					{__('Cancel', 'extendify-local')}
 				</button>

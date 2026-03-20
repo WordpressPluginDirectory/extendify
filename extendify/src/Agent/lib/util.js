@@ -8,3 +8,10 @@ export const isInEditor = () => {
 	const params = new URLSearchParams(window.location.search);
 	return path.includes('/wp-admin/post.php') && params.get('action') === 'edit';
 };
+
+export const isChangeSiteDesignWorkflowAvailable = () => {
+	const { useAgentOnboarding } = window.extSharedData;
+	const { context } = window.extAgentData;
+
+	return context?.isFrontPage && useAgentOnboarding;
+};

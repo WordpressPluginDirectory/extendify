@@ -21,7 +21,7 @@ const shapeToKeyValue = (shape) => {
 
 const initialState = {
 	// translators: this is for a action log UI. Keep it short
-	statusMessages: [__('Booting things up...', 'extendify-local')],
+	statusMessages: [__('Booting things up', 'extendify-local')],
 	errorMessage: null,
 	errorCount: 0,
 	description: null,

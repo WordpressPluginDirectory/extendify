@@ -9,7 +9,7 @@ import {
 	useEffect,
 	useState,
 } from '@wordpress/element';
-import { __, _x } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { close, Icon } from '@wordpress/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -88,17 +88,12 @@ export const DragResizeLayout = ({ children }) => {
 						draggable
 						className="flex h-full grow cursor-grab active:cursor-grabbing select-none items-center justify-between gap-1 p-0 py-3"
 					>
-						<div className="flex h-5 justify-center gap-2 px-4 rtl:after:right-0">
-							<div className="flex h-5 max-w-36 overflow-hidden">
-								<img
-									className="max-h-full max-w-full object-contain"
-									src={window.extSharedData.partnerLogo}
-									alt={window.extSharedData.partnerName}
-								/>
-							</div>
-							<div className="flex items-center rounded-lg bg-banner-text px-2 font-sans text-xs leading-none text-banner-main">
-								{_x('beta', 'Feature in beta status', 'extendify-local')}
-							</div>
+						<div className="flex h-5 px-4 max-w-36 overflow-hidden">
+							<img
+								className="max-h-full max-w-full object-contain"
+								src={window.extSharedData.partnerLogo}
+								alt={window.extSharedData.partnerName}
+							/>
 						</div>
 						<div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100">
 							<DragButton />

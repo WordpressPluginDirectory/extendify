@@ -37,8 +37,7 @@ class SiteProfileController
      */
     public static function get()
     {
-        $data = \get_option('extendify_site_profile', []);
-        $siteProfile = is_string($data) ? json_decode($data, true) : $data;
+        $siteProfile = \get_option('extendify_site_profile', []);
         return new \WP_REST_Response($siteProfile);
     }
 }

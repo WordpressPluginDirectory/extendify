@@ -188,15 +188,24 @@ export const updateSinglePageLinksToSections = async (
 		pluginPages.push('events');
 	}
 
+	const allAvailablePages = (patternTypes ?? []).concat(pluginPages);
+	if (!allAvailablePages.length) {
+		wpPages[0] = updatePage({
+			id: wpPages[0].id,
+			content: homePageContent.replaceAll(
+				/href="(#extendify-[\w|-]+)"/gi,
+				'href="#"',
+			),
+		});
+		return wpPages;
+	}
+
 	// get the suggested links from the AI and send both the patterns and the plugin pages.
 	const { suggestedLinks } =
-		(await getLinkSuggestions(
-			homePageContent,
-			patternTypes.concat(pluginPages),
-		)) || {};
+		(await getLinkSuggestions(homePageContent, allAvailablePages)) || {};
 
 	// replace the links
-	homePageContent = Object.keys(suggestedLinks).reduce((content, key) => {
+	homePageContent = Object.keys(suggestedLinks ?? {}).reduce((content, key) => {
 		const slug = suggestedLinks[key];
 
 		if (!slug) return content;

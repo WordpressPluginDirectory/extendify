@@ -127,26 +127,6 @@ class Admin
             true
         );
 
-        $siteProfile = \get_option('extendify_site_profile', []);
-        $siteProfile = is_string($siteProfile) ? json_decode($siteProfile, true) : $siteProfile;
-        $siteProfile = is_array($siteProfile) ? $siteProfile : [];
-        $map = [
-            'aiSiteType'          => 'type',
-            'aiTitle'             => 'title',
-            'aiDescription'       => 'description',
-            'aiObjective'         => 'objective',
-            'aiSiteCategory'      => 'category',
-            'aiStructure'         => 'structure',
-            'aiKeywords'          => 'imageSearchTerms',
-            'logoObjectName'      => 'logoObjectName',
-        ];
-        // Converts legacy site profile to new one
-        foreach ($map as $old => $new) {
-            if (!array_key_exists($new, $siteProfile)) {
-                $siteProfile[$new] = $siteProfile[$old] ?? null;
-            }
-        }
-
         $partnerData = PartnerData::getPartnerData();
         $userConsent = get_user_meta(get_current_user_id(), 'extendify_ai_consent', true);
         $htmlAllowlist = [
@@ -175,7 +155,7 @@ class Admin
                 'themeSlug' => \esc_attr(\get_option('stylesheet')),
                 'version' => \esc_attr(Config::$version),
                 'siteTitle' => \esc_attr(\get_bloginfo('name')),
-                'siteProfile' => $siteProfile,
+                'siteProfile' => \get_option('extendify_site_profile', []),
                 'wpLanguage' => \esc_attr(\get_locale()),
                 'wpVersion' => \esc_attr(\get_bloginfo('version')),
                 'isBlockTheme' => function_exists('wp_is_block_theme') ? (bool) wp_is_block_theme() : false,
@@ -189,6 +169,7 @@ class Admin
                 'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
                 'useAgentOnboarding' => (bool) (
                     PartnerData::setting('useAgentOnboarding') ||
+                    Config::preview('agent-onboarding') ||
                     constant('EXTENDIFY_DEVMODE')
                 ),
                 'showAIPageCreation' => (bool) (

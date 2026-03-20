@@ -3,7 +3,7 @@ import { replaceDuotoneSVG } from '@agent/lib/svg-helpers';
 import apiFetch from '@wordpress/api-fetch';
 import { parse } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
-import { useEffect, useRef, useState } from '@wordpress/element';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 
 const id = 'global-styles-inline-css';
 const path = window.location.pathname;
@@ -109,25 +109,25 @@ export const useFontVariationOverride = ({ css }) => {
 		});
 	}, [css, duotoneTheme, dynamicDuotone]);
 
-	return {
-		undoChange: () => {
-			// Revert duotone changes
-			if (duotoneCleanup.current) {
-				duotoneCleanup.current();
-				duotoneCleanup.current = null;
-			}
+	const undoChange = useCallback(() => {
+		// Revert duotone changes
+		if (duotoneCleanup.current) {
+			duotoneCleanup.current();
+			duotoneCleanup.current = null;
+		}
 
-			// Revert CSS changes
-			const style = document.getElementById(id);
-			if (style && frontStyles.current) {
-				style.innerHTML = frontStyles.current;
-			}
+		// Revert CSS changes
+		const style = document.getElementById(id);
+		if (style && frontStyles.current) {
+			style.innerHTML = frontStyles.current;
+		}
 
-			// Remove editor CSS
-			if (!onEditor) return;
-			const iframe = document.querySelector('iframe[name="editor-canvas"]');
-			const doc = iframe?.contentDocument || document;
-			doc?.getElementById(id)?.remove();
-		},
-	};
+		// Remove editor CSS
+		if (!onEditor) return;
+		const iframe = document.querySelector('iframe[name="editor-canvas"]');
+		const doc = iframe?.contentDocument || document;
+		doc?.getElementById(id)?.remove();
+	}, []);
+
+	return { undoChange };
 };

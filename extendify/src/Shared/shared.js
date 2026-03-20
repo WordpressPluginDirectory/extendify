@@ -9,7 +9,8 @@ const showAIAgents = window.extSharedData.showAIAgents;
 
 const isOnLaunch = () => {
 	const query = new URLSearchParams(window.location.search);
-	return query.get('page') === 'extendify-launch';
+	const page = query.get('page');
+	return page === 'extendify-launch' || page === 'extendify-auto-launch';
 };
 
 domReady(() => {

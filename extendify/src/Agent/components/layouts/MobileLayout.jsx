@@ -1,7 +1,7 @@
 import { usePortal } from '@agent/hooks/usePortal';
 import { useGlobalStore } from '@agent/state/global';
 import { createPortal, useEffect } from '@wordpress/element';
-import { __, _x } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { chevronDown, Icon } from '@wordpress/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -41,17 +41,12 @@ export const MobileLayout = ({ children }) => {
 				>
 					<div className="group flex shrink-0 items-center justify-between overflow-hidden rounded-t-[calc(0.5rem-1px)] bg-banner-main text-banner-text">
 						<div className="flex h-full grow items-center justify-between gap-1 p-0 py-3">
-							<div className="flex h-5 justify-center gap-2 px-4 rtl:after:right-0">
-								<div className="flex h-5 max-w-36 overflow-hidden">
-									<img
-										className="max-h-full max-w-full object-contain"
-										src={window.extSharedData.partnerLogo}
-										alt={window.extSharedData.partnerName}
-									/>
-								</div>
-								<div className="flex items-center rounded-lg bg-banner-text px-2 font-sans text-xs leading-none text-banner-main">
-									{_x('beta', 'Feature in beta status', 'extendify-local')}
-								</div>
+							<div className="flex h-5 px-4 max-w-36 overflow-hidden">
+								<img
+									className="max-h-full max-w-full object-contain"
+									src={window.extSharedData.partnerLogo}
+									alt={window.extSharedData.partnerName}
+								/>
 							</div>
 						</div>
 						<button

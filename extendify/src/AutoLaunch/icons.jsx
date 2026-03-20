@@ -91,3 +91,304 @@ export const checkmark = (
 		/>
 	</svg>
 );
+
+export const loaderThreeDots = (
+	<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<title>{__('Three bars loading animation', 'extendify-local')}</title>
+		<rect
+			x="6"
+			y="20"
+			width="6"
+			height="6"
+			rx="3"
+			fill="currentColor"
+			fillOpacity="0.5"
+		>
+			<animate
+				attributeName="y"
+				values="20;8;8;8;8;8;20"
+				keyTimes="0;0.167;0.333;0.5;0.667;0.833;1"
+				dur="2500ms"
+				repeatCount="indefinite"
+				calcMode="spline"
+				keySplines="0.25 0.1 0.25 1; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0.25 0.1 0.25 1"
+			/>
+			<animate
+				attributeName="height"
+				values="6;32;32;32;32;32;6"
+				keyTimes="0;0.167;0.333;0.5;0.667;0.833;1"
+				dur="2500ms"
+				repeatCount="indefinite"
+				calcMode="spline"
+				keySplines="0.25 0.1 0.25 1; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0.25 0.1 0.25 1"
+			/>
+		</rect>
+		<rect
+			x="20"
+			y="20"
+			width="6"
+			height="6"
+			rx="3"
+			fill="currentColor"
+			fillOpacity="0.5"
+		>
+			<animate
+				attributeName="y"
+				values="20;20;8;8;8;20;20"
+				keyTimes="0;0.167;0.333;0.5;0.667;0.833;1"
+				dur="2500ms"
+				repeatCount="indefinite"
+				calcMode="spline"
+				keySplines="0 0 0 0; 0.25 0.1 0.25 1; 0 0 0 0; 0 0 0 0; 0.25 0.1 0.25 1; 0 0 0 0"
+			/>
+			<animate
+				attributeName="height"
+				values="6;6;32;32;32;6;6"
+				keyTimes="0;0.167;0.333;0.5;0.667;0.833;1"
+				dur="2500ms"
+				repeatCount="indefinite"
+				calcMode="spline"
+				keySplines="0 0 0 0; 0.25 0.1 0.25 1; 0 0 0 0; 0 0 0 0; 0.25 0.1 0.25 1; 0 0 0 0"
+			/>
+		</rect>
+		<rect
+			x="34"
+			y="20"
+			width="6"
+			height="6"
+			rx="3"
+			fill="currentColor"
+			fillOpacity="0.5"
+		>
+			<animate
+				attributeName="y"
+				values="20;20;20;8;20;20;20"
+				keyTimes="0;0.167;0.333;0.5;0.667;0.833;1"
+				dur="2500ms"
+				repeatCount="indefinite"
+				calcMode="spline"
+				keySplines="0 0 0 0; 0 0 0 0; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0 0 0 0; 0 0 0 0"
+			/>
+			<animate
+				attributeName="height"
+				values="6;6;6;32;6;6;6"
+				keyTimes="0;0.167;0.333;0.5;0.667;0.833;1"
+				dur="2500ms"
+				repeatCount="indefinite"
+				calcMode="spline"
+				keySplines="0 0 0 0; 0 0 0 0; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0 0 0 0; 0 0 0 0"
+			/>
+		</rect>
+	</svg>
+);
+
+export const loaderSiteCreation = (
+	<svg
+		width="172"
+		height="118"
+		viewBox="0 0 172 118"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<title>{__('Site creation loading animation', 'extendify-local')}</title>
+		<rect
+			x="1"
+			y="1"
+			width="170"
+			height="116"
+			rx="12"
+			stroke="currentColor"
+			strokeOpacity="0.5"
+			strokeWidth="2"
+			strokeLinecap="round"
+		/>
+		<g clipPath="url(#clip0)">
+			<rect rx="6" fill="url(#gradTL)">
+				<animate
+					attributeName="x"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="9;9;9;9;9;9;9;9;9;9;9;9;9;9;9"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="y"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="9;9;9;9;9;9;9;9;9;9;9;9;9;9;9"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="width"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="100;100;48;48;48;48;48;48;74;74;74;74;74;74;100"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="height"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="100;100;100;100;100;100;47;47;47;47;47;47;100;100;100"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+			</rect>
+
+			<rect rx="6" fill="url(#gradTR)">
+				<animate
+					attributeName="x"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="115;115;63;63;63;63;63;63;89;89;89;89;89;89;115"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="y"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="9;9;9;9;9;9;9;9;9;9;9;9;9;9;9"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="width"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="48;48;100;100;100;100;100;100;74;74;74;74;74;74;48"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="height"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="100;100;100;100;47;47;47;47;47;47;47;47;100;100;100"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+			</rect>
+
+			<rect rx="6" fill="url(#gradBL)">
+				<animate
+					attributeName="x"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="9;9;9;9;9;9;9;9;9;9;9;9;9;9;9"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="y"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="109;109;109;109;109;109;62;62;62;62;62;109;109;109;109"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="width"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="48;48;48;48;48;48;48;48;80;80;0;0;0;0;48"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="height"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="0;0;0;0;0;0;47;47;47;47;47;0;0;0;0"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+			</rect>
+
+			<rect rx="6" fill="url(#gradBR)">
+				<animate
+					attributeName="x"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="63;63;63;63;63;63;63;63;95;95;9;9;89;89;63"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="y"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="115;115;115;115;62;62;62;62;62;62;62;62;115;115;115"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="width"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="100;100;100;100;100;100;100;100;68;68;154;154;74;74;100"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+				<animate
+					attributeName="height"
+					dur="4900ms"
+					repeatCount="indefinite"
+					calcMode="spline"
+					values="47;47;47;47;47;47;47;47;47;47;47;47;47;47;47"
+					keyTimes="0;0.041;0.143;0.184;0.286;0.327;0.429;0.469;0.571;0.612;0.714;0.755;0.857;0.898;1"
+					keySplines="0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1;0 0 1 1;0 0 0.58 1"
+				/>
+			</rect>
+		</g>
+
+		<defs>
+			<linearGradient id="gradTL" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stopColor="currentColor" stopOpacity="0.5" />
+				<stop offset="50%" stopColor="currentColor" stopOpacity="0.35" />
+				<stop offset="100%" stopColor="currentColor" stopOpacity="0.5" />
+			</linearGradient>
+			<linearGradient id="gradTR" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stopColor="currentColor" stopOpacity="0.5" />
+				<stop offset="50%" stopColor="currentColor" stopOpacity="0.35" />
+				<stop offset="100%" stopColor="currentColor" stopOpacity="0.5" />
+			</linearGradient>
+			<linearGradient id="gradBL" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stopColor="currentColor" stopOpacity="0.5" />
+				<stop offset="50%" stopColor="currentColor" stopOpacity="0.35" />
+				<stop offset="100%" stopColor="currentColor" stopOpacity="0.5" />
+			</linearGradient>
+			<linearGradient id="gradBR" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stopColor="currentColor" stopOpacity="0.5" />
+				<stop offset="50%" stopColor="currentColor" stopOpacity="0.35" />
+				<stop offset="100%" stopColor="currentColor" stopOpacity="0.5" />
+			</linearGradient>
+			<clipPath id="clip0">
+				<rect
+					width="154"
+					height="100"
+					fill="white"
+					transform="translate(9 9)"
+				/>
+			</clipPath>
+		</defs>
+	</svg>
+);

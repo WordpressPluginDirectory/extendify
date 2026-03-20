@@ -6,7 +6,7 @@ import {
 import { useWorkflowStore } from '@agent/state/workflows';
 import { registerCoreBlocks } from '@wordpress/block-library';
 import { getBlockTypes } from '@wordpress/blocks';
-import { useCallback, useEffect, useState } from '@wordpress/element';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 import { MediaUpload } from '@wordpress/media-utils';
 
@@ -17,12 +17,36 @@ export const UpdateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 	const [selectedImage, setSelectedImage] = useState(null);
 	const { block } = useWorkflowStore();
 
+	const resetImagePreview = useCallback(() => {
+		if (!selectedImage) return;
+		const imageElement = document.querySelector(
+			// The CSS.escape() method can also be used for escaping strings
+			// https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape_static
+			`[data-extendify-agent-block-id="${block?.id}"] > img[src="${CSS.escape(
+				selectedImage.url,
+			)}"]`,
+		);
+		if (imageElement) {
+			imageElement.src = inputs.url.replaceAll(',', '%2C');
+		}
+	}, [block?.id, selectedImage, inputs.url]);
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		if (!selectedImage) return;
+		return () => {
+			if (!confirmed.current) resetImagePreview();
+		};
+	}, [selectedImage]);
+
 	const previewImage = (image) => {
 		// Query the DOM based on the block id and the image url
 		const originalImage = document.querySelector(
 			// The CSS.escape() method can also be used for escaping strings
 			// https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape_static
-			`[data-extendify-agent-block-id="${block?.id}"] > img[src="${CSS.escape(inputs.url)}"]`,
+			`[data-extendify-agent-block-id="${block?.id}"] img[src="${CSS.escape(
+				inputs.url.replaceAll(',', '%2C'),
+			)}"]`,
 		);
 		if (!originalImage) return;
 		originalImage.srcset = '';
@@ -36,6 +60,7 @@ export const UpdateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 
 	const handleConfirm = async () => {
 		if (!selectedImage) return;
+		confirmed.current = true;
 		await onConfirm({
 			data: {
 				previousContent: inputs.previousContent,
@@ -44,25 +69,6 @@ export const UpdateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 			shouldRefreshPage: true,
 		});
 	};
-
-	const handleCancel = useCallback(() => {
-		if (!selectedImage) {
-			onCancel();
-			return;
-		}
-
-		const imageElement = document.querySelector(
-			// The CSS.escape() method can also be used for escaping strings
-			// https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape_static
-			`[data-extendify-agent-block-id="${block?.id}"] > img[src="${CSS.escape(selectedImage.url)}"]`,
-		);
-
-		if (imageElement) {
-			imageElement.src = inputs.url;
-		}
-
-		onCancel();
-	}, [onCancel, inputs, block, selectedImage]);
 
 	useEffect(() => {
 		if (getBlockTypes().length !== 0) return;
@@ -88,10 +94,7 @@ export const UpdateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 	if (showConfirmation) {
 		return (
 			<Wrapper>
-				<Confirmation
-					handleConfirm={handleConfirm}
-					handleCancel={handleCancel}
-				/>
+				<Confirmation handleConfirm={handleConfirm} handleCancel={onCancel} />
 			</Wrapper>
 		);
 	}

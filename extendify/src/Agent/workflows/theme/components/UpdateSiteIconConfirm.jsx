@@ -1,5 +1,5 @@
 import { ImageUploader } from '@agent/components/ImageUploader';
-import { useEffect, useState } from '@wordpress/element';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 const updateLinkHrefAttr = (url) => {
@@ -17,6 +17,20 @@ export const UpdateSiteIconConfirm = ({ onConfirm, onCancel }) => {
 		);
 	}, []);
 
+	const undoSiteIconChange = useCallback(() => {
+		if (originalSiteIconUrl) {
+			updateLinkHrefAttr(originalSiteIconUrl);
+		}
+	}, [originalSiteIconUrl]);
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		if (!originalSiteIconUrl) return;
+		return () => {
+			if (!confirmed.current) undoSiteIconChange();
+		};
+	}, [originalSiteIconUrl]);
+
 	useEffect(() => {
 		// Put modal above the Agent
 		const style = document.createElement('style');
@@ -28,15 +42,11 @@ export const UpdateSiteIconConfirm = ({ onConfirm, onCancel }) => {
 	}, []);
 
 	const handleConfirm = async ({ imageId }) => {
+		confirmed.current = true;
 		await onConfirm({
 			data: { imageId },
 			shouldRefreshPage: true,
 		});
-	};
-
-	const handleCancel = () => {
-		updateLinkHrefAttr(originalSiteIconUrl);
-		onCancel();
 	};
 
 	const handleSelect = (image) => {
@@ -51,7 +61,7 @@ export const UpdateSiteIconConfirm = ({ onConfirm, onCancel }) => {
 					title={__('Site icon', 'extendify-local')}
 					actionLabel={__('Set site icon', 'extendify-local')}
 					onSave={handleConfirm}
-					onCancel={handleCancel}
+					onCancel={onCancel}
 					onSelect={handleSelect}
 				/>
 			</div>

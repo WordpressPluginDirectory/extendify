@@ -1,30 +1,32 @@
-import { useCallback, useEffect } from '@wordpress/element';
+import { useCallback, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel, onRetry }) => {
+	const undoTextReplacements = useCallback(() => {
+		const replacements = inputs.replacements || [];
+		const reversed = replacements.map(({ original, updated }) => ({
+			original: updated,
+			updated: original,
+		}));
+		updateAllTextNodesAndAttributes(reversed);
+	}, [inputs]);
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		return () => {
+			if (!confirmed.current) undoTextReplacements();
+		};
+	}, []);
+
 	const handleConfirm = () => {
+		confirmed.current = true;
 		onConfirm({ data: inputs });
 	};
 
 	const handleRetry = useCallback(() => {
-		const replacements = inputs.replacements || [];
-		const reversed = replacements.map(({ original, updated }) => ({
-			original: updated,
-			updated: original,
-		}));
-		updateAllTextNodesAndAttributes(reversed);
+		undoTextReplacements();
 		onRetry();
-	}, [onRetry, inputs]);
-
-	const handleCancel = useCallback(() => {
-		const replacements = inputs.replacements || [];
-		const reversed = replacements.map(({ original, updated }) => ({
-			original: updated,
-			updated: original,
-		}));
-		onCancel();
-		updateAllTextNodesAndAttributes(reversed);
-	}, [inputs, onCancel]);
+	}, [undoTextReplacements, onRetry]);
 
 	useEffect(() => {
 		updateAllTextNodesAndAttributes(inputs.replacements);
@@ -46,7 +48,7 @@ export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel, onRetry }) => {
 				<button
 					type="button"
 					className="flex-1 rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
-					onClick={handleCancel}
+					onClick={onCancel}
 				>
 					{__('Cancel', 'extendify-local')}
 				</button>

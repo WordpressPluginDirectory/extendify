@@ -1,6 +1,6 @@
 import { ImageUploader } from '@agent/components/ImageUploader';
 import { useWorkflowStore } from '@agent/state/workflows';
-import { useEffect, useState } from '@wordpress/element';
+import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 const updateLogoSrcAttr = (url, cssFilter) => {
@@ -22,6 +22,20 @@ export const UpdateLogoConfirm = ({ onConfirm, onCancel }) => {
 		);
 	}, [block]);
 
+	const undoLogoChange = useCallback(() => {
+		if (originalLogoImgSrc) {
+			updateLogoSrcAttr(originalLogoImgSrc);
+		}
+	}, [originalLogoImgSrc]);
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		if (!originalLogoImgSrc) return;
+		return () => {
+			if (!confirmed.current) undoLogoChange();
+		};
+	}, [originalLogoImgSrc]);
+
 	useEffect(() => {
 		// Put modal above the Agent
 		const style = document.createElement('style');
@@ -33,15 +47,11 @@ export const UpdateLogoConfirm = ({ onConfirm, onCancel }) => {
 	}, []);
 
 	const handleConfirm = async ({ imageId }) => {
+		confirmed.current = true;
 		await onConfirm({
 			data: { imageId },
 			shouldRefreshPage: !window.extAgentData?.context?.adminPage,
 		});
-	};
-
-	const handleCancel = () => {
-		updateLogoSrcAttr(originalLogoImgSrc);
-		onCancel();
 	};
 
 	const handleSelect = (image) => {
@@ -56,7 +66,7 @@ export const UpdateLogoConfirm = ({ onConfirm, onCancel }) => {
 					title={__('Site logo', 'extendify-local')}
 					actionLabel={__('Set site logo', 'extendify-local')}
 					onSave={handleConfirm}
-					onCancel={handleCancel}
+					onCancel={onCancel}
 					onSelect={handleSelect}
 				/>
 			</div>

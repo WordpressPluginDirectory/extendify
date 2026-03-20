@@ -1,4 +1,10 @@
-import { callTool, digest, handleWorkflow, pickWorkflow } from '@agent/api';
+import {
+	callTool,
+	digest,
+	handleWorkflow,
+	pickWorkflow,
+	recordAgentActivity,
+} from '@agent/api';
 import { Chat } from '@agent/Chat';
 import { ChatInput } from '@agent/components/ChatInput';
 import { ChatMessages } from '@agent/components/ChatMessages';
@@ -8,6 +14,7 @@ import { useLockPost } from '@agent/hooks/useLockPost';
 import { getRedirectUrl } from '@agent/lib/redirects';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
+import { useSuggestionsStore } from '@agent/state/suggestions';
 import { useWorkflowStore } from '@agent/state/workflows';
 import {
 	useCallback,
@@ -49,6 +56,7 @@ export const Agent = () => {
 	const [loop, setLoop] = useState(0);
 	const workflow = getWorkflow();
 	const chatAvailable = useMemo(() => isChatAvailable(), [isChatAvailable]);
+	const { addSuggestions, getSuggestions } = useSuggestionsStore();
 
 	const cleanup = useCallback(() => {
 		setCanType(true);
@@ -169,6 +177,11 @@ export const Agent = () => {
 			...agentResponse?.whenFinishedTool,
 			agentResponse,
 		});
+		recordAgentActivity({
+			sessionId: workflow?.sessionId,
+			action: 'workflow_tool_bypass',
+			value: { workflow: workflow?.id },
+		});
 	}, []);
 
 	useEffect(() => {
@@ -205,7 +218,8 @@ export const Agent = () => {
 			setWhenFinishedToolProps(null);
 			addMessage('status', { type: 'workflow-tool-processing' });
 			toolWorking.current = true;
-			const { data, whenFinishedToolProps, shouldRefreshPage } = detail ?? {};
+			const { data, whenFinishedToolProps, shouldRefreshPage, redirectUrl } =
+				detail ?? {};
 			const { status, whenFinishedTool, answerId, redirectTo } =
 				whenFinishedToolProps?.agentResponse || {};
 			const { id, labels } = whenFinishedTool || {};
@@ -246,18 +260,23 @@ export const Agent = () => {
 				label: labels?.confirm,
 				type: 'workflow-tool-completed',
 			});
+			addSuggestions(whenFinishedToolProps.agentResponse?.recommendations);
 			addMessage('workflow', {
 				status: 'completed',
 				agent: workflow.agent,
 				answerId,
+				suggestions: getSuggestions(),
 			});
 			setWorkflow(null);
 
 			const url = getRedirectUrl(redirectTo, whenFinishedToolProps?.inputs);
-			if (url || shouldRefreshPage) {
+
+			if (url || redirectUrl || shouldRefreshPage) {
 				await new Promise((resolve) => setTimeout(resolve, 1000));
 			}
+
 			if (url) return window.location.assign(url);
+			if (redirectUrl) return window.location.assign(redirectUrl);
 			if (shouldRefreshPage) return window.location.reload();
 			// Clean up if not redirecting
 			cleanup();
@@ -274,6 +293,7 @@ export const Agent = () => {
 				status: 'canceled',
 				agent: workflow.agent,
 				answerId,
+				suggestions: getSuggestions(),
 			});
 			addWorkflowResult({
 				answerId,
@@ -312,6 +332,8 @@ export const Agent = () => {
 		addWorkflowResult,
 		setWorkflow,
 		workflow,
+		getSuggestions,
+		addSuggestions,
 	]);
 
 	useEffect(() => {
@@ -334,7 +356,11 @@ export const Agent = () => {
 		const cancelWorkflow =
 			(workflow?.cancelOnPageChange && theyMoved) || blockMissing;
 		if (cancelWorkflow) {
-			addMessage('workflow', { status: 'canceled', agent: workflow.agent });
+			addMessage('workflow', {
+				status: 'canceled',
+				agent: workflow.agent,
+				suggestions: getSuggestions(),
+			});
 			setWorkflow(null);
 			cleanup();
 			return;
@@ -409,11 +435,13 @@ export const Agent = () => {
 				const { id, inputs, static: staticC } = agentResponse.whenFinishedTool;
 				if (staticC) {
 					addMessage('workflow-component', { id, status: 'completed', inputs });
+					addSuggestions(agentResponse.recommendations);
 					setWorkflow(null);
 					addMessage('workflow', {
 						status: 'completed',
 						agent: workflow.agent,
 						answerId,
+						suggestions: getSuggestions(),
 					});
 					cleanup();
 				}
@@ -421,13 +449,16 @@ export const Agent = () => {
 			}
 			// If we're done, it means the AI has the answer
 			if (agentResponse.status !== 'in-progress') {
+				const { recommendations, status } = agentResponse;
+				const isCompleted = status === 'completed';
+				if (recommendations) addSuggestions(recommendations);
 				setWorkflow(null);
 				cleanup();
 				addMessage('workflow', {
-					status:
-						agentResponse.status === 'completed' ? 'completed' : 'canceled',
+					status: isCompleted ? 'completed' : 'canceled',
 					agent: workflow.agent,
 					answerId,
+					suggestions: getSuggestions(),
 				});
 				return;
 			}
@@ -498,6 +529,8 @@ export const Agent = () => {
 		whenFinishedToolProps,
 		setWhenFinishedToolProps,
 		block,
+		addSuggestions,
+		getSuggestions,
 	]);
 
 	useEffect(() => {
@@ -531,7 +564,7 @@ export const Agent = () => {
 							handleSubmit={handleSubmit}
 						/>
 					</div>
-					<div className="text-pretty px-4 pb-2 text-center text-xss leading-none text-gray-600">
+					<div className="text-pretty px-4 pb-2 text-center text-xss leading-none text-banner-text/60">
 						{__(
 							'AI Agent can make mistakes. Check changes before saving.',
 							'extendify-local',

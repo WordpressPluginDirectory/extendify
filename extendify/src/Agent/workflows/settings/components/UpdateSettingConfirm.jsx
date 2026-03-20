@@ -1,19 +1,25 @@
-import { useEffect, useRef } from '@wordpress/element';
+import { useCallback, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 export const UpdateSettingConfirm = ({ inputs, onConfirm, onCancel }) => {
 	const headerRef = useRef(null);
 	const oldTitle = useRef('');
-
-	const handleConfirm = () => {
-		onConfirm({ data: inputs, shouldRefreshPage: true });
-	};
-
-	const handleCancel = () => {
+	const undoSettingChange = useCallback(() => {
 		if (headerRef.current) {
 			headerRef.current.textContent = oldTitle.current;
 		}
-		onCancel();
+	}, []);
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		return () => {
+			if (!confirmed.current) undoSettingChange();
+		};
+	}, []);
+
+	const handleConfirm = () => {
+		confirmed.current = true;
+		onConfirm({ data: inputs, shouldRefreshPage: true });
 	};
 
 	useEffect(() => {
@@ -44,7 +50,7 @@ export const UpdateSettingConfirm = ({ inputs, onConfirm, onCancel }) => {
 				<button
 					type="button"
 					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
-					onClick={handleCancel}
+					onClick={onCancel}
 				>
 					{__('Cancel', 'extendify-local')}
 				</button>

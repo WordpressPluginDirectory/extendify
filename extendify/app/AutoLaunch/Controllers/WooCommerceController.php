@@ -8,7 +8,7 @@ namespace Extendify\AutoLaunch\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
-use Extendify\Launch\Services\WooCommerceImporter;
+use Extendify\AutoLaunch\Services\WooCommerceImporter;
 
 /**
  * The controller for interacting with WooCommerce to import temporary data.
