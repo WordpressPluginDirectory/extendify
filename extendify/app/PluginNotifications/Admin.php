@@ -14,6 +14,7 @@ class Admin
     public function __construct()
     {
         \add_action('in_admin_header', [$this, 'captureAndSuppressNotices'], 1);
+        \add_action('admin_init', [AdminPage::class, 'handleActions']);
         \add_action('admin_menu', [$this, 'addMenu']);
         \add_action('admin_enqueue_scripts', [$this, 'enqueueAssets']);
     }

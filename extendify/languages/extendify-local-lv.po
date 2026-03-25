@@ -38,7 +38,7 @@ msgstr "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm
 
 #: app/AdminPageRouter.php:42
 #: app/AdminPageRouter.php:66
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -139,33 +139,33 @@ msgstr "Tēma"
 msgid "Message"
 msgstr "Ziņojums"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/DOMHighlighter.jsx:266
 msgid "Remove highlight"
 msgstr "Noņemt izcelšanu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:113
 #: src/Agent/components/layouts/SidebarLayout.jsx:114
 msgid "Close window"
 msgstr "Aizvērt logu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:154
 msgid "Drag to move"
 msgstr "Velciet, lai pārvietotu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/layouts/MobileLayout.jsx:63
 msgid "Minimize window"
 msgstr "Minimizēt logu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/OptionsPopover.jsx:78
 msgid "View more options"
 msgstr "Skatīt vairāk opciju"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: src/Agent/icons.jsx:12
@@ -174,54 +174,54 @@ msgstr "Skatīt vairāk opciju"
 msgid "Magic Icon"
 msgstr "Burvju ikona"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/icons.jsx:39
 msgid "Magic Sparkle Animation"
 msgstr "Burvju dzirkstošā animācija"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/icons.jsx:113
 #: src/HelpCenter/components/ai-chat/icons.jsx:41
 msgid "Thumb Down Icon"
 msgstr "Ikona \"Īkšķis uz leju\""
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/icons.jsx:125
 #: src/HelpCenter/components/ai-chat/icons.jsx:53
 msgid "Thumb Up Icon"
 msgstr "Patīk ikona"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/icons.jsx:132
 msgid "Sparkle Icon"
 msgstr "Mirdzoša ikona"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/icons.jsx:147
 msgid "Tool Select Icon"
 msgstr "Rīka izvēles ikona"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/icons.jsx:179
 msgid "Selected Content Icon"
 msgstr "Atlasītā satura ikona"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:16
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:21
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:27
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:30
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:33
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:50
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:54
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:70
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:76
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:82
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:16
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:21
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:27
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:30
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:33
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:50
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:54
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:70
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:76
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:82
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: src/Agent/components/ChatInput.jsx:222
 #: src/Agent/components/ImageUploader.jsx:185
 #: src/Agent/icons.jsx:214
@@ -243,33 +243,33 @@ msgstr "Atlasītā satura ikona"
 msgid "Cancel"
 msgstr "Atcelt"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/ChatTools.jsx:35
 msgid "Select"
 msgstr "Izvēlēties"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/ChatInput.jsx:172
 msgid "What do you want to change in the selected content?"
 msgstr "Ko vēlaties mainīt atlasītajā saturā"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/ChatInput.jsx:176
 msgid "Ask anything"
 msgstr "Uzdodiet jebkuru jautājumu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/ChatInput.jsx:199
 msgid "Message too long"
 msgstr "Ziņojums pārāk garš"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/ChatInput.jsx:233
 msgid "Send message"
 msgstr "Sūtīt ziņojumu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
 #: public/build/extendify-auto-launch-98e58b101e615fdbf711.js:49
 #: public/build/extendify-launch-713abfcbd93ec218f2ee.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
@@ -279,96 +279,96 @@ msgstr "Sūtīt ziņojumu"
 msgid "Take me there"
 msgstr "Aizved mani tur"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:13
 msgid "Thinking..."
 msgstr "Domā..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:15
 msgid "Working on it..."
 msgstr "Notiek apstrāde..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:16
 msgid "Interpreting message..."
 msgstr "Notiek ziņojuma interpretācija..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:17
 msgid "Formulating a response..."
 msgstr "Veido atbildi..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:18
 msgid "Reviewing logic..."
 msgstr "Pārskata loģiku..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: public/build/extendify-auto-launch-98e58b101e615fdbf711.js:52
 #: src/Agent/components/messages/StatusMessage.jsx:20
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:163
 msgid "Processing..."
 msgstr "Notiek apstrāde…"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:21
 msgid "Gathering data..."
 msgstr "Notiek datu vākšana..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:22
 msgid "Analyzing..."
 msgstr "Notiek analīze..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:23
 #: src/Agent/components/messages/StatusMessage.jsx:24
 msgid "Canceled"
 msgstr "Atcelts"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:25
 msgid "Usage limit reached"
 msgstr "Lietojuma limits sasniegts"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:26
 msgid "Usage limit restored"
 msgstr "Lietojuma limits atjaunots"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:92
 msgid "Success icon"
 msgstr "Veiksmes ikona"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:102
 msgid "Workflow completed successfully"
 msgstr "Darbplūsma veiksmīgi pabeigta"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:118
 msgid "Workflow was canceled"
 msgstr "Darba plūsma tika atcelta"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/ErrorMessage.jsx:15
 msgid "Error icon"
 msgstr "Kļūdas ikona"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:1
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Komponents nav pieejams"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:4
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:4
 #: src/Agent/components/messages/WorkflowComponent.jsx:22
 msgid "It may have been removed or is not available for your account."
 msgstr "Tas var būt noņemts vai nav pieejams jūsu kontam."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:4
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:48
@@ -377,90 +377,90 @@ msgstr "Tas var būt noņemts vai nav pieejams jūsu kontam."
 msgid "Remove rating"
 msgstr "Noņemt vērtējumu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:4
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Novērtējiet, vai šī atbilde bija noderīga"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:4
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:49
 #: src/HelpCenter/components/ai-chat/Rating.jsx:48
 msgid "Rate that this answer was not helpful"
 msgstr "Novērtējiet, ka šī atbilde nebija noderīga"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:4
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:4
 #: src/Agent/components/messages/WorkflowMessage.jsx:15
 msgid "What's next? Would you like to do something else?"
 msgstr "Kas tālāk? Vai vēlaties darīt ko citu?"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:4
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:4
 #: src/Agent/components/ScrollDownButton.jsx:22
 msgid "Scroll down"
 msgstr "Ritināt uz leju"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:7
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:7
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Jūs esat sasniedzis savu dienas ziņojumu limitu. Jūsu limits tiks atiestatīts pēc %s."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:7
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:7
 #: src/Agent/components/PageDocument.jsx:12
 msgid "Selected content"
 msgstr "Atlasītais saturs"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:7
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:7
 #: src/Agent/components/PageDocument.jsx:25
 msgid "Remove"
 msgstr "Noņemt"
 
 #. translators: This message is shown when the AI agent fails to find a suitable workflow.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:9
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:9
 #: src/Agent/Agent.jsx:101
 msgid "Something went wrong while trying to start this request. Please try again."
 msgstr "Kaut kas nogāja greizi, mēģinot sākt šo pieprasījumu. Lūdzu, mēģiniet vēlreiz."
 
 #. translators: This message is shown when the AI agent fails to confirm an action.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:11
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:11
 #: src/Agent/Agent.jsx:249
 msgid "Sorry, something went wrong attempting to call the tool. Please try again."
 msgstr "Atvainojiet, radās kļūda, mēģinot izsaukt rīku. Lūdzu, mēģiniet vēlreiz."
 
 #. translators: This message is shown when the AI agent encounters a general error.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:13
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:13
 #: src/Agent/Agent.jsx:509
 msgid "Sorry, something went wrong. I tried but wasn't able to do this request. Please try again."
 msgstr "Atvainojiet, kaut kas nogāja greizi. Es mēģināju, bet nevarēju izpildīt šo pieprasījumu. Lūdzu, mēģiniet vēlreiz."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:13
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:13
 #: src/Agent/Agent.jsx:568
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "AI aģents var pieļaut kļūdas. Pārbaudiet izmaiņas pirms saglabāšanas."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:13
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:13
 #: src/Agent/components/buttons/AdminBar.jsx:41
 #: src/Agent/components/buttons/Mobile.jsx:38
 #: src/Agent/components/buttons/PostEditor.jsx:47
 msgid "Open Agent"
 msgstr "Atvērt aģentu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:13
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:13
 #: src/Agent/components/buttons/AdminBar.jsx:45
 #: src/Agent/components/buttons/Mobile.jsx:46
 #: src/Agent/components/buttons/PostEditor.jsx:54
 msgid "AI Agent"
 msgstr "AI aģents"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:13
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:13
 #: src/Agent/components/buttons/Mobile.jsx:49
 msgid "How can we help you today?"
 msgstr "Kā mēs varam jums palīdzēt šodien?"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:13
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:13
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:308
@@ -469,14 +469,14 @@ msgstr "Kā mēs varam jums palīdzēt šodien?"
 msgid "Close Modal"
 msgstr "Aizvērt modāli"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:13
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:313
 #: src/HelpCenter/components/tours/GuidedTour.jsx:315
 msgid "Tour"
 msgstr "Ekskursija"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:13
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-launch-713abfcbd93ec218f2ee.js:8
 #: src/Agent/components/GuidedTour.jsx:425
@@ -485,7 +485,7 @@ msgstr "Ekskursija"
 msgid "Back"
 msgstr "Atpakaļ"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:13
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:434
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
@@ -493,7 +493,7 @@ msgid "Tour Steps"
 msgstr "Tūres soļi"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:16
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:16
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: src/Agent/components/GuidedTour.jsx:443
 #: src/HelpCenter/components/tours/GuidedTour.jsx:450
@@ -501,7 +501,7 @@ msgstr "Tūres soļi"
 msgid "%1$s of %2$s"
 msgstr "%1$s no %2$s"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:16
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:16
 #: public/build/extendify-auto-launch-98e58b101e615fdbf711.js:49
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: public/build/extendify-launch-713abfcbd93ec218f2ee.js:8
@@ -512,7 +512,7 @@ msgstr "%1$s no %2$s"
 msgid "Next"
 msgstr "Tālāk"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:16
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:16
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: src/Agent/components/GuidedTour.jsx:485
@@ -521,36 +521,36 @@ msgstr "Tālāk"
 msgid "Done"
 msgstr "Gatavs"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:16
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:16
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: src/Agent/components/ImageUploader.jsx:137
 #: src/Assist/components/ImageUploader.jsx:95
 msgid "Edit or update the image"
 msgstr "Rediģēt vai atjaunot attēlu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:16
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:16
 #: src/Agent/components/ImageUploader.jsx:166
 msgid "Drop images to upload"
 msgstr "Ievelciet attēlus, lai augšupielādētu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:16
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:16
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
 #: src/Agent/components/ImageUploader.jsx:200
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:13
 msgid "Open Media Library"
 msgstr "Atvērt multivides bibliotēku"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:16
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:21
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:33
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:50
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:54
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:70
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:76
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:82
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:16
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:21
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:33
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:50
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:54
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:70
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:76
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:82
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: src/Agent/components/ImageUploader.jsx:221
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:254
@@ -568,7 +568,7 @@ msgstr "Atvērt multivides bibliotēku"
 msgid "Save"
 msgstr "Saglabāt"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/state/chat.js:21
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -577,7 +577,7 @@ msgstr ""
 "#### Jūsu vietne ir gatava 🎉  \n"
 "Vai vēlaties izpētīt citas vietnes krāsas?"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-library-47d651124bad74dbba8b.js:1
@@ -590,68 +590,68 @@ msgstr ""
 msgid "Design Library"
 msgstr "Dizaina bibliotēka"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Apskatīt dizaina bibliotēku"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:29
 msgid "Open the Pattern Library"
 msgstr "Atvērt modeļu bibliotēku"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:30
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Extendify modeļu bibliotēku var atvērt, noklikšķinot uz pogas pa kreisi."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:51
 msgid "Filter Patterns"
 msgstr "Modeļu filtrs"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:52
 msgid "Click on any pattern category to refine the selection."
 msgstr "Noklikšķiniet uz jebkuras modeļa kategorijas, lai precizētu atlasi"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:77
 msgid "Select a Pattern"
 msgstr "Izvēlieties modeli"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:78
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Vienkārši atlasiet jebkuru modeli, kuru vēlaties ievietot lapā, klikšķinot uz tā"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:97
 msgid "View the Inserted Pattern"
 msgstr "Skatīt ievietoto modeli"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:98
 msgid "The selected pattern has been inserted into the page."
 msgstr "Atlasītais modelis ir ievietots lapā."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
 #: src/Agent/tours/page-creator.js:6
@@ -662,33 +662,33 @@ msgstr "Atlasītais modelis ir ievietots lapā."
 msgid "AI Page Generator"
 msgstr "AI lapu ģenerators"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Uzziniet par AI lapu ģeneratoru"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:30
 #: src/HelpCenter/tours/page-creator.js:30
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Nospiediet šeit, lai sāktu izmantot savu AI lapu ģeneratoru."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:53
 #: src/HelpCenter/tours/page-creator.js:53
 msgid "Page description"
 msgstr "Lapas apraksts"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:54
 #: src/HelpCenter/tours/page-creator.js:54
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Uzrakstiet aprakstu lapai, kuru vēlaties izveidot. Esiet tik detalizēts, cik vēlaties. Mēs izveidosim lapu, balstoties uz šo aprakstu."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:81
@@ -697,28 +697,28 @@ msgstr "Uzrakstiet aprakstu lapai, kuru vēlaties izveidot. Esiet tik detalizēt
 msgid "Site description"
 msgstr "Vietnes apraksts"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:82
 #: src/HelpCenter/tours/page-creator.js:82
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Ja nepieciešams, atjauniniet vietnes aprakstu šeit. To izmantojam, lai pievienotu papildu kontekstu par jūsu tīmekļa vietni."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:105
 #: src/HelpCenter/tours/page-creator.js:105
 msgid "Generate your page"
 msgstr "Ģenerējiet savu lapu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:106
 #: src/HelpCenter/tours/page-creator.js:106
 msgid "When ready, press here to generate your page."
 msgstr "Kad esat gatavs, nospiediet šeit, lai izveidotu lapu."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -728,89 +728,89 @@ msgstr "Kad esat gatavs, nospiediet šeit, lai izveidotu lapu."
 msgid "Page editor"
 msgstr "Lapas redaktors"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Ekskursija pa lapas redaktoru"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:26
 #: src/HelpCenter/tours/page-editor.js:26
 msgid "Add a Block"
 msgstr "Pievienot bloku"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:27
 #: src/HelpCenter/tours/page-editor.js:27
 msgid "Click the plus to open the block inserter."
 msgstr "Noklikšķiniet uz pluszīmes, lai atvērtu bloku ievietotāju."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:47
 #: src/HelpCenter/tours/page-editor.js:47
 msgid "Block Inserter"
 msgstr "Bloku ievietotājs"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:48
 #: src/HelpCenter/tours/page-editor.js:48
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Pievienojiet bloku, klikšķinot vai velkot to uz lapu."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:88
 #: src/HelpCenter/tours/page-editor.js:91
 msgid "Page Title"
 msgstr "Lapas virsraksts"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:89
 #: src/HelpCenter/tours/page-editor.js:92
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Rediģējiet lapas nosaukumu, noklikšķinot uz tā. Piezīme: Nosaukums var parādīties vai neparādīties publicētajā lapā atkarībā no izmantotās lapas veidnes."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:128
 #: src/HelpCenter/tours/page-editor.js:131
 msgid "Blocks"
 msgstr "Bloki"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:129
 #: src/HelpCenter/tours/page-editor.js:132
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Katrs bloks parādīsies lapā un to var rediģēt, klikšķinot uz tā."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:170
 #: src/HelpCenter/tours/page-editor.js:173
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Šis ir parauga rindkopas bloks. Tas var būt vairāku teikumu garš un aizņemt vairākas rindas. Jūs varat pievienot lapai tik daudz bloku, cik vēlaties."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:185
 #: src/HelpCenter/tours/page-editor.js:188
 msgid "Page and Block Settings"
 msgstr "Lapas un bloka iestatījumi"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:186
 #: src/HelpCenter/tours/page-editor.js:189
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Atlasiet lapu vai bloku, lai mainītu iestatījumus visai lapai vai atlasītajam blokam."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-launch-713abfcbd93ec218f2ee.js:8
 #: src/Agent/tours/page-editor.js:228
@@ -819,28 +819,28 @@ msgstr "Atlasiet lapu vai bloku, lai mainītu iestatījumus visai lapai vai atla
 msgid "Preview"
 msgstr "Priekšskatījums"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:229
 #: src/HelpCenter/tours/page-editor.js:232
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Noklikšķiniet uz priekšskatījuma, lai apskatītu, kā izmaiņas izskatās jūsu vietnes priekšpusē."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:249
 #: src/HelpCenter/tours/page-editor.js:252
 msgid "Publish or Save"
 msgstr "Publicēt vai saglabāt"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:250
 #: src/HelpCenter/tours/page-editor.js:253
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Klikšķiniet uz publicēt vai atjaunot, lai saglabātu veiktās izmaiņas lapā un padarītu tās redzamas vietnē."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -850,82 +850,82 @@ msgstr "Klikšķiniet uz publicēt vai atjaunot, lai saglabātu veiktās izmaiņ
 msgid "Installing a plugin"
 msgstr "Spraudņa instalēšana"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Skatiet, kā instalēt spraudni"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Pievienot jaunu spraudņa izvēlni"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Noklikšķiniet šeit, lai piekļūtu lapai \"Pievienot spraudņus\"."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
 msgid "Search"
 msgstr "Meklēšana"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Meklēt spraudni pēc nosaukuma vai funkcijas."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Spraudņa detaļas"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Skatiet svarīgu informāciju par katru spraudni."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Instalēt tagad"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Instalējiet spraudni. Pēc tam nospiediet šo pogu vēlreiz, lai aktivizētu spraudni."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Augšupielādēt spraudni"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Ja jums ir spraudnis no ārēja avota, varat to augšupielādēt tieši šeit."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -935,87 +935,87 @@ msgstr "Ja jums ir spraudnis no ārēja avota, varat to augšupielādēt tieši 
 msgid "Plugin management"
 msgstr "Spraudņu pārvaldība"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Uzziniet, kā pārvaldīt spraudņus"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Uzstādīto spraudņu izvēlne"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Klikšķiniet uz šīs izvēlnes, lai skatītu un pārvaldītu instalētos spraudņus."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Uzstādītie spraudņi"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Skatīt visus spraudņus, kas instalēti jūsu vietnē. Tas ietver gan aktivizētos, gan deaktivizētos spraudņus."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Deaktivizēt/aktivizēt opciju"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Zem katra spraudņa varat to aktivizēt vai deaktivizēt."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Pievienot citu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Klikšķiniet šeit, lai pievienotu vēl vienu spraudni savai vietnei."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Apskatīt vietnes asistentu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Uzdevumi"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "Tagad, kad esat izveidojis sākuma vietni, pielāgojiet to ar šiem turpmākajiem uzdevumiem"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:9
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -1024,14 +1024,14 @@ msgstr "Tagad, kad esat izveidojis sākuma vietni, pielāgojiet to ar šiem turp
 msgid "Quick Links"
 msgstr "Ātrās saites"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Ērti piekļūstiet dažiem no visbiežāk izmantotajiem vienumiem WordPress, izmantojot šīs ātrās saites."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -1040,35 +1040,35 @@ msgstr "Ērti piekļūstiet dažiem no visbiežāk izmantotajiem vienumiem WordP
 msgid "Website Tools & Plugins"
 msgstr "Vietnes rīki un spraudņi"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Apskatiet mūsu personalizētos ieteikumus, kas palīdzēs sasniegt jūsu mērķus."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Apmeklējiet savu vietni"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Vienmēr varat apmeklēt savu vietni, klikšķinot uz šīs pogas"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Atgriezieties vietnes asistentā jebkurā laikā, noklikšķinot uz izvēlnes vienuma."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -1078,26 +1078,26 @@ msgstr "Atgriezieties vietnes asistentā jebkurā laikā, noklikšķinot uz izv�
 msgid "Users screen"
 msgstr "Lietotāju ekrāns"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Apskatīt lietotāju ekrānu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Visu lietotāju izvēlne"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Klikšķiniet šeit, lai skatītu un pārvaldītu lietotājus savā vietnē."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:250
@@ -1106,56 +1106,56 @@ msgstr "Klikšķiniet šeit, lai skatītu un pārvaldītu lietotājus savā viet
 msgid "Users"
 msgstr "Lietotāji"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "Skatiet visus savus lietotājus, tostarp administratorus, šajā tabulā."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Rediģēt lietotāja informāciju"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Klikšķiniet uz rediģēšanas pogas, lai mainītu lietotāja lomu, pārvaldītu kontu vai mainītu profila informāciju."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Meklēt lietotājus"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Izmantojiet meklēšanas joslu, lai atrastu konkrētu lietotāju."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Pievienot jaunu lietotāju"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Noklikšķiniet uz pogas \"Pievienot jaunu\", lai pievienotu jaunu lietotāju savai vietnei."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: public/build/extendify-launch-713abfcbd93ec218f2ee.js:8
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:99
@@ -1165,9 +1165,9 @@ msgstr "Noklikšķiniet uz pogas \"Pievienot jaunu\", lai pievienotu jaunu lieto
 msgid "Loading..."
 msgstr "Notiek ielāde..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:33
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:33
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:107
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:159
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
@@ -1175,11 +1175,11 @@ msgstr "Notiek ielāde..."
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Aģents ir veicis izmaiņas pārlūkprogrammā. Lūdzu, pārskatiet un apstipriniet."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:21
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:27
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:21
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:27
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:244
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:126
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:60
@@ -1188,77 +1188,77 @@ msgstr "Aģents ir veicis izmaiņas pārlūkprogrammā. Lūdzu, pārskatiet un a
 msgid "Try Again"
 msgstr "Mēģiniet vēlreiz"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:115
 msgid "No image returned"
 msgstr "Attēls netika atgriezts"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:120
 msgid "An unknown error occurred."
 msgstr "Radās nezināma kļūda."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:21
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:169
 #, js-format
 msgid "Error generating image: %s"
 msgstr "Kļūda attēla ģenerēšanā: %s"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:21
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:183
 #, js-format
 msgid "It looks like you've run out of credits. They'll refresh in %s, so check back then."
 msgstr "Izskatās, ka jums ir beigušies atzinības punkti. Tie tiks atjaunoti pēc %s, tāpēc pārbaudiet vēlāk."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:21
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:21
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:7
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:216
 #: src/Draft/components/image-generation/GenerateForm.jsx:90
 msgid "Generating image..."
 msgstr "Izveido attēlu..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:21
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:227
 msgid "Image generated successfully!"
 msgstr "Attēls veiksmīgi ģenerēts!"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:21
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:65
 msgid "Failed to save image"
 msgstr "Neizdevās saglabāt attēlu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:21
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:253
 msgid "Saving..."
 msgstr "Saglabā…"
 
 #. translators: %1$s is the number of credits remaining, %2$s is the total credits
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:260
 #, js-format
 msgid "You have %1$s of %2$s daily image credits remaining."
 msgstr "Jums ir atlikuši %1$s no %2$s dienas attēlu kredītiem."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:107
 #, js-format
 msgid "The agent has requested the media library. Press \"%s\" to upload or select an image."
 msgstr "Aģents ir pieprasījis mediju bibliotēku. Nospiediet \"%s\", lai augšupielādētu vai atlasītu attēlu."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:124
 msgid "Select or Upload Image"
 msgstr "Atlasiet vai augšupielādējiet attēlu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:19
 msgid "The agent has finished creating your page. Press take me there to visit your new page or dismiss to remove this notice."
 msgstr "Aģents ir pabeidzis jūsu lapas izveidi. Nospiediet \"Aizvest mani tur\", lai apmeklētu jauno lapu, vai \"Noraidīt\", lai noņemtu šo paziņojumu."
 
 #: app/PluginNotifications/NotificationsListTable.php:81
 #: app/PluginNotifications/NotificationsListTable.php:173
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:24
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:24
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
 #: src/Assist/components/dashboard/buttons/DismissButton.jsx:17
@@ -1267,175 +1267,155 @@ msgid "Dismiss"
 msgstr "Aizvērt"
 
 #. translators: %1$s is the current page or post status, and %2$s is the updated page or post status.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:27
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:27
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:28
 #, js-format
 msgid "Status will change from \"%s\" to \"%s\", please confirm to save."
 msgstr "Statuss tiks mainīts no \"%1$s\" uz \"%2$s\", lūdzu, apstipriniet saglabāšanu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:27
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:30
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:27
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:30
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:51
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:62
 msgid "Confirm"
 msgstr "Apstiprināt"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:27
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:79
 msgid "There was an error installing the plugin. You may try again"
 msgstr "Radās kļūda, instalējot spraudni. Varat mēģināt vēlreiz"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:27
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:102
 msgid "Installing plugin..."
 msgstr "Notiek spraudņa instalēšana..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:27
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:103
 msgid "Activating plugin..."
 msgstr "Notiek spraudņa aktivizēšana..."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:27
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:115
 msgid "The agent is requesting to install and activate a plugin."
 msgstr "Aģents pieprasa instalēt un aktivizēt spraudni."
 
 #. translators: %1$s and %2$s are HTML tags. %1$s opens a span with screen-reader-only text, and %2$s closes that span.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:30
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:30
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:134
 #, js-format
 msgid "Plugin Details %1$s(opens in a new tab)%2$s"
 msgstr "Spraudņa informācija %1$s(atveras jaunā cilnē)%2$s"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:30
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:30
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:152
 msgid "Install Plugin"
 msgstr "Uzstādīt spraudni"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:30
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:30
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:45
 msgid "Apply this setting change?"
 msgstr "Vai piemērot šo iestatījumu maiņu?"
 
 #. translators: No value found message for when a WP setting has no value.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:33
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:33
 msgid "No value found"
 msgstr "Vērtība nav atrasta"
 
 #. translators: This is a status message. 'Loading' is a verb — the app is currently loading the animation options. It is not referring to 'loading animation' as a compound noun.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:50
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:117
 msgid "Loading animation options..."
 msgstr "Notiek animācijas opciju ielāde..."
 
 #. translators: This message show above a UI where the user can select a different animation for their site.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:54
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:54
 #: src/Agent/workflows/theme/change-animation.js:16
 msgid "Below you can select a different animation for your site."
 msgstr "Zemāk varat izvēlēties citu animāciju savai vietnei."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:54
-#: src/Agent/workflows/theme/change-animation.js:23
-msgid "Updated the site animation"
-msgstr "Atjaunināta vietnes animācija"
-
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:54
-#: src/Agent/workflows/theme/change-animation.js:24
-msgid "Canceled the site animation update"
-msgstr "Atcelta vietnes animācijas atjaunināšana"
-
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:59
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:59
 #: src/Agent/workflows/theme/change-site-vibes.js:17
 msgid "Hey there! It looks like you are trying to change your site style, but you are not on a page where we can do that."
 msgstr "Sveiki! Izskatās, ka mēģināt mainīt savas vietnes stilu, bet neatrodaties lapā, kur to var izdarīt."
 
 #. translators: This is a placeholder title used in a visual preview of a site structural aesthetic styles. It demonstrates how the typography looks.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:67
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:67
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:108
 msgid "Title"
 msgstr "Virsraksts"
 
 #. translators: This is a placeholder description used in a visual preview of a site structural aesthetic styles. It demonstrates how the typography looks.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:70
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:70
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:114
 msgid "Description"
 msgstr "Apraksts"
 
 #. translators: This message show above a UI where the user can select a different site style variation for their theme.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:74
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:74
 #: src/Agent/workflows/theme/change-site-vibes.js:29
 msgid "Below you can select a different site style variation for your theme."
 msgstr "Zemāk varat atlasīt citu vietnes stila variantu savai tēmai."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:74
-#: src/Agent/workflows/theme/change-site-vibes.js:36
-msgid "Updated the site style"
-msgstr "Atjaunināts vietnes stils"
-
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:74
-#: src/Agent/workflows/theme/change-site-vibes.js:37
-msgid "Canceled the site style update"
-msgstr "Atcelta vietnes stila atjaunošana"
-
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:74
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:74
 #: src/Agent/hooks/useThemeFontsVariations.js:29
 msgid "Failed to fetch theme font variations."
 msgstr "Neizdevās iegūt tēmas fontu variantus."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:74
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:13
 msgid "Hey there! It looks like you are trying to change your theme fonts, but you are not on a page where we can do that."
 msgstr "Sveiki! Izskatās, ka mēģināt mainīt tēmas fontus, bet neatrodaties lapā, kur to var izdarīt."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:74
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:74
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:45
 msgid "We were unable to find any variations for your theme"
 msgstr "Neizdevās atrast nevienu variantu jūsu tēmai"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:76
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:76
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:58
 msgid "Loading font variations..."
 msgstr "Notiek fontu variantu ielāde..."
 
 #. translators: This message show above a UI where the user can select a different font variation for their theme.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:80
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:80
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:27
 msgid "Below you can select a different font variation for your theme."
 msgstr "Zemāk varat izvēlēties citu fonta variāciju savai tēmai."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:80
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:80
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:34
 msgid "Updated the theme fonts"
 msgstr "Atjaunināti tēmas fonti"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:80
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:80
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:35
 msgid "Canceled the theme fonts update"
 msgstr "Atcelta tēmas fontu atjaunošana"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:80
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:80
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Neizdevās iegūt tēmas variantus."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:80
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:80
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Sveiki! Izskatās, ka mēģināt mainīt tēmas krāsas, bet neatrodaties lapā, kur to var izdarīt."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:80
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:80
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:10
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 #: src/Agent/workflows/theme/components/Redirect.jsx:10
 msgid "Suggestion:"
 msgstr "Ieteikums:"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:80
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:80
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: public/build/extendify-launch-713abfcbd93ec218f2ee.js:8
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:12
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
@@ -1445,60 +1425,60 @@ msgid "Home page"
 msgstr "Sākumlapa"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:80
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:80
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:46
 msgid "We were unable to find any colors for your theme"
 msgstr "Nevarējām atrast nevienu krāsu jūsu tēmai"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:82
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:82
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:59
 msgid "Loading available colors..."
 msgstr "Notiek pieejamo krāsu ielāde..."
 
 #. translators: This message show above a UI where the user can select a different color variation for their theme.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: src/Agent/workflows/theme/change-theme-variation.js:21
 msgid "Below you can select a different color variation for your theme."
 msgstr "Zemāk varat izvēlēties citu krāsu variantu savai tēmai."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: src/Agent/workflows/theme/change-theme-variation.js:28
 msgid "Updated the theme color"
 msgstr "Atjaunināta tēmas krāsa"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: src/Agent/workflows/theme/change-theme-variation.js:29
 msgid "Canceled the theme color update"
 msgstr "Atcelta tēmas krāsu atjaunošana"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
 #: src/Assist/components/tasks/UpdateLogo.jsx:19
 msgid "Site logo"
 msgstr "Vietnes logotips"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:67
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
 msgid "Set site logo"
 msgstr "Uzstādīt vietnes logotipu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:107
 msgid "We were unable to generate color palettes. Please try again."
 msgstr "Neizdevās ģenerēt krāsu paletes. Lūdzu, mēģiniet vēlreiz."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "Vietnes ikona"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:86
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:86
 #: public/build/extendify-assist-page-b1315df6e831005e11ae.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:62
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
@@ -5150,37 +5130,37 @@ msgstr "Mainīt vietnes nosaukumu"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
 #: app/Agent/Admin.php:422
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:72
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:72
 #: src/Agent/workflows/theme/change-site-vibes.js:26
 msgid "Change website style"
 msgstr "Mainīt vietnes stilu"
 
 #. translators: "site animation" refers to the animation style for the current site.
 #: app/Agent/Admin.php:526
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:52
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:52
 #: src/Agent/workflows/theme/change-animation.js:13
 msgid "Change website animation"
 msgstr "Mainīt vietnes animāciju"
 
-#: app/PluginNotifications/Admin.php:209
+#: app/PluginNotifications/Admin.php:210
 #: app/PluginNotifications/NotificationsListTable.php:23
 msgid "Plugin"
 msgstr "Spraudnis"
 
-#: app/PluginNotifications/Admin.php:210
+#: app/PluginNotifications/Admin.php:211
 msgid "Notifications"
 msgstr "Paziņojumi"
 
-#: app/PluginNotifications/Admin.php:216
-#: app/PluginNotifications/AdminPage.php:21
+#: app/PluginNotifications/Admin.php:217
+#: app/PluginNotifications/AdminPage.php:50
 msgid "Plugin Notifications"
 msgstr "Spraudņa paziņojumi"
 
-#: app/PluginNotifications/Admin.php:263
+#: app/PluginNotifications/Admin.php:264
 msgid "Hide"
 msgstr "Slēpt"
 
-#: app/PluginNotifications/Admin.php:264
+#: app/PluginNotifications/Admin.php:265
 #: app/PluginNotifications/NotificationsListTable.php:165
 msgid "View"
 msgstr "Apskatīt"
@@ -5236,14 +5216,14 @@ msgstr "Lūgt AI izveidot tīmekļa vietni kafejnīcai"
 
 #. translators: "theme colors" refers to the color palette variation for the current theme.
 #: app/Agent/Admin.php:406
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:84
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:84
 #: src/Agent/workflows/theme/change-theme-variation.js:18
 msgid "Change website colors"
 msgstr "Mainīt vietnes krāsas"
 
 #. translators: "theme fonts" refers to the font variation for the current theme.
 #: app/Agent/Admin.php:414
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:78
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:78
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:24
 msgid "Change website fonts"
 msgstr "Mainīt vietnes fontus"
@@ -5280,19 +5260,19 @@ msgstr "Mainīt tīmekļa vietnes logotipu"
 msgid "Change website browser icon"
 msgstr "Mainīt vietnes pārlūkprogrammas ikonu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:4
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:4
 #: src/Agent/components/ChatSuggestions.jsx:107
 msgid "Show more"
 msgstr "Rādīt vairāk"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:59
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:59
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:48
 msgid "We were unable to find any website style for your theme."
 msgstr "Mēs nespējām atrast nevienu vietnes stilu jūsu tēmai."
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:64
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:64
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:64
 msgid "Loading website style options..."
 msgstr "Notiek vietnes stila opciju ielāde..."
@@ -5314,7 +5294,7 @@ msgid "Adding page: %s"
 msgstr "Pievieno lapu: %s"
 
 #. translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:18
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:18
 #: src/Agent/state/chat.js:17
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -5323,93 +5303,113 @@ msgstr ""
 "#### Jūsu vietne ir gatava 🎉  \n"
 "Vai vēlaties izpētīt citus vietnes dizainus?"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:54
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:54
 #: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:138
 msgid "Preview site design"
 msgstr "Priekšskatīt vietnes dizainu"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:54
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:54
 #: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:404
 msgid "Load more"
 msgstr "Ielādēt vēl"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:54
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:54
 #: src/Agent/workflows/theme/change-site-design.js:19
 msgid "Change website design"
 msgstr "Mainīt tīmekļa vietnes dizainu"
 
 #. translators: This message show above a UI where the user can select a different site design.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:56
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:56
 #: src/Agent/workflows/theme/change-site-design.js:22
 msgid "Below you can select a different design for your website."
 msgstr "Zemāk varat izvēlēties citu dizainu savai vietnei."
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:56
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:56
 #: src/Agent/workflows/theme/change-site-design.js:29
 msgid "Updated the website design"
 msgstr "Atjaunināts vietnes dizains"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:56
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:56
 #: src/Agent/workflows/theme/change-site-design.js:30
 msgid "Canceled the website design update"
 msgstr "Atcēla tīmekļa vietnes dizaina atjaunināšanu"
 
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:54
+#: src/Agent/workflows/theme/change-animation.js:23
+msgid "Updated the website animation"
+msgstr "Atjaunināta vietnes animācija"
+
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:54
+#: src/Agent/workflows/theme/change-animation.js:24
+msgid "Canceled the website animation update"
+msgstr "Atcelta vietnes animācijas atjaunināšana"
+
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:74
+#: src/Agent/workflows/theme/change-site-vibes.js:36
+msgid "Updated the website style"
+msgstr "Atjaunināts vietnes stils"
+
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:74
+#: src/Agent/workflows/theme/change-site-vibes.js:37
+msgid "Canceled the website style update"
+msgstr "Atcelta vietnes stila atjaunošana"
+
 #. translators: Animation style where the element gradually appears by transitioning from transparent to visible. Translate as a simple, non-technical description of the visual effect (e.g., 'appear', 'show up') suitable for non-technical users.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:35
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:35
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:20
 msgctxt "animation type"
 msgid "Fade In"
 msgstr "Parādīties"
 
 #. translators: Animation style where the element appears while moving upward. Translate as a simple, non-technical description of the motion (e.g., 'appear from below', 'rise into view') suitable for non-technical users.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:37
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:37
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:26
 msgctxt "animation type"
 msgid "Fade Up"
 msgstr "Parādās no apakšas"
 
 #. translators: Animation style where the element appears by scaling from small to its full size. Translate as a simple, non-technical description of the effect (e.g., 'zoom in', 'get closer') suitable for non-technical users. If the target language commonly uses the English term 'zoom', it's acceptable to keep it.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:39
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:39
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:32
 msgctxt "animation type"
 msgid "Zoom In"
 msgstr "Pietuvināt"
 
 #. translators: None refers to 'no animation'. Apply the correct grammatical gender/form that agrees with the word for 'animation' in the target language.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:41
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:41
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:38
 msgctxt "animation type"
 msgid "None"
 msgstr "Nav"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:50
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:128
 msgctxt "animation type"
 msgid "Type"
 msgstr "Veids"
 
 #. translators: "Slow" refers to a slower speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:43
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:43
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:47
 msgctxt "animation speed"
 msgid "Slow"
 msgstr "Lēns"
 
 #. translators: "Medium" refers to a moderate speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:45
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:45
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:52
 msgctxt "animation speed"
 msgid "Medium"
 msgstr "Vidējs"
 
 #. translators: "Fast" refers to a quicker speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:47
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:47
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:57
 msgctxt "animation speed"
 msgid "Fast"
 msgstr "Ātri"
 
-#: public/build/extendify-agent-8f4982aaebba7e81c016.js:50
+#: public/build/extendify-agent-e740a61e27ed3aa9081b.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:147
 msgctxt "animation speed"
 msgid "Speed"

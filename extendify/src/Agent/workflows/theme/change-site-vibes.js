@@ -33,8 +33,8 @@ export default {
 			whenFinishedTool: {
 				id: 'update-site-vibes',
 				labels: {
-					confirm: __('Updated the site style', 'extendify-local'),
-					cancel: __('Canceled the site style update', 'extendify-local'),
+					confirm: __('Updated the website style', 'extendify-local'),
+					cancel: __('Canceled the website style update', 'extendify-local'),
 				},
 			},
 		},

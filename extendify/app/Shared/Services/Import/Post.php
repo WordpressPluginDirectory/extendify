@@ -63,12 +63,12 @@ class Post
      * Check if the post is not being edited at the moment.
      *
      * @param int $postId the WordPress post id.
-     * @return int
+     * @return bool
      */
     public static function isLocked($postId)
     {
         require_once ABSPATH . '/wp-admin/includes/post.php';
-        return \wp_check_post_lock($postId);
+        return wp_check_post_lock($postId) !== false;
     }
 
     /**

@@ -20,8 +20,11 @@ export default {
 			whenFinishedTool: {
 				id: 'update-animation',
 				labels: {
-					confirm: __('Updated the site animation', 'extendify-local'),
-					cancel: __('Canceled the site animation update', 'extendify-local'),
+					confirm: __('Updated the website animation', 'extendify-local'),
+					cancel: __(
+						'Canceled the website animation update',
+						'extendify-local',
+					),
 				},
 			},
 		},

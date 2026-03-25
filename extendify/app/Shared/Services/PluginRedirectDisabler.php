@@ -71,9 +71,6 @@ class PluginRedirectDisabler
         'complianz-terms-conditions' => [
             'transients' => ['cmplz_tc_redirect_to_settings'],
         ],
-        'simplybook' => [
-            'deleteOptions' => ['simplybook_activation_flag'],
-        ],
         'translatepress-multilingual' => [
             'setOptions' => ['trp_onboarding_started' => 'yes'],
         ],
@@ -85,22 +82,8 @@ class PluginRedirectDisabler
      * @var string[]
      */
     private static $redirectUrlPatterns = [
-        'page=wpforms-getting-started',
-        'page=wp-mail-smtp-setup-wizard',
-        'page=monsterinsights-getting-started',
-        'page=monsterinsights-onboarding',
-        'page=aioseo-setup-wizard',
         'page=wpseo_installation_successful',
         'page=wc-gzd-setup',
-        'page=trp-onboarding',
-        'page=charitable-getting-started',
-        'page=give-onboarding-wizard',
-        'page=rank-math-wizard',
-        'page=cmplz-wizard',
-        'page=terms-conditions',
-        'page=simplybook',
-        'page=sugar-calendar',
-        'page=wpbot',
     ];
 
     /**

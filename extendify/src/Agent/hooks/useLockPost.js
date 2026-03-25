@@ -11,8 +11,8 @@ export const useLockPost = ({ postId, enabled }) => {
 				method: 'POST',
 				data: { postId },
 			}).catch(() => undefined);
-			// Send lock post signal every 5 minutes
-			timeoutId = setTimeout(lockPost, 5 * 60 * 1000);
+			// Send lock post signal every 2 minutes (must be under WP's 150s lock expiry)
+			timeoutId = setTimeout(lockPost, 2 * 60 * 1000);
 		};
 		lockPost();
 		return () => clearTimeout(timeoutId);
