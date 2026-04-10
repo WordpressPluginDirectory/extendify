@@ -8,7 +8,7 @@ import {
 	useRef,
 	useState,
 } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 
 export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 	const { data, isLoading } = useSiteVibesVariations();
@@ -69,13 +69,11 @@ export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 
 	if (noVibes) return null;
 
-	const textColor = 'var(--wp--preset--color--foreground, inherit)';
-
 	return (
 		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
-			<div className="rounded-lg border-b border-gray-300 bg-white">
-				<div className="grid gap-2 p-3 grid-cols-2 auto-rows-fr">
-					{shuffled?.slice(0, 10).map(({ name, slug }) => (
+			<div className="rounded-lg border-b border-gray-400 bg-white">
+				<div className="grid gap-3 p-4 grid-cols-2">
+					{shuffled?.slice(0, 10).map(({ slug }, index) => (
 						<Fragment key={slug}>
 							<style>
 								{styles[slug]
@@ -86,34 +84,35 @@ export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 									)}
 							</style>
 							<button
-								aria-label={name}
+								aria-label={sprintf(
+									__('Style %s', 'extendify-local'),
+									index + 1,
+								)}
+								aria-pressed={selected === slug}
 								type="button"
-								className={`ext-vibe-container relative z-10 flex h-full w-full appearance-none items-stretch justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-0 text-sm text-inherit shadow-vibe drop-shadow-md ${
-									selected === slug ? 'z-0 outline-1 outline-design-main' : ''
+								className={`ext-vibe-container aspect-square relative flex w-full appearance-none items-stretch justify-center overflow-hidden rounded-sm border border-gray-300 bg-none p-0 text-sm shadow-lg focus:outline-none focus:ring-2 focus:ring-design-main focus:ring-offset-1 ${
+									selected === slug ? 'ring-2 ring-design-main' : ''
 								}`}
 								onClick={() => setSelected(slug)}
 							>
 								<div
-									className={`wp-block-group w-full preview-is-style-ext-preset--group--${slug}--section has-background-background-color has-background h-full p-3`}
+									className={`wp-block-group w-full h-full preview-is-style-ext-preset--group--${slug}--section has-background-background-color has-background p-4`}
 								>
 									<div
-										style={{
-											color: textColor,
-										}}
-										className={`wp-block-group has-tertiary-background-color has-background h-full w-full content-stretch items-center justify-center bg-design-tertiary py-7 px-0 text-2xl rtl:space-x-reverse preview-is-style-ext-preset--group--${slug}--item-card-1--align-center`}
+										className={`wp-block-group has-tertiary-background-color has-background w-full h-full flex items-center justify-center bg-design-tertiary rtl:space-x-reverse preview-is-style-ext-preset--group--${slug}--item-card-1--align-center p-0`}
 									>
-										<h1 className="mb-1 text-sm font-semibold">
-											{
-												// translators: This is a placeholder title used in a visual preview of a site structural aesthetic styles. It demonstrates how the typography looks.
-												__('Title', 'extendify-local')
-											}
-										</h1>
-										<p className="mt-1 text-xs font-light">
-											{
-												// translators: This is a placeholder description used in a visual preview of a site structural aesthetic styles. It demonstrates how the typography looks.
-												__('Description', 'extendify-local')
-											}
-										</p>
+										<img
+											src="https://images.extendify-cdn.com/agents/style-selector-preview.jpg"
+											alt={sprintf(
+												__('Style %s', 'extendify-local'),
+												index + 1,
+											)}
+											draggable="false"
+											loading="lazy"
+											width={96}
+											height={96}
+											className="w-full h-full object-cover pointer-events-none"
+										/>
 									</div>
 								</div>
 							</button>

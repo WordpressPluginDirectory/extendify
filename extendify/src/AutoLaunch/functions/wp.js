@@ -5,7 +5,15 @@ import apiFetch from '@wordpress/api-fetch';
 import { __, sprintf } from '@wordpress/i18n';
 import { addQueryArgs } from '@wordpress/url';
 
-const allowedHeaders = ['header', 'header-with-center-nav-and-social'];
+const allowedHeaders = [
+	'header',
+	'header-with-center-nav-and-social',
+	'header-atlas-beacon',
+	'header-ember-harbor',
+	'header-catalina-skyline',
+	'header-ceadar-peak',
+];
+const homeServicesHeaders = ['header-center-nav-with-phone'];
 const allowedFooters = [
 	'footer',
 	'footer-social-icons',
@@ -37,13 +45,18 @@ export const getPageById = (id) => {
 
 const getTemplateParts = () => apiFetch({ path: '/wp/v2/template-parts' });
 
-export const getHeadersAndFooters = async (useNavFooter = false) => {
+export const getHeadersAndFooters = async ({
+	useNavFooter = false,
+	siteProfile = {},
+} = {}) => {
 	const patterns = await getTemplateParts();
 	const extendablePatterns = patterns.filter(
 		({ theme }) => theme === 'extendable',
 	);
+	const headerSlugs =
+		siteProfile.type === 'home services' ? homeServicesHeaders : allowedHeaders;
 	const headers = extendablePatterns?.filter(({ slug }) =>
-		allowedHeaders.includes(slug),
+		headerSlugs.includes(slug),
 	);
 
 	const footerNav =

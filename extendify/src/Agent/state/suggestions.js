@@ -13,6 +13,7 @@ const state = (set, get) => ({
 				message: s.label,
 				icon: s.icon ?? 'sparkle',
 				source: s.source ?? 'workflow',
+				available: s.available,
 				addedAt: Date.now(),
 				seenAt: null,
 				clickedAt: null,

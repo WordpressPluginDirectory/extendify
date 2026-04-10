@@ -73,6 +73,10 @@ export const urlParamsShape = z.object({
 		.union([z.boolean(), z.string()])
 		.optional()
 		.catch(() => false),
+	go: z
+		.boolean()
+		.optional()
+		.catch(() => false),
 });
 
 export const urlParams = urlParamsShape.parse(

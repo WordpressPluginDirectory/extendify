@@ -20,6 +20,7 @@ const shapeToKeyValue = (shape) => {
 };
 
 const initialState = {
+	go: false,
 	// translators: this is for a action log UI. Keep it short
 	statusMessages: [__('Booting things up', 'extendify-local')],
 	errorMessage: null,
@@ -46,10 +47,10 @@ const state = (set, get) => ({
 		...initialState.urlParams,
 		...urlParams,
 	},
-	title: urlParams.title || undefined,
-	description: urlParams.description || undefined,
-	descriptionBackup: urlParams.description || undefined,
-	descriptionRaw: urlParams.description || undefined,
+	title: undefined,
+	description: undefined,
+	descriptionBackup: undefined,
+	descriptionRaw: undefined,
 	pulse: false,
 	setPulse: (value) => set({ pulse: value }),
 	setData: (key, value) => {
@@ -107,10 +108,10 @@ const keySchemas = {
 export const useLaunchDataStore = create(
 	persist(devtools(state, { name: 'Extendify Launch Data' }), {
 		name: `extendify-launch-data-${window.extSharedData.siteId}`,
-		merge: (persisted, current) => {
-			if (!persisted || typeof persisted !== 'object') return current;
-
+		merge: (p, current) => {
 			// Make sure the persisted state is valid and not corrupted.
+			const persisted = p && typeof p === 'object' ? p : {};
+
 			// This gives us some recovery on page reload
 			const validated = Object.fromEntries(
 				Object.entries(persisted)
@@ -120,9 +121,8 @@ export const useLaunchDataStore = create(
 						return [key, result.success ? result.data : undefined];
 					}),
 			);
-
 			// Merge in the url params
-			const { title, description, ...urlParamsMapped } =
+			const { title, description, go, ...urlParamsMapped } =
 				overrideWithUrlParams(urlParams);
 
 			return {
@@ -130,16 +130,24 @@ export const useLaunchDataStore = create(
 				...persisted,
 				...validated,
 				// If there's a URL param here it should override these values
-				title: title || current.title,
-				description: description || current.description,
-				descriptionRaw: description || current.descriptionRaw,
+				title: title || persisted.title,
+				description: description || persisted.description,
+				descriptionRaw: description || persisted.descriptionRaw,
+				descriptionBackup: persisted.descriptionBackup || description || title,
+				go: go || persisted.go,
 				urlParams: {
-					...current.urlParams,
-					...persisted.urlParams,
-					...validated.urlParams,
+					title,
+					description,
+					go,
 					...urlParamsMapped,
 				},
 			};
+		},
+		onRehydrateStorage: () => (state) => {
+			if (!state) return;
+			queueMicrotask(() => {
+				useLaunchDataStore.setState(state);
+			});
 		},
 		partialize: (state) => {
 			const {

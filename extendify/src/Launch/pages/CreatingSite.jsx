@@ -55,8 +55,15 @@ import { useCallback, useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { colord } from 'colord';
 
-const { homeUrl, adminUrl, partnerLogo, partnerName, showImprint, wpLanguage } =
-	window.extSharedData;
+const {
+	homeUrl,
+	adminUrl,
+	partnerLogo,
+	partnerName,
+	showImprint,
+	wpLanguage,
+	installedPluginsSlugs,
+} = window.extSharedData;
 
 export const CreatingSite = () => {
 	const [isShowing] = useState(true);
@@ -289,8 +296,6 @@ export const CreatingSite = () => {
 				inform(__('Preparing site functionality', 'extendify-local'));
 				await new Promise((resolve) => setTimeout(resolve, 1000));
 
-				// Fetch active plugins after installing plugins
-				const { data: activePlugins } = await getActivePlugins();
 				const pluginInstallMessages = [
 					__('Getting everything ready', 'extendify-local'),
 					__('Enhancing your site', 'extendify-local'),
@@ -300,7 +305,7 @@ export const CreatingSite = () => {
 				for (const [index, plugin] of sortedPlugins.entries()) {
 					const slug = plugin?.wordpressSlug;
 					// Don't install if already installed
-					if (!wasPluginInstalled(activePlugins, slug)) {
+					if (!installedPluginsSlugs?.includes(slug)) {
 						await retryOperation(() => installPlugin(slug), {
 							maxAttempts: 2,
 						}).catch(console.error);

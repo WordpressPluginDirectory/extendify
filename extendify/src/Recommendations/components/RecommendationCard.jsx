@@ -82,7 +82,7 @@ export const RecommendationCard = ({
 							decodeEntities(title)
 						)}
 					</h3>
-					<p className="m-0 mt-1 text-xs">
+					<p className="m-0 mt-1 text-xs italic">
 						{sprintf(
 							// translators: %s is a name
 							_x(
@@ -213,7 +213,7 @@ const InstallPluginAction = ({ product, ctaContent, ctaPluginSlug }) => {
 
 	return (
 		<Button
-			className="h-auto min-w-24 whitespace-normal wrap-break-word rounded-xs bg-wp-theme-main px-3 align-middle text-sm text-design-text shadow-none hover:opacity-90 disabled:opacity-80"
+			className="min-w-24 whitespace-normal wrap-break-word rounded-xs bg-wp-theme-main px-3 align-middle text-sm text-design-text shadow-none hover:opacity-90 disabled:opacity-80"
 			type="button"
 			variant="secondary"
 			size="compact"

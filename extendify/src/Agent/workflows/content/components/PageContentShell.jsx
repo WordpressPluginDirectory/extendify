@@ -73,7 +73,7 @@ const PageContentShell = ({ pageDescription, onComplete }) => {
 				title: page.title,
 			});
 			onComplete(result);
-		}, 1000);
+		}, 30_000); // 30 seconds to insert the page in WordPress.
 
 		return () => clearTimeout(id);
 	}, [patterns, editPost, page, theme, templates, onComplete]);
@@ -142,9 +142,7 @@ export const generatePage = (pageDescription) => {
 		container.style.display = 'none';
 		document.body.appendChild(container);
 		let isCompleted = false;
-		let timeout;
 		const cleanup = () => {
-			if (timeout) clearTimeout(timeout);
 			if (container.parentNode) container.remove();
 		};
 
@@ -158,17 +156,10 @@ export const generatePage = (pageDescription) => {
 				: resolve(data);
 		};
 
-		timeout = setTimeout(() => {
-			if (!isCompleted) {
-				handleComplete(null);
-			}
-		}, 180000);
-
 		try {
 			render(
 				<PageContentShell
 					onComplete={(data) => {
-						clearTimeout(timeout);
 						handleComplete(data);
 					}}
 					pageDescription={pageDescription}
@@ -176,7 +167,6 @@ export const generatePage = (pageDescription) => {
 				container,
 			);
 		} catch (error) {
-			clearTimeout(timeout);
 			cleanup();
 			reject(error);
 		}

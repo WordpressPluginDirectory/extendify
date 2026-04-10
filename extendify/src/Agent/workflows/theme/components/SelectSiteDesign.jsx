@@ -15,6 +15,7 @@ import {
 } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
+import { colord } from 'colord';
 
 const undoHeroSectionChange = () => {
 	document.querySelector('.ext-hero-section-preview')?.remove();
@@ -55,6 +56,8 @@ const PREVIEW_HEIGHT = 200;
 
 const DesignOption = ({ renderedHtml, styles, isSelected, onClick }) => {
 	const containerRef = useRef(null);
+	const iframeRef = useRef(null);
+	const bodyObserverRef = useRef(null);
 	const [scale, setScale] = useState(1);
 	const [previewHeight, setPreviewHeight] = useState(PREVIEW_HEIGHT);
 
@@ -66,51 +69,109 @@ const DesignOption = ({ renderedHtml, styles, isSelected, onClick }) => {
 			setScale(entry.contentRect.width / VIEWPORT_WIDTH);
 		});
 		obs.observe(el);
-		return () => obs.disconnect();
+		return () => {
+			obs.disconnect();
+			bodyObserverRef.current?.disconnect();
+		};
 	}, []);
 
 	const srcdoc = useMemo(() => {
-		const themeStyleHref =
-			document.getElementById('extendable-style-css')?.getAttribute('href') ??
-			'';
-		const wpFontsLocal =
-			document.querySelector('style.wp-fonts-local')?.innerHTML ?? '';
-		const wpBlockLibraryInline =
-			document.getElementById('wp-block-library-inline-css')?.innerHTML ?? '';
-		const linkTags = (styles.linkStyles ?? [])
-			.map((url) => `<link rel="stylesheet" href="${url}">`)
-			.join('\n');
-		return `
-			<!DOCTYPE html>
-			<html>
-				<head>
-					${themeStyleHref ? `<link rel="stylesheet" href="${themeStyleHref}">` : ''}
-					${linkTags}
-					${wpFontsLocal ? `<style class="wp-fonts-local">${wpFontsLocal}</style>` : ''}
-					${wpBlockLibraryInline ? `<style id="wp-block-library-inline-css">${wpBlockLibraryInline}</style>` : ''}
-					<style>${styles.colorAndFontsVariations ?? ''}</style>
-					<style>${styles.vibes ?? ''}</style>
-					<style>${styles.blockSupportsCss ?? ''}</style>
-				</head>
-				<body>
-					${lowerImageQuality(renderedHtml)}
-				</body>
-			</html>`;
+		const clone = document.documentElement.cloneNode(true);
+		const head = clone.querySelector('head');
+		const body = clone.querySelector('body');
+
+		// Strip all scripts
+		clone.querySelectorAll('script').forEach((el) => {
+			el.remove();
+		});
+
+		clone.querySelector('#block-style-variation-styles-inline-css')?.remove();
+		clone.querySelector('#admin-bar-inline-css')?.remove();
+
+		// Inject variation styles
+		const styleEl = head.appendChild(document.createElement('style'));
+		styleEl.textContent = [
+			styles?.colorAndFontsVariations ?? '',
+			styles?.vibes ?? '',
+			styles?.blockSupportsCss ?? '',
+		].join('\n');
+
+		// Inject link styles
+		(styles?.linkStyles ?? []).forEach((href) => {
+			if (clone.querySelector(`link[href="${href}"]`)) return;
+
+			const link = document.createElement('link');
+
+			link.rel = 'stylesheet';
+			link.href = href;
+
+			head.appendChild(link);
+		});
+
+		// Clone duotone SVG filters from the page and adjust colors for this variation
+		const duotoneMap = new Map(
+			(styles?.duotoneTheme ?? []).map((item) => [item.slug, item]),
+		);
+
+		const duotoneSvgNodes = [
+			...document.querySelectorAll('svg:has(filter[id^="wp-duotone"])'),
+		].map((svg) => {
+			const cloned = svg.cloneNode(true);
+
+			cloned.querySelectorAll('filter[id^="wp-duotone"]').forEach((filter) => {
+				const preset = duotoneMap.get(filter.id.replace('wp-duotone-', ''));
+
+				if (!preset?.colors || preset.colors.length !== 2) return;
+
+				const [dark, light] = preset.colors.map((hex) => {
+					const { r, g, b } = colord(hex).toRgb();
+					return { r: r / 255, g: g / 255, b: b / 255 };
+				});
+
+				['feFuncR', 'feFuncG', 'feFuncB'].forEach((func, i) => {
+					const ch = ['r', 'g', 'b'][i];
+					filter
+						.querySelector(func)
+						?.setAttribute('tableValues', `${dark[ch]} ${light[ch]}`);
+				});
+			});
+			return cloned;
+		});
+
+		// Set body to header + hero section, then append duotone SVGs
+		const headerHtml = document.querySelector('header')?.outerHTML ?? '';
+		body.innerHTML = `${headerHtml}${lowerImageQuality(renderedHtml)}`;
+		duotoneSvgNodes.forEach((node) => {
+			body.appendChild(node);
+		});
+
+		return `<!DOCTYPE html>${clone.outerHTML}`;
 	}, [
 		renderedHtml,
-		styles.linkStyles,
-		styles.colorAndFontsVariations,
-		styles.vibes,
-		styles.blockSupportsCss,
+		styles?.linkStyles,
+		styles?.colorAndFontsVariations,
+		styles?.duotoneTheme,
+		styles?.vibes,
+		styles?.blockSupportsCss,
 	]);
 
 	const handleIframeLoad = (e) => {
-		const contentHeight = e.target.contentDocument?.body?.scrollHeight;
-		if (contentHeight && scale) {
-			setPreviewHeight(
-				Math.min(Math.round(contentHeight * scale), PREVIEW_HEIGHT),
-			);
-		}
+		const iframeDoc = e.target.contentDocument;
+		if (!iframeDoc?.body) return;
+
+		const updateHeight = () => {
+			const contentHeight = iframeDoc.body.scrollHeight;
+			if (contentHeight && scale) {
+				setPreviewHeight(Math.round(contentHeight * scale) + 2);
+			}
+		};
+
+		updateHeight();
+
+		bodyObserverRef.current?.disconnect();
+		const obs = new ResizeObserver(updateHeight);
+		obs.observe(iframeDoc.body);
+		bodyObserverRef.current = obs;
 	};
 
 	return (
@@ -118,31 +179,36 @@ const DesignOption = ({ renderedHtml, styles, isSelected, onClick }) => {
 			ref={containerRef}
 			type="button"
 			style={{ height: `${previewHeight}px` }}
-			className={`relative w-full cursor-pointer overflow-hidden rounded-md border shadow-md ${
-				isSelected
-					? 'border-design-main ring-wp ring-design-main'
-					: 'border-gray-400'
-			}`}
+			className={classnames(
+				'relative w-full cursor-pointer overflow-hidden rounded-md border shadow-md',
+				{
+					'border-design-main ring-wp ring-design-main': isSelected,
+					'border-gray-400': !isSelected,
+				},
+			)}
 			onClick={onClick}
 			onKeyDown={(e) => e.key === 'Enter' && onClick()}
 		>
 			<div
+				className="overflow-hidden"
 				style={{
 					width: VIEWPORT_WIDTH,
-					height: previewHeight / scale,
 					transform: `scale(${scale})`,
 					transformOrigin: 'top left',
 				}}
 			>
 				<iframe
+					ref={iframeRef}
 					title={__('Preview site design', 'extendify-local')}
 					onLoad={handleIframeLoad}
 					srcDoc={srcdoc}
 					style={{
 						width: '100%',
-						height: '100%',
+						height: previewHeight / scale,
 						border: 0,
 						pointerEvents: 'none',
+						display: 'block',
+						overflow: 'hidden',
 					}}
 				/>
 			</div>
@@ -166,6 +232,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 	const [heroPatterns, setHeroPatterns] = useState();
 	const [colorAndFontsVariations, setColorAndFontsVariations] = useState();
 	const [blockEditorStyles, setBlockEditorStyles] = useState();
+	const [currentHeroHtml, setCurrentHeroHtml] = useState();
 
 	const [selectedColorAndFonts, setSelectedColorAndFonts] = useState();
 	const [selectedHeroPattern, setSelectedHeroPattern] = useState();
@@ -220,13 +287,17 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 			.map(([slug, css]) => ({
 				slug,
 				css: css?.replaceAll(slug, 'natural-1'),
-			}));
+			}))
+			.sort(() => Math.random() - 0.5);
 
 		return [...vibes, ...vibes.slice(0, 3)];
 	}, [vibesData, isLoadingVibes]);
 
 	useEffect(() => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
+		const heroEl = document.querySelector('.ext-hero-section');
+
+		if (heroEl) setCurrentHeroHtml(heroEl.outerHTML);
 	}, []);
 
 	useEffect(() => {
@@ -268,7 +339,11 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		})
 			.then((data) => {
 				setHeroPatterns(data?.patterns?.flat() ?? []);
-				setColorAndFontsVariations(data.colorAndFontsVariations);
+				setColorAndFontsVariations(
+					[...(data?.colorAndFontsVariations ?? [])].sort(
+						() => Math.random() - 0.5,
+					),
+				);
 
 				setBlockEditorStyles(data?.blockEditorSettings);
 			})
@@ -283,20 +358,42 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		}
 	}, [blockEditorStyles, updateSettings]);
 
+	const currentDesignOption = useMemo(
+		() => ({ id: 'current', isCurrent: true, renderedHtml: currentHeroHtml }),
+		[currentHeroHtml],
+	);
+
+	useEffect(() => {
+		if (currentDesignOption) setSelectedHeroPattern(currentDesignOption);
+	}, [currentDesignOption]);
+
 	const visibleHeroPatterns = heroPatterns?.slice(0, visibleCount);
 	const hasMore = visibleCount < heroPatterns?.length;
 
-	const handleCancel = () => {
+	const undoChanges = () => {
 		undoHeroSectionChange();
 		undoColorAndFontsChange();
 		undoVibesChange();
 		removeInjectedLinks();
+	};
 
+	const handleCancel = () => {
+		undoChanges();
 		onCancel();
 	};
 
 	const handleConfirm = async () => {
-		if (!selectedHeroPattern || !selectedVibe || !selectedColorAndFonts) return;
+		if (!selectedHeroPattern) return;
+
+		if (selectedHeroPattern.isCurrent) {
+			onConfirm({
+				data: { postId: context?.postId },
+				shouldRefreshPage: false,
+			});
+			return;
+		}
+
+		if (!selectedVibe || !selectedColorAndFonts) return;
 
 		const postId = context?.postId;
 
@@ -353,6 +450,19 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="flex flex-col gap-4 p-3">
+					{currentHeroHtml && (
+						<DesignOption
+							renderedHtml={currentHeroHtml}
+							isSelected={selectedHeroPattern?.id === 'current'}
+							onClick={() => {
+								setSelectedHeroPattern(currentDesignOption);
+								setSelectedColorAndFonts(null);
+								setSelectedVibe(null);
+
+								undoChanges();
+							}}
+						/>
+					)}
 					{visibleHeroPatterns?.map((heroPattern, i) => (
 						<DesignOption
 							key={heroPattern.id}
@@ -361,6 +471,8 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 							styles={{
 								linkStyles: heroPattern.linkStyles,
 								colorAndFontsVariations: colorAndFontsVariations[i].css,
+								duotoneTheme:
+									colorAndFontsVariations[i]?.settings?.color?.duotone?.theme,
 								vibes: vibes[i]?.css,
 								blockSupportsCss: heroPattern.blockSupportsCss,
 							}}

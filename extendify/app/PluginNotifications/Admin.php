@@ -49,14 +49,20 @@ class Admin
                 $file = self::getCallbackFile($fn);
 
                 $extendifyDir = basename(rtrim(EXTENDIFY_PATH, '/\\'));
-                if ($file && str_contains($file, '/plugins/' . $extendifyDir . '/')) {
+                try {
+                    if ($file && str_contains($file, '/plugins/' . $extendifyDir . '/')) {
+                        \call_user_func($fn);
+                        continue;
+                    }
+
+                    \ob_start();
                     \call_user_func($fn);
+                    $html = \ob_get_clean();
+                } catch (\Throwable $e) {
+                    \ob_end_clean();
+                    \add_action('admin_notices', $fn, 11);
                     continue;
                 }
-
-                \ob_start();
-                \call_user_func($fn);
-                $html = \ob_get_clean();
 
                 if (empty(trim($html))) {
                     continue;

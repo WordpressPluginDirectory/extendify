@@ -191,6 +191,7 @@ class Admin
             'blog' => 'boolean',
             'landing-page' => 'string',
             'cta-link' => 'string|boolean',
+            'go' => 'boolean',
         ];
 
         $params = [];

@@ -43,8 +43,10 @@ export const handleHome = async ({
 			siteProfile.category === 'Business'
 		: false;
 
-	const { headers: head, footers: foot } =
-		await getHeadersAndFooters(hasFooterNav);
+	const { headers: head, footers: foot } = await getHeadersAndFooters({
+		useNavFooter: hasFooterNav,
+		siteProfile,
+	});
 	const headerCode = head[0]?.content?.raw?.trim() ?? '';
 	const footerCode = foot[0]?.content?.raw?.trim() ?? '';
 	return getHomeShape.parse({ home: { ...template, headerCode, footerCode } });

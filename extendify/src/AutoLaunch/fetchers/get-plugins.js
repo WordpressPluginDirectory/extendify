@@ -5,18 +5,13 @@ import {
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
-import {
-	activatePlugin,
-	alreadyActive,
-	getActivePlugins,
-	installPlugin,
-} from '@auto-launch/functions/plugins';
+import { activatePlugin, installPlugin } from '@auto-launch/functions/plugins';
 import { AI_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
-const { pluginGroupId } = window.extSharedData;
+const { pluginGroupId, installedPluginsSlugs } = window.extSharedData;
 const fallback = { sitePlugins: [] };
 const url = `${AI_HOST}/api/site-plugins`;
 const method = 'POST';
@@ -63,9 +58,8 @@ export const handleSitePlugins = async ({
 	}, fallback);
 
 	// install partner plugins
-	const activePlugins = await getActivePlugins();
 	const pluginsToInstall = plugins.sitePlugins.filter(
-		({ wordpressSlug: slug }) => !alreadyActive(activePlugins, slug),
+		({ wordpressSlug: slug }) => !installedPluginsSlugs?.includes(slug),
 	);
 	if (showStatus && pluginsToInstall.length > 0) {
 		setStatus(

@@ -27,11 +27,19 @@ export const SelectThemeVariation = ({ onConfirm, onCancel, onLoad }) => {
 
 	const handleConfirm = () => {
 		if (!selected) return;
+		const variation = variations.find((v) => v.title === selected);
+		if (!variation) {
+			// translators: A chat message shown to the user when their selected color variation cannot be applied
+			const content = __(
+				'We were unable to apply your selected colors. Please try again.',
+				'extendify-local',
+			);
+			addMessage('message', { role: 'assistant', content, error: true });
+			onCancel();
+			return;
+		}
 		confirmed.current = true;
-		onConfirm({
-			data: { variation: variations.find((v) => v.title === selected) },
-			shouldRefreshPage: true,
-		});
+		onConfirm({ data: { variation }, shouldRefreshPage: true });
 	};
 
 	useEffect(() => {

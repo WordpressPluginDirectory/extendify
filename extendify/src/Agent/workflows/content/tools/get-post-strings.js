@@ -7,11 +7,46 @@ export default async ({ postId, postType }) => {
 		path: `/wp/v2/${type}/${postId}?context=edit`,
 	});
 	const blocks = parse(response.content.raw);
+	const postStrings = [response.title.raw, ...extractTextFromBlocks(blocks)];
+
+	// Get active template part slugs from the DOM
+	const slugs = [
+		...new Set(
+			[...document.querySelectorAll('[data-extendify-part-slug]')].map(
+				(el) => el.dataset.extendifyPartSlug,
+			),
+		),
+	];
+
+	if (!slugs.length) {
+		return { post_strings: dedupeStrings(postStrings), parts_used: [] };
+	}
+
+	let allParts = [];
+	try {
+		allParts = await apiFetch({
+			path: '/wp/v2/template-parts?per_page=100&context=edit',
+		});
+	} catch {
+		try {
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+			allParts = await apiFetch({
+				path: '/wp/v2/template-parts?per_page=100&context=edit',
+			});
+		} catch {
+			// Maybe error to the user, but we retried twice
+		}
+	}
+	const activeParts = allParts.filter((p) => slugs.includes(p.slug));
+	const partsUsed = activeParts.map((part) => {
+		const partBlocks = parse(part.content.raw);
+		postStrings.push(...extractTextFromBlocks(partBlocks));
+		return { id: part.id, area: part.area };
+	});
+
 	return {
-		post_strings: dedupeStrings([
-			response.title.raw,
-			...extractTextFromBlocks(blocks),
-		]),
+		post_strings: dedupeStrings(postStrings),
+		parts_used: partsUsed,
 	};
 };
 

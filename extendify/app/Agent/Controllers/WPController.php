@@ -376,7 +376,17 @@ class WPController
         return new \WP_REST_Response(['content' => trim($content)]);
     }
 
-    protected static function getHeroPatternsData($title, $description, $images, $cta)
+    /**
+     * Get the Hero Patterns from the API
+     *
+     * @param string $title The title to replace in the pattern code
+     * @param string $description The description to replace in the pattern code
+     * @param array $images The images to replace in the pattern code, as an array of urls
+     * @param array $cta The cta to replace in the pattern code, as an array with 'label' and 'link' keys
+     * @param bool $featured Whether to limit to featured patterns
+     * @return array|WP_Error|array<string|int, mixed> The hero patterns data or a WP_Error on failure
+     */
+    protected static function getHeroPatternsData($title, $description, $images, $cta, $featuredOnly = false)
     {
         $response = \wp_remote_post(
             'https://patterns.extendify.com/api/heros',
@@ -388,6 +398,7 @@ class WPController
                 'body' => wp_json_encode([
                     "wpVersion" => \get_bloginfo('version'),
                     "wpLanguage" => \get_locale(),
+                    "featured" => $featuredOnly,
                 ])
             ]
         );
@@ -518,8 +529,9 @@ class WPController
         $description = $request->get_param('description');
         $images = $request->get_param('images');
         $cta = $request->get_param('cta');
+        $featuredOnly = true; // Only show featured patterns
 
-        $heroPatterns = self::getHeroPatternsData($title, $description, $images, $cta);
+        $heroPatterns = self::getHeroPatternsData($title, $description, $images, $cta, $featuredOnly);
 
         if (\is_wp_error($heroPatterns)) {
             return new \WP_REST_Response([], 500);

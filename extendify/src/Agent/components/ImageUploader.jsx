@@ -44,7 +44,11 @@ export const ImageUploader = ({
 
 	const media = useSelect(
 		(select) => {
-			return select(coreStore).getMedia(imageId);
+			return select(coreStore).getEntityRecord(
+				'postType',
+				'attachment',
+				imageId,
+			);
 		},
 		[imageId],
 	);
@@ -140,7 +144,7 @@ export const ImageUploader = ({
 									!imageId ? null : `image-${imageId}-describedby`
 								}
 							>
-								{imageId && media && (
+								{imageId && media && !isLoading && (
 									<ResponsiveWrapper
 										naturalWidth={mediaWidth}
 										naturalHeight={mediaHeight}

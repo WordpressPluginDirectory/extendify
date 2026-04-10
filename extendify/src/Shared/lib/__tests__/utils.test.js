@@ -48,6 +48,8 @@ describe('sleep', () => {
 		const start = Date.now();
 		await sleep(50);
 		const duration = Date.now() - start;
-		expect(duration).toBeGreaterThanOrEqual(49);
+		// Note: setTimeout can fire slightly early due to timer coalescing,
+		// so we allow some buffer in the assertion
+		expect(duration).toBeGreaterThanOrEqual(47);
 	});
 });

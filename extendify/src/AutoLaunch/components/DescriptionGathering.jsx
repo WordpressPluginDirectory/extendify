@@ -3,6 +3,7 @@ import { useInstallRequiredPlugins } from '@auto-launch/hooks/useInstallRequired
 import { loaderThreeDots } from '@auto-launch/icons';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import { AI_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import {
 	forwardRef,
@@ -15,9 +16,11 @@ import { __ } from '@wordpress/i18n';
 import { chevronRight, Icon, pencil } from '@wordpress/icons';
 
 export const DescriptionGathering = () => {
-	const { setData, descriptionBackup } = useLaunchDataStore();
+	const { setData, descriptionBackup, urlParams } = useLaunchDataStore();
 	useInstallRequiredPlugins();
-	const [input, setInput] = useState(descriptionBackup || '');
+	const [input, setInput] = useState(
+		urlParams.description || urlParams.title || descriptionBackup || '',
+	);
 	const [improving, setImproving] = useState(false);
 	const [lastImproved, setLastImproved] = useState(null);
 	const textareaRef = useRef(null);
@@ -48,6 +51,7 @@ export const DescriptionGathering = () => {
 	const submitForm = (e) => {
 		e.preventDefault();
 		setData('descriptionRaw', input.trim());
+		setData('go', true);
 	};
 
 	const handleImprove = async () => {
@@ -59,6 +63,7 @@ export const DescriptionGathering = () => {
 			method,
 			headers,
 			body: JSON.stringify({
+				...reqDataBasics,
 				description: input.trim(),
 				title: window.extSharedData.siteTitle,
 			}),

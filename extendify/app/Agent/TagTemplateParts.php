@@ -64,8 +64,10 @@ class TagTemplateParts
         // OPEN a template-part scope (do not number the wrapper itself)
         if (self::isTemplatePart($block)) {
             $label = self::labelForPart($block);
+            $slug = $block['attrs']['slug'] ?? '';
             self::$frames[] = [
                 'label' => $label,
+                'slug' => $slug,
                 'seq' => 0, // per-part counter
             ];
             // mark so we know to pop when this wrapper finishes rendering
@@ -86,6 +88,7 @@ class TagTemplateParts
             self::$blockStack[] = [
                 'id' => $frame['seq'],
                 'label' => $frame['label'],
+                'slug' => $frame['slug'] ?? '',
             ];
             self::setCurrentFrame($frame);
         }
@@ -123,6 +126,9 @@ class TagTemplateParts
             if ($tp->next_tag()) {
                 $tp->set_attribute('data-extendify-part-block-id', (string) (int) $info['id']);
                 $tp->set_attribute('data-extendify-part', $info['label']);
+                if (!empty($info['slug'])) {
+                    $tp->set_attribute('data-extendify-part-slug', $info['slug']);
+                }
                 $html = $tp->get_updated_html();
             }
         }

@@ -96,7 +96,7 @@ const updateAllTextNodesAndAttributes = (replacements) => {
 	}
 
 	// Update attributes
-	['alt', 'title', 'aria-label'].forEach((attr) => {
+	['alt', 'title', 'aria-label', 'href', 'data-id'].forEach((attr) => {
 		document.querySelectorAll(`[${attr}]`).forEach((el) => {
 			// Skip elements that are inside the chat
 			if (isInChat(el)) return;

@@ -25,19 +25,22 @@ class WooCommerceImporter
      */
     public static function import()
     {
-        $response = wp_remote_get(add_query_arg(
-            [
+        $response = wp_remote_post('https://ai.extendify.com/api/plugins/woo/content', [
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'referer' => get_bloginfo('url'),
+            ],
+            'body' => wp_json_encode([
                 'wpLanguage' => get_locale(),
-                'siteProfile' => wp_json_encode(get_option('extendify_site_profile', [])),
+                'siteProfile' => get_option('extendify_site_profile', []),
                 'siteId' => get_option('extendify_site_id'),
                 'version' => Config::$version,
                 'title' => get_bloginfo('name'),
                 'wpVersion' => get_bloginfo('version'),
                 'partnerId' => PartnerData::$id,
                 'devbuild' => constant('EXTENDIFY_DEVMODE'),
-            ],
-            'https://ai.extendify.com/api/plugins/woo/content'
-        ));
+            ]),
+        ]);
         $data = [];
 
         // Only update the data if the request was successful.

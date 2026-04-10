@@ -262,7 +262,8 @@ class AdminPageRouter
                 'address',
                 'blog',
                 'landing-page',
-                'cta-link'
+                'cta-link',
+                'go',
             ];
             // phpcs:ignore WordPress.Security.NonceVerification.Recommended,WordPress.Security.ValidatedSanitizedInput.MissingUnslash
             $autoLaunch = isset($_GET['auto-launch']) && filter_var($_GET['auto-launch'], FILTER_VALIDATE_BOOLEAN);

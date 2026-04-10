@@ -44,7 +44,7 @@ import {
 	updateTemplatePart,
 	updateVariation,
 } from '@auto-launch/functions/theme';
-import { updateNaturalVibeStyles } from '@auto-launch/functions/vibes';
+import { computeVibeAdjustedBlocks } from '@auto-launch/functions/vibes';
 import {
 	createBlogSampleData,
 	getOption,
@@ -263,13 +263,27 @@ export const useCreateSite = () => {
 				);
 				variation = mergeFontsIntoVariation(siteStyle.variation, installed);
 			}
-			await updateVariation(variation);
-			// natural-1 is the default vibe
-			if (siteStyle?.vibe !== 'natural-1') {
+			// If the selected vibe isn't the default, we need to pick the
+			// vibe-specific block variations from the theme's global styles and
+			// apply them. We merge the vibe-adjusted blocks straight into the
+			// variation so updateVariation can POST everything in one shot —
+			// otherwise a second POST would overwrite the fonts, colors and
+			// other style overrides the variation carries.
+			if (siteStyle?.vibe && siteStyle.vibe !== 'natural-1') {
 				// translators: vibe in this context is a noun - the feeling of their site design.
 				addStatusMessage(__('Setting the website style', 'extendify-local'));
-				await updateNaturalVibeStyles(siteStyle?.vibe);
+				const vibeBlocks = await computeVibeAdjustedBlocks(
+					siteStyle.vibe,
+				).catch(() => null);
+				if (vibeBlocks) {
+					variation = {
+						...variation,
+						styles: { ...variation.styles, blocks: vibeBlocks },
+					};
+				}
 			}
+
+			await updateVariation(variation);
 
 			// navigation menu
 			addStatusMessage(__('Working on the navigation', 'extendify-local'));
@@ -289,6 +303,15 @@ export const useCreateSite = () => {
 				headerCode = headerCode
 					.replace(/<!--\s*wp:navigation\b[^>]*.*\/-->/gis, '')
 					.replace(social, '');
+			}
+			if (typeof siteProfile.phoneNumber === 'string') {
+				headerCode = headerCode.replaceAll(
+					// Hardcoded in the template
+					'206-555-0100',
+					siteProfile.phoneNumber ||
+						// translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
+						__('206-555-0100', 'extendify-local'),
+				);
 			}
 			await updateTemplatePart('extendable/header', headerCode);
 

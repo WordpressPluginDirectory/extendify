@@ -141,14 +141,31 @@ export const useLayoutShift = (open) => {
 		const siteBlocks = document.querySelector('.wp-site-blocks');
 		const wpadminbar = document.querySelector('#wpadminbar');
 
+		const applyScaling = () => {
+			if (!siteBlocks) return;
+
+			if (open) {
+				const viewportWidth = window.innerWidth;
+				const scale = (viewportWidth - SIDEBAR_WIDTH) / viewportWidth;
+				Object.assign(siteBlocks.style, {
+					transformOrigin: 'top left',
+					transform: `translateX(${SIDEBAR_WIDTH}px) scale(${scale})`,
+					height: '100vh',
+				});
+				document.body.style.overflowX = 'hidden';
+			} else {
+				Object.assign(siteBlocks.style, {
+					transformOrigin: 'top left',
+					transform: 'translateX(0) scale(1)',
+					height: '',
+				});
+				document.body.style.overflowX = '';
+			}
+		};
+
 		if (!firstRun.current) {
 			if (siteBlocks) {
-				siteBlocks.style.transition = t([
-					'margin-left',
-					'margin-top',
-					'margin-right',
-					'margin-bottom',
-				]);
+				siteBlocks.style.transition = t(['transform']);
 			}
 			if (wpadminbar) {
 				wpadminbar.style.transition = t([
@@ -167,14 +184,7 @@ export const useLayoutShift = (open) => {
 			const fw = open ? `${FRAME_WIDTH}px` : '0px';
 			const ml = open ? `${SIDEBAR_WIDTH}px` : '0px';
 
-			if (siteBlocks) {
-				Object.assign(siteBlocks.style, {
-					marginTop: fw,
-					marginRight: fw,
-					marginBottom: fw,
-					marginLeft: ml,
-				});
-			}
+			applyScaling();
 
 			if (wpadminbar) {
 				Object.assign(wpadminbar.style, {
@@ -190,15 +200,18 @@ export const useLayoutShift = (open) => {
 			}
 		});
 
+		window.addEventListener('resize', applyScaling);
+
 		return () => {
 			cancelAnimationFrame(raf);
+			window.removeEventListener('resize', applyScaling);
+			document.body.style.overflowX = '';
 			if (siteBlocks) {
 				Object.assign(siteBlocks.style, {
 					transition: '',
-					marginTop: '',
-					marginRight: '',
-					marginBottom: '',
-					marginLeft: '',
+					transform: '',
+					transformOrigin: '',
+					height: '',
 				});
 			}
 			if (wpadminbar) {

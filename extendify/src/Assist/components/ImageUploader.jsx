@@ -19,7 +19,8 @@ export const ImageUploader = ({ type, onUpdate, title, actionLabel }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [imageId, setImageId] = useState(0);
 	const media = useSelect(
-		(select) => select(coreStore).getMedia(imageId),
+		(select) =>
+			select(coreStore).getEntityRecord('postType', 'attachment', imageId),
 		[imageId],
 	);
 	const { mediaWidth, mediaHeight, mediaSourceUrl } = getMediaDetails(media);

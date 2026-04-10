@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 
 const MAX_HEIGHT_SMALL = 400;
 
-export const Launch = ({ needsDescription, lastHeight }) => {
-	if (needsDescription) {
+export const Launch = ({ skipDescription, lastHeight }) => {
+	if (!skipDescription) {
 		return (
 			<motion.div
 				animate={{ opacity: 1 }}

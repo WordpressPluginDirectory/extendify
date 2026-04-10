@@ -181,6 +181,9 @@ class Admin
                     ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
                 'installedPlugins' => array_map('esc_attr', array_keys(\get_plugins())),
+                'installedPluginsSlugs' => array_values(array_filter(array_map(function ($p) {
+                    return $p['TextDomain'] ?? '';
+                }, \get_plugins()))),
                 'activePlugins' => array_map('esc_attr', array_values(\get_option('active_plugins', []))),
                 'frontPage' => \esc_attr(\get_option('page_on_front', 0)),
                 'globalStylesPostID' => \esc_attr(\WP_Theme_JSON_Resolver::get_user_global_styles_post_id()),

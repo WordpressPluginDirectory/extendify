@@ -70,6 +70,7 @@ export const getProfileShape = z.looseObject({
 	blog: z.boolean(),
 	landingPage: z.boolean(),
 	landingPageCTALink: z.union([z.literal(false), z.string()]),
+	phoneNumber: z.union([z.boolean(), z.string()]).optional(),
 });
 
 // get-strings
