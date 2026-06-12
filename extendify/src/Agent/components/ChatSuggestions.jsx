@@ -1,4 +1,5 @@
 import { sparkle } from '@agent/icons';
+import { useDomainActivities } from '@agent/state/domain-activities';
 import { useSuggestionsStore } from '@agent/state/suggestions';
 import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
@@ -31,15 +32,22 @@ const icons = {
 
 export const ChatSuggestions = ({ suggestions }) => {
 	const { markAsClicked, isAvailable, getSuggestions } = useSuggestionsStore();
+	const { setDomainActivity } = useDomainActivities();
 	const [allSuggestions, setAllSuggestions] = useState(suggestions);
 
-	const handleSubmit = (suggestion) => {
+	const handleSelect = (suggestion) => {
+		markAsClicked(suggestion);
+		if (suggestion.tracking) {
+			setDomainActivity({ ...suggestion.tracking, action: 'clicked' });
+		}
+		// External-link suggestions are plain links: the anchor opens the new tab.
+		// They don't trigger a workflow or post a message in the chat.
+		if (suggestion.type === 'external-link') return;
 		window.dispatchEvent(
 			new CustomEvent('extendify-agent:chat-submit', {
 				detail: { message: suggestion.message },
 			}),
 		);
-		markAsClicked(suggestion);
 	};
 
 	const handleShowMore = () => {
@@ -58,7 +66,7 @@ export const ChatSuggestions = ({ suggestions }) => {
 					<SuggestionButton
 						key={suggestion.message}
 						suggestion={suggestion}
-						handleSubmit={handleSubmit}
+						onSelect={handleSelect}
 					/>
 				);
 			})}
@@ -67,14 +75,12 @@ export const ChatSuggestions = ({ suggestions }) => {
 	);
 };
 
-const SuggestionButton = ({ suggestion, handleSubmit }) => {
+const SuggestionButton = ({ suggestion, onSelect }) => {
 	const icon = icons[suggestion?.icon] ?? icons.sparkle;
-	return (
-		<button
-			type="button"
-			className="group flex items-center justify-between rounded-sm bg-transparent px-1 py-1 text-left text-sm not-italic text-gray-900 transition-colors duration-100 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-design-main"
-			onClick={() => handleSubmit(suggestion)}
-		>
+	const className =
+		'group flex items-center justify-between rounded-sm bg-transparent px-1 py-1 text-left text-sm not-italic text-gray-900 transition-colors duration-100 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-design-main';
+	const content = (
+		<>
 			<div className="flex items-center gap-1.5 leading-none">
 				<span className="h-5 w-5 shrink-0 self-start fill-gray-700">
 					{icon}
@@ -84,6 +90,31 @@ const SuggestionButton = ({ suggestion, handleSubmit }) => {
 			<span className="inline-block h-5 w-5 fill-gray-700 leading-none opacity-0 transition-opacity duration-100 group-hover:opacity-100 rtl:scale-x-[-1]">
 				{chevronRight}
 			</span>
+		</>
+	);
+
+	// External-link suggestions render as a real anchor that opens in a new tab.
+	if (suggestion.type === 'external-link') {
+		return (
+			<a
+				href={suggestion.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				className={`${className} no-underline`}
+				onClick={() => onSelect(suggestion)}
+			>
+				{content}
+			</a>
+		);
+	}
+
+	return (
+		<button
+			type="button"
+			className={className}
+			onClick={() => onSelect(suggestion)}
+		>
+			{content}
 		</button>
 	);
 };

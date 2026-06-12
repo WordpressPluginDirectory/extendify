@@ -19,15 +19,35 @@ const generatePatterns = async (page, data) => {
 	});
 };
 
+// Hold back patterns that already have finalized content (e.g. design build)
+const splitGeneratedContent = (page) => {
+	const generated = page.patterns?.filter((p) => p.contentGenerated) ?? [];
+	const rest = page.patterns?.filter((p) => !p.contentGenerated) ?? [];
+	return { generated, toGenerate: { ...page, patterns: rest } };
+};
+
 export const generatePageContent = async (pages, data) => {
+	const splits = pages.map(splitGeneratedContent);
+
 	const result = await Promise.allSettled(
-		pages.map(
-			(page) =>
-				generatePatterns(page, data)
+		splits.map(
+			({ toGenerate }) =>
+				generatePatterns(toGenerate, data)
 					.then((response) => response)
-					.catch(() => page), // safe fallback
+					.catch(() => toGenerate), // safe fallback
 		),
 	);
 
-	return result?.map((page, i) => page.value || pages[i]);
+	return result?.map((pageResult, i) => {
+		const original = pages[i];
+		const { generated } = splits[i];
+		const merged =
+			pageResult.status === 'fulfilled' && pageResult.value
+				? { ...original, ...pageResult.value }
+				: original;
+		return {
+			...merged,
+			patterns: [...generated, ...(merged.patterns ?? [])],
+		};
+	});
 };

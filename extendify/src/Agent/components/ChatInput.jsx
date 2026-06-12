@@ -2,6 +2,7 @@ import { ChatTools } from '@agent/components/ChatTools';
 import { cancelRequest } from '@agent/icons';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
+import { useQuickEditStore } from '@quick-edit/state/store';
 import {
 	useCallback,
 	useEffect,
@@ -19,7 +20,8 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 	const [history, setHistory] = useState([]);
 	const dirtyRef = useRef(false);
 	const [historyIndex, setHistoryIndex] = useState(null);
-	const { getWorkflowsByFeature, block } = useWorkflowStore();
+	const { getWorkflowsByFeature } = useWorkflowStore();
+	const block = useQuickEditStore((s) => s.agentBlock);
 	const { isMobile } = useGlobalStore();
 	const domTool =
 		getWorkflowsByFeature({ requires: ['block'] })?.length > 0 && !isMobile;

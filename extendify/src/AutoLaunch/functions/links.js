@@ -10,7 +10,11 @@ const { homeUrl } = window.extSharedData;
 const buttonRegex = /href="(#extendify-[\w-]+)"/gi;
 const pagesWithButtons = (p) => p?.content?.raw?.match(buttonRegex);
 
-export const updateButtonLinks = async (wpPages, pluginPages) => {
+export const updateButtonLinks = async (
+	wpPages,
+	pluginPages,
+	headerCode = '',
+) => {
 	// Fetch active plugins after installing plugins
 	const contactPageSlug = wpPages.find(({ originalSlug }) =>
 		originalSlug?.startsWith('contact'),
@@ -31,6 +35,10 @@ export const updateButtonLinks = async (wpPages, pluginPages) => {
 				// TODO: Filter out patterns from pages that have identical buttons?
 			);
 		});
+
+	if (headerCode?.match(buttonRegex)) {
+		patternsToProcess.push(headerCode);
+	}
 
 	// Collect the page slugs to share with the server
 	const availablePages = wpPages
@@ -95,25 +103,34 @@ export const updateButtonLinks = async (wpPages, pluginPages) => {
 		.filter((r) => r.status === 'fulfilled')
 		.map((r) => r.value);
 
-	return (
-		wpPages
-			// Add the new pages into the wpPages array
-			.map((p) => newPages.find(({ id }) => id === p.id) || p)
-			// Also include the originalSlug from wpPages
-			.map((p) => {
-				const { originalSlug } = wpPages.find(({ id }) => id === p.id) || {};
-				return { ...p, originalSlug };
+	const updatedHeaderCode = linkKeys
+		? headerCode.replace(new RegExp(linkKeys, 'g'), (match) => {
+				const link = suggestedLinks[match.replace(/"/g, '')];
+				if (link === '/') return `"${homeUrl}/${contactPageSlug ?? ''}"`;
+				return `"${homeUrl}/${link.replace(/^\//, '')}"`;
 			})
-	);
+		: headerCode.replace(new RegExp(buttonRegex, 'g'), 'href="#"');
+
+	const updatedPages = wpPages
+		// Add the new pages into the wpPages array
+		.map((p) => newPages.find(({ id }) => id === p.id) || p)
+		// Also include the originalSlug from wpPages
+		.map((p) => {
+			const { originalSlug } = wpPages.find(({ id }) => id === p.id) || {};
+			return { ...p, originalSlug };
+		});
+
+	return { wpPages: updatedPages, headerCode: updatedHeaderCode };
 };
 
 export const updateSinglePageLinksToSections = async (
 	wpPages,
 	pages,
 	options,
+	headerCode = '',
 ) => {
 	let homePageContent = wpPages?.[0]?.content?.raw;
-	if (!homePageContent) return wpPages;
+	if (!homePageContent) return { wpPages, headerCode };
 	const { objective, activePlugins, landingPageCTALink } = options;
 
 	/**
@@ -136,7 +153,13 @@ export const updateSinglePageLinksToSections = async (
 			),
 		});
 
-		return wpPages;
+		return {
+			wpPages,
+			headerCode: headerCode.replaceAll(
+				/href="(#extendify-[\w|-]+)"/gi,
+				`href="${ctaHref}"`,
+			),
+		};
 	}
 
 	// get all the patterns that we have in the home page
@@ -185,17 +208,26 @@ export const updateSinglePageLinksToSections = async (
 				'href="#"',
 			),
 		});
-		return wpPages;
+		return {
+			wpPages,
+			headerCode: headerCode.replaceAll(
+				/href="(#extendify-[\w|-]+)"/gi,
+				'href="#"',
+			),
+		};
 	}
 
 	// get the suggested links from the AI and send both the patterns and the plugin pages.
 	const { suggestedLinks } =
 		(await getLinkSuggestions({
-			pageContent: homePageContent,
+			pageContent: headerCode
+				? `${homePageContent}\n${headerCode}`
+				: homePageContent,
 			availablePages: allAvailablePages,
 		})) || {};
 
 	// replace the links
+	let updatedHeaderCode = headerCode;
 	homePageContent = Object.keys(suggestedLinks ?? {}).reduce((content, key) => {
 		const slug = suggestedLinks[key];
 
@@ -205,6 +237,7 @@ export const updateSinglePageLinksToSections = async (
 			? `"${homeUrl}/${slug}"`
 			: `"${homeUrl}/#${slug}"`;
 
+		updatedHeaderCode = updatedHeaderCode.replaceAll(`"${key}"`, newLink);
 		return content.replaceAll(`"${key}"`, newLink);
 	}, homePageContent);
 
@@ -214,7 +247,7 @@ export const updateSinglePageLinksToSections = async (
 		content: homePageContent,
 	});
 
-	return wpPages;
+	return { wpPages, headerCode: updatedHeaderCode };
 };
 
 const getLinkSuggestions = async ({ pageContent, availablePages }) => {

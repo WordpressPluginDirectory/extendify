@@ -2,14 +2,16 @@ import { DOMHighlighter } from '@agent/components/DOMHighlighter';
 import { DragResizeLayout } from '@agent/components/layouts/DragResizeLayout';
 import { MobileLayout } from '@agent/components/layouts/MobileLayout';
 import { useGlobalStore } from '@agent/state/global';
-import { useWorkflowStore } from '@agent/state/workflows';
+import { useEditModeStore } from '@quick-edit/state/edit-mode';
+import { useQuickEditStore } from '@quick-edit/state/store';
 import { useEffect } from '@wordpress/element';
 import { SidebarLayout } from './components/layouts/SidebarLayout';
 
 export const Chat = ({ busy, children }) => {
 	const { setIsMobile, isMobile, mode } = useGlobalStore();
-	const { domToolEnabled, block, setBlock, setDomToolEnabled } =
-		useWorkflowStore();
+	const editModeOn = useEditModeStore((s) => s.on);
+	const block = useQuickEditStore((s) => s.agentBlock);
+	const setBlock = useQuickEditStore((s) => s.setAgentBlock);
 
 	useEffect(() => {
 		if (!isMobile || !block) return;
@@ -31,26 +33,6 @@ export const Chat = ({ busy, children }) => {
 			window.removeEventListener('resize', onResize);
 		};
 	}, [setIsMobile]);
-
-	useEffect(() => {
-		// Exit select mode when Escape is pressed
-		const onKeyDown = (e) => {
-			if (e.key !== 'Escape' || !domToolEnabled) return;
-
-			// Cancel the workflow
-			window.dispatchEvent(new CustomEvent('extendify-agent:cancel-workflow'));
-
-			// If a block is selected, clear it
-			if (block) return setBlock(null);
-
-			// If no block is selected, exit select mode
-			setDomToolEnabled(false);
-		};
-		window.addEventListener('keydown', onKeyDown);
-		return () => {
-			window.removeEventListener('keydown', onKeyDown);
-		};
-	}, [domToolEnabled, block, setBlock, setDomToolEnabled]);
 
 	if (isMobile) {
 		return (
@@ -74,7 +56,7 @@ export const Chat = ({ busy, children }) => {
 				>
 					{children}
 				</div>
-				{domToolEnabled && <DOMHighlighter busy={busy} />}
+				{editModeOn && <DOMHighlighter busy={busy} />}
 			</SidebarLayout>
 		);
 	}
@@ -87,7 +69,7 @@ export const Chat = ({ busy, children }) => {
 			>
 				{children}
 			</div>
-			{domToolEnabled && <DOMHighlighter busy={busy} />}
+			{editModeOn && <DOMHighlighter busy={busy} />}
 		</DragResizeLayout>
 	);
 };

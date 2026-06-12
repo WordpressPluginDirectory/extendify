@@ -3,6 +3,14 @@ import { isInTheFuture } from '@wordpress/date';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
+const url = new URL(window.location.href);
+const openAgentFromUrl = url.searchParams.has('extendify-open-agent');
+if (openAgentFromUrl) {
+	url.searchParams.delete('extendify-open-agent');
+	window.history.replaceState({}, '', url.toString());
+}
+const forceOpen = window.extAgentData?.startOnboarding || openAgentFromUrl;
+
 export const useGlobalStore = create()(
 	persist(
 		devtools(
@@ -11,7 +19,7 @@ export const useGlobalStore = create()(
 				open: true,
 				minimized: false,
 				// e.g. floating, docked-left, docked-right ?
-				mode: window.extAgentData.agentPosition,
+				mode: window.extAgentData?.agentPosition,
 				queuedTour: null,
 				scratch: {},
 				isMobile: window.innerWidth < 768,
@@ -63,8 +71,7 @@ export const useGlobalStore = create()(
 		{
 			name: `extendify-agent-global-${window.extSharedData.siteId}`,
 			merge: (persistedState, currentState) => {
-				// force open if we hit the success page
-				const open = window.extAgentData?.startOnboarding
+				const open = forceOpen
 					? true
 					: (persistedState?.open ?? currentState.open);
 				return { ...currentState, ...persistedState, open };

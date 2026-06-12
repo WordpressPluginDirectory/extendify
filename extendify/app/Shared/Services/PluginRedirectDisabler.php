@@ -55,7 +55,7 @@ class PluginRedirectDisabler
             'transients' => ['charitable_activation_redirect'],
         ],
         'give' => [
-            'transients' => ['_give_activation_redirect'],
+            'deleteOptions' => ['give_cache__give_activation_redirect'],
         ],
         'seo-by-rank-math' => [
             'transients' => ['_rank_math_activation_redirect'],

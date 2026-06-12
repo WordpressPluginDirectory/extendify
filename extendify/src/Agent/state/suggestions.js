@@ -1,7 +1,14 @@
+import { enhanceDomainSuggestion } from '@agent/lib/domain-suggestion';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
-const pluginSuggestions = window.extAgentData?.suggestions || [];
+const pluginSuggestions = (window.extAgentData?.suggestions || [])
+	.map(enhanceDomainSuggestion)
+	.filter(Boolean)
+	.map((s) => ({
+		...s,
+		source: s.source ?? 'plugin',
+	}));
 
 const state = (set, get) => ({
 	suggestions: pluginSuggestions,

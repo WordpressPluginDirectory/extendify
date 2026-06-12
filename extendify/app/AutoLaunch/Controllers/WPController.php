@@ -8,7 +8,9 @@ namespace Extendify\AutoLaunch\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Agent\Controllers\ChatHistoryController;
 use Extendify\Shared\DataProvider\ResourceData;
+use Extendify\Shared\Services\AutoUpdate\AutoUpdate;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -159,5 +161,25 @@ class WPController
         \do_action('extendify_after_launch');
 
         return new \WP_REST_Response('ok');
+    }
+
+    /**
+     * Runs every time the launch page loads: resets launch state (a no-op on a
+     * fresh site, the expected reset on an existing one) and enables auto-updates.
+     *
+     * @return \WP_REST_Response
+     */
+    public static function preLaunch()
+    {
+        \delete_option('extendify_onboarding_completed');
+        ChatHistoryController::clear();
+
+        if (AutoUpdate::isEnabled()) {
+            AutoUpdate::enableAutoUpdateForPlugin(EXTENDIFY_PLUGIN_BASENAME);
+            AutoUpdate::addToAutoUpdateList('auto_update_themes', 'extendable');
+            AutoUpdate::enableAutoUpdateForCore();
+        }
+
+        return new \WP_REST_Response(['success' => true]);
     }
 }

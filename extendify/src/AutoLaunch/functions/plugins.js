@@ -1,4 +1,5 @@
 import { recordPluginActivity } from '@shared/api/DataApi';
+import { enableAutoUpdate } from '@shared/api/wp';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
 
@@ -16,6 +17,7 @@ export const installPlugin = async (slug) => {
 			data: { slug },
 		});
 		await recordPluginActivity({ slug, source: 'auto-launch' });
+		await enableAutoUpdate(p?.plugin);
 		return p;
 	};
 	try {
@@ -41,7 +43,7 @@ export const getPlugin = async (slug) => {
 	const response = await apiFetch({
 		path: addQueryArgs('/wp/v2/plugins', { search: slug }),
 	});
-	return response?.[0];
+	return response?.find((p) => p.plugin?.split('/')[0] === slug);
 };
 
 export const activatePlugin = async (slug) => {
@@ -56,9 +58,13 @@ export const activatePlugin = async (slug) => {
 		await fn(slug);
 	} catch (_) {
 		console.warn(`Error activating ${slug}. Retrying with fresh data...`);
-		// try once more but get the slug first
-		const { plugin } = await getPlugin(slug);
-		await fn(plugin);
+		try {
+			// try once more but get the slug first
+			const { plugin } = await getPlugin(slug);
+			await fn(plugin);
+		} catch (error) {
+			console.error(`Failed to activate ${slug} again. Giving up`, error);
+		}
 	}
 };
 

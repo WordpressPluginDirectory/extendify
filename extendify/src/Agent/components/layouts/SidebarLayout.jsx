@@ -18,6 +18,8 @@ export const SidebarLayout = ({ children }) => {
 
 	const closeAgent = () => {
 		setOpen(false);
+		// External contract: no in-repo listener by design — notifies
+		// host-page/analytics consumers the user dismissed the agent.
 		window.dispatchEvent(new CustomEvent('extendify-agent:closed-button'));
 	};
 
@@ -131,35 +133,129 @@ export const SidebarLayout = ({ children }) => {
 	);
 };
 
+// Survives save-triggered reloads (modal saves, undo) — the page can
+// reload while the agent is open and we want to land at the same scroll.
+const SCROLL_STASH_KEY = 'extendify-agent-wsb-scroll-stash';
+
+const urlKey = () => window.location.pathname + window.location.search;
+
+const stashScroll = (scroll) => {
+	try {
+		window.sessionStorage.setItem(
+			SCROLL_STASH_KEY,
+			JSON.stringify({ key: urlKey(), scroll }),
+		);
+	} catch (_) {
+		/* no-op */
+	}
+};
+
+const consumeStashedScroll = () => {
+	try {
+		const raw = window.sessionStorage.getItem(SCROLL_STASH_KEY);
+		window.sessionStorage.removeItem(SCROLL_STASH_KEY);
+		if (!raw) return 0;
+		const data = JSON.parse(raw);
+		if (!data || data.key !== urlKey()) return 0;
+		const n = Number(data.scroll);
+		return Number.isFinite(n) && n > 0 ? n : 0;
+	} catch (_) {
+		return 0;
+	}
+};
+
 export const useLayoutShift = (open) => {
 	const ease = 'ease-in-out';
 	const t = (props) =>
 		props.map((p) => `${p} ${ANIMATE_TIME}ms ${ease}`).join(', ');
 	const firstRun = useRef(true);
+	const savedScroll = useRef(0);
+
+	useEffect(() => {
+		const onBeforeUnload = () => {
+			const wsb = document.querySelector('.wp-site-blocks');
+			const scroll = wsb?.scrollTop || window.scrollY || 0;
+			if (scroll > 0) stashScroll(scroll);
+		};
+		window.addEventListener('beforeunload', onBeforeUnload);
+		return () => window.removeEventListener('beforeunload', onBeforeUnload);
+	}, []);
 
 	useEffect(() => {
 		const siteBlocks = document.querySelector('.wp-site-blocks');
 		const wpadminbar = document.querySelector('#wpadminbar');
+		const stickyHeader = document.querySelector(
+			'header.is-position-sticky, header.wp-block-template-part:has(.ext-header-sticky)',
+		);
+
+		// firstRun.current flips below before applyScaling runs in rAF.
+		const isFirstApply = firstRun.current;
 
 		const applyScaling = () => {
 			if (!siteBlocks) return;
 
 			if (open) {
+				// Capture before `position: fixed` zeroes window.scrollY.
+				// Fall through to savedScroll.current so resize / strict-mode
+				// re-runs don't clobber it with the now-pinned scrollY (0).
+				const stashed = isFirstApply ? consumeStashedScroll() : 0;
+				savedScroll.current = stashed || window.scrollY || savedScroll.current;
+
 				const viewportWidth = window.innerWidth;
 				const scale = (viewportWidth - SIDEBAR_WIDTH) / viewportWidth;
+
+				// Subtract 40 because translateY(40px) below pushes the element down.
+				const scaledHeight = (window.innerHeight - 40) / scale;
+
 				Object.assign(siteBlocks.style, {
 					transformOrigin: 'top left',
-					transform: `translateX(${SIDEBAR_WIDTH}px) scale(${scale})`,
-					height: '100vh',
+					transform: `translateX(${SIDEBAR_WIDTH}px) translateY(40px) scale(${scale})`,
+					height: `${scaledHeight}px`,
+					overflowY: 'auto',
+					// `auto` so the scrollTop below is instant; `smooth` would animate from 0.
+					scrollBehavior: 'auto',
 				});
-				document.body.style.overflowX = 'hidden';
+				// Force layout so scrollTop respects the new height/overflow.
+				void siteBlocks.scrollHeight;
+				siteBlocks.scrollTop = savedScroll.current;
+				if (stickyHeader) {
+					stickyHeader.style.setProperty(
+						'--wp-admin--admin-bar--position-offset',
+						'0px',
+					);
+				}
+				document.body.style.overflow = 'hidden';
+				document.body.style.position = 'fixed';
+				document.body.style.top = '0';
+				document.body.style.left = '0';
+				document.body.style.width = '100vw';
 			} else {
+				const stashed = isFirstApply ? consumeStashedScroll() : 0;
+				const wsbScroll =
+					siteBlocks.scrollTop || stashed || savedScroll.current;
 				Object.assign(siteBlocks.style, {
 					transformOrigin: 'top left',
-					transform: 'translateX(0) scale(1)',
+					transform: 'translateX(0) translateY(0) scale(1)',
 					height: '',
+					overflowY: '',
+					maxWidth: '100vw',
+					scrollBehavior: '',
 				});
-				document.body.style.overflowX = '';
+				if (stickyHeader) {
+					stickyHeader.style.removeProperty(
+						'--wp-admin--admin-bar--position-offset',
+						'32px',
+					);
+				}
+				document.body.style.overflow = '';
+				document.body.style.position = '';
+				document.body.style.top = '';
+				document.body.style.left = '';
+				document.body.style.width = '';
+				// `instant` overrides themes that set html { scroll-behavior: smooth }.
+				void document.documentElement.scrollHeight;
+				window.scrollTo({ top: wsbScroll, left: 0, behavior: 'instant' });
+				savedScroll.current = 0;
 			}
 		};
 
@@ -186,6 +282,14 @@ export const useLayoutShift = (open) => {
 
 			applyScaling();
 
+			// External contract: no in-repo listener by design — lets host-page
+			// consumers react to the agent reflowing the viewport.
+			window.dispatchEvent(
+				new CustomEvent('extendify-agent:layout-shift', {
+					detail: { open },
+				}),
+			);
+
 			if (wpadminbar) {
 				Object.assign(wpadminbar.style, {
 					marginTop: fw,
@@ -203,28 +307,15 @@ export const useLayoutShift = (open) => {
 		window.addEventListener('resize', applyScaling);
 
 		return () => {
+			if (siteBlocks?.scrollTop) {
+				savedScroll.current = siteBlocks.scrollTop;
+			}
 			cancelAnimationFrame(raf);
 			window.removeEventListener('resize', applyScaling);
 			document.body.style.overflowX = '';
-			if (siteBlocks) {
-				Object.assign(siteBlocks.style, {
-					transition: '',
-					transform: '',
-					transformOrigin: '',
-					height: '',
-				});
-			}
-			if (wpadminbar) {
-				Object.assign(wpadminbar.style, {
-					transition: '',
-					marginTop: '',
-					marginRight: '',
-					marginBottom: '',
-					marginLeft: '',
-					borderRadius: '',
-					maxWidth: '',
-				});
-			}
+			// Don't clear wsb / wpadminbar styles here. Cleanup is sync,
+			// but the next effect's close branch animates them in rAF —
+			// wiping them now collapses the un-zoom to a no-op jump.
 		};
 	}, [open]);
 };

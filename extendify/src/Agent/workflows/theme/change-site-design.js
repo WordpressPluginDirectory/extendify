@@ -1,6 +1,7 @@
+import { Redirect } from '@agent/workflows/theme/components/Redirect';
 import { __ } from '@wordpress/i18n';
 import { layout } from '@wordpress/icons';
-import { SelectSiteDesign } from './components/SelectSiteDesign';
+import { SelectSiteDesign } from './components/change-site-design/SelectSiteDesign';
 
 const { context, abilities } = window.extAgentData;
 
@@ -11,6 +12,14 @@ const workflow = {
 		context?.postId &&
 		!context?.isBlogPage &&
 		context?.isBlockTheme,
+	needsRedirect: () => !context?.isFrontPage,
+	redirectComponent: () =>
+		Redirect(
+			__(
+				'Hey there! It looks like you are trying to change your site design, but you are not on a page where we can do that.',
+				'extendify-local',
+			),
+		),
 	id: 'change-site-design',
 	whenFinished: {
 		component: SelectSiteDesign,

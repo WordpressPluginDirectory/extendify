@@ -18,8 +18,11 @@ use Extendify\AutoLaunch\Admin as AutoLaunchAdmin;
 use Extendify\Library\Admin as LibraryAdmin;
 use Extendify\Library\Frontend as LibraryFrontend;
 use Extendify\Agent\Frontend as AgentFrontend;
+use Extendify\QuickEdit\Frontend as QuickEditFrontend;
 use Extendify\PageCreator\Admin as PageCreatorAdmin;
 use Extendify\PartnerData;
+use Extendify\Toolbar\Admin as ToolbarAdmin;
+use Extendify\Toolbar\Frontend as ToolbarFrontend;
 use Extendify\Recommendations\Admin as RecommendationsAdmin;
 use Extendify\PluginNotifications\Admin as PluginNotificationsAdmin;
 use Extendify\Shared\Admin as SharedAdmin;
@@ -38,10 +41,6 @@ if (!defined('EXTENDIFY_PATH')) {
 
 if (!defined('EXTENDIFY_URL')) {
     define('EXTENDIFY_URL', \plugin_dir_url(__FILE__));
-}
-
-if (!defined('EXTENDIFY_PLUGIN_BASENAME')) {
-    define('EXTENDIFY_PLUGIN_BASENAME', \plugin_basename(__DIR__ . '/extendify.php'));
 }
 
 if (is_readable(EXTENDIFY_PATH . 'vendor/autoload.php')) {
@@ -66,6 +65,9 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     // This class will fetch and cache partner data to be used
     // throughout every class below. If opt in.
     new PartnerData();
+
+    // Assign A/B test variants now that partner data is loaded.
+    Insights::setup((array) PartnerData::setting('activeTests'));
 
     // Set up scheduled cache (if opt-in and active).
     if (!PartnerData::setting('deactivated')) {
@@ -132,6 +134,12 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
         && Config::$launchCompleted
         && (PartnerData::setting('showAIAgents') || Config::preview('ai-agent'));
 
+    // True when the AI Agent is actually loaded this request — the gate
+    // above, or dev mode (so it can be exercised locally). Quick Edit and
+    // the simple toolbar both build on the Agent, so they share this
+    // decision rather than gating themselves independently.
+    $extendifyLoadAgent = $extendifyShowAgent || constant('EXTENDIFY_DEVMODE');
+
     if (!$extendifyShowAgent) {
         new HelpCenterAdmin();
     }
@@ -144,9 +152,26 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
         new DraftAdmin();
     }
 
-    if ($extendifyShowAgent || constant('EXTENDIFY_DEVMODE')) {
+    if ($extendifyLoadAgent) {
         new AgentAdmin();
         new AgentFrontend();
+    }
+
+    if ($extendifyLoadAgent) {
+        new QuickEditFrontend();
+    }
+
+    // Simple Extendify toolbar — replaces the WordPress core admin
+    // bar on the front end with a minimal AI Agent / Quick Edit /
+    // Edit / WP Admin bar. The user-profile "Toolbar Style" setting
+    // controls per-user override; the default is Launch-aware
+    // ('simple' post-Launch, 'full' pre-Launch). Gated on the Agent
+    // too: the toolbar's "AI Agent" button drives the Agent's mounted
+    // admin-bar button, so without the Agent it would present a dead
+    // button — never ship the toolbar unless the Agent is there.
+    if ($extendifyLoadAgent && (PartnerData::setting('showSimpleToolbar') || Config::preview('simple-toolbar'))) {
+        new ToolbarAdmin();
+        new ToolbarFrontend();
     }
 })();
 

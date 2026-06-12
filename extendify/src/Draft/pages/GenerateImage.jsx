@@ -49,7 +49,7 @@ export const GenerateImage = () => {
 			subtractOneCredit();
 			abortController.current = new AbortController();
 			const { imageCredits, images, id } = await generateImage(
-				aiImageOptions,
+				{ ...aiImageOptions, source: 'draft' },
 				abortController.current.signal,
 			);
 			updateImageCredits(imageCredits);
@@ -59,7 +59,7 @@ export const GenerateImage = () => {
 			if (error?.code === 20) return;
 			// If we didn't get back any credit info, it was a server error
 			if (!error?.imageCredits) {
-				// Pause to prefent flickering
+				// Pause to prevent flickering
 				await new Promise((resolve) => setTimeout(resolve, 1000));
 				setErrorMessage(error.message);
 				// Add back the credit we subtracted

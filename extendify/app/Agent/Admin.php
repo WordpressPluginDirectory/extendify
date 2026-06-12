@@ -10,9 +10,10 @@ defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Agent\Controllers\ChatHistoryController;
 use Extendify\Agent\Controllers\TourController;
-use Extendify\Agent\Controllers\WorkflowHistoryController;
 use Extendify\Config;
+use Extendify\Constants;
 use Extendify\Shared\Services\Escaper;
+use Extendify\Shared\Services\HttpClient;
 use Extendify\Agent\TagBlocks;
 use Extendify\Agent\TagTemplateParts;
 use Extendify\Agent\Controllers\SiteNavigationController;
@@ -34,7 +35,6 @@ class Admin
         \add_action('admin_enqueue_scripts', [$this, 'loadScriptsAndStyles']);
         \add_action('wp_enqueue_scripts', [$this, 'loadScriptsAndStyles']);
         ChatHistoryController::init();
-        WorkflowHistoryController::init();
 
         // Tag blocks so we can identify them later
         TagBlocks::init();
@@ -42,6 +42,8 @@ class Admin
 
         // Add the site navigation ids to the navigation blocks
         SiteNavigationController::init();
+
+        \add_action('extendify_agent_suggestions_refresh', [$this, 'refreshSuggestions']);
     }
 
     /**
@@ -51,6 +53,12 @@ class Admin
      */
     public function loadScriptsAndStyles()
     {
+        // The Customizer preview iframe is a front-end render, so this fires
+        // there too — but the Agent only belongs on the live, top-level page.
+        if (is_customize_preview()) {
+            return;
+        }
+
         $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
         $scriptAssetPath = EXTENDIFY_PATH . 'public/build/' . Config::$assetManifest['extendify-agent.php'];
         $fallback = [
@@ -149,10 +157,18 @@ class Admin
                 // List of suggestions the AI can make for this user.
                 // For example, we could check whether they need to set up a specific plugin.
                 'suggestions' => $this->getSuggestions(),
+                'domainsSuggestionSettings' => [
+                    'showPrimary' => (bool) PartnerData::setting('showPrimaryDomainRecommendationAgent'),
+                    'showSecondary' => (bool) PartnerData::setting('showSecondaryDomainRecommendationAgent'),
+                    'stagingSites' => PartnerData::setting('stagingSites'),
+                    'searchUrl' => PartnerData::setting('domainSearchURL'),
+                ],
                 'chatHistory' => ChatHistoryController::getChatHistory(),
-                'workflowHistory' => WorkflowHistoryController::getWorkflowHistory(),
                 'userData' => [
                     'tourData' => \wp_json_encode(TourController::get()->get_data()),
+                    'domainsRecommendationsActivities' => \wp_json_encode(
+                        \get_option('extendify_domains_recommendations_activities', null)
+                    ),
                 ],
             ]),
             'before'
@@ -367,88 +383,76 @@ class Admin
      */
     private function getSuggestions()
     {
-        return [
-            [
-                'id' => 'publish-this-page',
-                'icon' => 'published',
-                'message' => __('Publish this page', 'extendify-local'),
-                'workflowId' => 'update-post-status',
-                'source' => 'plugin',
-                'available' => ['context' => ['postStatus' => 'draft']],
-            ],
-            [
-                'id' => 'unpublish-this-page',
-                'icon' => 'drafts',
-                'message' => __('Unpublish this page', 'extendify-local'),
-                'workflowId' => 'update-post-status',
-                'source' => 'plugin',
-                'available' => ['context' => ['postStatus' => 'publish', 'isFrontPage' => false]],
-            ],
-            [
-                'id' => 'change-site-title',
-                'icon' => 'edit',
-                'message' => __('Change website title', 'extendify-local'),
-                'workflowId' => 'edit-wp-setting',
-                'source' => 'plugin',
-                'available' => ['abilities' => ['canEditSettings']],
-            ],
-            [
-                'id' => 'change-theme-colors',
-                'icon' => 'styles',
-                'message' => __('Change website colors', 'extendify-local'),
-                'workflowId' => 'change-theme-variation',
-                'source' => 'plugin',
-                'available' => ['context' => ['hasThemeVariations']],
-            ],
-            [
-                'id' => 'change-theme-fonts',
-                'icon' => 'typography',
-                'message' => __('Change website fonts', 'extendify-local'),
-                'workflowId' => 'change-theme-fonts-variation',
-                'source' => 'plugin',
-                'available' => ['context' => ['hasThemeVariations']],
-            ],
-            [
-                'id' => 'change-site-style',
-                'icon' => 'styles',
-                'message' => __('Change website style', 'extendify-local'),
-                'workflowId' => 'change-site-vibes',
-                'source' => 'plugin',
-                'available' => ['abilities' => ['canEditThemes'], 'context' => ['isUsingVibes']],
-            ],
-            [
-                'id' => 'edit-text-on-this-page',
-                'icon' => 'edit',
-                'message' => __('Edit text on this page', 'extendify-local'),
-                'workflowId' => 'edit-post-strings',
-                'source' => 'plugin',
-                'available' => ['abilities' => ['canEditPost'], 'context' => ['postId', 'usingBlockEditor']],
-            ],
-            [
-                'id' => 'change-website-animation',
-                'icon' => 'swatch',
-                'message' => __('Change website animation', 'extendify-local'),
-                'workflowId' => 'change-animation',
-                'source' => 'plugin',
-                'available' => ['abilities' => ['canEditSettings']],
-            ],
-            [
-                'id' => 'change-website-logo',
-                'icon' => 'siteLogo',
-                'message' => __('Change website logo', 'extendify-local'),
-                'workflowId' => 'update-logo',
-                'source' => 'plugin',
-                'available' => ['abilities' => ['canEditSettings', 'canUploadMedia']],
-            ],
-            [
-                'id' => 'change-website-browser-icon',
-                'icon' => 'siteLogo',
-                'message' => __('Change website browser icon', 'extendify-local'),
-                'workflowId' => 'update-site-icon',
-                'source' => 'plugin',
-                'available' => ['abilities' => ['canEditSettings', 'canUploadMedia']],
-            ],
-        ];
+        $locale = \get_locale();
+        $cached = \get_option('extendify_agent_suggestions_' . $locale);
+
+        if (!is_array($cached) || !isset($cached['fetchedAt'])) {
+            return $this->refreshSuggestions($locale) ?? [];
+        }
+
+        $age = time() - $cached['fetchedAt'];
+        if ($age > DAY_IN_SECONDS) {
+            if (!\wp_next_scheduled('extendify_agent_suggestions_refresh', [$locale])) {
+                \wp_schedule_single_event(time(), 'extendify_agent_suggestions_refresh', [$locale]);
+                if (\is_admin()) {
+                    \spawn_cron();
+                }
+            }
+        }
+
+        return $cached['data'] ?? [];
+    }
+
+    /**
+     * Fetch suggestions from the API and persist them.
+     * Called synchronously on cold start and via wp-cron when cache is stale.
+     *
+     * @param string $locale - Locale to fetch (cron may run in a different site locale).
+     * @return array|null
+     */
+    public function refreshSuggestions($locale)
+    {
+        // When the refresh runs via wp-cron, the active locale may differ from the cached entry's locale.
+        // Switch so HttpClient sends the matching wp_language and the response lands in the right cache key.
+        $needSwitch = $locale !== \get_locale();
+        if ($needSwitch) {
+            \switch_to_locale($locale);
+        }
+
+        $response = HttpClient::post(
+            Constants::AI_HOST . '/api/agent/suggestions',
+            [],
+            null,
+            true
+        );
+
+        if ($needSwitch) {
+            \restore_previous_locale();
+        }
+
+        $optionKey = 'extendify_agent_suggestions_' . $locale;
+
+        if ($response['code'] !== 200) {
+            // Back off: stamp the cache as fetched ~23h ago so we retry in ~1h instead of every request.
+            $cached = \get_option($optionKey);
+            \update_option(
+                $optionKey,
+                [
+                    'data' => is_array($cached) ? ($cached['data'] ?? []) : [],
+                    'fetchedAt' => time() - (DAY_IN_SECONDS - HOUR_IN_SECONDS),
+                ],
+                false
+            );
+            return null;
+        }
+
+        $suggestions = $response['response']['suggestions'] ?? [];
+        \update_option(
+            $optionKey,
+            ['data' => $suggestions, 'fetchedAt' => time()],
+            false
+        );
+        return $suggestions;
     }
 
     /**

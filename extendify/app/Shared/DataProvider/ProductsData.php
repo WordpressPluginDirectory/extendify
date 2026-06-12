@@ -8,6 +8,7 @@ namespace Extendify\Shared\DataProvider;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Constants;
 use Extendify\PartnerData;
 use Extendify\Shared\Services\Sanitizer;
 
@@ -40,7 +41,7 @@ class ProductsData
                     'custom_products' => PartnerData::setting('productRecommendations')['customProducts'],
                     'wp_language' => \get_locale(),
                 ],
-                'https://dashboard.extendify.com/api/recommendations/products'
+                Constants::DASHBOARD_HOST . '/api/recommendations/products'
             ),
             [
                 'headers' => ['Accept' => 'application/json'],

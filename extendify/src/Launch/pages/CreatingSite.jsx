@@ -84,6 +84,7 @@ export const CreatingSite = () => {
 		siteObjective,
 		siteQA,
 		urlParameters,
+		setSiteStrings,
 	} = useUserSelectionStore();
 	const { pages, style, removeAll, add } = usePagesSelectionStore();
 	const [info, setInfo] = useState([
@@ -397,6 +398,19 @@ export const CreatingSite = () => {
 				siteProfile,
 			);
 
+			const createdHomePage = pagesWithCustomContent.find(
+				(p) => p.slug === 'home',
+			);
+			const heroPattern = createdHomePage?.patterns?.find((p) =>
+				p.patternTypes?.includes('hero-header'),
+			);
+			const pMatch = heroPattern?.code?.match(/<p[^>]*>([\s\S]*?)<\/p>/);
+			const heroDesc = pMatch?.[1]?.replace(/<[^>]+>/g, '').trim();
+			setSiteStrings({
+				...siteStrings,
+				heroDescription: heroDesc || siteStrings?.heroDescription,
+			});
+
 			const createdPages = await createWpPages(pagesWithCustomContent, {
 				stickyNav:
 					siteStructure === 'single-page' && siteObjective !== 'landing-page',
@@ -616,6 +630,7 @@ export const CreatingSite = () => {
 		logoUrl,
 		sitePlugins,
 		siteQA,
+		setSiteStrings,
 	]);
 
 	useEffect(() => {

@@ -53,6 +53,26 @@ class ChatHistoryController
         }, $results);
     }
 
+    /**
+     * Delete the user's chat history, if the table exists.
+     *
+     * @param int|null $user_id The user ID, defaults to the current user.
+     * @return void
+     */
+    public static function clear($user_id = null)
+    {
+        global $wpdb;
+        $table = $wpdb->prefix . 'extendify_agent_events';
+        $user_id = $user_id ?: get_current_user_id();
+
+        if (!$wpdb->get_var("SHOW TABLES LIKE '$table'")) {
+            return;
+        }
+
+        $wpdb->query(
+            $wpdb->prepare("DELETE FROM $table WHERE user_id = %d", $user_id)
+        );
+    }
 
     /**
      * Return the data

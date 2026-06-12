@@ -187,6 +187,8 @@ class ImageUploader
             wp_update_attachment_metadata($attachmentId, $metadata);
         }
 
+        update_post_meta($attachmentId, '_extendify_source_url', $image);
+
         return $attachmentId;
     }
 

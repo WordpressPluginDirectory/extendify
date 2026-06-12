@@ -27,7 +27,10 @@ export const MainButton = () => {
 			}}
 			className="components-button has-icon is-primary h-8 min-w-0 cursor-pointer px-2 xs:h-9 sm:ml-2 xl:pr-3"
 		>
-			<Icon icon={extendifyLogo} size={24} />
+			<Icon
+				icon={extendifyLogo(__('Design Library', 'extendify-local'))}
+				size={24}
+			/>
 			<span className="ml-1 hidden xl:inline">
 				{__('Design Library', 'extendify-local')}
 			</span>

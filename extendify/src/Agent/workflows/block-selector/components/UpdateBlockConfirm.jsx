@@ -1,5 +1,5 @@
-import { patchVariantClasses } from '@agent/lib/variant-classes';
-import { useWorkflowStore } from '@agent/state/workflows';
+import { useQuickEditStore } from '@quick-edit/state/store';
+import { patchVariantClasses } from '@shared/lib/variant-classes';
 import apiFetch from '@wordpress/api-fetch';
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
@@ -12,7 +12,7 @@ export const UpdateBlockConfirm = ({
 	onCancel,
 	onRetry,
 }) => {
-	const { block } = useWorkflowStore();
+	const block = useQuickEditStore((s) => s.agentBlock);
 	const [loading, setLoading] = useState(true);
 	const detachedEl = useRef(null);
 
@@ -52,7 +52,7 @@ export const UpdateBlockConfirm = ({
 			window.dispatchEvent(new Event('extendify-agent:remove-block-highlight'));
 			// hide the block
 			const el = document.querySelector(
-				`[data-extendify-agent-block-id="${block.id}"]`,
+				`[data-extendify-agent-block-id="${block?.id}"]`,
 			);
 			// TODO: work out a way to propagate an error here
 			if (!el && !detachedEl.current) return onCancel();

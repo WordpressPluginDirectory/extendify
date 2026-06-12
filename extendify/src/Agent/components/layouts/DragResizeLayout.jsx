@@ -34,6 +34,8 @@ export const DragResizeLayout = ({ children }) => {
 		initialPosition: usePositionStore.getState(),
 		onDragEnd: (x, y) => {
 			usePositionStore.getState().setPosition(x, y);
+			// External contract: no in-repo listener by design — emitted for
+			// host-page/analytics consumers (mirrors the consumed :resize-end below).
 			window.dispatchEvent(
 				new CustomEvent('extendify-agent:drag-end', { detail: { x, y } }),
 			);
@@ -65,6 +67,8 @@ export const DragResizeLayout = ({ children }) => {
 
 	const closeAgent = () => {
 		setOpen(false);
+		// External contract: no in-repo listener by design — notifies
+		// host-page/analytics consumers the user dismissed the agent.
 		window.dispatchEvent(new CustomEvent('extendify-agent:closed-button'));
 	};
 

@@ -1,4 +1,5 @@
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
+import { digest } from '@shared/api/digest';
 import { __ } from '@wordpress/i18n';
 
 export const setStatus = (msg) => {
@@ -23,11 +24,15 @@ export const retryTwice = async (fn) => {
 	}
 };
 
-export const failWithFallback = async (fn, fallback) => {
+export const failWithFallback = async (fn, fallback, errDetails = {}) => {
 	try {
 		return await fn();
 	} catch (error) {
-		console.error('failWithFallback:', error);
+		digest({
+			...errDetails,
+			error: errDetails?.error ?? error,
+			source: 'auto-launch',
+		});
 		return fallback;
 	}
 };

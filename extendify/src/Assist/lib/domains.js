@@ -13,8 +13,10 @@ const {
 	stagingSites,
 } = window.extAssistData?.domainsSuggestionSettings || {};
 
-const hasDomains =
-	(safeParseJson(window.extSharedData.resourceData)?.domains || [])?.length > 0;
+const parsedDomains = safeParseJson(window.extSharedData.resourceData)?.domains;
+export const domains = Array.isArray(parsedDomains) ? parsedDomains : [];
+
+const hasDomains = domains.length > 0;
 
 const domainByLanguage = (lang, urlList) => {
 	try {
@@ -30,9 +32,9 @@ export const domainSearchUrl =
 		? 'https://extendify.com?s={DOMAIN}'
 		: domainByLanguage(wpLanguage, searchUrl);
 
-const isStagingDomain =
-	stagingSites.filter((l) => hostname.toLowerCase().includes(l))?.length > 0 ||
-	false;
+const isStagingDomain = (stagingSites || []).some((l) =>
+	hostname.toLowerCase().includes(l),
+);
 
 // Show if it's not a staging domain, has a title, and is enabled
 export const showDomainBanner = (() => {
@@ -90,3 +92,9 @@ export const deleteDomainCache = () =>
 		path: 'extendify/v1/assist/delete-domains-recommendations',
 		method: 'POST',
 	});
+
+export const buildDomainViewItems = (domains) =>
+	domains.map((domain, i) => ({
+		domain,
+		type: i === 0 ? 'primary' : 'secondary',
+	}));

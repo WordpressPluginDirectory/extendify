@@ -1,8 +1,8 @@
+import { getMediaDetails } from '@assist/lib/media';
 import {
 	addCustomMediaViewsCss,
 	removeCustomMediaViewsCss,
-} from '@agent/lib/media-views';
-import { getMediaDetails } from '@assist/lib/media';
+} from '@shared/lib/media-views';
 import apiFetch from '@wordpress/api-fetch';
 import { isBlobURL } from '@wordpress/blob';
 import {

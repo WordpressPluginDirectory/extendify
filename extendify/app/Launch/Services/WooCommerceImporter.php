@@ -9,6 +9,7 @@ namespace Extendify\Launch\Services;
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
+use Extendify\Constants;
 use Extendify\PartnerData;
 use Extendify\Shared\Services\Sanitizer;
 
@@ -25,7 +26,7 @@ class WooCommerceImporter
      */
     public static function import()
     {
-        $response = wp_remote_post('https://ai.extendify.com/api/plugins/woo/content', [
+        $response = wp_remote_post(Constants::AI_HOST . '/api/plugins/woo/content', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'referer' => get_bloginfo('url'),

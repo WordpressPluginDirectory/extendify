@@ -1,6 +1,6 @@
 import { walkAndUpdateImageDetails } from '@agent/lib/blocks';
 import { useChatStore } from '@agent/state/chat';
-import { useWorkflowStore } from '@agent/state/workflows';
+import { useQuickEditStore } from '@quick-edit/state/store';
 import { generateImage } from '@shared/api/DataApi';
 import { downloadImage } from '@shared/api/wp';
 import { useImageGenerationStore } from '@shared/state/generate-images';
@@ -37,7 +37,7 @@ export const GenerateImageConfirm = ({
 		resetImageCredits,
 	} = useImageGenerationStore();
 	const { addMessage, messages } = useChatStore();
-	const { block } = useWorkflowStore();
+	const block = useQuickEditStore((s) => s.agentBlock);
 	const noCredits = Number(imageCredits.remaining) === 0;
 	const generatingImageRef = useRef(false);
 	const confirmed = useRef(false);
@@ -109,6 +109,7 @@ export const GenerateImageConfirm = ({
 			try {
 				const { imageCredits, images } = await generateImage({
 					prompt: inputs.prompt,
+					source: 'agent',
 				});
 				updateImageCredits(imageCredits);
 				const url = images?.[0]?.url;

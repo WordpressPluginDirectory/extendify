@@ -12,16 +12,20 @@ const initialState = {
 
 const state = (set, get) => ({
 	...initialState,
-	setDomainActivity: ({ domain, position, type = 'primary' }) => {
-		const activities = get().activities;
+	setDomainActivity: ({
+		domain,
+		position,
+		type = 'primary',
+		action = 'clicked',
+	}) => {
 		set({
 			activities: [
-				...activities,
+				...get().activities,
 				{
-					domain,
+					domain: domain?.toLowerCase(),
 					position,
 					type,
-					action: 'clicked',
+					action,
 					date: new Date().toISOString(),
 				},
 			],
@@ -29,11 +33,22 @@ const state = (set, get) => ({
 	},
 });
 
+const debounce = (func, delay) => {
+	let timeoutId;
+	return (...params) => {
+		clearTimeout(timeoutId);
+		timeoutId = setTimeout(() => func(...params), delay);
+	};
+};
+
 const path = '/extendify/v1/assists/domains-recommendations-activities';
 const storage = {
 	getItem: async () => await apiFetch({ path }),
-	setItem: async (_name, state) =>
-		await apiFetch({ path, method: 'POST', data: { state } }),
+	setItem: debounce(
+		async (_name, state) =>
+			await apiFetch({ path, method: 'POST', data: { state } }),
+		500,
+	),
 };
 
 export const useDomainActivities = create(

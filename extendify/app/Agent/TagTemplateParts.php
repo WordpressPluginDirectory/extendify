@@ -4,27 +4,44 @@ namespace Extendify\Agent;
 
 defined('ABSPATH') || die('No direct access.');
 
-/**
- * Tag blocks inside template parts (header/footer/etc.) with deterministic IDs.
- * - Only runs inside core/template-part scopes.
- * - Preorder numbering per template-part.
- */
+// Preorder numbering, per template-part scope.
 class TagTemplateParts
 {
+    // Dynamic self-rendering blocks: their rendered output contains blocks that
+    // aren't in the parsed tree (a mini-cart drawer, a loop's per-item copies),
+    // so counting that output inflates every later id beyond what the static
+    // TemplatePartBlockFinder can resolve. Each is counted as one opaque leaf
+    // here and its rendered subtree skipped; the finder shares this list and
+    // treats them as leaves too (counted, not descended into).
+    public static $ignored = [
+        'core/query',
+        'core/post-template',
+        'core/post-content',
+        'core/comments',
+        'core/comment-template',
+        'woocommerce/product-collection',
+        'woocommerce/product-template',
+        'woocommerce/mini-cart',
+        'woocommerce/cart',
+        'woocommerce/checkout',
+    ];
+
     private static $frames = [];
+    // Entries keyed by block-name; see onRenderBlock for why a plain stack lost
+    // tags on nav items 5+.
     private static $blockStack = [];
 
     public static function init()
     {
-        // Reset per-request state
-        add_action('template_redirect', function () {
-            self::$frames = [];
-            self::$blockStack = [];
-        });
-        // Assign IDs at the block-data layer (pre-order, stable)
+        add_action('template_redirect', [self::class, 'reset']);
         add_filter('render_block_data', [self::class, 'onRenderBlockData'], 10, 2);
-        // Turn those IDs into DOM attributes & manage scope lifecycle
         add_filter('render_block', [self::class, 'onRenderBlock'], 10, 2);
+    }
+
+    public static function reset()
+    {
+        self::$frames = [];
+        self::$blockStack = [];
     }
 
     private static function isTemplatePart(array $b): bool
@@ -53,7 +70,6 @@ class TagTemplateParts
         return 'template-part';
     }
 
-    /** Assign IDs/labels into attrs before render (pre-order) */
     public static function onRenderBlockData(array $block, array $source): array
     {
         $name = $block['blockName'] ?? '';
@@ -61,42 +77,46 @@ class TagTemplateParts
             return $block;
         }
 
-        // OPEN a template-part scope (do not number the wrapper itself)
         if (self::isTemplatePart($block)) {
-            $label = self::labelForPart($block);
-            $slug = $block['attrs']['slug'] ?? '';
             self::$frames[] = [
-                'label' => $label,
-                'slug' => $slug,
-                'seq' => 0, // per-part counter
+                'label' => self::labelForPart($block),
+                'slug' => $block['attrs']['slug'] ?? '',
+                'seq' => 0,
+                'skip_depth' => 0,
             ];
-            // mark so we know to pop when this wrapper finishes rendering
             $block['attrs']['__extendify_scope_open'] = 1;
             return $block;
         }
 
-        // Not inside a template-part? Ignore (prevents tagging post content).
         if (empty(self::$frames)) {
             return $block;
         }
 
-        // Inside a template part
         $frame = self::currentFrame();
-        // Any other block inside the part → number it
-        if ($frame) {
+        if (!$frame) {
+            return $block;
+        }
+
+        // render_block_data runs top-down (before a block's own render), so an
+        // ignored block is counted here as a leaf and the skip is raised *after*
+        // — its descendants then render with skip_depth > 0 and are not counted.
+        if (($frame['skip_depth'] ?? 0) === 0) {
             $frame['seq']++;
             self::$blockStack[] = [
+                'name' => $name,
                 'id' => $frame['seq'],
                 'label' => $frame['label'],
                 'slug' => $frame['slug'] ?? '',
             ];
-            self::setCurrentFrame($frame);
         }
+        if (in_array($name, self::$ignored, true)) {
+            $frame['skip_depth'] = ($frame['skip_depth'] ?? 0) + 1;
+        }
+        self::setCurrentFrame($frame);
 
         return $block;
     }
 
-    /** Inject DOM attributes and close scopes after render */
     public static function onRenderBlock(string $html, array $block): string
     {
         $name = $block['blockName'] ?? '';
@@ -104,22 +124,60 @@ class TagTemplateParts
             return $html;
         }
 
-        // When the template-part wrapper finishes rendering, POP the frame
         if (self::isTemplatePart($block) && !empty($block['attrs']['__extendify_scope_open'])) {
-            // wrapper itself isn’t tagged; just close the scope
             array_pop(self::$frames);
             return $html;
         }
 
-        // If we’re not inside a template part, do nothing
         if (empty(self::$frames)) {
             return $html;
         }
 
-        // Inject attributes for blocks we numbered
-        $info = !empty(self::$blockStack)
-            ? array_pop(self::$blockStack)
-            : null;
+        $frame = self::currentFrame();
+        $skip = $frame['skip_depth'] ?? 0;
+
+        // render_block runs bottom-up, so the ignored block's own filter fires
+        // after its descendants — drop one skip level here. Only the outermost
+        // ignored block (skip === 1) was counted in render_block_data, so only it
+        // falls through to be stamped; nested ones and descendants bail.
+        if (in_array($name, self::$ignored, true)) {
+            $frame['skip_depth'] = max(0, $skip - 1);
+            self::setCurrentFrame($frame);
+            if ($skip > 1) {
+                return $html;
+            }
+        } elseif ($skip > 0) {
+            return $html;
+        }
+
+        // Name-keyed lookup, not array_pop: core/navigation fires render_block
+        // for inner items without firing render_block_data first, so a
+        // straight pop would consume entries belonging to unrelated outer
+        // blocks. If nothing matches, mint a fresh id (nav-link/-submenu path).
+        $info = null;
+        $infoIndex = -1;
+        for ($i = count(self::$blockStack) - 1; $i >= 0; $i--) {
+            if (self::$blockStack[$i]['name'] === $name) {
+                $info = self::$blockStack[$i];
+                $infoIndex = $i;
+                break;
+            }
+        }
+        if ($info !== null) {
+            array_splice(self::$blockStack, $infoIndex, 1);
+        } else {
+            $frame = self::currentFrame();
+            if ($frame) {
+                $frame['seq']++;
+                self::setCurrentFrame($frame);
+                $info = [
+                    'name'  => $name,
+                    'id'    => $frame['seq'],
+                    'label' => $frame['label'],
+                    'slug'  => $frame['slug'] ?? '',
+                ];
+            }
+        }
 
         if ($info && $html) {
             $tp = new \WP_HTML_Tag_Processor($html);

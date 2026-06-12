@@ -8,6 +8,7 @@ namespace Extendify;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Constants;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -54,7 +55,10 @@ class PartnerData
         'showDomainTask' => false,
         'showSecondaryDomainBanner' => false,
         'showSecondaryDomainTask' => false,
+        'showPrimaryDomainRecommendationAgent' => false,
+        'showSecondaryDomainRecommendationAgent' => false,
         'domainTLDs' => ['com', 'net'],
+        'priorityDomainTLDs' => [],
         'stagingSites' => ['wordpress'],
         'domainSearchURL' => '',
         'showDraft' => false,
@@ -75,12 +79,21 @@ class PartnerData
         ],
         'license' => 'active',
         'showAIAgents' => false,
+        'showQuickEdit' => false,
+        // Simple front-end Extendify toolbar (replaces WP core admin
+        // bar for editors who prefer it). Default style is Launch-aware
+        // (simple post-Launch, full before).
+        'showSimpleToolbar' => false,
         'showImprint' => [],
         'showLaunchQuestions' => false,
         'pluginGroupId' => null,
         'requiredPlugins' => null,
+        'showProductActivation' => [],
         'useAgentOnboarding' => false,
         'hidePluginNotifications' => false,
+        'hideLaunchExitLink' => false,
+        'useAutoUpdate' => false,
+        'activeTests' => [],
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -99,7 +112,13 @@ class PartnerData
             ?? self::$config['showSecondaryDomainTask']);
         self::$config['showSecondaryDomainBanner'] = ($data['showSecondaryDomainBanner']
             ?? self::$config['showSecondaryDomainBanner']);
+        self::$config['showPrimaryDomainRecommendationAgent'] = ($data['showPrimaryDomainRecommendationAgent']
+            ?? self::$config['showPrimaryDomainRecommendationAgent']);
+        self::$config['showSecondaryDomainRecommendationAgent'] = ($data['showSecondaryDomainRecommendationAgent']
+            ?? self::$config['showSecondaryDomainRecommendationAgent']);
         self::$config['domainTLDs'] = ($data['domainTLDs'] ?? self::$config['domainTLDs']);
+        self::$config['priorityDomainTLDs'] = ($data['priorityDomainTLDs']
+            ?? self::$config['priorityDomainTLDs']);
         self::$config['stagingSites'] = array_map('trim', ($data['stagingSites'] ?? self::$config['stagingSites']));
         self::$config['domainSearchURL'] = ($data['domainSearchURL'] ?? self::$config['domainSearchURL']);
         self::$logo = isset($data['logo'][0]['thumbnails']['large']['url'])
@@ -139,11 +158,19 @@ class PartnerData
         self::$config['showImprint'] = ($data['showImprint'] ?? self::$config['showImprint']);
         self::$config['showLaunchQuestions'] = ($data['showLaunchQuestions'] ?? self::$config['showLaunchQuestions']);
         self::$config['showAIAgents'] = ($data['showAIAgents'] ?? self::$config['showAIAgents']);
+        self::$config['showQuickEdit'] = ($data['showQuickEdit'] ?? self::$config['showQuickEdit']);
+        self::$config['showSimpleToolbar'] = ($data['showSimpleToolbar']
+            ?? self::$config['showSimpleToolbar']);
         self::$config['pluginGroupId'] = ($data['pluginGroup'] ?? self::$config['pluginGroupId']);
         self::$config['requiredPlugins'] = ($data['requiredPlugins'] ?? self::$config['requiredPlugins']);
+        self::$config['showProductActivation'] = ($data['showProductActivation']
+            ?? self::$config['showProductActivation']);
         self::$config['useAgentOnboarding'] = ($data['useAgentOnboarding'] ?? self::$config['useAgentOnboarding']);
         self::$config['hidePluginNotifications'] = ($data['hidePluginNotifications']
             ?? self::$config['hidePluginNotifications']);
+        self::$config['hideLaunchExitLink'] = ($data['hideLaunchExitLink'] ?? self::$config['hideLaunchExitLink']);
+        self::$config['useAutoUpdate'] = ($data['useAutoUpdate'] ?? self::$config['useAutoUpdate']);
+        self::$config['activeTests'] = ($data['activeTests'] ?? self::$config['activeTests']);
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);
@@ -203,8 +230,9 @@ class PartnerData
                 'partner' => self::$id,
                 'wp_language' => \get_locale(),
                 'site_url' => \home_url(),
+                'site_id' => \get_option('extendify_site_id', ''),
             ],
-            'https://dashboard.extendify.com/api/onboarding/partner-data/'
+            Constants::DASHBOARD_HOST . '/api/onboarding/partner-data/'
         );
 
         $response = \wp_safe_remote_get($url, ['headers' => ['Accept' => 'application/json']]);

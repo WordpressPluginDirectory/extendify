@@ -63,6 +63,8 @@ export const UpdateSiteDescription = ({ popModal, setModalTitle }) => {
 					name="extendify-site-description-input"
 					id="extendify-site-description-input"
 					className="input-focus h-12 w-96 max-w-full border border-gray-900 px-2"
+					autoComplete="off"
+					data-1p-ignore
 					onChange={(e) => {
 						setSiteDescription(e.target.value);
 					}}

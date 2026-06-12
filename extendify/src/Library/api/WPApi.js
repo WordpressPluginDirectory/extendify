@@ -6,3 +6,6 @@ export const updateOption = async (option, value) =>
 		method: 'POST',
 		data: { key: option, value },
 	});
+
+export const getSiteImages = () =>
+	apiFetch({ path: '/extendify/v1/shared/site-images' });

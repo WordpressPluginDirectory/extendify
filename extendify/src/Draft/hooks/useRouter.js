@@ -69,6 +69,14 @@ const useRouterState = create(
 	}),
 );
 
+export const navigateTo = (slug) => {
+	const page = pages.find((a) => a.slug === slug);
+	if (!page) return useRouterState.getState().setCurrent(pages[0]);
+
+	useActivityStore.getState().incrementActivity(`draft-${page.slug}`);
+	useRouterState.getState().setCurrent(page);
+};
+
 export const useRouter = () => {
 	const { current, setCurrent, history, goBack } = useRouterState();
 	const Component = current?.component ?? (() => null);
@@ -88,13 +96,7 @@ export const useRouter = () => {
 			),
 			[current],
 		),
-		navigateTo: (slug) => {
-			const page = pages.find((a) => a.slug === slug);
-			if (!page) return setCurrent(pages[0]);
-
-			useActivityStore.getState().incrementActivity(`draft-${page.slug}`);
-			setCurrent(page);
-		},
+		navigateTo,
 		goBack,
 		history,
 	};

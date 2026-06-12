@@ -8,6 +8,7 @@ import {
 } from '@auto-launch/functions/helpers';
 import { updateOption } from '@auto-launch/functions/wp';
 import { AI_HOST } from '@constants';
+import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
@@ -28,27 +29,43 @@ export const handleSiteStyle = async ({ siteProfile }) => {
 
 	const response = await retryTwice(() =>
 		fetchWithTimeout(url, { method, headers, body }, 20_000),
-	);
+	).catch((error) => {
+		return { ok: false, statusText: error.message, status: 0 };
+	});
 
-	if (!response?.ok) return fallback;
-
-	return failWithFallback(async () => {
-		const data = await response.json();
-		const style = shapeLocal.parse(data)[0];
-		const variation = await getThemeVariation(
-			{
-				slug: style.colorPalette,
-				fonts: style.fonts,
+	if (!response?.ok) {
+		digest({
+			error: {
+				message: response.statusText,
+				name: 'FetchError',
+				status: response.status,
 			},
-			{ fallback: true },
-		);
-		const siteStyle = { ...style, variation };
-		await updateOption('extendify_site_style', siteStyle);
-		// Set animation default
-		await updateOption('extendify_animation_settings', {
-			type: style.animation ?? 'fade',
-			speed: 'medium',
+			details: { source: 'auto-launch', caller: 'handleSiteStyle' },
 		});
-		return getStyleShape.parse({ siteStyle });
-	}, fallback);
+		return fallback;
+	}
+
+	return failWithFallback(
+		async () => {
+			const data = await response.json();
+			const style = shapeLocal.parse(data)[0];
+			const variation = await getThemeVariation(
+				{
+					slug: style.colorPalette,
+					fonts: style.fonts,
+				},
+				{ fallback: true },
+			);
+			const siteStyle = { ...style, variation };
+			await updateOption('extendify_site_style', siteStyle);
+			// Set animation default
+			await updateOption('extendify_animation_settings', {
+				type: style.animation ?? 'fade',
+				speed: 'medium',
+			});
+			return getStyleShape.parse({ siteStyle });
+		},
+		fallback,
+		{ caller: 'handleSiteStyle' },
+	);
 };

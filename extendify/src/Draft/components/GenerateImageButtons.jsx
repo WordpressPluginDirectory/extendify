@@ -1,3 +1,4 @@
+import { navigateTo } from '@draft/hooks/useRouter';
 import { magic } from '@draft/svg';
 import { render } from '@shared/lib/dom';
 import { BlockControls } from '@wordpress/block-editor';
@@ -34,42 +35,53 @@ export const GenerateImageButtons = (CurrentComponents, props) => {
 			: document.querySelector(`[data-block="${blockId}"]`);
 		if (!block) return;
 
+		const openSidebarTo = (slug) => {
+			openGeneralSidebar('extendify-draft/draft');
+			navigateTo(slug);
+		};
+
 		const parentSelector =
 			'.block-editor-media-placeholder .components-form-file-upload';
-		const placeHolder = Object.assign(document.createElement('div'), {
-			className: 'components-form-file-upload',
-		});
-		block.querySelector(parentSelector)?.after(placeHolder);
+		const anchor = block.querySelector(parentSelector);
+		if (!anchor) return;
 
-		let root;
-		const component = (
-			<>
+		const generatePlaceholder = Object.assign(document.createElement('div'), {
+			className: 'components-form-file-generate-image',
+		});
+		const unsplashPlaceholder = Object.assign(document.createElement('div'), {
+			className: 'components-form-file-search-unsplash',
+		});
+		anchor.after(generatePlaceholder, unsplashPlaceholder);
+
+		let generateRoot, unsplashRoot;
+		const id = requestAnimationFrame(() => {
+			generateRoot = render(
 				<Button
 					variant="primary"
 					__next40pxDefaultSize
-					onClick={async () => {
-						openGeneralSidebar('extendify-draft/draft');
-						await new Promise((r) => requestAnimationFrame(r));
-						const btn = document.getElementById(
-							'extendify-draft-image-gen-button',
-						);
-						btn?.focus();
-						btn?.classList.add('animate-pulse-flash');
-					}}
+					onClick={() => openSidebarTo('ai-image')}
 				>
-					{__('Get Personalized Image', 'extendify-local')}
-				</Button>
-				{/* layout placeholder */}
-				<span aria-hidden="true" />
-			</>
-		);
-		const id = requestAnimationFrame(() => {
-			root = render(component, placeHolder);
+					{__('Generate Image', 'extendify-local')}
+				</Button>,
+				generatePlaceholder,
+			);
+			unsplashRoot = render(
+				<Button
+					variant="primary"
+					__next40pxDefaultSize
+					onClick={() => openSidebarTo('unsplash')}
+				>
+					{__('Search Unsplash', 'extendify-local')}
+				</Button>,
+				unsplashPlaceholder,
+			);
 		});
 		return () => {
 			cancelAnimationFrame(id);
-			root?.unmount();
-			placeHolder?.remove();
+			generateRoot?.unmount();
+			unsplashRoot?.unmount();
+			generatePlaceholder.remove();
+			unsplashPlaceholder.remove();
 		};
 	}, [blockId, openGeneralSidebar, name]);
 

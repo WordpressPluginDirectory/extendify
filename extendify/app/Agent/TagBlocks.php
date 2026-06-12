@@ -6,8 +6,19 @@ defined('ABSPATH') || die('No direct access.');
 
 class TagBlocks
 {
-    // Blocks to ignore completely (block + its children)
-    private static $ignored = ['core/query', 'core/post-template', 'core/post-content'];
+    // Loop blocks render their inner tree once per item; counting children as
+    // separate seqs would produce N DOM ids for one parse_blocks() entry and
+    // break source-walks that resolve clicked ids back to block code.
+    // Public so SaveController + WPController can share the same list.
+    public static $ignored = [
+        'core/query',
+        'core/post-template',
+        'core/post-content',
+        'core/comments',
+        'core/comment-template',
+        'woocommerce/product-collection',
+        'woocommerce/product-template',
+    ];
 
     public static function init()
     {

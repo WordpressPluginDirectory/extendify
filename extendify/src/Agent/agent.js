@@ -1,5 +1,6 @@
 import { Agent } from '@agent/Agent.jsx';
 import { render } from '@shared/lib/dom';
+import { isEmbedded } from '@shared/lib/embedded-guard';
 import { isOnLaunch } from '@shared/lib/utils';
 import domReady from '@wordpress/dom-ready';
 import '@agent/agent.css';
@@ -7,9 +8,11 @@ import '@agent/buttons';
 import { GuidedTour } from '@agent/components/GuidedTour';
 import { throwSideConfetti } from './lib/confetti';
 
-const isInsideIframe = () => !!document.querySelector('body.iframe');
-
 domReady(() => {
+	// Never activate framed — the Customizer preview, page-builder previews,
+	// and the block-editor canvas are all someone else's iframe.
+	if (isEmbedded()) return;
+
 	// disableForReducedMotion
 	// tours
 	const tourId = 'extendify-agent-tour';
@@ -25,7 +28,7 @@ domReady(() => {
 		document.getElementById('wpwrap') ||
 		// TODO: is this on all block themes?
 		document.querySelector('.wp-site-blocks');
-	if (isOnLaunch() || isInsideIframe() || !bg) return;
+	if (isOnLaunch() || !bg) return;
 	const id = 'extendify-agent-main';
 	if (document.getElementById(id)) return;
 	const agent = Object.assign(document.createElement('div'), {

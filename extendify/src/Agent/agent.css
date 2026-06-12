@@ -50,9 +50,9 @@
 		to right,
 		#fff 0%,
 		#fff 20%,
-		var(--ext-design-main, #2c39bd) 40%,
-		var(--ext-design-secondary, #40ffaa) 55%,
-		var(--ext-design-tertiary, #4079ff) 80%,
+		#3858e9 40%,
+		#7b90ff 55%,
+		#2145e6 80%,
 		#fff 90%,
 		#fff 100%
 	);
@@ -116,9 +116,11 @@ body.extendify-agent-mobile-btn-open
 }
 /* no-prefix */
 .extendify-agent-highlighter-mode {
-	cursor: crosshair !important;
 	user-select: none !important;
 }
+/* While the agent is running a workflow against the selected block,
+ * communicate "you can't click anything else right now." Resting cursor
+ * is owned by edit mode's cursor contract (quick-edit.css). */
 /* no-prefix */
 .extendify-agent-highlighter-mode.extendify-agent-busy {
 	cursor: not-allowed !important;
@@ -135,13 +137,12 @@ body.extendify-agent-mobile-btn-open
 .extendify-agent-highlighter-mode .wp-block-spacer {
 	pointer-events: none !important;
 }
+/* WP's lightbox img listens for clicks at the page level; suppress here
+ * because the capture-phase selector handler in hover-bar otherwise has
+ * to compete with the lightbox opening. Anchors / buttons / role=button
+ * keep their default pointer-events so the click rule can route them
+ * (anchors navigate, form controls focus). */
 /* no-prefix */
-.extendify-agent-highlighter-mode a,
-.extendify-agent-highlighter-mode .wp-lightbox-container img,
-.extendify-agent-highlighter-mode button,
-.extendify-agent-highlighter-mode [role="button"],
-.extendify-agent-highlighter-mode [role="link"] {
-	cursor: crosshair !important;
-	text-decoration: none !important;
+.extendify-agent-highlighter-mode .wp-lightbox-container img {
 	pointer-events: none !important;
 }

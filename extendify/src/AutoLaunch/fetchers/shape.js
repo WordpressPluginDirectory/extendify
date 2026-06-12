@@ -5,6 +5,9 @@ const patternShape = z.looseObject({
 	name: z.string(),
 	code: z.string(),
 	patternTypes: z.array(z.string()),
+	contentGenerated: z.boolean().optional(),
+	navSlug: z.string().optional(),
+	navLabel: z.string().optional(),
 });
 export const homeTemplateShape = z.looseObject({
 	id: z.string(),
@@ -73,10 +76,17 @@ export const getProfileShape = z.looseObject({
 	phoneNumber: z.union([z.boolean(), z.string()]).optional(),
 });
 
+// get-launch-decisions
+export const getLaunchDecisionsShape = z.looseObject({
+	navExtras: z.string().optional(),
+	navButtonLabel: z.string().optional(),
+});
+
 // get-strings
 export const getStringsShape = z.looseObject({
 	aiHeaders: z.array(z.string()),
 	aiBlogTitles: z.array(z.string()),
+	heroDescription: z.string().optional(),
 });
 
 // get-style
@@ -90,3 +100,23 @@ export const styleShape = z.looseObject({
 export const getStyleShape = z.object({
 	siteStyle: styleShape.extend({ variation: z.looseObject().optional() }),
 });
+
+// get-design-build
+const designBuildShape = z.looseObject({
+	siteProfile: getProfileShape,
+	pages: z.array(
+		z.object({
+			slug: z.string(),
+			name: z.string(),
+			description: z.string().optional(),
+		}),
+	),
+	patternId: z.string(),
+	headerCode: z.string(),
+	siteStyle: styleShape.omit({ variation: true }),
+	selectedPlugins: z.array(pluginShape),
+	html: z.string(),
+	patternCode: z.string(),
+	logoUrl: z.url().nullish(),
+});
+export const getDesignBuildShape = designBuildShape;

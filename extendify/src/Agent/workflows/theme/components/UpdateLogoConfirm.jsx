@@ -1,5 +1,5 @@
 import { ImageUploader } from '@agent/components/ImageUploader';
-import { useWorkflowStore } from '@agent/state/workflows';
+import { useQuickEditStore } from '@quick-edit/state/store';
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
@@ -12,7 +12,7 @@ const updateLogoSrcAttr = (url, cssFilter) => {
 };
 
 export const UpdateLogoConfirm = ({ onConfirm, onCancel }) => {
-	const { block } = useWorkflowStore();
+	const block = useQuickEditStore((s) => s.agentBlock);
 
 	const [originalLogoImgSrc, setOriginalLogoImgSrc] = useState();
 

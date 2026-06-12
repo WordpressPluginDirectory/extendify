@@ -33,5 +33,6 @@ export const handleSiteImages = async ({ siteProfile }) => {
 	return failWithFallback(
 		async () => getImagesShape.parse(await response.json()),
 		fallback,
+		{ caller: 'handleSiteImages' },
 	);
 };

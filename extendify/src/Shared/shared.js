@@ -2,6 +2,7 @@ import domReady from '@wordpress/dom-ready';
 import '@shared/shared.css';
 import { EditPageToolTip } from '@shared/components/EditPageToolTip';
 import '@shared/lib/api-fetch';
+import { ProductAccountActivation } from '@shared/components/ProductAccountActivation/ProductAccountActivation';
 import { render } from '@shared/lib/dom';
 import { preFetchImages as preFetchUnsplashImages } from '@shared/lib/unsplash';
 
@@ -19,7 +20,19 @@ domReady(() => {
 	preFetchUnsplashImages();
 
 	const urlParams = new URLSearchParams(window.location.search);
+
 	if (!urlParams.has('extendify-launch-success')) return;
+
+	if (window.extSharedData?.showProductActivation?.length) {
+		const container = Object.assign(document.createElement('div'), {
+			id: 'extendify-product-activation-container',
+		});
+
+		document.body.appendChild(container);
+
+		render(<ProductAccountActivation />, container);
+	}
+
 	const currentUrl = new URL(window.location.href);
 	// Remove the query param so it doesn't show again
 	urlParams.delete('extendify-launch-success');

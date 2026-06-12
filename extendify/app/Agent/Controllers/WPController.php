@@ -8,6 +8,7 @@ namespace Extendify\Agent\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Constants;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -300,18 +301,25 @@ class WPController
     public static function getBlockCode(\WP_REST_Request $request)
     {
         $blockId = (int) $request->get_param('blockId');
-        $postId  = (int) $request->get_param('postId');
 
         if ($blockId < 1) {
             return new \WP_REST_Response(['error' => 'Invalid blockId'], 400);
         }
 
+        // A template-part source resolves the part and walks it with the shared
+        // preorder finder, instead of the post path below.
+        $partSlug = (string) $request->get_param('partSlug');
+        if ($partSlug !== '') {
+            return self::getTemplatePartBlockCode($partSlug, $blockId);
+        }
+
+        $postId = (int) $request->get_param('postId');
         $post = \get_post($postId);
         if (!$post) {
             return new \WP_REST_Response(['error' => 'Post not found'], 404);
         }
 
-        $ignored = ['core/query', 'core/post-template', 'core/post-content'];
+        $ignored = \Extendify\Agent\TagBlocks::$ignored;
 
         $ast = array_values(array_filter(
             parse_blocks($post->post_content),
@@ -362,6 +370,40 @@ class WPController
         ], 200);
     }
 
+    // Resolves the part the same way SaveController does — active-theme-scoped
+    // get_block_template, not a raw get_posts by name — then walks it with the
+    // shared preorder finder so the blockId lands on the block save will write.
+    private static function getTemplatePartBlockCode(string $slug, int $blockId)
+    {
+        $stylesheet = wp_get_theme()->get_stylesheet();
+        $template = get_block_template("{$stylesheet}//{$slug}", 'wp_template_part');
+        if (!$template || empty($template->wp_id)) {
+            return new \WP_REST_Response(['error' => 'Template part not found'], 404);
+        }
+
+        $post = \get_post($template->wp_id);
+        if (!$post) {
+            return new \WP_REST_Response(['error' => 'Template part not found'], 404);
+        }
+
+        $found = \Extendify\Agent\TemplatePartBlockFinder::find(
+            parse_blocks($post->post_content),
+            $blockId
+        );
+        if (!is_array($found) || empty($found['block']['blockName'])) {
+            return new \WP_REST_Response(['error' => 'Block id not found in this template part'], 404);
+        }
+
+        $block = $found['block'];
+        return new \WP_REST_Response([
+            'partSlug' => $slug,
+            'blockId'  => $blockId,
+            'name'     => $block['blockName'],
+            'attrs'    => $block['attrs'] ?? (object)[],
+            'block'    => serialize_blocks([$block]),
+        ], 200);
+    }
+
     /**
      * Get the rendered HTML of some block code
      *
@@ -383,13 +425,20 @@ class WPController
      * @param string $description The description to replace in the pattern code
      * @param array $images The images to replace in the pattern code, as an array of urls
      * @param array $cta The cta to replace in the pattern code, as an array with 'label' and 'link' keys
-     * @param bool $featured Whether to limit to featured patterns
-     * @return array|WP_Error|array<string|int, mixed> The hero patterns data or a WP_Error on failure
+     * @param bool $featuredOnly Whether to limit to featured patterns
+     * @param string|null $source What triggered the request, e.g. 'change-site-design-workflow'
+     * @return array|\WP_Error|array<string|int, mixed> The hero patterns data or a WP_Error on failure
      */
-    protected static function getHeroPatternsData($title, $description, $images, $cta, $featuredOnly = false)
-    {
+    protected static function getHeroPatternsData(
+        $title,
+        $description,
+        $images,
+        $cta,
+        $featuredOnly = false,
+        $source = null
+    ) {
         $response = \wp_remote_post(
-            'https://patterns.extendify.com/api/heros',
+            Constants::PATTERNS_HOST . '/api/heros',
             [
                 'headers' => [
                     'Content-Type' => 'application/json',
@@ -399,6 +448,7 @@ class WPController
                     "wpVersion" => \get_bloginfo('version'),
                     "wpLanguage" => \get_locale(),
                     "featured" => $featuredOnly,
+                    "source" => $source,
                 ])
             ]
         );
@@ -409,91 +459,94 @@ class WPController
 
         $body = json_decode(\wp_remote_retrieve_body($response), true);
 
-        $heroPatterns = array_map(
-            function ($heroPattern) use ($description, $title, $images, $cta) {
-                $code = $heroPattern['code'] ?? '';
+        $cursor = 0;
+        $imageCount = count($images);
+        $heroPatterns = [];
 
-                if ($title) {
-                    $code = preg_replace(
-                        '/(<!-- wp:heading[^>]*-->[\s\S]*?<h1[^>]*>)[\s\S]*?(<\/h1>[\s\S]*?<!-- \/wp:heading -->)/m',
-                        '${1}' . esc_html($title) . '${2}',
-                        $code,
-                        1
-                    );
-                }
+        foreach ($body as $heroPattern) {
+            $code = $heroPattern['code'] ?? '';
 
-                if ($description) {
-                    $code = preg_replace(
-                        '/(<!-- wp:paragraph[^>]*-->[\s\S]*?<p[^>]*>)[\s\S]*?(<\/p>[\s\S]*?<!-- \/wp:paragraph -->)/m',
-                        '${1}' . esc_html($description) . '${2}',
-                        $code,
-                        1
-                    );
-                }
-
-                if ($cta['label'] ?? null) {
-                    $code = preg_replace(
-                        '/(<!-- wp:button[^>]*-->[\s\S]*?<a[^>]*>)[\s\S]*?(<\/a>[\s\S]*?<!-- \/wp:button -->)/m',
-                        '${1}' . esc_html($cta['label']) . '${2}',
-                        $code,
-                        1
-                    );
-                }
-
-                if ($cta['link'] ?? null) {
-                    $code = preg_replace(
-                        '/(<!-- wp:button[\s\S]*?<a[^>]*\shref=")[^"]*(")/m',
-                        '${1}' . esc_url($cta['link']) . '${2}',
-                        $code,
-                        1
-                    );
-                }
-
-                foreach ($heroPattern['urls'] ?? [] as $key => $url) {
-                    if (!($images[$key] ?? null)) {
-                        break;
-                    }
-
-                    $code = str_replace($url, $images[$key], $code);
-                }
-
-                $renderedHtml = do_blocks(str_replace('ext-animate--on', '', $code));
-
-                $blockSupportsCss = function_exists('wp_style_engine_get_stylesheet_from_context')
-                    ? wp_style_engine_get_stylesheet_from_context('block-supports')
-                    : '';
-
-                // Clear block-supports store so CSS doesn't accumulate across patterns.
-                \WP_Style_Engine_CSS_Rules_Store::remove_all_stores();
-
-                $linkStyles = array_values(
-                    array_filter(
-                        array_map(
-                            function ($style) {
-                                return wp_styles()->registered[$style]->src ?? null;
-                            },
-                            wp_styles()->queue ?? []
-                        )
-                    )
+            if ($title) {
+                $code = preg_replace(
+                    '/(<!-- wp:heading[^>]*-->[\s\S]*?<h1[^>]*>)[\s\S]*?(<\/h1>[\s\S]*?<!-- \/wp:heading -->)/m',
+                    '${1}' . esc_html($title) . '${2}',
+                    $code,
+                    1
                 );
+            }
 
-                /**
-                 * Clear queue for the next pattern.
-                 *
-                 * `do_blocks` appends to the global queue the styles needed for the blocks.
-                 */
-                wp_styles()->queue = [];
+            if ($description) {
+                $code = preg_replace(
+                    '/(<!-- wp:paragraph[^>]*-->[\s\S]*?<p[^>]*>)[\s\S]*?(<\/p>[\s\S]*?<!-- \/wp:paragraph -->)/m',
+                    '${1}' . esc_html($description) . '${2}',
+                    $code,
+                    1
+                );
+            }
 
-                return [
-                    'id'               => $heroPattern['id'],
-                    'code'             => $code,
-                    'renderedHtml'     => $renderedHtml,
-                    'blockSupportsCss' => $blockSupportsCss,
-                    'linkStyles'       => $linkStyles,
-                ];
-            },
-            $body
-        );
+            if ($cta['label'] ?? null) {
+                $code = preg_replace(
+                    '/(<!-- wp:button[^>]*-->[\s\S]*?<a[^>]*>)[\s\S]*?(<\/a>[\s\S]*?<!-- \/wp:button -->)/m',
+                    '${1}' . esc_html($cta['label']) . '${2}',
+                    $code,
+                    1
+                );
+            }
+
+            if ($cta['link'] ?? null) {
+                $code = preg_replace(
+                    '/(<!-- wp:button[\s\S]*?<a[^>]*\shref=")[^"]*(")/m',
+                    '${1}' . esc_url($cta['link']) . '${2}',
+                    $code,
+                    1
+                );
+            }
+
+            $patternUrls = $heroPattern['urls'] ?? [];
+            foreach ($patternUrls as $key => $url) {
+                if (!$imageCount) {
+                    break;
+                }
+                $code = str_replace($url, $images[($cursor + $key) % $imageCount], $code);
+            }
+            $cursor = $imageCount ? ($cursor + count($patternUrls)) % $imageCount : 0;
+
+            $renderedHtml = do_blocks(str_replace('ext-animate--on', '', $code));
+
+            $blockSupportsCss = function_exists('wp_style_engine_get_stylesheet_from_context')
+                ? wp_style_engine_get_stylesheet_from_context('block-supports')
+                : '';
+
+            // Clear block-supports store so CSS doesn't accumulate across patterns.
+            \WP_Style_Engine_CSS_Rules_Store::remove_all_stores();
+
+            $linkStyles = array_values(
+                array_filter(
+                    array_map(
+                        function ($style) {
+                            return wp_styles()->registered[$style]->src ?? null;
+                        },
+                        wp_styles()->queue ?? []
+                    )
+                )
+            );
+
+            /**
+             * Clear queue for the next pattern.
+             *
+             * `do_blocks` appends to the global queue the styles needed for the blocks.
+             */
+            wp_styles()->queue = [];
+
+            $heroPatterns[] = [
+                'id'               => $heroPattern['id'],
+                'name'             => $heroPattern['name'],
+                'code'             => $code,
+                'renderedHtml'     => $renderedHtml,
+                'blockSupportsCss' => $blockSupportsCss,
+                'linkStyles'       => $linkStyles,
+            ];
+        }
 
         return $heroPatterns;
     }
@@ -523,26 +576,136 @@ class WPController
         return new \WP_REST_Response(['patterns' => $heroPatterns, 'blockEditorSettings' => $editorSettings ?? null]);
     }
 
+    /**
+     * Build the image list for the hero section.
+     *
+     * Returns up to 6 images: unused site images first, already-used images last.
+     * When already at capacity, reverses the array so the last-used image leads next time.
+     */
+    protected static function getHeroSectionImages(array $images, array $siteImages, int $postId): array
+    {
+        $maxSlots = 6;
+
+        if (count($images) >= $maxSlots) {
+            return array_reverse($images);
+        }
+
+        if (!$postId || empty($siteImages)) {
+            return $images;
+        }
+
+        $usedImages = self::resolveUsedImages($postId);
+        $siteImages = array_map(function ($url) {
+            return self::stripQueryString($url);
+        }, $siteImages);
+
+        $unusedSiteImages = array_values(array_filter(
+            $siteImages,
+            function ($url) use ($usedImages, $images) {
+                return !in_array($url, $usedImages, true) && !in_array($url, $images, true);
+            }
+        ));
+
+        $unusedSlots = $maxSlots - count($images);
+        return array_merge(array_slice($unusedSiteImages, 0, $unusedSlots), $images);
+    }
+
+    protected static function stripQueryString(string $url): string
+    {
+        $parsed = wp_parse_url($url);
+        return ($parsed['scheme'] ?? 'https') . '://' . ($parsed['host'] ?? '') . ($parsed['path'] ?? '');
+    }
+
+    /**
+     * Get all Unsplash URLs used in a post.
+     */
+    protected static function resolveUsedImages(int $postId): array
+    {
+        $post = get_post($postId);
+        if (!$post) {
+            return [];
+        }
+
+        $processor = new \WP_HTML_Tag_Processor($post->post_content);
+        $usedImages = [];
+
+        while ($processor->next_tag('img')) {
+            $src = $processor->get_attribute('src');
+            if (!$src) {
+                continue;
+            }
+
+            $baseUrl = self::stripQueryString($src);
+
+            if (str_contains($src, 'unsplash.com')) {
+                $usedImages[] = $baseUrl;
+                continue;
+            }
+
+            $attachmentId = attachment_url_to_postid(esc_url($baseUrl));
+
+            if (!$attachmentId) {
+                continue;
+            }
+
+            $sourceUrl = get_post_meta($attachmentId, '_extendify_source_url', true);
+
+            if (!$sourceUrl) {
+                continue;
+            }
+
+            $usedImages[] = self::stripQueryString($sourceUrl);
+        }
+
+        return array_values(array_unique($usedImages));
+    }
+
     public static function getSiteDesignVariations(\WP_REST_Request $request)
     {
         $title = $request->get_param('title');
         $description = $request->get_param('description');
-        $images = $request->get_param('images');
+        $images = $request->get_param('images') ?? [];
         $cta = $request->get_param('cta');
         $featuredOnly = true; // Only show featured patterns
+        $currentHeroPattern = $request->get_param('currentHeroPattern');
+        $postId = (int) $request->get_param('postId');
+        $siteImages = $request->get_param('siteImages') ?? [];
+        $source = $request->get_param('source');
 
-        $heroPatterns = self::getHeroPatternsData($title, $description, $images, $cta, $featuredOnly);
+        $images = self::getHeroSectionImages($images, $siteImages, $postId);
+
+        $heroPatterns = self::getHeroPatternsData($title, $description, $images, $cta, $featuredOnly, $source);
 
         if (\is_wp_error($heroPatterns)) {
             return new \WP_REST_Response([], 500);
         }
 
+        $heroPatterns = array_values(
+            array_filter(
+                $heroPatterns,
+                function ($heroPattern) use ($currentHeroPattern) {
+                    if (!$currentHeroPattern) {
+                        return true;
+                    }
+
+                    return $heroPattern['name'] !== $currentHeroPattern;
+                }
+            )
+        );
+
         $current = \WP_Theme_JSON_Resolver::get_merged_data('theme');
 
         $unfiltered = \WP_Theme_JSON_Resolver::get_style_variations();
 
+        // Keep only full style variations — exclude color-only and font-only
+        // presets that get_style_variations() returns from styles/colors/* and
+        // styles/typography/*.
         $colorAndFontsVariations = array_filter($unfiltered, function ($variation) {
-            return self::variationHasProperties($variation, ['color', 'elements', 'typography']);
+            $hasPalette    = ($variation['settings']['color']['palette'] ?? []) !== [];
+            $hasTypography = ($variation['styles']['typography'] ?? []) !== []
+            || ($variation['settings']['typography'] ?? []) !== [];
+            $hasElements   = ($variation['styles']['elements'] ?? []) !== [];
+            return $hasPalette && $hasTypography && $hasElements;
         });
 
         $buildSlugMap = function ($unfiltered) {

@@ -1,6 +1,5 @@
 import {
 	callTool,
-	digest,
 	handleWorkflow,
 	pickWorkflow,
 	recordAgentActivity,
@@ -16,6 +15,8 @@ import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useSuggestionsStore } from '@agent/state/suggestions';
 import { useWorkflowStore } from '@agent/state/workflows';
+import { useQuickEditStore } from '@quick-edit/state/store';
+import { digest } from '@shared/api/digest';
 import {
 	useCallback,
 	useEffect,
@@ -38,13 +39,12 @@ export const Agent = () => {
 		getWorkflowByExample,
 		workflowData,
 		setWorkflow,
-		addWorkflowResult,
 		setWhenFinishedToolProps,
 		whenFinishedToolProps,
 		getAvailableWorkflows,
-		block,
-		setBlock,
 	} = useWorkflowStore();
+	const block = useQuickEditStore((s) => s.agentBlock);
+	const setBlock = useQuickEditStore((s) => s.setAgentBlock);
 	const workflowIds = getAvailableWorkflows().map((w) => w.id);
 	const { open, setOpen, updateRetryAfter, isChatAvailable } = useGlobalStore();
 	useLockPost({ postId, enabled: !!open });
@@ -65,6 +65,9 @@ export const Agent = () => {
 		controller = new AbortController();
 		block && setBlock(null);
 		window.dispatchEvent(new Event('extendify-agent:remove-block-highlight'));
+		// scrollIntoView below walks up and scrolls the page itself,
+		// fighting useLayoutShift's scroll restore when closing.
+		if (!useGlobalStore.getState().open) return;
 		const c = Array.from(
 			document.querySelectorAll(
 				'#extendify-agent-chat-scroll-area div:last-child',
@@ -121,6 +124,12 @@ export const Agent = () => {
 
 	const handleSubmit = useCallback(
 		async (message) => {
+			// Save any in-flight QE canvas edits before the agent runs so
+			// the user doesn't lose their work to a workflow that touches
+			// the same block. No-op when no QE canvas is mounted.
+			window.dispatchEvent(
+				new CustomEvent('extendify-quick-edit:agent-submit'),
+			);
 			setWaitingOnToolOrUser(false);
 			agentWorking.current = false;
 			addMessage('message', { role: 'user', content: message });
@@ -220,27 +229,26 @@ export const Agent = () => {
 			toolWorking.current = true;
 			const { data, whenFinishedToolProps, shouldRefreshPage, redirectUrl } =
 				detail ?? {};
-			const { status, whenFinishedTool, answerId, redirectTo } =
+			const { whenFinishedTool, answerId, redirectTo } =
 				whenFinishedToolProps?.agentResponse || {};
 			const { id, labels } = whenFinishedTool || {};
 			// Not all workflows have a tool at the end (e.g. tours)
 			const toolResponse = await callTool?.({ tool: id, inputs: data }).catch(
 				(error) => {
 					const { sessionId } = workflow || {};
-					digest({ caller: `when-finished: ${id}`, sessionId, error });
+					digest({
+						error,
+						details: {
+							source: 'agent',
+							caller: `when-finished: ${id}`,
+							sessionId,
+						},
+					});
 					devmode && console.error(error);
 					return { error: error.message };
 				},
 			);
 			toolWorking.current = false;
-			// Add the workflow result to the history
-			addWorkflowResult({
-				answerId,
-				agentName: workflow?.agent?.name,
-				status,
-				errorMsg: toolResponse?.error,
-				language: workflow?.language,
-			});
 			if (toolResponse?.error) {
 				await new Promise((resolve) => setTimeout(resolve, 1000));
 				addMessage('message', {
@@ -295,12 +303,6 @@ export const Agent = () => {
 				answerId,
 				suggestions: getSuggestions(),
 			});
-			addWorkflowResult({
-				answerId,
-				status: 'canceled',
-				agentName: workflow?.agent?.name,
-				language: workflow?.language,
-			});
 			setWorkflow(null);
 			cleanup();
 		};
@@ -329,7 +331,6 @@ export const Agent = () => {
 		addMessage,
 		popMessage,
 		cleanup,
-		addWorkflowResult,
 		setWorkflow,
 		workflow,
 		getSuggestions,
@@ -346,6 +347,15 @@ export const Agent = () => {
 			window.removeEventListener('extendify-agent:open', handleOpen);
 		};
 	}, [setOpen]);
+
+	// Closing the sidebar dismisses any latent block selection. The X-close
+	// indicator (in DOMHighlighter) only renders while the sidebar is open,
+	// so leaving `block` set after close would let Quick Edit's hover-bar
+	// gate fire on a selection the user can no longer see or clear.
+	useEffect(() => {
+		if (open) return;
+		if (block) setBlock(null);
+	}, [open, block, setBlock]);
 
 	useEffect(() => {
 		if (waitingOnToolOrUser || !open || !workflow?.id) return;
@@ -390,21 +400,16 @@ export const Agent = () => {
 					return;
 				}
 				const { sessionId } = workflow || {};
-				digest({ caller: 'handle-workflow', sessionId, error });
+				digest({
+					error,
+					details: { source: 'agent', caller: `handle-workflow`, sessionId },
+				});
 				devmode && console.error(error);
 				return { error: error.message };
 			});
 			if (retrying.current) retrying.current = false;
 			if (!agentResponse) return;
-			const { status, answerId, sessionId } = agentResponse;
-			// Add the workflow result to the history
-			addWorkflowResult({
-				answerId,
-				status,
-				errorMsg: agentResponse?.error,
-				agentName: workflow?.agent?.name,
-				language: workflow?.language,
-			});
+			const { answerId, sessionId } = agentResponse;
 			if (!open) return;
 			if (agentResponse.error) {
 				// mutate the window to add failed tools rather than keep state
@@ -422,6 +427,8 @@ export const Agent = () => {
 					pageSuggestion: agentResponse.pageSuggestion,
 					agent: workflow.agent,
 					sessionId: workflow?.sessionId,
+					workflowId: workflow?.id,
+					language: workflow?.language,
 				});
 			}
 			// This is at the end of the workflow
@@ -479,7 +486,14 @@ export const Agent = () => {
 					.then(([data]) => data)
 					.catch((error) => {
 						const { sessionId } = workflow || {};
-						digest({ caller: `in-progress: ${id}`, sessionId, error });
+						digest({
+							error,
+							details: {
+								source: 'agent',
+								caller: `in-progress: ${id}`,
+								sessionId,
+							},
+						});
 						devmode && console.error(error);
 						throw error;
 					});
@@ -498,7 +512,10 @@ export const Agent = () => {
 			setWaitingOnToolOrUser(true);
 		})().catch(async (error) => {
 			const { sessionId } = workflow || {};
-			digest({ caller: 'main-loop', sessionId, error });
+			digest({
+				error,
+				details: { source: 'agent', caller: 'main-loop', sessionId },
+			});
 			devmode && console.error(error);
 			setWorkflow(null);
 			cleanup();
@@ -516,7 +533,6 @@ export const Agent = () => {
 	}, [
 		loop,
 		cleanup,
-		addWorkflowResult,
 		open,
 		workflow,
 		workflowData,
@@ -564,7 +580,7 @@ export const Agent = () => {
 							handleSubmit={handleSubmit}
 						/>
 					</div>
-					<div className="text-pretty px-4 pb-2 text-center text-xss leading-none text-banner-text/60">
+					<div className="text-pretty px-4 pb-2 text-center text-xss leading-none text-gray-700">
 						{__(
 							'AI Agent can make mistakes. Check changes before saving.',
 							'extendify-local',

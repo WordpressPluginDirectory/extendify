@@ -11,7 +11,6 @@ export const isInEditor = () => {
 
 export const isChangeSiteDesignWorkflowAvailable = () => {
 	const { useAgentOnboarding } = window.extSharedData;
-	const { context } = window.extAgentData;
 
-	return context?.isFrontPage && useAgentOnboarding;
+	return useAgentOnboarding;
 };

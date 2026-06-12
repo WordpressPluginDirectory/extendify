@@ -8,3 +8,9 @@ export const postLaunchFunctions = () =>
 		path: '/extendify/v1/launch/post-launch-functions',
 		method: 'POST',
 	});
+
+export const preLaunchFunctions = () =>
+	apiFetch({
+		path: '/extendify/v1/auto-launch/pre-launch-functions',
+		method: 'POST',
+	});

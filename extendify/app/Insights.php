@@ -19,12 +19,23 @@ use Extendify\PartnerData;
 class Insights
 {
     /**
-     * An array of active tests. 'A' should be the control.
-     * For weighted tests, try ['A', 'A', 'A', 'A', 'B']
+     * Option name storing each site's A/B test assignments, keyed by the
+     * screen/feature under test (e.g. 'AutoLaunch.WebsiteTitle').
      *
-     * @var array
+     * @var string
      */
-    protected $activeTests = [];
+    // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
+    const ACTIVE_TESTS_OPTION = 'extendify_active_tests';
+
+    /**
+     * Tests the plugin knows how to run, each mapped to its available variants.
+     *
+     * @var array<string, string[]>
+     */
+    // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
+    const ACTIVE_TESTS = [
+        'AutoLaunch.WebsiteTitle' => ['A', 'B'],
+    ];
 
     /**
      * Process the readme file to get version and name
@@ -52,28 +63,35 @@ class Insights
             });
         }
 
-        $this->setUpActiveTests();
         $this->filterExternalInsights();
         $this->setupAdminLoginInsights();
     }
 
     /**
-     * Returns the active tests for the user, and sets up tests as needed.
+     * Assign A/B variants for the known tests based on the partner's active
+     * tests. Each active test is rolled once and kept on return visits;
+     * inactive tests are dropped.
      *
+     * @param string[] $activeTests Test keys the partner has enabled.
      * @return void
      */
-    public function setUpActiveTests()
+    public static function setup(array $activeTests = [])
     {
-        // Make sure that the active tests are set.
-        $currentTests = \get_option('extendify_active_tests', []);
-        $newTests = array_map(function ($test) {
-            // Pick from value randomly.
-            return $test[array_rand($test)];
-        }, array_diff_key($this->activeTests, $currentTests));
-        $testsCombined = array_merge($currentTests, $newTests);
-        if ($newTests) {
-            \update_option('extendify_active_tests', Sanitizer::sanitizeArray($testsCombined));
+        $assignments = \get_option(self::ACTIVE_TESTS_OPTION, []);
+
+        foreach (self::ACTIVE_TESTS as $key => $variants) {
+            if (!in_array($key, $activeTests, true)) {
+                unset($assignments[$key]);
+                continue;
+            }
+
+            // Roll once so a returning visitor keeps the same variant.
+            if (!isset($assignments[$key])) {
+                $assignments[$key] = $variants[random_int(0, count($variants) - 1)];
+            }
         }
+
+        \update_option(self::ACTIVE_TESTS_OPTION, Sanitizer::sanitizeArray($assignments));
     }
 
     /**

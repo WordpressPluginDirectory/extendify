@@ -1,19 +1,22 @@
+import { useDomainViewActivity } from '@assist/hooks/useDomainViewActivity';
 import {
+	buildDomainViewItems,
 	createDomainUrlLink,
 	deleteDomainCache,
 	domainSearchUrl,
+	domains,
 } from '@assist/lib/domains';
 import { useDomainActivities } from '@assist/state/domain-activities';
 import { useTasksStore } from '@assist/state/tasks';
-import { safeParseJson } from '@shared/lib/parsing';
 import { __ } from '@wordpress/i18n';
 import { chevronRightSmall, Icon } from '@wordpress/icons';
 
-const domains = safeParseJson(window.extSharedData.resourceData)?.domains || [];
+const viewItems = buildDomainViewItems(domains);
 
 export const SecondaryDomainCard = ({ task }) => {
 	const { completeTask } = useTasksStore();
 	const { setDomainActivity } = useDomainActivities();
+	useDomainViewActivity({ position: 'addon-task', items: viewItems });
 
 	const handleInteract = () => {
 		completeTask(task.slug);
@@ -23,7 +26,7 @@ export const SecondaryDomainCard = ({ task }) => {
 	const recordActivity = (domain, type) =>
 		setDomainActivity({ domain, position: 'addon-task', type });
 
-	if (!domains?.length) {
+	if (!domains.length) {
 		return (
 			<div
 				className="flex h-full w-full items-center justify-center bg-cover bg-right-bottom bg-no-repeat"
@@ -77,7 +80,7 @@ export const SecondaryDomainCard = ({ task }) => {
 						</a>
 					</div>
 					{/*Secondary domains*/}
-					{domains?.slice(1)?.map((domain) => (
+					{domains.slice(1).map((domain) => (
 						<a
 							href={createDomainUrlLink(domainSearchUrl, domain)}
 							target="_blank"

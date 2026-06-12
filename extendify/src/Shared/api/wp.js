@@ -26,14 +26,31 @@ export const getAllPlugins = async () => {
 	return response;
 };
 
+export const enableAutoUpdate = async (plugin) => {
+	if (!plugin) return;
+	try {
+		await apiFetch({
+			path: '/extendify/v1/shared/enable-auto-update',
+			method: 'POST',
+			data: { plugin },
+		});
+	} catch (_e) {
+		// Best-effort: the install already succeeded.
+	}
+};
+
 export const installPlugin = async (slug) => {
-	return await apiFetch({
+	const plugin = await apiFetch({
 		path: '/wp/v2/plugins',
 		method: 'POST',
 		data: {
 			slug,
 		},
 	});
+
+	await enableAutoUpdate(plugin?.plugin);
+
+	return plugin;
 };
 
 export const activatePlugin = async (slug) => {

@@ -1,3 +1,4 @@
+import { applyDesignBuildOrder } from '@auto-launch/fetchers/get-design-build';
 import { getPagesShape, pageTemplateShape } from '@auto-launch/fetchers/shape';
 import {
 	fetchWithTimeout,
@@ -22,8 +23,8 @@ export const handlePages = async ({
 	sitePlugins,
 	siteStyle,
 	siteImages,
+	designBuild,
 }) => {
-	// Pages are only needed for multi-page sites
 	if (siteProfile.structure !== 'multi-page') {
 		return { pages: [] };
 	}
@@ -35,15 +36,19 @@ export const handlePages = async ({
 		...reqDataBasics,
 		siteProfile,
 		siteStyle,
-		siteImages: { siteImages }, // route expects this shape
+		siteImages: { siteImages },
 		sitePlugins,
 		includeOptional: false,
+		// If pages are passed in they may be used
+		pages: designBuild?.pages ?? [],
+		buildId: designBuild?.buildId,
 	});
 
 	const response = await retryTwice(() =>
 		fetchWithTimeout(url, { method, headers, body }),
 	);
 	const template = shapeLocal.parse(await response.json());
+	const pages = applyDesignBuildOrder(template.recommended, designBuild);
 
-	return getPagesShape.parse({ pages: [...template.recommended] });
+	return getPagesShape.parse({ pages });
 };

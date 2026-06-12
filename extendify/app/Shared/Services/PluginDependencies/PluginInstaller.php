@@ -8,6 +8,8 @@ namespace Extendify\Shared\Services\PluginDependencies;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Shared\Services\AutoUpdate\AutoUpdate;
+
 /**
  * Install plugins programmatically.
  */
@@ -46,6 +48,10 @@ class PluginInstaller
 
         $upgrader->install($api->download_link);
         $file = $upgrader->plugin_info();
+
+        if (AutoUpdate::isEnabled()) {
+            AutoUpdate::enableAutoUpdateForPlugin($file);
+        }
 
         // Install the language pack if available.
         $currentLocale = get_locale();

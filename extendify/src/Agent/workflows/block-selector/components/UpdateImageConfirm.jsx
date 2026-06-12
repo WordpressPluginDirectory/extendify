@@ -1,9 +1,9 @@
 import { walkAndUpdateImageDetails } from '@agent/lib/blocks';
+import { useQuickEditStore } from '@quick-edit/state/store';
 import {
 	addCustomMediaViewsCss,
 	removeCustomMediaViewsCss,
-} from '@agent/lib/media-views';
-import { useWorkflowStore } from '@agent/state/workflows';
+} from '@shared/lib/media-views';
 import { registerCoreBlocks } from '@wordpress/block-library';
 import { getBlockTypes } from '@wordpress/blocks';
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
@@ -12,59 +12,90 @@ import { MediaUpload } from '@wordpress/media-utils';
 
 const openButton = __('Open Media Library', 'extendify-local');
 
+const normalizeImageUrl = (url) => {
+	if (!url) return '';
+	const base = url.split('?')[0].split('#')[0];
+	try {
+		return decodeURIComponent(base);
+	} catch {
+		return base;
+	}
+};
+
+// The rendered src often diverges from inputs.url — a srcset candidate, a
+// re-encoded comma, or extra CDN query params — so we match on the normalized
+// URL and, failing that, fall back to the sole image (a single-image block is
+// unambiguous) rather than missing the swap entirely.
+const findLiveImage = (blockId, url) => {
+	if (!blockId) return null;
+	const scope = document.querySelector(
+		`[data-extendify-agent-block-id="${blockId}"]`,
+	);
+	if (!scope) return null;
+	const images = [...scope.querySelectorAll('img')];
+	if (!images.length) return null;
+	const target = normalizeImageUrl(url);
+	const match = images.find(
+		(img) => normalizeImageUrl(img.getAttribute('src')) === target,
+	);
+	return match ?? (images.length === 1 ? images[0] : null);
+};
+
 export const UpdateImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 	const [showConfirmation, setShowConfirmation] = useState(false);
-	const [selectedImage, setSelectedImage] = useState(null);
-	const { block } = useWorkflowStore();
+	const block = useQuickEditStore((s) => s.agentBlock);
+
+	// The selected attachment plus the live <img> we swapped and its original
+	// src/srcset, so the preview reverts to exactly what was there on cancel.
+	const preview = useRef(null);
 
 	const resetImagePreview = useCallback(() => {
-		if (!selectedImage) return;
-		const imageElement = document.querySelector(
-			// The CSS.escape() method can also be used for escaping strings
-			// https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape_static
-			`[data-extendify-agent-block-id="${block?.id}"] > img[src="${CSS.escape(
-				selectedImage.url,
-			)}"]`,
-		);
-		if (imageElement) {
-			imageElement.src = inputs.url.replaceAll(',', '%2C');
+		const swapped = preview.current;
+		if (!swapped?.el) return;
+		swapped.el.src = swapped.src;
+		if (swapped.srcset) {
+			swapped.el.srcset = swapped.srcset;
+		} else {
+			swapped.el.removeAttribute('srcset');
 		}
-	}, [block?.id, selectedImage, inputs.url]);
+	}, []);
 
 	const confirmed = useRef(false);
-	useEffect(() => {
-		if (!selectedImage) return;
-		return () => {
+	useEffect(
+		() => () => {
 			if (!confirmed.current) resetImagePreview();
-		};
-	}, [selectedImage]);
+		},
+		[resetImagePreview],
+	);
 
 	const previewImage = (image) => {
-		// Query the DOM based on the block id and the image url
-		const originalImage = document.querySelector(
-			// The CSS.escape() method can also be used for escaping strings
-			// https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape_static
-			`[data-extendify-agent-block-id="${block?.id}"] img[src="${CSS.escape(
-				inputs.url.replaceAll(',', '%2C'),
-			)}"]`,
-		);
-		if (!originalImage) return;
-		originalImage.srcset = '';
-		// replace the original image source with the new image url
-		originalImage.src = image.url;
-		// show the confirmation message
+		const liveImage = findLiveImage(block?.id, inputs.url);
+		preview.current = {
+			image,
+			el: liveImage,
+			src: liveImage?.getAttribute('src') ?? '',
+			srcset: liveImage?.getAttribute('srcset') ?? '',
+		};
+		if (liveImage) {
+			liveImage.srcset = '';
+			liveImage.src = image.url;
+		}
+		// Advance as soon as an image is chosen. The picker's single click
+		// auto-confirms (the frame closes itself), and QuickEdit's QE_INTERIOR
+		// guard keeps that click from canceling the workflow — so the frame is
+		// torn down cleanly before this unmounts the picker. The live swap is
+		// best-effort; the real change is applied server-side on confirm.
 		setShowConfirmation(true);
-		// save the image in the state to be used later in onConfirm and onCancel
-		setSelectedImage(image);
 	};
 
 	const handleConfirm = async () => {
-		if (!selectedImage) return;
+		const image = preview.current?.image;
+		if (!image) return;
 		confirmed.current = true;
 		await onConfirm({
 			data: {
 				previousContent: inputs.previousContent,
-				newContent: walkAndUpdateImageDetails(inputs, selectedImage),
+				newContent: walkAndUpdateImageDetails(inputs, image),
 			},
 			shouldRefreshPage: true,
 		});

@@ -1,5 +1,6 @@
 import { usePortal } from '@agent/hooks/usePortal';
 import { useWorkflowStore } from '@agent/state/workflows';
+import { useQuickEditStore } from '@quick-edit/state/store';
 import apiFetch from '@wordpress/api-fetch';
 import {
 	createPortal,
@@ -13,32 +14,32 @@ import { close, Icon } from '@wordpress/icons';
 import { addQueryArgs } from '@wordpress/url';
 import { motion } from 'framer-motion';
 
-const selector = [
-	'[data-extendify-agent-block-id]',
-	'[data-extendify-part-block-id]',
-	'.wp-block-navigation',
-].join(', ');
-const ignored = ['wp-block-video', 'wp-block-spacer', 'wp-block-post-*'];
-const SELECTED_ATTR = 'data-extendify-agent-block-selected';
-const HIGHLIGHTER_CLS = 'extendify-agent-highlighter-mode';
-
+// Render-only after the selector unification: `agentBlock` is set
+// by Quick Edit's Ask AI flow (or future workflows), and this component
+// draws the outline + X-close indicator. Hover-bar owns hover + click
+// selection on the live page; DOMHighlighter no longer listens for either.
 export const DOMHighlighter = ({ busy = false }) => {
 	const [rect, setRect] = useState(null);
 	const mountNode = usePortal('extendify-agent-dom-mount');
-	const raf = useRef(null);
 	const el = useRef(null);
-	const { getWorkflowsByFeature, block, setBlock, setBlockCode } =
-		useWorkflowStore();
+	const { getWorkflowsByFeature } = useWorkflowStore();
+	const block = useQuickEditStore((s) => s.agentBlock);
+	const selected = useQuickEditStore((s) => s.selected);
+	const setBlock = useQuickEditStore((s) => s.setAgentBlock);
+	const setBlockCode = useQuickEditStore((s) => s.setAgentBlockCode);
 	const enabled = getWorkflowsByFeature({ requires: ['block'] })?.length > 0;
+	// When the QE canvas is mounted on the same block the agent is staged
+	// on, this overlay must NOT intercept clicks — otherwise text-selection
+	// inside the contenteditable underneath is eaten by the outline.
+	const sameBlockAsQE =
+		selected?.blockId != null &&
+		block?.id != null &&
+		String(selected.blockId) === String(block.id);
 
 	const clearBlock = useCallback(() => {
 		setBlock(null);
 		setRect(null);
 		el.current = null;
-		document.querySelector(HIGHLIGHTER_CLS)?.classList.remove(HIGHLIGHTER_CLS);
-		document
-			.querySelector(`[${SELECTED_ATTR}]`)
-			?.removeAttribute(SELECTED_ATTR);
 	}, [setBlock, setRect]);
 
 	useEffect(() => {
@@ -66,6 +67,41 @@ export const DOMHighlighter = ({ busy = false }) => {
 		};
 	}, [setBlockCode, block]);
 
+	// Re-syncs the rect for programmatic block changes (e.g. Ask AI)
+	// and after the wp-site-blocks open/close transform settles.
+	useEffect(() => {
+		if (!block?.id) return;
+		const attr = block.target || 'data-extendify-agent-block-id';
+		const match = document.querySelector(
+			`[${attr}="${CSS.escape(String(block.id))}"]`,
+		);
+		if (!match) return;
+		el.current = match;
+
+		const measure = () => {
+			const r = match.getBoundingClientRect();
+			if (r.width <= 0 || r.height <= 0) return;
+			setRect({ top: r.top, left: r.left, width: r.width, height: r.height });
+		};
+		measure();
+
+		// transitionend covers the panel-open/close transform; the
+		// timeouts are belt-and-braces if transitions are disabled.
+		const wsb = document.querySelector('.wp-site-blocks');
+		const onTransitionEnd = (e) => {
+			if (e.propertyName === 'transform') measure();
+		};
+		wsb?.addEventListener('transitionend', onTransitionEnd);
+		const t1 = window.setTimeout(measure, 80);
+		const t2 = window.setTimeout(measure, 360);
+
+		return () => {
+			wsb?.removeEventListener('transitionend', onTransitionEnd);
+			window.clearTimeout(t1);
+			window.clearTimeout(t2);
+		};
+	}, [block]);
+
 	useEffect(() => {
 		const handle = () => {
 			setRect(null);
@@ -79,122 +115,28 @@ export const DOMHighlighter = ({ busy = false }) => {
 			);
 	}, []);
 
-	useEffect(() => {
-		if (busy || block) return;
-		if (!mountNode || !enabled) return setRect(null);
-
-		const onMove = (e) => {
-			if (raf.current) return;
-			raf.current = requestAnimationFrame(() => {
-				raf.current = null;
-				const target = e.target;
-
-				if (!target) return setRect(null);
-				const match = target.closest(selector);
-				if (!match) return setRect(null);
-
-				// Ignore some blocks
-				const pattern = ignored.map((c) => c.replace('*', '.*')).join('|');
-				const regex = new RegExp(`^(${pattern})$`);
-				if (Array.from(match.classList).some((cls) => regex.test(cls))) {
-					return setRect(null);
-				}
-
-				const innerBlockCount = Array.from(
-					match.querySelectorAll(selector),
-				).filter((el) => !ignored.some((c) => el.classList.contains(c))).length;
-
-				// Manage pattern complexity
-				if (innerBlockCount > 50) return setRect(null);
-
-				el.current = match;
-				const r = match.getBoundingClientRect();
-				if (r.width <= 0 || r.height <= 0) return setRect(null);
-
-				const { top, left, width, height } = r;
-				setRect({ top, left, width, height });
-			});
-		};
-
-		window.addEventListener('mousemove', onMove, { passive: true });
-		return () => {
-			window.removeEventListener('mousemove', onMove);
-			if (raf.current) cancelAnimationFrame(raf.current);
-		};
-	}, [busy, mountNode, enabled, block]);
-
+	// Use capture phase for `scroll` so we hear it on any scrollable
+	// ancestor (e.g. wp-site-blocks when something repositions it as
+	// the page scroll container). Bubble-phase `scroll` doesn't
+	// propagate, so a window-only listener misses those.
 	useEffect(() => {
 		const onScrollOrResize = () => {
 			if (!el.current) return;
 			const { top, left, width, height } = el.current.getBoundingClientRect();
 			setRect({ top, left, width, height });
 		};
-		window.addEventListener('scroll', onScrollOrResize, { passive: true });
+		window.addEventListener('scroll', onScrollOrResize, {
+			passive: true,
+			capture: true,
+		});
 		window.addEventListener('resize', onScrollOrResize);
 		return () => {
-			window.removeEventListener('scroll', onScrollOrResize);
+			window.removeEventListener('scroll', onScrollOrResize, {
+				capture: true,
+			});
 			window.removeEventListener('resize', onScrollOrResize);
 		};
 	}, [el]);
-
-	useEffect(() => {
-		if (!enabled || busy) return;
-
-		const onClickCapture = (e) => {
-			if (!rect || busy) return;
-			// If they click inside the chat window, ignore
-			if (e.target.closest('#extendify-agent-chat')) return;
-			// find the real element under cursor
-			const stack = document.elementsFromPoint(e.clientX, e.clientY) || [];
-			if (!stack[0]) return;
-			e.preventDefault();
-			e.stopPropagation();
-
-			const match = stack[0].closest(selector);
-			if (!match && !block) return;
-			const sameBlock = match?.hasAttribute(SELECTED_ATTR);
-			// If we already have a block, clicking outside removes it
-			if (block && !sameBlock) return clearBlock();
-			if (block && sameBlock) return; // no change
-
-			match.setAttribute(SELECTED_ATTR, true);
-			document.querySelector('#extendify-agent-chat-textarea')?.focus();
-
-			// determine what's in the block.
-			const templatePart = match.closest('[data-extendify-part]');
-			const details = {
-				id: match.getAttribute('data-extendify-agent-block-id'),
-				target: 'data-extendify-agent-block-id',
-				hasNav:
-					Boolean(match.querySelector('.wp-block-navigation')) ||
-					match.classList.contains('wp-block-navigation'),
-				hasSiteTitle:
-					match.classList.contains('wp-block-site-title') ||
-					Boolean(match.querySelector('.wp-block-site-title')),
-				hasSiteLogo:
-					match.classList.contains('wp-block-site-logo') ||
-					Boolean(match.querySelector('.wp-block-site-logo')),
-				hasLinks: Boolean(match.querySelector('a')) || match.tagName === 'A',
-				hasImages:
-					Boolean(match.querySelector('.wp-block-image')) ||
-					match.classList.contains('wp-block-image') ||
-					Boolean(match.querySelector('img')),
-				hasText: /\S/.test((match.textContent || '').replace(/\u200B/g, '')),
-			};
-			// Override how we identify if it's a template part
-			if (templatePart) {
-				details.id = templatePart.getAttribute('data-extendify-part-block-id');
-				details.target = 'data-extendify-part-block-id';
-				details.template = templatePart.getAttribute('data-extendify-part');
-			}
-			setBlock(details);
-		};
-
-		// capture=true so we stop clicks before app code or link navigation
-		window.addEventListener('click', onClickCapture, { capture: true });
-		return () =>
-			window.removeEventListener('click', onClickCapture, { capture: true });
-	}, [enabled, setBlock, rect, clearBlock, block, busy]);
 
 	useEffect(() => {
 		if (!el.current) return;
@@ -211,6 +153,48 @@ export const DOMHighlighter = ({ busy = false }) => {
 			resizeObserver.disconnect();
 		};
 	}, [el.current]);
+
+	// Workflows can mutate the page while the outline is up: a tool that
+	// re-renders the block produces a new DOM node with the same
+	// data-extendify-agent-block-id, and ancestor reflows can shift the
+	// element without changing its own size (ResizeObserver misses both).
+	// Re-query and re-measure on any wp-site-blocks subtree mutation,
+	// rAF-debounced so a burst of mutations costs one measurement.
+	useEffect(() => {
+		if (!block?.id) return;
+		const root = document.querySelector('.wp-site-blocks');
+		if (!root) return;
+		const attr = block.target || 'data-extendify-agent-block-id';
+		const sel = `[${attr}="${CSS.escape(String(block.id))}"]`;
+
+		let rafId = 0;
+		const observer = new MutationObserver(() => {
+			if (rafId) return;
+			rafId = window.requestAnimationFrame(() => {
+				rafId = 0;
+				const match = document.querySelector(sel);
+				if (!match) return;
+				el.current = match;
+				const r = match.getBoundingClientRect();
+				if (r.width <= 0 || r.height <= 0) return;
+				setRect({
+					top: r.top,
+					left: r.left,
+					width: r.width,
+					height: r.height,
+				});
+			});
+		});
+		observer.observe(root, {
+			childList: true,
+			subtree: true,
+			characterData: true,
+		});
+		return () => {
+			observer.disconnect();
+			if (rafId) window.cancelAnimationFrame(rafId);
+		};
+	}, [block]);
 
 	useEffect(() => {
 		if (!enabled) return;
@@ -248,8 +232,8 @@ export const DOMHighlighter = ({ busy = false }) => {
 						'fixed z-9 h-6 w-6 -translate-y-3.5 cursor-pointer select-none flex items-center justify-center rounded-full text-center font-bold ring-1 ring-black'
 					}
 					tabIndex={0}
-					onClick={() => setBlock(null)}
-					onKeyDown={() => setBlock(null)}
+					onClick={clearBlock}
+					onKeyDown={clearBlock}
 					style={{
 						top,
 						left: width / 2 + left - 12,
@@ -278,7 +262,7 @@ export const DOMHighlighter = ({ busy = false }) => {
 					left: 0,
 					willChange: 'transform,width,height,opacity',
 					outlineColor: 'var(--wp--preset--color--primary, red)',
-					pointerEvents: block && !busy ? 'auto' : 'none',
+					pointerEvents: block && !busy && !sameBlockAsQE ? 'auto' : 'none',
 				}}
 			/>
 		</>,

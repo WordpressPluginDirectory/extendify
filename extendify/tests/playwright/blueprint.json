@@ -1,0 +1,23 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"login": false,
+	"preferredVersions": { "php": "8.3", "wp": "latest" },
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": { "WP_DEBUG": true }
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "wordpress.org/themes",
+				"slug": "extendable"
+			},
+			"options": { "activate": true }
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-content/plugins/extendify-sdk/tests/playwright/setup.php'; ?>"
+		}
+	]
+}

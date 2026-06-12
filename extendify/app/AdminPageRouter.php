@@ -30,6 +30,7 @@ class AdminPageRouter
         // This does the initial redirect to Launch.
         \add_action('admin_init', [$this, 'redirectOnce'], 10);
         \add_action('admin_init', [$this, 'maybeForceFlush'], 5);
+        \add_action('admin_init', [$this, 'handleLaunchRedirect'], 1);
 
         // Add a dropdown above Dashboard in the admin toolbar.
         \add_action('admin_bar_menu', function ($wpAdminBar) {
@@ -176,6 +177,43 @@ class AdminPageRouter
     }
 
     /**
+     * Routes /wp-admin/?launch-redirect based on Launch and Agent state.
+     *
+     * @return void
+     */
+    public function handleLaunchRedirect()
+    {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if (!isset($_GET['launch-redirect']) || \wp_doing_ajax() || !PartnerData::$id) {
+            return;
+        }
+
+        // If launch hasn't yet completed, they go to launch/auto-launch
+        if (!Config::$launchCompleted) {
+            $useAgentOnboarding = PartnerData::setting('useAgentOnboarding') ||
+                Config::preview('agent-onboarding') ||
+                constant('EXTENDIFY_DEVMODE');
+            $page = $useAgentOnboarding ? 'extendify-auto-launch' : 'extendify-launch';
+            $query_params = $this->presentLaunchParams(['page' => $page]);
+            \wp_safe_redirect(\add_query_arg($query_params, \admin_url('admin.php')));
+            exit;
+        }
+
+        // If they have the Agent onboarding enabled, redirect to home.
+        if (PartnerData::setting('showAIAgents')) {
+            \wp_safe_redirect(\add_query_arg(
+                ['extendify-open-agent' => '1'],
+                \home_url('/')
+            ));
+            exit;
+        }
+
+        // Otherwise, they go to Assist.
+        \wp_safe_redirect(\admin_url() . $this->getRoute());
+        exit;
+    }
+
+    /**
      * Redirect once to Launch, only once (at least once) when
      * the email matches the entry in WP Admin > Settings > General.
      *
@@ -207,12 +245,10 @@ class AdminPageRouter
                 Config::preview('agent-onboarding') ||
                 constant('EXTENDIFY_DEVMODE');
             if ($agentOnboarding) {
-                // If they landed on launch but have the Agent onboarding enabled, redirect to auto-launch.
-                $redirect_url = \add_query_arg(
-                    ['page' => 'extendify-auto-launch'],
-                    \admin_url('admin.php')
-                );
-                \wp_safe_redirect($redirect_url);
+                // If they landed on launch but have the Agent onboarding enabled, redirect to
+                // auto-launch — carrying their deep-link params, which a bare page-only redirect drops.
+                $query_params = $this->presentLaunchParams(['page' => 'extendify-auto-launch']);
+                \wp_safe_redirect(\add_query_arg($query_params, \admin_url('admin.php')));
                 exit;
             }
             return;
@@ -238,49 +274,60 @@ class AdminPageRouter
             \update_option('permalink_structure', '/%postname%/');
             \update_option('extendify_needs_rewrite_flush', true);
 
-            $allowed_launch_params = [
-                'objective',
-                'title',
-                'description',
-                'structure',
-                'tone',
-                'skip',
-                // new for autolaunch (some duplicated)
-                'type',
-                'title',
-                'description',
-                'objective',
-                'category',
-                'structure',
-                'tone',
-                'products',
-                'appointments',
-                'events',
-                'donations',
-                'multilingual',
-                'contact',
-                'address',
-                'blog',
-                'landing-page',
-                'cta-link',
-                'go',
-            ];
             // phpcs:ignore WordPress.Security.NonceVerification.Recommended,WordPress.Security.ValidatedSanitizedInput.MissingUnslash
             $autoLaunch = isset($_GET['auto-launch']) && filter_var($_GET['auto-launch'], FILTER_VALIDATE_BOOLEAN);
-            $query_params = ['page' => $autoLaunch ? 'extendify-auto-launch' : 'extendify-launch'];
-
-            foreach ($allowed_launch_params as $param) {
-                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-                $value = sanitize_text_field(wp_unslash($_GET[$param] ?? ''));
-                if (!empty($value)) {
-                    $query_params[$param] = $value;
-                }
-            }
+            $query_params = $this->presentLaunchParams([
+                'page' => $autoLaunch ? 'extendify-auto-launch' : 'extendify-launch',
+            ]);
 
             $redirect_url = \add_query_arg($query_params, \admin_url('admin.php'));
             \wp_safe_redirect($redirect_url);
             exit;
         }
+    }
+
+    /**
+     * Merges the allowlisted launch deep-link params present in the request onto
+     * $base, so a redirect into Launch/AutoLaunch carries the partner's params
+     * through instead of dropping them.
+     *
+     * @param array $base Seed query args (typically the destination `page`).
+     * @return array
+     */
+    private function presentLaunchParams(array $base)
+    {
+        $allowed = [
+            'objective',
+            'title',
+            'description',
+            'structure',
+            'tone',
+            'skip',
+            'type',
+            'category',
+            'products',
+            'appointments',
+            'events',
+            'donations',
+            'multilingual',
+            'contact',
+            'address',
+            'blog',
+            'landing-page',
+            'cta-link',
+            'build-id',
+            'go',
+        ];
+
+        foreach ($allowed as $param) {
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            $value = sanitize_text_field(wp_unslash($_GET[$param] ?? ''));
+            if (!empty($value)) {
+                $base[$param] = $value;
+            }
+        }
+
+        return $base;
     }
 
     /**

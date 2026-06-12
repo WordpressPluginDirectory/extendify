@@ -2,8 +2,8 @@ import { isChangeSiteDesignWorkflowAvailable } from '@agent/lib/util';
 import changeSiteDesignWorkflow from '@agent/workflows/theme/change-site-design';
 import variationsWorkflow from '@agent/workflows/theme/change-theme-variation';
 import { workflows } from '@agent/workflows/workflows';
+import { useQuickEditStore } from '@quick-edit/state/store';
 import { deepMerge } from '@shared/lib/utils';
-import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
@@ -26,16 +26,6 @@ const state = (set, get) => ({
 	workflow: null,
 	// Data for the tool component that shows up at the end of a workflow
 	whenFinishedToolProps: null,
-	block: null, // data-extendify-agent-block-id + details about the block
-	setBlock: (block) => set({ block, blockCode: null }),
-	// Used as "previousContent" in workflows that need it
-	blockCode: null,
-	setBlockCode: (blockCode) => set({ blockCode }),
-	domToolEnabled: false,
-	setDomToolEnabled: (enabled) => {
-		if (get().block) return; // can't disable if a block is set
-		set({ domToolEnabled: enabled });
-	},
 	getWorkflow: () => {
 		const curr = get().workflow;
 		// Workflows may define a "parent" workflow via templateId
@@ -60,7 +50,7 @@ const state = (set, get) => ({
 		const blockWorkflows = wfs.filter(({ requires }) =>
 			requires?.includes('block'),
 		);
-		if (get().block) return blockWorkflows;
+		if (useQuickEditStore.getState().agentBlock) return blockWorkflows;
 		// otherwise remove all of the above
 		return wfs.filter(({ id }) => !blockWorkflows.some((w) => w.id === id));
 	},
@@ -74,35 +64,6 @@ const state = (set, get) => ({
 		);
 	},
 	workflowData: null,
-	// This is the history of the results
-	// { answerId: '', canceled: false,  reason: '', error: false, completed: false, whenFinishedTool: null }[]
-	workflowHistory: window.extAgentData?.workflowHistory || [],
-	addWorkflowResult: (data) => {
-		const workflowId = get().workflow?.id;
-
-		if (data.status === 'completed') {
-			set((state) => {
-				const max = Math.max(0, state.workflowHistory.length - 10);
-
-				return {
-					workflowHistory: [
-						{ workflowId, ...data },
-						...state.workflowHistory.toSpliced(0, max),
-					],
-				};
-			});
-		}
-
-		if (!workflowId) return;
-		// Persist it to the server
-		const path = '/extendify/v1/agent/workflows';
-		apiFetch({
-			method: 'POST',
-			keepalive: true,
-			path,
-			data: { workflowId, ...data },
-		});
-	},
 	mergeWorkflowData: (data) => {
 		set((state) => {
 			if (!state.workflowData) return { workflowData: data };
@@ -111,18 +72,18 @@ const state = (set, get) => ({
 			};
 		});
 	},
-	setWorkflow: (workflow) =>
+	setWorkflow: (workflow) => {
+		const agentBlockCode = useQuickEditStore.getState().agentBlockCode;
 		set({
 			workflow: workflow
 				? { ...workflow, startingPage: window.location.href }
 				: null,
 			// If a block is selected, add it to the workflow data
 			// previousContent is named this way for legacy reasons
-			workflowData: get().blockCode
-				? { previousContent: get().blockCode }
-				: null,
+			workflowData: agentBlockCode ? { previousContent: agentBlockCode } : null,
 			whenFinishedToolProps: null,
-		}),
+		});
+	},
 	setWhenFinishedToolProps: (whenFinishedToolProps) =>
 		set({ whenFinishedToolProps }),
 });
@@ -143,10 +104,6 @@ export const useWorkflowStore = create()(
 				};
 			}
 			return { ...currentState, ...persistedState };
-		},
-		partialize: (state) => {
-			const { block, workflowHistory, ...rest } = state;
-			return { ...rest };
 		},
 	}),
 );

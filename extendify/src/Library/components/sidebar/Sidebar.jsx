@@ -18,7 +18,7 @@ export const Sidebar = () => {
 				</div>
 			) : (
 				<div className="-mb-5 hidden px-5 py-3 text-extendify-black sm:flex sm:pt-5">
-					<Icon icon={extendifyLogo} size={40} />
+					<Icon icon={extendifyLogo()} size={40} />
 				</div>
 			)}
 			<div className="flex flex-col gap-4 overflow-y-auto pb-16">

@@ -8,6 +8,7 @@ namespace Extendify\HelpCenter\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Constants;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -16,13 +17,6 @@ use Extendify\Shared\Services\Sanitizer;
 
 class SupportArticlesController
 {
-    /**
-     * The url for the server.
-     *
-     * @var string
-     */
-    public static $host = 'https://kb.extendify.com';
-
     /**
      * Return support articles from source.
      *
@@ -34,7 +28,7 @@ class SupportArticlesController
             return new \WP_REST_Response([], 200);
         }
 
-        $response = wp_remote_get(sprintf('%s/api/posts?lang=%s', static::$host, \get_locale()));
+        $response = wp_remote_get(sprintf('%s/api/posts?lang=%s', Constants::KB_HOST, \get_locale()));
 
         if (is_wp_error($response)) {
             return new \WP_REST_Response([]);
@@ -55,7 +49,7 @@ class SupportArticlesController
         $response = wp_remote_get(
             sprintf(
                 '%s/api/posts/%s?lang=%s',
-                static::$host,
+                Constants::KB_HOST,
                 $request->get_param('slug'),
                 \get_locale()
             )

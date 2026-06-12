@@ -106,6 +106,7 @@ export const RestartLaunchModal = ({ pages }) => {
 				styleResetError,
 			);
 		}
+
 		window.location.reload();
 	};
 

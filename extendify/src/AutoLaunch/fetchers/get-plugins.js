@@ -5,19 +5,18 @@ import {
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
-import { activatePlugin, installPlugin } from '@auto-launch/functions/plugins';
 import { AI_HOST } from '@constants';
+import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
-const { pluginGroupId, installedPluginsSlugs } = window.extSharedData;
+const { pluginGroupId } = window.extSharedData;
 const fallback = { sitePlugins: [] };
 const url = `${AI_HOST}/api/site-plugins`;
 const method = 'POST';
 const headers = { 'Content-Type': 'application/json' };
 
-// Local due to legacy naming inconsistency
 const shapeLocal = z.object({
 	selectedPlugins: z.array(pluginShape),
 });
@@ -43,33 +42,26 @@ export const handleSitePlugins = async ({
 
 	const response = await retryTwice(() =>
 		fetchWithTimeout(url, { method, headers, body }),
-	);
+	).catch((error) => {
+		return { ok: false, statusText: error.message, status: 0 };
+	});
 
-	if (!response?.ok) return fallback;
-
-	const plugins = await failWithFallback(async () => {
-		const data = await response.json();
-		const sitePlugins = shapeLocal
-			.parse(data)
-			.selectedPlugins // We add give to the front. See here why:
-			// https://github.com/extendify/company-product/issues/713
-			.toSorted(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
-		return getPluginsShape.parse({ sitePlugins });
-	}, fallback);
-
-	// install partner plugins
-	const pluginsToInstall = plugins.sitePlugins.filter(
-		({ wordpressSlug: slug }) => !installedPluginsSlugs?.includes(slug),
-	);
-	if (showStatus && pluginsToInstall.length > 0) {
-		setStatus(
-			// translators: this is for a action log UI. Keep it short
-			__('Setting up functionality for your website', 'extendify-local'),
-		);
+	if (!response?.ok) {
+		digest({
+			error: {
+				message: response.statusText,
+				name: 'FetchError',
+				status: response.status,
+			},
+			details: { source: 'auto-launch', caller: 'handleSitePlugins' },
+		});
+		return fallback;
 	}
-	for (const { wordpressSlug: slug } of pluginsToInstall) {
-		const p = await installPlugin(slug);
-		await activatePlugin(p?.plugin ?? slug);
-	}
-	return plugins;
+
+	const { selectedPlugins } = await failWithFallback(
+		async () => shapeLocal.parse(await response.json()),
+		fallback,
+		{ caller: 'handleSitePlugins' },
+	);
+	return getPluginsShape.parse({ sitePlugins: selectedPlugins });
 };

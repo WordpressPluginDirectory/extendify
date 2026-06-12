@@ -9,6 +9,8 @@ namespace Extendify\AutoLaunch;
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
+use Extendify\Insights;
+use Extendify\PartnerData;
 
 /**
  * This class handles any file loading for the admin area.
@@ -70,6 +72,7 @@ class Admin
             'window.extLaunchData = ' . \wp_json_encode([
                 'editorStyles' => \get_block_editor_settings([], new \WP_Block_Editor_Context()),
                 'wpRoot' => \rest_url(),
+                'activeTests' => \get_option(Insights::ACTIVE_TESTS_OPTION, []),
                 'resetSiteInformation' => [
                     'pagesIds' => array_map('esc_attr', $this->getLaunchCreatedPages()),
                     'navigationsIds' => array_map('esc_attr', $this->getLaunchCreatedNavigations()),
@@ -83,6 +86,7 @@ class Admin
                         'hello-world',
                         'Default post slug'
                     ),
+                'hideAutoLaunchExitLink' => (bool) PartnerData::setting('hideLaunchExitLink'),
             ]),
             'before'
         );
@@ -191,6 +195,7 @@ class Admin
             'blog' => 'boolean',
             'landing-page' => 'string',
             'cta-link' => 'string|boolean',
+            'build-id' => 'string',
             'go' => 'boolean',
         ];
 

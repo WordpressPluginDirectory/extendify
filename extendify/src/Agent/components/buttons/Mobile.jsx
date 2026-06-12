@@ -38,7 +38,7 @@ export const Mobile = () => {
 			aria-label={__('Open Agent', 'extendify-local')}
 		>
 			<div className="flex gap-3">
-				<div className="flex h-10 w-10 items-center justify-center rounded-full bg-wp-theme-main">
+				<div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#3858e9]">
 					<Icon icon={magic} size={24} />
 				</div>
 				<div className="text-left text-sm rtl:text-right">

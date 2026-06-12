@@ -6,6 +6,7 @@
 
 namespace Extendify\Assist\Controllers;
 
+use Extendify\Constants;
 use Extendify\Shared\Services\Sanitizer;
 
 defined('ABSPATH') || die('No direct access.');
@@ -16,13 +17,6 @@ defined('ABSPATH') || die('No direct access.');
 
 class DomainsSuggestionController
 {
-    /**
-     * The url for the server.
-     *
-     * @var string
-     */
-    public static $host = 'https://ai.extendify.com';
-
     /**
      * The list of url strings in the site name to block from using the api.
      *
@@ -66,23 +60,34 @@ class DomainsSuggestionController
             return new \WP_REST_Response([]);
         }
 
+        $cleanedSiteTitle = self::cleanSiteTitle($siteName);
+        if ($cleanedSiteTitle === '') {
+            return new \WP_REST_Response([]);
+        }
+
         $siteProfile = \get_option('extendify_site_profile', []);
+        if (empty($siteProfile)) {
+            return new \WP_REST_Response([]);
+        }
+
         $businessDescription = ($siteProfile['description'] ?? '');
         $data = [
-            'query' => self::cleanSiteTitle($siteName),
+            'query' => $cleanedSiteTitle,
             'devbuild' => defined('EXTENDIFY_DEVMODE')
                 ? constant('EXTENDIFY_DEVMODE')
                 : is_readable(EXTENDIFY_PATH . '.devbuild'),
             'siteId' => \get_option('extendify_site_id', ''),
             'tlds' => ($partnerData['domainTLDs'] ?? []),
+            'priorityTlds' => ($partnerData['priorityDomainTLDs'] ?? []),
             'partnerId' => \esc_attr(constant('EXTENDIFY_PARTNER_ID')),
             'wpLanguage' => \get_locale(),
             'wpVersion' => \get_bloginfo('version'),
             'businessDescription' => \esc_attr($businessDescription),
+            'siteProfile' => $siteProfile,
         ];
 
         $response = \wp_remote_post(
-            sprintf('%s/api/domains/suggest', static::$host),
+            sprintf('%s/api/domains/suggest', Constants::AI_HOST),
             [
                 'body' => \wp_json_encode($data),
                 'headers' => ['Content-Type' => 'application/json'],
@@ -93,12 +98,17 @@ class DomainsSuggestionController
             return new \WP_REST_Response([]);
         }
 
+        $status = \wp_remote_retrieve_response_code($response);
+        if ($status < 200 || $status >= 300) {
+            return new \WP_REST_Response([]);
+        }
+
         $body = wp_remote_retrieve_body($response);
         if (empty($body)) {
             return new \WP_REST_Response([]);
         }
 
-        return new \WP_REST_Response(json_decode($body, true), \wp_remote_retrieve_response_code($response));
+        return new \WP_REST_Response(json_decode($body, true), $status);
     }
 
     /**
@@ -109,7 +119,7 @@ class DomainsSuggestionController
      */
     public static function cleanSiteTitle($siteTitle)
     {
-        return preg_replace('/[^\p{L}\p{N}\s\-]+/u', '', html_entity_decode($siteTitle));
+        return trim(preg_replace('/[^\p{L}\p{N}\s\-]+/u', '', html_entity_decode($siteTitle)));
     }
 
     /**

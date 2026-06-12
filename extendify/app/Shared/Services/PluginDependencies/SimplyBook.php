@@ -6,6 +6,7 @@
 
 namespace Extendify\Shared\Services\PluginDependencies;
 
+use Extendify\Constants;
 use Extendify\PartnerData;
 use Extendify\Shared\Services\HttpClient;
 use Extendify\Shared\Services\Sanitizer;
@@ -58,7 +59,7 @@ class SimplyBook
             return;
         }
 
-        $response = HttpClient::post('https://ai.extendify.com/api/plugins/simplybook', [
+        $response = HttpClient::post(Constants::AI_HOST . '/api/plugins/simplybook', [
             'params' => [
                 'title' => \get_bloginfo('name'),
                 'wpLanguage' => \get_locale(),

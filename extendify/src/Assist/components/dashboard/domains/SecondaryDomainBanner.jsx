@@ -1,21 +1,24 @@
+import { useDomainViewActivity } from '@assist/hooks/useDomainViewActivity';
 import {
+	buildDomainViewItems,
 	createDomainUrlLink,
 	deleteDomainCache,
 	domainSearchUrl,
+	domains,
 } from '@assist/lib/domains';
 import { useDomainActivities } from '@assist/state/domain-activities';
 import { useGlobalStore } from '@assist/state/globals';
-import { safeParseJson } from '@shared/lib/parsing';
 import { __ } from '@wordpress/i18n';
 import { close, globe, Icon } from '@wordpress/icons';
 
-const domains = safeParseJson(window.extSharedData.resourceData)?.domains || [];
+const viewItems = buildDomainViewItems(domains.slice(0, 1));
 
 export const SecondaryDomainBanner = () => {
 	const { dismissBanner } = useGlobalStore();
 	const { setDomainActivity } = useDomainActivities();
+	useDomainViewActivity({ position: 'addon-banner', items: viewItems });
 
-	if (!domainSearchUrl || !domains?.length) return null;
+	if (!domainSearchUrl || !domains.length) return null;
 
 	return (
 		<div
@@ -42,7 +45,7 @@ export const SecondaryDomainBanner = () => {
 					</div>
 				</div>
 				<div className="domain-name-action">
-					{!domains.length > 0 && (
+					{!domains.length && (
 						<div className="flex h-full items-center justify-center">
 							{__('Service offline. Check back later.', 'extendify-local')}
 						</div>

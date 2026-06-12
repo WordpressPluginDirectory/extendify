@@ -6,6 +6,8 @@
 
 namespace Extendify\Assist\Controllers;
 
+use Extendify\Constants;
+
 defined('ABSPATH') || die('No direct access.');
 
 /**
@@ -14,13 +16,6 @@ defined('ABSPATH') || die('No direct access.');
 
 class RecommendationsController
 {
-    /**
-     * The url for the server.
-     *
-     * @var string
-     */
-    public static $host = 'https://dashboard.extendify.com';
-
     /**
      * Return recommendations from source.
      *
@@ -42,7 +37,7 @@ class RecommendationsController
             'sdk_partner' => defined('EXTENDIFY_PARTNER_ID') ? EXTENDIFY_PARTNER_ID : '',
         ]);
         $response = \wp_remote_get(
-            sprintf('%s/api/assist/recommendations?%s', static::$host, $params),
+            sprintf('%s/api/assist/recommendations?%s', Constants::DASHBOARD_HOST, $params),
             [
                 'headers' => [
                     'Content-Type' => 'application/json',

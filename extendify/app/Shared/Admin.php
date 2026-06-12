@@ -141,6 +141,19 @@ class Admin
             require_once ABSPATH . 'wp-admin/includes/plugin.php';
         }
 
+        $activePlugins = array_values(\get_option('active_plugins', []));
+        $activePluginSlugs = array_map(function ($plugin) {
+            return dirname($plugin);
+        }, $activePlugins);
+        $productActivationPlugins = PartnerData::setting('showProductActivation') ?? [];
+
+        $productActivationPlugins = array_filter(
+            $productActivationPlugins,
+            function ($plugin) use ($activePluginSlugs) {
+                return in_array($plugin['slug'], $activePluginSlugs);
+            }
+        );
+
         \wp_add_inline_script(
             Config::$slug . '-shared-scripts',
             'window.extSharedData = ' . \wp_json_encode([
@@ -160,6 +173,10 @@ class Admin
                 'wpVersion' => \esc_attr(\get_bloginfo('version')),
                 'isBlockTheme' => function_exists('wp_is_block_theme') ? (bool) wp_is_block_theme() : false,
                 'userId' => \esc_attr(\get_current_user_id()),
+                // phpcs:ignore WordPress.Security.NonceVerification
+                'userEmail' => isset($_GET['extendify-launch-success'])
+                    ? \esc_attr(\wp_get_current_user()->user_email)
+                    : null,
                 'partnerLogo' => \esc_attr(PartnerData::$logo),
                 'partnerId' => \esc_attr(PartnerData::$id),
                 'partnerName' => \esc_attr(PartnerData::$name),
@@ -177,14 +194,15 @@ class Admin
                 ),
                 'showAILogo' => (bool) PartnerData::setting('showAILogo'),
                 'showImprint' => array_map('esc_attr', (array) PartnerData::setting('showImprint')),
+                'showProductActivation' => array_values($productActivationPlugins),
                 'consentTermsCustom' => \wp_kses((html_entity_decode(($partnerData['consentTermsCustom'] ?? ''))
                     ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
                 'installedPlugins' => array_map('esc_attr', array_keys(\get_plugins())),
+                'activePlugins' => $activePlugins,
                 'installedPluginsSlugs' => array_values(array_filter(array_map(function ($p) {
                     return $p['TextDomain'] ?? '';
                 }, \get_plugins()))),
-                'activePlugins' => array_map('esc_attr', array_values(\get_option('active_plugins', []))),
                 'frontPage' => \esc_attr(\get_option('page_on_front', 0)),
                 'globalStylesPostID' => \esc_attr(\WP_Theme_JSON_Resolver::get_user_global_styles_post_id()),
                 'showLocalizedCopy' => (bool) array_key_exists('showLocalizedCopy', $partnerData),

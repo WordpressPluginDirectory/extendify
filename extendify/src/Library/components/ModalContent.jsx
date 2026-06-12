@@ -1,7 +1,9 @@
 import { BlockPreviewButton } from '@library/components/BlockPreviewButton';
 import { usePatterns } from '@library/hooks/usePatterns';
+import { useSiteImages } from '@library/hooks/useSiteImages';
+import { replacePatternImages } from '@library/util/replace-pattern-images';
 import { Spinner } from '@wordpress/components';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect, useMemo, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { useInView } from 'react-intersection-observer';
 import Masonry from 'react-masonry-css';
@@ -10,6 +12,8 @@ export const ModalContent = ({ insertPattern, category }) => {
 	const { data, isLoading, setSize } = usePatterns({
 		category,
 	});
+	const { siteImages } = useSiteImages();
+	const sessionSeed = useMemo(() => Math.random().toString(36), []);
 	const [showLoading, setShowLoading] = useState(true);
 	const [loadMoreRef, inView] = useInView();
 	const noMore = data?.at(-1)?.length < 9; // hard coded for now
@@ -58,13 +62,17 @@ export const ModalContent = ({ insertPattern, category }) => {
 						<BlockPreviewButton
 							key={id}
 							insertPattern={insertPattern}
-							code={patternReplacementCode ?? code}
+							code={replacePatternImages(
+								patternReplacementCode ?? code,
+								siteImages,
+								`${id}-${sessionSeed}`,
+							)}
 						/>
 					)),
 				)}
 			</Masonry>
 			{showLoading ? (
-				<div className="absolute inset-0 z-0 flex flex-col items-center justify-center text-center">
+				<div className="absolute inset-0 flex flex-col items-center justify-center text-center">
 					<Spinner />
 					<span className="sr-only">
 						{__('Loading Patterns...', 'extendify-local')}

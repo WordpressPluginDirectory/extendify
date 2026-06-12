@@ -7,7 +7,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           3.0.2
+ * Version:           3.1.0
  * Requires at least: 6.5
  * Requires PHP:      7.0
  * License:           GPL-2.0-or-later
@@ -65,6 +65,9 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
 
             if (!self::$loaded) {
                 self::$loaded = true;
+                if (!defined('EXTENDIFY_PLUGIN_BASENAME')) {
+                    define('EXTENDIFY_PLUGIN_BASENAME', plugin_basename(__FILE__));
+                }
                 require dirname(__FILE__) . '/bootstrap.php';
                 if (!defined('EXTENDIFY_BASE_URL')) {
                     define('EXTENDIFY_BASE_URL', plugin_dir_url(__FILE__));

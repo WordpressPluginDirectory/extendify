@@ -1,0 +1,37 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"login": false,
+	"preferredVersions": { "php": "8.3", "wp": "latest" },
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"WP_DEBUG": true,
+				"EXTENDIFY_PARTNER_ID": "github"
+			}
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "wordpress.org/themes",
+				"slug": "extendable"
+			},
+			"options": { "activate": true }
+		},
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"extendify_partner_data_v2": {
+					"deactivated": false,
+					"showAIPageCreation": false
+				},
+				"_transient_extendify_partner_data_cache_check": "1",
+				"extendify_onboarding_completed": "2026-01-01T00:00:00.000Z"
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-content/plugins/extendify-sdk/tests/playwright/setup.php'; ?>"
+		}
+	]
+}

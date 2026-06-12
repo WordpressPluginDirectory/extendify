@@ -73,6 +73,10 @@ export const urlParamsShape = z.object({
 		.union([z.boolean(), z.string()])
 		.optional()
 		.catch(() => false),
+	'build-id': z
+		.string()
+		.optional()
+		.catch(() => ''),
 	go: z
 		.boolean()
 		.optional()
@@ -80,7 +84,7 @@ export const urlParamsShape = z.object({
 });
 
 export const urlParams = urlParamsShape.parse(
-	safeParseJson(window.extLaunchData.urlParams) || {},
+	safeParseJson(window.extLaunchData?.urlParams) || {},
 );
 // remove them from the url to avoid confusion later
 const url = new URL(window.location.href);

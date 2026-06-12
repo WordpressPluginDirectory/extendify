@@ -1,6 +1,8 @@
 import {
+	getDesignBuildShape,
 	getHomeShape,
 	getImagesShape,
+	getLaunchDecisionsShape,
 	getLogoShape,
 	getPagesShape,
 	getPluginsShape,
@@ -8,6 +10,7 @@ import {
 	getStringsShape,
 	getStyleShape,
 } from '@auto-launch/fetchers/shape';
+import { clearSiteImages } from '@auto-launch/functions/wp';
 import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
@@ -25,12 +28,16 @@ const initialState = {
 	statusMessages: [__('Booting things up', 'extendify-local')],
 	errorMessage: null,
 	errorCount: 0,
+	title: null,
 	description: null,
 	descriptionBackup: undefined,
 	descriptionRaw: null,
 	urlParams: {},
 	siteProfile: {
 		...shapeToKeyValue(getProfileShape),
+	},
+	launchDecisions: {
+		...shapeToKeyValue(getLaunchDecisionsShape),
 	},
 	...shapeToKeyValue(getLogoShape),
 	...shapeToKeyValue(getPluginsShape),
@@ -39,6 +46,9 @@ const initialState = {
 	...shapeToKeyValue(getImagesShape),
 	...shapeToKeyValue(getHomeShape),
 	...shapeToKeyValue(getPagesShape),
+	...shapeToKeyValue(getDesignBuildShape),
+	designBuild: undefined,
+	attempt: 1,
 };
 
 const state = (set, get) => ({
@@ -75,13 +85,14 @@ const state = (set, get) => ({
 		set({ errorCount: 0 });
 	},
 	reset: ({ exclude }) => {
-		const newState = { ...initialState };
+		const newState = { ...initialState, attempt: get().attempt + 1 };
 		if (exclude && Array.isArray(exclude)) {
 			exclude.forEach((key) => {
 				if (!isValidKey(key)) return;
 				newState[key] = get()[key];
 			});
 		}
+		clearSiteImages().catch(() => null);
 		set(newState);
 	},
 });
@@ -92,6 +103,7 @@ const isValidKey = (key) => Object.keys(initialState).includes(key);
 const keySchemas = {
 	urlParams: urlParamsShape,
 	siteProfile: getProfileShape,
+	launchDecisions: getLaunchDecisionsShape,
 	...Object.fromEntries(
 		[
 			getLogoShape,
@@ -101,6 +113,7 @@ const keySchemas = {
 			getImagesShape,
 			getHomeShape,
 			getPagesShape,
+			getDesignBuildShape,
 		].flatMap((s) => Object.entries(s.shape)),
 	),
 };

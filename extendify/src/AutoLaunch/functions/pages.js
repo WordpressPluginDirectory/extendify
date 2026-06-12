@@ -7,6 +7,12 @@ import { createBlock, parse, serialize } from '@wordpress/blocks';
 import { __, sprintf } from '@wordpress/i18n';
 import { setStatus } from './helpers';
 
+// Slugs that plugins own — skip creating design-build pages for these.
+export const PLUGIN_OWNED_PAGES = [
+	{ slug: 'shop', plugin: 'woocommerce' },
+	{ slug: 'events', plugin: 'the-events-calendar' },
+];
+
 export const getPagesToCreate = (data) => {
 	const { home, pages, siteProfile } = data;
 	const homepage = {
@@ -117,7 +123,7 @@ const transformHeadingToPostTitle = (rawHTML) => {
 	return serialize(parse(rawHTML).map(walk));
 };
 
-export const createWpPages = async (pagesRaw, { stickyNav }) => {
+export const createWpPages = async (pagesRaw) => {
 	const pages = [];
 
 	for (const page of pagesRaw) {
@@ -130,10 +136,11 @@ export const createWpPages = async (pagesRaw, { stickyNav }) => {
 			const code = pattern.code;
 			const patternType = pattern.patternTypes?.[0];
 
-			const { slug } =
+			const { slug: defaultSlug } =
 				Object.values(pageNames).find(({ alias }) =>
 					alias.includes(patternType),
 				) || {};
+			const slug = pattern.navSlug ?? defaultSlug;
 
 			if (seenPatternTypes.has(slug) || !slug) {
 				content.push(code);
@@ -148,11 +155,7 @@ export const createWpPages = async (pagesRaw, { stickyNav }) => {
 			title: page.name,
 			status: 'publish',
 			content: content.join(''),
-			template: stickyNav
-				? 'no-title-sticky-header'
-				: page.slug === 'home'
-					? 'no-title'
-					: 'page-with-title',
+			template: page.slug === 'home' ? 'no-title' : 'page-with-title',
 			meta: { made_with_extendify_launch: true },
 		};
 

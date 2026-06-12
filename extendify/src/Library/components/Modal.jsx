@@ -122,7 +122,7 @@ export const Modal = () => {
 						/>
 						<div
 							id="extendify-library-patterns-list"
-							className="grow overflow-y-auto"
+							className="relative grow overflow-y-auto"
 						>
 							<ModalContent insertPattern={insertPattern} category={category} />
 						</div>

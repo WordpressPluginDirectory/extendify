@@ -121,7 +121,7 @@ class ResourceData
             'recommendations' => $this->recommendations(),
             'supportArticles' => $this->supportArticles(),
             // Domains are now cached forever until the site title changes.
-            'domains' => $domains,
+            'domains' => is_array($domains) ? $domains : [],
         ];
     }
 

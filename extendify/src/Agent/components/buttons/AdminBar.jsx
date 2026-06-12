@@ -26,14 +26,15 @@ export const AdminBar = () => {
 				opacity: { duration: 0.1, ease: 'easeInOut' },
 			}}
 			className={classNames(
-				'items-center justify-center gap-0.5 h-full border-0 leading-extra-tight text-white md:inline-flex whitespace-nowrap hover:opacity-80',
+				'items-center justify-center gap-1 border-0 leading-extra-tight text-white md:inline-flex whitespace-nowrap',
 				{ 'opacity-60': open && !isSidebarDocked },
 				// Open, docked sidebar (keeps the spacing)
-				{ 'mr-1 rtl:ml-1 rtl:mr-0': open && isSidebarDocked },
+				{ 'h-full mr-1 rtl:ml-1 rtl:mr-0': open && isSidebarDocked },
 				{
 					// Styles for when docked sidebar is open
 					// Useful to put things here you don't want to animate out
-					'py-0.5 px-1.5 bg-design-main text-design-text':
+					// Pill sizing matches the simple toolbar's .ext-tb-ai-agent
+					'my-1 ml-1 mr-2 rtl:ml-2 rtl:mr-1 h-6 rounded px-[10px] bg-[#3858e9] hover:bg-[#2145e6]':
 						!isSidebarDocked || (isSidebarDocked && !open),
 				},
 			)}
@@ -41,9 +42,7 @@ export const AdminBar = () => {
 			aria-label={__('Open Agent', 'extendify-local')}
 		>
 			<Icon className="shrink-0" icon={magic} width={20} height={20} />
-			<span className="px-1 leading-none">
-				{__('AI Agent', 'extendify-local')}
-			</span>
+			<span className="leading-none">{__('AI Agent', 'extendify-local')}</span>
 		</motion.button>
 	);
 };
