@@ -20,7 +20,7 @@ class Insights
 {
     /**
      * Option name storing each site's A/B test assignments, keyed by the
-     * screen/feature under test (e.g. 'AutoLaunch.WebsiteTitle').
+     * screen/feature under test (e.g. 'AutoLaunch.ShowTitle').
      *
      * @var string
      */
@@ -28,13 +28,19 @@ class Insights
     const ACTIVE_TESTS_OPTION = 'extendify_active_tests';
 
     /**
-     * Tests the plugin knows how to run, each mapped to its available variants.
+     * Tests the plugin knows how to run. Each is rolled independently against
+     * its own rollout percentage, which the partner config supplies.
      *
-     * @var array<string, string[]>
+     * @var string[]
      */
     // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
-    const ACTIVE_TESTS = [
-        'AutoLaunch.WebsiteTitle' => ['A', 'B'],
+    const AVAILABLE_TESTS = [
+        'AutoLaunch.HideEnhanceAI',
+        'AutoLaunch.ShowTitle',
+        'AutoLaunch.SubmitOutside',
+        'AutoLaunch.SubmitCreateWebsite',
+        'AutoLaunch.DescriptionPlaceholderLaw',
+        'AutoLaunch.HeaderParagraphOld',
     ];
 
     /**
@@ -69,25 +75,40 @@ class Insights
 
     /**
      * Assign A/B variants for the known tests based on the partner's active
-     * tests. Each active test is rolled once and kept on return visits;
+     * tests. Each active test is rolled once;
      * inactive tests are dropped.
      *
-     * @param string[] $activeTests Test keys the partner has enabled.
+     * @param string[] $activeTests Active tests in `Name:Percentage` form
+     *                              (e.g. 'AutoLaunch.ShowTitle:20'); a bare
+     *                              name defaults to a 50% rollout.
      * @return void
      */
     public static function setup(array $activeTests = [])
     {
         $assignments = \get_option(self::ACTIVE_TESTS_OPTION, []);
 
-        foreach (self::ACTIVE_TESTS as $key => $variants) {
-            if (!in_array($key, $activeTests, true)) {
+        $percentages = [];
+        foreach ($activeTests as $entry) {
+            list($key, $percentage) = array_pad(explode(':', $entry, 2), 2, null);
+            $percentages[$key] = is_numeric($percentage) ? (float) $percentage : 50.0;
+        }
+
+        foreach (self::AVAILABLE_TESTS as $key) {
+            if (!array_key_exists($key, $percentages)) {
                 unset($assignments[$key]);
                 continue;
             }
 
-            // Roll once so a returning visitor keeps the same variant.
+            // Roll once so the site keeps the same variant.
             if (!isset($assignments[$key])) {
-                $assignments[$key] = $variants[random_int(0, count($variants) - 1)];
+                $assignments[$key] = [
+                    // The percentage is variant B's rollout share: 50 -> 50% A / 50% B,
+                    // 20 -> 80% A / 20% B.
+                    'variant' => random_int(1, 10000) <= $percentages[$key] * 100 ? 'B' : 'A',
+                    'percentage' => $percentages[$key],
+                    // ISO 8601 (UTC)
+                    'assignedAt' => gmdate('c'),
+                ];
             }
         }
 

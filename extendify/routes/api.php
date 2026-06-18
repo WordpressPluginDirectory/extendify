@@ -46,6 +46,7 @@ use Extendify\Shared\Controllers\DataController as SharedDataController;
 use Extendify\Shared\Controllers\ImageGenerationController;
 use Extendify\Shared\Services\PluginsActivation\SimplyBook as SimplyBookActivation;
 use Extendify\Shared\Services\PluginsActivation\TranslatePress as TranslatePressActivation;
+use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
 
 \add_action(
     'rest_api_init',
@@ -150,6 +151,10 @@ use Extendify\Shared\Services\PluginsActivation\TranslatePress as TranslatePress
         ApiRouter::post(
             '/' . TranslatePressActivation::slug() . '/create-account',
             [TranslatePressActivation::class, 'createAccount']
+        );
+        ApiRouter::post(
+            '/' . ImagifyActivation::slug() . '/create-account',
+            [ImagifyActivation::class, 'createAccount']
         );
     }
 );

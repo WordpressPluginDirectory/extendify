@@ -74,4 +74,8 @@ export const pluginsActivation = {
 		createAccountCallback: (data) =>
 			createAccount({ slug: 'translatepress-multilingual', ...data }),
 	},
+	imagify: {
+		createAccountCallback: (data) =>
+			createAccount({ slug: 'imagify', ...data }),
+	},
 };

@@ -370,3 +370,56 @@ describe('detachKeyboardEntry — undecorate', () => {
 		expect(el.hasAttribute('role')).toBe(false);
 	});
 });
+
+// focusout → hideBar defers via setTimeout(0); if the focused element
+// detached first, it must skip hideBar or it tears down the just-rendered bar.
+describe('attachKeyboardEntry — onFocusOut deferred hideBar', () => {
+	beforeEach(() => {
+		jest.useFakeTimers();
+	});
+
+	afterEach(() => {
+		jest.useRealTimers();
+	});
+
+	const fireFocusOut = (target) =>
+		target.dispatchEvent(new FocusEvent('focusout', { bubbles: true }));
+
+	it('does NOT hide the bar when the focusout target detaches before the deferred check', async () => {
+		const tagged = document.createElement('div');
+		tagged.setAttribute('data-extendify-agent-block-id', '1');
+		document.body.appendChild(tagged);
+		const editable = document.createElement('textarea');
+		document.body.appendChild(editable);
+
+		const { attachKeyboardEntry } = await loadModule();
+		const { hideBar } = require('@quick-edit/lib/hover-bar');
+		attachKeyboardEntry({ getSession: () => null });
+		hideBar.mockClear();
+
+		fireFocusOut(editable);
+		editable.remove();
+		jest.advanceTimersByTime(0);
+
+		expect(hideBar).not.toHaveBeenCalled();
+	});
+
+	it('still hides the bar when focus leaves a tagged block to an attached non-tagged element', async () => {
+		const tagged = document.createElement('div');
+		tagged.setAttribute('data-extendify-agent-block-id', '1');
+		document.body.appendChild(tagged);
+		const otherButton = document.createElement('button');
+		document.body.appendChild(otherButton);
+
+		const { attachKeyboardEntry } = await loadModule();
+		const { hideBar } = require('@quick-edit/lib/hover-bar');
+		attachKeyboardEntry({ getSession: () => null });
+		hideBar.mockClear();
+
+		fireFocusOut(tagged);
+		otherButton.focus();
+		jest.advanceTimersByTime(0);
+
+		expect(hideBar).toHaveBeenCalled();
+	});
+});

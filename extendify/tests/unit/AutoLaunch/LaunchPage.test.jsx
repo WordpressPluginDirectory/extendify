@@ -82,9 +82,11 @@ describe('AutoLaunchPage — hideAutoLaunchExitLink flag', () => {
 	});
 });
 
-describe('AutoLaunchPage — AutoLaunch.WebsiteTitle A/B test', () => {
-	test('shows the alternate heading and subtitle for variant B', () => {
-		window.extLaunchData.activeTests = { 'AutoLaunch.WebsiteTitle': 'B' };
+describe('AutoLaunchPage — AutoLaunch.HeaderParagraphOld A/B test', () => {
+	test('shows the old Launch-era heading and paragraph for variant B', () => {
+		window.extLaunchData.activeTests = {
+			'AutoLaunch.HeaderParagraphOld': { variant: 'B' },
+		};
 		render(<LaunchPage />);
 		expect(screen.getByText(/Tell Us About Your Website/i)).toBeInTheDocument();
 		expect(
@@ -92,8 +94,10 @@ describe('AutoLaunchPage — AutoLaunch.WebsiteTitle A/B test', () => {
 		).toBeInTheDocument();
 	});
 
-	test('shows the current heading and no subtitle for variant A', () => {
-		window.extLaunchData.activeTests = { 'AutoLaunch.WebsiteTitle': 'A' };
+	test('shows the current heading and no paragraph for variant A', () => {
+		window.extLaunchData.activeTests = {
+			'AutoLaunch.HeaderParagraphOld': { variant: 'A' },
+		};
 		render(<LaunchPage />);
 		expect(
 			screen.getByText(/Describe the website you want to build/i),
@@ -109,5 +113,16 @@ describe('AutoLaunchPage — AutoLaunch.WebsiteTitle A/B test', () => {
 		expect(
 			screen.getByText(/Describe the website you want to build/i),
 		).toBeInTheDocument();
+	});
+});
+
+describe('AutoLaunchPage — content container', () => {
+	test('always scrolls on overflow', () => {
+		window.extLaunchData.activeTests = {};
+		const { container } = render(<LaunchPage />);
+		expect(container.querySelector('.flex-1')).toHaveClass(
+			'min-h-0',
+			'overflow-y-auto',
+		);
 	});
 });

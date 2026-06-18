@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'extendify/extendify',
-        'pretty_version' => '3.1.0',
-        'version' => '3.1.0.0',
-        'reference' => 'e93132ea569a00344911513b7c6c2ad766f339a7',
+        'pretty_version' => '3.1.1',
+        'version' => '3.1.1.0',
+        'reference' => '01459bab472337be6959ee82c354e3b5531b9a55',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'extendify/extendify' => array(
-            'pretty_version' => '3.1.0',
-            'version' => '3.1.0.0',
-            'reference' => 'e93132ea569a00344911513b7c6c2ad766f339a7',
+            'pretty_version' => '3.1.1',
+            'version' => '3.1.1.0',
+            'reference' => '01459bab472337be6959ee82c354e3b5531b9a55',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

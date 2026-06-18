@@ -104,7 +104,7 @@ msgid "Edit or update the image"
 msgstr "Уреди или ажурирај слику"
 
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:25
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:25
 #: src/Assist/components/ImageUploader.jsx:139
 msgid "Replace image"
 msgstr "Замени слику"
@@ -209,7 +209,7 @@ msgstr "Изабери стране веб места"
 #: app/PluginNotifications/NotificationsListTable.php:173
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:24
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
 #: src/Assist/components/dashboard/buttons/DismissButton.jsx:17
 #: src/Assist/components/dashboard/LaunchCard.jsx:119
@@ -225,7 +225,7 @@ msgstr "Отпреми лого сајта"
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:82
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
 #: src/Assist/components/tasks/UpdateLogo.jsx:19
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:26
@@ -280,9 +280,9 @@ msgstr "Унеси опис веб места..."
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:78
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:82
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Agent/components/ImageUploader.jsx:225
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:255
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:133
@@ -694,9 +694,9 @@ msgstr "Поглед у Арктик"
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:10
 #: public/build/extendify-help-center-990a6039c48263c53985.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:22
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:25
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:22
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:25
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:131
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:136
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:173
@@ -1369,7 +1369,7 @@ msgid "Ensure your website is on-brand by adding your logo."
 msgstr "Osigurajte da vaš sajt bude u skladu sa brendom dodavanjem vašeg logotipa"
 
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Assist/tasks/upload-logo.js:15
 #: src/Assist/tasks/upload-site-icon.js:15
 #: src/QuickEdit/components/InlineEditor.jsx:403
@@ -1497,7 +1497,7 @@ msgid "Insert at bottom"
 msgstr "Уметни на дно"
 
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/Draft/components/InsertMenu.jsx:247
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:283
 msgid "Try again"
@@ -1579,7 +1579,7 @@ msgid "Importing image..."
 msgstr "Увоз слике..."
 
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:10
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Draft/components/image-generation/ImagePreview.jsx:90
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:242
 msgid "Use this image"
@@ -1646,7 +1646,7 @@ msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Претражи и додај бесплатне фотографије са Unsplash.com"
 
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:10
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Draft/components/GenerateImageButtons.jsx:74
 #: src/Draft/pages/Home.jsx:48
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:187
@@ -1654,7 +1654,7 @@ msgid "Search Unsplash"
 msgstr "Претражи Unsplash"
 
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:10
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Draft/components/stock-images/UnsplashImages.jsx:13
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:232
 msgid "No images found."
@@ -2602,11 +2602,11 @@ msgid "%1$s of %2$s"
 msgstr "%1$s од %2$s"
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:16
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-help-center-990a6039c48263c53985.js:7
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
 #: src/Agent/components/GuidedTour.jsx:473
-#: src/AutoLaunch/components/DescriptionGathering.jsx:239
+#: src/AutoLaunch/components/DescriptionGathering.jsx:265
 #: src/HelpCenter/components/tours/GuidedTour.jsx:480
 #: src/Launch/components/PageControl.jsx:396
 msgid "Next"
@@ -2620,7 +2620,7 @@ msgid "Blog"
 msgstr "Блог"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:44
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:44
 #: public/build/extendify-common-daccb23caf676cfb742d.js:37
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/AutoLaunch/hooks/useCreateSite.js:495
@@ -2629,8 +2629,8 @@ msgid "Events"
 msgstr "Догађаји"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:10
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:39
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:10
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:39
 #: public/build/extendify-common-daccb23caf676cfb742d.js:15
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:3
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:14
@@ -2642,7 +2642,7 @@ msgstr "Догађаји"
 msgid "Added by Launch"
 msgstr "Додато од стране Launch"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:32
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:32
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:1
 #: src/AutoLaunch/hooks/useCreateSite.js:368
 #: src/Launch/api/WPApi.js:51
@@ -2654,7 +2654,7 @@ msgstr "Навигација заглавља"
 msgid "Start over?"
 msgstr "Почни поново?"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:49
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:49
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:155
 #: src/Launch/components/RestartLaunchModal.jsx:197
@@ -2740,9 +2740,9 @@ msgstr "Прескочи"
 msgid "Press to select"
 msgstr "Притисни да одабереш"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/components/DescriptionGathering.jsx:161
+#: src/AutoLaunch/components/DescriptionGathering.jsx:231
 #: src/Launch/pages/SiteInformation.jsx:181
 msgid "Enter your website name"
 msgstr "Унесите име вашег веб места"
@@ -2842,14 +2842,14 @@ msgstr "Преусмеравање за 3, 2, 1..."
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Наишли смо на грешку сервера коју не можемо отклонити. Молимо вас да поново учитате страницу и покушате поново."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:7
 #: src/Launch/pages/NeedsTheme.jsx:10
 msgid "One more thing before we start."
 msgstr "Још једна ствар пре него што почнемо"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:11
 #: src/Launch/pages/NeedsTheme.jsx:14
@@ -2858,7 +2858,7 @@ msgstr "Здраво, Launch покреће Extendable и потребан је 
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:1
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:24
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:39
@@ -2900,8 +2900,8 @@ msgstr "Преузимање..."
 
 #: public/build/extendify-library-d552629d6f7ca24f0750.js:1
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Library/components/topbar/CloseButton.jsx:9
 #: src/Library/components/topbar/CloseButton.jsx:16
 #: src/PageCreator/components/topbar/CloseButton.jsx:9
@@ -3125,9 +3125,9 @@ msgid "Share your vision, and we'll craft a website that's perfectly tailored to
 msgstr "Поделите своју визију, а ми ћемо направити веб место савршено прилагођено вашим потребама, спремно за брзо покретање. Почнимо тако што ћемо сазнати више о томе шта градите."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:19
-#: src/AutoLaunch/LaunchPage.jsx:38
+#: src/AutoLaunch/LaunchPage.jsx:43
 #: src/Launch/LaunchPage.jsx:57
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Покретање - Веб креирање уз вештачку интелигенцију"
@@ -3153,7 +3153,7 @@ msgid "Please wait while we build some website options for you to select from."
 msgstr "Молимо вас сачекајте док креирамо неке опције веб места за вас да одаберете."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:41
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:41
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:14
 #: src/AutoLaunch/hooks/useCreateSite.js:464
 #: src/Launch/pages/CreatingSite.jsx:424
@@ -3161,7 +3161,7 @@ msgid "Creating blog sample data"
 msgstr "Креирање примерних података за блог"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:8
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:8
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:5
 #: src/AutoLaunch/functions/nav.js:215
 #: src/Launch/api/WPApi.js:400
@@ -3206,14 +3206,14 @@ msgstr "Литвански"
 msgid "Select your site's tone"
 msgstr "Одабери тон свог сајта"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/components/DescriptionGathering.jsx:143
+#: src/AutoLaunch/components/DescriptionGathering.jsx:213
 #: src/Launch/pages/SiteInformation.jsx:168
 msgid "Website title (required)"
 msgstr "Наслов веб сајта (обавезно)"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:41
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:41
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/AutoLaunch/functions/pages.js:215
 msgid "Hello World Featured Image"
@@ -3256,7 +3256,7 @@ msgid "AI Page Generator"
 msgstr "Генератор страница вештачке интелигенције"
 
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:25
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:25
 #: src/PageCreator/components/content/CustomTextarea.jsx:45
 msgid "Edit"
 msgstr "Уреди"
@@ -3378,9 +3378,9 @@ msgstr "Нпр. Лични финансијски блог који дели с�
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "На пример, бесплатна е-књига са практичним саветима и стратегијама за продуктивност која ће вам помоћи да останете фокусирани, ефикасно управљате временом и постигнете своје циљеве."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/components/DescriptionGathering.jsx:41
+#: src/AutoLaunch/components/DescriptionGathering.jsx:199
 #: src/Launch/pages/SiteInformation.jsx:204
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "На пример, лични фотографски портфолио са колекцијом пејзажне, портретне и уличне фотографије, који бележи тренутке из целог света"
@@ -3405,9 +3405,9 @@ msgstr "Описите свој блог"
 msgid "Describe your Landing Page"
 msgstr "Описати вашу одредишну страницу"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/components/DescriptionGathering.jsx:171
+#: src/AutoLaunch/components/DescriptionGathering.jsx:239
 #: src/Launch/pages/SiteInformation.jsx:214
 msgid "Describe your website"
 msgstr "Описите своје веб место"
@@ -3432,9 +3432,9 @@ msgstr "Коју врсту веб места креирате?"
 msgid "Tell Us About Your Landing Page"
 msgstr "Реците нам о вашој одредишној страници"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/LaunchPage.jsx:132
+#: src/AutoLaunch/LaunchPage.jsx:151
 #: src/Launch/pages/SiteInformation.jsx:105
 msgid "Tell Us About Your Website"
 msgstr "Реците нам о вашем веб сајту"
@@ -3486,7 +3486,7 @@ msgstr "Генериши своју страну"
 msgid "When ready, press here to generate your page."
 msgstr "Када будете спремни, притисните овде да генеришете страницу."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ToolTip.jsx:66
 msgid "Close ToolTip"
 msgstr "Затвори објашњење"
@@ -3575,9 +3575,9 @@ msgstr "Предлог:"
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:70
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:76
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:82
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Agent/components/ChatInput.jsx:224
 #: src/Agent/components/ImageUploader.jsx:189
 #: src/Agent/icons.jsx:214
@@ -3869,7 +3869,7 @@ msgstr "Хајде да прегледамо ваше препоруке зас�
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "На основу датих података, наша вештачка интелигенција је предложила најбоља подешавања за ваш сајт. Брзо прегледајте и потврдите да је све у реду пре него што наставите."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:37
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:37
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:14
 #: src/AutoLaunch/hooks/useCreateSite.js:399
 #: src/Launch/pages/CreatingSite.jsx:240
@@ -3881,18 +3881,18 @@ msgstr "Навигација у подножју"
 msgid "Adding imprint page"
 msgstr "Додавање странице са импресумом"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/EditPageToolTip.jsx:8
 msgid "Tooltip pointing to the edit page button"
 msgstr "Саветник који показује на дугме за уређивање странице"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/EditPageToolTip.jsx:11
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Добро дошли на ваше ново веб место! Када будете спремни, притисните овде да уредите ову страницу."
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:7
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/Agent/components/PageDocument.jsx:25
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:167
 msgid "Remove"
@@ -3920,9 +3920,9 @@ msgstr "Потврди"
 msgid "Thinking..."
 msgstr "Размишљање..."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/LaunchPage.jsx:90
+#: src/AutoLaunch/LaunchPage.jsx:129
 #: src/Launch/components/PageControl.jsx:328
 msgid "WP Admin Dashboard"
 msgstr "WP Админ контрола"
@@ -4071,7 +4071,7 @@ msgstr "Инсталирај додатак"
 msgid "Go through the AI website creation process again to create a new site."
 msgstr "Поново прођите кроз процес креирања веб сајта помоћу ВИ да бисте направили ново веб место."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:49
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:49
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:173
 #: src/Launch/components/RestartLaunchModal.jsx:206
@@ -4426,7 +4426,7 @@ msgstr "Иконица блога"
 msgid "Business Icon"
 msgstr "Пословна иконица"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
 #: src/AutoLaunch/icons.jsx:87
 #: src/Launch/svg/Checkmark.jsx:15
@@ -4608,7 +4608,7 @@ msgstr "Иконица језика"
 msgid "Down Arrow Icon"
 msgstr "Иконица стрелице надоле"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-library-d552629d6f7ca24f0750.js:1
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:1
 #: src/AutoLaunch/icons.jsx:5
@@ -4715,98 +4715,98 @@ msgid "The network seems unstable. Retrying..."
 msgstr "Mreža izgleda nestabilno. Pokušavam ponovo..."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:18
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:18
 #: src/AutoLaunch/hooks/useCreateSite.js:148
 msgid "Setting up functionality for your website"
 msgstr "Подешавање функционалности за ваш веб сајт"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:28
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:28
 #: src/AutoLaunch/hooks/useCreateSite.js:275
 msgid "Adding admin configurations"
 msgstr "Dodavanje administratorskih podešavanja"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:30
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:30
 #: src/AutoLaunch/hooks/useCreateSite.js:340
 msgid "Installing fonts locally"
 msgstr "Instalacija fontova lokalno"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:32
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:32
 #: src/AutoLaunch/hooks/useCreateSite.js:366
 msgid "Working on the navigation"
 msgstr "Рад на навигацији"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:34
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:34
 #: src/AutoLaunch/hooks/useCreateSite.js:378
 msgid "Perfecting a landing page"
 msgstr "Usavršavanje odredišne stranice"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:39
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:39
 #: src/AutoLaunch/hooks/useCreateSite.js:410
 msgid "Creating pages"
 msgstr "Kreiranje stranica"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:44
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:44
 #: src/AutoLaunch/hooks/useCreateSite.js:484
 msgid "Setting up your online store"
 msgstr "Podešavanje vaše online продавнице"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/hooks/useCreateSite.js:571
 msgid "All done!"
 msgstr "Sve završeno!"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/hooks/useCreateSite.js:585
 msgid "Something went wrong during the final steps. We will try again but you may need to refresh the page."
 msgstr "Догодила се грешка током завршних корака. Покушаћемо поново, али можда ћете морати да освежите страницу"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/hooks/useCreateSite.js:616
 msgid "Having some trouble with this step. Trying again..."
 msgstr "Imate problema s ovim korakom. Pokušavam ponovo..."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/components/CreatingSite.jsx:94
 msgid "We are experiencing some delays"
 msgstr "Imamo kašnjenja"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/components/CreatingSite.jsx:97
 msgid "Pausing for a few seconds"
 msgstr "Pauziranje na nekoliko sekundi"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:116
 msgid "Start Over?"
 msgstr "Ponovo početi?"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:121
 msgid "It looks like you have been here before. We need to clean up some things before we can continue."
 msgstr "Изгледа да сте већ били овде. Морамо да очистимо неке ствари пре него што можемо да наставимо"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:49
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:49
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:129
 #, js-format
 msgid "%s pages/posts will be deleted."
 msgstr "%1$s страница/чланака ће бити избрисано"
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:1
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:49
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:49
 #: src/Agent/components/messages/StatusMessage.jsx:20
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:164
 msgid "Processing..."
 msgstr "Obrada..."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
-#: src/AutoLaunch/LaunchPage.jsx:146
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
+#: src/AutoLaunch/LaunchPage.jsx:165
 msgid "Describe the website you want to build"
 msgstr "Опишите веб сајт који желите да направите"
 
@@ -4816,7 +4816,7 @@ msgid "We were unable to generate color palettes. Please try again."
 msgstr "Nismo uspeli da generišemo palete boja. Molimo pokušajte ponovo"
 
 #. translators: vibe in this context is a noun - the feeling of their site design.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:32
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:32
 #: src/AutoLaunch/hooks/useCreateSite.js:349
 msgid "Setting the website style"
 msgstr "Подешавање стила веб сајта"
@@ -4875,8 +4875,8 @@ msgstr "Ажурирана боја теме"
 msgid "Canceled the theme color update"
 msgstr "Отказано ажурирање боје теме"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
-#: src/AutoLaunch/components/DescriptionGathering.jsx:254
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
+#: src/AutoLaunch/components/DescriptionGathering.jsx:289
 msgid "Enhance with AI"
 msgstr "Унапреди са ВИ"
 
@@ -4890,7 +4890,7 @@ msgstr ""
 "Желите ли да истражите друге боје сајта?"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:24
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:24
 #: src/AutoLaunch/fetchers/get-home.js:30
 msgid "Preparing your home page"
 msgstr "Припрема почетне странице"
@@ -4902,25 +4902,25 @@ msgid "Finding the perfect images"
 msgstr "Тражење савршених слика"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:15
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:15
 #: src/AutoLaunch/fetchers/get-logo.js:28
 msgid "Generating a logo"
 msgstr "Генерисање лога"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:26
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:26
 #: src/AutoLaunch/fetchers/get-pages.js:33
 msgid "Preparing your pages"
 msgstr "Припрема страница"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:6
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:6
 #: src/AutoLaunch/fetchers/get-plugins.js:31
 msgid "Setting up site functionality"
 msgstr "Подешавање функционалности сајта"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:13
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:13
 #: src/AutoLaunch/fetchers/get-profile.js:25
 msgid "Creating a site profile"
 msgstr "Креирање профила сајта"
@@ -4932,7 +4932,7 @@ msgid "Generating site content ideas"
 msgstr "Генерисање идеја за садржај"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:21
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:21
 #: src/AutoLaunch/fetchers/get-style.js:26
 msgid "Picking the perfect design"
 msgstr "Одабир савршеног дизајна"
@@ -5216,8 +5216,8 @@ msgstr "Направите свој сајт сада"
 msgid "Booting things up"
 msgstr "Покретање"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
-#: src/AutoLaunch/components/DescriptionGathering.jsx:181
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
+#: src/AutoLaunch/components/DescriptionGathering.jsx:149
 msgid "Enhancing the website description..."
 msgstr "Унапређивање описа веб сајта..."
 
@@ -5257,17 +5257,17 @@ msgstr "Нисмо успели да пронађемо ниједан стил 
 msgid "Loading website style options..."
 msgstr "Учитавање опција стила веб сајта..."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/icons.jsx:97
 msgid "Three bars loading animation"
 msgstr "Анимација учитавања са три траке"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/icons.jsx:193
 msgid "Site creation loading animation"
 msgstr "Анимација учитавања креирања сајта"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:6
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:6
 #: src/AutoLaunch/functions/pages.js:133
 #, js-format
 msgid "Adding page: %s"
@@ -5341,7 +5341,7 @@ msgid "We were unable to apply your selected colors. Please try again."
 msgstr "Нисмо могли да применимо изабране боје. Покушајте поново."
 
 #. translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:37
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:37
 #: src/AutoLaunch/hooks/useCreateSite.js:390
 msgid "206-555-0100"
 msgstr "060-555-0100"
@@ -5359,12 +5359,12 @@ msgid "Hey there! It looks like you are trying to change your site design, but y
 msgstr "Здраво! Изгледа да покушавате да промените дизајн веб места, али нисте на страници где то можемо урадити."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:3
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:3
 #: src/AutoLaunch/fetchers/get-design-build.js:29
 msgid "Loading your design"
 msgstr "Учитавање дизајна"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:32
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:32
 #: src/AutoLaunch/functions/nav.js:248
 msgid "Get Started"
 msgstr "Започните"
@@ -5375,62 +5375,62 @@ msgstr "Започните"
 msgid "The %s plugin is not active."
 msgstr "Додатак %s није укључен."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/Loading.jsx:12
 msgid "Setting up plugins for you..."
 msgstr "Подешавање додатака за вас..."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/Loading.jsx:15
 msgid "Please wait while we install your plugins and create accounts with the selected providers. This should only take a moment."
 msgstr "Сачекајте док инсталирамо ваше додатке и креирамо налоге код одабраних провајдера. Ово ће трајати само тренутак."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupComplete.jsx:23
 msgid "Setup complete"
 msgstr "Постављање завршено"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupComplete.jsx:26
 msgid "Your plugin accounts have been set up. Account activation may take a moment to complete."
 msgstr "Ваши налози за додатке су подешени. Активирање налога може потрајати неколико тренутака."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:46
 msgid "Almost done! Let's finish setting up your plugins"
 msgstr "Скоро готово! Завршимо подешавање ваших додатака"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:86
 msgid "Term of Service"
 msgstr "Услови коришћења"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:113
 msgid "Email address"
 msgstr "Адреса е-поште"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:124
 msgid "This email will be used to create accounts with the selected plugin providers. Form protected by reCAPTCHA."
 msgstr "Ова е-пошта ће се користити за креирање налога код одабраних добављача додатака. Образац је заштићен reCAPTCHA-ом."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:139
 msgid "I agree to create accounts with the selected providers using my email address, and to their applicable Terms of Service."
 msgstr "Слажем се да направим налоге код одабраних провајдера користећи своју адресу е-поште и прихватам њихове важеће услове коришћења."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:154
 msgid "I wish to receive communications about news and/or promotions from selected providers."
 msgstr "Желим да примам обавештења о вестима и/или промоцијама од одабраних пружалаца услуга."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:167
 msgid "No thanks"
 msgstr "Не, хвала"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:178
 msgid "Create accounts"
 msgstr "Направи налоге"
@@ -5438,7 +5438,7 @@ msgstr "Направи налоге"
 #: app/QuickEdit/Frontend.php:67
 #: app/QuickEdit/Frontend.php:72
 #: app/Toolbar/Frontend.php:192
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 msgid "Quick Edit"
 msgstr "Брзо уређивање"
 
@@ -5485,8 +5485,8 @@ msgid "Image"
 msgstr "Слика"
 
 #: app/QuickEdit/Schemas/NavigationLink.php:18
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/NavItemModal.jsx:179
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:120
 msgid "Label"
@@ -5527,347 +5527,347 @@ msgstr "(отвара у новом језичку)"
 msgid "WP Admin"
 msgstr "WP администрација"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 msgid "Your session expired. Please refresh the page and try again."
 msgstr "Ваша сеанса је истекла. Освежите страницу и покушајте поново."
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 msgid "Sorry, something went wrong. Please try again or try editing something else."
 msgstr "Извините, дошло је до грешке. Покушајте поново или уредите нешто друго."
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 #: src/QuickEdit/components/toolbar/ColorButton.jsx:79
 msgid "Clear text color"
 msgstr "Уклони боју текста"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 #: src/QuickEdit/components/toolbar/ColorButton.jsx:80
 msgid "Clear highlight"
 msgstr "Уклони истицање"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 #: src/QuickEdit/components/toolbar/HeadingLevelButton.jsx:38
 #: src/QuickEdit/components/toolbar/HeadingLevelButton.jsx:56
 msgid "Heading level"
 msgstr "Ниво заглавља"
 
 #. translators: %d is the heading level number 1-6.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/HeadingLevelButton.jsx:69
 #, js-format
 msgid "Heading %d"
 msgstr "Наслов %d"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:15
 msgid "Align text left"
 msgstr "Поравнај текст улево"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:20
 msgid "Align text center"
 msgstr "Поравнај текст по центру"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:25
 msgid "Align text right"
 msgstr "Поравнај текст удесно"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:86
 msgid "Align text"
 msgstr "Поравнај текст"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:103
 msgid "Text alignment"
 msgstr "Поравнање текста"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/BlockTextEditor.jsx:454
 msgid "Quick Edit toolbar"
 msgstr "Трака са алаткама за брзо уређивање"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/BlockTextEditor.jsx:831
 msgid "Text color"
 msgstr "Боја текста"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/BlockTextEditor.jsx:836
 msgid "Highlight color"
 msgstr "Боја истицања"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/BlockTextEditor.jsx:871
 #: src/QuickEdit/components/BlockTextEditor.jsx:882
 msgid "Saving…"
 msgstr "Снимање…"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:80
 msgid "Image generation failed"
 msgstr "Генерисање слике није успело"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:200
 msgid "Generate image with AI"
 msgstr "Генериши слику помоћу ВИ"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:222
 msgid "Image prompt"
 msgstr "Подсетник за слику"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:223
 msgid "Describe the image you want to create"
 msgstr "Опишите слику коју желите да креирате"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:235
 msgid "Aspect ratio"
 msgstr "Однос ширине и висине"
 
 #. translators: image aspect ratio — a square (1:1) shape.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:7
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:7
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:244
 msgid "Square"
 msgstr "Квадрат"
 
 #. translators: image aspect ratio — landscape orientation (wider than tall).
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:10
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:10
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:251
 msgid "Landscape"
 msgstr "Широки формат"
 
 #. translators: image aspect ratio — portrait orientation (taller than wide).
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:13
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:13
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:258
 msgid "Portrait"
 msgstr "Портрет"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:13
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:13
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:266
 msgid "Generating image…"
 msgstr "Генерисање слике…"
 
 #. translators: %1$d is the number of credits used, %2$d is the total credits available.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:272
 #, js-format
 msgid "%1$d of %2$d credits used"
 msgstr "%1$d од %2$d кредита искоришћено"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:231
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:291
 #: src/QuickEdit/components/modals/ProductImageModal.jsx:30
 msgid "Use image"
 msgstr "Користи слику"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:306
 msgid "Out of credits"
 msgstr "Нема више кредита"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:307
 msgid "Generate"
 msgstr "Генериши"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/NavItemModal.jsx:130
 msgid "Pick a new destination"
 msgstr "Изаберите нову дестинацију"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/NavItemModal.jsx:134
 msgid "Currently linked to:"
 msgstr "Тренутно повезано са:"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/NavItemModal.jsx:154
 #: src/QuickEdit/components/modals/SocialLinkModal.jsx:103
 msgid "URL"
 msgstr "URL"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/NavItemModal.jsx:163
 msgid "Edit navigation link"
 msgstr "Уреди навигациону везу"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductPriceModal.jsx:76
 msgid "Edit price"
 msgstr "Уреди цену"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductPriceModal.jsx:99
 msgid "Regular price"
 msgstr "Редовна цена"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductPriceModal.jsx:112
 msgid "Sale price (optional)"
 msgstr "Цена на попусту (опционо)"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:20
 msgid "Edit product name"
 msgstr "Уреди назив производа"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:21
 msgid "Edit short description"
 msgstr "Уреди кратак опис"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:22
 msgid "Edit description"
 msgstr "Измени опис"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:83
 msgid "Edit product field"
 msgstr "Уреди поље производа"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:101
 msgid "Product name"
 msgstr "Име производа"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:110
 msgid "Short description"
 msgstr "Кратак опис"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:120
 msgid "Description"
 msgstr "Опис"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:24
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:119
 msgid "Site title"
 msgstr "Наслов сајта"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:25
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:128
 msgid "Tagline"
 msgstr "Опис сајта"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:100
 msgid "Site identity"
 msgstr "Идентитет сајта"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:156
 msgid "Change logo"
 msgstr "Промени логотип"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:157
 msgid "Choose logo"
 msgstr "Одаберите логотип"
 
 #. translators: %s is the social network name, e.g. "Facebook".
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/SocialLinkModal.jsx:79
 #, js-format
 msgid "Edit %s link"
 msgstr "Уреди %s везу"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/SocialLinkModal.jsx:82
 msgid "Edit social link"
 msgstr "Уреди друштвену везу"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:204
 msgid "Describe an image to search Unsplash"
 msgstr "Опиши слику за претрагу на Unsplash-у"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:226
 msgid "Loading images…"
 msgstr "Учитавање слика…"
 
 #. translators: image credit line; precedes the photographer's name.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:289
 msgid "Photo by"
 msgstr "Фотографија од"
 
 #. translators: precedes the "Unsplash" brand link.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:313
 msgid "Photos powered by"
 msgstr "Фотографије омогућене од стране"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:96
 msgid "Edit form field"
 msgstr "Уреди поље обрасца"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:128
 msgid "Placeholder"
 msgstr "Држач места"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:135
 msgid "Description (shown below the field)"
 msgstr "Опис (приказан испод поља)"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:142
 msgid "Required field"
 msgstr "Обавезно поље"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:221
 msgid "Media library is not loaded."
 msgstr "Библиотека садржаја није учитана."
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:229
 msgid "Upload image"
 msgstr "Отпреми слику"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:230
 #: src/QuickEdit/components/InlineEditor.jsx:400
 msgid "Pick from media library"
 msgstr "Изаберите из медијске библиотеке"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:406
 msgid "Generate with AI"
 msgstr "Генериши помоћу ВИ"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:409
 msgid "Search for new image"
 msgstr "Претражи нову слику"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:533
 msgid "No editor for this block type yet."
 msgstr "Још увек нема уређивача за ову врсту блока."
 
 #. translators: %s is the multilingual plugin name, e.g. "TranslatePress".
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:22
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:22
 #, js-format
 msgid "Quick Edit can't edit translated content — manage translations in %s."
 msgstr "Брзо уређивање не може изменити преведени садржај — управљајте преводима у %s"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:22
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:22
 msgid "Quick Edit can't edit translated content on this page."
 msgstr "Брзо уређивање не може да уређује преведен садржај на овој страни."
 
@@ -5886,38 +5886,48 @@ msgid "Replace product image"
 msgstr "Замени слику производа"
 
 #. translators: %s is a snippet of the block's text content.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:25
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:25
 #, js-format
 msgid "Ask AI about \"%s\""
 msgstr "Питај ВИ о \"%s\""
 
 #. translators: %1$s is the action verb (Edit / Replace image), %2$s is a snippet of the block's text content.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:28
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:28
 #, js-format
 msgid "%1$s \"%2$s\""
 msgstr "%1$s „%2$s“"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:28
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:28
 #: src/QuickEdit/state/undo.js:95
 msgid "Reverted last change."
 msgstr "Поништена последња измена"
 
 #. translators: %s is the underlying error message.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:31
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:31
 #: src/QuickEdit/state/undo.js:107
 #, js-format
 msgid "Undo failed: %s"
 msgstr "Поништавање није успело: %s"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:31
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:31
 #: src/QuickEdit/state/undo.js:108
 msgid "unknown error"
 msgstr "непозната грешка"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
-#: src/AutoLaunch/LaunchPage.jsx:135
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
+#: src/AutoLaunch/LaunchPage.jsx:154
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time."
 msgstr "Поделите своју визију, а ми ћемо креирати веб сајт савршено прилагођен вашим потребама, спреман за покретање у најкраћем року."
+
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
+#: src/AutoLaunch/components/DescriptionGathering.jsx:195
+msgid "E.g., A boutique law firm specializing in family law, estate planning, and real estate, offering trusted, personalized counsel to clients across the region."
+msgstr "На пример, Бутик адвокатска канцеларија специјализована за породично право, планирање имовине и некретнине, нуди поуздане и персонализоване савете клијентима широм региона"
+
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
+#: src/AutoLaunch/components/DescriptionGathering.jsx:264
+msgid "Create website"
+msgstr "Направи веб сајт"
 
 #: app/Toolbar/Admin.php:46
 msgctxt "toolbar style"
@@ -6016,7 +6026,7 @@ msgctxt "animation type"
 msgid "Type"
 msgstr "Tip"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/icons.jsx:55
 msgctxt "icon"
 msgid "Loading animation"

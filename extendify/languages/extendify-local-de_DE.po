@@ -115,9 +115,9 @@ msgstr "Wähle ein Design für deine Website"
 msgid "Searching..."
 msgstr "Suche..."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/components/DescriptionGathering.jsx:161
+#: src/AutoLaunch/components/DescriptionGathering.jsx:231
 #: src/Launch/pages/SiteInformation.jsx:181
 msgid "Enter your website name"
 msgstr "Gib den Namen deiner Website ein"
@@ -165,7 +165,7 @@ msgid "Discard"
 msgstr "Verwerfen"
 
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/Draft/components/InsertMenu.jsx:247
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:283
 msgid "Try again"
@@ -884,7 +884,7 @@ msgid "Page not found"
 msgstr "Seite nicht gefunden"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:44
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:44
 #: public/build/extendify-common-daccb23caf676cfb742d.js:37
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/AutoLaunch/hooks/useCreateSite.js:495
@@ -990,9 +990,9 @@ msgstr "Es ist ein Serverfehler aufgetreten, der nicht behoben werden kann. Bitt
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:78
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:82
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Agent/components/ImageUploader.jsx:225
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:255
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:133
@@ -1096,7 +1096,7 @@ msgstr "Website-Logo setzen"
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:82
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
 #: src/Assist/components/tasks/UpdateLogo.jsx:19
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:26
@@ -1109,7 +1109,7 @@ msgid "Remove image"
 msgstr "Bild entfernen"
 
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:25
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:25
 #: src/Assist/components/ImageUploader.jsx:139
 msgid "Replace image"
 msgstr "Bild ersetzen"
@@ -1134,7 +1134,7 @@ msgstr "Modal schließen"
 #: app/PluginNotifications/NotificationsListTable.php:173
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:24
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
 #: src/Assist/components/dashboard/buttons/DismissButton.jsx:17
 #: src/Assist/components/dashboard/LaunchCard.jsx:119
@@ -1203,7 +1203,7 @@ msgstr "Website-Branche"
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:1
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:24
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:39
@@ -1212,14 +1212,14 @@ msgstr "Website-Branche"
 msgid "Take me there"
 msgstr "Bring mich dorthin"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:11
 #: src/Launch/pages/NeedsTheme.jsx:14
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Launch benötigt Extendable um fortzufahren. Du kannst es über den nachstehenden Link installieren und nach der Aktivierung neu beginnen."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:7
 #: src/Launch/pages/NeedsTheme.jsx:10
@@ -1239,11 +1239,11 @@ msgid "View Site"
 msgstr "Website anzeigen"
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:16
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-help-center-990a6039c48263c53985.js:7
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
 #: src/Agent/components/GuidedTour.jsx:473
-#: src/AutoLaunch/components/DescriptionGathering.jsx:239
+#: src/AutoLaunch/components/DescriptionGathering.jsx:265
 #: src/HelpCenter/components/tours/GuidedTour.jsx:480
 #: src/Launch/components/PageControl.jsx:396
 msgid "Next"
@@ -1309,8 +1309,8 @@ msgstr "Design"
 
 #: public/build/extendify-library-d552629d6f7ca24f0750.js:1
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:1
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Library/components/topbar/CloseButton.jsx:9
 #: src/Library/components/topbar/CloseButton.jsx:16
 #: src/PageCreator/components/topbar/CloseButton.jsx:9
@@ -1408,8 +1408,8 @@ msgid "Launch"
 msgstr "Launch"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:10
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:39
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:10
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:39
 #: public/build/extendify-common-daccb23caf676cfb742d.js:15
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:3
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:14
@@ -1426,7 +1426,7 @@ msgstr "Hinzugefügt von Launch"
 msgid "Start over?"
 msgstr "Von vorne beginnen?"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:49
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:49
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:155
 #: src/Launch/components/RestartLaunchModal.jsx:197
@@ -1441,9 +1441,9 @@ msgstr "Verarbeitung"
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:10
 #: public/build/extendify-help-center-990a6039c48263c53985.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:22
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:25
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:22
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:25
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:131
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:136
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:173
@@ -1699,7 +1699,7 @@ msgid "Importing image..."
 msgstr "Bild wird importiert..."
 
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:10
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Draft/components/image-generation/ImagePreview.jsx:90
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:242
 msgid "Use this image"
@@ -1963,7 +1963,7 @@ msgid "Replace"
 msgstr "Ersetzen"
 
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Assist/tasks/upload-logo.js:15
 #: src/Assist/tasks/upload-site-icon.js:15
 #: src/QuickEdit/components/InlineEditor.jsx:403
@@ -2212,7 +2212,7 @@ msgstr "Verfügbar und genau richtig für deine Website"
 msgid "Get another domain for your site."
 msgstr "Hol dir eine andere Domain für deine Website."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:32
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:32
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:1
 #: src/AutoLaunch/hooks/useCreateSite.js:368
 #: src/Launch/api/WPApi.js:51
@@ -2310,7 +2310,7 @@ msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Kostenlose Stockfotos von Unsplash.com suchen und hinzufügen"
 
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:10
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Draft/components/GenerateImageButtons.jsx:74
 #: src/Draft/pages/Home.jsx:48
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:187
@@ -2318,7 +2318,7 @@ msgid "Search Unsplash"
 msgstr "Unsplash durchsuchen"
 
 #: public/build/extendify-draft-ee16c2683a1b583fd071.js:10
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Draft/components/stock-images/UnsplashImages.jsx:13
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:232
 msgid "No images found."
@@ -3125,9 +3125,9 @@ msgid "Share your vision, and we'll craft a website that's perfectly tailored to
 msgstr "Teile deine Vision, und wir erstellen eine Website, die perfekt auf deine Bedürfnisse zugeschnitten ist und in kürzester Zeit startbereit ist. Lass uns damit beginnen, mehr über dein Projekt zu erfahren."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:19
-#: src/AutoLaunch/LaunchPage.jsx:38
+#: src/AutoLaunch/LaunchPage.jsx:43
 #: src/Launch/LaunchPage.jsx:57
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Launch - KI-gestützte Web-Erstellung"
@@ -3153,7 +3153,7 @@ msgid "Please wait while we build some website options for you to select from."
 msgstr "Bitte warte, während wir einige Website-Optionen für dich erstellen."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:41
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:41
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:14
 #: src/AutoLaunch/hooks/useCreateSite.js:464
 #: src/Launch/pages/CreatingSite.jsx:424
@@ -3161,7 +3161,7 @@ msgid "Creating blog sample data"
 msgstr "Erstellen von Blog-Beispieldaten"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:8
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:8
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:5
 #: src/AutoLaunch/functions/nav.js:215
 #: src/Launch/api/WPApi.js:400
@@ -3206,14 +3206,14 @@ msgstr "Litauisch"
 msgid "Select your site's tone"
 msgstr "Wähle den Ton deiner Website"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/components/DescriptionGathering.jsx:143
+#: src/AutoLaunch/components/DescriptionGathering.jsx:213
 #: src/Launch/pages/SiteInformation.jsx:168
 msgid "Website title (required)"
 msgstr "Website-Titel (erforderlich)"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:41
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:41
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:17
 #: src/AutoLaunch/functions/pages.js:215
 msgid "Hello World Featured Image"
@@ -3256,7 +3256,7 @@ msgid "AI Page Generator"
 msgstr "KI-Seitengenerator"
 
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:25
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:25
 #: src/PageCreator/components/content/CustomTextarea.jsx:45
 msgid "Edit"
 msgstr "Bearbeiten"
@@ -3378,9 +3378,9 @@ msgstr "Z. B. ein persönlicher Finanzblog, der Expertentipps zu Budgetierung, I
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Z. B. ein kostenloses E-Book mit umsetzbaren Produktivitätstipps und -strategien, um fokussiert zu bleiben, die Zeit effektiv zu nutzen und Ziele zu erreichen."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/components/DescriptionGathering.jsx:41
+#: src/AutoLaunch/components/DescriptionGathering.jsx:199
 #: src/Launch/pages/SiteInformation.jsx:204
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Z. B. ein persönliches Fotografie-Portfolio mit einer Sammlung von Landschafts-, Porträt- und Straßenfotografie, das Momente aus aller Welt festhält."
@@ -3405,9 +3405,9 @@ msgstr "Beschreibe deinen Blog"
 msgid "Describe your Landing Page"
 msgstr "Beschreibe deine Landingpage"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/components/DescriptionGathering.jsx:171
+#: src/AutoLaunch/components/DescriptionGathering.jsx:239
 #: src/Launch/pages/SiteInformation.jsx:214
 msgid "Describe your website"
 msgstr "Beschreibe deine Website"
@@ -3432,9 +3432,9 @@ msgstr "Welche Art von Website erstellst du?"
 msgid "Tell Us About Your Landing Page"
 msgstr "Erzähl uns von deiner Landingpage"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/LaunchPage.jsx:132
+#: src/AutoLaunch/LaunchPage.jsx:151
 #: src/Launch/pages/SiteInformation.jsx:105
 msgid "Tell Us About Your Website"
 msgstr "Erzähle uns von deiner Website"
@@ -3486,7 +3486,7 @@ msgstr "Erstelle deine Seite"
 msgid "When ready, press here to generate your page."
 msgstr "Wenn du bereit bist, klicke hier, um deine Seite zu erstellen."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ToolTip.jsx:66
 msgid "Close ToolTip"
 msgstr "ToolTip schließen"
@@ -3575,9 +3575,9 @@ msgstr "Vorschlag:"
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:70
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:76
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:82
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/Agent/components/ChatInput.jsx:224
 #: src/Agent/components/ImageUploader.jsx:189
 #: src/Agent/icons.jsx:214
@@ -3869,7 +3869,7 @@ msgstr "Lass uns deine KI-gestützten Empfehlungen überprüfen"
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "Anhand der von dir bereitgestellten Details hat unsere KI die besten Einstellungen für deine Website vorgeschlagen. Schau kurz drüber und bestätige, dass alles passt, bevor du weitermachst."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:37
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:37
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:14
 #: src/AutoLaunch/hooks/useCreateSite.js:399
 #: src/Launch/pages/CreatingSite.jsx:240
@@ -3881,18 +3881,18 @@ msgstr "Fußzeilennavigation"
 msgid "Adding imprint page"
 msgstr "Impressum-Seite hinzufügen"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/EditPageToolTip.jsx:8
 msgid "Tooltip pointing to the edit page button"
 msgstr "Tooltip, der auf den \"Seite bearbeiten\"-Button zeigt"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/EditPageToolTip.jsx:11
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Willkommen auf deiner neuen Website! Wenn du bereit bist, klicke hier, um diese Seite zu bearbeiten."
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:7
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/Agent/components/PageDocument.jsx:25
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:167
 msgid "Remove"
@@ -3920,9 +3920,9 @@ msgstr "Bestätigen"
 msgid "Thinking..."
 msgstr "Nachdenken…"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
-#: src/AutoLaunch/LaunchPage.jsx:90
+#: src/AutoLaunch/LaunchPage.jsx:129
 #: src/Launch/components/PageControl.jsx:328
 msgid "WP Admin Dashboard"
 msgstr "WP-Admin-Dashboard"
@@ -4071,7 +4071,7 @@ msgstr "Plugin installieren"
 msgid "Go through the AI website creation process again to create a new site."
 msgstr "Gehe den KI-Website-Erstellungsprozess erneut durch, um eine neue Website zu erstellen."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:49
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:49
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:173
 #: src/Launch/components/RestartLaunchModal.jsx:206
@@ -4426,7 +4426,7 @@ msgstr "Blog-Icon"
 msgid "Business Icon"
 msgstr "Geschäfts-Icon"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-launch-7f966aed871ff8799b32.js:8
 #: src/AutoLaunch/icons.jsx:87
 #: src/Launch/svg/Checkmark.jsx:15
@@ -4608,7 +4608,7 @@ msgstr "Sprach-Icon"
 msgid "Down Arrow Icon"
 msgstr "Icon für Pfeil nach unten"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: public/build/extendify-library-d552629d6f7ca24f0750.js:1
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:1
 #: src/AutoLaunch/icons.jsx:5
@@ -4715,98 +4715,98 @@ msgid "The network seems unstable. Retrying..."
 msgstr "Das Netzwerk scheint instabil zu sein. Erneuter Versuch..."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:18
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:18
 #: src/AutoLaunch/hooks/useCreateSite.js:148
 msgid "Setting up functionality for your website"
 msgstr "Funktionalität für deine Website einrichten"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:28
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:28
 #: src/AutoLaunch/hooks/useCreateSite.js:275
 msgid "Adding admin configurations"
 msgstr "Admin-Einstellungen hinzufügen"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:30
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:30
 #: src/AutoLaunch/hooks/useCreateSite.js:340
 msgid "Installing fonts locally"
 msgstr "Schriften lokal installieren"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:32
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:32
 #: src/AutoLaunch/hooks/useCreateSite.js:366
 msgid "Working on the navigation"
 msgstr "Arbeiten an der Navigation"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:34
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:34
 #: src/AutoLaunch/hooks/useCreateSite.js:378
 msgid "Perfecting a landing page"
 msgstr "Optimierung einer Landingpage"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:39
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:39
 #: src/AutoLaunch/hooks/useCreateSite.js:410
 msgid "Creating pages"
 msgstr "Seiten erstellen"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:44
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:44
 #: src/AutoLaunch/hooks/useCreateSite.js:484
 msgid "Setting up your online store"
 msgstr "Einrichtung deines Onlineshops"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/hooks/useCreateSite.js:571
 msgid "All done!"
 msgstr "Alles erledigt!"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/hooks/useCreateSite.js:585
 msgid "Something went wrong during the final steps. We will try again but you may need to refresh the page."
 msgstr "Etwas ist bei den letzten Schritten schiefgelaufen. Wir versuchen es erneut, aber du musst möglicherweise die Seite aktualisieren."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/hooks/useCreateSite.js:616
 msgid "Having some trouble with this step. Trying again..."
 msgstr "Es gibt ein Problem bei diesem Schritt. Versuche es erneut..."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/components/CreatingSite.jsx:94
 msgid "We are experiencing some delays"
 msgstr "Wir haben derzeit Verzögerungen"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/components/CreatingSite.jsx:97
 msgid "Pausing for a few seconds"
 msgstr "Ein paar Sekunden pausieren"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:116
 msgid "Start Over?"
 msgstr "Neu starten?"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:121
 msgid "It looks like you have been here before. We need to clean up some things before we can continue."
 msgstr "Es sieht so aus, als wärst du schon einmal hier gewesen. Wir müssen ein paar Dinge bereinigen, bevor wir weitermachen können."
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:49
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:49
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:129
 #, js-format
 msgid "%s pages/posts will be deleted."
 msgstr "%s Seiten/Beiträge werden gelöscht"
 
 #: public/build/extendify-agent-eecd37c1f65d2fabddda.js:1
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:49
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:49
 #: src/Agent/components/messages/StatusMessage.jsx:20
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:164
 msgid "Processing..."
 msgstr "Verarbeitung..."
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
-#: src/AutoLaunch/LaunchPage.jsx:146
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
+#: src/AutoLaunch/LaunchPage.jsx:165
 msgid "Describe the website you want to build"
 msgstr "Beschreibe die Website, die du erstellen möchtest"
 
@@ -4816,7 +4816,7 @@ msgid "We were unable to generate color palettes. Please try again."
 msgstr "Wir konnten keine Farbpaletten erstellen. Bitte versuche es erneut."
 
 #. translators: vibe in this context is a noun - the feeling of their site design.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:32
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:32
 #: src/AutoLaunch/hooks/useCreateSite.js:349
 msgid "Setting the website style"
 msgstr "Website-Stil festlegen"
@@ -4875,8 +4875,8 @@ msgstr "Die Theme-Farbe wurde aktualisiert"
 msgid "Canceled the theme color update"
 msgstr "Die Aktualisierung der Theme-Farbe wurde abgebrochen"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
-#: src/AutoLaunch/components/DescriptionGathering.jsx:254
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
+#: src/AutoLaunch/components/DescriptionGathering.jsx:289
 msgid "Enhance with AI"
 msgstr "Mit KI verbessern"
 
@@ -4890,7 +4890,7 @@ msgstr ""
 "Möchtest du andere Website-Farben erkunden?"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:24
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:24
 #: src/AutoLaunch/fetchers/get-home.js:30
 msgid "Preparing your home page"
 msgstr "Startseite wird vorbereitet"
@@ -4902,25 +4902,25 @@ msgid "Finding the perfect images"
 msgstr "Perfekte Bilder werden gesucht"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:15
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:15
 #: src/AutoLaunch/fetchers/get-logo.js:28
 msgid "Generating a logo"
 msgstr "Logo wird erstellt"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:26
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:26
 #: src/AutoLaunch/fetchers/get-pages.js:33
 msgid "Preparing your pages"
 msgstr "Seiten werden vorbereitet"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:6
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:6
 #: src/AutoLaunch/fetchers/get-plugins.js:31
 msgid "Setting up site functionality"
 msgstr "Website-Funktionen werden eingerichtet"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:13
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:13
 #: src/AutoLaunch/fetchers/get-profile.js:25
 msgid "Creating a site profile"
 msgstr "Website-Profil wird erstellt"
@@ -4932,7 +4932,7 @@ msgid "Generating site content ideas"
 msgstr "Inhaltsideen werden generiert"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:21
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:21
 #: src/AutoLaunch/fetchers/get-style.js:26
 msgid "Picking the perfect design"
 msgstr "Perfektes Design wird ausgewählt"
@@ -5216,8 +5216,8 @@ msgstr "Erstelle jetzt deine Website"
 msgid "Booting things up"
 msgstr "Wird gestartet"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
-#: src/AutoLaunch/components/DescriptionGathering.jsx:181
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
+#: src/AutoLaunch/components/DescriptionGathering.jsx:149
 msgid "Enhancing the website description..."
 msgstr "Die Website-Beschreibung verbessern ..."
 
@@ -5257,17 +5257,17 @@ msgstr "Wir konnten keinen Website-Stil für dein Theme finden."
 msgid "Loading website style options..."
 msgstr "Website-Stil-Optionen werden geladen …"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/icons.jsx:97
 msgid "Three bars loading animation"
 msgstr "Drei-Balken-Ladeanimation"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/icons.jsx:193
 msgid "Site creation loading animation"
 msgstr "Ladeanimation für die Website-Erstellung"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:6
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:6
 #: src/AutoLaunch/functions/pages.js:133
 #, js-format
 msgid "Adding page: %s"
@@ -5341,7 +5341,7 @@ msgid "We were unable to apply your selected colors. Please try again."
 msgstr "Deine ausgewählten Farben konnten nicht angewendet werden. Bitte versuche es erneut."
 
 #. translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:37
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:37
 #: src/AutoLaunch/hooks/useCreateSite.js:390
 msgid "206-555-0100"
 msgstr "030-12345678"
@@ -5359,12 +5359,12 @@ msgid "Hey there! It looks like you are trying to change your site design, but y
 msgstr "Hey! Es sieht so aus, als ob du das Design deiner Website ändern möchtest, aber du bist nicht auf einer Seite, auf der das möglich ist."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:3
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:3
 #: src/AutoLaunch/fetchers/get-design-build.js:29
 msgid "Loading your design"
 msgstr "Design wird geladen"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:32
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:32
 #: src/AutoLaunch/functions/nav.js:248
 msgid "Get Started"
 msgstr "Loslegen"
@@ -5375,62 +5375,62 @@ msgstr "Loslegen"
 msgid "The %s plugin is not active."
 msgstr "Das Plugin %s ist nicht aktiv."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/Loading.jsx:12
 msgid "Setting up plugins for you..."
 msgstr "Plugins werden für dich eingerichtet ..."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/Loading.jsx:15
 msgid "Please wait while we install your plugins and create accounts with the selected providers. This should only take a moment."
 msgstr "Bitte warte, während wir deine Plugins installieren und Konten bei den ausgewählten Anbietern erstellen. Das dauert nur einen Moment."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupComplete.jsx:23
 msgid "Setup complete"
 msgstr "Einrichtung abgeschlossen"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupComplete.jsx:26
 msgid "Your plugin accounts have been set up. Account activation may take a moment to complete."
 msgstr "Deine Plugin-Konten wurden eingerichtet. Die Aktivierung der Konten kann einen Moment dauern."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:46
 msgid "Almost done! Let's finish setting up your plugins"
 msgstr "Fast fertig! Lass uns deine Plugins einrichten"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:86
 msgid "Term of Service"
 msgstr "Nutzungsbedingungen"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:113
 msgid "Email address"
 msgstr "E-Mail-Adresse"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:124
 msgid "This email will be used to create accounts with the selected plugin providers. Form protected by reCAPTCHA."
 msgstr "Diese E-Mail-Adresse wird verwendet, um Konten bei den ausgewählten Plugin-Anbietern zu erstellen. Formular geschützt durch reCAPTCHA."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:139
 msgid "I agree to create accounts with the selected providers using my email address, and to their applicable Terms of Service."
 msgstr "Ich stimme zu, Konten bei den ausgewählten Anbietern mit meiner E-Mail-Adresse zu erstellen und deren geltenden Nutzungsbedingungen zuzustimmen."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:154
 msgid "I wish to receive communications about news and/or promotions from selected providers."
 msgstr "Ich möchte Mitteilungen über Neuigkeiten und/oder Aktionen von ausgewählten Anbietern erhalten."
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:167
 msgid "No thanks"
 msgstr "Nein, danke"
 
-#: public/build/extendify-shared-d31be01dcb037be514e3.js:1
+#: public/build/extendify-shared-b31c940669aa417ba7ed.js:1
 #: src/Shared/components/ProductAccountActivation/SetupPlugins.jsx:178
 msgid "Create accounts"
 msgstr "Konten erstellen"
@@ -5438,7 +5438,7 @@ msgstr "Konten erstellen"
 #: app/QuickEdit/Frontend.php:67
 #: app/QuickEdit/Frontend.php:72
 #: app/Toolbar/Frontend.php:192
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 msgid "Quick Edit"
 msgstr "Schnellbearbeitung"
 
@@ -5485,8 +5485,8 @@ msgid "Image"
 msgstr "Bild"
 
 #: app/QuickEdit/Schemas/NavigationLink.php:18
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/NavItemModal.jsx:179
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:120
 msgid "Label"
@@ -5527,347 +5527,347 @@ msgstr "(öffnet in einem neuen Tab)"
 msgid "WP Admin"
 msgstr "WP-Admin"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 msgid "Your session expired. Please refresh the page and try again."
 msgstr "Deine Sitzung ist abgelaufen. Bitte aktualisiere die Seite und versuche es erneut."
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 msgid "Sorry, something went wrong. Please try again or try editing something else."
 msgstr "Entschuldige, da ist etwas schiefgelaufen. Bitte versuche es erneut oder bearbeite etwas anderes."
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 #: src/QuickEdit/components/toolbar/ColorButton.jsx:79
 msgid "Clear text color"
 msgstr "Textfarbe zurücksetzen"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 #: src/QuickEdit/components/toolbar/ColorButton.jsx:80
 msgid "Clear highlight"
 msgstr "Hervorhebung entfernen"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:1
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:1
 #: src/QuickEdit/components/toolbar/HeadingLevelButton.jsx:38
 #: src/QuickEdit/components/toolbar/HeadingLevelButton.jsx:56
 msgid "Heading level"
 msgstr "Überschriftenebene"
 
 #. translators: %d is the heading level number 1-6.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/HeadingLevelButton.jsx:69
 #, js-format
 msgid "Heading %d"
 msgstr "Überschrift %d"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:15
 msgid "Align text left"
 msgstr "Text linksbündig ausrichten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:20
 msgid "Align text center"
 msgstr "Text zentrieren"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:25
 msgid "Align text right"
 msgstr "Text rechtsbündig ausrichten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:86
 msgid "Align text"
 msgstr "Text ausrichten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/toolbar/TextAlignButtons.jsx:103
 msgid "Text alignment"
 msgstr "Textausrichtung"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/BlockTextEditor.jsx:454
 msgid "Quick Edit toolbar"
 msgstr "Schnellbearbeitungs-Werkzeugleiste"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/BlockTextEditor.jsx:831
 msgid "Text color"
 msgstr "Textfarbe"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/BlockTextEditor.jsx:836
 msgid "Highlight color"
 msgstr "Hervorhebungsfarbe"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/BlockTextEditor.jsx:871
 #: src/QuickEdit/components/BlockTextEditor.jsx:882
 msgid "Saving…"
 msgstr "Speichern …"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:80
 msgid "Image generation failed"
 msgstr "Die Bilderstellung ist fehlgeschlagen"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:200
 msgid "Generate image with AI"
 msgstr "Bild mit KI erstellen"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:222
 msgid "Image prompt"
 msgstr "Bild-Prompt"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:223
 msgid "Describe the image you want to create"
 msgstr "Beschreibe das Bild, das du erstellen möchtest"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:4
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:4
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:235
 msgid "Aspect ratio"
 msgstr "Seitenverhältnis"
 
 #. translators: image aspect ratio — a square (1:1) shape.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:7
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:7
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:244
 msgid "Square"
 msgstr "Quadrat"
 
 #. translators: image aspect ratio — landscape orientation (wider than tall).
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:10
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:10
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:251
 msgid "Landscape"
 msgstr "Querformat"
 
 #. translators: image aspect ratio — portrait orientation (taller than wide).
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:13
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:13
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:258
 msgid "Portrait"
 msgstr "Hochformat"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:13
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:13
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:266
 msgid "Generating image…"
 msgstr "Bild wird erstellt …"
 
 #. translators: %1$d is the number of credits used, %2$d is the total credits available.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:272
 #, js-format
 msgid "%1$d of %2$d credits used"
 msgstr "%1$d von %2$d Credits verwendet"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:231
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:291
 #: src/QuickEdit/components/modals/ProductImageModal.jsx:30
 msgid "Use image"
 msgstr "Bild verwenden"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:306
 msgid "Out of credits"
 msgstr "Keine Guthaben mehr"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/AiImagePickerModal.jsx:307
 msgid "Generate"
 msgstr "Generieren"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/NavItemModal.jsx:130
 msgid "Pick a new destination"
 msgstr "Wähle ein neues Ziel"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/NavItemModal.jsx:134
 msgid "Currently linked to:"
 msgstr "Derzeit verlinkt mit:"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/NavItemModal.jsx:154
 #: src/QuickEdit/components/modals/SocialLinkModal.jsx:103
 msgid "URL"
 msgstr "URL"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/NavItemModal.jsx:163
 msgid "Edit navigation link"
 msgstr "Navigationslink bearbeiten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductPriceModal.jsx:76
 msgid "Edit price"
 msgstr "Preis bearbeiten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductPriceModal.jsx:99
 msgid "Regular price"
 msgstr "Regulärer Preis"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductPriceModal.jsx:112
 msgid "Sale price (optional)"
 msgstr "Verkaufspreis (optional)"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:20
 msgid "Edit product name"
 msgstr "Produktname bearbeiten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:21
 msgid "Edit short description"
 msgstr "Kurzbeschreibung bearbeiten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:22
 msgid "Edit description"
 msgstr "Beschreibung bearbeiten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:83
 msgid "Edit product field"
 msgstr "Produktfeld bearbeiten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:101
 msgid "Product name"
 msgstr "Produktname"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:110
 msgid "Short description"
 msgstr "Kurze Beschreibung"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/ProductTextModal.jsx:120
 msgid "Description"
 msgstr "Beschreibung"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:24
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:119
 msgid "Site title"
 msgstr "Seitentitel"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:25
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:128
 msgid "Tagline"
 msgstr "Slogan"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:100
 msgid "Site identity"
 msgstr "Website-Identität"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:156
 msgid "Change logo"
 msgstr "Logo ändern"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:16
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:16
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:157
 msgid "Choose logo"
 msgstr "Logo wählen"
 
 #. translators: %s is the social network name, e.g. "Facebook".
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/SocialLinkModal.jsx:79
 #, js-format
 msgid "Edit %s link"
 msgstr "%s-Link bearbeiten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/SocialLinkModal.jsx:82
 msgid "Edit social link"
 msgstr "Social-Link bearbeiten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:204
 msgid "Describe an image to search Unsplash"
 msgstr "Beschreibe ein Bild, um auf Unsplash zu suchen"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:226
 msgid "Loading images…"
 msgstr "Bilder werden geladen …"
 
 #. translators: image credit line; precedes the photographer's name.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:289
 msgid "Photo by"
 msgstr "Foto von"
 
 #. translators: precedes the "Unsplash" brand link.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/UnsplashImagePickerModal.jsx:313
 msgid "Photos powered by"
 msgstr "Fotos bereitgestellt von"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:96
 msgid "Edit form field"
 msgstr "Formularfeld bearbeiten"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:128
 msgid "Placeholder"
 msgstr "Platzhalter"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:135
 msgid "Description (shown below the field)"
 msgstr "Beschreibung (unterhalb des Feldes angezeigt)"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/modals/WPFormsFieldModal.jsx:142
 msgid "Required field"
 msgstr "Pflichtfeld"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:221
 msgid "Media library is not loaded."
 msgstr "Die Mediathek wurde nicht geladen."
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:229
 msgid "Upload image"
 msgstr "Bild hochladen"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:230
 #: src/QuickEdit/components/InlineEditor.jsx:400
 msgid "Pick from media library"
 msgstr "Aus der Mediathek auswählen"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:406
 msgid "Generate with AI"
 msgstr "Mit KI generieren"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:409
 msgid "Search for new image"
 msgstr "Nach neuem Bild suchen"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:19
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:19
 #: src/QuickEdit/components/InlineEditor.jsx:533
 msgid "No editor for this block type yet."
 msgstr "Für diesen Blocktyp gibt es noch keinen Editor."
 
 #. translators: %s is the multilingual plugin name, e.g. "TranslatePress".
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:22
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:22
 #, js-format
 msgid "Quick Edit can't edit translated content — manage translations in %s."
 msgstr "Schnellbearbeitung kann übersetzte Inhalte nicht bearbeiten – verwalte Übersetzungen in %s."
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:22
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:22
 msgid "Quick Edit can't edit translated content on this page."
 msgstr "Die Schnellbearbeitung kann übersetzte Inhalte auf dieser Seite nicht bearbeiten."
 
@@ -5886,38 +5886,48 @@ msgid "Replace product image"
 msgstr "Produktbild ersetzen"
 
 #. translators: %s is a snippet of the block's text content.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:25
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:25
 #, js-format
 msgid "Ask AI about \"%s\""
 msgstr "KI zu „%s“ befragen"
 
 #. translators: %1$s is the action verb (Edit / Replace image), %2$s is a snippet of the block's text content.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:28
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:28
 #, js-format
 msgid "%1$s \"%2$s\""
 msgstr "%1$s „%2$s“"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:28
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:28
 #: src/QuickEdit/state/undo.js:95
 msgid "Reverted last change."
 msgstr "Letzte Änderung rückgängig gemacht"
 
 #. translators: %s is the underlying error message.
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:31
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:31
 #: src/QuickEdit/state/undo.js:107
 #, js-format
 msgid "Undo failed: %s"
 msgstr "Rückgängig machen fehlgeschlagen: %s"
 
-#: public/build/extendify-quick-edit-9fe2e1d459e3ddb0adac.js:31
+#: public/build/extendify-quick-edit-646d2d5852ca0eb68b7f.js:31
 #: src/QuickEdit/state/undo.js:108
 msgid "unknown error"
 msgstr "unbekannter Fehler"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:51
-#: src/AutoLaunch/LaunchPage.jsx:135
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:51
+#: src/AutoLaunch/LaunchPage.jsx:154
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time."
 msgstr "Teile deine Vision, und wir erstellen eine Website, die perfekt auf deine Bedürfnisse zugeschnitten ist und in kürzester Zeit gelauncht werden kann."
+
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
+#: src/AutoLaunch/components/DescriptionGathering.jsx:195
+msgid "E.g., A boutique law firm specializing in family law, estate planning, and real estate, offering trusted, personalized counsel to clients across the region."
+msgstr "Z. B. Eine Boutique-Kanzlei, die sich auf Familienrecht, Nachlassplanung und Immobilienrecht spezialisiert hat und vertrauensvolle, personalisierte Beratung für Kunden in der gesamten Region bietet."
+
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
+#: src/AutoLaunch/components/DescriptionGathering.jsx:264
+msgid "Create website"
+msgstr "Website erstellen"
 
 #: app/Toolbar/Admin.php:46
 msgctxt "toolbar style"
@@ -6016,7 +6026,7 @@ msgctxt "animation type"
 msgid "Type"
 msgstr "Typ"
 
-#: public/build/extendify-auto-launch-0208b045c568a0153c4b.js:46
+#: public/build/extendify-auto-launch-19d1d1deadea274ee5e3.js:46
 #: src/AutoLaunch/icons.jsx:55
 msgctxt "icon"
 msgid "Loading animation"

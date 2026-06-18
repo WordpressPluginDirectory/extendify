@@ -4,6 +4,7 @@ import { MovingGradient } from '@auto-launch/components/MovingGradients';
 import { NeedsTheme } from '@auto-launch/components/NeedsTheme';
 import { RestartLaunchModal } from '@auto-launch/components/RestartLaunchModal';
 import { ViewportPulse } from '@auto-launch/components/ViewportPulse';
+import { getAbTest } from '@auto-launch/functions/getAbTest';
 import { preLaunchFunctions } from '@auto-launch/functions/setup';
 import { updateOption } from '@auto-launch/functions/wp';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
@@ -13,6 +14,7 @@ import { useSelect } from '@wordpress/data';
 import { useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { chevronLeft, Icon } from '@wordpress/icons';
+import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { checkIn } from './functions/insights';
 
@@ -30,6 +32,9 @@ export const LaunchPage = () => {
 		Boolean(urlParams?.['build-id']) ||
 		designBuild ||
 		((title || descriptionRaw) && go);
+	const showExitLink =
+		!skipDescription && !window.extLaunchData?.hideAutoLaunchExitLink;
+	const showTitle = getAbTest('AutoLaunch.ShowTitle').variant === 'B';
 
 	const containerRef = useRef(null);
 
@@ -78,17 +83,14 @@ export const LaunchPage = () => {
 					/>
 				</AnimatePresence>
 			</div>
-			{skipDescription ||
-			window.extLaunchData?.hideAutoLaunchExitLink ? null : (
-				<div className="flex w-full p-6 md:p-8 absolute bottom-0 left-0">
-					<a
-						className="inline-flex items-center gap-0.5 text-sm text-banner-text opacity-70 hover:opacity-100 transition-opacity p-2"
-						href={window.extSharedData.adminUrl}
-						onClick={() => checkIn({ stage: 'exit_to_wp_admin' })}
-					>
-						<Icon fill="currentColor" icon={chevronLeft} size={20} />
-						{__('WP Admin Dashboard', 'extendify-local')}
-					</a>
+			{showExitLink && (
+				<div
+					className={classNames('flex w-full', {
+						'mt-6': showTitle,
+						'py-8 px-6 absolute bottom-0 left-0 z-10': !showTitle,
+					})}
+				>
+					<ExitLink />
 				</div>
 			)}
 		</Wrapper>
@@ -101,11 +103,13 @@ const Wrapper = ({ children }) => {
 	return (
 		<div style={{ zIndex: 99999 + 1 }} className="fixed inset-0 bg-white">
 			<div className="relative h-dvh bg-banner-main text-banner-text text-base flex flex-col items-center justify-between">
-				<div className="relative w-full flex flex-col items-center gap-5 md:gap-8 p-6 pb-25 flex-1 justify-center">
-					<div className="mb-4">
-						<Logo />
+				<div className="relative w-full flex flex-col items-center p-6 flex-1 min-h-0 overflow-y-auto">
+					<div className="w-full flex flex-col items-center gap-5 md:gap-8 m-auto">
+						<div className="mb-4">
+							<Logo />
+						</div>
+						{children}
 					</div>
-					{children}
 				</div>
 			</div>
 			<MovingGradient />
@@ -114,7 +118,22 @@ const Wrapper = ({ children }) => {
 	);
 };
 
+const ExitLink = () => {
+	return (
+		<a
+			className="inline-flex items-center gap-0.5 text-sm text-banner-text opacity-70 hover:opacity-100 transition-opacity"
+			href={window.extSharedData.adminUrl}
+			onClick={() => checkIn({ stage: 'exit_to_wp_admin' })}
+		>
+			<Icon fill="currentColor" icon={chevronLeft} size={20} />
+			{__('WP Admin Dashboard', 'extendify-local')}
+		</a>
+	);
+};
+
 const TheTitle = ({ skipDescription }) => {
+	const useOldHeader =
+		getAbTest('AutoLaunch.HeaderParagraphOld').variant === 'B';
 	if (skipDescription) return null;
 
 	const headingClass =
@@ -125,7 +144,7 @@ const TheTitle = ({ skipDescription }) => {
 		transition: { duration: 0.4 },
 	};
 
-	if (window.extLaunchData?.activeTests?.['AutoLaunch.WebsiteTitle'] === 'B') {
+	if (useOldHeader) {
 		return (
 			<motion.div className="flex flex-col items-center gap-2" {...transition}>
 				<h2 className={headingClass}>

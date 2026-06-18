@@ -1,3 +1,4 @@
+import { getAbTest } from '@auto-launch/functions/getAbTest';
 import { fetchWithTimeout } from '@auto-launch/functions/helpers';
 import { useInstallRequiredPlugins } from '@auto-launch/hooks/useInstallRequiredPlugins';
 import { loaderThreeDots } from '@auto-launch/icons';
@@ -17,6 +18,8 @@ import { __ } from '@wordpress/i18n';
 import { chevronRight, Icon, pencil } from '@wordpress/icons';
 import { isURL } from '@wordpress/url';
 
+const getShowTitle = () => getAbTest('AutoLaunch.ShowTitle').variant === 'B';
+
 export const DescriptionGathering = () => {
 	const { setData, descriptionBackup, urlParams } = useLaunchDataStore();
 	useInstallRequiredPlugins();
@@ -31,17 +34,13 @@ export const DescriptionGathering = () => {
 	const [lastImproved, setLastImproved] = useState(null);
 	const textareaRef = useRef(null);
 	const { consentTerms } = useAIConsentStore();
-	const launchPageVariant =
-		window.extLaunchData?.activeTests?.['AutoLaunch.WebsiteTitle'] === 'B';
-	const submitButtonBelow = launchPageVariant;
-	const showTitleField = launchPageVariant;
-	const submitDisabled = showTitleField
+	// Showing the title field makes the description optional, so the submit
+	// gate and the textarea autofocus both follow it.
+	const showTitle = getShowTitle();
+	const submitDisabled = showTitle
 		? title.trim().length === 0
 		: input.trim().length === 0;
-	const placeholder = __(
-		'E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world.',
-		'extendify-local',
-	);
+	const placeholder = useDescriptionPlaceholder();
 
 	// resize the height of the textarea based on the content
 	const adjustHeight = useCallback(() => {
@@ -67,7 +66,7 @@ export const DescriptionGathering = () => {
 
 	const submitForm = (e) => {
 		e.preventDefault();
-		if (showTitleField) setData('title', title.trim());
+		if (showTitle) setData('title', title.trim());
 		setData('descriptionRaw', input.trim());
 		setData('go', true);
 	};
@@ -134,43 +133,12 @@ export const DescriptionGathering = () => {
 				onClick={() => textareaRef.current?.focus()}
 				className="relative flex w-full flex-col"
 			>
-				{showTitleField && !improving && (
-					<div className="mb-4 w-full">
-						<label
-							htmlFor="extendify-launch-site-title"
-							className="mb-2 block px-2 text-base font-medium leading-6 text-gray-900"
-						>
-							{__('Website title (required)', 'extendify-local')}
-						</label>
-						<div className="w-full rounded-3xl border border-gray-300 bg-gray-100/80 text-gray-900 backdrop-blur-2xl focus-within:border-gray-500 focus-within:ring-gray-500 shadow-md overflow-hidden">
-							<input
-								id="extendify-launch-site-title"
-								type="text"
-								className="w-full bg-transparent text-base font-medium leading-6 placeholder:text-gray-700 placeholder:font-normal focus:shadow-none focus:outline-hidden border-none text-gray-900 px-6 py-4"
-								// biome-ignore lint: Allow autofocus here
-								autoFocus
-								autoComplete="off"
-								data-1p-ignore
-								value={title}
-								// the form's onClick refocuses the textarea; keep clicks here local
-								onClick={(e) => e.stopPropagation()}
-								onChange={(e) => {
-									setTitle(e.target.value);
-									setData('title', e.target.value);
-								}}
-								placeholder={__('Enter your website name', 'extendify-local')}
-							/>
-						</div>
-					</div>
-				)}
-				{showTitleField && !improving && (
-					<label
-						htmlFor="extendify-launch-chat-textarea"
-						className="mb-2 block px-2 text-base font-medium leading-6 text-gray-900"
-					>
-						{__('Describe your website', 'extendify-local')}
-					</label>
-				)}
+				<TitleField
+					title={title}
+					setTitle={setTitle}
+					setData={setData}
+					improving={improving}
+				/>
 				<div className="w-full rounded-3xl border border-gray-300 bg-gray-100/80 text-gray-900 backdrop-blur-2xl focus-within:border-gray-500 focus-within:ring-gray-500 shadow-md overflow-hidden">
 					{improving ? (
 						<div className="flex h-49 flex-col items-center justify-center gap-4">
@@ -189,7 +157,7 @@ export const DescriptionGathering = () => {
 								className="flex min-h-20 md:min-h-24 w-full resize-none bg-transparent text-base leading-6 placeholder:text-gray-700 focus:shadow-none focus:outline-hidden border-none text-gray-900 p-6 pb-0"
 								rows="1"
 								// biome-ignore lint: Allow autofocus here
-								autoFocus={!showTitleField}
+								autoFocus={!showTitle}
 								autoComplete="off"
 								data-1p-ignore
 								value={input}
@@ -200,25 +168,19 @@ export const DescriptionGathering = () => {
 							/>
 							<div className="flex justify-between items-end gap-4 p-6">
 								<div>
-									<ImprovePrompt
+									<EnhanceWithAIButton
 										disabled={
 											input.trim().length === 0 || input.trim() === lastImproved
 										}
 										onClick={handleImprove}
 									/>
 								</div>
-								{!submitButtonBelow && (
-									<SubmitButton disabled={submitDisabled} />
-								)}
+								<InlineSubmitButton disabled={submitDisabled} />
 							</div>
 						</>
 					)}
 				</div>
-				{submitButtonBelow && !improving && (
-					<div className="mt-4 flex justify-end">
-						<SubmitButton disabled={submitDisabled} />
-					</div>
-				)}
+				<OutsideSubmitButton disabled={submitDisabled} improving={improving} />
 			</form>
 			<div
 				className="text-pretty mt-4 text-center text-xs leading-4 opacity-70 text-banner-text [&>a]:text-xs [&>a]:text-banner-text [&>a]:underline w-full"
@@ -228,7 +190,79 @@ export const DescriptionGathering = () => {
 	);
 };
 
+const useDescriptionPlaceholder = () =>
+	getAbTest('AutoLaunch.DescriptionPlaceholderLaw').variant === 'B'
+		? __(
+				'E.g., A boutique law firm specializing in family law, estate planning, and real estate, offering trusted, personalized counsel to clients across the region.',
+				'extendify-local',
+			)
+		: __(
+				'E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world.',
+				'extendify-local',
+			);
+
+const TitleField = ({ title, setTitle, setData, improving }) => {
+	if (!getShowTitle() || improving) return null;
+	return (
+		<>
+			<div className="mb-4 w-full">
+				<label
+					htmlFor="extendify-launch-site-title"
+					className="mb-2 block px-2 text-base font-medium leading-6 text-gray-900"
+				>
+					{__('Website title (required)', 'extendify-local')}
+				</label>
+				<div className="w-full rounded-3xl border border-gray-300 bg-gray-100/80 text-gray-900 backdrop-blur-2xl focus-within:border-gray-500 focus-within:ring-gray-500 shadow-md overflow-hidden">
+					<input
+						id="extendify-launch-site-title"
+						type="text"
+						className="w-full bg-transparent text-base font-medium leading-6 placeholder:text-gray-700 placeholder:font-normal focus:shadow-none focus:outline-hidden border-none text-gray-900 px-6 py-4"
+						// biome-ignore lint: Allow autofocus here
+						autoFocus
+						autoComplete="off"
+						data-1p-ignore
+						value={title}
+						// the form's onClick refocuses the textarea; keep clicks here local
+						onClick={(e) => e.stopPropagation()}
+						onChange={(e) => {
+							setTitle(e.target.value);
+							setData('title', e.target.value);
+						}}
+						placeholder={__('Enter your website name', 'extendify-local')}
+					/>
+				</div>
+			</div>
+			<label
+				htmlFor="extendify-launch-chat-textarea"
+				className="mb-2 block px-2 text-base font-medium leading-6 text-gray-900"
+			>
+				{__('Describe your website', 'extendify-local')}
+			</label>
+		</>
+	);
+};
+
+const InlineSubmitButton = ({ disabled }) => {
+	if (getAbTest('AutoLaunch.SubmitOutside').variant === 'B') return null;
+	return <SubmitButton disabled={disabled} />;
+};
+
+const OutsideSubmitButton = ({ disabled, improving }) => {
+	if (getAbTest('AutoLaunch.SubmitOutside').variant !== 'B' || improving) {
+		return null;
+	}
+	return (
+		<div className="mt-4 flex justify-end">
+			<SubmitButton disabled={disabled} />
+		</div>
+	);
+};
+
 const SubmitButton = forwardRef((props, ref) => {
+	const label =
+		getAbTest('AutoLaunch.SubmitCreateWebsite').variant === 'B'
+			? __('Create website', 'extendify-local')
+			: __('Next', 'extendify-local');
 	return (
 		<button
 			ref={ref}
@@ -236,13 +270,14 @@ const SubmitButton = forwardRef((props, ref) => {
 			className="inline-flex items-center justify-center rounded-full border-0 bg-design-main px-3 py-2 text-sm leading-5 font-normal text-design-text focus-visible:ring-design-main disabled:opacity-40 focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-2 group hover:opacity-90 transition-opacity"
 			{...props}
 		>
-			<span className="px-1">{__('Next', 'extendify-local')}</span>
+			<span className="px-1">{label}</span>
 			<Icon fill="currentColor" icon={chevronRight} size={24} />
 		</button>
 	);
 });
 
-const ImprovePrompt = (props) => {
+const EnhanceWithAIButton = (props) => {
+	if (getAbTest('AutoLaunch.HideEnhanceAI').variant === 'B') return null;
 	return (
 		<button
 			type="button"
