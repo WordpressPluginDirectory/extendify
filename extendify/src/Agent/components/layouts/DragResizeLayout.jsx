@@ -1,3 +1,4 @@
+import { useCanvasOpen } from '@agent/components/Canvas';
 import { useDraggable } from '@agent/hooks/useDraggable';
 import { usePortal } from '@agent/hooks/usePortal';
 import { useResizable } from '@agent/hooks/useResizable';
@@ -65,6 +66,8 @@ export const DragResizeLayout = ({ children }) => {
 		return () => observer.disconnect();
 	}, [el, open, setOpen]);
 
+	const canvasOpen = useCanvasOpen();
+
 	const closeAgent = () => {
 		setOpen(false);
 		// External contract: no in-repo listener by design — notifies
@@ -103,9 +106,10 @@ export const DragResizeLayout = ({ children }) => {
 							<DragButton />
 						</div>
 					</div>
+					{/* Only hidden: removing it shifts the drag handle to the edge. */}
 					<button
 						type="button"
-						className="relative z-10 flex h-full items-center rounded-none border-0 bg-banner-main py-3 pe-4 ps-2 text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main"
+						className={`relative z-10 flex h-full items-center rounded-none border-0 bg-banner-main py-3 pe-4 ps-2 text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main ${canvasOpen ? 'invisible' : ''}`}
 						onClick={closeAgent}
 					>
 						<Icon

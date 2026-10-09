@@ -1,4 +1,5 @@
 import { safeParseJson } from '@shared/lib/parsing';
+import { safeLocalStorage } from '@shared/state/safe-local-storage';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
@@ -34,7 +35,7 @@ const state = (set, get) => ({
 export const usePagesSelectionStore = create(
 	persist(devtools(state, { name: 'Extendify Launch Pages Selections' }), {
 		name: key,
-		storage: createJSONStorage(() => localStorage),
+		storage: createJSONStorage(() => safeLocalStorage),
 		skipHydration: true,
 	}),
 	state,

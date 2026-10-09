@@ -15,7 +15,7 @@ export default {
 		Redirect(
 			// translators: "site style" refers to the structural aesthetic style for the site.
 			__(
-				'Hey there! It looks like you are trying to change your site style, but you are not on a page where we can do that.',
+				'It looks like you are trying to change your site style, but you are not on a page where we can do that.',
 				'extendify-local',
 			),
 		),

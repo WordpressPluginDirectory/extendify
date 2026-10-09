@@ -1,5 +1,7 @@
 import { getActivePlugins, processPlaceholders } from '@page-creator/api/WPApi';
 import { recordPluginActivity } from '@shared/api/DataApi';
+import { failedDependencies } from '@shared/lib/patterns';
+import { sleep } from '@shared/lib/utils';
 
 export const processPatterns = async (patterns) => {
 	const maxAttempts = 3;
@@ -22,7 +24,10 @@ export const processPatterns = async (patterns) => {
 
 	for (let attempt = 1; attempt <= maxAttempts; attempt++) {
 		try {
-			return await processPlaceholders(patterns);
+			const processed = await processPlaceholders(patterns);
+			if (!failedDependencies(processed).length || attempt === maxAttempts) {
+				return processed;
+			}
 		} catch (error) {
 			if (attempt === maxAttempts) {
 				console.error(
@@ -31,7 +36,8 @@ export const processPatterns = async (patterns) => {
 				);
 				return patterns;
 			}
-			await new Promise((resolve) => setTimeout(resolve, delay));
 		}
+
+		await sleep(delay);
 	}
 };

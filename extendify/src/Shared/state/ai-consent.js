@@ -12,7 +12,7 @@ const storage = {
 		}),
 };
 
-const defaultConsentTerms = sprintf(
+export const defaultConsentTerms = sprintf(
 	// translators: %1$s and %2$s are opening and closing anchor tags.
 	__(
 		'By using AI features, you agree with the %1$sTerms of Use and Privacy Policy%2$s.',

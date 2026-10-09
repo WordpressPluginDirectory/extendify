@@ -33,6 +33,17 @@ class Frontend
         \add_action('wp_enqueue_scripts', [$this, 'loadScriptsAndStyles']);
         \add_action('wp_body_open', [$this, 'render'], 1);
         \add_action('wp_head', [$this, 'hideCoreAdminBar'], 1);
+        // This class is loaded conditionally, so callers often see the false default.
+        \add_filter('extendify_simple_toolbar_active', [$this, 'reportActive']);
+    }
+
+    /**
+     * @param bool $active
+     * @return bool
+     */
+    public function reportActive($active)
+    {
+        return $active || self::shouldRender();
     }
 
     /**
@@ -178,7 +189,7 @@ class Frontend
         ?>
         <div id="extendify-toolbar" role="navigation" aria-label="<?php \esc_attr_e('Site toolbar', 'extendify-local'); ?>">
             <div class="ext-tb-section ext-tb-left">
-                <button type="button" class="ext-tb-btn ext-tb-ai-agent" id="ext-tb-ai-agent" aria-label="<?php \esc_attr_e('Open the AI Agent', 'extendify-local'); ?>">
+                <button type="button" class="ext-tb-btn ext-tb-ai-agent" id="ext-tb-ai-agent" disabled aria-busy="true" aria-label="<?php \esc_attr_e('Open the AI Agent', 'extendify-local'); ?>">
                     <svg class="ext-tb-magic" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                         <path d="M17.0909 9.81818L18 7.81818L20 6.90909L18 6L17.0909 4L16.1818 6L14.1818 6.90909L16.1818 7.81818L17.0909 9.81818Z" fill="currentColor"/>
                         <path d="M17.0909 14.1818L16.1818 16.1818L14.1818 17.0909L16.1818 18L17.0909 20L18 18L20 17.0909L18 16.1818L17.0909 14.1818Z" fill="currentColor"/>
@@ -217,6 +228,7 @@ class Frontend
                     </svg>
                     <span class="screen-reader-text"><?php \esc_html_e('(opens in a new tab)', 'extendify-local'); ?></span>
                 </a>
+                <?php \do_action('extendify_toolbar_right'); ?>
             </div>
         </div>
         <?php

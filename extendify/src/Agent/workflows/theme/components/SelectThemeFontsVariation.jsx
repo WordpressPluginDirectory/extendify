@@ -4,7 +4,7 @@ import { useChatStore } from '@agent/state/chat';
 import { useEffect, useMemo, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export const SelectThemeFontsVariation = ({ onConfirm, onCancel, onLoad }) => {
+export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 	const [css, setCss] = useState('');
 	const [selected, setSelected] = useState(null);
 	const { undoChange } = useFontVariationOverride({ css });
@@ -34,11 +34,6 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel, onLoad }) => {
 	};
 
 	useEffect(() => {
-		if (isLoading) return;
-		onLoad();
-	}, [isLoading, onLoad]);
-
-	useEffect(() => {
 		if (isLoading || !noVariations) return;
 		const timer = setTimeout(() => onCancel(), 100);
 		// translators: A chat message shown to the user
@@ -63,7 +58,7 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel, onLoad }) => {
 	if (noVariations) return null;
 
 	return (
-		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
+		<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="grid grid-cols-2 gap-2 p-3">
 					{shuffled?.slice(0, 10)?.map(({ title, css, styles }) => (

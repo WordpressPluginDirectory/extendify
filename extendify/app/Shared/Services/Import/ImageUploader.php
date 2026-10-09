@@ -41,6 +41,25 @@ class ImageUploader
     ];
 
     /**
+     * Check whether the url points at one of our image domains.
+     *
+     * @param string $url The image url to check.
+     * @return bool
+     */
+    public static function isAllowedImageHost($url)
+    {
+        $host = strtolower((string) wp_parse_url($url, PHP_URL_HOST));
+
+        foreach (self::$imagesDomains as $domain) {
+            if ($host === $domain || str_ends_with($host, '.' . $domain)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Upload the image and return the attachment information
      * If the attachment is already there, then return the
      * attachment information only.
@@ -78,11 +97,11 @@ class ImageUploader
             return new \WP_Error(2002, 'File type is not allowed.');
         }
 
-        if (!preg_match('(' . implode('|', array_map('preg_quote', self::$imagesDomains)) . ')i', $image)) {
+        if (!self::isAllowedImageHost($image)) {
             $imageUrl = esc_url_raw($image);
         } else {
             $parsedUrl = wp_parse_url($image);
-            parse_str($parsedUrl['query'], $params);
+            parse_str(($parsedUrl['query'] ?? ''), $params);
 
             if (!isset($params['w'])) {
                 $params['w'] = 1280;
@@ -209,7 +228,7 @@ class ImageUploader
      */
     protected function upload($imageUrl, $imageSha, $fileMimeType)
     {
-        $response = wp_remote_get($imageUrl);
+        $response = wp_safe_remote_get($imageUrl);
         $body = trim(wp_remote_retrieve_body($response));
         return wp_upload_bits($imageSha . $this->mimes[$fileMimeType], null, $body);
     }

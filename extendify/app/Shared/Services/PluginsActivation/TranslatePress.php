@@ -14,6 +14,11 @@ class TranslatePress extends PluginActivation
         return 'translatepress-multilingual';
     }
 
+    public static function isEligible(): bool
+    {
+        return empty(\get_option('trp_license_key'));
+    }
+
     protected static function saveKey(array $data)
     {
         $key = $data['license_key'] ?? null;

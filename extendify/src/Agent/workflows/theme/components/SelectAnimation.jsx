@@ -59,7 +59,7 @@ const speeds = [
 	},
 ];
 
-export const SelectAnimation = ({ onConfirm, onCancel, onLoad }) => {
+export const SelectAnimation = ({ onConfirm, onCancel }) => {
 	const initialSettings = useRef({});
 	const [animation, setAnimation] = useState(null);
 	const [touched, setTouched] = useState(0);
@@ -94,11 +94,6 @@ export const SelectAnimation = ({ onConfirm, onCancel, onLoad }) => {
 	}, [speed, animation, touched]);
 
 	useEffect(() => {
-		if (loading) return;
-		onLoad();
-	}, [loading, onLoad]);
-
-	useEffect(() => {
 		if (!loading) return;
 		getOption('extendify_animation_settings').then((settings = {}) => {
 			const defaults = { type: 'none', speed: 'medium' };
@@ -121,7 +116,7 @@ export const SelectAnimation = ({ onConfirm, onCancel, onLoad }) => {
 	}
 
 	return (
-		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
+		<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg p-3 border-b border-gray-300 bg-white">
 				<div className="text-xs uppercase mb-3 text-gray-700 font-medium">
 					{/* translators: "Type" refers to the category of animation effects available. e.g. The type could be 'Zoom In', 'Fade', etc. */}

@@ -5,10 +5,14 @@ import { __ } from '@wordpress/i18n';
 import { chevronUp, Icon } from '@wordpress/icons';
 
 export const Mobile = () => {
-	const { isMobile, minimized, setMinimized } = useGlobalStore();
+	const { isMobile, minimized, setMinimized, setOpen } = useGlobalStore();
 	const ref = useRef(null);
 
-	const minimize = () => setMinimized(false);
+	const maximize = () => {
+		// A restored minimized:true can pair with open:false, which renders nothing.
+		setOpen(true);
+		setMinimized(false);
+	};
 
 	useEffect(() => {
 		if (!isMobile || minimized) return;
@@ -34,7 +38,7 @@ export const Mobile = () => {
 			ref={ref}
 			type="button"
 			className="m-0 flex w-full items-center justify-between gap-2 bg-gray-900 px-4 py-3 font-sans text-white shadow-[0_-1px_0_0_rgba(255,255,255,0.05)]"
-			onClick={minimize}
+			onClick={maximize}
 			aria-label={__('Open Agent', 'extendify-local')}
 		>
 			<div className="flex gap-3">

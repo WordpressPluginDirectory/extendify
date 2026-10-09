@@ -1,3 +1,4 @@
+import { useCanvasOpen } from '@agent/components/Canvas';
 import { usePortal } from '@agent/hooks/usePortal';
 import { useGlobalStore } from '@agent/state/global';
 import { createPortal, useEffect } from '@wordpress/element';
@@ -7,9 +8,16 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 export const MobileLayout = ({ children }) => {
 	const mountNode = usePortal('extendify-agent-mount');
-	const { minimized, setMinimized } = useGlobalStore();
+	const { minimized, setMinimized, open, mode } = useGlobalStore();
+
+	const canvasOpen = useCanvasOpen();
 
 	const minimize = () => setMinimized(true);
+
+	// The full-screen chat would cover the canvas the user just opened.
+	useEffect(() => {
+		if (canvasOpen) setMinimized(true);
+	}, [canvasOpen, setMinimized]);
 
 	useEffect(() => {
 		if (!mountNode || minimized) return;
@@ -19,10 +27,12 @@ export const MobileLayout = ({ children }) => {
 		};
 	}, [mountNode, minimized]);
 
-	if (!mountNode) return null;
+	// Only the frontend agent may show while the store says closed.
+	if (!mountNode || (!open && mode !== 'docked-left')) return null;
 
 	return createPortal(
 		<div
+			data-extendify-agent-panel
 			className={`fixed inset-0 z-max-1 items-center justify-center ${
 				minimized ? 'hidden' : 'flex'
 			}`}

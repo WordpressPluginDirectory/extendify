@@ -38,7 +38,7 @@ export const UpdateSettingConfirm = ({ inputs, onConfirm, onCancel }) => {
 	}, [inputs, headerRef]);
 
 	return (
-		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
+		<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="p-3">
 					<p className="m-0 p-0 text-sm text-gray-900">

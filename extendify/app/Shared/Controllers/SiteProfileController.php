@@ -25,8 +25,10 @@ class SiteProfileController
     public static function store($request)
     {
         $value = $request->get_param('siteProfile');
-        \update_option('extendify_site_profile', Sanitizer::sanitizeUnknown($value));
+        // sanitize_text_field() on the raw JSON entity-encodes from the first "<"
+        // to the end, corrupting it. Decode first so we sanitize fields, not JSON.
         $siteProfile = is_string($value) ? json_decode($value, true) : $value;
+        \update_option('extendify_site_profile', Sanitizer::sanitizeUnknown($siteProfile));
         return new \WP_REST_Response($siteProfile);
     }
 

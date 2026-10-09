@@ -1,4 +1,5 @@
 import { getSiteImages } from '@library/api/WPApi';
+import { siteImageUrls } from '@shared/lib/site-images';
 import useSWRImmutable from 'swr/immutable';
 
 export const useSiteImages = () => {
@@ -6,5 +7,6 @@ export const useSiteImages = () => {
 		'library-site-images',
 		getSiteImages,
 	);
-	return { siteImages: data?.siteImages ?? [], error, isLoading };
+	// Patterns here carry no type, so the banner picks are part of one pool.
+	return { siteImages: siteImageUrls(data?.siteImages), error, isLoading };
 };

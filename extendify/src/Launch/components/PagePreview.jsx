@@ -1,6 +1,6 @@
-import blockStyleVariations from '@launch/_data/block-style-variations.json';
 import themeJSON from '@launch/_data/theme-processed.json';
 import { usePreviewIframe } from '@launch/hooks/usePreviewIframe';
+import { useVibeCss } from '@launch/hooks/useVibeCss';
 import { getFontOverrides } from '@launch/lib/preview-helpers';
 import { hexTomatrixValues, lowerImageQuality } from '@launch/lib/util';
 import { pageNames } from '@shared/lib/pages';
@@ -29,12 +29,11 @@ export const PagePreview = forwardRef(
 			() => style?.siteStyle?.vibe,
 			[style?.siteStyle?.vibe],
 		);
-		const blockVariationCSS = useMemo(() => {
-			if (vibe && blockStyleVariations[vibe]) {
-				return blockStyleVariations[vibe];
-			}
-			return blockStyleVariations['natural-1'] || '';
-		}, [vibe]);
+		const { data: vibeCss } = useVibeCss();
+		const blockVariationCSS = useMemo(
+			() => vibeCss?.[vibe] ?? vibeCss?.['natural-1'] ?? '',
+			[vibe, vibeCss],
+		);
 
 		const onLoad = useCallback(
 			(frame) => {

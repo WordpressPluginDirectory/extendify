@@ -60,14 +60,19 @@ class PartnerData
         'domainTLDs' => ['com', 'net'],
         'priorityDomainTLDs' => [],
         'stagingSites' => ['wordpress'],
+        'trialDomains' => [],
         'domainSearchURL' => '',
         'showDraft' => false,
         'showChat' => false,
         'showAIPageCreation' => false,
+        'mcpConfig' => [],
+        'mcpWriteList' => [],
+        'mcpReadList' => [],
         'enableImageImports-1-14-6' => false,
         'disableLibraryAutoOpen' => false,
         'enableApexDomain' => false,
         'showLaunch' => false,
+        'showLaunchTitle' => false,
         'deactivated' => true,
         'launchRedirectWebsite' => false,
         'showAILogo' => false,
@@ -79,6 +84,7 @@ class PartnerData
         ],
         'license' => 'active',
         'showAIAgents' => false,
+        'agentAbilitiesAllowlist' => [],
         'showQuickEdit' => false,
         // Simple front-end Extendify toolbar (replaces WP core admin
         // bar for editors who prefer it). Default style is Launch-aware
@@ -93,7 +99,19 @@ class PartnerData
         'hidePluginNotifications' => false,
         'hideLaunchExitLink' => false,
         'useAutoUpdate' => false,
+        'showLaunchUpdate' => false,
         'activeTests' => [],
+        'showExtendifyCode' => false,
+        'useComingSoon' => false,
+        'useSearchEngineBlock' => false,
+        'extendifyCodeData' => [
+            'link' => '',
+            'title' => '',
+            'message' => '',
+            'cta-primary' => '',
+        ],
+        'customDesign' => null,
+        'strings' => [],
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -103,6 +121,14 @@ class PartnerData
      * @return void
      */
     public function __construct()
+    {
+        self::load();
+    }
+
+    /**
+     * @return void
+     */
+    public static function load()
     {
         self::$id = defined('EXTENDIFY_PARTNER_ID') ? constant('EXTENDIFY_PARTNER_ID') : null;
         $data = self::getPartnerData();
@@ -120,6 +146,7 @@ class PartnerData
         self::$config['priorityDomainTLDs'] = ($data['priorityDomainTLDs']
             ?? self::$config['priorityDomainTLDs']);
         self::$config['stagingSites'] = array_map('trim', ($data['stagingSites'] ?? self::$config['stagingSites']));
+        self::$config['trialDomains'] = array_map('trim', ($data['trialDomains'] ?? self::$config['trialDomains']));
         self::$config['domainSearchURL'] = ($data['domainSearchURL'] ?? self::$config['domainSearchURL']);
         self::$logo = isset($data['logo'][0]['thumbnails']['large']['url'])
             ? $data['logo'][0]['thumbnails']['large']['url']
@@ -139,7 +166,11 @@ class PartnerData
             'secondaryColorText' => '#ffffff',
         ];
         self::$config['showAIPageCreation'] = ($data['showAIPageCreation'] ?? self::$config['showAIPageCreation']);
+        self::$config['mcpConfig'] = ($data['mcpConfig'] ?? self::$config['mcpConfig']);
+        self::$config['mcpWriteList'] = ($data['mcpWriteList'] ?? self::$config['mcpWriteList']);
+        self::$config['mcpReadList'] = ($data['mcpReadList'] ?? self::$config['mcpReadList']);
         self::$config['showLaunch'] = ($data['showLaunch'] ?? self::$config['showLaunch']);
+        self::$config['showLaunchTitle'] = ($data['showLaunchTitle'] ?? self::$config['showLaunchTitle']);
         self::$config['deactivated'] = ($data['deactivated'] ?? self::$config['deactivated']);
         self::$config['launchRedirectWebsite'] = ($data['launchRedirectWebsite']
             ?? self::$config['launchRedirectWebsite']);
@@ -158,6 +189,8 @@ class PartnerData
         self::$config['showImprint'] = ($data['showImprint'] ?? self::$config['showImprint']);
         self::$config['showLaunchQuestions'] = ($data['showLaunchQuestions'] ?? self::$config['showLaunchQuestions']);
         self::$config['showAIAgents'] = ($data['showAIAgents'] ?? self::$config['showAIAgents']);
+        self::$config['agentAbilitiesAllowlist'] = ($data['agentAbilitiesAllowlist']
+            ?? self::$config['agentAbilitiesAllowlist']);
         self::$config['showQuickEdit'] = ($data['showQuickEdit'] ?? self::$config['showQuickEdit']);
         self::$config['showSimpleToolbar'] = ($data['showSimpleToolbar']
             ?? self::$config['showSimpleToolbar']);
@@ -170,7 +203,15 @@ class PartnerData
             ?? self::$config['hidePluginNotifications']);
         self::$config['hideLaunchExitLink'] = ($data['hideLaunchExitLink'] ?? self::$config['hideLaunchExitLink']);
         self::$config['useAutoUpdate'] = ($data['useAutoUpdate'] ?? self::$config['useAutoUpdate']);
+        self::$config['showLaunchUpdate'] = ($data['showLaunchUpdate'] ?? self::$config['showLaunchUpdate']);
         self::$config['activeTests'] = ($data['activeTests'] ?? self::$config['activeTests']);
+        self::$config['showExtendifyCode'] = ($data['showExtendifyCode'] ?? self::$config['showExtendifyCode']);
+        self::$config['useComingSoon'] = ($data['useComingSoon'] ?? self::$config['useComingSoon']);
+        self::$config['useSearchEngineBlock'] = ($data['useSearchEngineBlock']
+            ?? self::$config['useSearchEngineBlock']);
+        self::$config['extendifyCodeData'] = ($data['extendifyCodeData'] ?? self::$config['extendifyCodeData']);
+        self::$config['customDesign'] = ($data['customDesign'] ?? self::$config['customDesign']);
+        self::$config['strings'] = ($data['strings'] ?? self::$config['strings']);
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);
@@ -192,13 +233,10 @@ class PartnerData
         if ($partnerData !== 'empty') {
             // We have data, but if it's been 10 minutes, check for new data.
             $partnerRefresh = \get_transient('extendify_partner_data_cache_check');
-            if (!$partnerRefresh && \is_admin()) {
-                \add_action('init', function () {
-                    if (!\wp_next_scheduled('extendify_fetch_partner_data')) {
-                        \wp_schedule_single_event(time(), 'extendify_fetch_partner_data');
-                        \spawn_cron();
-                    }
-                });
+            if (!$partnerRefresh && \is_user_logged_in()) {
+                \did_action('init')
+                    ? self::scheduleRefresh()
+                    : \add_action('init', [self::class, 'scheduleRefresh']);
             }
 
             return array_merge(self::$config, $partnerData);
@@ -209,6 +247,47 @@ class PartnerData
         // Cache here even if empty [] to prevent multiple requests.
         \update_option('extendify_partner_data_v2', $mergedData);
         return $mergedData;
+    }
+
+    /**
+     * A token request may be the only visitor a site gets, so it fetches a stale config itself.
+     *
+     * @return void
+     */
+    public static function refreshIfStale()
+    {
+        if (\get_transient('extendify_partner_data_cache_check')) {
+            return;
+        }
+
+        // The 45s timeout the plugin gives its hosts is longer than a waiting MCP client allows.
+        $brief = function ($args) {
+            $args['timeout'] = 5;
+            return $args;
+        };
+        \add_filter('http_request_args', $brief, 101);
+        try {
+            $fetched = self::fetchPartnerData();
+        } finally {
+            \remove_filter('http_request_args', $brief, 101);
+        }
+
+        if ($fetched) {
+            self::load();
+        }
+    }
+
+    /**
+     * @return void
+     */
+    public static function scheduleRefresh()
+    {
+        if (\wp_next_scheduled('extendify_fetch_partner_data')) {
+            return;
+        }
+
+        \wp_schedule_single_event(time(), 'extendify_fetch_partner_data');
+        \spawn_cron();
     }
 
     /**
@@ -256,7 +335,14 @@ class PartnerData
 
         $sanitizedData = array_merge(
             Sanitizer::sanitizeUnknown($result['data']),
-            ['consentTermsCustom' => \sanitize_text_field(htmlentities(($result['data']['consentTermsCustom'] ?? '')))]
+            [
+                'consentTermsCustom' => \sanitize_text_field(htmlentities(
+                    ($result['data']['consentTermsCustom'] ?? ''),
+                    ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401
+                )),
+                'customDesign' => self::sanitizeDesign($result['data']['customDesign'] ?? null),
+                'strings' => self::sanitizeStrings($result['data']['strings'] ?? null),
+            ]
         );
 
         // Merge before persisting as this data is accessed directly elsewhere.
@@ -264,6 +350,74 @@ class PartnerData
         \update_option('extendify_partner_data_v2', $mergedData);
 
         return $mergedData;
+    }
+
+    /**
+     * Partner copy overriding the shipped strings.
+     *
+     * Which keys exist is the flow's to know, so only shape and text are checked here.
+     *
+     * @param mixed $strings The map as the partner-data response carried it.
+     * @return array
+     */
+    public static function sanitizeStrings($strings)
+    {
+        return array_map(
+            'sanitize_text_field',
+            self::designEntries($strings, '/^[a-zA-Z][a-zA-Z0-9]*$/', 'is_string')
+        );
+    }
+
+    /**
+     * A design carries GLSL, which the text sanitizers break, so only its shape is checked.
+     *
+     * Empty members are left out rather than kept: json_encode writes an empty
+     * PHP array as [], and the page reads the design as an object.
+     *
+     * @param mixed $design The design as the partner-data response carried it.
+     * @return array|null
+     */
+    private static function sanitizeDesign($design)
+    {
+        if (!is_array($design)) {
+            return null;
+        }
+
+        $shader = ($design['shader'] ?? null);
+        $logo = ($design['logo'] ?? null);
+        $kept = array_filter([
+            'vars' => self::designEntries(
+                ($design['vars'] ?? null),
+                '/^--ext-(ui|tpl)-[a-z0-9-]+$/',
+                function ($value) {
+                    // A CSS value is a string, but 0.88 is a natural way to write one.
+                    return is_string($value) || is_int($value) || is_float($value);
+                }
+            ),
+            'templates' => self::designEntries(($design['templates'] ?? null), '/^[A-Za-z0-9_-]+$/', 'is_string'),
+            'shader' => is_string($shader) ? \wp_check_invalid_utf8($shader) : '',
+            'logo' => is_string($logo) ? \esc_url_raw($logo) : '',
+        ]);
+
+        return $kept ?: null;
+    }
+
+    private static function designEntries($entries, $keyPattern, callable $accepts)
+    {
+        if (!is_array($entries)) {
+            return [];
+        }
+
+        $kept = [];
+        foreach ($entries as $key => $value) {
+            if (!is_string($key) || !preg_match($keyPattern, $key) || !$accepts($value)) {
+                continue;
+            }
+
+            $kept[$key] = is_string($value) ? \wp_check_invalid_utf8($value) : $value;
+        }
+
+        return $kept;
     }
 
     /**

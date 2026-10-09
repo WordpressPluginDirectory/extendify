@@ -1,7 +1,13 @@
+import { replaceVibeBlocks } from '@shared/lib/vibe-blocks';
+import {
+	applyVibeGlobals,
+	applyVibeStyles,
+	vibeGlobalsEntry,
+} from '@shared/lib/vibe-globals';
+import { getVibes, vibesBySlug } from '@shared/lib/vibes';
 import apiFetch from '@wordpress/api-fetch';
 
 const globalStylesPostID = window.extSharedData?.globalStylesPostID;
-const themeSlug = window.extAgentData?.context?.themeSlug;
 
 export default async ({ selectedVibe }) => {
 	if (
@@ -13,36 +19,45 @@ export default async ({ selectedVibe }) => {
 	}
 
 	try {
-		// Fetch variation
-		const { styles: variationStyles } = await apiFetch({
-			path: `/wp/v2/global-styles/${globalStylesPostID}?context=edit`,
+		const [currentGlobalStyles, payloads] = await Promise.all([
+			apiFetch({
+				path: `/wp/v2/global-styles/${globalStylesPostID}?context=edit`,
+			}),
+			// Same query the picker asked for, so this reads the cached response.
+			getVibes(`agent,${selectedVibe}`),
+		]);
+
+		const vibes = vibesBySlug(payloads);
+		const entry = vibeGlobalsEntry(vibes, selectedVibe);
+		const currentStyles = currentGlobalStyles.styles;
+
+		const styles = applyVibeStyles({
+			currentStyles,
+			vibeStyles: entry?.styles,
+			vibes,
 		});
-		// Fetch theme styles
-		const { styles: themeStyles } = await apiFetch({
-			path: `/wp/v2/global-styles/themes/${themeSlug}?context=edit`,
-		});
 
-		const updatedBlocks = {};
-		for (const [blockName, blockObj] of Object.entries(themeStyles.blocks)) {
-			if (!blockObj?.variations) {
-				updatedBlocks[blockName] = blockObj;
-				continue;
-			}
-
-			const { variations, ...rest } = blockObj;
-			updatedBlocks[blockName] = {
-				...rest,
-				variations: processBlockVariations(variations, selectedVibe),
-			};
-		}
-
-		// Apply the update
+		// One post holds all three, so a second POST would drop the first.
 		await Promise.all([
 			apiFetch({
-				path: `wp/v2/global-styles/${globalStylesPostID}`,
 				method: 'POST',
+				path: `/wp/v2/global-styles/${globalStylesPostID}`,
 				data: {
-					styles: { ...variationStyles, blocks: updatedBlocks },
+					id: globalStylesPostID,
+					settings: applyVibeGlobals({
+						currentSettings: currentGlobalStyles.settings,
+						vibeSettings: entry?.settings,
+						vibes,
+					}),
+					styles: {
+						...styles,
+						// Pre-apply blocks here would drop the css applyVibeStyles wrote.
+						blocks: replaceVibeBlocks({
+							currentBlocks: styles?.blocks,
+							vibeBlocks: vibes[selectedVibe]?.blocks,
+							selectedVibe,
+						}),
+					},
 				},
 			}),
 			updateSiteStyleOption(selectedVibe),
@@ -73,25 +88,4 @@ const updateSiteStyleOption = async (selectedVibe) => {
 		method: 'POST',
 		data: { option: 'extendify_siteStyle', value: updatedSiteStyle },
 	});
-};
-
-const processBlockVariations = (variations, targetVibe) => {
-	const updatedVariations = {};
-
-	for (const [styleName, styleProperties] of Object.entries(variations)) {
-		if (!styleName.includes('--natural-1--')) {
-			updatedVariations[styleName] = styleProperties;
-			continue;
-		}
-
-		const sourceStyleName = styleName.replace(
-			'--natural-1--',
-			`--${targetVibe}--`,
-		);
-		const sourceStyle = variations[sourceStyleName];
-
-		updatedVariations[styleName] = sourceStyle || styleProperties;
-	}
-
-	return updatedVariations;
 };

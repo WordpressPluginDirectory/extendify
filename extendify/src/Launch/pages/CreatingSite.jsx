@@ -331,12 +331,21 @@ export const CreatingSite = () => {
 				patterns: style.patterns,
 				slug: 'home',
 			};
-			const blogPage = {
-				name: pageNames.blog.title,
-				id: 'blog',
-				patterns: [],
-				slug: 'blog',
-			};
+			// Home's blog section leaves posts unreachable without a posts page.
+			const needsBlog =
+				hasBlogGoal ||
+				homePage.patterns?.some((pattern) =>
+					pattern.patternTypes?.includes('blog-section'),
+				);
+			const blogPage =
+				needsBlog && !pages.some(({ slug }) => slug === 'blog')
+					? {
+							name: pageNames.blog.title,
+							id: 'blog',
+							patterns: [],
+							slug: 'blog',
+						}
+					: null;
 
 			await waitFor200Response();
 
@@ -372,11 +381,7 @@ export const CreatingSite = () => {
 				? pagesWithoutPageTitlePattern
 				: pages;
 
-			const pagesToCreate = [
-				...pagesToUse,
-				homePage,
-				hasBlogGoal ? blogPage : null,
-			].filter(Boolean);
+			const pagesToCreate = [...pagesToUse, homePage, blogPage].filter(Boolean);
 
 			const pagesWithReplacedPatterns = [];
 			// Run these one page at a time so we don't end up with duplicate dependency issues
@@ -416,11 +421,7 @@ export const CreatingSite = () => {
 					siteStructure === 'single-page' && siteObjective !== 'landing-page',
 			});
 
-			const hasBlogPattern = homePage?.patterns?.some((pattern) =>
-				pattern.patternTypes.includes('blog-section'),
-			);
-
-			if (hasBlogGoal || hasBlogPattern) {
+			if (needsBlog) {
 				informDesc(__('Creating blog sample data', 'extendify-local'));
 				await createBlogSampleData(siteStrings, siteImages);
 			}
@@ -450,11 +451,9 @@ export const CreatingSite = () => {
 			await waitFor200Response();
 			informDesc(__('Setting up site layout', 'extendify-local'));
 
-			const navPagesMultiPageSite = [
-				...pages,
-				hasBlogGoal ? blogPage : null,
-				homePage,
-			].filter(Boolean);
+			const navPagesMultiPageSite = [...pages, blogPage, homePage].filter(
+				Boolean,
+			);
 
 			const pluginPages = [];
 

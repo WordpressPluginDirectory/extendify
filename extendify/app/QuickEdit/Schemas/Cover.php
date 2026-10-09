@@ -96,7 +96,9 @@ class Cover implements Schema
                 $block['innerContent'] = $innerContent;
                 // Inspection-only; the serializer rebuilds innerHTML from innerContent.
                 $block['innerHTML'] = implode('', array_map(
-                    static fn($c) => is_string($c) ? $c : '',
+                    static function ($c) {
+                        return is_string($c) ? $c : '';
+                    },
                     $innerContent
                 ));
                 break;

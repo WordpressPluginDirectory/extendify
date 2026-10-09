@@ -1,32 +1,53 @@
+import { appliedVibeOwnership } from '@shared/lib/applied-vibes';
 import { deepMerge } from '@shared/lib/utils';
+import {
+	preserveVibeSettings,
+	preserveVibeStyles,
+} from '@shared/lib/vibe-globals';
 import apiFetch from '@wordpress/api-fetch';
 
 const { globalStylesPostID } = window.extSharedData;
 
-// Will merge into the current variation and preserve block style variations (vibes)
-export default async ({ variation }) => {
-	const currentTheme = await apiFetch({
-		path: `/wp/v2/global-styles/${globalStylesPostID}?context=edit`,
-	});
-	const currentVariations = await apiFetch({
-		path: '/extendify/v1/agent/block-style-variations',
-	});
+// The vibe layer keeps its owned leaves even when the variation declares them.
+export default async ({ variation, purge = (document) => document }) => {
+	const [current, vibes] = await Promise.all([
+		apiFetch({
+			path: `/wp/v2/global-styles/${globalStylesPostID}?context=edit`,
+		}),
+		getCurrentVibes(),
+	]);
 
-	const preservedBlockVibes = Object.keys(currentVariations).reduce(
-		(blocks, blockName) => {
-			blocks[blockName] = { variations: currentVariations[blockName] };
-			return blocks;
-		},
-		{},
+	const merged = deepMerge(
+		purge({ settings: current.settings, styles: current.styles }),
+		variation,
 	);
-
-	const final = deepMerge(currentTheme, variation, {
-		styles: { blocks: preservedBlockVibes },
-	});
 
 	return apiFetch({
 		method: 'POST',
 		path: `/wp/v2/global-styles/${globalStylesPostID}`,
-		data: { id: globalStylesPostID, ...final },
+		data: {
+			id: globalStylesPostID,
+			settings: preserveVibeSettings({
+				mergedSettings: merged.settings,
+				currentSettings: current.settings,
+				vibes,
+			}),
+			styles: preserveVibeStyles({
+				mergedStyles: merged.styles,
+				currentStyles: current.styles,
+				vibes,
+			}),
+		},
 	});
+};
+
+const getCurrentVibes = async () => {
+	try {
+		const { data } = await apiFetch({
+			path: '/extendify/v1/launch/options?option=extendify_siteStyle',
+		});
+		return await appliedVibeOwnership(data?.vibe);
+	} catch {
+		return {};
+	}
 };

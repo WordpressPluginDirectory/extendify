@@ -2,13 +2,13 @@ import {
 	addCustomMediaViewsCss,
 	removeCustomMediaViewsCss,
 } from '@shared/lib/media-views';
+import { track } from '@shared/lib/track';
 import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { loadProduct, save, saveProduct } from '../lib/api';
 import { invalidateBlockSource } from '../lib/block-source-cache';
 import { splice } from '../lib/dom';
 import { friendlyMessage } from '../lib/errors';
-import { track } from '../lib/insights';
 import { closeModal, mountModal } from '../lib/modal-root';
 import { useQuickEditStore } from '../state/store';
 import { pushUndo } from '../state/undo';
@@ -222,7 +222,10 @@ const ImagePicker = ({ selected, field }) => {
 			return;
 		}
 		const mode = initialTab === 'upload' ? 'upload' : 'browse';
-		track('image_source_chosen', { source: mode });
+		track('quick_edit_action', {
+			element: selected.blockType,
+			type: `image_${mode}`,
+		});
 		const frame = window.wp.media({
 			title:
 				mode === 'upload'
@@ -372,8 +375,9 @@ const ImagePicker = ({ selected, field }) => {
 	};
 
 	const openImageModal = (Component) => {
-		const source = Component === AiImagePickerModal ? 'ai' : 'unsplash';
-		track('image_source_chosen', { source });
+		const type =
+			Component === AiImagePickerModal ? 'image_ai' : 'image_unsplash';
+		track('quick_edit_action', { element: selected.blockType, type });
 		const isProduct = selected.source?.kind === 'product';
 		const onAfterSave = (didSave) => {
 			closeModal(false);

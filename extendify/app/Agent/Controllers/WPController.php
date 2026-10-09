@@ -8,8 +8,12 @@ namespace Extendify\Agent\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Agent\PostBlockFinder;
+use Extendify\Agent\TemplatePartBlockFinder;
 use Extendify\Constants;
+use Extendify\Shared\Services\HeroDescription;
 use Extendify\Shared\Services\Sanitizer;
+use Extendify\Shared\Services\SiteImages;
 
 /**
  * The controller for interacting with WordPress.
@@ -51,6 +55,10 @@ class WPController
         'glasgow',
         'royal',
         'obsidian',
+        'heath',
+        'signal',
+        'marzipan',
+        'butterscotch',
     ];
 
     /**
@@ -284,13 +292,81 @@ class WPController
                 'letterSpacing' => $typography['letterSpacing'] ?? null,
                 'fontStyle' => $typography['fontStyle'] ?? null,
                 'fontWeight' => $typography['fontWeight'] ?? null,
-                'textTransform' => $typography['textTransform'] ?? 'none',
+                // Defaulting to 'none' would cancel the applied vibe's uppercase.
+                'textTransform' => $typography['textTransform'] ?? null,
             ], function ($v) {
                 return $v !== null;
             })
         ];
     }
 
+
+    /**
+     * Where else the synced pattern or menu a composite blockId names is used
+     *
+     * @param \WP_REST_Request $request The REST API request object.
+     * @return \WP_REST_Response
+     */
+    public static function getSharedBlockUsage(\WP_REST_Request $request)
+    {
+        $composite = TemplatePartBlockFinder::parseCompositeId(
+            $request->get_param('blockId')
+        );
+        if (!$composite) {
+            return new \WP_REST_Response(['scope' => 'block', 'pages' => []], 200);
+        }
+
+        $seen = [];
+        $pages = [];
+        $sitewide = self::collectRefUsage($composite['ref'], $seen, $pages);
+
+        return new \WP_REST_Response([
+            'scope' => $sitewide ? 'site' : ($pages ? 'pages' : 'block'),
+            'pages' => array_values($pages),
+        ], 200);
+    }
+
+    // A template or part renders it everywhere, so a page list only matters otherwise.
+    private static function collectRefUsage(int $ref, array &$seen, array &$pages): bool
+    {
+        if (isset($seen[$ref])) {
+            return false;
+        }
+        $seen[$ref] = true;
+
+        $sitewide = false;
+        foreach (self::postsReferencing($ref) as $row) {
+            $id = (int) $row->ID;
+            if (in_array($row->post_type, ['wp_template', 'wp_template_part'], true)) {
+                $sitewide = true;
+                continue;
+            }
+            // A pattern nested in a pattern inherits wherever the outer one lands.
+            if ($row->post_type === 'wp_block') {
+                $sitewide = self::collectRefUsage($id, $seen, $pages) || $sitewide;
+                continue;
+            }
+            $pages[$id] = ['id' => $id, 'title' => \get_the_title($id)];
+        }
+
+        return $sitewide;
+    }
+
+    // The ref is literal text inside a block comment, which WP indexes nowhere.
+    private static function postsReferencing(int $ref)
+    {
+        global $wpdb;
+
+        $like = $wpdb->esc_like('"ref":' . $ref);
+        return $wpdb->get_results($wpdb->prepare(
+            "SELECT ID, post_type FROM {$wpdb->posts}
+             WHERE post_status IN ('publish', 'private', 'draft')
+               AND post_type IN ('post', 'page', 'wp_block', 'wp_template', 'wp_template_part')
+               AND (post_content LIKE %s OR post_content LIKE %s)",
+            '%' . $like . '}%',
+            '%' . $like . ',%'
+        ));
+    }
 
     /**
      * Get the HTML of a specific tagged block code
@@ -300,15 +376,26 @@ class WPController
      */
     public static function getBlockCode(\WP_REST_Request $request)
     {
-        $blockId = (int) $request->get_param('blockId');
+        $rawId = $request->get_param('blockId');
+        $partSlug = (string) $request->get_param('partSlug');
 
+        $composite = TemplatePartBlockFinder::parseCompositeId($rawId);
+        if ($composite) {
+            return self::getRefPostBlockCode(
+                $composite,
+                (string) $rawId,
+                $partSlug,
+                (int) $request->get_param('postId')
+            );
+        }
+
+        $blockId = (int) $rawId;
         if ($blockId < 1) {
             return new \WP_REST_Response(['error' => 'Invalid blockId'], 400);
         }
 
         // A template-part source resolves the part and walks it with the shared
         // preorder finder, instead of the post path below.
-        $partSlug = (string) $request->get_param('partSlug');
         if ($partSlug !== '') {
             return self::getTemplatePartBlockCode($partSlug, $blockId);
         }
@@ -319,55 +406,25 @@ class WPController
             return new \WP_REST_Response(['error' => 'Post not found'], 404);
         }
 
-        $ignored = \Extendify\Agent\TagBlocks::$ignored;
+        $found = PostBlockFinder::find(parse_blocks($post->post_content), $blockId);
 
-        $ast = array_values(array_filter(
-            parse_blocks($post->post_content),
-            static function ($b) {
-                return is_array($b) && !empty($b['blockName']);
-            }
-        ));
-
-        $seq = 0;
-        $found = null;
-
-        $walk = function (array $list) use (&$walk, &$seq, $blockId, &$found, $ignored) {
-            foreach ($list as $b) {
-                $name = $b['blockName'] ?? null;
-                if (!$name) {
-                    continue;
-                }
-
-                // Ignore this block and its subtree (matches tagger behavior)
-                if (in_array($name, $ignored, true)) {
-                    continue; // do NOT increment seq, do NOT traverse children
-                }
-
-                $seq++;
-                if ($seq === $blockId) {
-                    $found = $b;
-                    return true;
-                }
-
-                if (!empty($b['innerBlocks']) && $walk($b['innerBlocks'])) {
-                    return true;
-                }
-            }
-            return false;
-        };
-        $walk($ast);
-
-        if (!is_array($found) || empty($found['blockName'])) {
+        if (!$found || empty($found['block']['blockName'])) {
             return new \WP_REST_Response(['error' => 'Block id not found in this post'], 404);
         }
 
-        return new \WP_REST_Response([
-            'postId'  => $postId,
+        return self::blockCodeResponse($found['block'], ['postId' => $postId], $blockId);
+    }
+
+    // One response shape for every source, so the client reads the same fields
+    // whichever post the block turned out to live in.
+    private static function blockCodeResponse(array $block, array $scope, $blockId)
+    {
+        return new \WP_REST_Response(array_merge($scope, [
             'blockId' => $blockId,
-            'name'    => $found['blockName'],
-            'attrs'   => $found['attrs'] ?? (object)[],
-            'block'   => serialize_blocks([$found]),
-        ], 200);
+            'name'    => $block['blockName'],
+            'attrs'   => $block['attrs'] ?? (object)[],
+            'block'   => serialize_blocks([$block]),
+        ]), 200);
     }
 
     // Resolves the part the same way SaveController does — active-theme-scoped
@@ -375,33 +432,69 @@ class WPController
     // shared preorder finder so the blockId lands on the block save will write.
     private static function getTemplatePartBlockCode(string $slug, int $blockId)
     {
-        $stylesheet = wp_get_theme()->get_stylesheet();
-        $template = get_block_template("{$stylesheet}//{$slug}", 'wp_template_part');
-        if (!$template || empty($template->wp_id)) {
+        $content = self::templatePartContent($slug);
+        if ($content === null) {
             return new \WP_REST_Response(['error' => 'Template part not found'], 404);
         }
 
-        $post = \get_post($template->wp_id);
-        if (!$post) {
-            return new \WP_REST_Response(['error' => 'Template part not found'], 404);
-        }
-
-        $found = \Extendify\Agent\TemplatePartBlockFinder::find(
-            parse_blocks($post->post_content),
+        $found = TemplatePartBlockFinder::find(
+            parse_blocks($content),
             $blockId
         );
         if (!is_array($found) || empty($found['block']['blockName'])) {
             return new \WP_REST_Response(['error' => 'Block id not found in this template part'], 404);
         }
 
-        $block = $found['block'];
-        return new \WP_REST_Response([
-            'partSlug' => $slug,
-            'blockId'  => $blockId,
-            'name'     => $block['blockName'],
-            'attrs'    => $block['attrs'] ?? (object)[],
-            'block'    => serialize_blocks([$block]),
-        ], 200);
+        return self::blockCodeResponse($found['block'], ['partSlug' => $slug], $blockId);
+    }
+
+    // Post and theme file number identically, so an id survives the first edit.
+    private static function templatePartContent(string $slug)
+    {
+        $stylesheet = \wp_get_theme()->get_stylesheet();
+        $template = \get_block_template("{$stylesheet}//{$slug}", 'wp_template_part');
+        if (!$template) {
+            return null;
+        }
+        $post = empty($template->wp_id) ? null : \get_post($template->wp_id);
+        return $post ? $post->post_content : $template->content;
+    }
+
+    // A synced pattern's or menu's blocks live in the post its id names, walked
+    // with the same finder — the part they render inside owns none of them.
+    private static function getRefPostBlockCode(
+        array $composite,
+        string $blockId,
+        string $partSlug,
+        int $postId
+    ) {
+        $post = \get_post($composite['ref']);
+        if (!$post || $post->post_type !== $composite['postType']) {
+            return new \WP_REST_Response(['error' => 'Referenced post not found'], 404);
+        }
+
+        $containerPost = $partSlug === '' ? \get_post($postId) : null;
+        $container = $partSlug !== ''
+            ? self::templatePartContent($partSlug)
+            : ($containerPost ? $containerPost->post_content : null);
+        if ($container === null) {
+            return new \WP_REST_Response(['error' => 'Block id not found in this post'], 404);
+        }
+
+        // Unchecked, every pattern and menu on the site reads back from any page.
+        if (!TemplatePartBlockFinder::contentRendersRef($container, $composite['ref'])) {
+            return new \WP_REST_Response(['error' => 'Block id not found in this post'], 404);
+        }
+
+        $found = TemplatePartBlockFinder::find(
+            parse_blocks($post->post_content),
+            $composite['seq']
+        );
+        if (!is_array($found) || empty($found['block']['blockName'])) {
+            return new \WP_REST_Response(['error' => 'Block id not found in this referenced post'], 404);
+        }
+
+        return self::blockCodeResponse($found['block'], ['partSlug' => $partSlug], $blockId);
     }
 
     /**
@@ -415,7 +508,13 @@ class WPController
         $blockCode = $request->get_param('blockCode');
         $content = \do_blocks($blockCode);
 
-        return new \WP_REST_Response(['content' => trim($content)]);
+        // Layout supports register per-container CSS for a page-side enqueue
+        // that never happens on a REST fragment — ship it with the markup.
+        $styles = function_exists('wp_style_engine_get_stylesheet_from_context')
+            ? \wp_style_engine_get_stylesheet_from_context('block-supports')
+            : '';
+
+        return new \WP_REST_Response(['content' => trim($content), 'styles' => $styles]);
     }
 
     /**
@@ -475,7 +574,15 @@ class WPController
                 );
             }
 
-            if ($description) {
+            if (trim((string) $description) === '') {
+                // Catalog paragraphs describe the slot, not the site.
+                $code = preg_replace(
+                    '/<!-- wp:paragraph[\s\S]*?<!-- \/wp:paragraph -->/m',
+                    '',
+                    $code,
+                    1
+                );
+            } else {
                 $code = preg_replace(
                     '/(<!-- wp:paragraph[^>]*-->[\s\S]*?<p[^>]*>)[\s\S]*?(<\/p>[\s\S]*?<!-- \/wp:paragraph -->)/m',
                     '${1}' . esc_html($description) . '${2}',
@@ -590,24 +697,26 @@ class WPController
             return array_reverse($images);
         }
 
-        if (!$postId || empty($siteImages)) {
+        $candidates = SiteImages::urls($siteImages);
+
+        if (!$postId || empty($candidates)) {
             return $images;
         }
 
         $usedImages = self::resolveUsedImages($postId);
-        $siteImages = array_map(function ($url) {
+        $candidates = array_map(function ($url) {
             return self::stripQueryString($url);
-        }, $siteImages);
+        }, $candidates);
 
-        $unusedSiteImages = array_values(array_filter(
-            $siteImages,
+        $unusedImages = array_values(array_filter(
+            $candidates,
             function ($url) use ($usedImages, $images) {
                 return !in_array($url, $usedImages, true) && !in_array($url, $images, true);
             }
         ));
 
         $unusedSlots = $maxSlots - count($images);
-        return array_merge(array_slice($unusedSiteImages, 0, $unusedSlots), $images);
+        return array_merge(array_slice($unusedImages, 0, $unusedSlots), $images);
     }
 
     protected static function stripQueryString(string $url): string
@@ -663,7 +772,7 @@ class WPController
     public static function getSiteDesignVariations(\WP_REST_Request $request)
     {
         $title = $request->get_param('title');
-        $description = $request->get_param('description');
+        $description = HeroDescription::resolve($request->get_param('description'));
         $images = $request->get_param('images') ?? [];
         $cta = $request->get_param('cta');
         $featuredOnly = true; // Only show featured patterns

@@ -1,3 +1,4 @@
+import { track } from '@shared/lib/track';
 import { __experimentalLinkControl as LinkControl } from '@wordpress/block-editor';
 import { Button, Modal, Notice, TextControl } from '@wordpress/components';
 import { useState } from '@wordpress/element';
@@ -6,7 +7,6 @@ import { save, saveWpNavigationItem } from '../../lib/api';
 import { useCmdEnterSave } from '../../lib/cmd-enter-save';
 import { friendlyMessage } from '../../lib/errors';
 import { normalizeText } from '../../lib/fingerprint';
-import { track } from '../../lib/insights';
 import { closeModal, QE_MODAL_BODY_OPEN_CLASS } from '../../lib/modal-root';
 import { pushUndo } from '../../state/undo';
 import { ModalCloseButton } from './ModalCloseButton';

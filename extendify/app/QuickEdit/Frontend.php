@@ -4,6 +4,7 @@ namespace Extendify\QuickEdit;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Agent\Admin;
 use Extendify\Config;
 use Extendify\PartnerData;
 use Extendify\QuickEdit\Controllers\SaveController;
@@ -37,7 +38,9 @@ class Frontend
 
         // TagBlocks + TagTemplateParts are initialized by Agent\Admin.
         add_action('wp_enqueue_scripts', [$this, 'enqueue']);
-        add_action('admin_bar_menu', [$this, 'registerAdminBar'], 100);
+        // Landing after the agent button's 4 stops admin-bar.js moving it post-paint.
+        $beside = Admin::agentPosition() === 'docked-left' ? 5 : 100;
+        add_action('admin_bar_menu', [$this, 'registerAdminBar'], $beside);
     }
 
     /**

@@ -1,8 +1,12 @@
 import { generateImage } from '@shared/api/DataApi';
-import { importImage, importImageServer } from '@shared/api/wp';
+import { downloadImage } from '@shared/api/wp';
+import { useImageCreditsSync } from '@shared/hooks/useImageCreditsSync';
+import { useStampedPreview } from '@shared/hooks/useStampedPreview';
+import { track } from '@shared/lib/track';
 import { useImageGenerationStore } from '@shared/state/generate-images';
 import {
 	Button,
+	CheckboxControl,
 	Modal,
 	Notice,
 	Spinner,
@@ -17,7 +21,6 @@ import { invalidateBlockSource } from '../../lib/block-source-cache';
 import { useCmdEnterSave } from '../../lib/cmd-enter-save';
 import { splice } from '../../lib/dom';
 import { friendlyMessage } from '../../lib/errors';
-import { track } from '../../lib/insights';
 import { QE_MODAL_BODY_OPEN_CLASS } from '../../lib/modal-root';
 import { pushUndo } from '../../state/undo';
 import { ModalCloseButton } from './ModalCloseButton';
@@ -48,11 +51,15 @@ export const AiImagePickerModal = ({ selected, field, onAfterSave }) => {
 		aiImageOptions,
 		setAiImageOption,
 	} = useImageGenerationStore();
+	const [disclose, setDisclose] = useState(false);
 	const [generating, setGenerating] = useState(false);
 	const [applying, setApplying] = useState(false);
 	const [error, setError] = useState('');
 	const [preview, setPreview] = useState(null); // { src, id }
 	const abortRef = useRef(null);
+	const previewSrc = useStampedPreview(preview?.src, disclose);
+
+	useImageCreditsSync();
 
 	const noCredits = imageCredits.remaining === 0;
 	const usedCredits = imageCredits.total - imageCredits.remaining;
@@ -71,7 +78,11 @@ export const AiImagePickerModal = ({ selected, field, onAfterSave }) => {
 				id: gid,
 			} = await generateImage(aiImageOptions, abortRef.current.signal);
 			updateImageCredits(newCredits);
-			setPreview({ src: images[0].url, id: gid });
+			setPreview({
+				src: images[0].url,
+				id: gid,
+				alt: images[0].alt ?? aiImageOptions.prompt,
+			});
 			track('ai_image_generated', { size: aiImageOptions.size });
 		} catch (err) {
 			if (err?.code === 20) return; // aborted
@@ -96,19 +107,17 @@ export const AiImagePickerModal = ({ selected, field, onAfterSave }) => {
 		setError('');
 		setApplying(true);
 		try {
-			let attachment;
-			try {
-				attachment = await importImage(preview.src, {
-					alt: aiImageOptions.prompt,
-					filename: 'ai-image.jpg',
+			const attachment = await downloadImage(
+				preview.id,
+				preview.src,
+				'ai-generated',
+				null,
+				{
+					alt: preview.alt,
 					caption: '',
-				});
-			} catch (_e) {
-				attachment = await importImageServer(preview.src, {
-					alt: aiImageOptions.prompt,
-					caption: '',
-				});
-			}
+					disclose,
+				},
+			);
 			const mediaId = attachment?.id;
 			if (!mediaId) throw new Error('No media id returned');
 
@@ -153,7 +162,7 @@ export const AiImagePickerModal = ({ selected, field, onAfterSave }) => {
 						value: {
 							url: attachment.url || attachment.source_url,
 							id: mediaId,
-							alt: aiImageOptions.prompt || '',
+							alt: attachment.alt_text ?? '',
 						},
 					},
 				],
@@ -213,13 +222,13 @@ export const AiImagePickerModal = ({ selected, field, onAfterSave }) => {
 			) : null}
 			{preview?.src ? (
 				<div className="extendify-quick-edit-ai-preview">
-					<img src={preview.src} alt={aiImageOptions.prompt} />
+					<img src={previewSrc} alt={preview.alt} />
 				</div>
 			) : (
 				<form onSubmit={onGenerate} className="extendify-quick-edit-ai-form">
 					<TextareaControl
 						autoFocus
-						label={__('Image prompt', 'extendify-local')}
+						label={__('Image description', 'extendify-local')}
 						placeholder={__(
 							'Describe the image you want to create',
 							'extendify-local',
@@ -259,6 +268,14 @@ export const AiImagePickerModal = ({ selected, field, onAfterSave }) => {
 							}
 						/>
 					</ToggleGroupControl>
+					<CheckboxControl
+						__nextHasNoMarginBottom
+						// translators: Checkbox that adds a visible "AI Generated" mark onto the image.
+						label={__('Label image as AI-generated', 'extendify-local')}
+						checked={disclose}
+						onChange={setDisclose}
+						disabled={generating}
+					/>
 					{generating ? (
 						// biome-ignore lint/a11y/useSemanticElements: deliberate live region; <output> changes display + semantics
 						<div className="extendify-quick-edit-ai-generating" role="status">

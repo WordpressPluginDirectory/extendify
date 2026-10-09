@@ -1,5 +1,7 @@
 // Entries are shaped like the save endpoint's request body so replay is just
 // save(entry). Cap protects localStorage size.
+
+import { track } from '@shared/lib/track';
 import { __, sprintf } from '@wordpress/i18n';
 import {
 	save,
@@ -8,7 +10,6 @@ import {
 	saveWpFormsField,
 	saveWpNavigationItem,
 } from '../lib/api';
-import { track } from '../lib/insights';
 
 const STORAGE_KEY = 'extendify-quick-edit-undo-stack-v1';
 const MAX_DEPTH = 5;

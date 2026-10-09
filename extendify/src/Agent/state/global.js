@@ -3,6 +3,9 @@ import { isInTheFuture } from '@wordpress/date';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
+// Mirrors Tailwind's --breakpoint-md, where WP's admin bar goes big.
+export const DESKTOP_MIN_WIDTH = 783;
+
 const url = new URL(window.location.href);
 const openAgentFromUrl = url.searchParams.has('extendify-open-agent');
 if (openAgentFromUrl) {
@@ -22,7 +25,7 @@ export const useGlobalStore = create()(
 				mode: window.extAgentData?.agentPosition,
 				queuedTour: null,
 				scratch: {},
-				isMobile: window.innerWidth < 768,
+				isMobile: window.innerWidth < DESKTOP_MIN_WIDTH,
 				setIsMobile: (isMobile) => {
 					if (get().isMobile === isMobile) return;
 					set({ isMobile });

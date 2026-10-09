@@ -1,3 +1,4 @@
+import { safeLocalStorage } from '@shared/state/safe-local-storage';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
@@ -36,6 +37,6 @@ const state = (set, get) => ({
 export const useAIChatStore = create(
 	persist(devtools(state, { name: 'Extendify Chat History' }), {
 		name: `extendify-chat-history-${window.extSharedData.siteId}`,
-		storage: createJSONStorage(() => localStorage),
+		storage: createJSONStorage(() => safeLocalStorage),
 	}),
 );

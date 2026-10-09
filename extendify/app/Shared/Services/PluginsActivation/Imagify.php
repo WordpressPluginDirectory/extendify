@@ -14,6 +14,18 @@ class Imagify extends PluginActivation
         return 'imagify';
     }
 
+    public static function isEligible(): bool
+    {
+        // A key from IMAGIFY_API_KEY or the network option reaches only their accessor.
+        if (function_exists('get_imagify_option')) {
+            return empty(\get_imagify_option('api_key'));
+        }
+
+        $settings = (array) \get_option('imagify_settings', []);
+
+        return empty($settings['api_key']);
+    }
+
     protected static function saveKey(array $data)
     {
         $key = $data['api_key'] ?? null;

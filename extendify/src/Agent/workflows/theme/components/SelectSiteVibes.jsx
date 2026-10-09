@@ -10,7 +10,7 @@ import {
 } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 
-export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
+export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 	const { data, isLoading } = useSiteVibesVariations();
 	const { vibes, css: styles } = data || {};
 	const [selected, setSelected] = useState(null);
@@ -35,11 +35,6 @@ export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 		confirmed.current = true;
 		onConfirm({ data: { selectedVibe: selected }, shouldRefreshPage: true });
 	};
-
-	useEffect(() => {
-		if (isLoading) return;
-		onLoad();
-	}, [isLoading, onLoad]);
 
 	useEffect(() => {
 		if (isLoading || !noVibes) return;
@@ -70,10 +65,10 @@ export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 	if (noVibes) return null;
 
 	return (
-		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
+		<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg border-b border-gray-400 bg-white">
 				<div className="grid gap-3 p-4 grid-cols-2">
-					{shuffled?.slice(0, 10).map(({ slug }, index) => (
+					{shuffled?.slice(0, 12).map(({ slug }, index) => (
 						<Fragment key={slug}>
 							<style>
 								{styles[slug]

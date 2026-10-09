@@ -7,6 +7,7 @@ const TEST_DIR = resolve(ROOT, 'tests/playwright');
 const BASE_PORT = Number(process.env.BASE_PORT ?? 9400);
 const WP_VERSION = process.env.WP_VERSION ?? 'latest';
 const RUN_PROJECT = process.env.RUN_PROJECT;
+const PREVIEW_URL = process.env.PREVIEW_URL;
 
 const walkSpecs = (dir: string): string[] => {
 	const out: string[] = [];
@@ -73,7 +74,7 @@ const allProjects = specs
 			testMatch: relative(ROOT, spec),
 			use: {
 				...devices['Desktop Chrome'],
-				baseURL: `http://127.0.0.1:${port}`,
+				baseURL: PREVIEW_URL ?? `http://127.0.0.1:${port}`,
 			},
 		};
 	})
@@ -89,7 +90,7 @@ const projects = RUN_PROJECT
 const activeBlueprints = new Set(
 	projects.map((p) => projectBlueprint.get(p.name)).filter(Boolean) as string[],
 );
-const webServers = [...blueprintPort.entries()]
+const webServers = (PREVIEW_URL ? [] : [...blueprintPort.entries()])
 	.filter(([blueprint]) => activeBlueprints.has(blueprint))
 	.map(([blueprint, port]) => ({
 		// PHP version is pinned per-blueprint via `preferredVersions.php` — the
@@ -105,18 +106,29 @@ const webServers = [...blueprintPort.entries()]
 		stderr: 'pipe' as const,
 	}));
 
+// RequestUtils caches the discovered REST root to this file and reuses it
+// whenever it is already populated, skipping rediscovery. The default path is
+// one shared file and playground ports shift between runs, so a later run can
+// POST to whichever server held that port before. Scope it to the process.
+if (!process.env.STORAGE_STATE_PATH) {
+	process.env.STORAGE_STATE_PATH = resolve(
+		ROOT,
+		`artifacts/storage-states/admin-${process.pid}.json`,
+	);
+}
+
 // @wordpress/e2e-test-utils-playwright's RequestUtils HEADs process.env.WP_BASE_URL
 // (default http://localhost:8889 — wp-env's default port) to find the REST root,
 // regardless of each request context's configured baseURL. Pin it to the selected
-// project's playground port so requestUtils.login() reaches the right server.
+// project's own site so requestUtils.login() reaches the right server.
 if (projects.length > 0 && !process.env.WP_BASE_URL) {
-	const firstPort = new URL(projects[0].use.baseURL).port;
-	process.env.WP_BASE_URL = `http://127.0.0.1:${firstPort}`;
+	process.env.WP_BASE_URL = new URL(projects[0].use.baseURL).origin;
 }
 
 export default defineConfig({
 	testDir: TEST_DIR,
-	globalSetup: './tests/playwright/global-setup.ts',
+	// An `active` site has already applied its blueprint; only playground needs the poll.
+	globalSetup: PREVIEW_URL ? undefined : './tests/playwright/global-setup.ts',
 	forbidOnly: !!process.env.CI,
 	retries: process.env.CI ? 1 : 0,
 	workers: 1,

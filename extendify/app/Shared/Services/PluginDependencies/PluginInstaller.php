@@ -43,6 +43,10 @@ class PluginInstaller
             ]
         );
 
+        if (is_wp_error($api)) {
+            return $api;
+        }
+
         $skin     = new \WP_Ajax_Upgrader_Skin();
         $upgrader = new \Plugin_Upgrader($skin);
 

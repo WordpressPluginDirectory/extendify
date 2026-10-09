@@ -12,6 +12,7 @@ import {
 import { Full } from '@assist/pages/layouts/Full';
 import { useGlobalStore } from '@assist/state/globals';
 import { useTasksStore } from '@assist/state/tasks';
+import { Notification } from '@notifications/Notification';
 
 export const Dashboard = () => {
 	const { tasks } = useTasks();
@@ -29,6 +30,10 @@ export const Dashboard = () => {
 				!isDismissedBanner('secondary-domain-banner') && (
 					<SecondaryDomainBanner />
 				)}
+
+			<div className="mb-6">
+				<Notification slot="admin-assist" />
+			</div>
 
 			<DesktopCards
 				className="hidden md:block"

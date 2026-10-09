@@ -5,7 +5,7 @@ import {
 	Input,
 	Label,
 } from '@headlessui/react';
-import { __ } from '@wordpress/i18n';
+import { __, _n } from '@wordpress/i18n';
 import { check, chevronRight, external, Icon } from '@wordpress/icons';
 import { isEmail } from '@wordpress/url';
 import classNames from 'classnames';
@@ -22,6 +22,7 @@ export const SetupPlugins = ({
 	termsAgreed,
 	setTermsAgreed,
 }) => {
+	const offeredCount = plugins.length;
 	const isCreateAccountsEnabled =
 		isEmail(email) && termsAgreed && plugins?.some((plugin) => plugin.selected);
 
@@ -43,8 +44,10 @@ export const SetupPlugins = ({
 	return (
 		<div className="py-10 px-16">
 			<DialogTitle className="text-2xl font-semibold text-center text-gray-900 mb-10 font-sans">
-				{__(
+				{_n(
+					"Almost done! Let's finish setting up your plugin",
 					"Almost done! Let's finish setting up your plugins",
+					offeredCount,
 					'extendify-local',
 				)}
 			</DialogTitle>
@@ -121,8 +124,10 @@ export const SetupPlugins = ({
 					className="text-gray-900 w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-extendify-main focus:border-transparent"
 				/>
 				<Description className="mt-2 text-xss text-gray-700">
-					{__(
+					{_n(
+						'This email will be used to create an account with the selected plugin provider. Form protected by reCAPTCHA.',
 						'This email will be used to create accounts with the selected plugin providers. Form protected by reCAPTCHA.',
+						offeredCount,
 						'extendify-local',
 					)}
 				</Description>
@@ -133,11 +138,13 @@ export const SetupPlugins = ({
 					type="checkbox"
 					checked={termsAgreed}
 					onChange={(e) => setTermsAgreed(e.target.checked)}
-					className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-extendify-main focus:ring-extendify-main"
+					className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 accent-extendify-main focus:ring-extendify-main"
 				/>
 				<span className="text-xs/relaxed text-gray-700">
-					{__(
+					{_n(
+						'I agree to create an account with the selected provider using my email address, and to their applicable Terms of Service.',
 						'I agree to create accounts with the selected providers using my email address, and to their applicable Terms of Service.',
+						offeredCount,
 						'extendify-local',
 					)}
 				</span>
@@ -148,11 +155,13 @@ export const SetupPlugins = ({
 					type="checkbox"
 					checked={marketingConsent}
 					onChange={(e) => setMarketingConsent(e.target.checked)}
-					className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-extendify-main focus:ring-extendify-main"
+					className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 accent-extendify-main focus:ring-extendify-main"
 				/>
 				<span className="text-xs/relaxed text-gray-700">
-					{__(
+					{_n(
+						'I wish to receive communications about news and/or promotions from the selected provider.',
 						'I wish to receive communications about news and/or promotions from selected providers.',
+						offeredCount,
 						'extendify-local',
 					)}
 				</span>
@@ -175,7 +184,12 @@ export const SetupPlugins = ({
 						{ 'cursor-not-allowed opacity-50': !isCreateAccountsEnabled },
 					)}
 				>
-					{__('Create accounts', 'extendify-local')}
+					{_n(
+						'Create account',
+						'Create accounts',
+						offeredCount,
+						'extendify-local',
+					)}
 					<Icon size={22} icon={chevronRight} className="fill-white" />
 				</button>
 			</div>

@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
 
 export const ErrorMessage = ({ children }) => (
-	<div className="mb-4 ml-10 mr-2 min-w-0 flex-1 flex-col gap-1 rtl:ml-2 rtl:mr-10 rtl:flex">
-		<div className="flex gap-2 rounded-lg border border-wp-alert-red bg-wp-alert-red/10 p-3 text-red-800">
-			<div>
+	<div className="mb-4 ms-2 me-2 min-w-0 flex-1 flex-col gap-1 rtl:flex">
+		<div className="flex items-center gap-2 border-l-4 border-l-wp-alert-red bg-wp-notice-error p-3 text-gray-900">
+			<div className="text-wp-alert-red">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"

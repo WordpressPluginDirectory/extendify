@@ -119,7 +119,11 @@ class DomainsSuggestionController
      */
     public static function cleanSiteTitle($siteTitle)
     {
-        return trim(preg_replace('/[^\p{L}\p{N}\s\-]+/u', '', html_entity_decode($siteTitle)));
+        return trim(preg_replace(
+            '/[^\p{L}\p{N}\s\-]+/u',
+            '',
+            html_entity_decode($siteTitle, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401)
+        ));
     }
 
     /**

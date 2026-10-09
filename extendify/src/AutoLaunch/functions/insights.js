@@ -1,6 +1,8 @@
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import { INSIGHTS_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
+import { track } from '@shared/lib/track';
+import apiFetch from '@wordpress/api-fetch';
 
 const headers = {
 	'Content-type': 'application/json',
@@ -11,6 +13,7 @@ const headers = {
 const { urlParams, activeTests } = window.extLaunchData;
 export const checkIn = ({
 	stage,
+	description,
 	siteProfile = {},
 	sitePlugins = [],
 	siteStyle = {},
@@ -23,6 +26,7 @@ export const checkIn = ({
 		...reqDataBasics,
 		autoLaunch: true,
 		stage,
+		description,
 		attempt,
 		activeTests: Object.keys(activeTests ?? {}).length
 			? JSON.stringify(activeTests)
@@ -64,4 +68,26 @@ export const checkIn = ({
 		body: payload,
 		keepalive: true,
 	});
+};
+
+const probeFailureReason = async () => {
+	try {
+		// parse:false so we get the raw Response and can read the HTTP status — the
+		// default JSON parse throws `invalid_json` on a blocked API's HTML error page.
+		await apiFetch({ path: '/extendify/v1/shared/ping', parse: false });
+		return null;
+	} catch (error) {
+		if (error?.status === 403) return '403';
+		if (error?.status === 404) return '404';
+		// Any other status means the request reached the REST API and errored
+		// upstream (our ping only ever 200s) — reachable, so not "unreachable".
+		if (error?.status) return null;
+		return 'network';
+	}
+};
+
+export const reportRestApiStatus = async () => {
+	const reason = await probeFailureReason();
+	if (!reason) return;
+	track('rest_api_unreachable', { reason });
 };

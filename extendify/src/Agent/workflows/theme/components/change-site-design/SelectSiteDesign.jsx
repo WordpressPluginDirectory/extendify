@@ -1,16 +1,21 @@
+import { usePaletteOverride } from '@agent/hooks/usePaletteOverride';
+import { usePalettes } from '@agent/hooks/usePalettes';
 import { useSiteVibesOverride } from '@agent/hooks/useSiteVibesOverride';
 import { useSiteVibesVariations } from '@agent/hooks/useSiteVibesVariations';
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
+import { refreshBlockHighlight } from '@agent/lib/block-highlight';
 import { DesignOption } from '@agent/workflows/theme/components/change-site-design/DesignOption';
+import { fontsOnlyVariation } from '@agent/workflows/theme/components/change-site-design/utils/fontsOnlyVariation';
 import { removeAnimationClasses } from '@agent/workflows/theme/components/change-site-design/utils/removeAnimationClasses';
 import { handleSiteImages } from '@auto-launch/fetchers/get-images';
-import { handleSiteStrings } from '@auto-launch/fetchers/get-strings';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import { paletteDuotone } from '@shared/lib/palette-preview';
+import { samplePalettes } from '@shared/lib/palettes';
 import { safeParseJson } from '@shared/lib/parsing';
+import { normalizeSiteImages } from '@shared/lib/site-images';
 import apiFetch from '@wordpress/api-fetch';
 import { registerCoreBlocks } from '@wordpress/block-library';
 import { getBlockTypes, parse, serialize } from '@wordpress/blocks';
-import { Spinner } from '@wordpress/components';
 import { useDispatch } from '@wordpress/data';
 import { useEffect, useMemo, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
@@ -58,6 +63,29 @@ const isAdmin = context?.adminPage;
 
 const PAGE_SIZE = 5;
 
+const hasImages = ({ hero, general }) => hero.length > 0 || general.length > 0;
+
+const resolveSiteImages = async ({ storedSiteImages, siteProfile }) => {
+	const stored = normalizeSiteImages(storedSiteImages);
+	if (hasImages(stored)) return stored;
+
+	// A browser that didn't run Launch otherwise reuses one image on every option.
+	const localized = normalizeSiteImages(window.extSharedData.siteImages);
+	if (hasImages(localized)) return localized;
+
+	if (siteProfile) {
+		const { siteImages } = await handleSiteImages({ siteProfile });
+		const fetched = normalizeSiteImages(siteImages);
+		if (hasImages(fetched)) return fetched;
+	}
+
+	const saved = await apiFetch({
+		path: '/extendify/v1/shared/site-images',
+	}).catch(() => null);
+
+	return normalizeSiteImages(saved?.siteImages);
+};
+
 export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 	const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 	const [isLoading, setIsLoading] = useState(false);
@@ -72,6 +100,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 	const [selectedColorAndFonts, setSelectedColorAndFonts] = useState();
 	const [selectedHeroPattern, setSelectedHeroPattern] = useState();
 	const [selectedVibe, setSelectedVibe] = useState();
+	const [selectedPalette, setSelectedPalette] = useState();
 
 	const { updateSettings } = useDispatch('core/block-editor');
 
@@ -100,10 +129,31 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		injectedLinksRef.current = [];
 	};
 
+	const {
+		palettes,
+		preferred,
+		css: paletteCss,
+		isLoading: isLoadingPalettes,
+	} = usePalettes();
+	const onPalettes = Boolean(palettes?.length);
+	const shownPalettes = useMemo(
+		() => samplePalettes(palettes, preferred),
+		[palettes, preferred],
+	);
+	const paletteFor = (index) =>
+		onPalettes ? shownPalettes[index % shownPalettes.length] : undefined;
+
 	const { undoChange: undoColorAndFontsChange } = useVariationOverride({
 		css: !isAdmin && selectedColorAndFonts?.css,
 		duotoneTheme:
-			!isAdmin && selectedColorAndFonts?.settings?.color?.duotone?.theme,
+			!isAdmin &&
+			!onPalettes &&
+			selectedColorAndFonts?.settings?.color?.duotone?.theme,
+	});
+
+	const { undoChange: undoPaletteChange } = usePaletteOverride({
+		css: (!isAdmin && paletteCss?.[selectedPalette?.slug]) || '',
+		duotoneTheme: (!isAdmin && paletteDuotone(selectedPalette)) || null,
 	});
 
 	const { undoChange: undoVibesChange } = useSiteVibesOverride({
@@ -115,13 +165,19 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		useSiteVibesVariations();
 
 	const vibes = useMemo(() => {
-		if (isLoadingVibes) return null;
+		// Null for a theme with no block variations, which .css would throw on.
+		if (isLoadingVibes || !vibesData?.css) return [];
 
 		const vibes = Object.entries(vibesData.css)
 			.filter(([slug]) => slug !== vibesData.currentVibe)
 			.map(([slug, css]) => ({
 				slug,
 				css: css?.replaceAll(slug, 'natural-1'),
+				// Css only adds, so a cloned page keeps the applied vibe's slots.
+				previewCss: `${vibesData.resets?.[slug] ?? ''}${css ?? ''}`.replaceAll(
+					slug,
+					'natural-1',
+				),
 			}))
 			.sort(() => Math.random() - 0.5);
 
@@ -176,22 +232,11 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 			stored?.state?.siteImages ?? launchState?.siteImages?.siteImages ?? [];
 		const siteProfile = stored?.state?.siteProfile ?? launchState?.siteProfile;
 
-		const storedDescription =
-			description ??
-			stored?.state?.heroDescription ??
-			launchState?.siteStrings?.heroDescription ??
-			null;
-
 		(async () => {
-			const siteImages =
-				storedSiteImages.length > 0 || !siteProfile
-					? storedSiteImages
-					: (await handleSiteImages({ siteProfile })).siteImages;
-
-			const resolvedDescription =
-				storedDescription || !siteProfile
-					? storedDescription
-					: (await handleSiteStrings({ siteProfile })).heroDescription;
+			const siteImages = await resolveSiteImages({
+				storedSiteImages,
+				siteProfile,
+			});
 
 			apiFetch({
 				path: '/extendify/v1/agent/site-design-variations',
@@ -201,7 +246,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 					images: domImages,
 					siteImages,
 					postId: context?.postId,
-					description: resolvedDescription,
+					description,
 					currentHeroPattern: heroPatternName,
 					source: 'change-site-design-workflow',
 					cta: {
@@ -247,9 +292,18 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 	const undoChanges = () => {
 		undoHeroSectionChange();
 		undoColorAndFontsChange();
+		undoPaletteChange();
 		undoVibesChange();
 		removeInjectedLinks();
+		refreshBlockHighlight();
 	};
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		return () => {
+			if (!confirmed.current) undoChanges();
+		};
+	}, []);
 
 	const handleCancel = () => {
 		undoChanges();
@@ -260,6 +314,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		if (!selectedHeroPattern) return;
 
 		if (selectedHeroPattern.isCurrent) {
+			confirmed.current = true;
 			onConfirm({
 				data: { postId: context?.postId },
 				shouldRefreshPage: false,
@@ -296,12 +351,16 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 				}),
 			);
 
+			confirmed.current = true;
 			onConfirm({
 				data: {
 					updatedPageBlocks,
 					postId,
 					vibeSlug: selectedVibe.slug,
-					colorAndFontsVariation: selectedColorAndFonts,
+					colorAndFontsVariation: onPalettes
+						? fontsOnlyVariation(selectedColorAndFonts)
+						: selectedColorAndFonts,
+					colorPalette: selectedPalette?.slug,
 				},
 				shouldRefreshPage: true,
 			});
@@ -312,16 +371,16 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		}
 	};
 
-	if (isLoading || isLoadingVibes) {
+	if (isLoading || isLoadingVibes || isLoadingPalettes) {
 		return (
-			<div className="flex justify-center flex-col gap-1">
-				<Spinner />
+			<div className="min-h-24 p-2 text-center text-sm">
+				{__('Loading design options...', 'extendify-local')}
 			</div>
 		);
 	}
 
 	return (
-		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
+		<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="flex flex-col gap-4 p-3">
 					{currentHeroHtml && (
@@ -333,6 +392,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 								setSelectedHeroPattern(currentDesignOption);
 								setSelectedColorAndFonts(null);
 								setSelectedVibe(null);
+								setSelectedPalette(null);
 
 								undoChanges();
 							}}
@@ -346,15 +406,18 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 							styles={{
 								linkStyles: heroPattern.linkStyles,
 								colorAndFontsVariations: colorAndFontsVariations[i].css,
-								duotoneTheme:
-									colorAndFontsVariations[i]?.settings?.color?.duotone?.theme,
-								vibes: vibes[i]?.css,
+								paletteCss: paletteCss?.[paletteFor(i)?.slug],
+								duotoneTheme: onPalettes
+									? paletteDuotone(paletteFor(i))
+									: colorAndFontsVariations[i]?.settings?.color?.duotone?.theme,
+								vibes: vibes[i]?.previewCss,
 								blockSupportsCss: heroPattern.blockSupportsCss,
 							}}
 							onClick={() => {
 								setSelectedHeroPattern(heroPattern);
 								setSelectedColorAndFonts(colorAndFontsVariations[i]);
 								setSelectedVibe(vibes[i]);
+								setSelectedPalette(paletteFor(i));
 
 								if (!isAdmin) {
 									const blockSupportsCss = heroPattern.blockSupportsCss;
@@ -371,6 +434,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 									injectLinkStyles(heroPattern.linkStyles);
 
 									updateHeroSection(heroPattern.renderedHtml);
+									refreshBlockHighlight();
 								}
 							}}
 						/>
@@ -419,11 +483,9 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 					disabled={!selectedHeroPattern || isSaving}
 					onClick={handleConfirm}
 				>
-					{isSaving ? (
-						<Spinner className="m-0" />
-					) : (
-						__('Save', 'extendify-local')
-					)}
+					{isSaving
+						? __('Saving...', 'extendify-local')
+						: __('Save', 'extendify-local')}
 				</button>
 			</div>
 		</div>

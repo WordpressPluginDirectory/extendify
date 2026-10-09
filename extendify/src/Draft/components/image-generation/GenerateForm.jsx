@@ -2,36 +2,28 @@ import { CreditCounter } from '@draft/components/image-generation/CreditCounter'
 import { useImageGenerationStore } from '@shared/state/generate-images';
 import {
 	Button,
+	CheckboxControl,
 	TextareaControl,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOptionIcon as ToggleGroupControlOptionIcon,
 } from '@wordpress/components';
-import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export const GenerateForm = ({ isGenerating, errorMessage }) => {
-	const { imageCredits, resetImageCredits, aiImageOptions, setAiImageOption } =
+export const GenerateForm = ({
+	isGenerating,
+	errorMessage,
+	disclose,
+	setDisclose,
+}) => {
+	const { imageCredits, aiImageOptions, setAiImageOption } =
 		useImageGenerationStore();
 	const usedCredits = imageCredits.total - imageCredits.remaining;
-	const [refreshCheck, setRefreshCheck] = useState(0);
 	const { size, prompt } = aiImageOptions;
-
-	useEffect(() => {
-		const handle = () => {
-			setRefreshCheck((prev) => prev + 1);
-			if (!imageCredits.refresh) return;
-			if (new Date(Number(imageCredits.refresh)) > new Date()) return;
-			resetImageCredits();
-		};
-		if (refreshCheck === 0) handle(); // First run
-		const id = setTimeout(handle, 1000);
-		return () => clearTimeout(id);
-	}, [imageCredits, resetImageCredits, refreshCheck]);
 
 	return (
 		<>
 			{isGenerating ? null : (
-				<div>
+				<div className="flex flex-col gap-4">
 					<TextareaControl
 						id="draft-ai-image-textarea"
 						autoFocus
@@ -74,6 +66,14 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 							value="1024x1536"
 						/>
 					</ToggleGroupControl>
+
+					<CheckboxControl
+						__nextHasNoMarginBottom
+						// translators: Checkbox that adds a visible "AI Generated" mark onto the image.
+						label={__('Label image as AI-generated', 'extendify-local')}
+						checked={disclose}
+						onChange={setDisclose}
+					/>
 				</div>
 			)}
 			{errorMessage.length > 0 && (

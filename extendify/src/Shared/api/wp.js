@@ -1,5 +1,7 @@
 import { AI_HOST } from '@constants';
+import { renderAiLabelPill, stampAiLabel } from '@shared/lib/ai-label';
 import apiFetch from '@wordpress/api-fetch';
+import { sprintf } from '@wordpress/i18n';
 import { addQueryArgs } from '@wordpress/url';
 
 export const getPlugin = async (slug) => {
@@ -72,6 +74,16 @@ export const loadImage = (img) => {
 	});
 };
 
+const shouldDisclose = (metadata) =>
+	Boolean(metadata.aiGenerated) && Boolean(metadata.disclose);
+
+const altText = (metadata) => {
+	if (!shouldDisclose(metadata)) return metadata.alt ?? '';
+	const pattern =
+		window.extSharedData?.aiImageAltPattern ?? '%s (AI-generated)';
+	return sprintf(pattern, metadata.alt ?? '').trim();
+};
+
 export const importImage = async (imageUrl, metadata = {}) => {
 	const image = new Image();
 	image.src = imageUrl;
@@ -85,6 +97,9 @@ export const importImage = async (imageUrl, metadata = {}) => {
 	const ctx = canvas.getContext('2d');
 	if (!ctx) return;
 	ctx.drawImage(image, 0, 0);
+	if (shouldDisclose(metadata)) {
+		stampAiLabel(ctx, canvas.width, canvas.height);
+	}
 
 	const blob = await new Promise((resolve) => {
 		canvas.toBlob((blob) => {
@@ -94,9 +109,12 @@ export const importImage = async (imageUrl, metadata = {}) => {
 
 	const formData = new FormData();
 	formData.append('file', new File([blob], metadata.filename));
-	formData.append('alt_text', metadata.alt ?? '');
+	formData.append('alt_text', altText(metadata));
 	formData.append('caption', metadata.caption ?? '');
 	formData.append('status', 'publish');
+	if (metadata.aiGenerated) {
+		formData.append('meta[extendify_ai_generated]', '1');
+	}
 
 	return await apiFetch({
 		path: 'wp/v2/media',
@@ -109,8 +127,20 @@ export const importImageServer = async (src, metadata = {}) => {
 	const formData = new FormData();
 	formData.append('source', src);
 	// Fallback doesn't support custom file_name
-	formData.append('alt_text', metadata.alt ?? '');
+	formData.append('alt_text', altText(metadata));
 	formData.append('caption', metadata.caption ?? '');
+	if (metadata.aiGenerated) {
+		formData.append('ai_generated', '1');
+		if (shouldDisclose(metadata)) {
+			const pill = await renderAiLabelPill();
+			if (pill) {
+				formData.append(
+					'disclosure_label',
+					new File([pill], 'disclosure-label.png', { type: 'image/png' }),
+				);
+			}
+		}
+	}
 
 	return await apiFetch({
 		path: '/extendify/v1/draft/upload-image',
@@ -127,20 +157,38 @@ export const downloadImage = async (
 	metadata = { alt: '', caption: '' },
 ) => {
 	let image;
+	const aiGenerated = source === 'ai-generated';
 	if (unsplashId) {
 		await downloadPing(id, source, { unsplashId });
+	} else if (aiGenerated && id) {
+		await downloadPing(id, source, { disclose: metadata.disclose });
 	}
+
+	let filename = metadata.filename ?? 'image.jpg';
+	if (aiGenerated && !filename.includes('ai-generated')) {
+		const parts = filename.split('.');
+		if (parts.length > 1) {
+			const ext = parts.pop();
+			filename = `${parts.join('.')}-ai-generated.${ext}`;
+		} else {
+			filename = `${filename}-ai-generated`;
+		}
+	}
+
 	try {
 		image = await importImage(src, {
 			alt: metadata.alt,
-			filename: 'image.jpg',
+			filename,
 			caption: metadata.caption,
+			aiGenerated,
+			disclose: metadata.disclose,
 		});
 	} catch (_e) {
 		image = await importImageServer(src, {
 			alt: metadata.alt,
-			filename: 'image.jpg',
 			caption: metadata.caption,
+			aiGenerated,
+			disclose: metadata.disclose,
 		});
 	}
 

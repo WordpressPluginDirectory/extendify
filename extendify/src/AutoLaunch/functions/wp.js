@@ -21,6 +21,8 @@ const allowedFootersWithNav = [
 	'footer-with-center-logo-social-nav',
 ];
 
+const MS_PER_DAY = 86_400_000;
+
 export const updateOption = (option, value) =>
 	apiFetch({
 		path: '/extendify/v1/auto-launch/options',
@@ -133,7 +135,46 @@ export const createTag = (data) =>
 export const createCategory = (data) =>
 	apiFetch({ path: '/wp/v2/categories', method: 'POST', data });
 
-export const createBlogSampleData = async (siteStrings, siteImages) => {
+const formatImageUrl = (image) =>
+	image?.includes('?q=80&w=1470') ? image : `${image}?q=80&w=1470`;
+
+const replacePostContentImages = (content, images) =>
+	(content.match(/https:\/\/images\.unsplash\.com\/[^\s"]+/g) || []).reduce(
+		(updated, match, i) =>
+			updated.replace(match, formatImageUrl(images[i] || match)),
+		content,
+	);
+
+// The blog-section images fill the newest posts so the home's date-desc loop matches
+// the preview 1:1; extra posts fall back to the shared pool.
+export const buildBlogPosts = ({
+	blogTitles,
+	siteImages,
+	blogImages = [],
+	sampleData,
+}) => {
+	const pool = siteImages || [];
+	// Every post shares the same sample body, so resolve its images once.
+	const postContent = replacePostContentImages(sampleData.post_content, pool);
+	return Array.from({ length: 8 }, (_, i) => {
+		const title =
+			blogTitles?.[i] ||
+			// translators: %s is a post number
+			sprintf(__('Blog Post %s', 'extendify-local'), i + 1);
+		const image = blogImages[i] ?? pool[i % pool.length];
+		return {
+			name: title,
+			featured_image: image ? formatImageUrl(image) : null,
+			post_content: postContent,
+		};
+	});
+};
+
+export const createBlogSampleData = async (
+	siteStrings,
+	siteImages,
+	blogImages,
+) => {
 	const localizedBlogSampleData =
 		blogSampleData[window.extSharedData?.wpLanguage || 'en_US'] ||
 		blogSampleData.en_US;
@@ -141,33 +182,12 @@ export const createBlogSampleData = async (siteStrings, siteImages) => {
 	const categories =
 		(await createWpCategories(localizedBlogSampleData.categories)) || [];
 	const tags = (await createWpTags(localizedBlogSampleData.tags)) || [];
-	const formatImageUrl = (image) =>
-		image?.includes('?q=80&w=1470') ? image : `${image}?q=80&w=1470`;
-	const imagesArray = (siteImages || []).sort(() => Math.random() - 0.5);
 
-	const replacePostContentImages = (content, images) =>
-		(content.match(/https:\/\/images\.unsplash\.com\/[^\s"]+/g) || []).reduce(
-			(updated, match, i) =>
-				updated.replace(match, formatImageUrl(images[i] || match)),
-			content,
-		);
-
-	const posts = Array.from({ length: 8 }, (_, i) => {
-		const title =
-			siteStrings?.aiBlogTitles?.[i] ||
-			// translators: %s is a post number
-			sprintf(__('Blog Post %s', 'extendify-local'), i + 1);
-		const featuredImage = imagesArray[i % imagesArray.length]
-			? formatImageUrl(imagesArray[i % imagesArray.length])
-			: null;
-		return {
-			name: title,
-			featured_image: featuredImage,
-			post_content: replacePostContentImages(
-				localizedBlogSampleData.post_content,
-				imagesArray,
-			),
-		};
+	const posts = buildBlogPosts({
+		blogTitles: siteStrings?.aiBlogTitles,
+		siteImages,
+		blogImages,
+		sampleData: localizedBlogSampleData,
 	});
 
 	for (const [index, post] of posts.entries()) {
@@ -195,6 +215,11 @@ export const createBlogSampleData = async (siteStrings, siteImages) => {
 				title: post.name,
 				content: post.post_content,
 				status: 'publish',
+				// Space posts a day apart, newest first, so the home's date-desc loop
+				// matches the preview order.
+				date_gmt: new Date(Date.now() - index * MS_PER_DAY)
+					.toISOString()
+					.slice(0, 19),
 				featured_media: mediaId || null,
 				categories: category,
 				tags: tagFeaturedPost,

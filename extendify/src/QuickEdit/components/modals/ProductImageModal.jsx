@@ -1,7 +1,7 @@
+import { track } from '@shared/lib/track';
 import { useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { loadProduct, saveProduct } from '../../lib/api';
-import { track } from '../../lib/insights';
 import { pushUndo } from '../../state/undo';
 
 export const ProductImageModal = ({ productId, onAfterSave }) => {

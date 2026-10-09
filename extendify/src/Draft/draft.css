@@ -2,6 +2,10 @@
 @import "../tailwind.css" source(none);
 @source ".";
 
+:root {
+	color-scheme: only light;
+}
+
 .completion:after {
 	content: "";
 	display: block;

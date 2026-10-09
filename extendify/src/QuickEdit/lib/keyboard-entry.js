@@ -1,12 +1,7 @@
 import { __, sprintf } from '@wordpress/i18n';
+import { useQuickEditStore } from '../state/store';
 import { resolveTarget } from './dom';
-import {
-	askAiTarget,
-	editTarget,
-	hideBar,
-	pillContextFor,
-	showBar,
-} from './hover-bar';
+import { hideBar, isAgentWorking, pinTarget, showBar } from './hover-bar';
 
 const SELECTOR = [
 	'[data-extendify-agent-block-id]',
@@ -35,32 +30,17 @@ const findTagged = (start) => {
 	return null;
 };
 
-const buildAriaLabel = (el, target, { quickEditable, aiAvailable }) => {
+// Enter only reveals the pills, so announcing "Edit" promises too much.
+const buildAriaLabel = (el) => {
 	const text = (el.textContent || '').trim().replace(/\s+/g, ' ');
 	const snippet = text.length > 60 ? `${text.substring(0, 60)}…` : text;
-	// Ask-AI-only blocks (group / columns / media-text) route Enter to the
-	// agent, so announce that action rather than "Edit".
-	if (aiAvailable && !quickEditable) {
-		return snippet
-			? sprintf(
-					// translators: %s is a snippet of the block's text content.
-					__('Ask AI about "%s"', 'extendify-local'),
-					snippet,
-				)
-			: __('Ask AI', 'extendify-local');
-	}
-	const verb =
-		target?.blockType === 'core/image' || target?.blockType === 'core/cover'
-			? __('Replace image', 'extendify-local')
-			: __('Edit', 'extendify-local');
 	return snippet
 		? sprintf(
-				// translators: %1$s is the action verb (Edit / Replace image), %2$s is a snippet of the block's text content.
-				__('%1$s "%2$s"', 'extendify-local'),
-				verb,
+				// translators: %s is a snippet of the block's text content.
+				__('Editing options for "%s"', 'extendify-local'),
 				snippet,
 			)
-		: verb;
+		: __('Editing options', 'extendify-local');
 };
 
 // Skips role="button" on headings/links/landmarks so SR users
@@ -99,11 +79,7 @@ const decorate = () => {
 			el.setAttribute('role', 'button');
 		}
 
-		const target = resolveTarget(el);
-		el.setAttribute(
-			'aria-label',
-			buildAriaLabel(el, target, pillContextFor(target)),
-		);
+		el.setAttribute('aria-label', buildAriaLabel(el));
 		el.setAttribute(KB_READY_ATTR, '1');
 	}
 };
@@ -134,6 +110,7 @@ export const attachKeyboardEntry = ({ getSession }) => {
 
 	onFocusIn = (e) => {
 		if (getSession?.()) return;
+		if (isAgentWorking()) return;
 		const el = findTagged(e.target);
 		if (!el) return;
 		hideBar();
@@ -161,11 +138,15 @@ export const attachKeyboardEntry = ({ getSession }) => {
 				return;
 			}
 			if (target && !document.body.contains(target)) return;
+			// A pinned bar outlives focus; only an outside click or Esc drops it.
+			if (useQuickEditStore.getState().committedSelection) return;
 			const active = document.activeElement;
 			if (!active || active === document.body) {
 				hideBar();
 				return;
 			}
+			// Pinning moves focus onto a pill, which lives outside the block.
+			if (active.closest?.('.extendify-quick-edit-bar')) return;
 			if (findTagged(active)) return;
 			hideBar();
 		}, 0);
@@ -174,29 +155,15 @@ export const attachKeyboardEntry = ({ getSession }) => {
 	onActivate = (e) => {
 		if (e.key !== 'Enter' && e.key !== ' ') return;
 		if (getSession?.()) return;
+		if (isAgentWorking()) return;
 		const el = findTagged(e.target);
 		if (!el) return;
 		// Skip activation when the keystroke came from a child with
 		// its own action (e.g. a link inside a nav item).
 		if (e.target !== el) return;
-		const target = resolveTarget(el);
-		if (!target?.blockType) return;
+		if (!resolveTarget(el)?.blockType) return;
 		e.preventDefault();
-		const { quickEditable, aiAvailable } = pillContextFor(target);
-		// Quick-editable blocks open the inline editor (picker types need the
-		// bar mounted first so the dropdown can anchor to it).
-		if (quickEditable) {
-			showBar(el);
-			editTarget(target);
-			return;
-		}
-		// Ask-AI-only blocks (group / columns / media-text) have no editor to
-		// open; route Enter straight to the agent like the Ask AI pill does.
-		if (aiAvailable) {
-			askAiTarget(el);
-			return;
-		}
-		showBar(el);
+		pinTarget(el);
 	};
 
 	document.addEventListener('focusin', onFocusIn, true);

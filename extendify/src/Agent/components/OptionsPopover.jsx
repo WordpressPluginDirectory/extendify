@@ -1,5 +1,8 @@
 import { usePortal } from '@agent/hooks/usePortal';
 import { isChangeSiteDesignWorkflowAvailable } from '@agent/lib/util';
+import demoFormAssisted from '@agent/workflows/canvas/demo-form-assisted';
+import demoFormAssistedModal from '@agent/workflows/canvas/demo-form-assisted-modal';
+import demoFormSimple from '@agent/workflows/canvas/demo-form-simple';
 import animationWorkflow from '@agent/workflows/theme/change-animation';
 import changeSiteDesignWorkflow from '@agent/workflows/theme/change-site-design';
 import vibesWorkflow from '@agent/workflows/theme/change-site-vibes';
@@ -103,6 +106,13 @@ const buttons = [
 		available: animationWorkflow.available,
 		icon: animationWorkflow.icon,
 	},
+	...[demoFormAssisted, demoFormAssistedModal, demoFormSimple].map(
+		(workflow) => ({
+			name: workflow.example.text,
+			available: workflow.available,
+			icon: workflow.icon,
+		}),
+	),
 	...(isChangeSiteDesignWorkflowAvailable()
 		? [
 				{

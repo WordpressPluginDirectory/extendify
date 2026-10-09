@@ -22,8 +22,9 @@ export const useFontVariationOverride = ({ css }) => {
 		apiFetch({
 			path: `/wp/v2/global-styles/${globalStylesPostID}?context=edit`,
 		}).then((stylesResponse) => {
-			const duotone = stylesResponse?.settings?.color?.duotone?.theme;
-			setDuotoneTheme(duotone);
+			// The stored list is plain after a palette, origin-keyed after a variation.
+			const duotone = stylesResponse?.settings?.color?.duotone;
+			setDuotoneTheme(Array.isArray(duotone) ? duotone : duotone?.theme);
 		});
 	}, [css]);
 

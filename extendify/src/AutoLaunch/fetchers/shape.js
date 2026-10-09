@@ -8,6 +8,8 @@ const patternShape = z.looseObject({
 	contentGenerated: z.boolean().optional(),
 	navSlug: z.string().optional(),
 	navLabel: z.string().optional(),
+	blogImages: z.array(z.string()).optional(),
+	images: z.array(z.string()).optional(),
 });
 export const homeTemplateShape = z.looseObject({
 	id: z.string(),
@@ -21,8 +23,12 @@ export const getHomeShape = z.looseObject({
 });
 
 // get-images
+const libraryImageShape = z.looseObject({ url: z.string() });
 export const getImagesShape = z.looseObject({
-	siteImages: z.array(z.string()),
+	siteImages: z.object({
+		hero: z.array(libraryImageShape).default([]),
+		general: z.array(libraryImageShape).default([]),
+	}),
 });
 
 // get-logo
@@ -52,6 +58,12 @@ export const getPluginsShape = z.object({
 });
 
 // get-profile
+export const socialProfilesShape = z.looseObject({
+	facebook: z.string().nullish(),
+	instagram: z.string().nullish(),
+	x: z.string().nullish(),
+	tiktok: z.string().nullish(),
+});
 export const getProfileShape = z.looseObject({
 	type: z.string(),
 	title: z.string(),
@@ -74,6 +86,8 @@ export const getProfileShape = z.looseObject({
 	landingPage: z.boolean(),
 	landingPageCTALink: z.union([z.literal(false), z.string()]),
 	phoneNumber: z.union([z.boolean(), z.string()]).optional(),
+	email: z.string().nullish(),
+	socialProfiles: socialProfilesShape.nullish(),
 });
 
 // get-launch-decisions
@@ -111,12 +125,19 @@ const designBuildShape = z.looseObject({
 			description: z.string().optional(),
 		}),
 	),
-	patternId: z.string(),
-	headerCode: z.string(),
 	siteStyle: styleShape.omit({ variation: true }),
 	selectedPlugins: z.array(pluginShape),
-	html: z.string(),
-	patternCode: z.string(),
 	logoUrl: z.url().nullish(),
+	templateParts: z.looseObject({
+		header: z.string().nullish(),
+		footer: z.string().nullish(),
+	}),
+	builtPages: z.array(
+		z.object({
+			slug: z.string(),
+			fullPage: z.boolean(),
+			patterns: z.array(patternShape),
+		}),
+	),
 });
 export const getDesignBuildShape = designBuildShape;

@@ -3,12 +3,17 @@ import { reqDataBasics } from '@shared/lib/data';
 import { retryTwice } from './helpers';
 
 const generatePatterns = async (page, data) => {
-	const { siteProfile } = data;
+	const { siteProfile, designBuild } = data;
 	return await retryTwice(async () => {
 		const response = await fetch(`${AI_HOST}/api/patterns`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ ...reqDataBasics, siteProfile, page }),
+			body: JSON.stringify({
+				...reqDataBasics,
+				siteProfile,
+				page,
+				buildId: designBuild?.buildId,
+			}),
 		});
 		if (!response.ok) {
 			throw new Error(
@@ -30,11 +35,10 @@ export const generatePageContent = async (pages, data) => {
 	const splits = pages.map(splitGeneratedContent);
 
 	const result = await Promise.allSettled(
-		splits.map(
-			({ toGenerate }) =>
-				generatePatterns(toGenerate, data)
-					.then((response) => response)
-					.catch(() => toGenerate), // safe fallback
+		splits.map(({ toGenerate }) =>
+			toGenerate.patterns.length
+				? generatePatterns(toGenerate, data).catch(() => toGenerate)
+				: Promise.resolve(toGenerate),
 		),
 	);
 

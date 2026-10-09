@@ -2,6 +2,7 @@ import {
 	addCustomMediaViewsCss,
 	removeCustomMediaViewsCss,
 } from '@shared/lib/media-views';
+import { track } from '@shared/lib/track';
 import { MediaUpload } from '@wordpress/block-editor';
 import {
 	Button,
@@ -15,7 +16,6 @@ import { __ } from '@wordpress/i18n';
 import { loadSiteIdentity, saveSiteIdentity } from '../../lib/api';
 import { useCmdEnterSave } from '../../lib/cmd-enter-save';
 import { friendlyMessage } from '../../lib/errors';
-import { track } from '../../lib/insights';
 import { closeModal, QE_MODAL_BODY_OPEN_CLASS } from '../../lib/modal-root';
 import { pushUndo } from '../../state/undo';
 import { ModalCloseButton } from './ModalCloseButton';

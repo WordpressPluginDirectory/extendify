@@ -17,13 +17,13 @@ import {
 } from './lib/keyboard-undo';
 import { fetchLinkSuggestions } from './lib/link-suggestions';
 // Side-effect import: subscribes html.extendify-quick-edit-on before first paint.
-import { useEditModeStore } from './state/edit-mode';
+import { STORAGE_KEY, useEditModeStore } from './state/edit-mode';
 import { useQuickEditStore } from './state/store';
 
 import './quick-edit.css';
 
 // Cross-bundle race: edit-mode.js is shared with the Agent bundle (via
-// Chat.jsx + ChatTools.jsx). When the Agent bundle's script tag fires
+// Chat.jsx and the QuickEdit store). When the Agent bundle's script tag fires
 // first, the shared chunk evaluates before this bundle's inline
 // `window.extQuickEditData = …` has run, so DEFAULT_ON resolves to
 // false and the store freezes with on=false. By the time THIS module
@@ -34,9 +34,7 @@ import './quick-edit.css';
 	if (!window.extQuickEditData?.defaultOn) return;
 	let persisted;
 	try {
-		persisted = JSON.parse(
-			localStorage.getItem('extendify-quick-edit-mode') ?? 'null',
-		);
+		persisted = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
 	} catch {
 		persisted = null;
 	}

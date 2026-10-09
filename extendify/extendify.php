@@ -7,7 +7,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           3.1.1
+ * Version:           3.2.3
  * Requires at least: 6.5
  * Requires PHP:      7.0
  * License:           GPL-2.0-or-later
@@ -28,8 +28,6 @@
 // phpcs:enable Generic.Files.LineLength.TooLong
 
 defined('ABSPATH') || exit;
-
-use Extendify\PartnerData;
 
 /** ExtendifySdk is the previous class name used */
 if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
@@ -81,28 +79,25 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
         $extendify();
     });
 
-    add_action('update_option', function ($option) {
-        if (in_array($option, ['WPLANG', 'blogname'], true)) {
-            \delete_transient('extendify_recommendations');
-            \delete_transient('extendify_domains');
-            \delete_transient('extendify_supportArticles');
-        }
+    // Autoloaded options load on every request, even while the plugin is inactive.
+    // Before 6.6 there is no 'auto' value, so older sites are left alone.
+    if (function_exists('wp_autoload_values_to_autoload')) {
+        register_deactivation_hook(__FILE__, function () {
+            $names = preg_grep('/^extendify_/', array_keys(wp_load_alloptions()));
+            update_option('extendify_autoload_restore', $names, false);
+            wp_set_option_autoload_values(array_fill_keys($names, false));
+        });
 
-        // Delete the partner transient so we can fetch new data when the locale is switched.
-        if (($option === 'WPLANG') && get_transient('extendify_partner_data_cache_check')) {
-            delete_transient('extendify_partner_data_cache_check');
-            PartnerData::getPartnerData();
-        }
-    });
-
-    // Delete the partner transient so we can fetch new data when the locale is switched via WP-CLI.
-    add_action('cli_init', function () {
-        $command = sanitize_text_field(wp_unslash(($_SERVER['argv'][1] ?? '')));
-        if ($command === 'language' && get_transient('extendify_partner_data_cache_check')) {
-            delete_transient('extendify_partner_data_cache_check');
-            PartnerData::getPartnerData();
-        }
-    });
+        register_activation_hook(__FILE__, function () {
+            global $wpdb;
+            // Passing true writes 'on', which skips WordPress's 150KB autoload size check.
+            foreach (get_option('extendify_autoload_restore', []) as $name) {
+                $wpdb->update($wpdb->options, ['autoload' => 'auto'], ['option_name' => $name]);
+            }
+            wp_cache_delete('alloptions', 'options');
+            delete_option('extendify_autoload_restore');
+        });
+    }
 
     // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundBeforeLastUsed
     add_action('upgrader_process_complete', function ($upgrader, $options) {
@@ -147,15 +142,6 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
             exit;
         }
     });
-
-    // Allow Extendify requests to have a longer timeout.
-    add_filter('http_request_args', function ($args, $url) {
-        if (strpos($url, 'extendify') !== false) {
-            $args['timeout'] = 45;
-        }
-
-        return $args;
-    }, 100, 2);
 
     // Clean up the site profile if being accessed
     add_filter('option_extendify_site_profile', function ($value) {

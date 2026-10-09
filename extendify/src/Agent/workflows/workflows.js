@@ -1,13 +1,26 @@
 const workflowContext = require.context(
 	'.',
 	true,
-	// Exclude this file and anything in tools/ or components/
-	/^(?!.*\/(tools|components)\/)(?!\.\/workflows\.js$).*\.js$/,
+	// Anything not excluded here ships to find-agent as an eligible workflow.
+	/^(?!.*\/(tools|components|overrides)\/)(?!\.\/workflows\.js$).*\.js$/,
 );
 export const workflows = workflowContext
 	.keys()
 	.filter((key) => key !== './workflows.js')
 	.map((key) => workflowContext(key).default || workflowContext(key));
+
+// Merged over the workflow the backend sent, never offered to find-agent.
+const abilityContext = require.context(
+	'.',
+	true,
+	/abilities\/overrides\/.*\.js$/,
+);
+export const abilityWorkflows = Object.fromEntries(
+	abilityContext.keys().map((key) => {
+		const workflow = abilityContext(key).default || abilityContext(key);
+		return [workflow.id, workflow];
+	}),
+);
 
 // Dynamically pull in all tools
 const toolContext = require.context('.', true, /tools\/.*\.js$/);

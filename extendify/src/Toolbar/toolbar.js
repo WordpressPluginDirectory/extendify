@@ -17,6 +17,7 @@
  *     the core admin bar.
  */
 import { isEmbedded } from '@shared/lib/embedded-guard';
+import { track } from '@shared/lib/track';
 import { __ } from '@wordpress/i18n';
 import './toolbar.css';
 
@@ -25,10 +26,20 @@ const QUICK_EDIT_ON_CLASS = 'extendify-quick-edit-on';
 const AGENT_BTN_HOST_ID = 'wp-admin-bar-extendify-agent-btn';
 const AGENT_SIDEBAR_ID = 'extendify-agent-sidebar';
 
+function watch(target, options, callback) {
+	const observer = new MutationObserver(callback);
+	observer.observe(target, options);
+	return observer;
+}
+
 function findExtendifyAgentButton() {
 	const host = document.getElementById(AGENT_BTN_HOST_ID);
 	if (!host) return null;
-	return host.querySelector('button') || host;
+	const mounted = host.querySelector('button:not([disabled])');
+	if (mounted) return mounted;
+	// The stand-in never leaves the slot, so a disabled button means not-yet-mounted.
+	if (host.querySelector('button')) return null;
+	return host;
 }
 
 function clickExtendifyAgent() {
@@ -60,31 +71,43 @@ function waitFor(predicate, maxTries, intervalMs) {
  * agent bundle.
  */
 function watchAgentSidebar(toolbar, aiBtn) {
-	let attached = false;
-	const observer = new MutationObserver(() => {
-		const sidebar = document.getElementById(AGENT_SIDEBAR_ID);
-		if (!sidebar || attached) return;
-		attached = true;
-		const update = () => {
-			const open = !sidebar.hasAttribute('inert');
-			toolbar.classList.toggle('ext-tb-agent-open', open);
-			if (!aiBtn) return;
-			aiBtn.inert = open;
-			if (open) {
-				aiBtn.setAttribute('tabindex', '-1');
-				aiBtn.setAttribute('aria-hidden', 'true');
-			} else {
-				aiBtn.removeAttribute('tabindex');
-				aiBtn.removeAttribute('aria-hidden');
+	const setOpen = (open) => {
+		toolbar.classList.toggle('ext-tb-agent-open', open);
+		if (!aiBtn) return;
+		aiBtn.inert = open;
+		if (open) {
+			aiBtn.setAttribute('tabindex', '-1');
+			aiBtn.setAttribute('aria-hidden', 'true');
+		} else {
+			aiBtn.removeAttribute('tabindex');
+			aiBtn.removeAttribute('aria-hidden');
+		}
+	};
+	// A resize past the mobile breakpoint replaces this node, so never latch on one.
+	let watched = null;
+	let inertObserver = null;
+	const observer = watch(
+		document.body,
+		{ childList: true, subtree: true },
+		() => {
+			const sidebar = document.getElementById(AGENT_SIDEBAR_ID);
+			if (sidebar === watched) return;
+			watched = sidebar;
+			inertObserver?.disconnect();
+			inertObserver = null;
+			if (!sidebar) {
+				setOpen(false);
+				return;
 			}
-		};
-		new MutationObserver(update).observe(sidebar, {
-			attributes: true,
-			attributeFilter: ['inert'],
-		});
-		update();
-	});
-	observer.observe(document.body, { childList: true, subtree: true });
+			const update = () => setOpen(!sidebar.hasAttribute('inert'));
+			inertObserver = watch(
+				sidebar,
+				{ attributes: true, attributeFilter: ['inert'] },
+				update,
+			);
+			update();
+		},
+	);
 	if (document.getElementById(AGENT_SIDEBAR_ID)) observer.takeRecords();
 }
 
@@ -99,10 +122,11 @@ function watchQuickEditState(btn) {
 		btn.setAttribute('aria-checked', on ? 'true' : 'false');
 	};
 	sync();
-	new MutationObserver(sync).observe(document.documentElement, {
-		attributes: true,
-		attributeFilter: ['class'],
-	});
+	watch(
+		document.documentElement,
+		{ attributes: true, attributeFilter: ['class'] },
+		sync,
+	);
 }
 
 function init() {
@@ -145,6 +169,17 @@ function init() {
 			window.dispatchEvent(new CustomEvent(QUICK_EDIT_TOGGLE_EVENT));
 		});
 	}
+
+	toolbar
+		.querySelector('.ext-tb-edit')
+		?.addEventListener('click', () =>
+			track('toolbar_link_clicked', { target: 'block_editor' }),
+		);
+	toolbar
+		.querySelector('.ext-tb-admin-link')
+		?.addEventListener('click', () =>
+			track('toolbar_link_clicked', { target: 'wp_admin' }),
+		);
 
 	watchAgentSidebar(toolbar, aiBtn);
 }

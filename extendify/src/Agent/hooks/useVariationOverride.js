@@ -1,3 +1,4 @@
+import { refreshBlockHighlight } from '@agent/lib/block-highlight';
 import { getDynamicDuotoneMap } from '@agent/lib/svg-blocks-scanner';
 import { replaceDuotoneSVG } from '@agent/lib/svg-helpers';
 import { parse } from '@wordpress/blocks';
@@ -23,6 +24,7 @@ export const useVariationOverride = ({ css, duotoneTheme }) => {
 			frontStyles.current = style.innerHTML;
 		}
 		style.innerHTML = css;
+		refreshBlockHighlight();
 	}, [css]);
 
 	// Handle the editor

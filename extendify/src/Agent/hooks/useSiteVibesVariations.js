@@ -1,70 +1,86 @@
-import blockStyleVariations from '@launch/_data/block-style-variations.json';
+import { isObject } from '@shared/lib/utils';
+import {
+	buildVibeResetCss,
+	withAppliedVariation,
+} from '@shared/lib/vibe-preview';
+import { getVibes, vibeCssBySlug, vibesBySlug } from '@shared/lib/vibes';
 import apiFetch from '@wordpress/api-fetch';
 import useSWRImmutable from 'swr/immutable';
 
 export const useSiteVibesVariations = () => {
 	const { data, error, isLoading } = useSWRImmutable(
-		{
-			key: 'site-vibes-variations',
-			themeSlug: window.extAgentData.context.themeSlug,
-		},
+		{ key: 'site-vibes-variations' },
 		fetcher,
 	);
 	return { data, error, isLoading };
 };
 
 const fetcher = async () => {
-	const stylesResponse = await apiFetch({
-		path: '/wp/v2/global-styles/themes/extendable?context=edit',
-	});
-
-	const styles = stylesResponse?.styles;
-	if (!styles?.blocks) return null;
-
 	const optionsResponse = await apiFetch({
 		path: '/extendify/v1/launch/options?option=extendify_siteStyle',
 	});
 
-	const currentVibe = optionsResponse?.data?.vibe;
+	const siteStyle = optionsResponse?.data;
+	const currentVibe = siteStyle?.vibe || 'natural-1';
+
+	// The site's current vibe is not necessarily offered on this surface.
+	const payloads = await getVibes(`agent,${currentVibe}`);
+	if (!payloads.length) return null;
+
+	const bySlug = vibesBySlug(payloads);
+	const [theme, variation] = await Promise.all([
+		getThemeGlobalStyles(),
+		getAppliedVariation(siteStyle),
+	]);
+	const themeStyles = withAppliedVariation(theme?.styles, variation?.styles);
+	const themeSettings = withAppliedVariation(
+		theme?.settings,
+		variation?.settings,
+	);
 
 	return {
-		vibes: extractVibesFromTheme(styles),
-		css: { ...blockStyleVariations },
-		currentVibe: currentVibe || 'natural-1',
+		vibes: payloads.map(({ slug, title }) => ({ name: title || slug, slug })),
+		css: vibeCssBySlug(payloads),
+		payloads: bySlug,
+		resets: Object.fromEntries(
+			Object.keys(bySlug).map((slug) => [
+				slug,
+				buildVibeResetCss({
+					payloads: bySlug,
+					slug,
+					themeStyles,
+					themeSettings,
+				}),
+			]),
+		),
+		currentVibe,
 	};
 };
 
-const extractVibesFromTheme = (themeStyles) => {
-	if (!themeStyles?.blocks) return [];
+const getThemeGlobalStyles = async () => {
+	const themeSlug = window.extAgentData?.context?.themeSlug;
+	if (!themeSlug) return null;
 
-	const vibeSet = new Set();
-	const { blocks } = themeStyles;
-
-	// Scan all blocks for vibe variations
-	for (const blockObj of Object.values(blocks)) {
-		if (!blockObj?.variations) continue;
-
-		for (const styleName of Object.keys(blockObj.variations)) {
-			if (!styleName.startsWith('ext-preset--')) continue;
-
-			// Split the slug: ext-preset--group--gradient-1--item-card-1--align-center
-			const parts = styleName.split('--');
-
-			if (parts.length >= 4) {
-				const vibe = parts[2]; // 'gradient-1' ← This is what we want!
-				if (vibe) vibeSet.add(vibe);
-			}
-		}
+	try {
+		return await apiFetch({
+			path: `/wp/v2/global-styles/themes/${themeSlug}?context=edit`,
+		});
+	} catch {
+		return null;
 	}
-
-	return Array.from(vibeSet).map((slug) => ({
-		name: slugToDisplayName(slug), // "gradient-1" → "Gradient 1"
-		slug,
-	}));
 };
 
-const slugToDisplayName = (slug) =>
-	slug
-		.split('-')
-		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-		.join(' ');
+// Sites launched before extendify_siteStyle carried the variation hold it on
+// the legacy AutoLaunch row only.
+const getAppliedVariation = async (siteStyle) => {
+	if (isObject(siteStyle?.variation)) return siteStyle.variation;
+
+	try {
+		const { data } = await apiFetch({
+			path: '/extendify/v1/launch/options?option=extendify_site_style',
+		});
+		return isObject(data?.variation) ? data.variation : null;
+	} catch {
+		return null;
+	}
+};

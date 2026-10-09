@@ -1,5 +1,6 @@
 import { addImageToBlock } from '@draft/api/WPApi';
 import { downloadImage } from '@shared/api/wp';
+import { useStampedPreview } from '@shared/hooks/useStampedPreview';
 import { store as blockEditorStore } from '@wordpress/block-editor';
 import { Button, Spinner } from '@wordpress/components';
 import { useDispatch, useSelect } from '@wordpress/data';
@@ -10,10 +11,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 export const ImagePreview = ({
 	prompt,
+	alt,
 	size,
 	isGenerating,
 	id,
 	src,
+	disclose,
 	clearImageResponse,
 }) => {
 	const { openGeneralSidebar } = useDispatch(editPostStore);
@@ -24,11 +27,15 @@ export const ImagePreview = ({
 		[],
 	);
 	const [imgWidth, imgHeight] = size.split('x');
+	const previewSrc = useStampedPreview(src, disclose);
 
 	const handleInsert = async (event) => {
 		event.preventDefault();
 		setIsInserting(true);
-		const image = await downloadImage(id, src, 'ai-generated');
+		const image = await downloadImage(id, src, 'ai-generated', null, {
+			alt: alt ?? prompt,
+			disclose,
+		});
 		if (!image) return;
 
 		await addImageToBlock(selectedBlock, image, updateBlockAttributes);
@@ -63,7 +70,7 @@ export const ImagePreview = ({
 					>
 						<img
 							alt={prompt}
-							src={src}
+							src={previewSrc}
 							className="block w-full"
 							style={{ aspectRatio: Number(imgWidth) / Number(imgHeight) }}
 						/>

@@ -11,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\Config;
 use Extendify\Insights;
 use Extendify\PartnerData;
+use Extendify\Shared\Services\LaunchUpdate\LaunchUpdater;
 
 /**
  * This class handles any file loading for the admin area.
@@ -67,12 +68,17 @@ class Admin
             ]);
         }
 
+        $showLaunchUpdate = PartnerData::setting('showLaunchUpdate');
+        $launchUpdate = $showLaunchUpdate ? LaunchUpdater::claimPendingUpdates() : [];
         \wp_add_inline_script(
             Config::$slug . '-launch-scripts',
             'window.extLaunchData = ' . \wp_json_encode([
                 'editorStyles' => \get_block_editor_settings([], new \WP_Block_Editor_Context()),
                 'wpRoot' => \rest_url(),
                 'activeTests' => \get_option(Insights::ACTIVE_TESTS_OPTION, []),
+                'showLaunchTitle' => (bool) PartnerData::setting('showLaunchTitle'),
+                'customDesign' => PartnerData::setting('customDesign'),
+                'partnerStrings' => PartnerData::setting('strings'),
                 'resetSiteInformation' => [
                     'pagesIds' => array_map('esc_attr', $this->getLaunchCreatedPages()),
                     'navigationsIds' => array_map('esc_attr', $this->getLaunchCreatedNavigations()),
@@ -87,6 +93,12 @@ class Admin
                         'Default post slug'
                     ),
                 'hideAutoLaunchExitLink' => (bool) PartnerData::setting('hideLaunchExitLink'),
+                'themeUpdateNeeded' => !empty($launchUpdate['theme']),
+                'pluginUpdateNeeded' => !empty($launchUpdate['plugin']),
+                'launchUpdateAttempt' => $launchUpdate['attempt'] ?? 0,
+                'launchUpdateStale' => (object) ($launchUpdate['stale'] ?? []),
+                'pluginUpdateViaRest' => LaunchUpdater::isWpOrgBuild(),
+                'pluginSlug' => Config::$slug,
             ]),
             'before'
         );

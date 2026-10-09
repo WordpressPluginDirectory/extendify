@@ -1,123 +1,46 @@
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
+import { prewarmRecaptcha } from '@shared/api/pluginsActivation';
 import { useEffect, useState } from '@wordpress/element';
 import { isEmail } from '@wordpress/url';
-import { pluginsActivation } from '../../api/pluginsActivation';
-import { Loading } from './Loading';
+import { accountContext } from './accountContext';
+import { createAccount } from './createAccount';
+import { partitionPlugins } from './partitionPlugins';
 import { SetupComplete } from './SetupComplete';
 import { SetupPlugins } from './SetupPlugins';
 import {
+	ACCOUNT_STATUS,
 	ACTIVATION_STATUS,
 	usePluginsActivation,
 } from './usePluginsActivation';
 
-async function createAccount(plugin, data) {
-	if (!plugin?.idempotent) {
-		const signal = AbortSignal.timeout(10000);
-		const attemptStart = Date.now();
-
-		try {
-			await plugin.createAccountCallback({ ...data, signal });
-
-			return {
-				requestTimeInMs: [Date.now() - attemptStart],
-				retries: 0,
-				errors: [],
-			};
-		} catch (error) {
-			const err = new Error('Single attempt failed');
-
-			err.requestTimeInMs = [Date.now() - attemptStart];
-			err.retries = 0;
-			err.errors = error?.message ? [error.message] : [];
-
-			throw err;
-		}
-	}
-
-	return createAccountWithRetry(plugin, data);
-}
-
-/**
- * Attempts account creation with retry logic within a 10s window.
- * Retries immediately on timeout (5s), or after 2.5s on other failures.
- */
-async function createAccountWithRetry(
-	plugin,
-	{ email, marketingConsent, termsAgreed, scriptData },
-) {
-	const windowMs = 10000;
-	const perAttemptMs = 5000;
-	const backoffMs = 2500;
-	const maxRetries = 5;
-
-	const windowStart = Date.now();
-	const requestTimeInMs = [];
-	const errors = [];
-	let retries = 0;
-
-	while (Date.now() - windowStart < windowMs && retries < maxRetries) {
-		const attemptStart = Date.now();
-		const signal = AbortSignal.timeout(perAttemptMs);
-
-		try {
-			await plugin.createAccountCallback({
-				email,
-				marketingConsent,
-				termsAgreed,
-				scriptData,
-				signal,
-			});
-			requestTimeInMs.push(Date.now() - attemptStart);
-			return { requestTimeInMs, retries, errors };
-		} catch (error) {
-			requestTimeInMs.push(Date.now() - attemptStart);
-			if (error?.message) errors.push(error.message);
-
-			const isTimeout = signal.aborted;
-			const remainingMs = windowMs - (Date.now() - windowStart);
-
-			if (remainingMs <= 0) break;
-
-			retries++;
-
-			if (!isTimeout && remainingMs >= backoffMs) {
-				await new Promise((resolve) => setTimeout(resolve, backoffMs));
-			}
-		}
-	}
-
-	const err = new Error(`Retry window of ${windowMs}ms exceeded`);
-	err.requestTimeInMs = requestTimeInMs;
-	err.retries = retries;
-	err.errors = errors;
-	throw err;
-}
-
 export const ProductAccountActivation = () => {
 	const [isOpen, setIsOpen] = useState(true);
-	const [isLoading, setIsLoading] = useState(false);
-	const [isFinished, setIsFinished] = useState(false);
-	const [plugins, setPlugins] = useState(
-		(window.extSharedData?.showProductActivation ?? [])
-			.map((pluginData) => ({
-				...pluginData,
-				selected: true,
-				createAccountCallback:
-					pluginsActivation[pluginData.slug]?.createAccountCallback ?? null,
-				idempotent: pluginsActivation[pluginData.slug]?.idempotent ?? true,
-			}))
-			.filter((plugin) => plugin.createAccountCallback),
+	const [submitted, setSubmitted] = useState(null);
+	const { offered, ineligible } = partitionPlugins(
+		window.extSharedData?.showProductActivation,
 	);
+	const [plugins, setPlugins] = useState(offered);
 
 	const [email, setEmail] = useState(window.extSharedData?.userEmail ?? '');
 	const [marketingConsent, setMarketingConsent] = useState(false);
 	const [termsAgreed, setTermsAgreed] = useState(false);
-	const { scriptData, activatePlugins } = usePluginsActivation(plugins);
+	const { scriptData, activatePlugins } = usePluginsActivation(
+		plugins,
+		ineligible,
+	);
 
 	useEffect(() => {
 		const style = document.createElement('style');
 		style.textContent = '.grecaptcha-badge { visibility: hidden; }';
 		document.head.appendChild(style);
+	}, []);
+
+	useEffect(() => {
+		// Site keys come from PHP, so the prewarm needs no SWR wait.
+		for (const plugin of offered) {
+			const siteKey = plugin.scriptData?.recaptchaSiteKey;
+			if (siteKey) prewarmRecaptcha(siteKey).catch(() => {});
+		}
 	}, []);
 
 	const handleClose = () => {
@@ -127,87 +50,100 @@ export const ProductAccountActivation = () => {
 		setIsOpen(false);
 	};
 
+	const trackStatus = (slug, request) => {
+		const record = (status) =>
+			setSubmitted((current) =>
+				current.map((plugin) =>
+					plugin.slug === slug ? { ...plugin, status } : plugin,
+				),
+			);
+
+		request.then(
+			() => record(ACCOUNT_STATUS.success),
+			() => record(ACCOUNT_STATUS.error),
+		);
+
+		return request;
+	};
+
 	const handleCreateAccounts = async () => {
 		if (!isEmail(email)) return;
 
-		setIsLoading(true);
+		const selectedPlugins = plugins.filter((plugin) => plugin.selected);
 
-		const selectedPlugins = plugins?.filter((plugin) => plugin.selected) ?? [];
+		setSubmitted(
+			selectedPlugins.map((plugin) => ({
+				...plugin,
+				status: ACCOUNT_STATUS.pending,
+			})),
+		);
 
-		const results = await Promise.allSettled(
+		const settling = Promise.allSettled(
 			selectedPlugins.map((plugin) =>
-				createAccount(plugin, {
-					email,
-					marketingConsent,
-					termsAgreed,
-					scriptData: scriptData?.[plugin.slug],
-				}),
+				trackStatus(
+					plugin.slug,
+					createAccount(plugin, {
+						email,
+						marketingConsent,
+						termsAgreed,
+						scriptData: { ...scriptData?.[plugin.slug], ...plugin.scriptData },
+					}),
+				),
 			),
 		);
 
-		const context = Object.fromEntries(
-			selectedPlugins.map((plugin, index) => {
-				const result = results[index];
-				const { requestTimeInMs, retries, errors } =
-					result.status === 'fulfilled' ? result.value : result.reason;
-				const entry = {
-					status: result.status === 'fulfilled' ? 'success' : 'error',
-					requestTimeInMs,
-					endpoint: `extendify/v1/${plugin.slug}/create-account`,
-					retries,
-					...(errors.length > 0 && { errors }),
-				};
-				return [plugin.slug, entry];
-			}),
-		);
+		// A record stuck on pending is a user who left before the answer.
+		await activatePlugins({
+			status: ACTIVATION_STATUS.completed,
+			context: accountContext(selectedPlugins),
+		});
+
+		const results = await settling;
 
 		await activatePlugins({
 			status: ACTIVATION_STATUS.completed,
-			context,
+			context: accountContext(selectedPlugins, results),
 		});
-
-		setIsFinished(true);
-		setIsLoading(false);
 	};
 
 	return (
-		plugins?.length && (
-			<Dialog
-				open={isOpen}
-				onClose={() => {}}
-				className="relative z-high extendify-shared"
-			>
-				<DialogBackdrop
-					transition
-					className="fixed inset-0 bg-black/30 transition-opacity data-closed:opacity-0"
-				/>
-
-				<div className="z-10 fixed inset-0 flex w-screen items-center justify-center p-4 [body:has(#extendify-agent-chat)_&]:ml-96 [body:has(#extendify-agent-chat)_&]:w-[calc(100%-24rem)]">
-					<DialogPanel
+		plugins.length > 0 && (
+			<Dialog open={isOpen} onClose={() => {}} className="extendify-shared">
+				{/* Utilities on the scope-class element itself never match the prefixed CSS. */}
+				<div className="relative z-high">
+					<DialogBackdrop
 						transition
-						className="relative w-full max-w-208 bg-white rounded-lg shadow-xl transition-all data-closed:opacity-0 data-closed:scale-95"
-					>
-						{!isFinished && !isLoading && (
-							<SetupPlugins
-								plugins={plugins}
-								setPlugins={setPlugins}
-								handleCreateAccounts={handleCreateAccounts}
-								email={email}
-								setEmail={setEmail}
-								handleClose={handleClose}
-								marketingConsent={marketingConsent}
-								setMarketingConsent={setMarketingConsent}
-								termsAgreed={termsAgreed}
-								setTermsAgreed={setTermsAgreed}
-							/>
-						)}
+						className="fixed inset-0 bg-black/30 transition-opacity data-closed:opacity-0"
+					/>
 
-						{!isFinished && isLoading && <Loading />}
-
-						{isFinished && (
-							<SetupComplete handleClose={() => setIsOpen(false)} />
-						)}
-					</DialogPanel>
+					<div className="z-10 fixed top-0 left-0 right-0 bottom-(--extendify-notification-bar-height,0px) flex items-center justify-center p-4 [body:has(#extendify-agent-chat)_&]:ml-96 [body:has(#extendify-agent-chat)_&]:w-[calc(100%-24rem)]">
+						<DialogPanel
+							transition
+							className="relative w-full max-w-208 max-h-full overflow-hidden flex flex-col bg-white rounded-lg shadow-xl transition-all data-closed:opacity-0 data-closed:scale-95"
+						>
+							<div className="overflow-y-auto">
+								{submitted ? (
+									<SetupComplete
+										plugins={submitted}
+										handleClose={() => setIsOpen(false)}
+									/>
+								) : (
+									<SetupPlugins
+										plugins={plugins}
+										setPlugins={setPlugins}
+										handleCreateAccounts={handleCreateAccounts}
+										email={email}
+										setEmail={setEmail}
+										handleClose={handleClose}
+										marketingConsent={marketingConsent}
+										setMarketingConsent={setMarketingConsent}
+										termsAgreed={termsAgreed}
+										setTermsAgreed={setTermsAgreed}
+									/>
+								)}
+							</div>
+						</DialogPanel>
+					</div>
 				</div>
 			</Dialog>
 		)

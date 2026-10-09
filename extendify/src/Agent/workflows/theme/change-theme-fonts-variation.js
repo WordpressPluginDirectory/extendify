@@ -11,7 +11,7 @@ export default {
 	redirectComponent: () =>
 		Redirect(
 			__(
-				'Hey there! It looks like you are trying to change your theme fonts, but you are not on a page where we can do that.',
+				'It looks like you are trying to change your theme fonts, but you are not on a page where we can do that.',
 				'extendify-local',
 			),
 		),

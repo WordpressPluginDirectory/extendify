@@ -282,7 +282,7 @@ export const getSiteImages = async (siteProfile) => {
 };
 
 export const getSiteStyles = async ({ title, siteProfile }) => {
-	const request = new Request(`${AI_HOST}/api/styles`, {
+	const request = new Request(`${AI_HOST}/api/style-recipes`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({ ...extraBody, title, siteProfile }),

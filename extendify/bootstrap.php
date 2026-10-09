@@ -9,6 +9,7 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\AdminPageRouter;
 use Extendify\Assist\Admin as AssistAdmin;
 use Extendify\Agent\Admin as AgentAdmin;
+use Extendify\ComingSoon\Frontend as ComingSoonFrontend;
 use Extendify\Config;
 use Extendify\Draft\Admin as DraftAdmin;
 use Extendify\HelpCenter\Admin as HelpCenterAdmin;
@@ -17,19 +18,34 @@ use Extendify\Launch\Admin as LaunchAdmin;
 use Extendify\AutoLaunch\Admin as AutoLaunchAdmin;
 use Extendify\Library\Admin as LibraryAdmin;
 use Extendify\Library\Frontend as LibraryFrontend;
+use Extendify\Mcp\Server as McpServer;
+use Extendify\Mcp\OAuth\Metadata as McpMetadata;
+use Extendify\Mcp\OAuth\Authorize as McpAuthorize;
+use Extendify\Mcp\OAuth\TokenEndpoint as McpTokenEndpoint;
+use Extendify\Mcp\OAuth\RegistrationEndpoint as McpRegistrationEndpoint;
+use Extendify\Mcp\Profile as McpProfile;
+use Extendify\Mcp\Lifecycle as McpLifecycle;
+use Extendify\Mcp\Jobs as McpJobs;
 use Extendify\Agent\Frontend as AgentFrontend;
 use Extendify\QuickEdit\Frontend as QuickEditFrontend;
 use Extendify\PageCreator\Admin as PageCreatorAdmin;
 use Extendify\PartnerData;
+use Extendify\Notifications\Admin as NotificationsAdmin;
+use Extendify\Notifications\Frontend as NotificationsFrontend;
 use Extendify\Toolbar\Admin as ToolbarAdmin;
 use Extendify\Toolbar\Frontend as ToolbarFrontend;
 use Extendify\Recommendations\Admin as RecommendationsAdmin;
 use Extendify\PluginNotifications\Admin as PluginNotificationsAdmin;
 use Extendify\Shared\Admin as SharedAdmin;
+use Extendify\Shared\DataProvider\NotificationData;
 use Extendify\Shared\DataProvider\ResourceData;
+use Extendify\Shared\Services\BlockStyleVariations;
+use Extendify\Shared\Services\ForcePluginReinstall;
 use Extendify\Shared\Services\Import\ImagesImporter;
 use Extendify\Shared\Services\PluginRedirectDisabler;
+use Extendify\Shared\Services\PluginsActivation\SimplyBook;
 use Extendify\Shared\Services\VersionMigrator;
+use Extendify\SiteVisibility;
 
 if (!defined('EXTENDIFY_REQUIRED_CAPABILITY')) {
     define('EXTENDIFY_REQUIRED_CAPABILITY', 'manage_options');
@@ -47,6 +63,43 @@ if (is_readable(EXTENDIFY_PATH . 'vendor/autoload.php')) {
     require EXTENDIFY_PATH . 'vendor/autoload.php';
 }
 
+// Registered after the autoloader — these callbacks reference classes it loads.
+add_filter('http_request_args', function ($args, $url) {
+    $extendifyHosts = array_filter(array_map(function ($host) {
+        return wp_parse_url($host, PHP_URL_HOST);
+    }, \Extendify\Constants::serviceUrls()));
+
+    $host = wp_parse_url($url, PHP_URL_HOST);
+    if ($host && (str_contains($host, 'extendify') || in_array($host, $extendifyHosts, true))) {
+        $args['timeout'] = 45;
+    }
+
+    return $args;
+}, 100, 2);
+
+add_action('update_option', function ($option) {
+    if (in_array($option, ['WPLANG', 'blogname'], true)) {
+        \delete_transient('extendify_recommendations');
+        \delete_transient('extendify_domains');
+        \delete_transient('extendify_supportArticles');
+    }
+
+    // Delete the partner transient so we can fetch new data when the locale is switched.
+    if (($option === 'WPLANG') && get_transient('extendify_partner_data_cache_check')) {
+        delete_transient('extendify_partner_data_cache_check');
+        PartnerData::getPartnerData();
+    }
+});
+
+// Delete the partner transient so we can fetch new data when the locale is switched via WP-CLI.
+add_action('cli_init', function () {
+    $command = sanitize_text_field(wp_unslash(($_SERVER['argv'][1] ?? '')));
+    if ($command === 'language' && get_transient('extendify_partner_data_cache_check')) {
+        delete_transient('extendify_partner_data_cache_check');
+        PartnerData::getPartnerData();
+    }
+});
+
 if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     define('EXTENDIFY_IS_THEME_EXTENDABLE', get_option('stylesheet') === 'extendable');
 }
@@ -62,6 +115,15 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     // Run various database updates depending on the plugin version.
     new VersionMigrator();
 
+    // Force-reinstall support for /wp/v2/plugins (opt-in via request header).
+    ForcePluginReinstall::register();
+
+    // Keeps our design variation names registered so global styles can hold them.
+    BlockStyleVariations::register();
+
+    // Their registration callback comes in unauthenticated, so this cannot sit behind the capability gate.
+    SimplyBook::register();
+
     // This class will fetch and cache partner data to be used
     // throughout every class below. If opt in.
     new PartnerData();
@@ -72,9 +134,26 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     // Set up scheduled cache (if opt-in and active).
     if (!PartnerData::setting('deactivated')) {
         ResourceData::scheduleCache();
+        NotificationData::scheduleCache();
+    }
+
+    // A token request carries no session and would fail the capability check.
+    if (defined('EXTENDIFY_PARTNER_ID') && !PartnerData::setting('deactivated')) {
+        McpServer::register();
+        McpMetadata::register();
+        McpAuthorize::register();
+        McpTokenEndpoint::register();
+        McpRegistrationEndpoint::register();
+        McpProfile::register();
+        McpLifecycle::register();
+        McpJobs::register();
     }
 
     if (!current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
+        if (!SiteVisibility::isPublished()) {
+            new ComingSoonFrontend();
+        }
+
         return;
     }
 
@@ -147,6 +226,9 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     if (PartnerData::setting('showProductRecommendations') || constant('EXTENDIFY_DEVMODE')) {
         new RecommendationsAdmin();
     }
+
+    new NotificationsAdmin();
+    new NotificationsFrontend();
 
     if (PartnerData::setting('showDraft') || constant('EXTENDIFY_DEVMODE')) {
         new DraftAdmin();

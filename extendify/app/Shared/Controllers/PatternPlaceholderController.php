@@ -53,20 +53,20 @@ class PatternPlaceholderController
                 ? self::PLUGIN_HANDLERS[$pluginDependency]
                 : null;
             if ($handlerClass && isset($metadata['key'])) {
-                $pattern['code'] = $handlerClass::create($pattern['code'], $metadata['key'], $newCode);
+                $code = $handlerClass::create($pattern['code'], $metadata['key'], $newCode);
+                if (is_wp_error($code)) {
+                    // The caller renders whatever is in code, so leaving it is the fallback.
+                    $pattern['pluginDependencyFailed'] = true;
+                    return $pattern;
+                }
+
+                $pattern['code'] = $code;
                 return $pattern;
             }
 
             // We added a feature this version doesn't yet support.
             return $pattern;
         }, $patterns);
-
-        // if any of the pattern code is a wp_error, we need to fail.
-        foreach ($patterns as $pattern) {
-            if (is_wp_error($pattern['code'])) {
-                return new \WP_REST_Response($pattern['code'], 422);
-            }
-        }
 
         return new \WP_REST_Response($patterns);
     }

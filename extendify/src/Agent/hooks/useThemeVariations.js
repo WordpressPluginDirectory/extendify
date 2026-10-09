@@ -27,12 +27,14 @@ const fetcher = async () => {
 	};
 };
 
-export const useThemeVariations = () => {
+export const useThemeVariations = ({ enabled = true } = {}) => {
 	const { data, error, isLoading } = useSWRImmutable(
-		{
-			key: 'theme-variations',
-			themeSlug: window.extAgentData.context.themeSlug,
-		},
+		enabled
+			? {
+					key: 'theme-variations',
+					themeSlug: window.extAgentData.context.themeSlug,
+				}
+			: null,
 		fetcher,
 	);
 	return { variations: data?.variations, error, isLoading };

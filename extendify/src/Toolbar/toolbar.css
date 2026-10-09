@@ -7,6 +7,7 @@
 
 /* no-prefix */
 #extendify-toolbar {
+	color-scheme: only light;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -111,6 +112,19 @@
 	pointer-events: none;
 }
 
+@media (min-width: 783px) {
+	/* Without the skeleton case the collapse animates in on every load. */
+	/* no-prefix */
+	html.extendify-agent-skeleton #extendify-toolbar .ext-tb-ai-agent {
+		width: 0;
+		padding: 0;
+		margin: 0;
+		opacity: 0;
+		overflow: hidden;
+		pointer-events: none;
+	}
+}
+
 /* no-prefix */
 #extendify-toolbar .ext-tb-ai-agent:hover {
 	color: #ffffff;
@@ -202,18 +216,24 @@ html.extendify-quick-edit-on #extendify-toolbar .ext-tb-toggle-thumb {
 /* When Extendify Agent sidebar is open, reframe the toolbar to
    match the way Extendify reframes the core admin bar (slot it
    next to the sidebar inside the rounded frame). */
-/* no-prefix */
-#extendify-toolbar.ext-tb-agent-open {
-	top: 8px;
-	left: 384px;
-	right: 8px;
-	border-radius: 8px 8px 0 0;
-	overflow: hidden;
+/* 783px tracks Skeleton::DESKTOP; no 384px rail below it. */
+@media (min-width: 783px) {
+	/* .ext-tb-agent-open lands only once the sidebar mounts; the rail needs it sooner. */
+	/* no-prefix */
+	#extendify-toolbar.ext-tb-agent-open,
+	html.extendify-agent-skeleton #extendify-toolbar {
+		top: 8px;
+		left: 384px;
+		right: 8px;
+		border-radius: 8px 8px 0 0;
+		overflow: hidden;
+	}
 }
 
 @media screen and (max-width: 782px) {
 	/* no-prefix */
 	#extendify-toolbar {
+		z-index: 999;
 		height: 46px;
 		font-size: 14px;
 	}

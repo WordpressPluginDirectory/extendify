@@ -1,1 +1,1 @@
-export { default } from './update-variation';
+export { default } from './update-palette';

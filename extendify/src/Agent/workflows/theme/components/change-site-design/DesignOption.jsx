@@ -57,6 +57,7 @@ const generatePreviewHtml = (renderedHtml, styles) => {
 	});
 
 	clone.querySelector('#block-style-variation-styles-inline-css')?.remove();
+	clone.querySelector('#extendify-palette-preview-css')?.remove();
 	clone.querySelector('#admin-bar-inline-css')?.remove();
 	clone.querySelector('#admin-bar-css')?.remove();
 	clone.querySelector('#extendify-toolbar-reset')?.remove();
@@ -66,6 +67,8 @@ const generatePreviewHtml = (renderedHtml, styles) => {
 	const styleEl = head.appendChild(document.createElement('style'));
 	styleEl.textContent = [
 		styles?.colorAndFontsVariations ?? '',
+		// Ties the option on specificity, so it only wins by coming after it.
+		styles?.paletteCss ?? '',
 		styles?.vibes ?? '',
 		styles?.blockSupportsCss ?? '',
 	].join('\n');
@@ -109,6 +112,7 @@ export const DesignOption = ({ renderedHtml, styles, isSelected, onClick }) => {
 			renderedHtml,
 			styles?.linkStyles,
 			styles?.colorAndFontsVariations,
+			styles?.paletteCss,
 			styles?.duotoneTheme,
 			styles?.vibes,
 			styles?.blockSupportsCss,

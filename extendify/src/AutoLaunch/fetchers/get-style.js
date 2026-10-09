@@ -1,4 +1,4 @@
-import { getThemeVariation } from '@auto-launch/fetchers/get-variation';
+import { getStyleDocument } from '@auto-launch/fetchers/get-style-document';
 import { getStyleShape, styleShape } from '@auto-launch/fetchers/shape';
 import {
 	failWithFallback,
@@ -7,23 +7,23 @@ import {
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { updateOption } from '@auto-launch/functions/wp';
+import { launchStrings } from '@auto-launch/strings';
 import { AI_HOST } from '@constants';
 import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
-import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
 const fallback = { siteStyle: {} };
-const url = `${AI_HOST}/api/styles`;
+const url = `${AI_HOST}/api/style-recipes`;
 const method = 'POST';
 const headers = { 'Content-Type': 'application/json' };
 
-// variation gets merged in after fetch
+// The styles route serves no global-styles document.
 const shapeLocal = z.array(styleShape.omit({ variation: true }));
 
 export const handleSiteStyle = async ({ siteProfile }) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Picking the perfect design', 'extendify-local'));
+	setStatus(launchStrings().statusStyle);
 
 	const body = JSON.stringify({ ...reqDataBasics, siteProfile, count: 1 });
 
@@ -49,14 +49,13 @@ export const handleSiteStyle = async ({ siteProfile }) => {
 		async () => {
 			const data = await response.json();
 			const style = shapeLocal.parse(data)[0];
-			const variation = await getThemeVariation(
-				{
-					slug: style.colorPalette,
-					fonts: style.fonts,
-				},
-				{ fallback: true },
-			);
+			const variation = await getStyleDocument({
+				colorPalette: style.colorPalette,
+				fonts: style.fonts,
+			});
 			const siteStyle = { ...style, variation };
+			// The Agent reads extendify_siteStyle; the legacy row keeps old readers.
+			await updateOption('extendify_siteStyle', siteStyle);
 			await updateOption('extendify_site_style', siteStyle);
 			// Set animation default
 			await updateOption('extendify_animation_settings', {

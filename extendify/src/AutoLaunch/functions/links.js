@@ -1,9 +1,8 @@
-import { updatePage } from '@auto-launch/functions/pages';
+import { sectionSlug, updatePage } from '@auto-launch/functions/pages';
 import { alreadyActive } from '@auto-launch/functions/plugins';
 import { getOption, getPageById } from '@auto-launch/functions/wp';
 import { AI_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
-import { pageNames } from '@shared/lib/pages';
 import { getBlockContent, parse } from '@wordpress/blocks';
 
 const { homeUrl } = window.extSharedData;
@@ -163,18 +162,10 @@ export const updateSinglePageLinksToSections = async (
 	}
 
 	// get all the patterns that we have in the home page
-	const patternTypes = pages?.[0]?.patterns
-		?.map((pattern) => pattern?.patternTypes?.[0])
-		?.filter((patternType) => patternType !== 'hero-header')
-		?.map((patternType) => {
-			const { slug } =
-				Object.values(pageNames).find(({ alias }) =>
-					alias.includes(patternType),
-				) || {};
-			return slug;
-		})
-		?.filter(Boolean)
-		?.flat();
+	const sectionSlugs = pages?.[0]?.patterns
+		?.filter((pattern) => pattern?.patternTypes?.[0] !== 'hero-header')
+		?.map(sectionSlug)
+		?.filter(Boolean);
 
 	const createdPages =
 		pages
@@ -199,7 +190,7 @@ export const updateSinglePageLinksToSections = async (
 		pluginPages.push('events');
 	}
 
-	const allAvailablePages = (patternTypes ?? []).concat(pluginPages);
+	const allAvailablePages = (sectionSlugs ?? []).concat(pluginPages);
 	if (!allAvailablePages.length) {
 		wpPages[0] = updatePage({
 			id: wpPages[0].id,

@@ -216,6 +216,8 @@ class AdminPageRouter
     /**
      * Redirect once to Launch, only once (at least once) when
      * the email matches the entry in WP Admin > Settings > General.
+     * Requests carrying a build-id keep redirecting until onboarding
+     * completes.
      *
      * @return void
      */
@@ -229,7 +231,16 @@ class AdminPageRouter
             return;
         }
 
-        if (\get_option('extendify_launch_loaded', false) || !Config::$showLaunch) {
+        // Partner preview links must work on every admin visit, not just the first.
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended,WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+        $buildIdRedirect = !empty(sanitize_text_field(wp_unslash($_GET['build-id'] ?? '')))
+            && !Config::$launchCompleted;
+
+        if (!$buildIdRedirect && \get_option('extendify_launch_loaded', false)) {
+            return;
+        }
+
+        if (!Config::$showLaunch) {
             return;
         }
 
@@ -252,6 +263,16 @@ class AdminPageRouter
                 exit;
             }
             return;
+        }
+
+        if ($buildIdRedirect) {
+            \update_option('permalink_structure', '/%postname%/');
+            \update_option('extendify_needs_rewrite_flush', true);
+
+            // Only AutoLaunch consumes build-id.
+            $query_params = $this->presentLaunchParams(['page' => 'extendify-auto-launch']);
+            \wp_safe_redirect(\add_query_arg($query_params, \admin_url('admin.php')));
+            exit;
         }
 
         $user = \wp_get_current_user();

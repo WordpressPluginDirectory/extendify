@@ -6,10 +6,10 @@ import {
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { updateOption } from '@auto-launch/functions/wp';
+import { launchStrings } from '@auto-launch/strings';
 import { AI_HOST } from '@constants';
 import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
-import { __ } from '@wordpress/i18n';
 import { uploadMedia } from '@wordpress/media-utils';
 
 const { showAILogo } = window.extSharedData;
@@ -25,7 +25,7 @@ export const handleSiteLogo = async ({ siteProfile }) => {
 	if (!showAILogo) return fallback;
 
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Generating a logo', 'extendify-local'));
+	setStatus(launchStrings().statusLogo);
 
 	const { logoObjectName: objectName } = siteProfile;
 	const body = JSON.stringify({ ...reqDataBasics, objectName });
@@ -62,11 +62,16 @@ export const handleSiteLogo = async ({ siteProfile }) => {
 	return getLogoShape.parse({ logoUrl });
 };
 
-export const uploadLogo = async (url) => {
+// The backend serves the real brand logo from a `logos-custom/` path; other
+// logos keep the duotone-prefixed upload name.
+export const isExternalLogo = (url) => url?.includes('logos-custom/') ?? false;
+
+export const uploadLogo = async (url, { external = false } = {}) => {
 	const blob = await (await fetch(url)).blob();
 	const type = blob.type;
 	const fileExtension = type.replace('image/', '');
-	const logoName = `ext-custom-logo-${Date.now()}`;
+	const prefix = external ? 'ext-logo-' : 'ext-custom-logo-';
+	const logoName = `${prefix}${Date.now()}`;
 	const image = new File([blob], `${logoName}.${fileExtension}`, { type });
 
 	await uploadMedia({

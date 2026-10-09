@@ -11,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\Config;
 use Extendify\Constants;
 use Extendify\PartnerData;
+use Extendify\Shared\Services\Import\ImageUploader;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -131,6 +132,8 @@ class WooCommerceImporter
             return;
         }
 
+        $productGalleryImages = [];
+
         foreach ($images as $index => $imageUrl) {
             $imageId = $this->uploadImage($imageUrl);
             if (!is_wp_error($imageId)) {
@@ -150,16 +153,13 @@ class WooCommerceImporter
      * Uploads an image from URL to WordPress media library.
      *
      * @param string $url Image URL to upload.
-     * @return int|false Attachment ID on success, false on failure.
+     * @return int|\WP_Error Attachment ID on success, WP_Error on failure.
      */
     public function uploadImage(string $url)
     {
-        if (! function_exists('\media_sideload_image')) {
-            require_once ABSPATH . 'wp-admin/includes/media.php';
-            require_once ABSPATH . 'wp-admin/includes/file.php';
-            require_once ABSPATH . 'wp-admin/includes/image.php';
-        }
+        // media_sideload_image rejects our image urls, which carry no file extension.
+        $uploaded = (new ImageUploader())->uploadImage($url);
 
-        return \media_sideload_image($url, 0, null, 'id');
+        return is_wp_error($uploaded) ? $uploaded : $uploaded['attachment_id'];
     }
 }

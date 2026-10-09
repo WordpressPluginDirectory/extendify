@@ -1,6 +1,11 @@
 @import "tailwindcss" source(none) important;
 @import "../tailwind.css" source(none);
 @source ".";
+@source "../Notifications";
+
+:root {
+	color-scheme: only light;
+}
 
 .hide-checkmark::before {
 	content: none;

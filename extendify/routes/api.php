@@ -32,7 +32,10 @@ use Extendify\PageCreator\Controllers\SiteController as PageCreatorSiteControlle
 
 use Extendify\Agent\Controllers\WPController as AgentWPController;
 use Extendify\Agent\Controllers\ChatHistoryController as AgentChatController;
+use Extendify\Agent\Controllers\ContentController as AgentContentController;
+use Extendify\Agent\Controllers\OptionsController as AgentOptionsController;
 use Extendify\Agent\Controllers\SiteNavigationController as AgentSiteNavigationController;
+use Extendify\Agent\Controllers\UpdateBlocksController as AgentUpdateBlocksController;
 
 use Extendify\PluginNotifications\Controllers\NotificationsController;
 use Extendify\Shared\Controllers\AutoUpdateController;
@@ -41,12 +44,14 @@ use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsController;
 use Extendify\Shared\Controllers\ActivityController;
 use Extendify\Shared\Controllers\SiteProfileController;
+use Extendify\Shared\Controllers\SiteVisibilityController;
 use Extendify\Shared\Controllers\SiteImagesController;
 use Extendify\Shared\Controllers\DataController as SharedDataController;
 use Extendify\Shared\Controllers\ImageGenerationController;
 use Extendify\Shared\Services\PluginsActivation\SimplyBook as SimplyBookActivation;
 use Extendify\Shared\Services\PluginsActivation\TranslatePress as TranslatePressActivation;
 use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
+use Extendify\Shared\Services\PluginsActivation\Metricool as MetricoolActivation;
 
 \add_action(
     'rest_api_init',
@@ -79,7 +84,9 @@ use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
         ApiRouter::post('/auto-launch/create-navigation', [AutoLaunchWPController::class, 'createNavigationWithMeta']);
         ApiRouter::get('/auto-launch/get-navigation', [AutoLaunchWPController::class, 'getNavigation']);
         ApiRouter::post('/auto-launch/pre-launch-functions', [AutoLaunchWPController::class, 'preLaunch']);
+        ApiRouter::post('/auto-launch/reset-launch-state', [AutoLaunchWPController::class, 'resetLaunchState']);
         ApiRouter::post('/auto-launch/post-launch-functions', [AutoLaunchWPController::class, 'postLaunch']);
+        ApiRouter::post('/auto-launch/run-updates', [AutoLaunchWPController::class, 'runUpdates']);
         ApiRouter::get(
             '/auto-launch/import-woocommerce',
             [AutoLaunchWooCommerceController::class, 'importTemporaryProducts']
@@ -114,16 +121,28 @@ use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
         ApiRouter::get('/agent/theme-variations', [AgentWPController::class, 'getVariations']);
         ApiRouter::get('/agent/theme-fonts-variations', [AgentWPController::class, 'getFontsVariations']);
         ApiRouter::get('/agent/get-block-code', [AgentWPController::class, 'getBlockCode']);
+        ApiRouter::get('/agent/shared-block-usage', [AgentWPController::class, 'getSharedBlockUsage']);
         ApiRouter::post('/agent/get-block-html', [AgentWPController::class, 'getBlockHtml']);
+        ApiRouter::post('/agent/update-blocks', [AgentUpdateBlocksController::class, 'updateBlocks']);
         ApiRouter::post('/agent/lock-post', [AgentWPController::class, 'lockPost']);
         ApiRouter::get('/agent/chat-events', [AgentChatController::class, 'get']);
         ApiRouter::post('/agent/chat-events', [AgentChatController::class, 'store']);
         ApiRouter::post('/agent/site-navigation', [AgentSiteNavigationController::class, 'getSiteNavigation']);
-        ApiRouter::post('/agent/render-navigation', [AgentSiteNavigationController::class, 'renderNavigationMenu']);
         ApiRouter::post('/agent/site-design-variations', [AgentWPController::class, 'getSiteDesignVariations']);
         ApiRouter::get('/agent/block-style-variations', [AgentWPController::class, 'getBlockStyleVariations']);
         ApiRouter::post('/agent/options', [AgentWPController::class, 'updateOption']);
         ApiRouter::get('/agent/options', [AgentWPController::class, 'getOption']);
+        ApiRouter::post('/agent/site-options', [AgentOptionsController::class, 'handle']);
+        ApiRouter::post('/agent/content-search', [AgentContentController::class, 'search']);
+        ApiRouter::post('/agent/content-read', [AgentContentController::class, 'read']);
+
+        // Site visibility.
+        ApiRouter::post('/site-visibility/publish', [SiteVisibilityController::class, 'publish']);
+        ApiRouter::post('/site-visibility/unpublish', [SiteVisibilityController::class, 'unpublish']);
+
+        // Search engine indexing.
+        ApiRouter::post('/search-indexing/enable', [SiteVisibilityController::class, 'allowIndexing']);
+        ApiRouter::post('/search-indexing/disable', [SiteVisibilityController::class, 'blockIndexing']);
 
         // Notifications.
         ApiRouter::post('/notifications/dismiss', [NotificationsController::class, 'dismiss']);
@@ -145,16 +164,20 @@ use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
         ApiRouter::get('/shared/ping', [SharedDataController::class, 'ping']);
         ApiRouter::get('/shared/partner-plugins', [SharedDataController::class, 'getPartnerPlugins']);
         ApiRouter::post(
-            '/' . SimplyBookActivation::slug() . '/create-account',
+            SimplyBookActivation::createAccountRoute(),
             [SimplyBookActivation::class, 'createAccount']
         );
         ApiRouter::post(
-            '/' . TranslatePressActivation::slug() . '/create-account',
+            TranslatePressActivation::createAccountRoute(),
             [TranslatePressActivation::class, 'createAccount']
         );
         ApiRouter::post(
-            '/' . ImagifyActivation::slug() . '/create-account',
+            ImagifyActivation::createAccountRoute(),
             [ImagifyActivation::class, 'createAccount']
+        );
+        ApiRouter::post(
+            MetricoolActivation::createAccountRoute(),
+            [MetricoolActivation::class, 'createAccount']
         );
     }
 );

@@ -2,21 +2,16 @@
 @import "../tailwind.css" source(none);
 @source ".";
 
+:root {
+	color-scheme: only light;
+}
+
 @theme {
 	/* Body-level bars/menus render outside WP admin's font context, so they
 	   need an explicit system UI stack. */
 	--font-qe:
 		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
 		Cantarell, "Helvetica Neue", sans-serif;
-}
-
-/* DOMHighlighter renders one motion.div for both hover preview AND
-   selected-block X-close. Hover state has `pointer-events: none` inline,
-   selected state has `auto` — keep the selected rect, hide the hover. */
-/* no-prefix */
-html.extendify-quick-edit-on #extendify-agent-dom-mount
-	[style*="pointer-events: none"] {
-	@apply hidden!;
 }
 
 /* Once a block is being edited in Quick Edit, the agent's selected-block
@@ -79,30 +74,6 @@ html.extendify-quick-edit-on #wpadminbar
 	#wp-admin-bar-extendify-quick-edit-toggle
 	.extendify-quick-edit-toggle-thumb {
 	@apply translate-x-[12px]!;
-}
-
-/* Ask AI flash — `lib/ask-ai.js#flashSelection` adds the class. */
-/* no-prefix */
-@keyframes extendify-quick-edit-ask-flash {
-	0% {
-		outline-color: rgba(56, 88, 233, 0);
-		box-shadow: 0 0 0 0 rgba(56, 88, 233, 0);
-	}
-	30% {
-		outline-color: rgba(56, 88, 233, 1);
-		box-shadow: 0 0 0 6px rgba(56, 88, 233, 0.35);
-	}
-	100% {
-		outline-color: rgba(56, 88, 233, 0);
-		box-shadow: 0 0 0 0 rgba(56, 88, 233, 0);
-	}
-}
-
-/* no-prefix */
-.extendify-quick-edit-ask-flash {
-	@apply rounded-[4px]! outline-offset-[4px]!;
-	outline: 3px solid transparent !important;
-	animation: extendify-quick-edit-ask-flash 1.4s ease-out both !important;
 }
 
 /* Above WP admin bar (z 100000). */
@@ -393,6 +364,17 @@ html.extendify-quick-edit-on .block-editor-link-control__settings
 }
 
 /* no-prefix */
+.extendify-quick-edit-pill-close {
+	@apply px-[9px] text-[13px] leading-none;
+}
+
+/* Hidden rather than removed: the bar would change width on every pin. */
+/* no-prefix */
+.extendify-quick-edit-pill-close:disabled {
+	@apply invisible;
+}
+
+/* no-prefix */
 .extendify-quick-edit-pill-ai {
 	background: #3858e9;
 }
@@ -428,7 +410,7 @@ html.extendify-quick-edit-on .block-editor-link-control__settings
 /* no-prefix */
 .extendify-quick-edit-hover-outline {
 	/* z-index 99997: below hover bar (99999) but above page content */
-	@apply pointer-events-none fixed z-[99997] box-border rounded-[4px] opacity-0 outline-offset-0 mix-blend-hard-light;
+	@apply pointer-events-none fixed z-[99997] box-border rounded-[4px] opacity-0 outline-offset-0;
 	outline: 4px dashed var(--wp--preset--color--primary, #3b82f6);
 	/* Subtle overshoot — `cubic-bezier(0.34, 1.4, 0.64, 1)` was too
 	   bouncy in practice (peak ~140% of final). Tightened to ~108%
@@ -439,6 +421,11 @@ html.extendify-quick-edit-on .block-editor-link-control__settings
 		width 0.2s cubic-bezier(0.34, 1.08, 0.64, 1),
 		height 0.2s cubic-bezier(0.34, 1.08, 0.64, 1),
 		opacity 0.1s ease-out;
+}
+/* Matches the agent's selected outline (see lib/over-media.js). */
+/* no-prefix */
+.extendify-quick-edit-hover-outline.is-over-media {
+	box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
 }
 /* no-prefix */
 .extendify-quick-edit-hover-outline.is-visible {
@@ -911,25 +898,10 @@ body:has(.extendify-quick-edit-floating-bar) [id^="portal/tooltip"] {
 	@apply z-[1000000]!;
 }
 
-/* When wp.media's frame opens on top of our modal (e.g. SiteIdentityModal's
-   "Change logo" → MediaUpload), our modal would otherwise sit on top
-   (z-index 1000000) and block clicks on the media library grid. Hide our
-   modal while wp.media is open; it reappears when the user picks an image
-   or closes the frame.
-
-   Trigger on `body.modal-open` — wp.media (legacy Backbone code) adds
-   that class directly on open and removes it on close. Round-3 used
-   `:has(.media-modal)`, which stayed true after wp.media closed (wp.media
-   hides via display:none and leaves the element in the DOM).
-
-   Our own QE modals MUST NOT trip this rule. @wordpress/components Modal
-   also adds `body.modal-open` on mount, so every QE modal hid itself on
-   first open. Each QE modal now passes
-   `bodyOpenClassName={QE_MODAL_BODY_OPEN_CLASS}` — see modal-root.js. */
+/* wp.media opened over our modal is unclickable; hide ours meanwhile. */
 /* no-prefix */
-body.modal-open .components-modal__frame:has(.extendify-quick-edit-modal),
 body.modal-open
-	.components-modal__screen-overlay:has(.extendify-quick-edit-modal) {
+.components-modal__screen-overlay:has(.extendify-quick-edit-modal) {
 	@apply invisible!;
 }
 
@@ -951,8 +923,7 @@ body.modal-open
  * ---------------------------------------------------------------- */
 
 /* no-prefix */
-.components-modal__frame:has(.extendify-quick-edit-modal),
-.extendify-quick-edit-modal-root .components-modal__frame {
+.components-modal__frame.extendify-quick-edit-modal {
 	@apply overflow-hidden rounded-[16px]!;
 	box-shadow:
 		0 10px 15px -3px rgba(0, 0, 0, 0.12),
@@ -960,18 +931,19 @@ body.modal-open
 }
 
 /* no-prefix */
-.components-modal__frame:has(.extendify-quick-edit-modal)
-.components-modal__header {
+.components-modal__frame.extendify-quick-edit-modal .components-modal__header {
 	@apply border-b border-b-gray-300 px-[24px] py-[18px];
 }
 /* no-prefix */
-.components-modal__frame:has(.extendify-quick-edit-modal)
+.components-modal__frame.extendify-quick-edit-modal
 .components-modal__header-heading {
 	@apply text-[15px] font-semibold tracking-[-0.01em];
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+		Cantarell, "Helvetica Neue", sans-serif;
 }
 /* no-prefix */
-.components-modal__frame:has(.extendify-quick-edit-modal)
-.components-modal__content {
+.components-modal__frame.extendify-quick-edit-modal .components-modal__content {
 	@apply px-[24px] pt-[18px] pb-[22px];
 }
 
@@ -1215,22 +1187,17 @@ body.modal-open
 	@apply absolute inset-0 flex items-center justify-center bg-[rgba(0,0,0,0.45)];
 }
 
-/* Reduced motion (a11y M7). Stop the infinite upload spinner and the pulsing
-   Ask-AI flash (the motions vestibular-sensitive users most need gone) and
-   drop the hover outline's spring so it tracks instantly. All `!important`:
-   the surrounding environment ships a global `prefers-reduced-motion` reset
+/* Reduced motion (a11y M7). Stop the infinite upload spinner and drop the
+   hover outline's spring so it tracks instantly. All `!important`: the
+   surrounding environment ships a global `prefers-reduced-motion` reset
    that forces a tiny non-zero duration (~0.01ms) onto everything, so these
    must win over it — and over the base rules — for Extendify's own
    reduced-motion intent to be authoritative rather than theme-dependent.
-   Selectors are page-level (the flash class, the body-level fixed outline,
-   wp.media's modal), so they carry `no-prefix` like the originals. */
+   Selectors are page-level (the body-level fixed outline, wp.media's
+   modal), so they carry `no-prefix` like the originals. */
 @media (prefers-reduced-motion: reduce) {
 	/* no-prefix */
 	.extendify-quick-edit-media-uploading .media-frame-content::before {
-		@apply animate-none!;
-	}
-	/* no-prefix */
-	.extendify-quick-edit-ask-flash {
 		@apply animate-none!;
 	}
 	/* no-prefix */

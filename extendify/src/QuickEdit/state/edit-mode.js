@@ -1,11 +1,14 @@
 import { isEmbedded } from '@shared/lib/embedded-guard';
+import { track } from '@shared/lib/track';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { track } from '../lib/insights';
 
 const HTML_CLASS = 'extendify-quick-edit-on';
 
 const DEFAULT_ON = !!window.extQuickEditData?.defaultOn;
+
+// One origin serves many sites over its life.
+export const STORAGE_KEY = `extendify-quick-edit-mode-${window.extSharedData?.siteId}`;
 
 export const useEditModeStore = create()(
 	persist(
@@ -19,7 +22,7 @@ export const useEditModeStore = create()(
 			toggle: () => set({ on: !get().on }),
 		}),
 		{
-			name: 'extendify-quick-edit-mode',
+			name: STORAGE_KEY,
 			partialize: ({ on }) => ({ on }),
 		},
 	),
@@ -33,6 +36,6 @@ const applyHtmlClass = (on) =>
 
 useEditModeStore.subscribe((state) => {
 	applyHtmlClass(state.on);
-	track(state.on ? 'edit_mode_on' : 'edit_mode_off');
+	track('quick_edit_status', { value: state.on ? 'on' : 'off' });
 });
 applyHtmlClass(useEditModeStore.getState().on);

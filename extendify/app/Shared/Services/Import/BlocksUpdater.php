@@ -105,12 +105,10 @@ class BlocksUpdater
                 $block = $this->removeTargetedClassAttribute($block);
                 $block = $this->removeClassAttributeFromAttrs($block);
                 // In some cases the block might become unformatted.
-                foreach ($this->classesToTarget as $cls) {
-                    $block['innerHTML'] = str_replace($cls, '', $block['innerHTML']);
-                    $block['innerContent'] = array_map(function ($item) use ($cls) {
-                        return !is_null($item) ? str_replace($cls, '', $item) : null;
-                    }, ($block['innerContent'] ?? []));
-                }
+                $block['innerHTML'] = $this->stripClassTokens($block['innerHTML']);
+                $block['innerContent'] = array_map(function ($item) {
+                    return !is_null($item) ? $this->stripClassTokens($item) : null;
+                }, ($block['innerContent'] ?? []));
             }
 
             return $block;
@@ -143,12 +141,8 @@ class BlocksUpdater
         $html->next_tag('img');
         $src = $html->get_attribute('src');
 
-        return $src && preg_match(
-            '(' . implode('|', array_map('preg_quote', ImageUploader::$imagesDomains, ['/'])) . ')i',
-            $src
-        )
-        ? $src
-        : '';
+        // Feeds a server-side fetch, so a path-matched domain would let any host through.
+        return ($src && ImageUploader::isAllowedImageHost($src)) ? $src : '';
     }
 
     /**
@@ -182,6 +176,33 @@ class BlocksUpdater
                 $html->remove_class($targetedClass);
             } while ($html->next_tag(['class' => $targetedClass]));
             $content = $html->get_updated_html();
+        }
+
+        return $content;
+    }
+
+    /**
+     * Build a pattern matching the class only where it stands as a whole token.
+     *
+     * @param string $targetedClass The class name to match.
+     * @return string
+     */
+    protected function classTokenPattern($targetedClass)
+    {
+        // Uploaded filenames embed the class name (ext-imported-*.jpg); a bare substring match eats the src.
+        return '/(?<=[\s"\'])' . preg_quote($targetedClass, '/') . '(?=[\s"\'])/';
+    }
+
+    /**
+     * Remove the targeted classes from html the tag processor left untouched.
+     *
+     * @param string $content The html content.
+     * @return string
+     */
+    protected function stripClassTokens($content)
+    {
+        foreach ($this->classesToTarget as $targetedClass) {
+            $content = preg_replace($this->classTokenPattern($targetedClass), '', $content);
         }
 
         return $content;
@@ -257,12 +278,11 @@ class BlocksUpdater
      */
     protected function hasTargetedClassName(array $block)
     {
-        if (
-            array_reduce($this->classesToTarget, function (bool $carry, string $targetClass) use ($block) {
-                return $carry || (strpos(($block['innerHTML'] ?? ''), $targetClass) !== false);
-            }, false)
-        ) {
-            return true;
+        $innerHTML = ($block['innerHTML'] ?? '');
+        foreach ($this->classesToTarget as $targetedClass) {
+            if (preg_match($this->classTokenPattern($targetedClass), $innerHTML)) {
+                return true;
+            }
         }
 
         $classList = is_array(($block['attrs']['className'] ?? null))

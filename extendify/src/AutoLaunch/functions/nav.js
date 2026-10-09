@@ -24,6 +24,22 @@ export const updateNavigation = (id, content) =>
 		data: { content },
 	});
 
+const navLink = (attributes) =>
+	`<!-- wp:navigation-link ${JSON.stringify(attributes)} /-->`;
+
+const pluginPageLink = (page) =>
+	navLink({
+		label: page.title?.rendered ?? page.name,
+		id: page.id,
+		type: page.type,
+		url: page.link,
+		kind: page.id ? 'post-type' : 'custom',
+		isTopLevelLink: true,
+	});
+
+const anchorLink = ({ label, url }) =>
+	navLink({ label, type: 'custom', url, kind: 'custom', isTopLevelLink: true });
+
 export const addSectionLinksToNav = async (
 	navigationId,
 	homePatterns = [],
@@ -48,10 +64,7 @@ export const addSectionLinksToNav = async (
 			Object.values(pageNames).find(({ alias }) =>
 				alias.includes(patternType),
 			) || {};
-		return {
-			label: pattern.navLabel ?? lookup.title,
-			slug: pattern.navSlug ?? lookup.slug,
-		};
+		return { label: lookup.title, slug: lookup.slug };
 	};
 
 	const sectionPatterns = homePatterns.filter((pattern) => {
@@ -71,31 +84,10 @@ export const addSectionLinksToNav = async (
 			? `${window.extSharedData.homeUrl}/${slug}`
 			: `${window.extSharedData.homeUrl}/#${slug}`;
 
-		const attributes = JSON.stringify({
-			label,
-			type: 'custom',
-			url,
-			kind: 'custom',
-			isTopLevelLink: true,
-		});
-
-		return `<!-- wp:navigation-link ${attributes} /-->`;
+		return anchorLink({ label, url });
 	});
 
-	const pluginPagesNavigationLinks = pluginPages.map(
-		({ title, id, type, link }) => {
-			const attributes = JSON.stringify({
-				label: title.rendered,
-				id,
-				type,
-				url: link,
-				kind: id ? 'post-type' : 'custom',
-				isTopLevelLink: true,
-			});
-
-			return `<!-- wp:navigation-link ${attributes} /-->`;
-		},
-	);
+	const pluginPagesNavigationLinks = pluginPages.map(pluginPageLink);
 
 	// When an ordered slug list is provided, interleave plugin pages by slug
 	// so e.g. "shop" lands where the design preview placed it.
@@ -131,6 +123,40 @@ export const addSectionLinksToNav = async (
 	await updateNavigation(navigationId, navigationLinks);
 };
 
+// Full-page single-page: the design build's page list IS the menu, in order —
+// the same list the preview nav used — and the BE baked matching #section
+// anchors into the page HTML. Build straight from it; no pattern derivation.
+export const addSectionLinksFromDesign = async (
+	navigationId,
+	designPages = [],
+	pluginPages = [],
+) => {
+	const { homeUrl } = window.extSharedData;
+	const pluginBySlug = new Map(pluginPages.map((page) => [page.slug, page]));
+
+	const sectionLink = ({ slug, name }) =>
+		anchorLink({ label: name, url: `${homeUrl}/#${slug}` });
+
+	const seen = new Set();
+	const links = [];
+	for (const { slug, name } of designPages) {
+		if (!slug || slug === 'home' || seen.has(slug)) continue;
+		seen.add(slug);
+		const pluginPage = pluginBySlug.get(slug);
+		links.push(
+			pluginPage ? pluginPageLink(pluginPage) : sectionLink({ slug, name }),
+		);
+	}
+	// An active plugin page the design didn't place still belongs in the nav.
+	for (const page of pluginPages) {
+		if (!page.slug || seen.has(page.slug)) continue;
+		seen.add(page.slug);
+		links.push(pluginPageLink(page));
+	}
+
+	await updateNavigation(navigationId, links.join(''));
+};
+
 export const addPageLinksToNav = async (
 	navigationId,
 	allPages,
@@ -158,7 +184,16 @@ export const addPageLinksToNav = async (
 			Object.keys(pageNames).length + 1
 		);
 	};
-	const mergedPages = [...filteredCreatedPages, ...pluginPages];
+	const seen = new Set();
+	const mergedPages = [...filteredCreatedPages, ...pluginPages].filter(
+		(page) => {
+			const slug = getSlug(page);
+			if (!slug) return true;
+			if (seen.has(slug)) return false;
+			seen.add(slug);
+			return true;
+		},
+	);
 
 	let finalPages;
 	if (orderedSlugs.length) {
@@ -191,18 +226,7 @@ export const addPageLinksToNav = async (
 			: sortedPages;
 	}
 
-	const pageLinks = finalPages.map(({ id, title, link, type }) => {
-		const attributes = JSON.stringify({
-			label: title.rendered,
-			id,
-			type,
-			url: link,
-			kind: id ? 'post-type' : 'custom',
-			isTopLevelLink: true,
-		});
-
-		return `<!-- wp:navigation-link ${attributes} /-->`;
-	});
+	const pageLinks = finalPages.map(pluginPageLink);
 
 	const topLevelLinks = pageLinks.slice(0, 5).join('');
 	const submenuLinks = pageLinks.slice(5);
@@ -273,6 +297,28 @@ const getNavExtrasBlock = (launchDecisions) => {
 		default:
 			return null;
 	}
+};
+
+// Woo auto-inserts these after the nav, but WP suppresses them when AutoLaunch
+// saves the header directly — insert them ourselves so they render. fontSize
+// matches Extendable's nav (`small`).
+export const injectWooCommerceIcons = (headerCode) => {
+	// The fetched header can already carry them: WP materializes hooked blocks
+	// into REST responses once Woo is active (e.g. on a re-launch).
+	if (/wp:woocommerce\/(mini-cart|customer-account)/.test(headerCode)) {
+		return headerCode;
+	}
+
+	// After updateNavAttributes the nav block is always self-closing.
+	const navBlock = /<!--\s*wp:navigation\b[^>]*?\/-->/i;
+	if (!navBlock.test(headerCode)) return headerCode;
+
+	const icons = [
+		'<!-- wp:woocommerce/customer-account {"displayStyle":"icon_only","iconStyle":"line","iconClass":"wc-block-customer-account__account-icon","fontSize":"small"} /-->',
+		'<!-- wp:woocommerce/mini-cart {"fontSize":"small"} /-->',
+	].join('\n');
+
+	return headerCode.replace(navBlock, (nav) => `${nav}\n${icons}`);
 };
 
 export const injectNavExtras = (headerCode, launchDecisions) => {

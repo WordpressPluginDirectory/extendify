@@ -1,6 +1,5 @@
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import { digest } from '@shared/api/digest';
-import { __ } from '@wordpress/i18n';
 
 export const setStatus = (msg) => {
 	useLaunchDataStore.getState().addStatusMessage(msg);
@@ -15,7 +14,7 @@ export const retryTwice = async (fn) => {
 	} catch (_) {
 		setErrorMessage(
 			// translators: This is an error message shown to the user when a network request fails and is being retried
-			__('The network seems unstable. Retrying...', 'extendify-local'),
+			launchStrings().errorUnstable,
 		);
 		await wait(1000);
 		const res = await fn();
@@ -28,17 +27,15 @@ export const failWithFallback = async (fn, fallback, errDetails = {}) => {
 	try {
 		return await fn();
 	} catch (error) {
-		digest({
-			...errDetails,
-			error: errDetails?.error ?? error,
-			source: 'auto-launch',
-		});
+		const { error: reported = error, ...details } = errDetails;
+		digest({ error: reported, details: { source: 'auto-launch', ...details } });
 		return fallback;
 	}
 };
 
 export const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+import { launchStrings } from '@auto-launch/strings';
 import apiFetch from '@wordpress/api-fetch';
 
 export async function apiFetchWithTimeout(options = {}, timeoutMs = 30000) {

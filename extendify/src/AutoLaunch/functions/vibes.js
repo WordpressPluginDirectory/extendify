@@ -1,65 +1,41 @@
-import { getGlobalStyles } from '@auto-launch/functions/theme';
+import { replaceVibeBlocks } from '@shared/lib/vibe-blocks';
+import { applyVibeGlobals, applyVibeStyles } from '@shared/lib/vibe-globals';
+import { getVibes, vibesBySlug } from '@shared/lib/vibes';
 
+// natural-1 is what the theme already ships, so it contributes nothing.
 const isValidVibe = (selectedVibe) =>
 	!!selectedVibe &&
 	typeof selectedVibe === 'string' &&
 	selectedVibe.trim() !== '' &&
 	selectedVibe !== 'natural-1';
 
-const generateSourceStyleName = (naturalStyleName, targetVibe) =>
-	naturalStyleName.replace('--natural-1--', `--${targetVibe}--`);
-
-const processBlockVariations = (variations, targetVibe) =>
-	Object.fromEntries(
-		Object.entries(variations).map(([styleName, styleProperties]) => {
-			if (!styleName.includes('--natural-1--')) {
-				return [styleName, { ...styleProperties }];
-			}
-
-			const sourceStyleName = generateSourceStyleName(styleName, targetVibe);
-			const sourceStyle = variations[sourceStyleName];
-
-			return [
-				styleName,
-				sourceStyle ? { ...sourceStyle } : { ...styleProperties },
-			];
-		}),
-	);
-
-// Compute the vibe-adjusted blocks from the theme's global styles.
-// Returns the blocks object (ready to merge into a variation) without
-// POSTing anything. Callers should merge the result into the variation's
-// styles before calling updateVariation — doing it this way avoids a
-// separate POST that would overwrite the fonts, colors and other style
-// overrides already set in the variation.
-export const computeVibeAdjustedBlocks = async (selectedVibe) => {
+// Layout rides along because WordPress derives fluid type from wideSize.
+export const computeVibeAdjustments = async (selectedVibe, variation) => {
 	if (!isValidVibe(selectedVibe)) return null;
 
-	const { styles: themeStyles } = await getGlobalStyles();
-	if (!themeStyles?.blocks) return null;
+	const vibes = vibesBySlug(await getVibes(selectedVibe));
+	const vibe = vibes[selectedVibe];
+	if (!vibe) return null;
 
-	return Object.fromEntries(
-		Object.entries(themeStyles.blocks).map(([blockName, blockObj]) => {
-			if (!blockObj?.variations) {
-				return [blockName, blockObj];
-			}
+	const styles = applyVibeStyles({
+		currentStyles: variation?.styles ?? {},
+		vibeStyles: vibe.styles,
+		vibes,
+	});
 
-			const { variations, ...rest } = blockObj;
-			const hasNaturalVariations = Object.keys(variations).some((styleName) =>
-				styleName.includes('--natural-1--'),
-			);
-
-			if (!hasNaturalVariations) {
-				return [blockName, blockObj];
-			}
-
-			return [
-				blockName,
-				{
-					...rest,
-					variations: processBlockVariations(variations, selectedVibe),
-				},
-			];
+	return {
+		settings: applyVibeGlobals({
+			currentSettings: variation?.settings ?? {},
+			vibeSettings: vibe.settings,
+			vibes,
 		}),
-	);
+		styles: {
+			...styles,
+			blocks: replaceVibeBlocks({
+				currentBlocks: styles?.blocks,
+				vibeBlocks: vibe.blocks,
+				selectedVibe,
+			}),
+		},
+	};
 };

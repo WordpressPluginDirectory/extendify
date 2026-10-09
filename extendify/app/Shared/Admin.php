@@ -10,12 +10,19 @@ defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
 use Extendify\PartnerData;
+use Extendify\Notifications\Availability;
 use Extendify\Shared\Controllers\UserSelectionController;
+use Extendify\Shared\DataProvider\NotificationData;
 use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\AdminMenuList;
 use Extendify\Shared\Services\ApexDomain\ApexDomain;
 use Extendify\Shared\Services\Escaper;
 use Extendify\Shared\Services\PluginDependencies\SimplyBook;
+use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
+use Extendify\Shared\Services\PluginsActivation\Metricool as MetricoolActivation;
+use Extendify\Shared\Services\PluginsActivation\SimplyBook as SimplyBookActivation;
+use Extendify\Shared\Services\PluginsActivation\TranslatePress as TranslatePressActivation;
+use Extendify\Shared\Services\SiteImages;
 use Extendify\SiteSettings;
 use Extendify\Shared\Controllers\ImageGenerationController;
 use Extendify\Shared\DataProvider\ProductsData;
@@ -154,6 +161,52 @@ class Admin
             }
         );
 
+        $activations = [
+            ImagifyActivation::class,
+            MetricoolActivation::class,
+            SimplyBookActivation::class,
+            TranslatePressActivation::class,
+        ];
+
+        $productActivationPlugins = array_map(function ($plugin) use ($activations) {
+            foreach ($activations as $activation) {
+                if ($plugin['slug'] === $activation::slug()) {
+                    return array_merge($plugin, [
+                        'scriptData' => $activation::scriptData(),
+                        'eligible' => $activation::isEligible(),
+                        'endpoint' => Config::$slug . '/' . Config::$apiVersion
+                            . $activation::createAccountRoute(),
+                    ]);
+                }
+            }
+
+            return $plugin;
+        }, $productActivationPlugins);
+
+        // Visitors read the stamp and the alt text, so both resolve in the site's locale.
+        $switchedLocale = \switch_to_locale(\get_locale());
+        // translators: Short label stamped onto an image marking it as AI-generated.
+        // Give the all-caps form your language uses.
+        $aiImageLabel = \_x('AI GENERATED', 'uppercase', 'extendify-local');
+        // translators: %s is the image description. Keep it first; the note after it marks the image as AI-generated.
+        $aiImageAltPattern = \__('%s (AI-generated)', 'extendify-local');
+        if ($switchedLocale) {
+            \restore_previous_locale();
+        }
+
+        $extendifyCodeData = (array) PartnerData::setting('extendifyCodeData');
+
+        // esc_url() strips the {DESCRIPTION} braces; shield the placeholder across it.
+        $extendifyCodeLink = str_replace(
+            '__EXTENDIFY_DESCRIPTION__',
+            '{DESCRIPTION}',
+            \esc_url_raw(str_replace(
+                '{DESCRIPTION}',
+                '__EXTENDIFY_DESCRIPTION__',
+                (string) ($extendifyCodeData['link'] ?? '')
+            ))
+        );
+
         \wp_add_inline_script(
             Config::$slug . '-shared-scripts',
             'window.extSharedData = ' . \wp_json_encode([
@@ -169,7 +222,11 @@ class Admin
                 'version' => \esc_attr(Config::$version),
                 'siteTitle' => \esc_attr(\get_bloginfo('name')),
                 'siteProfile' => \get_option('extendify_site_profile', []),
+                // Empty when the launch-time image fetch failed.
+                'siteImages' => SiteImages::normalize(\get_option('extendify_site_images', [])),
                 'wpLanguage' => \esc_attr(\get_locale()),
+                'aiImageLabel' => $aiImageLabel,
+                'aiImageAltPattern' => $aiImageAltPattern,
                 'wpVersion' => \esc_attr(\get_bloginfo('version')),
                 'isBlockTheme' => function_exists('wp_is_block_theme') ? (bool) wp_is_block_theme() : false,
                 'userId' => \esc_attr(\get_current_user_id()),
@@ -182,6 +239,14 @@ class Admin
                 'partnerName' => \esc_attr(PartnerData::$name),
                 'launchDataLegacy' => \wp_json_encode((UserSelectionController::get()->get_data() ?? [])),
                 'resourceData' => \wp_json_encode((new ResourceData())->getData()),
+                'notifications' => \wp_json_encode(
+                    Availability::available(NotificationData::get())
+                ),
+                'notificationState' => \get_user_meta(
+                    \get_current_user_id(),
+                    'extendify_notification_state',
+                    true
+                ) ?: ['cards' => []],
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
                 'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
                 'useAgentOnboarding' => (bool) (
@@ -195,8 +260,10 @@ class Admin
                 'showAILogo' => (bool) PartnerData::setting('showAILogo'),
                 'showImprint' => array_map('esc_attr', (array) PartnerData::setting('showImprint')),
                 'showProductActivation' => array_values($productActivationPlugins),
-                'consentTermsCustom' => \wp_kses((html_entity_decode(($partnerData['consentTermsCustom'] ?? ''))
-                    ?? ''), $htmlAllowlist),
+                'consentTermsCustom' => \wp_kses((html_entity_decode(
+                    ($partnerData['consentTermsCustom'] ?? ''),
+                    ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401
+                ) ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
                 'installedPlugins' => array_map('esc_attr', array_keys(\get_plugins())),
                 'activePlugins' => $activePlugins,
@@ -219,6 +286,13 @@ class Admin
                 ),
                 'products' => ProductsData::get(),
                 'showAIAgents' => (bool) (PartnerData::setting('showAIAgents') || Config::preview('ai-agent')),
+                'showExtendifyCode' => (bool) PartnerData::setting('showExtendifyCode'),
+                'extendifyCodeData' => [
+                    'link' => $extendifyCodeLink,
+                    'title' => $extendifyCodeData['title'] ?? '',
+                    'message' => $extendifyCodeData['message'] ?? '',
+                    'ctaPrimary' => $extendifyCodeData['cta-primary'] ?? '',
+                ],
                 'pluginGroupId' => Escaper::recursiveEscAttr(PartnerData::setting('pluginGroupId')),
                 'adminPagesMenuList' => get_option('_transient_extendify_admin_pages_menu', []),
                 'globalState' => ImageGenerationController::get()->get_data(),
@@ -264,6 +338,13 @@ class Admin
             'show_in_rest' => true,
         ]);
         register_post_meta('post', 'made_with_extendify_launch', [
+            'single' => true,
+            'type' => 'boolean',
+            'show_in_rest' => true,
+        ]);
+
+        // Marks AI-generated images for EU AI Act disclosure.
+        register_post_meta('attachment', 'extendify_ai_generated', [
             'single' => true,
             'type' => 'boolean',
             'show_in_rest' => true,

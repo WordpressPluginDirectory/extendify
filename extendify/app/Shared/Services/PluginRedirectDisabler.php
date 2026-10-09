@@ -27,6 +27,8 @@ class PluginRedirectDisabler
     private static $pluginCleanup = [
         'wpforms-lite' => [
             'transients' => ['wpforms_activation_redirect'],
+            // WPForms 2.0's wizard arms after activation, so the transient never reaches it.
+            'setOptions' => ['wpforms_setup_wizard_disabled' => true],
         ],
         'wp-mail-smtp' => [
             'transients' => ['wp_mail_smtp_activation_redirect'],

@@ -42,7 +42,9 @@ class Paragraph implements Schema
                     // $1 / \1 / $0 is spliced literally, not parsed as a backref.
                     $newInner = preg_replace_callback(
                         '/(<p\b[^>]*>)(.*?)(<\/p>)/is',
-                        static fn ($m) => $m[1] . $escaped . $m[3],
+                        static function ($m) use ($escaped) {
+                            return $m[1] . $escaped . $m[3];
+                        },
                         $existing,
                         1
                     );

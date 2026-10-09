@@ -87,6 +87,138 @@
 	--color-wp-alert-yellow: #f0b849;
 	--color-wp-alert-red: #cc1818;
 	--color-wp-alert-green: #4ab866;
+	--color-wp-notice-success: #eff9f1;
+	--color-wp-notice-error: #fcf0f0;
+	--color-wp-notice-neutral: #c3c4c7;
+
+	/* Fallbacks match what the flow hardcoded, so an untouched site is identical. */
+	--color-ui-page: var(--ext-ui-page, var(--ext-banner-main, #2271b1));
+	--color-ui-page-text: var(
+		--ext-ui-page-text,
+		var(--ext-banner-text, #ffffff)
+	);
+	--ui-base-action: var(--ext-ui-action, var(--ext-design-main, #2271b1));
+	--color-ui-action: var(--ui-base-action);
+	--ui-base-action-text: var(
+		--ext-ui-action-text,
+		var(--ext-design-text, #ffffff)
+	);
+	--color-ui-action-text: var(--ui-base-action-text);
+	--color-ui-focus: var(--ext-ui-focus, var(--color-ui-action));
+	--ui-base-ink: var(--ext-ui-ink, #1e1e1e);
+	--color-ui-ink: var(--ui-base-ink);
+	--color-ui-ink-muted: var(--ext-ui-ink-muted, #757575);
+	--color-ui-line: var(--ext-ui-line, #dddddd);
+	/* Transparent, so the button reads as an outline and never as a white pill. */
+	--ui-base-secondary-fill: var(--ext-ui-secondary-fill, transparent);
+	--color-ui-secondary-fill: var(--ui-base-secondary-fill);
+	--ui-base-secondary-line: var(--ext-ui-secondary-line, var(--ui-base-ink));
+	--color-ui-secondary-line: var(--ui-base-secondary-line);
+	--ui-base-secondary-text: var(--ext-ui-secondary-text, var(--ui-base-ink));
+	--color-ui-secondary-text: var(--ui-base-secondary-text);
+	/* Merged so one utility carries both the fill and its opacity. */
+	--color-ui-surface: color-mix(
+		in srgb,
+		var(--ext-ui-surface, #f0f0f0)
+			calc(var(--ext-ui-surface-opacity, 0.8) * 100%),
+		transparent
+	);
+
+	--radius-ui-card: var(--ext-ui-radius-card, var(--ext-ui-radius, 1.5rem));
+	--radius-ui-input: var(--ext-ui-radius-input, var(--ext-ui-radius, 1.5rem));
+	--radius-ui-button: var(--ext-ui-radius-button, var(--ext-ui-radius, 9999px));
+	/* No global fallback: rounding the cards must not round the logo. */
+	--radius-ui-logo: var(--ext-ui-radius-logo, 0px);
+
+	--blur-ui: var(--ext-ui-blur, 40px);
+	--shadow-ui: var(
+		--ext-ui-shadow,
+		0 4px 6px -1px rgb(0 0 0 / 0.1),
+		0 2px 4px -2px rgb(0 0 0 / 0.1)
+	);
+
+	--font-ui-heading: var(--ext-ui-font-heading, var(--ext-ui-font, inherit));
+	--font-ui-body: var(--ext-ui-font-body, var(--ext-ui-font, inherit));
+	--font-ui-input: var(--ext-ui-font-input, var(--ext-ui-font, inherit));
+	--font-weight-ui-strong: var(--ext-ui-heading-weight, 600);
+
+	--text-ui-heading: var(--ext-ui-heading-size, 1.25rem);
+	--text-ui-heading--line-height: 1.4;
+	/* 1.2x holds the `text-xl` / `md:text-2xl` pair at the default size. */
+	--text-ui-heading-lg: calc(var(--ext-ui-heading-size, 1.25rem) * 1.2);
+	--text-ui-heading-lg--line-height: 1.34;
+	--text-ui-status: var(--ext-ui-status-size, 0.875rem);
+	--text-ui-status--line-height: 1.5;
+	--font-weight-ui-status: var(--ext-ui-status-weight, 500);
+	--text-ui-body: var(--ext-ui-body-size, 1rem);
+	--text-ui-body--line-height: var(--ext-ui-leading, 1.5rem);
+
+	--tracking-ui-heading: var(--ext-ui-heading-tracking, 0em);
+	--leading-ui: var(--ext-ui-leading, 1.5rem);
+}
+
+/* Launch design tokens with no matching Tailwind namespace. */
+@utility border-ui {
+	border-width: var(--ext-ui-border-width, 1px);
+	border-style: var(--ext-ui-border-style, solid);
+}
+@utility max-w-ui {
+	max-width: var(--ext-ui-max-width, 42rem);
+}
+@utility gap-ui {
+	gap: var(--ext-ui-gap, 1.25rem);
+}
+/* Scaled so one control holds the gap-5 / md:gap-8 pair exactly. */
+@utility gap-ui-lg {
+	gap: calc(var(--ext-ui-gap, 1.25rem) * 1.6);
+}
+@utility mb-ui-label {
+	margin-bottom: var(--ext-ui-label-gap, 0.5rem);
+}
+@utility mb-ui-block {
+	margin-bottom: calc(var(--ext-ui-label-gap, 0.5rem) * 2);
+}
+@utility gap-ui-section {
+	gap: var(--ext-ui-section-gap, 1rem);
+}
+/* Each side reads its own property first, so unlocking padding needs no JS. */
+@utility p-ui {
+	padding-top: var(--ext-ui-padding-top, var(--ext-ui-surface-padding, 1.5rem));
+	padding-right: var(
+		--ext-ui-padding-right,
+		var(--ext-ui-surface-padding, 1.5rem)
+	);
+	padding-bottom: var(
+		--ext-ui-padding-bottom,
+		var(--ext-ui-surface-padding, 1.5rem)
+	);
+	padding-left: var(
+		--ext-ui-padding-left,
+		var(--ext-ui-surface-padding, 1.5rem)
+	);
+}
+@utility px-ui {
+	padding-right: var(
+		--ext-ui-padding-right,
+		var(--ext-ui-surface-padding, 1.5rem)
+	);
+	padding-left: var(
+		--ext-ui-padding-left,
+		var(--ext-ui-surface-padding, 1.5rem)
+	);
+}
+/* Two fallbacks: the partner logo and the Extendify mark ship at different heights. */
+@utility h-ui-logo {
+	height: var(--ext-ui-logo-height, 2.5rem);
+}
+@utility h-ui-mark {
+	height: var(--ext-ui-logo-height, 2rem);
+}
+@utility h-ui-loader {
+	height: var(--ext-ui-loader-height, 118px);
+}
+@utility rounded-ui-loader {
+	border-radius: var(--ext-ui-loader-radius, 0px);
 }
 
 /* sizing */

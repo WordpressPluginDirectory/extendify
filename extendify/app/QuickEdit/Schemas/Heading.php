@@ -43,7 +43,9 @@ class Heading implements Schema
                     // $1 / \1 / $0 is spliced literally, not parsed as a backref.
                     $newInner = preg_replace_callback(
                         '/(<' . $tag . '\b[^>]*>)(.*?)(<\/' . $tag . '>)/is',
-                        static fn ($parts) => $parts[1] . $escaped . $parts[3],
+                        static function ($parts) use ($escaped) {
+                            return $parts[1] . $escaped . $parts[3];
+                        },
                         $existing,
                         1
                     );

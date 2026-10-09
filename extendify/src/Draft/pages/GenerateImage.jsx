@@ -4,6 +4,7 @@ import { useRouter } from '@draft/hooks/useRouter';
 import { pageState } from '@draft/state/factory';
 import { backArrow } from '@draft/svg/BackArrow';
 import { generateImage } from '@shared/api/DataApi';
+import { useImageCreditsSync } from '@shared/hooks/useImageCreditsSync';
 import { useImageGenerationStore } from '@shared/state/generate-images';
 import {
 	BaseControl,
@@ -29,11 +30,14 @@ export const GenerateImage = () => {
 		aiImageOptions,
 	} = useImageGenerationStore();
 	const [isGenerating, setIsGenerating] = useState(false);
+	const [disclose, setDisclose] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 	const abortController = useRef(null);
 	const noCredits = curCredits.remaining === 0;
 	const { imageDetails, setImageDetails } = usePageState();
 	const { goBack } = useRouter();
+
+	useImageCreditsSync();
 
 	const clearImageResponse = () => setImageDetails({ src: '', id: undefined });
 	const handleSubmit = async (event) => {
@@ -53,7 +57,11 @@ export const GenerateImage = () => {
 				abortController.current.signal,
 			);
 			updateImageCredits(imageCredits);
-			setImageDetails({ src: images[0].url, id });
+			setImageDetails({
+				src: images[0].url,
+				id,
+				alt: images[0].alt ?? aiImageOptions.prompt,
+			});
 		} catch (error) {
 			// If the request was aborted (canceled), don't show an error
 			if (error?.code === 20) return;
@@ -99,10 +107,12 @@ export const GenerateImage = () => {
 				<BaseControl label={__('Image Description', 'extendify-local')}>
 					<ImagePreview
 						prompt={aiImageOptions.prompt}
+						alt={imageDetails?.alt}
 						size={aiImageOptions.size}
 						isGenerating={isGenerating}
 						id={imageDetails?.id}
 						src={imageDetails?.src}
+						disclose={disclose}
 						clearImageResponse={clearImageResponse}
 					/>
 					{imageDetails.src ? null : (
@@ -110,6 +120,8 @@ export const GenerateImage = () => {
 							<GenerateForm
 								isGenerating={isGenerating}
 								errorMessage={errorMessage}
+								disclose={disclose}
+								setDisclose={setDisclose}
 							/>
 						</form>
 					)}

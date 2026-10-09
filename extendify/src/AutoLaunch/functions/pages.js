@@ -1,10 +1,11 @@
 import { importImage, updateOption } from '@auto-launch/functions/wp';
+import { launchStrings } from '@auto-launch/strings';
 import { PATTERNS_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
 import { pageNames } from '@shared/lib/pages';
 import apiFetch from '@wordpress/api-fetch';
 import { createBlock, parse, serialize } from '@wordpress/blocks';
-import { __, sprintf } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { setStatus } from './helpers';
 
 // Slugs that plugins own — skip creating design-build pages for these.
@@ -12,6 +13,8 @@ export const PLUGIN_OWNED_PAGES = [
 	{ slug: 'shop', plugin: 'woocommerce' },
 	{ slug: 'events', plugin: 'the-events-calendar' },
 ];
+
+export const isBlogPage = ({ originalSlug }) => originalSlug === 'blog';
 
 export const getPagesToCreate = (data) => {
 	const { home, pages, siteProfile } = data;
@@ -21,15 +24,16 @@ export const getPagesToCreate = (data) => {
 		slug: 'home',
 		patterns: home.patterns,
 	};
-	const needsBlog = siteProfile.objective === 'blog';
-	const blogPage = needsBlog
-		? {
-				name: pageNames.blog.title,
-				id: 'blog',
-				patterns: [],
-				slug: 'blog',
-			}
-		: null;
+	const hasBlog = pages.some(({ slug }) => slug === 'blog');
+	const blogPage =
+		siteProfile.blog && !hasBlog
+			? {
+					name: pageNames.blog.title,
+					id: 'blog',
+					patterns: [],
+					slug: 'blog',
+				}
+			: null;
 
 	// Remove the page title pattern from all pages
 	const patternHasTitle = (pattern) =>
@@ -123,26 +127,30 @@ const transformHeadingToPostTitle = (rawHTML) => {
 	return serialize(parse(rawHTML).map(walk));
 };
 
-export const createWpPages = async (pagesRaw) => {
+// navSlug: the design menu entry this section was picked for (applyDesignBuildNav).
+export const sectionSlug = (pattern) =>
+	pattern.navSlug ??
+	Object.values(pageNames).find(({ alias }) =>
+		alias.includes(pattern.patternTypes?.[0]),
+	)?.slug;
+
+export const createWpPages = async (
+	pagesRaw,
+	{ skipSectionIds = false } = {},
+) => {
 	const pages = [];
 
 	for (const page of pagesRaw) {
 		const content = [];
 		const seenPatternTypes = new Set();
 
-		setStatus(sprintf(__('Adding page: %s', 'extendify-local'), page.name));
+		setStatus(launchStrings().statusAddingPage(page.name));
 
 		for (const [_, pattern] of page.patterns.entries()) {
 			const code = pattern.code;
-			const patternType = pattern.patternTypes?.[0];
+			const slug = sectionSlug(pattern);
 
-			const { slug: defaultSlug } =
-				Object.values(pageNames).find(({ alias }) =>
-					alias.includes(patternType),
-				) || {};
-			const slug = pattern.navSlug ?? defaultSlug;
-
-			if (seenPatternTypes.has(slug) || !slug) {
+			if (skipSectionIds || seenPatternTypes.has(slug) || !slug) {
 				content.push(code);
 				continue;
 			}
@@ -176,7 +184,7 @@ export const createWpPages = async (pagesRaw) => {
 		await updateOption('page_on_front', maybeHome.id);
 	}
 
-	const maybeBlog = pages.find(({ originalSlug }) => originalSlug === 'blog');
+	const maybeBlog = pages.find(isBlogPage);
 	if (maybeBlog) {
 		await updateOption('page_for_posts', maybeBlog.id);
 	}
@@ -235,9 +243,7 @@ export const addImprintPage = async ({ siteStyle }) => {
 		// Get the imprint page template
 		const imprintPage = await getImprintPageTemplate({ siteStyle });
 		// Create the page in WordPress with the fetched template
-		const [createdImprintPage] = await createWpPages([imprintPage], {
-			stickyNav: false,
-		});
+		const [createdImprintPage] = await createWpPages([imprintPage]);
 		return createdImprintPage;
 	} catch (error) {
 		console.error('Failed to add imprint page:', error);

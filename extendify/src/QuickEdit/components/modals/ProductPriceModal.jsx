@@ -1,3 +1,4 @@
+import { track } from '@shared/lib/track';
 import {
 	Button,
 	Modal,
@@ -10,7 +11,6 @@ import { __ } from '@wordpress/i18n';
 import { loadProduct, saveProduct } from '../../lib/api';
 import { useCmdEnterSave } from '../../lib/cmd-enter-save';
 import { friendlyMessage } from '../../lib/errors';
-import { track } from '../../lib/insights';
 import { QE_MODAL_BODY_OPEN_CLASS } from '../../lib/modal-root';
 import { pushUndo } from '../../state/undo';
 import { ModalCloseButton } from './ModalCloseButton';

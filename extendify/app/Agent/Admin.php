@@ -12,13 +12,16 @@ use Extendify\Agent\Controllers\ChatHistoryController;
 use Extendify\Agent\Controllers\TourController;
 use Extendify\Config;
 use Extendify\Constants;
+use Extendify\Mcp\Profile as McpProfile;
 use Extendify\Shared\Services\Escaper;
 use Extendify\Shared\Services\HttpClient;
 use Extendify\Agent\TagBlocks;
 use Extendify\Agent\TagTemplateParts;
-use Extendify\Agent\Controllers\SiteNavigationController;
+use Extendify\Agent\WooProductImages;
+use Extendify\Agent\AbilitiesDiscovery;
 use Extendify\PartnerData;
 use Extendify\Shared\DataProvider\ProductsData;
+use Extendify\SiteVisibility;
 
 /**
  * This class handles any file loading for the admin area.
@@ -40,10 +43,25 @@ class Admin
         TagBlocks::init();
         TagTemplateParts::init();
 
-        // Add the site navigation ids to the navigation blocks
-        SiteNavigationController::init();
+        Skeleton::init();
+
+        WooProductImages::init();
 
         \add_action('extendify_agent_suggestions_refresh', [$this, 'refreshSuggestions']);
+    }
+
+    /**
+     * Where the agent panel mounts — docked-left only on the onboarding front end.
+     *
+     * @return string
+     */
+    public static function agentPosition()
+    {
+        $agentOnboarding = PartnerData::setting('useAgentOnboarding') ||
+            Config::preview('agent-onboarding') ||
+            constant('EXTENDIFY_DEVMODE');
+
+        return $agentOnboarding && !is_admin() ? 'docked-left' : 'floating';
     }
 
     /**
@@ -55,7 +73,7 @@ class Admin
     {
         // The Customizer preview iframe is a front-end render, so this fires
         // there too — but the Agent only belongs on the live, top-level page.
-        if (is_customize_preview()) {
+        if (is_customize_preview() || McpProfile::isOwnScreen()) {
             return;
         }
 
@@ -99,12 +117,13 @@ class Admin
                 false,
             'isOnEditorOrFSE' => $this->isGutenbergOrFse(),
             'activePlugins' => array_values(\get_option('active_plugins', [])),
-            // Whether the user is using the vibes experience or not.
-            'isUsingVibes' => (bool) file_exists(EXTENDIFY_PATH . 'src/Launch/_data/block-style-variations.json') &&
-                version_compare(wp_get_theme("extendable")->get('Version'), '2.0.32', '>='),
+            // The accessor also reads a key set by the IMAGIFY_API_KEY constant.
+            'hasImagifyApiKey' => function_exists('get_imagify_option') && (bool) \get_imagify_option('api_key'),
+            'isUsingVibes' => version_compare((string) wp_get_theme('extendable')->get('Version'), '2.0.32', '>='),
             'siteTitle' => \esc_attr(\get_bloginfo('name')),
             'siteDescription' => \esc_attr(\get_bloginfo('description')),
             'themePresets' => $this->getThemePresets(),
+            'presetSlugs' => $this->getPresetSlugs(),
         ];
         $recommendations = ProductsData::get() ?? [];
         $pluginRecommendations = array_filter($recommendations, function ($item) {
@@ -121,6 +140,10 @@ class Admin
         $agentContext = [
             'availableAdminPages' => get_option('_transient_extendify_admin_pages_menu', []),
             'pluginRecommendations' => $mappedPluginRecommendations,
+            'sitePublished' => SiteVisibility::isPublished(),
+            'comingSoonEnabled' => (bool) PartnerData::setting('useComingSoon'),
+            'searchEngineBlockEnabled' => (bool) PartnerData::setting('useSearchEngineBlock'),
+            'searchEnginesBlocked' => SiteVisibility::searchEnginesBlocked(),
         ];
         $abilities = [
             'canEditPost' => (bool) \current_user_can('edit_post', \get_queried_object_id()),
@@ -145,17 +168,17 @@ class Admin
             'window.extAgentData = ' . \wp_json_encode([
                 // phpcs:ignore WordPress.Security.NonceVerification.Recommended
                 'startOnboarding' => isset($_GET['extendify-launch-success']) && $agentOnboarding,
-                'agentPosition' => $agentOnboarding && !is_admin() ? 'docked-left' : 'floating',
+                'agentPosition' => self::agentPosition(),
                 // Add context about where they are
                 'context' => $context,
-                // Context that the Agent might need when returning a response,
-                // but not for handling the workflow.
+                // Material a workflow may want; each declares the keys it reads.
                 'agentContext' => $agentContext,
                 // List of abilities the AI can perform for this user.
                 // For example, we could check whether their theme has variations.
                 'abilities' => $abilities,
-                // List of suggestions the AI can make for this user.
-                // For example, we could check whether they need to set up a specific plugin.
+                // Registered WordPress Abilities (6.9+) this user may run.
+                'wpAbilities' => AbilitiesDiscovery::discover(),
+                // The domain card reads only the register-domain record.
                 'suggestions' => $this->getSuggestions(),
                 'domainsSuggestionSettings' => [
                     'showPrimary' => (bool) PartnerData::setting('showPrimaryDomainRecommendationAgent'),
@@ -273,6 +296,83 @@ class Admin
             'fontFamilies' => $fontFamilies,
             'colorPairs' => $colorPairs,
         ];
+    }
+
+    /**
+     * Preset slugs per design-token family across every origin. Feeds the Agent's
+     * block-attribute schema so the model picks named tokens, not raw CSS.
+     *
+     * @return array<string,string[]>
+     */
+    private function getPresetSlugs()
+    {
+        if (!function_exists('wp_get_global_settings')) {
+            return [];
+        }
+
+        $color = \wp_get_global_settings(['color']);
+        $typography = \wp_get_global_settings(['typography']);
+
+        return [
+            'color' => $this->originSlugs($color, 'palette', 'defaultPalette'),
+            'colorValues' => $this->originValues($color, 'palette', 'defaultPalette', 'color'),
+            'gradient' => $this->originSlugs($color, 'gradients', 'defaultGradients'),
+            'fontSize' => $this->originSlugs($typography, 'fontSizes', 'defaultFontSizes'),
+            'fontFamily' => $this->originSlugs($typography, 'fontFamilies', 'defaultFontFamilies'),
+        ];
+    }
+
+    /**
+     * Slug => value, so a colour written as its own hex finds the token naming it.
+     *
+     * @return array<string, string>
+     */
+    private function originValues($node, $listKey, $defaultKey, $valueKey)
+    {
+        $list = $node[$listKey] ?? [];
+
+        $origins = ['custom', 'theme'];
+        if (($node[$defaultKey] ?? true) !== false) {
+            $origins[] = 'default';
+        }
+
+        $values = [];
+        foreach ($origins as $origin) {
+            foreach ($list[$origin] ?? [] as $item) {
+                if (isset($item['slug'], $item[$valueKey])) {
+                    $values[(string) $item['slug']] = (string) $item[$valueKey];
+                }
+            }
+        }
+
+        return $values;
+    }
+
+    /**
+     * Preset slugs from a settings node's origin buckets; drops the `default`
+     * origin when the theme opted the family out.
+     *
+     * @return string[]
+     */
+    private function originSlugs($node, $listKey, $defaultKey)
+    {
+        $list = $node[$listKey] ?? [];
+
+        $origins = ['custom', 'theme'];
+        if (($node[$defaultKey] ?? true) !== false) {
+            $origins[] = 'default';
+        }
+
+        $slugs = [];
+        foreach ($origins as $origin) {
+            foreach ($list[$origin] ?? [] as $item) {
+                if (isset($item['slug'])) {
+                    $slugs[] = (string) $item['slug'];
+                }
+            }
+        }
+
+        return array_values(array_unique($slugs));
     }
 
     private static function extractColorSlug(string $value)

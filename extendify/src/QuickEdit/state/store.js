@@ -1,3 +1,4 @@
+import { useEditModeStore } from '@quick-edit/state/edit-mode';
 import { create } from 'zustand';
 
 export const useQuickEditStore = create((set, get) => ({
@@ -28,7 +29,11 @@ export const useQuickEditStore = create((set, get) => ({
 	setSelected: (target) => set({ selected: target, dirty: {}, error: null }),
 	clearSelected: () => set({ selected: null, dirty: {}, error: null }),
 
-	setAgentBlock: (agentBlock) => set({ agentBlock, agentBlockCode: null }),
+	setAgentBlock: (agentBlock) => {
+		// A staged block is invisible without the selection UI.
+		if (agentBlock) useEditModeStore.getState().setOn(true);
+		set({ agentBlock, agentBlockCode: null });
+	},
 	setAgentBlockCode: (agentBlockCode) => set({ agentBlockCode }),
 
 	setCommittedSelection: (committedSelection) => set({ committedSelection }),

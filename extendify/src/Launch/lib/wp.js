@@ -19,6 +19,7 @@ import {
 import { addIdAttributeToBlock } from '@launch/lib/blocks';
 import { recordPluginActivity } from '@shared/api/DataApi';
 import { pageNames } from '@shared/lib/pages';
+import { processWithSecondPass } from '@shared/lib/patterns';
 import apiFetch from '@wordpress/api-fetch';
 import { rawHandler, serialize } from '@wordpress/blocks';
 import { __, sprintf } from '@wordpress/i18n';
@@ -59,14 +60,7 @@ export const replacePlaceholderPatterns = async (patterns) => {
 		});
 	}
 
-	try {
-		return await processPlaceholders(patterns);
-	} catch (_e) {
-		// Try one more time (plugins installed may not be fully loaded)
-		return await processPlaceholders(patterns)
-			// If this fails, just return the original patterns
-			.catch(() => patterns);
-	}
+	return await processWithSecondPass(processPlaceholders, patterns);
 };
 
 export const createWpPages = async (pages, { stickyNav }) => {

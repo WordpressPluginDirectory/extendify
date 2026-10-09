@@ -87,6 +87,7 @@ export const ensureRegistered = () => {
 };
 ensureRegistered();
 
+import { track } from '@shared/lib/track';
 import { parse, serialize } from '@wordpress/blocks';
 import { Popover } from '@wordpress/components';
 import { useDispatch, useRegistry, useSelect } from '@wordpress/data';
@@ -102,7 +103,6 @@ import {
 import { splice } from '../lib/dom';
 import { friendlyMessage } from '../lib/errors';
 import { normalizedTextEquals, textFingerprint } from '../lib/fingerprint';
-import { track } from '../lib/insights';
 import { fetchLinkSuggestions } from '../lib/link-suggestions';
 import { registerSaver, unregisterSaver } from '../lib/save-bridge';
 import { useQuickEditStore } from '../state/store';
@@ -698,39 +698,21 @@ export const BlockTextEditor = ({ selected }) => {
 		return () => document.removeEventListener('keydown', onKey, true);
 	}, [clearSelected, host]);
 
-	// `alsoClear` lets cross-block click trigger save without racing the
-	// new block's `setSelected(B)` — save runs to completion against A's
-	// snapshotted data, but doesn't try to nullify the slot at the end.
-	const handleSave = async ({ alsoClear = true } = {}) => {
+	const handleSave = async () => {
 		if (saving) return;
 		if (!blocks) {
-			if (alsoClear) clearSelected();
+			clearSelected();
 			return;
 		}
 		// Move focus off the Save button before it disables so focus isn't
 		// stranded on a disabled control; the status node then announces
-		// "Saving…" politely. Cross-block saves leave focus on the new block.
-		if (alsoClear) statusRef.current?.focus({ preventScroll: true });
+		// "Saving…" politely.
+		statusRef.current?.focus({ preventScroll: true });
 		setSaving(true);
 		setSaveError(null);
 		const snap = selected;
 		const beforeRawBlock = beforeRawBlockRef.current;
-		// Capture before the optimistic write below mutates snap.el's text.
 		const fingerprint = textFingerprint(snap.el);
-		// Cross-block click unmounts the canvas before save's splice lands,
-		// so the live element's pre-edit text briefly flashes back into view.
-		// Pre-write the canvas editable's content into the live element so
-		// the unmount reveal already shows the edits. Snapshot the original
-		// so we can revert if save fails. Only text-content optimism — tag /
-		// wrapper changes still rely on splice (see plan).
-		let preEditInnerHtml = null;
-		if (!alsoClear && host && snap.el) {
-			const editable = host.querySelector('.block-editor-rich-text__editable');
-			if (editable) {
-				preEditInnerHtml = snap.el.innerHTML;
-				snap.el.innerHTML = editable.innerHTML;
-			}
-		}
 		try {
 			const rawBlock = serialize(blocks);
 			const res = await save({
@@ -754,15 +736,8 @@ export const BlockTextEditor = ({ selected }) => {
 				});
 			}
 			track('save', { kind: 'block', blockType: snap.blockType });
-			if (alsoClear) {
-				clearSelected();
-			} else {
-				setSaving(false);
-			}
+			clearSelected();
 		} catch (err) {
-			if (preEditInnerHtml !== null && snap.el) {
-				snap.el.innerHTML = preEditInnerHtml;
-			}
 			track('save_failed', {
 				kind: 'block',
 				blockType: snap.blockType,

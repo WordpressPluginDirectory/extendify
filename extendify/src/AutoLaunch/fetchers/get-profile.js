@@ -2,9 +2,9 @@ import { getProfileShape } from '@auto-launch/fetchers/shape';
 import { fetchWithTimeout, setStatus } from '@auto-launch/functions/helpers';
 import { updateOption } from '@auto-launch/functions/wp';
 import { overrideWithUrlParams } from '@auto-launch/state/url-params';
+import { launchStrings } from '@auto-launch/strings';
 import { AI_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
-import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
 const localShape = z.object({
@@ -22,7 +22,7 @@ export const handleSiteProfile = async ({
 	urlParams,
 }) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Creating a site profile', 'extendify-local'));
+	setStatus(launchStrings().statusProfile);
 
 	const body = JSON.stringify({
 		...reqDataBasics,

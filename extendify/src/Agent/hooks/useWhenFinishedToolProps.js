@@ -55,18 +55,8 @@ export const useWhenFinishedToolProps = () => {
 		);
 	}, [whenFinishedToolProps, setWhenFinishedToolProps, getWorkflow]);
 
-	const onLoad = useCallback(() => {
-		if (!whenFinishedToolProps) return;
-		const c = Array.from(
-			document.querySelectorAll(
-				'#extendify-agent-chat-scroll-area div:last-child',
-			),
-		)?.at(-1);
-		c?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-	}, [whenFinishedToolProps]);
-
 	return useMemo(() => {
 		if (!whenFinishedToolProps) return null;
-		return { ...whenFinishedToolProps, onConfirm, onCancel, onRetry, onLoad };
-	}, [whenFinishedToolProps, onConfirm, onCancel, onRetry, onLoad]);
+		return { ...whenFinishedToolProps, onConfirm, onCancel, onRetry };
+	}, [whenFinishedToolProps, onConfirm, onCancel, onRetry]);
 };

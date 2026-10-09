@@ -239,7 +239,7 @@ const CORE_BLOCK_SLUGS = new Set([
 	'term-description',
 ]);
 
-const detectBlockType = (el) => {
+export const detectBlockType = (el) => {
 	let firstWpBlockClass = null;
 	for (const cls of el.classList) {
 		if (KNOWN_UNSUPPORTED.has(cls)) return null;

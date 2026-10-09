@@ -29,6 +29,10 @@
 //   4. tagged block    — commit selection on the innermost tagged ancestor
 //   5. otherwise       — outside-click, clear any open hover bar
 //
+// A tagged-block click pins the bar and focuses its first pill; it never
+// opens Quick Edit and never stages the block for the agent. The pills are
+// the only entry to either surface, so the two can't hold one block at once.
+//
 // Anchor beats tagged-block intentionally: clicking a link in a nav menu
 // or a button inside a tagged section navigates. Pills carry
 // `data-extendify-quick-edit-pill` so they survive the form-control

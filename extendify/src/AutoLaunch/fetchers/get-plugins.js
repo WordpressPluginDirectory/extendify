@@ -5,10 +5,10 @@ import {
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
+import { launchStrings } from '@auto-launch/strings';
 import { AI_HOST } from '@constants';
 import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
-import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
 const { pluginGroupId } = window.extSharedData;
@@ -28,7 +28,7 @@ export const handleSitePlugins = async ({
 }) => {
 	if (showStatus) {
 		// translators: this is for a action log UI. Keep it short
-		setStatus(__('Setting up site functionality', 'extendify-local'));
+		setStatus(launchStrings().statusPlugins);
 	}
 
 	const body = JSON.stringify({

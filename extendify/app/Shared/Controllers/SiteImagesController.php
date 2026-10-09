@@ -11,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\Constants;
 use Extendify\Shared\Services\HttpClient;
 use Extendify\Shared\Services\Sanitizer;
+use Extendify\Shared\Services\SiteImages;
 
 /**
  * The controller for the persisted site images cache
@@ -28,7 +29,7 @@ class SiteImagesController
         $siteImages = \get_option('extendify_site_images', []);
 
         if (!empty($siteImages)) {
-            return new \WP_REST_Response(['siteImages' => $siteImages]);
+            return new \WP_REST_Response(['siteImages' => SiteImages::normalize($siteImages)]);
         }
 
         return new \WP_REST_Response(['siteImages' => self::refresh()]);
@@ -42,10 +43,7 @@ class SiteImagesController
      */
     public static function store($request)
     {
-        $siteImages = $request->get_param('siteImages');
-        if (!is_array($siteImages)) {
-            $siteImages = [];
-        }
+        $siteImages = SiteImages::normalize($request->get_param('siteImages'));
 
         \update_option('extendify_site_images', Sanitizer::sanitizeArray($siteImages));
         return new \WP_REST_Response(['siteImages' => $siteImages]);
@@ -64,8 +62,8 @@ class SiteImagesController
 
     /**
      * Fetch fresh images from the images service using the stored site profile,
-     * persist them, and return the array. Returns [] when the profile is empty
-     * or the upstream call fails.
+     * persist them, and return them. Returns empty sets when the profile is
+     * empty or the upstream call fails.
      *
      * @return array
      */
@@ -73,14 +71,19 @@ class SiteImagesController
     {
         $siteProfile = \get_option('extendify_site_profile', []);
         if (empty($siteProfile)) {
-            return [];
+            return SiteImages::normalize([]);
         }
 
         $response = HttpClient::post(
-            Constants::IMAGES_HOST . '/api/search',
+            Constants::IMAGES_HOST . '/api/images',
             [
                 'params' => [
                     'siteProfile' => $siteProfile,
+                    'lang' => \get_locale(),
+                    'imageTypes' => [
+                        ['type' => 'hero'],
+                        ['type' => 'general'],
+                    ],
                     'source' => 'shared',
                 ],
             ],
@@ -88,9 +91,9 @@ class SiteImagesController
             true
         );
 
-        $siteImages = $response['response']['siteImages'] ?? [];
-        if (!is_array($siteImages) || empty($siteImages)) {
-            return [];
+        $siteImages = SiteImages::normalize($response['response']['images'] ?? []);
+        if (empty($siteImages['hero']) && empty($siteImages['general'])) {
+            return $siteImages;
         }
 
         \update_option('extendify_site_images', Sanitizer::sanitizeArray($siteImages));

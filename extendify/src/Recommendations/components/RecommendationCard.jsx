@@ -1,7 +1,4 @@
-import {
-	getRecommendation,
-	recordActivity,
-} from '@recommendations/utils/record-activity';
+import { recordActivity } from '@recommendations/utils/record-activity';
 import { recordPluginActivity } from '@shared/api/DataApi';
 import { activatePlugin, installPlugin } from '@shared/api/wp';
 import { retryOperation, sleep } from '@shared/lib/utils';
@@ -155,9 +152,8 @@ const InstallPluginAction = ({ product, ctaContent, ctaPluginSlug }) => {
 			return;
 		}
 
-		const recommendation = getRecommendation({ product });
 		recordPluginActivity({
-			slug: recommendation || product,
+			slug: ctaPluginSlug,
 			source: 'search-recommendation-card',
 		});
 

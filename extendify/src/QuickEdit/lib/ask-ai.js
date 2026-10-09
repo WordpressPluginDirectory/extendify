@@ -24,29 +24,6 @@ export const subscribeToAgentBlock = (listener) => {
 	});
 };
 
-// Synchronous-readable cache of the agent sidebar's open state. The click
-// rule runs in a sync capture-phase listener and can't await a dynamic
-// import to choose between today's commit and the silent-stage bridge.
-// Watcher is kicked off lazily on first read so a Jest resetModules + doMock
-// can swap the agent store before the import resolves.
-let cachedSidebarOpen = false;
-let watcherStarted = false;
-const startSidebarWatcher = () => {
-	if (watcherStarted || !isAgentAvailable()) return;
-	watcherStarted = true;
-	import('@agent/state/global').then(({ useGlobalStore }) => {
-		cachedSidebarOpen = !!useGlobalStore.getState().open;
-		useGlobalStore.subscribe((state) => {
-			cachedSidebarOpen = !!state.open;
-		});
-	});
-};
-
-export const isAgentSidebarOpen = () => {
-	startSidebarWatcher();
-	return cachedSidebarOpen;
-};
-
 const findAgentTagged = (el) => {
 	let node = el;
 	while (node && node !== document.body) {
@@ -58,22 +35,14 @@ const findAgentTagged = (el) => {
 	return null;
 };
 
-// Bridges the gap between the click and the Agent's own selection
-// outline (which renders after panel mount + ResizeObserver settles).
-const flashSelection = (el) => {
-	if (!el) return;
-	el.classList.add('extendify-quick-edit-ask-flash');
-	window.setTimeout(() => {
-		el.classList.remove('extendify-quick-edit-ask-flash');
-	}, 1500);
-};
-
 // Focus the agent chat textarea so the user can type their request right
 // away. The textarea is created when the panel mounts; the brief retry
 // covers the open-from-closed case where it isn't in the DOM yet (when the
 // sidebar is already open it's found on the first try). preventScroll keeps
 // the block the user just clicked in view rather than yanking to the chat.
 const focusChatInput = (tries = 20) => {
+	// Pinning a block puts focus on its pill; a late retry would yank it away.
+	if (document.activeElement?.closest?.('.extendify-quick-edit-bar')) return;
 	const ta = document.querySelector('#extendify-agent-chat-textarea');
 	if (ta) {
 		ta.focus({ preventScroll: true });
@@ -82,32 +51,10 @@ const focusChatInput = (tries = 20) => {
 	if (tries > 0) setTimeout(() => focusChatInput(tries - 1), 50);
 };
 
-// Stage a block for the already-open agent. No setOpen — the sidebar is
-// already up — but we DO focus the chat so the cursor lands ready to type,
-// matching the Ask AI pill and the selector behavior on a fresh open. The
-// visual bridge is the same flash + the agent's DOMHighlighter outline that
-// engages once agentBlock is set.
-export const stageAgentBlock = (el) => {
-	if (!isAgentAvailable()) return;
-	const match = findAgentTagged(el);
-	if (!match) return;
-	flashSelection(match);
-	const next = buildAgentBlockDescriptor(match);
-	const current = useQuickEditStore.getState().agentBlock;
-	if (!current || current.id !== next.id || current.target !== next.target) {
-		useQuickEditStore.setState({
-			agentBlock: next,
-			agentBlockCode: null,
-		});
-	}
-	focusChatInput();
-};
-
 export const askAiAboutElement = async (el) => {
 	if (!isAgentAvailable()) return;
 
 	const match = findAgentTagged(el);
-	flashSelection(match || el);
 
 	// setBlock before setOpen so DOMHighlighter sees the block on mount.
 	const { useGlobalStore } = await import('@agent/state/global');

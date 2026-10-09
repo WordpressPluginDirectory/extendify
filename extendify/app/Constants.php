@@ -20,4 +20,21 @@ class Constants
     const IMAGES_HOST = 'https://images-resource.extendify.com';
     const DASHBOARD_HOST = 'https://dashboard.extendify.com';
     // phpcs:enable PSR12.Properties.ConstantVisibility.NotFound
+
+    /**
+     * All Extendify service base URLs.
+     *
+     * @return string[]
+     */
+    public static function serviceUrls()
+    {
+        return [
+            self::AI_HOST,
+            self::PATTERNS_HOST,
+            self::KB_HOST,
+            self::INSIGHTS_HOST,
+            self::IMAGES_HOST,
+            self::DASHBOARD_HOST,
+        ];
+    }
 }

@@ -1,4 +1,6 @@
 import { downloadImage } from '@shared/api/wp';
+import { resolveImageSearch } from '@shared/lib/image-search-defaults';
+import { track } from '@shared/lib/track';
 import { fetchImages } from '@shared/lib/unsplash';
 import {
 	Button,
@@ -13,7 +15,6 @@ import { loadProduct, save, saveProduct } from '../../lib/api';
 import { invalidateBlockSource } from '../../lib/block-source-cache';
 import { splice } from '../../lib/dom';
 import { friendlyMessage } from '../../lib/errors';
-import { track } from '../../lib/insights';
 import { QE_MODAL_BODY_OPEN_CLASS } from '../../lib/modal-root';
 import { pushUndo } from '../../state/undo';
 import { ModalCloseButton } from './ModalCloseButton';
@@ -75,15 +76,9 @@ export const UnsplashImagePickerModal = ({ selected, field, onAfterSave }) => {
 		const ac = new AbortController();
 		setLoadError(null);
 		setImages(null);
-		// Empty search → seed from the site profile's first imageSearchTerm.
-		// We deliberately don't read from the Shared Unsplash cache: that's
-		// populated via `source='prefetch'`, which the backend serves at
-		// smaller dimensions for localStorage friendliness. A direct fetch
-		// with `source='user'` gives the same site-relevance signal with
-		// grid-thumbnail quality on par with searched results.
-		const seed = window.extSharedData?.siteProfile?.imageSearchTerms?.[0];
-		const query = debounced || seed || 'unsplash';
-		fetchImages(query, 'user')
+		// Not the shared prefetch cache: it holds a mix of every profile term,
+		// where one resolved term keeps the grid on a single subject.
+		fetchImages(resolveImageSearch(debounced), 'user')
 			.then((res) => {
 				if (ac.signal.aborted) return;
 				setImages(res || []);

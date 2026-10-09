@@ -49,6 +49,34 @@ class TagTemplateParts
         return (($b['blockName'] ?? '') === 'core/template-part');
     }
 
+    private static function isSyncedPattern(array $b): bool
+    {
+        return (($b['blockName'] ?? '') === 'core/block');
+    }
+
+    private static function inFrame(string $prefix): bool
+    {
+        return (self::currentFrame()['prefix'] ?? '') === $prefix;
+    }
+
+    // A prefix opens an id space that belongs to another post; `nav` marks the
+    // one whose items are stamped from the finished html instead of counted.
+    private static function newFrame(
+        string $label,
+        string $slug,
+        string $prefix = '',
+        bool $nav = false
+    ): array {
+        return [
+            'label' => $label,
+            'slug' => $slug,
+            'prefix' => $prefix,
+            'nav' => $nav,
+            'seq' => 0,
+            'skip_depth' => 0,
+        ];
+    }
+
     private static function currentFrame()
     {
         return self::$frames ? self::$frames[count(self::$frames) - 1] : null;
@@ -78,12 +106,10 @@ class TagTemplateParts
         }
 
         if (self::isTemplatePart($block)) {
-            self::$frames[] = [
-                'label' => self::labelForPart($block),
-                'slug' => $block['attrs']['slug'] ?? '',
-                'seq' => 0,
-                'skip_depth' => 0,
-            ];
+            self::$frames[] = self::newFrame(
+                self::labelForPart($block),
+                $block['attrs']['slug'] ?? ''
+            );
             $block['attrs']['__extendify_scope_open'] = 1;
             return $block;
         }
@@ -97,6 +123,23 @@ class TagTemplateParts
             return $block;
         }
 
+        // The pattern's blocks render inline; counting them here would inflate
+        // every later id in the part.
+        if (self::isSyncedPattern($block) && ($frame['skip_depth'] ?? 0) === 0) {
+            self::$frames[] = self::newFrame(
+                $frame['label'],
+                $frame['slug'] ?? '',
+                TemplatePartBlockFinder::refPrefix('block', $block)
+            );
+            return $block;
+        }
+
+        // A ref nav's items are numbered off its post once it has rendered, so
+        // nothing inside its frame is counted here.
+        if (($frame['nav'] ?? false)) {
+            return $block;
+        }
+
         // render_block_data runs top-down (before a block's own render), so an
         // ignored block is counted here as a leaf and the skip is raised *after*
         // — its descendants then render with skip_depth > 0 and are not counted.
@@ -104,7 +147,7 @@ class TagTemplateParts
             $frame['seq']++;
             self::$blockStack[] = [
                 'name' => $name,
-                'id' => $frame['seq'],
+                'id' => ($frame['prefix'] ?? '') . $frame['seq'],
                 'label' => $frame['label'],
                 'slug' => $frame['slug'] ?? '',
             ];
@@ -114,7 +157,57 @@ class TagTemplateParts
         }
         self::setCurrentFrame($frame);
 
+        if (TemplatePartBlockFinder::isRefNav($block)) {
+            self::$frames[] = self::newFrame(
+                $frame['label'],
+                $frame['slug'] ?? '',
+                TemplatePartBlockFinder::refPrefix('navigation', $block),
+                true
+            );
+        }
+
         return $block;
+    }
+
+    // A page-list renders pages that aren't blocks, so a menu holding one is
+    // left unstamped rather than wrongly numbered.
+    // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
+    const STAMPABLE_NAV_ITEMS = ['core/navigation-link', 'core/navigation-submenu'];
+
+    public static function stampNavItems(
+        string $html,
+        string $prefix,
+        int $ref,
+        string $idAttr,
+        array $extra = []
+    ): string {
+        $navPost = \get_post($ref);
+        if (!$navPost || $navPost->post_type !== 'wp_navigation') {
+            return $html;
+        }
+
+        $outline = TemplatePartBlockFinder::outline(parse_blocks($navPost->post_content));
+        foreach ($outline as $entry) {
+            if (!in_array($entry['n'], self::STAMPABLE_NAV_ITEMS, true)) {
+                return $html;
+            }
+        }
+
+        $tp = new \WP_HTML_Tag_Processor($html);
+        $index = 0;
+        while ($tp->next_tag('LI') && isset($outline[$index])) {
+            $class = (string) $tp->get_attribute('class');
+            if (strpos($class, 'wp-block-navigation-item') === false) {
+                continue;
+            }
+            $tp->set_attribute($idAttr, $prefix . $outline[$index]['c']);
+            foreach ($extra as $attr => $value) {
+                $tp->set_attribute($attr, $value);
+            }
+            $index++;
+        }
+
+        return $tp->get_updated_html();
     }
 
     public static function onRenderBlock(string $html, array $block): string
@@ -133,13 +226,29 @@ class TagTemplateParts
             return $html;
         }
 
+        // Popping on the second pass would take the part's own frame.
+        if (self::isSyncedPattern($block)) {
+            if (self::inFrame(TemplatePartBlockFinder::refPrefix('block', $block))) {
+                array_pop(self::$frames);
+            }
+            return $html;
+        }
+
+        // A ref nav's items get stamped from the finished html, not counted here.
+        $navPrefix = TemplatePartBlockFinder::isRefNav($block)
+            ? TemplatePartBlockFinder::refPrefix('navigation', $block)
+            : '';
+        if ($navPrefix && self::inFrame($navPrefix)) {
+            array_pop(self::$frames);
+        } elseif (self::currentFrame()['nav'] ?? false) {
+            return $html;
+        }
+
         $frame = self::currentFrame();
         $skip = $frame['skip_depth'] ?? 0;
 
-        // render_block runs bottom-up, so the ignored block's own filter fires
-        // after its descendants — drop one skip level here. Only the outermost
-        // ignored block (skip === 1) was counted in render_block_data, so only it
-        // falls through to be stamped; nested ones and descendants bail.
+        // render_block runs bottom-up, so only the outermost ignored block was
+        // counted and only it may be stamped.
         if (in_array($name, self::$ignored, true)) {
             $frame['skip_depth'] = max(0, $skip - 1);
             self::setCurrentFrame($frame);
@@ -150,10 +259,8 @@ class TagTemplateParts
             return $html;
         }
 
-        // Name-keyed lookup, not array_pop: core/navigation fires render_block
-        // for inner items without firing render_block_data first, so a
-        // straight pop would consume entries belonging to unrelated outer
-        // blocks. If nothing matches, mint a fresh id (nav-link/-submenu path).
+        // core/navigation fires render_block with no render_block_data, so a
+        // straight pop eats an outer block's entry.
         $info = null;
         $infoIndex = -1;
         for ($i = count(self::$blockStack) - 1; $i >= 0; $i--) {
@@ -172,7 +279,7 @@ class TagTemplateParts
                 self::setCurrentFrame($frame);
                 $info = [
                     'name'  => $name,
-                    'id'    => $frame['seq'],
+                    'id'    => ($frame['prefix'] ?? '') . $frame['seq'],
                     'label' => $frame['label'],
                     'slug'  => $frame['slug'] ?? '',
                 ];
@@ -182,13 +289,27 @@ class TagTemplateParts
         if ($info && $html) {
             $tp = new \WP_HTML_Tag_Processor($html);
             if ($tp->next_tag()) {
-                $tp->set_attribute('data-extendify-part-block-id', (string) (int) $info['id']);
+                $tp->set_attribute('data-extendify-part-block-id', (string) $info['id']);
+                $tp->set_attribute('data-extendify-block-type', $name);
                 $tp->set_attribute('data-extendify-part', $info['label']);
                 if (!empty($info['slug'])) {
                     $tp->set_attribute('data-extendify-part-slug', $info['slug']);
                 }
                 $html = $tp->get_updated_html();
             }
+        }
+        if ($navPrefix && $info) {
+            $extra = ['data-extendify-part' => $info['label']];
+            if (!empty($info['slug'])) {
+                $extra['data-extendify-part-slug'] = $info['slug'];
+            }
+            $html = self::stampNavItems(
+                $html,
+                $navPrefix,
+                (int) $block['attrs']['ref'],
+                'data-extendify-part-block-id',
+                $extra
+            );
         }
         return $html;
     }

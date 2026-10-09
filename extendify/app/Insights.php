@@ -8,6 +8,9 @@ namespace Extendify;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Mcp\Availability;
+use Extendify\Mcp\Connections;
+use Extendify\Mcp\Log;
 use Extendify\Shared\Services\Sanitizer;
 use Extendify\PartnerData;
 
@@ -20,7 +23,7 @@ class Insights
 {
     /**
      * Option name storing each site's A/B test assignments, keyed by the
-     * screen/feature under test (e.g. 'AutoLaunch.ShowTitle').
+     * screen/feature under test (e.g. 'AutoLaunch.HideEnhanceAI').
      *
      * @var string
      */
@@ -36,11 +39,9 @@ class Insights
     // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
     const AVAILABLE_TESTS = [
         'AutoLaunch.HideEnhanceAI',
-        'AutoLaunch.ShowTitle',
-        'AutoLaunch.SubmitOutside',
         'AutoLaunch.SubmitCreateWebsite',
         'AutoLaunch.DescriptionPlaceholderLaw',
-        'AutoLaunch.HeaderParagraphOld',
+        'AutoLaunch.MigrateScreen',
     ];
 
     /**
@@ -79,7 +80,7 @@ class Insights
      * inactive tests are dropped.
      *
      * @param string[] $activeTests Active tests in `Name:Percentage` form
-     *                              (e.g. 'AutoLaunch.ShowTitle:20'); a bare
+     *                              (e.g. 'AutoLaunch.HideEnhanceAI:20'); a bare
      *                              name defaults to a 50% rollout.
      * @return void
      */
@@ -152,6 +153,11 @@ class Insights
                 'lastLoginAdmin' => $this->getLastAdminLogin(),
                 'hasImprint' => $this->hasImprint(),
             ]);
+
+            if (Availability::offered()) {
+                $insights['mcp'] = ['usage' => Log::usage(), 'connections' => Connections::count()];
+            }
+
             return $insights;
         });
     }

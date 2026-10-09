@@ -180,10 +180,14 @@ class SaveController
         $targetBlock = $found['block'];
 
         if ($rawBlock !== '') {
-            $parsed = parse_blocks(wp_unslash($rawBlock));
+            // From get_json_params, so never slashed — unslashing here stripped
+            // the real backslashes in serialized attrs and corrupted the block.
+            $parsed = parse_blocks($rawBlock);
             $parsed = array_values(array_filter(
                 $parsed,
-                static fn ($b) => is_array($b) && !empty($b['blockName'])
+                static function ($b) {
+                    return is_array($b) && !empty($b['blockName']);
+                }
             ));
             if (count($parsed) !== 1) {
                 return new \WP_REST_Response([
@@ -313,11 +317,13 @@ class SaveController
         // link text stay byte-for-byte intact.
         return preg_replace_callback(
             '/<a\b[^>]*>/i',
-            static fn ($match) => self::setTagAttributes($match[0], [
-                'href'      => $newHref,
-                'data-id'   => $newHref,
-                'data-type' => 'tel',
-            ]),
+            static function ($match) use ($newHref) {
+                return self::setTagAttributes($match[0], [
+                    'href'      => $newHref,
+                    'data-id'   => $newHref,
+                    'data-type' => 'tel',
+                ]);
+            },
             $innerHtml,
             1
         );
@@ -421,7 +427,9 @@ class SaveController
 
         $raw = array_values(array_filter(
             $candidates,
-            static fn ($c) => BlockFingerprint::matches($c['block'], $fingerprint)
+            static function ($c) use ($fingerprint) {
+                return BlockFingerprint::matches($c['block'], $fingerprint);
+            }
         ));
         if ($raw) {
             return $raw;
@@ -429,11 +437,13 @@ class SaveController
 
         $rendered = array_values(array_filter(
             $candidates,
-            static fn ($c) => BlockFingerprint::matches(
-                $c['block'],
-                $fingerprint,
-                self::renderBlockHtml($c['block'], $sourcePost)
-            )
+            static function ($c) use ($fingerprint, $sourcePost) {
+                return BlockFingerprint::matches(
+                    $c['block'],
+                    $fingerprint,
+                    self::renderBlockHtml($c['block'], $sourcePost)
+                );
+            }
         ));
         if ($rendered) {
             return $rendered;
@@ -444,7 +454,9 @@ class SaveController
         // the fingerprint — is truncated to a prefix of the stored block.
         return array_values(array_filter(
             $candidates,
-            static fn ($c) => BlockFingerprint::matches($c['block'], $fingerprint, '', true)
+            static function ($c) use ($fingerprint) {
+                return BlockFingerprint::matches($c['block'], $fingerprint, '', true);
+            }
         ));
     }
 

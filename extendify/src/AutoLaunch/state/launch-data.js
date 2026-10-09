@@ -11,9 +11,11 @@ import {
 	getStyleShape,
 } from '@auto-launch/fetchers/shape';
 import { clearSiteImages } from '@auto-launch/functions/wp';
-import { __ } from '@wordpress/i18n';
+import { launchStrings } from '@auto-launch/strings';
+import { siteImageUrls } from '@shared/lib/site-images';
+import { safeLocalStorage } from '@shared/state/safe-local-storage';
 import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { overrideWithUrlParams, urlParams, urlParamsShape } from './url-params';
 
 const shapeToKeyValue = (shape) => {
@@ -24,8 +26,9 @@ const shapeToKeyValue = (shape) => {
 
 const initialState = {
 	go: false,
+	showExtendifyCodeScreen: false,
 	// translators: this is for a action log UI. Keep it short
-	statusMessages: [__('Booting things up', 'extendify-local')],
+	statusMessages: [launchStrings().statusBooting],
 	errorMessage: null,
 	errorCount: 0,
 	title: null,
@@ -61,8 +64,6 @@ const state = (set, get) => ({
 	description: undefined,
 	descriptionBackup: undefined,
 	descriptionRaw: undefined,
-	pulse: false,
-	setPulse: (value) => set({ pulse: value }),
 	setData: (key, value) => {
 		if (!isValidKey(key)) return;
 		if (get()[key] === value) return; // avoid unnecessary updates
@@ -121,6 +122,7 @@ const keySchemas = {
 export const useLaunchDataStore = create(
 	persist(devtools(state, { name: 'Extendify Launch Data' }), {
 		name: `extendify-launch-data-${window.extSharedData.siteId}`,
+		storage: createJSONStorage(() => safeLocalStorage),
 		merge: (p, current) => {
 			// Make sure the persisted state is valid and not corrupted.
 			const persisted = p && typeof p === 'object' ? p : {};
@@ -146,7 +148,10 @@ export const useLaunchDataStore = create(
 				title: title || persisted.title,
 				description: description || persisted.description,
 				descriptionRaw: description || persisted.descriptionRaw,
-				descriptionBackup: persisted.descriptionBackup || description || title,
+				descriptionBackup:
+					persisted.descriptionBackup ||
+					description ||
+					(window.extLaunchData?.showLaunchTitle ? undefined : title),
 				go: go || persisted.go,
 				urlParams: {
 					title,
@@ -167,18 +172,24 @@ export const useLaunchDataStore = create(
 				statusMessages,
 				errorMessage,
 				errorCount,
-				pulse,
 				description,
 				descriptionRaw,
 				title,
+				showExtendifyCodeScreen,
 				...rest
 			} = state;
 			return Object.fromEntries(
-				Object.entries(rest).filter(([, v]) =>
-					Array.isArray(v) ? v.length > 0 : Boolean(v),
-				),
+				Object.entries(rest).filter(([key, v]) => {
+					// An empty set means the fetch failed; keeping it skips the retry.
+					if (key === 'siteImages') return siteImageUrls(v).length > 0;
+					return Array.isArray(v) ? v.length > 0 : Boolean(v);
+				}),
 			);
 		},
 	}),
 	state,
 );
+
+export const clearPersistedLaunchData = () => {
+	useLaunchDataStore.persist.clearStorage();
+};

@@ -30,6 +30,16 @@ const addImportant = (rule) => {
 	return `${rule.selectorText} { ${declarations.join('; ')}; }`;
 };
 
+// A <style> tag resolves core's relative url() against the page, so they 404.
+const rebaseUrls = (css, base) =>
+	css.replace(/url\((["']?)([^"')]+)\1\)/g, (match, _quote, url) => {
+		try {
+			return `url("${new URL(url, base).href}")`;
+		} catch {
+			return match;
+		}
+	});
+
 const getCustomMediaViewsCss = () => {
 	const link = document.getElementById('media-views-css');
 	if (!link) return null;
@@ -38,10 +48,17 @@ const getCustomMediaViewsCss = () => {
 
 	if (!processedRules?.length) return null;
 
-	const css = processedRules.join('\n');
+	const css = rebaseUrls(processedRules.join('\n'), link.href);
 
 	const additionalCSS = `
 			div:has(> .media-modal) {z-index: 999999 !important}
+
+			/* A host page's <meta name="color-scheme"> otherwise dark-renders wp.media's inputs and scrollbars. */
+			.media-modal,
+			.media-modal-backdrop {
+				color-scheme: only light !important;
+			}
+
 			.media-frame {
 				h1, h2, h3, h4, h5, h6 {
 					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
@@ -56,8 +73,11 @@ const getCustomMediaViewsCss = () => {
 					color: #646970 !important;
 				}
 
+				/* Core leaves these uncolored, so they take the theme's foreground. */
 				.media-search-input-label,
-				.load-more-count {
+				.load-more-count,
+				label[for="media-attachment-filters"],
+				label[for="media-attachment-date-filters"] {
 					color: #3c434a !important;
 				}
 			}
